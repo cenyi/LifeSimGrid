@@ -34,7 +34,16 @@
     "retroPalette": "🕹️ 범용 8비트 레트로 팔레트",
     "retroPaletteHint": "내장 32색 레트로 휴대용 팔레트 매칭 — 이미지 색상을 즉시 줄여 가장 순수한 픽셀 아트 시각 효과를 제공합니다.",
     "retroPaletteOff": "원본 색상",
-    "retroPaletteOn": "레트로 매치"
+    "retroPaletteOn": "레트로 매치",
+    "transform": "변환",
+    "rotateCw": "회전",
+    "flipH": "좌우 반전",
+    "flipV": "상하 반전",
+    "zoom": "확대/축소",
+    "zoomIn": "확대",
+    "zoomOut": "축소",
+    "zoomReset": "초기화",
+    "estimatedTime": "예상 시간"
   },
   "AvatarEditor": {
     "title": "아바타 QR 코드 설정 & 권한 언로커",

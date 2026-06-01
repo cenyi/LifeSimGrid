@@ -34,7 +34,16 @@
     "retroPalette": "🕹️ Palette Rétro 8-Bit Universelle",
     "retroPaletteHint": "Correspondance de palette rétro intégrée de 32 couleurs pour console portable — réduit instantanément les couleurs de l'image pour l'effet visuel pixel-art le plus pur.",
     "retroPaletteOff": "Couleurs Originales",
-    "retroPaletteOn": "Correspondance Rétro"
+    "retroPaletteOn": "Correspondance Rétro",
+    "transform": "Transformer",
+    "rotateCw": "Rotation",
+    "flipH": "Miroir H",
+    "flipV": "Miroir V",
+    "zoom": "Zoom",
+    "zoomIn": "Agrandir",
+    "zoomOut": "Réduire",
+    "zoomReset": "Réinitialiser",
+    "estimatedTime": "Temps Est."
   },
   "AvatarEditor": {
     "title": "Configurateur de Code QR d'Avatar & Débloqueur de Permissions",

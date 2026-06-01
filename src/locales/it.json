@@ -34,7 +34,16 @@
     "retroPalette": "🕹️ Tavolozza Retro 8-Bit Universale",
     "retroPaletteHint": "Tavolozza retro portatile universale a 32 colori integrata — riduce istantaneamente i colori dell'immagine per il più puro effetto visivo pixel-art.",
     "retroPaletteOff": "Colori Originali",
-    "retroPaletteOn": "Corrispondenza Retro"
+    "retroPaletteOn": "Corrispondenza Retro",
+    "transform": "Trasforma",
+    "rotateCw": "Ruota",
+    "flipH": "Rifletti O",
+    "flipV": "Rifletti V",
+    "zoom": "Zoom",
+    "zoomIn": "Ingrandisci",
+    "zoomOut": "Riduci",
+    "zoomReset": "Ripristina",
+    "estimatedTime": "Tempo Stim."
   },
   "AvatarEditor": {
     "title": "Configuratore Codice QR Avatar & Sblocco Permessi",

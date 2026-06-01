@@ -34,7 +34,16 @@
     "retroPalette": "🕹️ 通用 8-Bit 復古掌機色盤",
     "retroPaletteHint": "內建 32 色通用復古掌機調色盤匹配，一秒縮減圖片色彩，提供最純粹的點陣風視覺效果。",
     "retroPaletteOff": "原始色彩",
-    "retroPaletteOn": "復古匹配"
+    "retroPaletteOn": "復古匹配",
+    "transform": "變換",
+    "rotateCw": "旋轉",
+    "flipH": "水平翻轉",
+    "flipV": "垂直翻轉",
+    "zoom": "縮放",
+    "zoomIn": "放大",
+    "zoomOut": "縮小",
+    "zoomReset": "重設",
+    "estimatedTime": "預估時間"
   },
   "AvatarEditor": {
     "title": "虛擬化身 QR 數據配置與權限解鎖器",

@@ -33,8 +33,17 @@
     "clearHighlight": "ハイライト解除",
     "retroPalette": "🕹️ 汎用 8-Bit レトロ携帯機パレット",
     "retroPaletteHint": "内蔵32色レトロ携帯機パレットマッチング — 画像の色を一瞬で減らし、最も純粋なドット絵風ビジュアル効果を提供。",
-    "retroPaletteOff": "オリジナルカラー",
-    "retroPaletteOn": "レトロマッチ"
+    "retroPaletteOff": "オリジナル色",
+    "retroPaletteOn": "レトロマッチ",
+    "transform": "変換",
+    "rotateCw": "回転",
+    "flipH": "左右反転",
+    "flipV": "上下反転",
+    "zoom": "ズーム",
+    "zoomIn": "拡大",
+    "zoomOut": "縮小",
+    "zoomReset": "リセット",
+    "estimatedTime": "推定時間"
   },
   "AvatarEditor": {
     "title": "アバターQRコード設定＆制限解除エディタ",

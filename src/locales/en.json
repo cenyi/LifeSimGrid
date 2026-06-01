@@ -34,7 +34,16 @@
     "retroPalette": "🕹️ Universal 8-Bit Retro Palette",
     "retroPaletteHint": "Built-in 32-color retro palette — instantly reduces colors for that classic pixel-art look.",
     "retroPaletteOff": "Original Colors",
-    "retroPaletteOn": "Retro Match"
+    "retroPaletteOn": "Retro Match",
+    "transform": "Transform",
+    "rotateCw": "Rotate",
+    "flipH": "Flip H",
+    "flipV": "Flip V",
+    "zoom": "Zoom",
+    "zoomIn": "Zoom In",
+    "zoomOut": "Zoom Out",
+    "zoomReset": "Reset",
+    "estimatedTime": "Est. Time"
   },
   "AvatarEditor": {
     "title": "Avatar QR Code Configurator & Permission Unlocker",

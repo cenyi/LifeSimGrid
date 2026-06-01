@@ -33,8 +33,17 @@
     "clearHighlight": "清除高亮",
     "retroPalette": "🕹️ 通用8位复古调色板",
     "retroPaletteHint": "内置32色复古掌机调色板匹配——即时降低图片颜色数量，呈现最纯正的像素画视觉效果。",
-    "retroPaletteOff": "原始颜色",
-    "retroPaletteOn": "复古匹配"
+    "retroPaletteOff": "原始色彩",
+    "retroPaletteOn": "复古匹配",
+    "transform": "变换",
+    "rotateCw": "旋转",
+    "flipH": "水平翻转",
+    "flipV": "垂直翻转",
+    "zoom": "缩放",
+    "zoomIn": "放大",
+    "zoomOut": "缩小",
+    "zoomReset": "重置",
+    "estimatedTime": "预估时间"
   },
   "AvatarEditor": {
     "title": "虚拟化身QR码配置器 & 权限解锁器",

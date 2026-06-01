@@ -34,7 +34,16 @@
     "retroPalette": "🕹️ Paleta Retro Universal de 8 Bits",
     "retroPaletteHint": "Paleta retro integrada de 32 colores para consolas portátiles: reduce instantáneamente los colores de la imagen para obtener el efecto visual de pixel art más puro.",
     "retroPaletteOff": "Colores Originales",
-    "retroPaletteOn": "Coincidencia Retro"
+    "retroPaletteOn": "Coincidencia Retro",
+    "transform": "Transformar",
+    "rotateCw": "Rotar",
+    "flipH": "Voltear H",
+    "flipV": "Voltear V",
+    "zoom": "Zoom",
+    "zoomIn": "Acercar",
+    "zoomOut": "Alejar",
+    "zoomReset": "Restablecer",
+    "estimatedTime": "Tiempo Est."
   },
   "AvatarEditor": {
     "title": "Configurador de Código QR de Avatar y Desbloqueador de Permisos",

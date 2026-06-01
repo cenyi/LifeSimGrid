@@ -5,6 +5,7 @@ import { useState, useRef, useCallback, useEffect } from "react";
 import { useHistory } from "@/hooks/useHistory";
 import { canvasToThumbnail, type PixelHistoryData, type CanvasPreset, type PixelDensity } from "@/lib/history-db";
 import HistoryPanel, { ThumbnailImg } from "@/components/HistoryPanel";
+import { RotateCw, FlipHorizontal2, FlipVertical2, ZoomIn, ZoomOut } from "lucide-react";
 
 interface PresetConfig {
   w: number;
@@ -26,6 +27,7 @@ const DENSITY_BRUSH: Record<PixelDensity, number> = {
 
 const MAX_PALETTE_COLORS = 24;
 const COLOR_QUANT_BUCKETS = 6;
+const SECONDS_PER_CELL = 5;
 
 const RETRO_PALETTE: [number, number, number, string][] = [
   [0, 0, 0, "Void Black"],
@@ -103,6 +105,21 @@ function getContrastColor(hex: string): string {
   return r * 0.299 + g * 0.587 + b * 0.114 > 128 ? "#000000" : "#ffffff";
 }
 
+/** Formats seconds into a human-readable duration string */
+function formatDuration(totalSeconds: number): string {
+  if (totalSeconds < 1) return "<1m";
+  if (totalSeconds < 60) return `${Math.ceil(totalSeconds)}m`;
+  const hours = Math.floor(totalSeconds / 3600);
+  const mins = Math.ceil((totalSeconds % 3600) / 60);
+  if (hours > 0 && mins > 0) return `${hours}h ${mins}m`;
+  if (hours > 0) return `${hours}h`;
+  return `${mins}m`;
+}
+
+type Rotation = 0 | 90 | 180 | 270;
+
+const ROTATION_CYCLE: Rotation[] = [0, 90, 180, 270];
+
 export default function PixelStudio() {
   const t = useTranslations("PixelStudio");
   const ht = useTranslations("History");
@@ -118,14 +135,26 @@ export default function PixelStudio() {
   const [highlightColor, setHighlightColor] = useState<string | null>(null);
   const [pixelGrid, setPixelGrid] = useState<string[][]>([]);
   const [retroMode, setRetroMode] = useState(false);
+  const [rotation, setRotation] = useState<Rotation>(0);
+  const [flipH, setFlipH] = useState(false);
+  const [flipV, setFlipV] = useState(false);
+  const [zoom, setZoom] = useState(100);
   const { entries: historyEntries, loading: historyLoading, addEntry: addHistoryEntry, deleteEntry: deleteHistoryEntry, clearAll: clearHistory } = useHistory<PixelHistoryData>("pixel");
 
-  const canvasW = density;
-  const canvasH = Math.round(
+  const baseW = density;
+  const baseH = Math.round(
     (density * PRESET_DIMS[preset].h) / PRESET_DIMS[preset].w
   );
+  const isRotated = rotation === 90 || rotation === 270;
+  const canvasW = isRotated ? baseH : baseW;
+  const canvasH = isRotated ? baseW : baseH;
   const brushSize = DENSITY_BRUSH[density];
   const displayScale = Math.max(2, Math.min(4, Math.floor(400 / Math.max(canvasW, canvasH))));
+  const totalCells = canvasW * canvasH;
+  const uniqueColors = palette.length;
+  const estimatedTime = totalCells > 0 && uniqueColors > 0
+    ? formatDuration((totalCells * SECONDS_PER_CELL) / uniqueColors)
+    : null;
 
   /** Renders the uploaded image onto the pixel grid canvas with current filter settings */
   const renderCanvas = useCallback(() => {
@@ -157,7 +186,26 @@ export default function PixelStudio() {
       sy = (image.height - sh) / 2;
     }
 
-    ctx.drawImage(image, sx, sy, sw, sh, 0, 0, canvasW, canvasH);
+    const zoomFactor = zoom / 100;
+    let zsw = sw / zoomFactor;
+    let zsh = sh / zoomFactor;
+    zsw = Math.min(zsw, image.width);
+    zsh = Math.min(zsh, image.height);
+    let zsx = sx + (sw - zsw) / 2;
+    let zsy = sy + (sh - zsh) / 2;
+    zsx = Math.max(0, Math.min(zsx, image.width - zsw));
+    zsy = Math.max(0, Math.min(zsy, image.height - zsh));
+
+    ctx.save();
+    ctx.translate(canvasW / 2, canvasH / 2);
+    if (rotation === 90) ctx.rotate(Math.PI / 2);
+    else if (rotation === 180) ctx.rotate(Math.PI);
+    else if (rotation === 270) ctx.rotate((3 * Math.PI) / 2);
+    if (flipH) ctx.scale(-1, 1);
+    if (flipV) ctx.scale(1, -1);
+    ctx.drawImage(image, zsx, zsy, zsw, zsh, -canvasW / 2, -canvasH / 2, canvasW, canvasH);
+    ctx.restore();
+
     ctx.filter = "none";
 
     const imageData = ctx.getImageData(0, 0, canvasW, canvasH);
@@ -194,7 +242,7 @@ export default function PixelStudio() {
 
     setPalette(sorted);
     setPixelGrid(grid);
-  }, [image, brightness, contrast, canvasW, canvasH, retroMode]);
+  }, [image, brightness, contrast, canvasW, canvasH, retroMode, rotation, flipH, flipV, zoom]);
 
   useEffect(() => {
     renderCanvas();
@@ -256,6 +304,10 @@ export default function PixelStudio() {
     setRetroMode(false);
     setBrightness(100);
     setContrast(100);
+    setRotation(0);
+    setFlipH(false);
+    setFlipV(false);
+    setZoom(100);
   }
 
   /** Handles file selection from input or drag-and-drop */
@@ -263,6 +315,10 @@ export default function PixelStudio() {
     if (!file.type.startsWith("image/")) return;
     setFileName(file.name);
     setHighlightColor(null);
+    setRotation(0);
+    setFlipH(false);
+    setFlipV(false);
+    setZoom(100);
 
     const reader = new FileReader();
     reader.onload = (e) => {
@@ -333,6 +389,25 @@ export default function PixelStudio() {
     return null;
   }
 
+  /** Cycles rotation by 90 degrees clockwise */
+  function handleRotate() {
+    const idx = ROTATION_CYCLE.indexOf(rotation);
+    setRotation(ROTATION_CYCLE[(idx + 1) % ROTATION_CYCLE.length]);
+    setHighlightColor(null);
+  }
+
+  /** Toggles horizontal flip */
+  function handleFlipH() {
+    setFlipH((prev) => !prev);
+    setHighlightColor(null);
+  }
+
+  /** Toggles vertical flip */
+  function handleFlipV() {
+    setFlipV((prev) => !prev);
+    setHighlightColor(null);
+  }
+
   return (
     <div>
       <div className="flex flex-col gap-6 lg:flex-row lg:gap-4 lg:items-start">
@@ -397,6 +472,10 @@ export default function PixelStudio() {
                     onClick={() => {
                       setPreset(key);
                       setHighlightColor(null);
+                      setRotation(0);
+                      setFlipH(false);
+                      setFlipV(false);
+                      setZoom(100);
                     }}
                     className={`flex-1 rounded-xl border px-3 py-2 text-xs font-medium transition-all ${
                       preset === key
@@ -428,6 +507,10 @@ export default function PixelStudio() {
                     onClick={() => {
                       setDensity(val);
                       setHighlightColor(null);
+                      setRotation(0);
+                      setFlipH(false);
+                      setFlipV(false);
+                      setZoom(100);
                     }}
                     className={`rounded-xl border px-3 py-2 text-xs font-medium transition-all ${
                       density === val
@@ -440,6 +523,95 @@ export default function PixelStudio() {
                 ))}
               </div>
             </div>
+
+            {image && (
+              <div>
+                <label className="mb-1.5 block text-sm font-medium text-gray-700">
+                  🔄 {t("transform")}
+                </label>
+                <div className="flex gap-2">
+                  <button
+                    onClick={handleRotate}
+                    className="flex flex-1 items-center justify-center gap-1.5 rounded-xl border border-gray-200 bg-white px-3 py-2 text-xs font-medium text-gray-600 transition-all hover:bg-gray-50 active:scale-95"
+                    title={t("rotateCw")}
+                  >
+                    <RotateCw size={14} />
+                    {rotation > 0 ? `${rotation}°` : t("rotateCw")}
+                  </button>
+                  <button
+                    onClick={handleFlipH}
+                    className={`flex flex-1 items-center justify-center gap-1.5 rounded-xl border px-3 py-2 text-xs font-medium transition-all active:scale-95 ${
+                      flipH
+                        ? "border-island-blue bg-island-blue/10 text-gray-900"
+                        : "border-gray-200 bg-white text-gray-600 hover:bg-gray-50"
+                    }`}
+                    title={t("flipH")}
+                  >
+                    <FlipHorizontal2 size={14} />
+                    {t("flipH")}
+                  </button>
+                  <button
+                    onClick={handleFlipV}
+                    className={`flex flex-1 items-center justify-center gap-1.5 rounded-xl border px-3 py-2 text-xs font-medium transition-all active:scale-95 ${
+                      flipV
+                        ? "border-island-blue bg-island-blue/10 text-gray-900"
+                        : "border-gray-200 bg-white text-gray-600 hover:bg-gray-50"
+                    }`}
+                    title={t("flipV")}
+                  >
+                    <FlipVertical2 size={14} />
+                    {t("flipV")}
+                  </button>
+                </div>
+              </div>
+            )}
+
+            {image && (
+              <div>
+                <div className="mb-1 flex items-center justify-between">
+                  <label className="text-sm font-medium text-gray-700">
+                    🔎 {t("zoom")}
+                  </label>
+                  <span className="font-mono text-xs text-gray-500">
+                    {zoom}%
+                  </span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <button
+                    onClick={() => setZoom(Math.max(50, zoom - 25))}
+                    disabled={zoom <= 50}
+                    className="flex items-center justify-center rounded-lg border border-gray-200 bg-white p-1.5 text-gray-500 transition-all hover:bg-gray-50 disabled:opacity-30 disabled:hover:bg-white"
+                    title={t("zoomOut")}
+                  >
+                    <ZoomOut size={14} />
+                  </button>
+                  <input
+                    type="range"
+                    min="50"
+                    max="300"
+                    step="25"
+                    value={zoom}
+                    onChange={(e) => setZoom(Number(e.target.value))}
+                    className="flex-1"
+                  />
+                  <button
+                    onClick={() => setZoom(Math.min(300, zoom + 25))}
+                    disabled={zoom >= 300}
+                    className="flex items-center justify-center rounded-lg border border-gray-200 bg-white p-1.5 text-gray-500 transition-all hover:bg-gray-50 disabled:opacity-30 disabled:hover:bg-white"
+                    title={t("zoomIn")}
+                  >
+                    <ZoomIn size={14} />
+                  </button>
+                  <button
+                    onClick={() => setZoom(100)}
+                    className="rounded-lg border border-gray-200 bg-white px-2 py-1 text-xs font-medium text-gray-500 transition-all hover:bg-gray-50"
+                    title={t("zoomReset")}
+                  >
+                    {t("zoomReset")}
+                  </button>
+                </div>
+              </div>
+            )}
 
             <div>
               <div className="mb-1 flex items-center justify-between">
@@ -532,9 +704,40 @@ export default function PixelStudio() {
             />
           </div>
 
-          <div className="text-center font-mono text-xs text-gray-400">
-            {canvasW} × {canvasH} · {brushSize}px
-            {retroMode && " · 🕹️ Retro"}
+          <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-1 font-mono text-xs text-gray-400">
+            <span>{canvasW} × {canvasH}</span>
+            <span>·</span>
+            <span>{brushSize}px</span>
+            {retroMode && (
+              <>
+                <span>·</span>
+                <span>🕹️ Retro</span>
+              </>
+            )}
+            {rotation > 0 && (
+              <>
+                <span>·</span>
+                <span>↻ {rotation}°</span>
+              </>
+            )}
+            {flipH && (
+              <>
+                <span>·</span>
+                <span>↔ H</span>
+              </>
+            )}
+            {flipV && (
+              <>
+                <span>·</span>
+                <span>↕ V</span>
+              </>
+            )}
+            {zoom !== 100 && (
+              <>
+                <span>·</span>
+                <span>🔍 {zoom}%</span>
+              </>
+            )}
           </div>
 
           {image && (
@@ -552,14 +755,21 @@ export default function PixelStudio() {
                 <span className="text-xs font-semibold text-gray-700">
                   🎨 {t("colorPalette")}
                 </span>
-                {highlightColor && (
-                  <button
-                    onClick={() => setHighlightColor(null)}
-                    className="rounded-lg bg-gray-100 px-2 py-1 text-xs text-gray-500 transition-colors hover:bg-gray-200"
-                  >
-                    {t("clearHighlight")}
-                  </button>
-                )}
+                <div className="flex items-center gap-3">
+                  {estimatedTime && (
+                    <span className="text-xs text-gray-400">
+                      ⏱ {t("estimatedTime")}: {estimatedTime}
+                    </span>
+                  )}
+                  {highlightColor && (
+                    <button
+                      onClick={() => setHighlightColor(null)}
+                      className="rounded-lg bg-gray-100 px-2 py-1 text-xs text-gray-500 transition-colors hover:bg-gray-200"
+                    >
+                      {t("clearHighlight")}
+                    </button>
+                  )}
+                </div>
               </div>
               <p className="text-xs text-gray-400">{t("colorPaletteHint")}</p>
               <div className="flex flex-wrap gap-1.5">

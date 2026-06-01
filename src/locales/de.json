@@ -34,7 +34,16 @@
     "retroPalette": "🕹️ Universelle 8-Bit-Retro-Palette",
     "retroPaletteHint": "Integrierte 32-Farben-Retro-Handheld-Palettenzuordnung — reduziert die Bildfarben sofort für den reinsten Pixel-Art-Effekt.",
     "retroPaletteOff": "Originalfarben",
-    "retroPaletteOn": "Retro-Zuordnung"
+    "retroPaletteOn": "Retro-Zuordnung",
+    "transform": "Transformieren",
+    "rotateCw": "Drehen",
+    "flipH": "Spiegeln H",
+    "flipV": "Spiegeln V",
+    "zoom": "Zoom",
+    "zoomIn": "Vergrößern",
+    "zoomOut": "Verkleinern",
+    "zoomReset": "Zurücksetzen",
+    "estimatedTime": "Geschätzte Zeit"
   },
   "AvatarEditor": {
     "title": "Avatar-QR-Code-Konfigurator & Berechtigungs-Freischalter",

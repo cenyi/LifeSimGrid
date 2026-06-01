@@ -34,7 +34,16 @@
     "retroPalette": "🕹️ Universeel 8-Bit Retropalet",
     "retroPaletteHint": "Ingebouwd 32-kleuren retro handheld-palet matching — vermindert direct afbeeldingskleuren voor het puurste pixelkunst-visuele effect.",
     "retroPaletteOff": "Originele kleuren",
-    "retroPaletteOn": "Retro-match"
+    "retroPaletteOn": "Retro-match",
+    "transform": "Transformeren",
+    "rotateCw": "Draaien",
+    "flipH": "Spiegelen H",
+    "flipV": "Spiegelen V",
+    "zoom": "Zoom",
+    "zoomIn": "Inzoomen",
+    "zoomOut": "Uitzoomen",
+    "zoomReset": "Resetten",
+    "estimatedTime": "Geschatte Tijd"
   },
   "AvatarEditor": {
     "title": "Avatar QR-code Configurator & Machtigingsontgrendelaar",
