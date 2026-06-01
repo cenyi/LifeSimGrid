@@ -2,77 +2,202 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://lifesimgrid.org</loc>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <lastmod>2026-06-01</lastmod>
   </url>
   <url>
     <loc>https://lifesimgrid.org/zh-Hant</loc>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <lastmod>2026-06-01</lastmod>
   </url>
   <url>
     <loc>https://lifesimgrid.org/ja</loc>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <lastmod>2026-06-01</lastmod>
+  </url>
+  <url>
+    <loc>https://lifesimgrid.org/es</loc>
+    <lastmod>2026-06-01</lastmod>
+  </url>
+  <url>
+    <loc>https://lifesimgrid.org/fr</loc>
+    <lastmod>2026-06-01</lastmod>
+  </url>
+  <url>
+    <loc>https://lifesimgrid.org/ko</loc>
+    <lastmod>2026-06-01</lastmod>
+  </url>
+  <url>
+    <loc>https://lifesimgrid.org/de</loc>
+    <lastmod>2026-06-01</lastmod>
+  </url>
+  <url>
+    <loc>https://lifesimgrid.org/it</loc>
+    <lastmod>2026-06-01</lastmod>
+  </url>
+  <url>
+    <loc>https://lifesimgrid.org/nl</loc>
+    <lastmod>2026-06-01</lastmod>
+  </url>
+  <url>
+    <loc>https://lifesimgrid.org/zh-CN</loc>
+    <lastmod>2026-06-01</lastmod>
   </url>
   <url>
     <loc>https://lifesimgrid.org/about</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
+    <lastmod>2026-06-01</lastmod>
   </url>
   <url>
     <loc>https://lifesimgrid.org/zh-Hant/about</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
+    <lastmod>2026-06-01</lastmod>
   </url>
   <url>
     <loc>https://lifesimgrid.org/ja/about</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
+    <lastmod>2026-06-01</lastmod>
+  </url>
+  <url>
+    <loc>https://lifesimgrid.org/es/about</loc>
+    <lastmod>2026-06-01</lastmod>
+  </url>
+  <url>
+    <loc>https://lifesimgrid.org/fr/about</loc>
+    <lastmod>2026-06-01</lastmod>
+  </url>
+  <url>
+    <loc>https://lifesimgrid.org/ko/about</loc>
+    <lastmod>2026-06-01</lastmod>
+  </url>
+  <url>
+    <loc>https://lifesimgrid.org/de/about</loc>
+    <lastmod>2026-06-01</lastmod>
+  </url>
+  <url>
+    <loc>https://lifesimgrid.org/it/about</loc>
+    <lastmod>2026-06-01</lastmod>
+  </url>
+  <url>
+    <loc>https://lifesimgrid.org/nl/about</loc>
+    <lastmod>2026-06-01</lastmod>
+  </url>
+  <url>
+    <loc>https://lifesimgrid.org/zh-CN/about</loc>
+    <lastmod>2026-06-01</lastmod>
   </url>
   <url>
     <loc>https://lifesimgrid.org/privacy</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
+    <lastmod>2026-06-01</lastmod>
   </url>
   <url>
     <loc>https://lifesimgrid.org/zh-Hant/privacy</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
+    <lastmod>2026-06-01</lastmod>
   </url>
   <url>
     <loc>https://lifesimgrid.org/ja/privacy</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
+    <lastmod>2026-06-01</lastmod>
+  </url>
+  <url>
+    <loc>https://lifesimgrid.org/es/privacy</loc>
+    <lastmod>2026-06-01</lastmod>
+  </url>
+  <url>
+    <loc>https://lifesimgrid.org/fr/privacy</loc>
+    <lastmod>2026-06-01</lastmod>
+  </url>
+  <url>
+    <loc>https://lifesimgrid.org/ko/privacy</loc>
+    <lastmod>2026-06-01</lastmod>
+  </url>
+  <url>
+    <loc>https://lifesimgrid.org/de/privacy</loc>
+    <lastmod>2026-06-01</lastmod>
+  </url>
+  <url>
+    <loc>https://lifesimgrid.org/it/privacy</loc>
+    <lastmod>2026-06-01</lastmod>
+  </url>
+  <url>
+    <loc>https://lifesimgrid.org/nl/privacy</loc>
+    <lastmod>2026-06-01</lastmod>
+  </url>
+  <url>
+    <loc>https://lifesimgrid.org/zh-CN/privacy</loc>
+    <lastmod>2026-06-01</lastmod>
   </url>
   <url>
     <loc>https://lifesimgrid.org/terms</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
+    <lastmod>2026-06-01</lastmod>
   </url>
   <url>
     <loc>https://lifesimgrid.org/zh-Hant/terms</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
+    <lastmod>2026-06-01</lastmod>
   </url>
   <url>
     <loc>https://lifesimgrid.org/ja/terms</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
+    <lastmod>2026-06-01</lastmod>
+  </url>
+  <url>
+    <loc>https://lifesimgrid.org/es/terms</loc>
+    <lastmod>2026-06-01</lastmod>
+  </url>
+  <url>
+    <loc>https://lifesimgrid.org/fr/terms</loc>
+    <lastmod>2026-06-01</lastmod>
+  </url>
+  <url>
+    <loc>https://lifesimgrid.org/ko/terms</loc>
+    <lastmod>2026-06-01</lastmod>
+  </url>
+  <url>
+    <loc>https://lifesimgrid.org/de/terms</loc>
+    <lastmod>2026-06-01</lastmod>
+  </url>
+  <url>
+    <loc>https://lifesimgrid.org/it/terms</loc>
+    <lastmod>2026-06-01</lastmod>
+  </url>
+  <url>
+    <loc>https://lifesimgrid.org/nl/terms</loc>
+    <lastmod>2026-06-01</lastmod>
+  </url>
+  <url>
+    <loc>https://lifesimgrid.org/zh-CN/terms</loc>
+    <lastmod>2026-06-01</lastmod>
   </url>
   <url>
     <loc>https://lifesimgrid.org/contact</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
+    <lastmod>2026-06-01</lastmod>
   </url>
   <url>
     <loc>https://lifesimgrid.org/zh-Hant/contact</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
+    <lastmod>2026-06-01</lastmod>
   </url>
   <url>
     <loc>https://lifesimgrid.org/ja/contact</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
+    <lastmod>2026-06-01</lastmod>
+  </url>
+  <url>
+    <loc>https://lifesimgrid.org/es/contact</loc>
+    <lastmod>2026-06-01</lastmod>
+  </url>
+  <url>
+    <loc>https://lifesimgrid.org/fr/contact</loc>
+    <lastmod>2026-06-01</lastmod>
+  </url>
+  <url>
+    <loc>https://lifesimgrid.org/ko/contact</loc>
+    <lastmod>2026-06-01</lastmod>
+  </url>
+  <url>
+    <loc>https://lifesimgrid.org/de/contact</loc>
+    <lastmod>2026-06-01</lastmod>
+  </url>
+  <url>
+    <loc>https://lifesimgrid.org/it/contact</loc>
+    <lastmod>2026-06-01</lastmod>
+  </url>
+  <url>
+    <loc>https://lifesimgrid.org/nl/contact</loc>
+    <lastmod>2026-06-01</lastmod>
+  </url>
+  <url>
+    <loc>https://lifesimgrid.org/zh-CN/contact</loc>
+    <lastmod>2026-06-01</lastmod>
   </url>
 </urlset>

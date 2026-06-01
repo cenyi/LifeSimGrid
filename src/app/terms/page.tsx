@@ -1,4 +1,4 @@
-﻿import { setRequestLocale } from "next-intl/server";
+import { setRequestLocale } from "next-intl/server";
 import { NextIntlClientProvider } from "next-intl";
 import en from "@/locales/en.json";
 import TermsPage from "@/components/TermsPage";
@@ -16,6 +16,13 @@ export const metadata: Metadata = {
       en: `${BASE}/terms`,
       "zh-Hant": `${BASE}/zh-Hant/terms`,
       ja: `${BASE}/ja/terms`,
+      es: `${BASE}/es/terms`,
+      fr: `${BASE}/fr/terms`,
+      ko: `${BASE}/ko/terms`,
+      de: `${BASE}/de/terms`,
+      it: `${BASE}/it/terms`,
+      nl: `${BASE}/nl/terms`,
+      "zh-CN": `${BASE}/zh-CN/terms`,
     },
   },
 };

@@ -1,4 +1,4 @@
-﻿import { setRequestLocale } from "next-intl/server";
+import { setRequestLocale } from "next-intl/server";
 import { NextIntlClientProvider } from "next-intl";
 import en from "@/locales/en.json";
 import PrivacyPage from "@/components/PrivacyPage";
@@ -16,6 +16,13 @@ export const metadata: Metadata = {
       en: `${BASE}/privacy`,
       "zh-Hant": `${BASE}/zh-Hant/privacy`,
       ja: `${BASE}/ja/privacy`,
+      es: `${BASE}/es/privacy`,
+      fr: `${BASE}/fr/privacy`,
+      ko: `${BASE}/ko/privacy`,
+      de: `${BASE}/de/privacy`,
+      it: `${BASE}/it/privacy`,
+      nl: `${BASE}/nl/privacy`,
+      "zh-CN": `${BASE}/zh-CN/privacy`,
     },
   },
 };

@@ -1,4 +1,4 @@
-﻿import { setRequestLocale } from "next-intl/server";
+import { setRequestLocale } from "next-intl/server";
 import { NextIntlClientProvider } from "next-intl";
 import en from "@/locales/en.json";
 import AboutPage from "@/components/AboutPage";
@@ -16,6 +16,13 @@ export const metadata: Metadata = {
       en: `${BASE}/about`,
       "zh-Hant": `${BASE}/zh-Hant/about`,
       ja: `${BASE}/ja/about`,
+      es: `${BASE}/es/about`,
+      fr: `${BASE}/fr/about`,
+      ko: `${BASE}/ko/about`,
+      de: `${BASE}/de/about`,
+      it: `${BASE}/it/about`,
+      nl: `${BASE}/nl/about`,
+      "zh-CN": `${BASE}/zh-CN/about`,
     },
   },
 };
