@@ -20,6 +20,11 @@ export const metadata: Metadata = {
   ],
   robots: { index: true, follow: true },
   metadataBase: new URL("https://lifesimgrid.org"),
+  verification: {
+    other: {
+      "naver-site-verification": "c2158695ff94758b3a59a282c4abed080b166a2e",
+    },
+  },
 };
 
 export default function RootLayout({
