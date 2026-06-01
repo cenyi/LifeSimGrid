@@ -220,7 +220,7 @@ This is an independent third-party fan tool. Not affiliated with, authorized, or
 
 ### 🛡️ Security
 
-If you discover a security vulnerability, please **do not** open a public issue. Instead, email us at **security@lifesimgrid.com**. We take all security reports seriously and will respond within 48 hours.
+If you discover a security vulnerability, please **do not** open a public issue. Instead, email us at **hi@lifesimgrid.com**. We take all security reports seriously and will respond within 48 hours.
 
 ### 📋 Roadmap
 
@@ -589,6 +589,6 @@ MIT License — zie [LICENSE](LICENSE) bestand voor details.
 
 **© 2026 LifeSimGrid. Made with ❤️ by fans, for fans.**
 
-[🏠 Website](https://lifesimgrid.com) · [🐙 GitHub](https://github.com/cenyi/LifeSimGrid) · [🐛 Issues](https://github.com/cenyi/LifeSimGrid/issues) · [📧 Contact](mailto:support@lifesimgrid.com)
+[🏠 Website](https://lifesimgrid.com) · [🐙 GitHub](https://github.com/cenyi/LifeSimGrid) · [🐛 Issues](https://github.com/cenyi/LifeSimGrid/issues) · [📧 Contact](mailto:hi@lifesimgrid.com)
 
 </div>
