@@ -1,10 +1,10 @@
-import { setRequestLocale } from "next-intl/server";
+﻿import { setRequestLocale } from "next-intl/server";
 import { NextIntlClientProvider } from "next-intl";
 import en from "@/locales/en.json";
 import PrivacyPage from "@/components/PrivacyPage";
 import type { Metadata } from "next";
 
-const BASE = "https://lifesimgrid.com";
+const BASE = "https://lifesimgrid.org";
 
 export const metadata: Metadata = {
   title: "Privacy Policy - LifeSimGrid",

@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import "./globals.css";
 import Analytics from "@/components/Analytics";
 
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     "85x85",
   ],
   robots: { index: true, follow: true },
-  metadataBase: new URL("https://lifesimgrid.com"),
+  metadataBase: new URL("https://lifesimgrid.org"),
 };
 
 export default function RootLayout({

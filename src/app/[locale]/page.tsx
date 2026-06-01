@@ -7,7 +7,7 @@ import HomePageContent from "@/components/HomePageContent";
 import EnRedirect from "@/components/EnRedirect";
 import type { Metadata } from "next";
 
-const BASE = "https://lifesimgrid.com";
+const BASE = "https://lifesimgrid.org";
 
 const LOCALE_TITLES: Record<string, string> = {
   "zh-Hant": "LifeSimGrid - 自訂島嶼助手工具箱",

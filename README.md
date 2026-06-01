@@ -1,4 +1,4 @@
-<div align="center">
+﻿<div align="center">
 
 # 🏝️ LifeSimGrid
 
@@ -14,7 +14,7 @@
 
 🌐 **English** | [繁體中文](#繁體中文) | [日本語](#日本語) | [Español](#español) | [Français](#français) | [한국어](#한국어) | [Deutsch](#deutsch) | [Italiano](#italiano) | [Nederlands](#nederlands) | [简体中文](#简体中文)
 
-**[🔗 Live Demo](https://lifesimgrid.com)** · **[🐛 Report Bug](https://github.com/cenyi/LifeSimGrid/issues)** · **[✨ Request Feature](https://github.com/cenyi/LifeSimGrid/issues)**
+**[🔗 Live Demo](https://lifesimgrid.org)** · **[🐛 Report Bug](https://github.com/cenyi/LifeSimGrid/issues)** · **[✨ Request Feature](https://github.com/cenyi/LifeSimGrid/issues)**
 
 </div>
 
@@ -220,7 +220,7 @@ This is an independent third-party fan tool. Not affiliated with, authorized, or
 
 ### 🛡️ Security
 
-If you discover a security vulnerability, please **do not** open a public issue. Instead, email us at **hi@lifesimgrid.com**. We take all security reports seriously and will respond within 48 hours.
+If you discover a security vulnerability, please **do not** open a public issue. Instead, email us at **hi@lifesimgrid.org**. We take all security reports seriously and will respond within 48 hours.
 
 ### 📋 Roadmap
 
@@ -589,6 +589,6 @@ MIT License — zie [LICENSE](LICENSE) bestand voor details.
 
 **© 2026 LifeSimGrid. Made with ❤️ by fans, for fans.**
 
-[🏠 Website](https://lifesimgrid.com) · [🐙 GitHub](https://github.com/cenyi/LifeSimGrid) · [🐛 Issues](https://github.com/cenyi/LifeSimGrid/issues) · [📧 Contact](mailto:hi@lifesimgrid.com)
+[🏠 Website](https://lifesimgrid.org) · [🐙 GitHub](https://github.com/cenyi/LifeSimGrid) · [🐛 Issues](https://github.com/cenyi/LifeSimGrid/issues) · [📧 Contact](mailto:hi@lifesimgrid.org)
 
 </div>

@@ -4,7 +4,7 @@ import { getMessages } from "next-intl/server";
 import PrivacyPage from "@/components/PrivacyPage";
 import type { Metadata } from "next";
 
-const BASE = "https://lifesimgrid.com";
+const BASE = "https://lifesimgrid.org";
 
 const PAGE_TITLES: Record<string, string> = {
   "zh-Hant": "隱私政策 - LifeSimGrid",

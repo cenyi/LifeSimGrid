@@ -4,7 +4,7 @@ import { getMessages } from "next-intl/server";
 import ContactPage from "@/components/ContactPage";
 import type { Metadata } from "next";
 
-const BASE = "https://lifesimgrid.com";
+const BASE = "https://lifesimgrid.org";
 
 const PAGE_TITLES: Record<string, string> = {
   "zh-Hant": "聯絡我們 - LifeSimGrid",

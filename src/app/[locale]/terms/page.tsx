@@ -4,7 +4,7 @@ import { getMessages } from "next-intl/server";
 import TermsPage from "@/components/TermsPage";
 import type { Metadata } from "next";
 
-const BASE = "https://lifesimgrid.com";
+const BASE = "https://lifesimgrid.org";
 
 const PAGE_TITLES: Record<string, string> = {
   "zh-Hant": "服務條款 - LifeSimGrid",

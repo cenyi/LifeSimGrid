@@ -1,11 +1,11 @@
-import { setRequestLocale } from "next-intl/server";
+﻿import { setRequestLocale } from "next-intl/server";
 import { NextIntlClientProvider } from "next-intl";
 import en from "@/locales/en.json";
 import HomePageContent from "@/components/HomePageContent";
 import LocaleRedirector from "@/components/LocaleRedirector";
 import type { Metadata } from "next";
 
-const BASE = "https://lifesimgrid.com";
+const BASE = "https://lifesimgrid.org";
 
 export const metadata: Metadata = {
   title: "LifeSimGrid - Custom Island Companion Toolset",
