@@ -1,4 +1,261 @@
-﻿User-agent: *
+﻿# =========================================================
+#  LifeSimGrid robots.txt
+#  Explicit rules for major search engine crawlers.
+#  Cốc Cốc / Google / Bing / Yandex / Naver / Baidu / etc.
+# =========================================================
+
+# ---------- Global default ----------
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /*.json$
+
+# ---------- Google (Search, Images, News, Video, AdsBot) ----------
+User-agent: Googlebot
 Allow: /
 
+User-agent: Googlebot-Image
+Allow: /
+
+User-agent: Googlebot-News
+Allow: /
+
+User-agent: Googlebot-Video
+Allow: /
+
+User-agent: AdsBot-Google
+Allow: /
+
+User-agent: Mediapartners-Google
+Allow: /
+
+# ---------- Microsoft Bing / MSN ----------
+User-agent: Bingbot
+Allow: /
+
+User-agent: MSNBot-Media
+Allow: /
+
+User-agent: AdIdxBot
+Allow: /
+
+User-agent: BingPreview
+Allow: /
+
+# ---------- Yahoo (Slurp) ----------
+User-agent: Slurp
+Allow: /
+
+# ---------- Yandex ----------
+User-agent: YandexBot
+Allow: /
+
+User-agent: YandexImages
+Allow: /
+
+User-agent: YandexMedia
+Allow: /
+
+# ---------- Baidu ----------
+User-agent: Baiduspider
+Allow: /
+
+User-agent: Baiduspider-image
+Allow: /
+
+User-agent: Baiduspider-video
+Allow: /
+
+User-agent: Baiduspider-news
+Allow: /
+
+# ---------- Cốc Cốc (Vietnamese search engine) ----------
+User-agent: coccoc
+Allow: /
+
+User-agent: coccocbot-web
+Allow: /
+
+User-agent: coccocbot-image
+Allow: /
+
+User-agent: coccocbot-news
+Allow: /
+
+# ---------- Naver (Korean search engine) ----------
+User-agent: Yeti
+Allow: /
+
+User-agent: Naverbot
+Allow: /
+
+User-agent: Yeti-Mobile
+Allow: /
+
+# ---------- Daum / Kakao (Korean search engine) ----------
+User-agent: Daumoa
+Allow: /
+
+User-agent: Daum
+Allow: /
+
+User-agent: kakaotalk-scrap
+Allow: /
+
+User-agent: KakaoBot
+Allow: /
+
+# ---------- Nate (Korean portal) ----------
+User-agent: iNave
+Allow: /
+
+User-agent: Nave
+Allow: /
+
+# ---------- Yahoo! Japan (Japanese portal) ----------
+User-agent: Y!J-BRJ
+Allow: /
+User-agent: Y!J-BRJ/YahooJp
+Allow: /
+User-agent: Y!J-ASR
+Allow: /
+
+# ---------- Goo (Japanese search / NTT Resonant) ----------
+User-agent: gooblog
+Allow: /
+
+User-agent: GooBlog
+Allow: /
+
+# ---------- BIGLOBE (Japanese ISP search) ----------
+User-agent: biglobe
+Allow: /
+
+# ---------- @nifty (Japanese ISP search) ----------
+User-agent: nifty
+Allow: /
+
+# ---------- So-net (Japanese ISP search) ----------
+User-agent: sonet
+Allow: /
+
+User-agent: So-net
+Allow: /
+
+# ---------- Rakuten (Japanese search / marketplace) ----------
+User-agent: Rakutenbot
+Allow: /
+
+User-agent: Rommebot
+Allow: /
+
+# ---------- livedoor (Japanese portal) ----------
+User-agent: livedoor
+Allow: /
+
+User-agent: Hatena
+Allow: /
+
+User-agent: Antenna
+Allow: /
+
+# ---------- Mixi (Japanese SNS) ----------
+User-agent: mixi
+Allow: /
+
+# ---------- DuckDuckGo ----------
+User-agent: DuckDuckBot
+Allow: /
+
+# ---------- Apple ----------
+User-agent: Applebot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+# ---------- Sogou ----------
+User-agent: Sogou Pic Spider
+Allow: /
+
+User-agent: Sogou web spider
+Allow: /
+
+# ---------- Social media crawlers (Open Graph previews) ----------
+User-agent: facebookexternalhit
+Allow: /
+
+User-agent: Facebot
+Allow: /
+
+User-agent: Twitterbot
+Allow: /
+
+User-agent: LinkedInBot
+Allow: /
+
+User-agent: WhatsApp
+Allow: /
+
+User-agent: TelegramBot
+Allow: /
+
+User-agent: Slackbot
+Allow: /
+
+User-agent: Discordbot
+Allow: /
+
+User-agent: Pinterestbot
+Allow: /
+
+# ---------- AI / research crawlers (be permissive) ----------
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+# ---------- Aggressive / unwanted bots (block) ----------
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /
+
+User-agent: BLEXBot
+Disallow: /
+
+# ---------- Sitemap ----------
 Sitemap: https://lifesimgrid.org/sitemap.xml
+Sitemap: https://lifesimgrid.org/robots.txt
+
+# ---------- Host (helps Yandex / Cốc Cốc pick canonical) ----------
+Host: https://lifesimgrid.org
