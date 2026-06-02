@@ -1,4 +1,4 @@
-﻿import type { Metadata, Viewport } from "next";
+import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import Analytics from "@/components/Analytics";
 
@@ -20,6 +20,11 @@ export const metadata: Metadata = {
   creator: SITE_NAME,
   publisher: SITE_NAME,
   generator: "Next.js",
+  icons: {
+    icon: "/favicon.svg",
+    shortcut: "/favicon.svg",
+    apple: "/favicon.svg",
+  },
   title: {
     template: "%s - LifeSimGrid",
     default: "LifeSimGrid - Custom Island Companion Toolset",
@@ -81,11 +86,13 @@ export const metadata: Metadata = {
       "it_IT",
       "nl_NL",
     ],
+    images: `${SITE_URL}/og-image.svg`,
   },
   twitter: {
     card: "summary_large_image",
     title: "LifeSimGrid - Custom Island Companion Toolset",
     description: SITE_DESC,
+    images: `${SITE_URL}/og-image.svg`,
   },
   other: {
     "apple-mobile-web-app-title": SITE_NAME,
@@ -142,7 +149,7 @@ const jsonLd = {
       url: SITE_URL,
       logo: {
         "@type": "ImageObject",
-        url: `${SITE_URL}/favicon.ico`,
+        url: `${SITE_URL}/favicon.svg`,
       },
       sameAs: [],
     },

@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+  <!-- 背景 -->
+  <rect width="1200" height="630" fill="#1a1a2e"/>
+
+  <!-- 左侧装饰网格 -->
+  <g stroke="#0f3460" stroke-width="2" opacity="0.3">
+    <line x1="100" y1="100" x2="100" y2="530"/>
+    <line x1="200" y1="100" x2="200" y2="530"/>
+    <line x1="300" y1="100" x2="300" y2="530"/>
+    <line x1="400" y1="100" x2="400" y2="530"/>
+    <line x1="100" y1="100" x2="400" y2="100"/>
+    <line x1="100" y1="200" x2="400" y2="200"/>
+    <line x1="100" y1="300" x2="400" y2="300"/>
+    <line x1="100" y1="400" x2="400" y2="400"/>
+    <line x1="100" y1="500" x2="400" y2="500"/>
+  </g>
+
+  <!-- 中心大图标 -->
+  <g transform="translate(600, 315)">
+    <!-- 外框 -->
+    <rect x="-120" y="-120" width="240" height="240" rx="40" fill="#16213e" stroke="#0f3460" stroke-width="4"/>
+
+    <!-- 内部网格 -->
+    <g stroke="#0f3460" stroke-width="2" opacity="0.5">
+      <line x1="-60" y1="-120" x2="-60" y2="120"/>
+      <line x1="0" y1="-120" x2="0" y2="120"/>
+      <line x1="60" y1="-120" x2="60" y2="120"/>
+      <line x1="-120" y1="-60" x2="120" y2="-60"/>
+      <line x1="-120" y1="0" x2="120" y2="0"/>
+      <line x1="-120" y1="60" x2="120" y2="60"/>
+    </g>
+
+    <!-- 中心像素点 -->
+    <rect x="-50" y="-50" width="40" height="40" rx="10" fill="#e94560"/>
+    <rect x="10" y="-50" width="40" height="40" rx="10" fill="#e94560" opacity="0.7"/>
+    <rect x="-50" y="10" width="40" height="40" rx="10" fill="#e94560" opacity="0.7"/>
+    <rect x="10" y="10" width="40" height="40" rx="10" fill="#e94560" opacity="0.4"/>
+
+    <!-- 装饰点 -->
+    <circle cx="-90" cy="-90" r="10" fill="#533483"/>
+    <circle cx="90" cy="-90" r="10" fill="#533483"/>
+    <circle cx="-90" cy="90" r="10" fill="#533483"/>
+    <circle cx="90" cy="90" r="10" fill="#533483"/>
+
+    <!-- 顶部装饰条 -->
+    <rect x="-120" y="-120" width="240" height="12" rx="6" fill="#e94560" opacity="0.8"/>
+  </g>
+
+  <!-- 右侧文字 -->
+  <text x="850" y="250" font-family="Arial, sans-serif" font-size="72" font-weight="bold" fill="#ffffff">LifeSimGrid</text>
+  <text x="850" y="320" font-family="Arial, sans-serif" font-size="28" fill="#e94560">Custom Island Companion Toolset</text>
+
+  <!-- 功能标签 -->
+  <rect x="850" y="360" width="140" height="36" rx="18" fill="#16213e" stroke="#0f3460" stroke-width="2"/>
+  <text x="920" y="384" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#ffffff">Pixel Studio</text>
+
+  <rect x="1000" y="360" width="160" height="36" rx="18" fill="#16213e" stroke="#0f3460" stroke-width="2"/>
+  <text x="1080" y="384" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#ffffff">QR Configurator</text>
+
+  <rect x="850" y="410" width="140" height="36" rx="18" fill="#16213e" stroke="#0f3460" stroke-width="2"/>
+  <text x="920" y="434" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#ffffff">Voice Lab</text>
+
+  <!-- 底部信息 -->
+  <text x="850" y="500" font-family="Arial, sans-serif" font-size="20" fill="#7f8c8d">100% Client-Side · Open Source · 10 Languages</text>
+</svg>
