@@ -98,6 +98,7 @@ export const metadata: Metadata = {
     "revisit-after": "7 days",
   },
   verification: {
+    yandex: "58b4894d924b1d01",
     other: {
       "naver-site-verification": "c2158695ff94758b3a59a282c4abed080b166a2e",
     },
