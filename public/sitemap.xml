@@ -1,203 +1,99 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+  xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <!-- ============================================================
+       Homepage
+       ============================================================ -->
   <url>
-    <loc>https://lifesimgrid.org</loc>
-    <lastmod>2026-06-01</lastmod>
+    <loc>https://lifesimgrid.org/</loc>
+    <lastmod>2026-06-02</lastmod>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://lifesimgrid.org/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://lifesimgrid.org/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://lifesimgrid.org/zh-Hant"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://lifesimgrid.org/zh-CN"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://lifesimgrid.org/ja"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://lifesimgrid.org/es"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://lifesimgrid.org/fr"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://lifesimgrid.org/ko"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://lifesimgrid.org/de"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://lifesimgrid.org/it"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://lifesimgrid.org/nl"/>
   </url>
-  <url>
-    <loc>https://lifesimgrid.org/zh-Hant</loc>
-    <lastmod>2026-06-01</lastmod>
-  </url>
-  <url>
-    <loc>https://lifesimgrid.org/ja</loc>
-    <lastmod>2026-06-01</lastmod>
-  </url>
-  <url>
-    <loc>https://lifesimgrid.org/es</loc>
-    <lastmod>2026-06-01</lastmod>
-  </url>
-  <url>
-    <loc>https://lifesimgrid.org/fr</loc>
-    <lastmod>2026-06-01</lastmod>
-  </url>
-  <url>
-    <loc>https://lifesimgrid.org/ko</loc>
-    <lastmod>2026-06-01</lastmod>
-  </url>
-  <url>
-    <loc>https://lifesimgrid.org/de</loc>
-    <lastmod>2026-06-01</lastmod>
-  </url>
-  <url>
-    <loc>https://lifesimgrid.org/it</loc>
-    <lastmod>2026-06-01</lastmod>
-  </url>
-  <url>
-    <loc>https://lifesimgrid.org/nl</loc>
-    <lastmod>2026-06-01</lastmod>
-  </url>
-  <url>
-    <loc>https://lifesimgrid.org/zh-CN</loc>
-    <lastmod>2026-06-01</lastmod>
-  </url>
+
+  <!-- ============================================================
+       About
+       ============================================================ -->
   <url>
     <loc>https://lifesimgrid.org/about</loc>
-    <lastmod>2026-06-01</lastmod>
+    <lastmod>2026-06-02</lastmod>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://lifesimgrid.org/about"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://lifesimgrid.org/about"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://lifesimgrid.org/zh-Hant/about"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://lifesimgrid.org/zh-CN/about"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://lifesimgrid.org/ja/about"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://lifesimgrid.org/es/about"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://lifesimgrid.org/fr/about"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://lifesimgrid.org/ko/about"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://lifesimgrid.org/de/about"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://lifesimgrid.org/it/about"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://lifesimgrid.org/nl/about"/>
   </url>
-  <url>
-    <loc>https://lifesimgrid.org/zh-Hant/about</loc>
-    <lastmod>2026-06-01</lastmod>
-  </url>
-  <url>
-    <loc>https://lifesimgrid.org/ja/about</loc>
-    <lastmod>2026-06-01</lastmod>
-  </url>
-  <url>
-    <loc>https://lifesimgrid.org/es/about</loc>
-    <lastmod>2026-06-01</lastmod>
-  </url>
-  <url>
-    <loc>https://lifesimgrid.org/fr/about</loc>
-    <lastmod>2026-06-01</lastmod>
-  </url>
-  <url>
-    <loc>https://lifesimgrid.org/ko/about</loc>
-    <lastmod>2026-06-01</lastmod>
-  </url>
-  <url>
-    <loc>https://lifesimgrid.org/de/about</loc>
-    <lastmod>2026-06-01</lastmod>
-  </url>
-  <url>
-    <loc>https://lifesimgrid.org/it/about</loc>
-    <lastmod>2026-06-01</lastmod>
-  </url>
-  <url>
-    <loc>https://lifesimgrid.org/nl/about</loc>
-    <lastmod>2026-06-01</lastmod>
-  </url>
-  <url>
-    <loc>https://lifesimgrid.org/zh-CN/about</loc>
-    <lastmod>2026-06-01</lastmod>
-  </url>
-  <url>
-    <loc>https://lifesimgrid.org/privacy</loc>
-    <lastmod>2026-06-01</lastmod>
-  </url>
-  <url>
-    <loc>https://lifesimgrid.org/zh-Hant/privacy</loc>
-    <lastmod>2026-06-01</lastmod>
-  </url>
-  <url>
-    <loc>https://lifesimgrid.org/ja/privacy</loc>
-    <lastmod>2026-06-01</lastmod>
-  </url>
-  <url>
-    <loc>https://lifesimgrid.org/es/privacy</loc>
-    <lastmod>2026-06-01</lastmod>
-  </url>
-  <url>
-    <loc>https://lifesimgrid.org/fr/privacy</loc>
-    <lastmod>2026-06-01</lastmod>
-  </url>
-  <url>
-    <loc>https://lifesimgrid.org/ko/privacy</loc>
-    <lastmod>2026-06-01</lastmod>
-  </url>
-  <url>
-    <loc>https://lifesimgrid.org/de/privacy</loc>
-    <lastmod>2026-06-01</lastmod>
-  </url>
-  <url>
-    <loc>https://lifesimgrid.org/it/privacy</loc>
-    <lastmod>2026-06-01</lastmod>
-  </url>
-  <url>
-    <loc>https://lifesimgrid.org/nl/privacy</loc>
-    <lastmod>2026-06-01</lastmod>
-  </url>
-  <url>
-    <loc>https://lifesimgrid.org/zh-CN/privacy</loc>
-    <lastmod>2026-06-01</lastmod>
-  </url>
-  <url>
-    <loc>https://lifesimgrid.org/terms</loc>
-    <lastmod>2026-06-01</lastmod>
-  </url>
-  <url>
-    <loc>https://lifesimgrid.org/zh-Hant/terms</loc>
-    <lastmod>2026-06-01</lastmod>
-  </url>
-  <url>
-    <loc>https://lifesimgrid.org/ja/terms</loc>
-    <lastmod>2026-06-01</lastmod>
-  </url>
-  <url>
-    <loc>https://lifesimgrid.org/es/terms</loc>
-    <lastmod>2026-06-01</lastmod>
-  </url>
-  <url>
-    <loc>https://lifesimgrid.org/fr/terms</loc>
-    <lastmod>2026-06-01</lastmod>
-  </url>
-  <url>
-    <loc>https://lifesimgrid.org/ko/terms</loc>
-    <lastmod>2026-06-01</lastmod>
-  </url>
-  <url>
-    <loc>https://lifesimgrid.org/de/terms</loc>
-    <lastmod>2026-06-01</lastmod>
-  </url>
-  <url>
-    <loc>https://lifesimgrid.org/it/terms</loc>
-    <lastmod>2026-06-01</lastmod>
-  </url>
-  <url>
-    <loc>https://lifesimgrid.org/nl/terms</loc>
-    <lastmod>2026-06-01</lastmod>
-  </url>
-  <url>
-    <loc>https://lifesimgrid.org/zh-CN/terms</loc>
-    <lastmod>2026-06-01</lastmod>
-  </url>
+
+  <!-- ============================================================
+       Contact
+       ============================================================ -->
   <url>
     <loc>https://lifesimgrid.org/contact</loc>
-    <lastmod>2026-06-01</lastmod>
+    <lastmod>2026-06-02</lastmod>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://lifesimgrid.org/contact"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://lifesimgrid.org/contact"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://lifesimgrid.org/zh-Hant/contact"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://lifesimgrid.org/zh-CN/contact"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://lifesimgrid.org/ja/contact"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://lifesimgrid.org/es/contact"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://lifesimgrid.org/fr/contact"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://lifesimgrid.org/ko/contact"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://lifesimgrid.org/de/contact"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://lifesimgrid.org/it/contact"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://lifesimgrid.org/nl/contact"/>
   </url>
+
+  <!-- ============================================================
+       Privacy
+       ============================================================ -->
   <url>
-    <loc>https://lifesimgrid.org/zh-Hant/contact</loc>
-    <lastmod>2026-06-01</lastmod>
+    <loc>https://lifesimgrid.org/privacy</loc>
+    <lastmod>2026-06-02</lastmod>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://lifesimgrid.org/privacy"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://lifesimgrid.org/privacy"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://lifesimgrid.org/zh-Hant/privacy"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://lifesimgrid.org/zh-CN/privacy"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://lifesimgrid.org/ja/privacy"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://lifesimgrid.org/es/privacy"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://lifesimgrid.org/fr/privacy"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://lifesimgrid.org/ko/privacy"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://lifesimgrid.org/de/privacy"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://lifesimgrid.org/it/privacy"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://lifesimgrid.org/nl/privacy"/>
   </url>
+
+  <!-- ============================================================
+       Terms
+       ============================================================ -->
   <url>
-    <loc>https://lifesimgrid.org/ja/contact</loc>
-    <lastmod>2026-06-01</lastmod>
-  </url>
-  <url>
-    <loc>https://lifesimgrid.org/es/contact</loc>
-    <lastmod>2026-06-01</lastmod>
-  </url>
-  <url>
-    <loc>https://lifesimgrid.org/fr/contact</loc>
-    <lastmod>2026-06-01</lastmod>
-  </url>
-  <url>
-    <loc>https://lifesimgrid.org/ko/contact</loc>
-    <lastmod>2026-06-01</lastmod>
-  </url>
-  <url>
-    <loc>https://lifesimgrid.org/de/contact</loc>
-    <lastmod>2026-06-01</lastmod>
-  </url>
-  <url>
-    <loc>https://lifesimgrid.org/it/contact</loc>
-    <lastmod>2026-06-01</lastmod>
-  </url>
-  <url>
-    <loc>https://lifesimgrid.org/nl/contact</loc>
-    <lastmod>2026-06-01</lastmod>
-  </url>
-  <url>
-    <loc>https://lifesimgrid.org/zh-CN/contact</loc>
-    <lastmod>2026-06-01</lastmod>
+    <loc>https://lifesimgrid.org/terms</loc>
+    <lastmod>2026-06-02</lastmod>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://lifesimgrid.org/terms"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://lifesimgrid.org/terms"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://lifesimgrid.org/zh-Hant/terms"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://lifesimgrid.org/zh-CN/terms"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://lifesimgrid.org/ja/terms"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://lifesimgrid.org/es/terms"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://lifesimgrid.org/fr/terms"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://lifesimgrid.org/ko/terms"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://lifesimgrid.org/de/terms"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://lifesimgrid.org/it/terms"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://lifesimgrid.org/nl/terms"/>
   </url>
 </urlset>
