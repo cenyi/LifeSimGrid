@@ -28,6 +28,7 @@ const DENSITY_BRUSH: Record<PixelDensity, number> = {
 const MAX_PALETTE_COLORS = 24;
 const COLOR_QUANT_BUCKETS = 6;
 const SECONDS_PER_CELL = 5;
+const MAX_FILE_SIZE = 5 * 1024 * 1024; // 5MB
 
 const RETRO_PALETTE: [number, number, number, string][] = [
   [0, 0, 0, "Void Black"],
@@ -313,6 +314,10 @@ export default function PixelStudio() {
   /** Handles file selection from input or drag-and-drop */
   function handleFileChange(file: File) {
     if (!file.type.startsWith("image/")) return;
+    if (file.size > MAX_FILE_SIZE) {
+      alert(t("maxFileSizeExceeded", { size: "5MB" }));
+      return;
+    }
     setFileName(file.name);
     setHighlightColor(null);
     setRotation(0);

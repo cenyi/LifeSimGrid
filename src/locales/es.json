@@ -43,7 +43,8 @@
     "zoomIn": "Acercar",
     "zoomOut": "Alejar",
     "zoomReset": "Restablecer",
-    "estimatedTime": "Tiempo Est."
+    "estimatedTime": "Tiempo Est.",
+    "maxFileSizeExceeded": "Archivo demasiado grande (máx. {size}). Usa una imagen más pequeña para un mejor rendimiento."
   },
   "AvatarEditor": {
     "title": "Configurador de Código QR de Avatar y Desbloqueador de Permisos",
@@ -223,6 +224,8 @@
     "a16": "Porque este sitio se posiciona como una herramienta de personalización compatible con juegos de simulación de vida. En los juegos de simulación social actuales, las creaciones de los jugadores ya no se limitan a un solo azulejo o ropa. Cuando necesitas diseñar portadas de libros, discos de música, interiores de muebles de cobertura total o incluso fondos de pantalla de pantalla ancha, el juego utiliza diferentes ratios de recorte. Este kit de herramientas proporciona lienzos multi-especificación y muestreo de pincel multi-densidad para adaptarse perfectamente a las necesidades creativas extremas de múltiples juegos de simulación social, liberando tu trazado de píxeles de limitaciones.",
     "q17": "¿Cuál es el propósito principal de este sitio? ¿Para qué tipos de jugadores es adecuado?",
     "a17": "Este sitio es una herramienta auxiliar diseñada para juegos de simulación de vida en islas. Si te apasiona construir apartamentos en islas virtuales, gestionar relaciones de residentes y dibujar a mano ropa personalizada estilo píxel, entonces este kit de herramientas puramente frontend es tu asistente definitivo. A través del procesamiento de imágenes Canvas sin servidor, reparación de permisos de datos binarios y tecnología de simulación de voz de consola portátil 8-bit, optimizamos integralmente tu configuración de isleños y flujo de dibujo, para que puedas concentrarte más en la creatividad pura y la diversión mientras disfrutas de juegos de simulación de vida en islas.",
+    "q18": "¿Hay un límite de tamaño de archivo? ¿Las imágenes grandes afectan el rendimiento?",
+    "a18": "Sí — recomendamos imágenes de menos de 5 MB. Las fotos muy grandes o de alta resolución tardan más en decodificarse y renderizarse en el navegador, lo que puede causar retrasos notables al ajustar el brillo, el contraste o el zoom. Para la experiencia más fluida, usa JPEG o PNG comprimidos de menos de 5 MB con líneas limpias y colores sólidos.",
     "privacyBadge": "🔒 Privacidad 100% del Lado del Cliente — Todo el procesamiento ocurre en tu navegador. Cero subidas de datos.",
     "disclaimer": "Aviso Legal: Este sitio web es un conjunto de herramientas utilitarias independiente de terceros del lado del cliente que utiliza tecnologías Web estándar. No está afiliado, autorizado, mantenido ni respaldado por ningún fabricante de consolas de juego, desarrollador de software o editor oficial. Todos los protocolos de formato de avatar virtual y especificaciones de cuadrícula son propiedades de sus respectivos propietarios."
   },

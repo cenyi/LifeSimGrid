@@ -43,7 +43,8 @@
     "zoomIn": "Ingrandisci",
     "zoomOut": "Riduci",
     "zoomReset": "Ripristina",
-    "estimatedTime": "Tempo Stim."
+    "estimatedTime": "Tempo Stim.",
+    "maxFileSizeExceeded": "File troppo grande (max {size}). Usa un'immagine più piccola per prestazioni migliori."
   },
   "AvatarEditor": {
     "title": "Configuratore Codice QR Avatar & Sblocco Permessi",
@@ -223,6 +224,8 @@
     "a16": "Perché questo sito si posiziona come strumento di personalizzazione compatibile con i giochi di simulazione di vita. Negli attuali giochi di simulazione sociale, le creazioni dei giocatori non si limitano più a una singola piastrella o vestito. Quando devi progettare copertine di libri, album musicali, interni di mobili a copertura totale o persino carta da parati a schermo largo, il gioco utilizza rapporti di ritaglio diversi. Questo toolkit fornisce canvas multi-specificazione e campionamento pennello multi-densità per adattarsi perfettamente alle esigenze creative estreme di più giochi di simulazione sociale, liberando il tracciamento pixel da limitazioni.",
     "q17": "Qual è lo scopo principale di questo sito? Per quali tipi di giocatori è adatto?",
     "a17": "Questo sito è uno strumento ausiliario progettato per giochi di simulazione di vita su isola. Se ami costruire appartamenti su isole virtuali, gestire le relazioni tra residenti e disegnare a mano outfit personalizzati in stile pixel, allora questo toolkit puramente frontend è il tuo assistente definitivo. Attraverso l'elaborazione di immagini Canvas senza server, la riparazione dei permessi dei dati binari e la tecnologia di simulazione vocale della console portatile 8-bit, ottimizziamo in modo completo la configurazione degli isolani e il flusso di disegno, così puoi concentrarti maggiormente su creatività pura e divertimento mentre godi dei giochi di simulazione di vita su isola.",
+    "q18": "C'è un limite di dimensione del file? Le immagini grandi influenzano le prestazioni?",
+    "a18": "Sì — consigliamo immagini inferiori a 5 MB. Le foto molto grandi o ad alta risoluzione impiegano più tempo a decodificarsi e renderizzarsi nel browser, il che può causare rallentamenti evidenti durante la regolazione di luminosità, contrasto o zoom. Per un'esperienza fluida, usa JPEG o PNG compressi sotto i 5 MB con linee pulite e colori solidi.",
     "privacyBadge": "🔒 Privacy 100% Lato Client — Tutta l'elaborazione avviene nel tuo browser. Zero caricamenti di dati.",
     "disclaimer": "Disclaimer: Questo sito web è un toolkit utility lato client di terze parti indipendente che utilizza tecnologie Web standard. Non è affiliato, autorizzato, mantenuto o endorsement da alcun produttore di console da gioco, sviluppatore software o editore ufficiale. Tutti i protocolli di formato avatar virtuale e le specifiche di griglia sono proprietà dei rispettivi proprietari."
   },

@@ -43,7 +43,8 @@
     "zoomIn": "Agrandir",
     "zoomOut": "Réduire",
     "zoomReset": "Réinitialiser",
-    "estimatedTime": "Temps Est."
+    "estimatedTime": "Temps Est.",
+    "maxFileSizeExceeded": "Fichier trop volumineux (max {size}). Veuillez utiliser une image plus petite pour de meilleures performances."
   },
   "AvatarEditor": {
     "title": "Configurateur de Code QR d'Avatar & Débloqueur de Permissions",
@@ -223,7 +224,9 @@
     "a16": "Parce que ce site se positionne comme un outil de personnalisation compatible avec les jeux de simulation de vie. Dans les jeux de simulation sociale actuels, les créations des joueurs ne se limitent plus à une seule tuile ou tenue. Lorsque vous devez concevoir des couvertures de livres, des albums musicaux, des intérieurs de mobilier pleine couverture, ou même des papiers peints grand écran, le jeu utilise différents ratios de recadrage. Cette boîte à outils fournit des canevas multi-spécifications et un échantillonnage de pinceau multi-densité pour s'adapter parfaitement aux besoins créatifs extrêmes de plusieurs jeux de simulation sociale, libérant votre tracé pixel des limitations.",
     "q17": "Quel est le but principal de ce site ? Pour quels types de joueurs est-il adapté ?",
     "a17": "Ce site est un outil auxiliaire conçu pour les jeux de simulation de vie sur île. Si vous aimez construire des appartements sur des îles virtuelles, gérer les relations entre résidents et dessiner à la main des tenues personnalisées en style pixel, alors cette boîte à outils purement frontend est votre assistant ultime. Grâce au traitement d'images Canvas sans serveur, à la réparation d'autorisations de données binaires et à la technologie de simulation vocale de console portable 8-bit, nous optimisons globalement votre configuration d'insulaires et votre flux de dessin, pour que vous puissiez vous concentrer davantage sur la créativité pure et le plaisir tout en profitant des jeux de simulation de vie sur île.",
-    "privacyBadge": "🔒 100 % de Confidentialité Côté Client — Tout le traitement se fait dans votre navigateur. Zéro envoi de données.",
+    "q18": "Y a-t-il une limite de taille de fichier ? Les images volumineuses affectent-elles les performances ?",
+    "a18": "Oui — nous recommandons des images de moins de 5 Mo. Les photos très grandes ou haute résolution prennent plus de temps à décoder et à rendre dans le navigateur, ce qui peut causer des ralentissements notables lors de l'ajustement de la luminosité, du contraste ou du zoom. Pour une expérience optimale, utilisez des JPEG ou PNG compressés de moins de 5 Mo avec des lignes nettes et des couleurs unies.",
+    "privacyBadge": "🔒 Confidentialité 100% côté client — Tout est traité localement dans votre navigateur. Zéro téléchargement de données.",
     "disclaimer": "Avertissement : Ce site web est une boîte à outils utilitaire tierce indépendante côté client utilisant des technologies Web standards. Il n'est pas affilié, autorisé, maintenu ou approuvé par aucun fabricant de console de jeu, développeur de logiciels ou éditeur officiel. Tous les protocoles de format d'avatar virtuel et spécifications de grille sont la propriété de leurs propriétaires respectifs."
   },
   "About": {

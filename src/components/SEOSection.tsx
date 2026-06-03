@@ -84,6 +84,7 @@ export default function SEOSection() {
         { q: seo("q4"), a: seo.rich("a4", RICH_TAGS) },
         { q: seo("q5"), a: seo.rich("a5", RICH_TAGS) },
         { q: seo("q13"), a: seo.rich("a13", RICH_TAGS) },
+        { q: seo("q18"), a: seo.rich("a18", RICH_TAGS) },
       ],
     },
     {
