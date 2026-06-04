@@ -11,6 +11,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 [![100% Client-Side](https://img.shields.io/badge/Privacy-100%25_Client--Side-brightgreen)]()
 [![Languages](https://img.shields.io/badge/i18n-10_Languages-blueviolet)]()
+[![Docker Build](https://github.com/cenyi/LifeSimGrid/actions/workflows/docker-publish.yml/badge.svg)](https://github.com/cenyi/LifeSimGrid/actions/workflows/docker-publish.yml)
 
 🌐 **English** | [繁體中文](#繁體中文) | [日本語](#日本語) | [Español](#español) | [Français](#français) | [한국어](#한국어) | [Deutsch](#deutsch) | [Italiano](#italiano) | [Nederlands](#nederlands) | [简体中文](#简体中文)
 
