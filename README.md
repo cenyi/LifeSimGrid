@@ -181,6 +181,25 @@ This project uses Next.js static export (`output: 'export'`), making it compatib
 
 This project includes a multi-stage `Dockerfile` that builds the static export and serves it via nginx.
 
+**Option A: Pull pre-built image from GHCR (recommended)**
+
+```bash
+# Pull the latest image
+docker pull ghcr.io/cenyi/lifesimgrid:latest
+
+# Run the container
+docker run -d -p 8080:80 ghcr.io/cenyi/lifesimgrid:latest
+```
+
+To update to the latest version:
+
+```bash
+docker pull ghcr.io/cenyi/lifesimgrid:latest
+docker compose up -d   # or restart your container
+```
+
+**Option B: Build from source**
+
 ```bash
 # Build the Docker image
 docker build -t lifesimgrid .
@@ -196,7 +215,8 @@ Open [http://localhost:8080](http://localhost:8080) in your browser.
 ```yaml
 services:
   lifesimgrid:
-    build: .
+    image: ghcr.io/cenyi/lifesimgrid:latest
+    # Or build from source: build: .
     ports:
       - "8080:80"
     restart: unless-stopped
@@ -409,6 +429,25 @@ src/
 
 本專案包含多階段 `Dockerfile`，可建置靜態匯出並透過 nginx 提供服務。
 
+**方式 A：從 GHCR 拉取預建映像（推薦）**
+
+```bash
+# 拉取最新映像
+docker pull ghcr.io/cenyi/lifesimgrid:latest
+
+# 執行容器
+docker run -d -p 8080:80 ghcr.io/cenyi/lifesimgrid:latest
+```
+
+更新至最新版本：
+
+```bash
+docker pull ghcr.io/cenyi/lifesimgrid:latest
+docker compose up -d   # 或重新啟動容器
+```
+
+**方式 B：從原始碼建置**
+
 ```bash
 # 建置 Docker 映像
 docker build -t lifesimgrid .
@@ -424,7 +463,8 @@ docker run -d -p 8080:80 lifesimgrid
 ```yaml
 services:
   lifesimgrid:
-    build: .
+    image: ghcr.io/cenyi/lifesimgrid:latest
+    # 或從原始碼建置：build: .
     ports:
       - "8080:80"
     restart: unless-stopped
@@ -636,6 +676,25 @@ src/
 
 本プロジェクトにはマルチステージ `Dockerfile` が含まれており、静的エクスポートをビルドして nginx で配信します。
 
+**オプション A：GHCR からプレビルドイメージをプル（推奨）**
+
+```bash
+# 最新イメージをプル
+docker pull ghcr.io/cenyi/lifesimgrid:latest
+
+# コンテナを実行
+docker run -d -p 8080:80 ghcr.io/cenyi/lifesimgrid:latest
+```
+
+最新バージョンに更新：
+
+```bash
+docker pull ghcr.io/cenyi/lifesimgrid:latest
+docker compose up -d   # またはコンテナを再起動
+```
+
+**オプション B：ソースからビルド**
+
 ```bash
 # Docker イメージをビルド
 docker build -t lifesimgrid .
@@ -651,7 +710,8 @@ docker run -d -p 8080:80 lifesimgrid
 ```yaml
 services:
   lifesimgrid:
-    build: .
+    image: ghcr.io/cenyi/lifesimgrid:latest
+    # またはソースからビルド：build: .
     ports:
       - "8080:80"
     restart: unless-stopped
@@ -855,6 +915,25 @@ Este proyecto utiliza exportación estática de Next.js (`output: 'export'`), co
 
 Este proyecto incluye un `Dockerfile` multi-etapa que construye la exportación estática y la sirve mediante nginx.
 
+**Opción A: Extraer imagen preconstruida de GHCR (recomendado)**
+
+```bash
+# Extraer la última imagen
+docker pull ghcr.io/cenyi/lifesimgrid:latest
+
+# Ejecutar el contenedor
+docker run -d -p 8080:80 ghcr.io/cenyi/lifesimgrid:latest
+```
+
+Para actualizar a la última versión:
+
+```bash
+docker pull ghcr.io/cenyi/lifesimgrid:latest
+docker compose up -d   # o reinicia tu contenedor
+```
+
+**Opción B: Construir desde el código fuente**
+
 ```bash
 # Construir la imagen Docker
 docker build -t lifesimgrid .
@@ -870,7 +949,8 @@ Abre [http://localhost:8080](http://localhost:8080) en tu navegador.
 ```yaml
 services:
   lifesimgrid:
-    build: .
+    image: ghcr.io/cenyi/lifesimgrid:latest
+    # O construir desde el código fuente: build: .
     ports:
       - "8080:80"
     restart: unless-stopped
@@ -1074,6 +1154,25 @@ Ce projet utilise l'export statique de Next.js (`output: 'export'`), compatible 
 
 Ce projet inclut un `Dockerfile` multi-étapes qui construit l'export statique et le sert via nginx.
 
+**Option A : Tirer l'image pré-construite depuis GHCR (recommandé)**
+
+```bash
+# Tirer la dernière image
+docker pull ghcr.io/cenyi/lifesimgrid:latest
+
+# Exécuter le conteneur
+docker run -d -p 8080:80 ghcr.io/cenyi/lifesimgrid:latest
+```
+
+Pour mettre à jour vers la dernière version :
+
+```bash
+docker pull ghcr.io/cenyi/lifesimgrid:latest
+docker compose up -d   # ou redémarrez votre conteneur
+```
+
+**Option B : Construire depuis le code source**
+
 ```bash
 # Construire l'image Docker
 docker build -t lifesimgrid .
@@ -1089,7 +1188,8 @@ Ouvrez [http://localhost:8080](http://localhost:8080) dans votre navigateur.
 ```yaml
 services:
   lifesimgrid:
-    build: .
+    image: ghcr.io/cenyi/lifesimgrid:latest
+    # Ou construire depuis le code source : build: .
     ports:
       - "8080:80"
     restart: unless-stopped
@@ -1293,6 +1393,25 @@ src/
 
 이 프로젝트는 정적 내보내기를 빌드하고 nginx를 통해 제공하는 멀티스테이지 `Dockerfile`을 포함합니다.
 
+**옵션 A: GHCR에서 사전 빌드된 이미지 풀 (권장)**
+
+```bash
+# 최신 이미지 풀
+docker pull ghcr.io/cenyi/lifesimgrid:latest
+
+# 컨테이너 실행
+docker run -d -p 8080:80 ghcr.io/cenyi/lifesimgrid:latest
+```
+
+최신 버전으로 업데이트:
+
+```bash
+docker pull ghcr.io/cenyi/lifesimgrid:latest
+docker compose up -d   # 또는 컨테이너 재시작
+```
+
+**옵션 B: 소스에서 빌드**
+
 ```bash
 # Docker 이미지 빌드
 docker build -t lifesimgrid .
@@ -1308,7 +1427,8 @@ docker run -d -p 8080:80 lifesimgrid
 ```yaml
 services:
   lifesimgrid:
-    build: .
+    image: ghcr.io/cenyi/lifesimgrid:latest
+    # 또는 소스에서 빌드: build: .
     ports:
       - "8080:80"
     restart: unless-stopped
@@ -1512,6 +1632,25 @@ Dieses Projekt verwendet den statischen Next.js-Export (`output: 'export'`) und 
 
 Dieses Projekt enthält ein mehrstufiges `Dockerfile`, das den statischen Export erstellt und über nginx bereitstellt.
 
+**Option A: Vorgefertigtes Image von GHCR ziehen (empfohlen)**
+
+```bash
+# Neuestes Image ziehen
+docker pull ghcr.io/cenyi/lifesimgrid:latest
+
+# Container ausführen
+docker run -d -p 8080:80 ghcr.io/cenyi/lifesimgrid:latest
+```
+
+Auf die neueste Version aktualisieren:
+
+```bash
+docker pull ghcr.io/cenyi/lifesimgrid:latest
+docker compose up -d   # oder Container neu starten
+```
+
+**Option B: Aus dem Quellcode erstellen**
+
 ```bash
 # Docker-Image erstellen
 docker build -t lifesimgrid .
@@ -1527,7 +1666,8 @@ docker run -d -p 8080:80 lifesimgrid
 ```yaml
 services:
   lifesimgrid:
-    build: .
+    image: ghcr.io/cenyi/lifesimgrid:latest
+    # Oder aus dem Quellcode erstellen: build: .
     ports:
       - "8080:80"
     restart: unless-stopped
@@ -1731,6 +1871,25 @@ Questo progetto utilizza l'export statico di Next.js (`output: 'export'`), compa
 
 Questo progetto include un `Dockerfile` multi-fase che costruisce l'export statico e lo serve tramite nginx.
 
+**Opzione A: Estrarre l'immagine pre-costruita da GHCR (consigliato)**
+
+```bash
+# Estrarre l'immagine più recente
+docker pull ghcr.io/cenyi/lifesimgrid:latest
+
+# Eseguire il contenitore
+docker run -d -p 8080:80 ghcr.io/cenyi/lifesimgrid:latest
+```
+
+Per aggiornare all'ultima versione:
+
+```bash
+docker pull ghcr.io/cenyi/lifesimgrid:latest
+docker compose up -d   # o riavvia il contenitore
+```
+
+**Opzione B: Costruire dal codice sorgente**
+
 ```bash
 # Costruire l'immagine Docker
 docker build -t lifesimgrid .
@@ -1746,7 +1905,8 @@ Apri [http://localhost:8080](http://localhost:8080) nel tuo browser.
 ```yaml
 services:
   lifesimgrid:
-    build: .
+    image: ghcr.io/cenyi/lifesimgrid:latest
+    # O costruire dal codice sorgente: build: .
     ports:
       - "8080:80"
     restart: unless-stopped
@@ -1950,6 +2110,25 @@ Dit project gebruikt de statische Next.js-export (`output: 'export'`) en is comp
 
 Dit project bevat een meerfasig `Dockerfile` dat de statische export bouwt en via nginx aanbiedt.
 
+**Optie A: Vooraf gebouwde image van GHCR ophalen (aanbevolen)**
+
+```bash
+# Meest recente image ophalen
+docker pull ghcr.io/cenyi/lifesimgrid:latest
+
+# Container uitvoeren
+docker run -d -p 8080:80 ghcr.io/cenyi/lifesimgrid:latest
+```
+
+Bijwerken naar de nieuwste versie:
+
+```bash
+docker pull ghcr.io/cenyi/lifesimgrid:latest
+docker compose up -d   # of start uw container opnieuw
+```
+
+**Optie B: Bouwen vanuit broncode**
+
 ```bash
 # Docker-image bouwen
 docker build -t lifesimgrid .
@@ -1965,7 +2144,8 @@ Open [http://localhost:8080](http://localhost:8080) in uw browser.
 ```yaml
 services:
   lifesimgrid:
-    build: .
+    image: ghcr.io/cenyi/lifesimgrid:latest
+    # Of bouwen vanuit broncode: build: .
     ports:
       - "8080:80"
     restart: unless-stopped
@@ -2178,6 +2358,25 @@ src/
 
 本项目包含多阶段 `Dockerfile`，可构建静态导出并通过 nginx 提供服务。
 
+**方式 A：从 GHCR 拉取预构建镜像（推荐）**
+
+```bash
+# 拉取最新镜像
+docker pull ghcr.io/cenyi/lifesimgrid:latest
+
+# 运行容器
+docker run -d -p 8080:80 ghcr.io/cenyi/lifesimgrid:latest
+```
+
+更新至最新版本：
+
+```bash
+docker pull ghcr.io/cenyi/lifesimgrid:latest
+docker compose up -d   # 或重启容器
+```
+
+**方式 B：从源码构建**
+
 ```bash
 # 构建 Docker 镜像
 docker build -t lifesimgrid .
@@ -2193,7 +2392,8 @@ docker run -d -p 8080:80 lifesimgrid
 ```yaml
 services:
   lifesimgrid:
-    build: .
+    image: ghcr.io/cenyi/lifesimgrid:latest
+    # 或从源码构建：build: .
     ports:
       - "8080:80"
     restart: unless-stopped
