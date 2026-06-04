@@ -1,15 +1,15 @@
-/**
- * GitHub Actions workflow: Build and push Docker image to GHCR
- *
- * Triggers:
- *   - Push to main branch (publishes :latest)
- *   - Git tags matching v* (publishes :version tag + :latest)
- *
- * Prerequisites:
- *   - GitHub repo Settings → Actions → General → Workflow permissions: Read and write
- *   - GitHub repo Settings → Packages → Ensure GHCR is enabled
- */
-name: Build & Push Docker Image
+# ============================================================
+# GitHub Actions workflow: Build and push Docker image to GHCR
+#
+# Triggers:
+#   - Push to main branch (publishes :latest)
+#   - Git tags matching v* (publishes :version tag + :latest)
+#
+# Prerequisites:
+#   - GitHub repo Settings → Actions → General → Workflow permissions: Read and write
+#   - GitHub repo Settings → Packages → Ensure GHCR is enabled
+# ============================================================
+name: Build and Push Docker Image
 
 on:
   push:
