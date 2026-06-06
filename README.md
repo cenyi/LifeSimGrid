@@ -49,7 +49,7 @@ As a free, browser-based web toolkit, all binary cryptographic parsing, HTML5 Ca
 #### 🔮 Voice & Relationship Lab (Tomodachi Life Compatibility Calculator)
 *   **8-Bit Voice Simulation Synth**: Employs low-level Web Audio API architecture (sawtooth wave + low-pass filter nodes) to synthesize and preview the nostalgic, electronic robotic speech of retro handheld sound chips. It allows full customization of native voice pitch (Hz) and speech speed parameters.
 *   **Tomodachi Island Relationship Leaderboard**: Features a fully local automated management tracker. Based on the game's classic 12 astrological zodiac signs and 16 core behavioral personality groups (e.g., Independent Lone Wolf, Confident Go-Getter, Outgoing Leader), users can build an island custom roster of up to 15 residents (stored safely via `localStorage`).
-*   **Automated Destiny Cross-Calculation**: The math engine instantly calculates cross-pairings across your entire roster, outputting your island grid's definitive compatibility天梯榜 — highlighting the Top 3 Best Soulmates (highest romance/friendship harmony) versus the Top 3 Worst Matches (most likely to clash with virtual drama).
+*   **Automated Destiny Cross-Calculation**: The math engine instantly calculates cross-pairings across your entire roster, outputting your island grid's definitive compatibility — highlighting the Top 3 Best Soulmates (highest romance/friendship harmony) versus the Top 3 Worst Matches (most likely to clash with virtual drama).
 
 ### 🔒 Privacy-First Architecture
 
