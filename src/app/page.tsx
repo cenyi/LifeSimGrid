@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     title: "LifeSimGrid - Custom Island Companion Toolset",
     description:
       "Pixel Studio, QR Unlocker, Voice Lab — all in one. 100% client-side fan tool.",
-    url: `${BASE}/`,
+    url: BASE,
     siteName: "LifeSimGrid",
     type: "website",
   },

@@ -4,7 +4,7 @@ import { useTranslations, useLocale } from "next-intl";
 import { useRouter, usePathname, Link } from "@/i18n/routing";
 import { routing } from "@/i18n/routing";
 import { useState, useRef, useEffect } from "react";
-import { Globe, ShieldCheck, ChevronDown } from "lucide-react";
+import { Globe, ShieldCheck, ChevronDown, Palette, Unlock, Music, Grid3x3 } from "lucide-react";
 
 const STORAGE_KEY = "lifesimgrid-locale";
 
@@ -50,7 +50,7 @@ export default function Navbar() {
   }
 
   return (
-    <nav className="sticky top-0 z-50 w-full border-b border-gray-100 bg-white/80 backdrop-blur-md shadow-sm">
+    <nav aria-label="Main navigation" className="sticky top-0 z-50 w-full border-b border-gray-100 bg-white/80 backdrop-blur-md shadow-sm">
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
         <Link href="/" className="flex items-center space-x-2">
           <span className="font-mono text-xl font-bold tracking-tight text-gray-900 select-none">
@@ -61,6 +61,21 @@ export default function Navbar() {
         <div className="hidden items-center space-x-2 rounded-full border border-green-100 bg-green-50 px-3 py-1.5 text-xs font-medium text-green-700 md:flex">
           <ShieldCheck className="h-4 w-4 text-green-600" />
           <span>{t("privacyHint")}</span>
+        </div>
+
+        <div className="hidden items-center space-x-1 lg:flex">
+          <Link href="/acnh-pixel-studio" title={t("toolAcnh")} className="flex h-8 w-8 items-center justify-center rounded-lg border border-gray-200 bg-white text-gray-500 shadow-sm transition-all hover:bg-gray-50 hover:text-gray-900 active:scale-95">
+            <Palette className="h-4 w-4" />
+          </Link>
+          <Link href="/mii-qr-unlocker" title={t("toolMii")} className="flex h-8 w-8 items-center justify-center rounded-lg border border-gray-200 bg-white text-gray-500 shadow-sm transition-all hover:bg-gray-50 hover:text-gray-900 active:scale-95">
+            <Unlock className="h-4 w-4" />
+          </Link>
+          <Link href="/tomodachi-voice-lab" title={t("toolVoice")} className="flex h-8 w-8 items-center justify-center rounded-lg border border-gray-200 bg-white text-gray-500 shadow-sm transition-all hover:bg-gray-50 hover:text-gray-900 active:scale-95">
+            <Music className="h-4 w-4" />
+          </Link>
+          <Link href="/pixel-grid-studio" title={t("toolPixelGrid")} className="flex h-8 w-8 items-center justify-center rounded-lg border border-gray-200 bg-white text-gray-500 shadow-sm transition-all hover:bg-gray-50 hover:text-gray-900 active:scale-95">
+            <Grid3x3 className="h-4 w-4" />
+          </Link>
         </div>
 
         <div className="flex items-center space-x-2">

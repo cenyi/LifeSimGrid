@@ -57,7 +57,7 @@ export async function generateMetadata({
     alternates: {
       canonical: `${BASE}/${path}`,
       languages: {
-        en: `${BASE}/`,
+        en: BASE,
         "zh-Hant": `${BASE}/zh-Hant`,
         ja: `${BASE}/ja`,
         es: `${BASE}/es`,

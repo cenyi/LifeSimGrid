@@ -1,7 +1,7 @@
 "use client";
 
 import { useTranslations } from "next-intl";
-import { useState, type ReactNode } from "react";
+import { type ReactNode } from "react";
 import { ChevronDown } from "lucide-react";
 
 const RICH_TAGS = {
@@ -16,45 +16,6 @@ const RICH_TAGS = {
   ),
 };
 
-function AccordionItem({
-  question,
-  answer,
-  isOpen,
-  onToggle,
-}: {
-  question: string;
-  answer: ReactNode;
-  isOpen: boolean;
-  onToggle: () => void;
-}) {
-  return (
-    <div className="rounded-2xl border border-gray-100 bg-white shadow-sm transition-shadow hover:shadow-md">
-      <button
-        onClick={onToggle}
-        className="flex w-full items-center justify-between px-5 py-4 text-left"
-      >
-        <span className="pr-4 font-semibold text-gray-900">{question}</span>
-        <ChevronDown
-          className={`h-5 w-5 shrink-0 text-gray-400 transition-transform duration-300 ${
-            isOpen ? "rotate-180" : ""
-          }`}
-        />
-      </button>
-      <div
-        className={`grid transition-all duration-300 ease-in-out ${
-          isOpen ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"
-        }`}
-      >
-        <div className="overflow-hidden">
-          <div className="px-5 pb-4 leading-relaxed text-gray-600 seo-text">
-            {answer}
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-}
-
 function nodeToText(node: ReactNode): string {
   if (typeof node === "string") return node;
   if (typeof node === "number") return String(node);
@@ -67,7 +28,6 @@ function nodeToText(node: ReactNode): string {
 
 export default function SEOSection() {
   const seo = useTranslations("SEO");
-  const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   const faqCategories = [
     {
@@ -125,10 +85,6 @@ export default function SEOSection() {
     })),
   };
 
-  function handleToggle(index: number) {
-    setOpenIndex(openIndex === index ? null : index);
-  }
-
   return (
     <div className="mx-auto max-w-6xl px-4 py-10">
       <script
@@ -152,44 +108,48 @@ export default function SEOSection() {
             <h3 className="mb-4 font-mono text-lg font-bold text-gray-900">
               🎨 {seo("pixelGuideTitle")}
             </h3>
-            <div className="space-y-3 seo-text">
-              <p>{seo.rich("pixelStep1", RICH_TAGS)}</p>
-              <p>{seo.rich("pixelStep2", RICH_TAGS)}</p>
-              <p>{seo.rich("pixelStep3", RICH_TAGS)}</p>
-              <p>{seo.rich("pixelStep4", RICH_TAGS)}</p>
-              <p>{seo.rich("pixelStep5", RICH_TAGS)}</p>
-              <p>{seo.rich("pixelStep6", RICH_TAGS)}</p>
-              <p>{seo.rich("pixelStep7", RICH_TAGS)}</p>
-            </div>
+            <ol className="space-y-3 seo-text list-decimal list-inside">
+              <li>{seo.rich("pixelStep1", RICH_TAGS)}</li>
+              <li>{seo.rich("pixelStep2", RICH_TAGS)}</li>
+              <li>{seo.rich("pixelStep3", RICH_TAGS)}</li>
+              <li>{seo.rich("pixelStep4", RICH_TAGS)}</li>
+              <li>{seo.rich("pixelStep5", RICH_TAGS)}</li>
+              <li>{seo.rich("pixelStep6", RICH_TAGS)}</li>
+              <li>{seo.rich("pixelStep7", RICH_TAGS)}</li>
+            </ol>
           </div>
 
           <div className="rounded-2xl border border-blue-100 bg-white p-5 shadow-sm">
             <h3 className="mb-4 font-mono text-lg font-bold text-gray-900">
               🔓 {seo("qrGuideTitle")}
             </h3>
-            <div className="space-y-3 seo-text">
-              <p>{seo.rich("qrStep1", RICH_TAGS)}</p>
-              <p>{seo.rich("qrStep2", RICH_TAGS)}</p>
-              <p>{seo.rich("qrStep3", RICH_TAGS)}</p>
-              <p>{seo.rich("qrStep4", RICH_TAGS)}</p>
-              <p>{seo.rich("qrStep5", RICH_TAGS)}</p>
-            </div>
+            <ol className="space-y-3 seo-text list-decimal list-inside">
+              <li>{seo.rich("qrStep1", RICH_TAGS)}</li>
+              <li>{seo.rich("qrStep2", RICH_TAGS)}</li>
+              <li>{seo.rich("qrStep3", RICH_TAGS)}</li>
+              <li>{seo.rich("qrStep4", RICH_TAGS)}</li>
+              <li>{seo.rich("qrStep5", RICH_TAGS)}</li>
+            </ol>
           </div>
 
           <div className="rounded-2xl border border-purple-100 bg-white p-5 shadow-sm">
             <h3 className="mb-4 font-mono text-lg font-bold text-gray-900">
               🔮 {seo("voiceGuideTitle")}
             </h3>
-            <div className="space-y-3 seo-text">
-              <p>{seo.rich("voiceStep1", RICH_TAGS)}</p>
-              <p>{seo.rich("voiceStep2", RICH_TAGS)}</p>
-              <p>{seo.rich("voiceStep3", RICH_TAGS)}</p>
-              <p>{seo.rich("voiceStep4", RICH_TAGS)}</p>
-              <p>{seo.rich("voiceStep5", RICH_TAGS)}</p>
+            <ol className="space-y-3 seo-text list-decimal list-inside">
+              <li>{seo.rich("voiceStep1", RICH_TAGS)}</li>
+              <li>{seo.rich("voiceStep2", RICH_TAGS)}</li>
+              <li>{seo.rich("voiceStep3", RICH_TAGS)}</li>
+              <li>{seo.rich("voiceStep4", RICH_TAGS)}</li>
+              <li>{seo.rich("voiceStep5", RICH_TAGS)}</li>
+            </ol>
+            <div className="space-y-3 seo-text mt-3">
               <p className="pl-2">{seo.rich("voiceLove", RICH_TAGS)}</p>
               <p className="pl-2">{seo.rich("voiceFriend", RICH_TAGS)}</p>
-              <p>{seo.rich("voiceStep6", RICH_TAGS)}</p>
             </div>
+            <ol className="space-y-3 seo-text list-decimal list-inside mt-3" start={6}>
+              <li>{seo.rich("voiceStep6", RICH_TAGS)}</li>
+            </ol>
           </div>
         </div>
       </section>
@@ -200,33 +160,24 @@ export default function SEOSection() {
         </h2>
 
         <div className="space-y-6">
-          {faqCategories.map((category, catIdx) => {
-            const baseIndex = faqCategories
-              .slice(0, catIdx)
-              .reduce((sum, c) => sum + c.items.length, 0);
-
-            return (
+          {faqCategories.map((category, catIdx) => (
               <div key={catIdx}>
                 <h3 className="mb-3 text-sm font-bold uppercase tracking-wider text-gray-400">
                   {category.label}
                 </h3>
-                <div className="space-y-3">
-                  {category.items.map((item, itemIdx) => {
-                    const globalIdx = baseIndex + itemIdx;
-                    return (
-                      <AccordionItem
-                        key={globalIdx}
-                        question={item.q}
-                        answer={item.a}
-                        isOpen={openIndex === globalIdx}
-                        onToggle={() => handleToggle(globalIdx)}
-                      />
-                    );
-                  })}
+                <div>
+                  {category.items.map((item, itemIdx) => (
+                      <details key={itemIdx} className="border-b border-gray-200 last:border-0 group">
+                        <summary className="flex w-full items-center justify-between py-3 text-left font-medium cursor-pointer list-none [&::-webkit-details-marker]:hidden">
+                          <h4 className="text-sm font-medium">{item.q}</h4>
+                          <ChevronDown className="h-4 w-4 shrink-0 transition-transform group-open:rotate-180" />
+                        </summary>
+                        <p className="pb-3 text-sm text-gray-600">{item.a}</p>
+                      </details>
+                  ))}
                 </div>
               </div>
-            );
-          })}
+          ))}
         </div>
       </section>
     </div>

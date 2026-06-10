@@ -9,7 +9,7 @@ export default function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="w-full border-t border-gray-200 bg-[#F3F4F6]">
+    <footer role="contentinfo" aria-label="Site footer" className="w-full border-t border-gray-200 bg-[#F3F4F6]">
       <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
         <div className="mb-6 rounded-xl bg-amber-50 p-4">
           <p className="text-center text-sm leading-relaxed text-amber-800">
@@ -17,12 +17,19 @@ export default function Footer() {
           </p>
         </div>
 
+        <div className="mb-4 flex flex-wrap justify-center gap-x-4 gap-y-2 text-sm text-gray-500">
+          <Link href="/acnh-pixel-studio" className="transition-colors hover:text-gray-900">{t("toolAcnh")}</Link>
+          <Link href="/mii-qr-unlocker" className="transition-colors hover:text-gray-900">{t("toolMii")}</Link>
+          <Link href="/tomodachi-voice-lab" className="transition-colors hover:text-gray-900">{t("toolVoice")}</Link>
+          <Link href="/pixel-grid-studio" className="transition-colors hover:text-gray-900">{t("toolPixelGrid")}</Link>
+        </div>
+
         <div className="flex flex-col items-center justify-between gap-4 md:flex-row">
           <p className="text-sm text-gray-500">
             © {year} LifeSimGrid. All rights reserved. Made by a fan.
           </p>
 
-          <nav className="flex flex-wrap justify-center gap-x-6 gap-y-2 font-medium text-sm text-gray-500">
+          <nav aria-label="Footer navigation" className="flex flex-wrap justify-center gap-x-6 gap-y-2 font-medium text-sm text-gray-500">
             <Link
               href="/about"
               className="transition-colors hover:text-gray-900"

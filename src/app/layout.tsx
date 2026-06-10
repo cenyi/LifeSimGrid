@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import Analytics from "@/components/Analytics";
+import TrailingSlashRedirector from "@/components/TrailingSlashRedirector";
 
 const SITE_URL = "https://lifesimgrid.org";
 const SITE_NAME = "LifeSimGrid";
@@ -73,7 +74,7 @@ export const metadata: Metadata = {
     siteName: SITE_NAME,
     title: "LifeSimGrid - Custom Island Companion Toolset",
     description: SITE_DESC,
-    url: `${SITE_URL}/`,
+    url: SITE_URL,
     locale: "en_US",
     alternateLocale: [
       "zh_TW",
@@ -199,6 +200,7 @@ export default function RootLayout({
       </head>
       <body className="min-h-screen bg-cream antialiased">
         <Analytics />
+        <TrailingSlashRedirector />
         {children}
       </body>
     </html>

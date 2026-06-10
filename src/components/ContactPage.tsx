@@ -1,9 +1,19 @@
 "use client";
 
 import { useTranslations } from "next-intl";
+import { type ReactNode } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Mail, Scale, Clock, HelpCircle } from "lucide-react";
+
+/** Rich text tag that renders the email as a clickable mailto link */
+const EMAIL_TAG = {
+  email: (chunks: ReactNode) => (
+    <a href="mailto:hi@lifesimgrid.org" className="text-island-blue hover:underline">
+      {chunks}
+    </a>
+  ),
+};
 
 export default function ContactPage() {
   const t = useTranslations("Contact");
@@ -53,7 +63,7 @@ export default function ContactPage() {
                 </h2>
               </div>
               <p className="leading-relaxed text-gray-600">
-                {t("supportText")}
+                {t.rich("supportText", EMAIL_TAG)}
               </p>
             </div>
 

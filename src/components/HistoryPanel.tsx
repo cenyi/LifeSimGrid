@@ -82,14 +82,14 @@ export default function HistoryPanel<T>({
 
   if (loading) {
     return (
-      <div className="mt-6 rounded-2xl border border-gray-100 bg-white p-5 shadow-sm">
-        <p className="text-center text-sm text-gray-400">{t("loading")}</p>
-      </div>
+      <aside aria-label="History panel" className="mt-6 rounded-2xl border border-gray-100 bg-white p-5 shadow-sm">
+        <p aria-live="polite" className="text-center text-sm text-gray-400">{t("loading")}</p>
+      </aside>
     );
   }
 
   return (
-    <div className="mt-6 rounded-2xl border border-gray-100 bg-white shadow-sm">
+    <aside aria-label="History panel" className="mt-6 rounded-2xl border border-gray-100 bg-white shadow-sm">
       <button
         onClick={() => setExpanded(!expanded)}
         className="flex w-full items-center justify-between rounded-2xl p-5 transition-colors hover:bg-gray-50"
@@ -105,7 +105,7 @@ export default function HistoryPanel<T>({
       {expanded && (
         <div className="border-t border-gray-100 px-5 pb-5">
           {entries.length === 0 ? (
-            <p className="py-6 text-center text-sm text-gray-400">
+            <p aria-live="polite" className="py-6 text-center text-sm text-gray-400">
               {t("empty")}
             </p>
           ) : (
@@ -148,6 +148,6 @@ export default function HistoryPanel<T>({
           )}
         </div>
       )}
-    </div>
+    </aside>
   );
 }

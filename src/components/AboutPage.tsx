@@ -1,6 +1,7 @@
 "use client";
 
 import { useTranslations } from "next-intl";
+import { Link } from "@/i18n/routing";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
@@ -30,7 +31,7 @@ export default function AboutPage() {
               <div className="space-y-4">
                 <div className="rounded-xl bg-sunshine/10 p-4">
                   <h3 className="mb-1 font-mono text-base font-bold text-gray-900">
-                    🎨 {t("feature1Title")}
+                    🎨 <Link href="/acnh-pixel-studio" className="hover:text-island-blue transition-colors">{t("feature1Title")}</Link>
                   </h3>
                   <p className="text-sm leading-relaxed text-gray-600">
                     {t("feature1")}
@@ -38,7 +39,7 @@ export default function AboutPage() {
                 </div>
                 <div className="rounded-xl bg-island-blue/10 p-4">
                   <h3 className="mb-1 font-mono text-base font-bold text-gray-900">
-                    🔓 {t("feature2Title")}
+                    🔓 <Link href="/mii-qr-unlocker" className="hover:text-island-blue transition-colors">{t("feature2Title")}</Link>
                   </h3>
                   <p className="text-sm leading-relaxed text-gray-600">
                     {t("feature2")}
@@ -46,7 +47,7 @@ export default function AboutPage() {
                 </div>
                 <div className="rounded-xl bg-island-pink/20 p-4">
                   <h3 className="mb-1 font-mono text-base font-bold text-gray-900">
-                    🎵 {t("feature3Title")}
+                    🎵 <Link href="/tomodachi-voice-lab" className="hover:text-island-blue transition-colors">{t("feature3Title")}</Link>
                   </h3>
                   <p className="text-sm leading-relaxed text-gray-600">
                     {t("feature3")}

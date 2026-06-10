@@ -33,23 +33,33 @@ As a free, browser-based web toolkit, all binary cryptographic parsing, HTML5 Ca
 
 > *Coming soon — community contributions and Pull Requests with live screenshots are highly welcome!*
 
-### ✨ Three Dedicated Studios
+### ✨ Topic Clusters Architecture & Dedicated Studios
 
-#### 🎨 Pixel Studio (Animal Crossing Custom Design Pattern Tool)
-*   **Multi-Ratio Grid Canvas**: Perfectly adapts to advanced texture drawing specifications in **sandbox social simulation games**. It natively supports Square 1:1 (standard patterns), Rectangular 2:3 (easel portraits, album covers), and Widescreen 16:9 (sweeping custom interior wall wallpapers) crop aspect ratios.
-*   **Multi-Density Brush Sampling**: Offers four distinct pixel density tiers to match vintage console grid sizes — 256×256 (1px ultra-fine), 85×85 (3px, standard Pro Design tile layout), 64×64 (4px simplified canvas), and 32×32 (7px classic design tile).
-*   **Pre-Processing Image Filters**: Features built-in real-time adjustable brightness and contrast configuration sliders to significantly eliminate muddy color distortions when downscaling complex anime art or gaming graphics.
-*   **Paint-by-Numbers Highlighting**: Click any of the 24 quantized color swatches to instantly isolate and highlight matching pixel grid indices on the canvas with dashed borders for effortless manual tracing on your handheld console.
+LifeSimGrid uses a **Topic Clusters SEO strategy**: the homepage acts as an "aircraft carrier" aggregating brand authority, while 4 dedicated sub-pages serve as "destroyers" targeting specific vertical keywords for search-traffic acquisition.
 
-#### 🔓 QR Configurator (Mii QR Code Editor & FFL Protocol Permission Unlocker)
-*   **Parallel Batch Permission Unlock**: Supports dragging and dropping multiple Mii QR code images simultaneously. Implements high-performance frontend async streams via `Promise.all` to lift "anti-copying not allowed" and "sharing/editing restricted" checksum flags embedded in the official Mii FFL binary protocol format.
-*   **Online Cryptographic Rename**: Allows immediate, safe modification of character names directly in the web browser sandbox. The frontend engine automatically overwrites hexadecimal byte segments and fixes the binary verification checksum instantly.
-*   **Local Client-Side ZIP Packaging**: Leverages `JSZip` to bundle your fully decrypted and modified QR code assets directly inside the browser memory as a single `.zip` package export — eliminating the hassle of saving files one by one.
+#### 🎨 ACNH Pixel Studio (`/acnh-pixel-studio`)
+*   Dedicated sub-page for **Animal Crossing Custom Designs** pattern conversion.
+*   Features How-to-Import guide, Why-Use section, FAQ with JSON-LD structured data, and cross-links to other tools.
+*   Targets vertical keywords like "ACNH custom design pixel studio", "animal crossing pattern converter".
 
-#### 🔮 Voice & Relationship Lab (Tomodachi Life Compatibility Calculator)
-*   **8-Bit Voice Simulation Synth**: Employs low-level Web Audio API architecture (sawtooth wave + low-pass filter nodes) to synthesize and preview the nostalgic, electronic robotic speech of retro handheld sound chips. It allows full customization of native voice pitch (Hz) and speech speed parameters.
-*   **Tomodachi Island Relationship Leaderboard**: Features a fully local automated management tracker. Based on the game's classic 12 astrological zodiac signs and 16 core behavioral personality groups (e.g., Independent Lone Wolf, Confident Go-Getter, Outgoing Leader), users can build an island custom roster of up to 15 residents (stored safely via `localStorage`).
-*   **Automated Destiny Cross-Calculation**: The math engine instantly calculates cross-pairings across your entire roster, outputting your island grid's definitive compatibility — highlighting the Top 3 Best Soulmates (highest romance/friendship harmony) versus the Top 3 Worst Matches (most likely to clash with virtual drama).
+#### 🔓 Mii QR Unlocker (`/mii-qr-unlocker`)
+*   Dedicated sub-page for **Mii QR code** editing and FFL protocol permission unlocking.
+*   Features How-to-Fix guide, Supported Consoles section, FFL Format technical deep-dive with `<code>` tag highlighting, and FAQ with JSON-LD.
+*   Targets vertical keywords like "Mii QR code unlocker", "fix locked Mii QR codes", "FFL format".
+
+#### 🔮 Tomodachi Voice Lab (`/tomodachi-voice-lab`)
+*   Dedicated sub-page for **Tomodachi Life** voice synthesis and personality compatibility.
+*   Features 16-Personality Matrix with color-coded groups (amber/red/purple/green), Voice Guide, Share section, and FAQ with JSON-LD.
+*   Targets vertical keywords like "Tomodachi Life voice calculator", "Tomodachi personality types".
+
+#### 🔲 Pixel Grid Studio (`/pixel-grid-studio`)
+*   Dedicated sub-page for **general-purpose pixel grid** conversion (cross-stitch, Perler beads, pixel art templates).
+*   Features Turn-Photo guide, Multi-Purpose use cases (gamers/crafters/artists), print-optimized layout, and FAQ with JSON-LD.
+*   Targets vertical keywords like "pixel art grid converter", "cross stitch pattern generator", "Perler beads template".
+
+#### 🏠 Homepage Hub
+*   The homepage features tab-based tool switching for returning users and 4 CTA cards linking to sub-pages for new search-traffic users.
+*   Trust & Privacy section reinforces the 100% client-side, zero-data-upload commitment.
 
 ### 🔒 Privacy-First Architecture
 
@@ -137,17 +147,30 @@ src/
 │   │   ├── about/          # About page
 │   │   ├── contact/        # Contact page
 │   │   ├── privacy/        # Privacy policy
-│   │   └── terms/          # Terms of service
+│   │   ├── terms/          # Terms of service
+│   │   ├── acnh-pixel-studio/    # ACNH Custom Designs sub-page
+│   │   ├── mii-qr-unlocker/     # Mii QR Code sub-page
+│   │   ├── tomodachi-voice-lab/ # Tomodachi Voice sub-page
+│   │   └── pixel-grid-studio/   # Pixel Grid Studio sub-page
+│   ├── acnh-pixel-studio/  # Root-level EN sub-page
+│   ├── mii-qr-unlocker/   # Root-level EN sub-page
+│   ├── tomodachi-voice-lab/ # Root-level EN sub-page
+│   ├── pixel-grid-studio/  # Root-level EN sub-page
 │   ├── layout.tsx          # Root layout + metadataBase
 │   └── globals.css         # Global styles + anchor link CSS
 ├── components/             # React components
-│   ├── HomePageContent.tsx # Tab switching & hash navigation
-│   ├── PixelStudio.tsx     # Pixel grid converter
-│   ├── AvatarEditor.tsx    # Avatar QR configurator
-│   ├── VoiceLab.tsx        # Voice synth & relationship lab
-│   ├── SEOSection.tsx      # Guide, FAQ & JSON-LD
-│   ├── Navbar.tsx          # Navigation with language switcher
-│   └── Footer.tsx          # Footer with disclaimer
+│   ├── HomePageContent.tsx # Tab switching, Feature & Trust sections
+│   ├── AcnhPixelStudioPage.tsx  # ACNH sub-page component
+│   ├── MiiQrUnlockerPage.tsx    # Mii QR sub-page component
+│   ├── TomodachiVoiceLabPage.tsx # Voice Lab sub-page component
+│   ├── PixelGridStudioPage.tsx  # Pixel Grid sub-page component
+│   ├── PixelStudio.tsx     # Pixel grid converter (shared tool)
+│   ├── AvatarEditor.tsx    # Avatar QR configurator (shared tool)
+│   ├── VoiceLab.tsx        # Voice synth & relationship lab (shared tool)
+│   ├── SEOSection.tsx      # Guide, FAQ & JSON-LD (details/summary)
+│   ├── HistoryPanel.tsx    # History panel (aside + aria-live)
+│   ├── Navbar.tsx          # Navigation with tool links & language switcher
+│   └── Footer.tsx          # Footer with tool links & disclaimer
 ├── i18n/                   # next-intl configuration
 │   ├── routing.ts          # Locale routing config
 │   └── request.ts          # Server-side i18n setup
@@ -260,7 +283,7 @@ Each locale file (`src/locales/*.json`) must have exactly the same keys as `en.j
 1. Add the key to `en.json` first
 2. Add the key to all other locale files
 3. Use natural, native expressions — not machine translations
-4. Keep `<pixel>`, `<qr>`, `<voice>` next-intl rich text tags as-is
+4. Keep `<pixel>`, `<qr>`, `<voice>`, `<email>` next-intl rich text tags as-is
 5. Keep emoji prefixes, technical terms, and brand names as-is
 
 ### 🔒 Privacy & Copyright Disclaimer
@@ -285,6 +308,9 @@ Instead, report it responsibly via email to **hi@lifesimgrid.org**. Our core eng
 
 ### 📋 Project Roadmap
 
+- [x] **Topic Clusters SEO Architecture**: 4 dedicated sub-pages targeting vertical keywords with JSON-LD structured data, semantic HTML, and internal link network.
+- [x] **Semantic HTML & Accessibility**: `<details>`/`<summary>` FAQ accordions, `<ol>`/`<li>` step lists, `aria-labelledby` sections, `aria-live` loading states, print-optimized layouts.
+- [x] **Official Game Terminology Alignment**: All 10 locales use correct in-game terms (マイデザイン, PROデザイン, タヌポータル, 我的設計, 朋友聚會 新生活, etc.).
 - [ ] **PWA Support**: Full Progressive Web App capability offering 100% offline functionality via custom Service Worker caching.
 - [ ] **Dark Mode Toggle**: Fluid, system-adaptive dark theme implementation utilizing Tailwind CSS atomic styling.
 - [ ] **Expanded Localization**: Additional i18n locale integrations covering `pt-BR`, `ru`, `th`, and `vi`.

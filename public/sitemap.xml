@@ -7,7 +7,7 @@
        ============================================================ -->
   <url>
     <loc>https://lifesimgrid.org/</loc>
-    <lastmod>2026-06-05</lastmod>
+    <lastmod>2026-06-09</lastmod>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://lifesimgrid.org/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://lifesimgrid.org/"/>
     <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://lifesimgrid.org/zh-Hant"/>
@@ -95,5 +95,81 @@
     <xhtml:link rel="alternate" hreflang="de" href="https://lifesimgrid.org/de/terms"/>
     <xhtml:link rel="alternate" hreflang="it" href="https://lifesimgrid.org/it/terms"/>
     <xhtml:link rel="alternate" hreflang="nl" href="https://lifesimgrid.org/nl/terms"/>
+  </url>
+
+  <!-- ============================================================
+       ACNH Pixel Studio
+       ============================================================ -->
+  <url>
+    <loc>https://lifesimgrid.org/acnh-pixel-studio</loc>
+    <lastmod>2026-06-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://lifesimgrid.org/acnh-pixel-studio"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://lifesimgrid.org/acnh-pixel-studio"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://lifesimgrid.org/zh-Hant/acnh-pixel-studio"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://lifesimgrid.org/zh-CN/acnh-pixel-studio"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://lifesimgrid.org/ja/acnh-pixel-studio"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://lifesimgrid.org/es/acnh-pixel-studio"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://lifesimgrid.org/fr/acnh-pixel-studio"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://lifesimgrid.org/ko/acnh-pixel-studio"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://lifesimgrid.org/de/acnh-pixel-studio"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://lifesimgrid.org/it/acnh-pixel-studio"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://lifesimgrid.org/nl/acnh-pixel-studio"/>
+  </url>
+
+  <!-- ============================================================
+       Mii QR Unlocker
+       ============================================================ -->
+  <url>
+    <loc>https://lifesimgrid.org/mii-qr-unlocker</loc>
+    <lastmod>2026-06-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://lifesimgrid.org/mii-qr-unlocker"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://lifesimgrid.org/mii-qr-unlocker"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://lifesimgrid.org/zh-Hant/mii-qr-unlocker"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://lifesimgrid.org/zh-CN/mii-qr-unlocker"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://lifesimgrid.org/ja/mii-qr-unlocker"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://lifesimgrid.org/es/mii-qr-unlocker"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://lifesimgrid.org/fr/mii-qr-unlocker"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://lifesimgrid.org/ko/mii-qr-unlocker"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://lifesimgrid.org/de/mii-qr-unlocker"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://lifesimgrid.org/it/mii-qr-unlocker"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://lifesimgrid.org/nl/mii-qr-unlocker"/>
+  </url>
+
+  <!-- ============================================================
+       Tomodachi Voice Lab
+       ============================================================ -->
+  <url>
+    <loc>https://lifesimgrid.org/tomodachi-voice-lab</loc>
+    <lastmod>2026-06-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://lifesimgrid.org/tomodachi-voice-lab"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://lifesimgrid.org/tomodachi-voice-lab"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://lifesimgrid.org/zh-Hant/tomodachi-voice-lab"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://lifesimgrid.org/zh-CN/tomodachi-voice-lab"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://lifesimgrid.org/ja/tomodachi-voice-lab"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://lifesimgrid.org/es/tomodachi-voice-lab"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://lifesimgrid.org/fr/tomodachi-voice-lab"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://lifesimgrid.org/ko/tomodachi-voice-lab"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://lifesimgrid.org/de/tomodachi-voice-lab"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://lifesimgrid.org/it/tomodachi-voice-lab"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://lifesimgrid.org/nl/tomodachi-voice-lab"/>
+  </url>
+
+  <!-- ============================================================
+       Pixel Grid Studio
+       ============================================================ -->
+  <url>
+    <loc>https://lifesimgrid.org/pixel-grid-studio</loc>
+    <lastmod>2026-06-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://lifesimgrid.org/pixel-grid-studio"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://lifesimgrid.org/pixel-grid-studio"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://lifesimgrid.org/zh-Hant/pixel-grid-studio"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://lifesimgrid.org/zh-CN/pixel-grid-studio"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://lifesimgrid.org/ja/pixel-grid-studio"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://lifesimgrid.org/es/pixel-grid-studio"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://lifesimgrid.org/fr/pixel-grid-studio"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://lifesimgrid.org/ko/pixel-grid-studio"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://lifesimgrid.org/de/pixel-grid-studio"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://lifesimgrid.org/it/pixel-grid-studio"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://lifesimgrid.org/nl/pixel-grid-studio"/>
   </url>
 </urlset>
