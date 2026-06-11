@@ -4,6 +4,12 @@
 # Triggers:
 #   - Git tags matching v* (publishes :version tag + :latest)
 #
+# Build strategy:
+#   - Next.js SSG runs natively on amd64 runner (no QEMU)
+#   - Static output is copied into multi-arch nginx images
+#   - nginx:alpine has official arm64 images, so both platforms
+#     are built without any emulation
+#
 # Prerequisites:
 #   - GitHub repo Settings → Actions → General → Workflow permissions: Read and write
 #   - GitHub repo Settings → Packages → Ensure GHCR is enabled
@@ -30,6 +36,21 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build static export
+        run: npm run build
+
+      - name: Set up QEMU
+        uses: docker/setup-qemu-action@v3
+
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
 
@@ -50,9 +71,6 @@ jobs:
             type=semver,pattern={{major}}.{{minor}}
             type=raw,value=latest,enable=${{ startsWith(github.ref, 'refs/tags/') }}
 
-      # Build on amd64 only — QEMU arm64 emulation crashes during Next.js
-      # SSG (SIGILL). Static HTML output is architecture-independent,
-      # so nginx serves the same files on any platform.
       - name: Build and push Docker image
         uses: docker/build-push-action@v6
         with:
@@ -62,4 +80,4 @@ jobs:
           labels: ${{ steps.meta.outputs.labels }}
           cache-from: type=gha
           cache-to: type=gha,mode=max
-          platforms: linux/amd64
+          platforms: linux/amd64,linux/arm64

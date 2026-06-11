@@ -1,26 +1,12 @@
 # ============================================================
-# Stage 1: Build — Generate static export with Node.js
+# Serve pre-built static files with nginx
+#
+# The static export (npm run build) is performed on the CI runner
+# natively (amd64) to avoid QEMU arm64 emulation crashes during
+# Next.js SSG. Static HTML/CSS/JS is architecture-independent,
+# so nginx can serve the same files on any platform.
 # ============================================================
-FROM node:20-alpine AS builder
-
-WORKDIR /app
-
-# Copy dependency manifests first for better layer caching
-COPY package.json package-lock.json* ./
-
-# Install dependencies
-RUN npm ci
-
-# Copy source code
-COPY . .
-
-# Build static export (output: "export" in next.config.ts)
-RUN npm run build
-
-# ============================================================
-# Stage 2: Serve — Host static files with nginx
-# ============================================================
-FROM nginx:alpine AS runner
+FROM nginx:alpine
 
 # Remove default nginx static assets
 RUN rm -rf /usr/share/nginx/html/*
@@ -28,8 +14,8 @@ RUN rm -rf /usr/share/nginx/html/*
 # Copy custom nginx configuration
 COPY nginx.conf /etc/nginx/conf.d/default.conf
 
-# Copy static export from builder stage
-COPY --from=builder /app/out /usr/share/nginx/html
+# Copy pre-built static export (mounted from CI)
+COPY out/ /usr/share/nginx/html/
 
 # Expose port 80
 EXPOSE 80
