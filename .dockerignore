@@ -2,8 +2,8 @@
 node_modules
 npm-debug.log*
 
-# Build output (rebuilt inside Docker)
-out
+# Build output — .next is rebuilt inside Docker, but out/ is pre-built
+# by CI and must be included for the nginx-only Dockerfile
 .next
 
 # Development
