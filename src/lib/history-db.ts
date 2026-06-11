@@ -13,7 +13,7 @@ export interface HistoryEntry<T> {
 }
 
 export type CanvasPreset = "square" | "book" | "wide";
-export type PixelDensity = 256 | 85 | 64 | 32;
+export type PixelDensity = 16 | 32 | 64 | 85 | 128 | 256;
 export type VoicePreset = "adultMale" | "adultFemale" | "elder" | "child" | "robot";
 
 export interface PixelHistoryData {

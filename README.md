@@ -310,7 +310,8 @@ Instead, report it responsibly via email to **hi@lifesimgrid.org**. Our core eng
 
 - [x] **Topic Clusters SEO Architecture**: 4 dedicated sub-pages targeting vertical keywords with JSON-LD structured data, semantic HTML, and internal link network.
 - [x] **Semantic HTML & Accessibility**: `<details>`/`<summary>` FAQ accordions, `<ol>`/`<li>` step lists, `aria-labelledby` sections, `aria-live` loading states, print-optimized layouts.
-- [x] **Official Game Terminology Alignment**: All 10 locales use correct in-game terms (マイデザイン, PROデザイン, タヌポータル, 我的設計, 朋友聚會 新生活, etc.).
+- [x] **Official Game Terminology Alignment**: All 10 locales use correct in-game terms (マイデザイン, PROデザイン, タヌポータル, 我的設計, 朋友聚會 新生活, 커스텀 디자인, 프로 디자인, etc.).
+- [x] **Full 10-Language Localization Quality Audit**: All 8 non-en/de locale files audited and corrected against en/de baselines — technical entity words kept in English (European languages), official game terminology enforced (Asian languages), information density parity achieved, legal disclaimers standardized (448 keys per file, all validated).
 - [ ] **PWA Support**: Full Progressive Web App capability offering 100% offline functionality via custom Service Worker caching.
 - [ ] **Dark Mode Toggle**: Fluid, system-adaptive dark theme implementation utilizing Tailwind CSS atomic styling.
 - [ ] **Expanded Localization**: Additional i18n locale integrations covering `pt-BR`, `ru`, `th`, and `vi`.

@@ -2,6 +2,7 @@
   "Navbar": {
     "title": "LifeSimGrid 🎮",
     "privacyHint": "🔒 100% Veilig & Client-Side: Alles draait lokaal in je browser. We uploaden je afbeeldingen of gamegegevens nooit.",
+    "privacyShort": "100% Client-Side",
     "toolAcnh": "ACNH Pixelstudio",
     "toolMii": "Mii QR-ontgrendelaar",
     "toolVoice": "Tomodachi Stemlab",
@@ -48,7 +49,18 @@
     "zoomOut": "Uitzoomen",
     "zoomReset": "Zoom Resetten",
     "estimatedTime": "Geschatte Rendertijd",
-    "maxFileSizeExceeded": "Bestand te groot (max. {size}). Gebruik een kleinere gameafbeelding voor optimale prestaties."
+    "maxFileSizeExceeded": "Bestand te groot (max. {size}). Gebruik een kleinere gameafbeelding voor optimale prestaties.",
+    "universalTitle": "Universele Pixelraster Converter",
+    "universalDensity": "Raster Detaildichtheid",
+    "density16": "16×16 (14px Grote Kralen)",
+    "density128": "128×128 (2px Fijn Detail)",
+    "universalDownloadBtn": "Pixelraster Sjabloon Downloaden",
+    "universalCanvasPreset": "Canvas Beeldverhouding",
+    "universalPresetSquare": "Vierkant (1:1)",
+    "universalPresetBook": "Portret (2:3)",
+    "universalPresetWide": "Breedbeeld (16:9)",
+    "universalColorPalette": "Pixel Kleurenpalet (Verf op Nummer)",
+    "universalHint": "Tip: Het contrast verhogen maakt pixelranden scherper voor fysiek knutselen zoals Perler Beads en Kruissteek!"
   },
   "AvatarEditor": {
     "title": "Mii QR-code Editor & FFL-protocol Machtigingsontgrendelaar",
@@ -388,7 +400,8 @@
     "exploreOtherTools": "Verken Andere Tools",
     "exploreQr": "Mii QR Ontgrendelaar →",
     "exploreVoice": "Tomodachi Stemlab →",
-    "explorePixelGrid": "Algemene Pixelraster Studio →"
+    "explorePixelGrid": "Algemene Pixelraster Studio →",
+    "privacyBadge": "🔒 100% Client-Side & Serverless — Alle afbeeldingsverwerking wordt volledig uitgevoerd in je browser via HTML5 Canvas. Geen backend-databases, geen uploads. Je designs en auteursrechten zijn volledig beschermd."
   },
   "MiiQrUnlocker": {
     "metaTitle": "Mii QR-Code Ontgrendelaar - Los 'Kan Niet Worden Bewerkt' Fout Online Op",
@@ -422,7 +435,8 @@
     "exploreOtherTools": "Verken Andere Tools",
     "exploreAcnh": "ACNH Pixel Studio →",
     "exploreVoice": "Tomodachi Stemlab →",
-    "explorePixelGrid": "Algemene Pixelraster Studio →"
+    "explorePixelGrid": "Algemene Pixelraster Studio →",
+    "privacyBadge": "🔒 100% Client-Side & Serverless — Alle Mii FFL binaire parsing en QR-generatie wordt volledig uitgevoerd in je browser via jsQR. Geen backend-databases, geen uploads. Je avatar-gegevens en privacy zijn volledig beschermd."
   },
   "TomodachiVoiceLabPage": {
     "metaTitle": "Tomodachi Life Stemcalculator & Compatibiliteitscontrole",
@@ -457,7 +471,19 @@
     "exploreOtherTools": "Verken Andere Tools",
     "exploreAcnh": "ACNH Pixel Studio →",
     "exploreQr": "Mii QR Ontgrendelaar →",
-    "explorePixelGrid": "Algemene Pixelraster Studio →"
+    "explorePixelGrid": "Algemene Pixelraster Studio →",
+    "personalitySubtypesTitle": "De 16 Persoonlijkheidssubtypen",
+    "subtypeOutgoing": "Uitgaand: Leider, Entertainer, Trendsetter, Optimist — Energieke en sociale karakters die bloeien in interactie.",
+    "subtypeConfident": "Zelfverzekerd: Ontwerper, Avonturier, Doorzetter, Charmeur — Moedige en zelfverzekerde karakters die het voortouw nemen.",
+    "subtypeIndependent": "Onafhankelijk: Kunstenaar, Vrije Geest, Denker, Eenling — Creatieve en zelfstandige karakters die autonomie waarderen.",
+    "subtypeEasygoing": "Gemoedelijk: Dromer, Liefhebber, Zachtmoedige, Maatje — Zachte en zorgzame karakters die harmonie prioriteren.",
+    "techTitle": "Hoe Het Werkt: Technische Diepte-analyse",
+    "techAudioTitle": "Procedurele Audiosynthese",
+    "techAudioDesc": "Het Stemlab gebruikt de native Web Audio API van de browser om wiskundige oscillatoren dynamisch in realtime te genereren. In plaats van auteursrechtelijke, bemonsterde game-geluidseffecten af te spelen, combineert elk stempreset een specifieke oscillatorgolfvorm (zaagtand of blokgolf), basisfrequentie, filtercutoff en amplitude-envelope om de nostalgische 8-bit chiptune-stijl te recreëren. Het Oudere-preset integreert een Vibrato LFO (5Hz) voor een trillend effect, terwijl het Robot-preset een blokgolf gebruikt met nul attack/release voor een mechanisch geluid.",
+    "techCompatTitle": "De 12×12 Dierenriem Compatibiliteitsformule",
+    "techCompatDesc": "Onze compatibiliteitssimulator kruisverwijst de klassieke 12×12 astrologische dierenriemkaart van het spel (50% gewicht) met de 16-persoonlijkheidscomplementmatrix (50% gewicht) om de uiteindelijke lotsindex te berekenen. Complementaire kwadrant-koppelingen (bijv. Uitgaand + Onafhankelijk) versterken de Romantiek Lotswaarderingen, terwijl koppels uit dezelfde groep de Vriendschapsharmonie-scores maximaliseren.",
+    "shareCta": "Een absolute zielverwant of een chaotisch rivalen-match ontdekt? Kopieer je Relatieklassement-resultaten en deel je eilanddrama op Reddit (r/tomodachilife) of TikTok!",
+    "privacyBadge": "🔒 100% Client-Side & Serverless — Alle stemsynthese en compatibiliteitsberekeningen worden volledig uitgevoerd in je browser via Web Audio API. Geen backend-databases, geen uploads. Je eilandroster wordt lokaal opgeslagen via localStorage met nul server-tracking."
   },
   "PixelGridStudio": {
     "metaTitle": "Afbeelding naar Pixel Art Converter - Gratis Online Pixelraster Generator",
@@ -487,6 +513,13 @@
     "exploreOtherTools": "Verken Andere Tools",
     "exploreAcnh": "ACNH Pixel Studio →",
     "exploreQr": "Mii QR Ontgrendelaar →",
-    "exploreVoice": "Tomodachi Stemlab →"
+    "exploreVoice": "Tomodachi Stemlab →",
+    "techTitle": "Hoe Het Werkt: Afbeeldingsalgoritme Diepte-analyse",
+    "techDitheringTitle": "Foutdiffusie-Dithering",
+    "techDitheringDesc": "Bij het reduceren van een afbeelding naar een beperkt kleurenpalet past onze engine error-diffusion dithering toe om pixels van verschillende kleuren strategisch te interleven. Deze techniek simuleert vloeiende kleurovergangen zelfs bij lage resoluties zoals 32×32, en voorkomt het vlakke, gebandeerde uiterlijk dat eenvoudige kleurkwantisering produceert. Het resultaat is een pixelraster dat visuele diepte en detail behoudt ver voorbij wat de resolutie normaal zou toelaten.",
+    "techColorTitle": "Euclidische Afstand Kleurmatch",
+    "techColorDesc": "Ons algoritme berekent de Euclidean distance tussen de RGB-waarde van elke pixel en elke kleur in het doelpalet, en selecteert de dichtstbijzijnde overeenkomst. Wanneer het 32-kleuren retro gamepalet actief is, mapt deze wiskundige formule miljoenen invoerkleuren naar de dichtstbijzijnde vintage consolekleur — wat zorgt voor nauwkeurige, consistente resultaten elke keer zonder gebruik van eigendomlijke kleurgegevens.",
+    "printTip": "🖨️ Printoptimalisatie: Deze pagina ondersteunt native browser-afdrukken (Ctrl+P). Het verbergt automatisch de bedieningspanelen en geeft je een schoon, genummerd papierraster-blauwdruk perfect geoptimaliseerd voor kruissteek-tracering of offline knutselen!",
+    "privacyBadge": "🔒 100% Client-Side & Serverless — Alle afbeeldingsverwerking wordt volledig uitgevoerd in je browser via HTML5 Canvas. Geen backend-databases, geen uploads. Je afbeeldingen en creatieve werk zijn volledig beschermd."
   }
 }

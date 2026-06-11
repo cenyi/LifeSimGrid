@@ -2,6 +2,7 @@
   "Navbar": {
     "title": "LifeSimGrid 🎮",
     "privacyHint": "🔒 100% Seguro y del lado del cliente: Todo se ejecuta localmente en tu navegador. Nunca subimos tus imágenes ni datos de juego.",
+    "privacyShort": "100% Client-Side",
     "toolAcnh": "Estudio de Píxeles ACNH",
     "toolMii": "Desbloqueador QR Mii",
     "toolVoice": "Laboratorio de Voz Tomodachi",
@@ -48,7 +49,18 @@
     "zoomOut": "Alejar Zoom",
     "zoomReset": "Restablecer Zoom",
     "estimatedTime": "Tiempo Est. de Renderizado",
-    "maxFileSizeExceeded": "Archivo demasiado grande (máx. {size}). Usa una imagen de juego más pequeña para un rendimiento óptimo."
+    "maxFileSizeExceeded": "Archivo demasiado grande (máx. {size}). Usa una imagen de juego más pequeña para un rendimiento óptimo.",
+    "universalTitle": "Convertidor Universal de Cuadrícula de Píxeles",
+    "universalDensity": "Densidad de Detalle de Cuadrícula",
+    "density16": "16×16 (14px Cuentas Grandes)",
+    "density128": "128×128 (2px Detalle Fino)",
+    "universalDownloadBtn": "Descargar Plantilla de Cuadrícula de Píxeles",
+    "universalCanvasPreset": "Relación de Aspecto del Lienzo",
+    "universalPresetSquare": "Cuadrado (1:1)",
+    "universalPresetBook": "Retrato (2:3)",
+    "universalPresetWide": "Pantalla Panorámica (16:9)",
+    "universalColorPalette": "Paleta de Colores de Píxeles (Pintar por Números)",
+    "universalHint": "Consejo: Aumentar el contraste hace que los bordes de los píxeles sean más nítidos para manualidades físicas como Perler Beads y Cross Stitch!"
   },
   "AvatarEditor": {
     "title": "Editor de Código QR de Mii y Desbloqueador de Permisos del Protocolo FFL",
@@ -388,7 +400,8 @@
     "exploreOtherTools": "Explorar Otras Herramientas",
     "exploreQr": "Desbloqueador QR de Mii →",
     "exploreVoice": "Laboratorio de Voz Tomodachi →",
-    "explorePixelGrid": "Estudio de Cuadrícula de Píxeles General →"
+    "explorePixelGrid": "Estudio de Cuadrícula de Píxeles General →",
+    "privacyBadge": "🔒 100% del Lado del Cliente y Sin Servidor — Todo el procesamiento de imágenes se ejecuta completamente en tu navegador vía HTML5 Canvas. Sin bases de datos backend, sin subidas. Tus diseños y derechos de autor están completamente protegidos."
   },
   "MiiQrUnlocker": {
     "metaTitle": "Desbloqueador de Código QR Mii - Corrige el Error 'No Puede Ser Editado' Online",
@@ -422,7 +435,8 @@
     "exploreOtherTools": "Explorar Otras Herramientas",
     "exploreAcnh": "Estudio de Píxeles ACNH →",
     "exploreVoice": "Laboratorio de Voz Tomodachi →",
-    "explorePixelGrid": "Estudio de Cuadrícula de Píxeles General →"
+    "explorePixelGrid": "Estudio de Cuadrícula de Píxeles General →",
+    "privacyBadge": "🔒 100% del Lado del Cliente y Sin Servidor — Todo el análisis binario FFL de Mii y la generación de QR se ejecutan completamente en tu navegador vía jsQR. Sin bases de datos backend, sin subidas. Tus datos de avatar y privacidad están completamente protegidos."
   },
   "TomodachiVoiceLabPage": {
     "metaTitle": "Calculadora de Voz y Compatibilidad de Tomodachi Life",
@@ -457,7 +471,19 @@
     "exploreOtherTools": "Explorar Otras Herramientas",
     "exploreAcnh": "Estudio de Píxeles ACNH →",
     "exploreQr": "Desbloqueador QR de Mii →",
-    "explorePixelGrid": "Estudio de Cuadrícula de Píxeles General →"
+    "explorePixelGrid": "Estudio de Cuadrícula de Píxeles General →",
+    "personalitySubtypesTitle": "Los 16 Subtipos de Personalidad",
+    "subtypeOutgoing": "Extrovertido: Líder, Animador, Trendsetter, Optimista — Personajes enérgicos y sociales que prosperan en la interacción.",
+    "subtypeConfident": "Seguro: Diseñador, Aventurero, Emprendedor, Encantador — Personajes audaces y seguros de sí mismos que toman la iniciativa.",
+    "subtypeIndependent": "Independiente: Artista, Espíritu Libre, Pensador, Lobo Solitario — Personajes creativos y autosuficientes que valoran la autonomía.",
+    "subtypeEasygoing": "Tranquilo: Soñador, Cariñoso, Sensible, Compañero — Personajes gentiles y afectuosos que priorizan la armonía.",
+    "techTitle": "Cómo Funciona: Análisis Técnico en Profundidad",
+    "techAudioTitle": "Síntesis de Audio Procedural",
+    "techAudioDesc": "El Laboratorio de Voz utiliza la Web Audio API nativa del navegador para generar osciladores matemáticos dinámicamente en tiempo real. En lugar de reproducir efectos de sonido de juego con derechos de autor muestreados, cada preset de voz mezcla una forma de onda de oscilador específica (diente de sierra u onda cuadrada), frecuencia base, corte de filtro y envolvente de amplitud para recrear el nostálgico estilo chiptune de 8 bits. El preset de Anciano integra un Vibrato LFO (5Hz) para un efecto tembloroso, mientras que el preset de Robot usa una onda cuadrada con ataque/liberación cero para un sonido mecánico.",
+    "techCompatTitle": "La Fórmula de Compatibilidad Zodiacal 12×12",
+    "techCompatDesc": "Nuestro simulador de compatibilidad hace referencia cruzada de la carta astrológica de zodiaco 12×12 clásica del juego (50% de peso) con la matriz de complementariedad de 16 personalidades (50% de peso) para calcular el índice de destino final. Las parejas de cuadrantes complementarios (ej., Extrovertido + Independiente) potencian las Calificaciones de Destino Romántico, mientras que las parejas del mismo grupo maximizan las puntuaciones de Armonía de Amistad.",
+    "shareCta": "¿Descubriste un alma gemela absoluta o una pareja rival caótica? ¡Copia los resultados de tu Tabla de Relaciones y comparte el drama de tu isla en Reddit (r/tomodachilife) o TikTok!",
+    "privacyBadge": "🔒 100% del Lado del Cliente y Sin Servidor — Toda la síntesis de voz y los cálculos de compatibilidad se ejecutan completamente en tu navegador vía Web Audio API. Sin bases de datos backend, sin subidas. Tu lista de isleños se almacena localmente vía localStorage con cero rastreo de servidor."
   },
   "PixelGridStudio": {
     "metaTitle": "Convertidor de Imagen a Arte de Píxeles - Generador de Cuadrícula de Píxeles Online Gratuito",
@@ -487,6 +513,13 @@
     "exploreOtherTools": "Explorar Otras Herramientas",
     "exploreAcnh": "Estudio de Píxeles ACNH →",
     "exploreQr": "Desbloqueador QR de Mii →",
-    "exploreVoice": "Laboratorio de Voz Tomodachi →"
+    "exploreVoice": "Laboratorio de Voz Tomodachi →",
+    "techTitle": "Cómo Funciona: Análisis del Algoritmo de Imagen en Profundidad",
+    "techDitheringTitle": "Tramado de Difusión de Error",
+    "techDitheringDesc": "Al reducir una imagen a una paleta de colores limitada, nuestro motor aplica error-diffusion dithering para intercalar estratégicamente píxeles de diferentes colores. Esta técnica simula gradientes de color suaves incluso a bajas resoluciones como 32×32, evitando la apariencia plana y bandeada que produce la cuantización de color simple. El resultado es una cuadrícula de píxeles que retiene profundidad visual y detalle mucho más allá de lo que su resolución permitiría normalmente.",
+    "techColorTitle": "Correspondencia de Color por Distancia Euclidiana",
+    "techColorDesc": "Nuestro algoritmo calcula la Euclidean distance entre el valor RGB de cada píxel y cada color de la paleta objetivo, seleccionando la coincidencia más cercana. Cuando la paleta retro de 32 colores está activa, esta fórmula matemática mapea millones de colores de entrada al color de consola vintage más cercano — asegurando resultados precisos y consistentes cada vez sin utilizar ningún dato de color propietario.",
+    "printTip": "🖨️ Optimización de Impresión: Esta página soporta la impresión nativa del navegador (Ctrl+P). Oculta automáticamente los paneles de control, dándote un plano de cuadrícula de papel numerado limpio y perfectamente optimizado para trazado de punto de cruz o manualidades offline.",
+    "privacyBadge": "🔒 100% del Lado del Cliente y Sin Servidor — Todo el procesamiento de imágenes se ejecuta completamente en tu navegador vía HTML5 Canvas. Sin bases de datos backend, sin subidas. Tus imágenes y trabajo creativo están completamente protegidos."
   }
 }

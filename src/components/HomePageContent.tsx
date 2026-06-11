@@ -27,6 +27,7 @@ const TAB_HASH_MAP: Record<TabKey, string> = {
 
 export default function HomePageContent() {
   const t = useTranslations("Hero");
+  const nt = useTranslations("Navbar");
   const ft = useTranslations("FeatureSection");
   const [activeTab, setActiveTab] = useState<TabKey>("pixel");
 
@@ -81,6 +82,13 @@ export default function HomePageContent() {
           </p>
         </section>
 
+        <div className="mx-auto max-w-4xl px-4 pb-4">
+          <div className="flex items-center justify-center gap-2 rounded-full border border-green-100 bg-green-50 px-4 py-2 text-xs font-medium text-green-700 sm:text-sm">
+            <ShieldCheck className="h-4 w-4 shrink-0 text-green-600" />
+            <span>{nt("privacyHint")}</span>
+          </div>
+        </div>
+
         <section className="mx-auto max-w-6xl px-4 pb-4">
           <div className="flex flex-wrap justify-center gap-3">
             {tabs.map((tab) => (
@@ -108,9 +116,9 @@ export default function HomePageContent() {
         </section>
 
         {/* Feature Section - CTA Cards */}
-        <section className="mx-auto max-w-6xl px-4 py-12">
+        <section aria-labelledby="feature-title" className="mx-auto max-w-6xl px-4 py-12">
           <div className="mb-8 text-center">
-            <h2 className="font-mono text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl">
+            <h2 id="feature-title" className="font-mono text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl">
               {ft("title")}
             </h2>
             <p className="mx-auto mt-3 max-w-2xl text-base text-gray-600">
@@ -162,10 +170,10 @@ export default function HomePageContent() {
         </section>
 
         {/* Trust & Privacy Section */}
-        <section className="mx-auto max-w-6xl px-4 py-10">
+        <section aria-labelledby="trust-title" className="mx-auto max-w-6xl px-4 py-10">
           <div className="rounded-3xl bg-green-50 p-6 sm:p-8">
             <div className="mb-6 text-center">
-              <h2 className="font-mono text-2xl font-bold text-gray-900 sm:text-3xl">
+              <h2 id="trust-title" className="font-mono text-2xl font-bold text-gray-900 sm:text-3xl">
                 🔒 {ft("trustTitle")}
               </h2>
               <p className="mx-auto mt-3 max-w-2xl text-base text-gray-600">

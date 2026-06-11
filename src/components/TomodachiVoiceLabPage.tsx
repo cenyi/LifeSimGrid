@@ -18,6 +18,15 @@ export default function TomodachiVoiceLabPage() {
     { q: t("faq4Q"), a: t("faq4A") },
   ];
 
+  /** Wraps technical terms in <code> tags for SEO and visual emphasis */
+  const renderTechDesc = (text: string) => {
+    return text
+      .replace(/(Web Audio API)/g, '<code class="rounded bg-gray-100 px-1 py-0.5 text-sm font-mono">$1</code>')
+      .replace(/(Vibrato LFO)/g, '<code class="rounded bg-gray-100 px-1 py-0.5 text-sm font-mono">$1</code>')
+      .replace(/(12×12 astrological zodiac chart)/gi, '<code class="rounded bg-gray-100 px-1 py-0.5 text-sm font-mono">$1</code>')
+      .replace(/(16-personality complement matrix)/gi, '<code class="rounded bg-gray-100 px-1 py-0.5 text-sm font-mono">$1</code>');
+  };
+
   return (
     <div className="flex min-h-screen flex-col">
       <Navbar />
@@ -61,9 +70,6 @@ export default function TomodachiVoiceLabPage() {
         />
         {/* Hero */}
         <section className="mx-auto max-w-6xl px-4 pt-10 pb-6 text-center">
-          <Link href="/" className="mb-4 inline-block text-sm font-medium text-island-blue hover:underline">
-            {t("backToHome")}
-          </Link>
           <h1 className="font-mono text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl md:text-5xl">
             {t("title")}
           </h1>
@@ -97,6 +103,22 @@ export default function TomodachiVoiceLabPage() {
             ))}
           </div>
           <p className="mt-4 leading-relaxed text-gray-600">{t("personalityDetail")}</p>
+          {/* 16 Personality Sub-types List */}
+          <div className="mt-6 rounded-2xl border border-gray-100 bg-white p-5 shadow-sm">
+            <h3 className="mb-3 font-mono text-lg font-bold text-gray-900">{t("personalitySubtypesTitle")}</h3>
+            <div className="grid gap-3 sm:grid-cols-2">
+              {[
+                { key: "subtypeOutgoing", bg: "bg-amber-50" },
+                { key: "subtypeConfident", bg: "bg-red-50" },
+                { key: "subtypeIndependent", bg: "bg-purple-50" },
+                { key: "subtypeEasygoing", bg: "bg-green-50" },
+              ].map((item, i) => (
+                <div key={i} className={`rounded-xl p-3 ${item.bg}`}>
+                  <p className="text-sm leading-relaxed text-gray-700">{t(item.key)}</p>
+                </div>
+              ))}
+            </div>
+          </div>
         </section>
 
         {/* Voice Guide */}
@@ -115,6 +137,25 @@ export default function TomodachiVoiceLabPage() {
           </div>
         </section>
 
+        {/* Technical Deep Dive */}
+        <section aria-labelledby="tech-title" className="mx-auto max-w-6xl px-4 py-8">
+          <div className="rounded-3xl bg-blue-50 p-6 sm:p-8">
+            <h2 id="tech-title" className="mb-6 font-mono text-2xl font-bold text-gray-900 sm:text-3xl">
+              {t("techTitle")}
+            </h2>
+            <div className="space-y-4">
+              <div className="rounded-2xl border border-blue-100 bg-white p-5 shadow-sm">
+                <h3 className="mb-2 font-mono text-lg font-bold text-gray-900">{t("techAudioTitle")}</h3>
+                <p className="leading-relaxed text-gray-700" dangerouslySetInnerHTML={{ __html: renderTechDesc(t("techAudioDesc")) }} />
+              </div>
+              <div className="rounded-2xl border border-blue-100 bg-white p-5 shadow-sm">
+                <h3 className="mb-2 font-mono text-lg font-bold text-gray-900">{t("techCompatTitle")}</h3>
+                <p className="leading-relaxed text-gray-700" dangerouslySetInnerHTML={{ __html: renderTechDesc(t("techCompatDesc")) }} />
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Share */}
         <section aria-labelledby="share-title" className="mx-auto max-w-6xl px-4 py-8">
           <div className="rounded-3xl bg-green-50 p-6 sm:p-8">
@@ -122,6 +163,16 @@ export default function TomodachiVoiceLabPage() {
               {t("shareTitle")}
             </h2>
             <p className="leading-relaxed text-gray-700">{t("shareText")}</p>
+            <p className="mt-3 text-sm font-medium text-green-700">{t("shareCta")}</p>
+          </div>
+        </section>
+
+        {/* Privacy Badge */}
+        <section aria-labelledby="privacy-title" className="mx-auto max-w-6xl px-4 py-6">
+          <div className="rounded-2xl bg-green-50 p-5 text-center">
+            <h2 id="privacy-title" className="text-base font-semibold text-green-700 sm:text-lg">
+              {t("privacyBadge")}
+            </h2>
           </div>
         </section>
 

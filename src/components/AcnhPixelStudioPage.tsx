@@ -61,9 +61,6 @@ export default function AcnhPixelStudioPage() {
         />
         {/* Hero */}
         <section className="mx-auto max-w-6xl px-4 pt-10 pb-6 text-center">
-          <Link href="/" className="mb-4 inline-block text-sm font-medium text-island-blue hover:underline">
-            {t("backToHome")}
-          </Link>
           <h1 className="font-mono text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl md:text-5xl">
             {t("title")}
           </h1>
@@ -130,6 +127,15 @@ export default function AcnhPixelStudioPage() {
                 <p className="px-5 pb-4 leading-relaxed text-gray-600">{faq.a}</p>
               </details>
             ))}
+          </div>
+        </section>
+
+        {/* Privacy Badge */}
+        <section aria-labelledby="privacy-title" className="mx-auto max-w-6xl px-4 py-6">
+          <div className="rounded-2xl bg-green-50 p-5 text-center">
+            <h2 id="privacy-title" className="text-base font-semibold text-green-700 sm:text-lg">
+              {t("privacyBadge")}
+            </h2>
           </div>
         </section>
 

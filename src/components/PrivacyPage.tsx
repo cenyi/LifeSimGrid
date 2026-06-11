@@ -21,8 +21,8 @@ export default function PrivacyPage() {
     <div className="flex min-h-screen flex-col">
       <Navbar />
       <main className="flex-1">
-        <section className="mx-auto max-w-4xl px-4 py-12">
-          <h1 className="mb-2 font-mono text-3xl font-bold text-gray-900 sm:text-4xl">
+        <section aria-labelledby="privacy-heading" className="mx-auto max-w-4xl px-4 py-12">
+          <h1 id="privacy-heading" className="mb-2 font-mono text-3xl font-bold text-gray-900 sm:text-4xl">
             {t("title")}
           </h1>
           <p className="mb-2 text-sm text-gray-400">{t("lastUpdated")}</p>

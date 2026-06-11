@@ -2,6 +2,7 @@
   "Navbar": {
     "title": "LifeSimGrid 🎮",
     "privacyHint": "🔒 100 % Sicher & Clientseitig: Die gesamte Verarbeitung erfolgt lokal in Ihrem Browser. Wir laden Ihre Bilder oder Spieldaten niemals hoch.",
+    "privacyShort": "100% Client-seitig",
     "toolAcnh": "ACNH Pixel-Studio",
     "toolMii": "Mii QR-Entsperrer",
     "toolVoice": "Tomodachi Sprachlabor",
@@ -48,7 +49,18 @@
     "zoomOut": "Verkleinern",
     "zoomReset": "Zoom zurücksetzen",
     "estimatedTime": "Geschätzte Renderzeit",
-    "maxFileSizeExceeded": "Datei zu groß (max. {size}). Bitte verwenden Sie ein kleineres Spiel-Bild für optimale Leistung."
+    "maxFileSizeExceeded": "Datei zu groß (max. {size}). Bitte verwenden Sie ein kleineres Spiel-Bild für optimale Leistung.",
+    "universalTitle": "Universeller Pixelraster-Konverter",
+    "universalDensity": "Raster-Detaildichte",
+    "density16": "16×16 (14px Große Perlen)",
+    "density128": "128×128 (2px Feines Detail)",
+    "universalDownloadBtn": "Pixelraster-Vorlage herunterladen",
+    "universalCanvasPreset": "Leinwand-Seitenverhältnis",
+    "universalPresetSquare": "Quadratisch (1:1)",
+    "universalPresetBook": "Hochformat (2:3)",
+    "universalPresetWide": "Breitbild (16:9)",
+    "universalColorPalette": "Pixel-Farbpalette (Malen nach Zahlen)",
+    "universalHint": "Tipp: Erhöhen des Kontrasts macht Pixelgrenzen schärfer für physisches Basteln wie Perler Beads und Kreuzstich!"
   },
   "AvatarEditor": {
     "title": "Mii QR-Code Editor & Kopiersperre Freischalter (FFL Decoder)",
@@ -388,7 +400,8 @@
     "exploreOtherTools": "Andere Tools erkunden",
     "exploreQr": "Mii QR-Entsperrer →",
     "exploreVoice": "Tomodachi Sprachlabor →",
-    "explorePixelGrid": "Universelles Pixel-Grid-Studio →"
+    "explorePixelGrid": "Universelles Pixel-Grid-Studio →",
+    "privacyBadge": "🔒 100% Clientseitig & Serverless — Die gesamte Bildverarbeitung läuft vollständig in Ihrem Browser über HTML5 Canvas. Keine Backend-Datenbanken, keine Uploads. Ihre Designs und Urheberrechte sind vollständig geschützt."
   },
   "MiiQrUnlocker": {
     "metaTitle": "Mii QR-Code-Entsperrer - »Kann nicht bearbeitet werden« Fehler online beheben",
@@ -422,7 +435,8 @@
     "exploreOtherTools": "Andere Tools erkunden",
     "exploreAcnh": "ACNH Pixel-Studio →",
     "exploreVoice": "Tomodachi Sprachlabor →",
-    "explorePixelGrid": "Universelles Pixel-Grid-Studio →"
+    "explorePixelGrid": "Universelles Pixel-Grid-Studio →",
+    "privacyBadge": "🔒 100% Clientseitig & Serverless — Das gesamte Mii FFL-Binärparsing und die QR-Generierung laufen vollständig in Ihrem Browser über jsQR. Keine Backend-Datenbanken, keine Uploads. Ihre Avatar-Daten und Privatsphäre sind vollständig geschützt."
   },
   "TomodachiVoiceLabPage": {
     "metaTitle": "Tomodachi Life Stimmen-Rechner & Kompatibilitäts-Checker",
@@ -457,7 +471,19 @@
     "exploreOtherTools": "Andere Tools erkunden",
     "exploreAcnh": "ACNH Pixel-Studio →",
     "exploreQr": "Mii QR-Entsperrer →",
-    "explorePixelGrid": "Universelles Pixel-Grid-Studio →"
+    "explorePixelGrid": "Universelles Pixel-Grid-Studio →",
+    "personalitySubtypesTitle": "Die 16 Persönlichkeits-Subtypen",
+    "subtypeOutgoing": "Extrovertiert: Anführer, Entertainer, Trendsetter, Optimist — Energische und soziale Charaktere, die in der Interaktion aufblühen.",
+    "subtypeConfident": "Selbstbewusst: Designer, Abenteurer, Macher, Charmeur — Mutige und selbstsichere Charaktere, die die Führung übernehmen.",
+    "subtypeIndependent": "Unabhängig: Künstler, Freigeist, Denker, Einzelgänger — Kreative und eigenständige Charaktere, die Autonomie schätzen.",
+    "subtypeEasygoing": "Entspannt: Träumer, Herzensmensch, Weichling, Kumpel — Sanfte und fürsorgliche Charaktere, die Harmonie priorisieren.",
+    "techTitle": "Wie Es Funktioniert: Technischer Deep Dive",
+    "techAudioTitle": "Prozedurale Audiosynthese",
+    "techAudioDesc": "Das Sprachlabor nutzt die native Web Audio API des Browsers, um mathematische Oszillatoren dynamisch in Echtzeit zu erzeugen. Anstatt urheberrechtlich geschützte, gesampelte Spiele-Soundeffekte abzuspielen, kombiniert jedes Sprachpreset eine spezifische Oszillator-Wellenform (Sägezahn oder Rechteckwelle), Basisfrequenz, Filter-Cutoff und Amplitudenhüllkurve, um den nostalgischen 8-Bit-Chiptune-Stil zu recreieren. Das Ältere-Preset integriert ein Vibrato LFO (5 Hz) für einen zitternden Effekt, während das Roboter-Preset eine Rechteckwelle mit null Attack/Release für einen mechanischen Sound verwendet.",
+    "techCompatTitle": "Die 12×12 Tierkreiszeichen-Kompatibilitätsformel",
+    "techCompatDesc": "Unser Kompatibilitätssimulator kreuzreferenziert die klassische 12×12 astrologische Tierkreiszeichentabelle des Spiels (50 % Gewichtung) mit der 16-Persönlichkeits-Komplementärmatrix (50 % Gewichtung), um den endgültigen Schicksalsindex zu berechnen. Komplementäre Quadranten-Paarungen (z. B. Extrovertiert + Unabhängig) steigern die Romantik-Schicksalsbewertungen, während gleichgruppige Paarungen die Freundschafts-Harmonie-Scores maximieren.",
+    "shareCta": "Ein absolutes Seelenverwandten-Paar oder ein chaotisches Rivalen-Match entdeckt? Kopieren Sie Ihre Beziehungs-Rangliste-Ergebnisse und teilen Sie Ihr Inseldrama auf Reddit (r/tomodachilife) oder TikTok!",
+    "privacyBadge": "🔒 100% Clientseitig & Serverless — Die gesamte Sprachsynthese und Kompatibilitätsberechnung läuft vollständig in Ihrem Browser über Web Audio API. Keine Backend-Datenbanken, keine Uploads. Ihr Inselroster wird lokal über localStorage gespeichert mit null Server-Tracking."
   },
   "PixelGridStudio": {
     "metaTitle": "Bild-zu-Pixel-Art-Konverter - Kostenloses Online-Pixelraster-Generator",
@@ -487,6 +513,13 @@
     "exploreOtherTools": "Andere Tools erkunden",
     "exploreAcnh": "ACNH Pixel-Studio →",
     "exploreQr": "Mii QR-Entsperrer →",
-    "exploreVoice": "Tomodachi Sprachlabor →"
+    "exploreVoice": "Tomodachi Sprachlabor →",
+    "techTitle": "Wie Es Funktioniert: Bildalgorithmus Deep Dive",
+    "techDitheringTitle": "Fehlerdiffusions-Dithering",
+    "techDitheringDesc": "Beim Reduzieren eines Bildes auf eine begrenzte Farbpalette wendet unsere Engine error-diffusion dithering an, um Pixel unterschiedlicher Farben strategisch zu verschachteln. Diese Technik simuliert sanfte Farbverläufe selbst bei niedrigen Auflösungen wie 32×32 und verhindert das flache, gebänderte Erscheinungsbild, das einfache Farbquantisierung erzeugt. Das Ergebnis ist ein Pixelraster, das visuelle Tiefe und Details weit über das hinaus behält, was seine Auflösung normalerweise zulassen würde.",
+    "techColorTitle": "Euklidische-Distanz-Farbabgleich",
+    "techColorDesc": "Unser Algorithmus berechnet die Euclidean distance zwischen dem RGB-Wert jedes Pixels und jeder Farbe in der Zielpalette und wählt die nächstgelegene Übereinstimmung aus. Wenn die 32-Farben-Retro-Gaming-Palette aktiv ist, bildet diese mathematische Formel Millionen von Eingabefarben auf die nächstgelegene Vintage-Konsolenfarbe ab — und sorgt für genaue, konsistente Ergebnisse bei jeder Verwendung ohne Nutzung proprietärer Farbdaten.",
+    "printTip": "🖨️ Druckoptimierung: Diese Seite unterstützt natives Browser-Drucken (Strg+P). Sie blendet automatisch die Steuerungspanels aus und gibt Ihnen einen sauberen, nummerierten Papierraster-Plan, der perfekt für Kreuzstich-Nachzeichnung oder Offline-Basteln optimiert ist!",
+    "privacyBadge": "🔒 100% Clientseitig & Serverless — Die gesamte Bildverarbeitung läuft vollständig in Ihrem Browser über HTML5 Canvas. Keine Backend-Datenbanken, keine Uploads. Ihre Bilder und kreativen Arbeiten sind vollständig geschützt."
   }
 }

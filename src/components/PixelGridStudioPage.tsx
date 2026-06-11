@@ -18,6 +18,13 @@ export default function PixelGridStudioPage() {
     { q: t("faq4Q"), a: t("faq4A") },
   ];
 
+  /** Wraps technical terms in <code> tags for SEO and visual emphasis */
+  const renderTechDesc = (text: string) => {
+    return text
+      .replace(/(error-diffusion dithering)/gi, '<code class="rounded bg-gray-100 px-1 py-0.5 text-sm font-mono">$1</code>')
+      .replace(/(Euclidean distance)/gi, '<code class="rounded bg-gray-100 px-1 py-0.5 text-sm font-mono">$1</code>');
+  };
+
   return (
     <div className="flex min-h-screen flex-col">
       <div className="print:hidden"><Navbar /></div>
@@ -61,9 +68,6 @@ export default function PixelGridStudioPage() {
         />
         {/* Hero */}
         <section className="mx-auto max-w-6xl px-4 pt-10 pb-6 text-center">
-          <Link href="/" className="mb-4 inline-block text-sm font-medium text-island-blue hover:underline print:hidden">
-            {t("backToHome")}
-          </Link>
           <h1 className="font-mono text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl md:text-5xl">
             {t("title")}
           </h1>
@@ -75,7 +79,7 @@ export default function PixelGridStudioPage() {
         {/* Tool */}
         <section className="mx-auto max-w-6xl px-4 py-6">
           <div className="rounded-2xl border border-gray-100 bg-white p-4 shadow-md sm:p-8">
-            <PixelStudio />
+            <PixelStudio mode="universal" />
           </div>
         </section>
 
@@ -110,6 +114,43 @@ export default function PixelGridStudioPage() {
                 <h3 className="font-semibold text-base mb-1">{item.desc}</h3>
               </div>
             ))}
+          </div>
+        </section>
+
+        {/* Technical Deep Dive: Dithering & Quantization */}
+        <section aria-labelledby="tech-title" className="mx-auto max-w-6xl px-4 py-8">
+          <div className="rounded-3xl bg-blue-50 p-6 sm:p-8">
+            <h2 id="tech-title" className="mb-6 font-mono text-2xl font-bold text-gray-900 sm:text-3xl">
+              {t("techTitle")}
+            </h2>
+            <div className="space-y-4">
+              <div className="rounded-2xl border border-blue-100 bg-white p-5 shadow-sm">
+                <h3 className="mb-2 font-mono text-lg font-bold text-gray-900">{t("techDitheringTitle")}</h3>
+                <p className="leading-relaxed text-gray-700" dangerouslySetInnerHTML={{ __html: renderTechDesc(t("techDitheringDesc")) }} />
+              </div>
+              <div className="rounded-2xl border border-blue-100 bg-white p-5 shadow-sm">
+                <h3 className="mb-2 font-mono text-lg font-bold text-gray-900">{t("techColorTitle")}</h3>
+                <p className="leading-relaxed text-gray-700" dangerouslySetInnerHTML={{ __html: renderTechDesc(t("techColorDesc")) }} />
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Print Optimization Tip */}
+        <section aria-labelledby="print-title" className="mx-auto max-w-6xl px-4 py-6 print:hidden">
+          <div className="rounded-2xl bg-amber-50 p-5 text-center">
+            <h2 id="print-title" className="text-base font-semibold text-amber-700 sm:text-lg">
+              {t("printTip")}
+            </h2>
+          </div>
+        </section>
+
+        {/* Privacy Badge */}
+        <section aria-labelledby="privacy-title" className="mx-auto max-w-6xl px-4 py-6">
+          <div className="rounded-2xl bg-green-50 p-5 text-center">
+            <h2 id="privacy-title" className="text-base font-semibold text-green-700 sm:text-lg">
+              {t("privacyBadge")}
+            </h2>
           </div>
         </section>
 

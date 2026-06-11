@@ -2,6 +2,7 @@
   "Navbar": {
     "title": "LifeSimGrid 🎮",
     "privacyHint": "🔒 100% Sicuro e Lato Client: Tutto funziona localmente nel tuo browser. Non carichiamo mai le tue immagini o i dati di gioco.",
+    "privacyShort": "100% Client-Side",
     "toolAcnh": "Studio Pixel ACNH",
     "toolMii": "Sbloccatore QR Mii",
     "toolVoice": "Laboratorio Vocale Tomodachi",
@@ -48,7 +49,18 @@
     "zoomOut": "Riduci",
     "zoomReset": "Ripristina Zoom",
     "estimatedTime": "Tempo di Render Stim.",
-    "maxFileSizeExceeded": "File troppo grande (max {size}). Utilizza un'immagine di gioco più piccola per prestazioni ottimali."
+    "maxFileSizeExceeded": "File troppo grande (max {size}). Utilizza un'immagine di gioco più piccola per prestazioni ottimali.",
+    "universalTitle": "Convertitore Universale a Griglia di Pixel",
+    "universalDensity": "Densità Dettaglio Griglia",
+    "density16": "16×16 (14px Perle Grandi)",
+    "density128": "128×128 (2px Dettaglio Fine)",
+    "universalDownloadBtn": "Scarica Modello Griglia di Pixel",
+    "universalCanvasPreset": "Rapporto d'Aspetto della Tela",
+    "universalPresetSquare": "Quadrato (1:1)",
+    "universalPresetBook": "Ritratto (2:3)",
+    "universalPresetWide": "Panoramico (16:9)",
+    "universalColorPalette": "Tavolozza Colori Pixel (Dipinti per Numeri)",
+    "universalHint": "Consiglio: Aumentare il contrasto rende i bordi dei pixel più nitidi per lavori manuali come Perler Beads e Punto Croce!"
   },
   "AvatarEditor": {
     "title": "Editor Codice QR Mii & Sblocco Permessi Protocollo FFL",
@@ -388,7 +400,8 @@
     "exploreOtherTools": "Esplora Altri Strumenti",
     "exploreQr": "Sblocca QR Mii →",
     "exploreVoice": "Laboratorio Vocale Tomodachi →",
-    "explorePixelGrid": "Studio Griglia Pixel Generale →"
+    "explorePixelGrid": "Studio Griglia Pixel Generale →",
+    "privacyBadge": "🔒 100% Lato Client & Serverless — Tutta l'elaborazione delle immagini viene eseguita interamente nel tuo browser tramite HTML5 Canvas. Nessun database backend, nessun upload. I tuoi design e i tuoi diritti d'autore sono completamente protetti."
   },
   "MiiQrUnlocker": {
     "metaTitle": "Sblocca QR Code Mii - Correggi Errore «Non Può Essere Modificato» Online",
@@ -422,7 +435,8 @@
     "exploreOtherTools": "Esplora Altri Strumenti",
     "exploreAcnh": "Studio Pixel ACNH →",
     "exploreVoice": "Laboratorio Vocale Tomodachi →",
-    "explorePixelGrid": "Studio Griglia Pixel Generale →"
+    "explorePixelGrid": "Studio Griglia Pixel Generale →",
+    "privacyBadge": "🔒 100% Lato Client & Serverless — Tutto il parsing binario FFL dei Mii e la generazione QR vengono eseguiti interamente nel tuo browser tramite jsQR. Nessun database backend, nessun upload. I tuoi dati avatar e la tua privacy sono completamente protetti."
   },
   "TomodachiVoiceLabPage": {
     "metaTitle": "Calcolatore Vocale Tomodachi Life & Verifica Compatibilità",
@@ -457,7 +471,19 @@
     "exploreOtherTools": "Esplora Altri Strumenti",
     "exploreAcnh": "Studio Pixel ACNH →",
     "exploreQr": "Sblocca QR Mii →",
-    "explorePixelGrid": "Studio Griglia Pixel Generale →"
+    "explorePixelGrid": "Studio Griglia Pixel Generale →",
+    "personalitySubtypesTitle": "I 16 Sottotipi di Personalità",
+    "subtypeOutgoing": "Estroverso: Leader, Intrattenitore, Trendsetter, Ottimista — Personaggi energici e sociali che prosperano nell'interazione.",
+    "subtypeConfident": "Sicuro di Sé: Designer, Avventuriero, Determinato, Affascinante — Personaggi audaci e sicuri di sé che prendono l'iniziativa.",
+    "subtypeIndependent": "Indipendente: Artista, Spirito Libero, Pensatore, Lupo Solitario — Personaggi creativi e autosufficienti che valorizzano l'autonomia.",
+    "subtypeEasygoing": "Rilassato: Sognatore, Dolce, Tenero, Compagno — Personaggi gentili e affettuosi che danno priorità all'armonia.",
+    "techTitle": "Come Funziona: Analisi Tecnica in Profondità",
+    "techAudioTitle": "Sintesi Audio Procedurale",
+    "techAudioDesc": "Il Laboratorio Vocale utilizza la Web Audio API nativa del browser per generare dinamicamente oscillatori matematici in tempo reale. Invece di riprodurre effetti sonori di gioco campionati protetti da copyright, ogni preset vocale combina una specifica forma d'onda dell'oscillatore (dente di sega o onda quadra), frequenza base, cutoff del filtro e inviluppo di ampiezza per ricreare lo stile chiptune 8-bit nostalgico. Il preset Anziano integra un Vibrato LFO (5Hz) per un effetto tremolante, mentre il preset Robot utilizza un'onda quadra con attack/release zero per un suono meccanico.",
+    "techCompatTitle": "La Formula di Compatibilità Zodiacale 12×12",
+    "techCompatDesc": "Il nostro simulatore di compatibilità fa un riferimento incrociato della tabella zodiacale astrologica 12×12 classica del gioco (peso del 50%) con la matrice di complementarietà delle 16 personalità (peso del 50%) per calcolare l'indice del destino finale. Le associazioni di quadranti complementari (es. Estroverso + Indipendente) potenziano le Valutazioni di Destino Romantico, mentre le coppie dello stesso gruppo massimizzano i punteggi di Armonia Amicizia.",
+    "shareCta": "Scoperto un'anima gemella assoluta o un match rival caotico? Copia i risultati della tua Classifica Relazioni e condividi il dramma della tua isola su Reddit (r/tomodachilife) o TikTok!",
+    "privacyBadge": "🔒 100% Lato Client & Serverless — Tutta la sintesi vocale e i calcoli di compatibilità vengono eseguiti interamente nel tuo browser tramite Web Audio API. Nessun database backend, nessun upload. Il tuo roster isolano è archiviato localmente tramite localStorage con zero tracciamento server."
   },
   "PixelGridStudio": {
     "metaTitle": "Convertitore Immagine in Pixel Art - Generatore Griglia Pixel Gratuito Online",
@@ -487,6 +513,13 @@
     "exploreOtherTools": "Esplora Altri Strumenti",
     "exploreAcnh": "Studio Pixel ACNH →",
     "exploreQr": "Sblocca QR Mii →",
-    "exploreVoice": "Laboratorio Vocale Tomodachi →"
+    "exploreVoice": "Laboratorio Vocale Tomodachi →",
+    "techTitle": "Come Funziona: Analisi dell'Algoritmo Immagine in Profondità",
+    "techDitheringTitle": "Dithering a Diffusione dell'Errore",
+    "techDitheringDesc": "Quando si riduce un'immagine a una palette di colori limitata, il nostro motore applica l'error-diffusion dithering per intercalare strategicamente pixel di colori diversi. Questa tecnica simula sfumature di colore fluide anche a basse risoluzioni come 32×32, prevenendo l'aspetto piatto e a bande che produce la semplice quantizzazione dei colori. Il risultato è una griglia di pixel che mantiene profondità visiva e dettaglio ben oltre ciò che la sua risoluzione normalmente permetterebbe.",
+    "techColorTitle": "Corrispondenza Colore per Distanza Euclidea",
+    "techColorDesc": "Il nostro algoritmo calcola la Euclidean distance tra il valore RGB di ogni pixel e ogni colore nella palette di destinazione, selezionando la corrispondenza più vicina. Quando la palette retro a 32 colori è attiva, questa formula matematica mappa milioni di colori di input al colore della console vintage più vicino — garantendo risultati accurati e coerenti ogni volta senza utilizzare alcun dato colore proprietario.",
+    "printTip": "🖨️ Ottimizzazione Stampa: Questa pagina supporta la stampa nativa del browser (Ctrl+P). Nasconde automaticamente i pannelli di controllo, offrendoti un piano griglia cartaceo numerato pulito e perfettamente ottimizzato per il tracciamento a punto croce o l'artigianato offline!",
+    "privacyBadge": "🔒 100% Lato Client & Serverless — Tutta l'elaborazione delle immagini viene eseguita interamente nel tuo browser tramite HTML5 Canvas. Nessun database backend, nessun upload. Le tue immagini e il tuo lavoro creativo sono completamente protetti."
   }
 }

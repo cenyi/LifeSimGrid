@@ -2,6 +2,7 @@
   "Navbar": {
     "title": "LifeSimGrid 🎮",
     "privacyHint": "🔒 100% 安全且純前端：所有處理均在本地瀏覽器中執行，我們絕不會上傳您的圖片或遊戲資料。",
+    "privacyShort": "100%本地執行",
     "toolAcnh": "動森像素工作室",
     "toolMii": "Mii QR解鎖器",
     "toolVoice": "朋友聚會 新生活聲音實驗室",
@@ -48,7 +49,18 @@
     "zoomOut": "縮小",
     "zoomReset": "重設縮放",
     "estimatedTime": "預估渲染時間",
-    "maxFileSizeExceeded": "檔案過大（最大支援 {size}）。請使用較小的遊戲圖片以獲得最佳效能。"
+    "maxFileSizeExceeded": "檔案過大（最大支援 {size}）。請使用較小的遊戲圖片以獲得最佳效能。",
+    "universalTitle": "通用像素網格轉換器",
+    "universalDensity": "網格詳細密度",
+    "density16": "16×16 (14px 大型拼豆)",
+    "density128": "128×128 (2px 精細細節)",
+    "universalDownloadBtn": "下載像素網格範本",
+    "universalCanvasPreset": "畫布寬高比",
+    "universalPresetSquare": "正方形 (1:1)",
+    "universalPresetBook": "直式 (2:3)",
+    "universalPresetWide": "寬螢幕 (16:9)",
+    "universalColorPalette": "像素色彩調色盤 (數字填色)",
+    "universalHint": "提示：調高對比度可以讓拼豆和十字繡等實體手作的像素邊界更加清晰！"
   },
   "AvatarEditor": {
     "title": "Mii QR Code 編輯器 & FFL 協議權限解鎖器",
@@ -388,7 +400,8 @@
     "exploreOtherTools": "探索其他工具",
     "exploreQr": "Mii QR解鎖器 →",
     "exploreVoice": "朋友聚會 新生活聲音實驗室 →",
-    "explorePixelGrid": "通用像素網格工作室 →"
+    "explorePixelGrid": "通用像素網格工作室 →",
+    "privacyBadge": "🔒 100%客戶端運作＆無伺服器 — 所有圖片處理透過HTML5 Canvas在您的瀏覽器中執行。無後端資料庫、無上傳。您的設計與版權受到完整保護。"
   },
   "MiiQrUnlocker": {
     "metaTitle": "Mii QR碼解鎖器 - 線上修復「無法編輯」錯誤",
@@ -422,7 +435,8 @@
     "exploreOtherTools": "探索其他工具",
     "exploreAcnh": "ACNH像素工作室 →",
     "exploreVoice": "朋友聚會 新生活聲音實驗室 →",
-    "explorePixelGrid": "通用像素網格工作室 →"
+    "explorePixelGrid": "通用像素網格工作室 →",
+    "privacyBadge": "🔒 100%客戶端運作＆無伺服器 — 所有Mii FFL二進位解析與QR產生透過jsQR在您的瀏覽器中執行。無後端資料庫、無上傳。您的頭像資料與隱私受到完整保護。"
   },
   "TomodachiVoiceLabPage": {
     "metaTitle": "朋友聚會 新生活聲音計算器與相容性檢查",
@@ -457,7 +471,19 @@
     "exploreOtherTools": "探索其他工具",
     "exploreAcnh": "ACNH像素工作室 →",
     "exploreQr": "Mii QR解鎖器 →",
-    "explorePixelGrid": "通用像素網格工作室 →"
+    "explorePixelGrid": "通用像素網格工作室 →",
+    "personalitySubtypesTitle": "16種性格子類型",
+    "subtypeOutgoing": "外向型：領導者、表演者、潮流引領者、樂觀主義者 — 活力充沛且善於社交的角色。",
+    "subtypeConfident": "自信型：設計師、冒險家、行動派、魅力者 — 大膽且充滿自信的角色。",
+    "subtypeIndependent": "獨立型：藝術家、自由靈魂、思想家、獨行俠 — 創意且自主的角色。",
+    "subtypeEasygoing": "隨和型：夢想家、甜心、溫柔者、好夥伴 — 溫柔且重視和諧的角色。",
+    "techTitle": "運作原理：技術深度解析",
+    "techAudioTitle": "程序化音訊合成",
+    "techAudioDesc": "語音實驗室利用瀏覽器原生的Web Audio API即時動態生成數學振盪器。我們不播放有版權的取樣遊戲音效，而是將特定振盪器波形（鋸齒波或方波）、基頻、濾波器截止頻率和振幅包絡線混合，重現懷舊的8位元晶片音樂風格。長老預設整合了Vibrato LFO（5Hz）產生顫音效果，機器人預設則使用零攻擊/釋放的方波產生機械音。",
+    "techCompatTitle": "12×12星座相性公式",
+    "techCompatDesc": "相性模擬器交叉比對遊戲經典的12×12占星術星座圖表（50%權重）與16性格互補矩陣（50%權重）來計算最終命運指數。互補象限配對（如外向型＋獨立型）提升戀愛運指數，同組配對則最大化友情調和分數。",
+    "shareCta": "發現了命中注定的靈魂伴侶或混亂的宿敵配對？複製您的關係排行榜結果，在Reddit（r/tomodachilife）或TikTok上分享您的島嶼戲碼！",
+    "privacyBadge": "🔒 100%客戶端運作＆無伺服器 — 所有語音合成與相性計算透過Web Audio API在您的瀏覽器中執行。無後端資料庫、無上傳。您的島民名冊透過localStorage儲存在本機，零伺服器追蹤。"
   },
   "PixelGridStudio": {
     "metaTitle": "圖片轉像素畫轉換器 - 免費線上像素格子生成器",
@@ -487,6 +513,13 @@
     "exploreOtherTools": "探索其他工具",
     "exploreAcnh": "ACNH像素工作室 →",
     "exploreQr": "Mii QR解鎖器 →",
-    "exploreVoice": "朋友聚會 新生活聲音實驗室 →"
+    "exploreVoice": "朋友聚會 新生活 聲音實驗室 →",
+    "techTitle": "運作原理：圖像演算法深度解析",
+    "techDitheringTitle": "誤差擴散抖動",
+    "techDitheringDesc": "將圖像減少至有限調色盤時，引擎應用error-diffusion dithering策略性地交錯排列不同顏色的像素。此技術即使在32×32等低解析度下也能模擬平滑的色彩漸層，防止簡單色彩量化產生的平面條紋外觀。結果是超越解析度限制、保留視覺深度與細節的像素網格。",
+    "techColorTitle": "歐幾里得距離色彩匹配",
+    "techColorDesc": "演算法計算每個像素RGB值與目標調色盤中每種顏色之間的Euclidean distance，選擇最接近的匹配。當32色復古遊戲調色盤啟用時，此數學公式將數百萬輸入色彩映射至最接近的經典主機色號，確保每次都能產生準確一致的結果，且不使用任何專有色彩資料。",
+    "printTip": "🖨️ 列印最佳化：此頁面支援瀏覽器原生列印（Ctrl+P）。自動隱藏控制面板，為您提供乾淨的編號紙本網格藍圖，完美適用於十字繡描圖或離線手作！",
+    "privacyBadge": "🔒 100%客戶端運作＆無伺服器 — 所有圖片處理透過HTML5 Canvas在您的瀏覽器中執行。無後端資料庫、無上傳。您的圖片與創作受到完整保護。"
   }
 }

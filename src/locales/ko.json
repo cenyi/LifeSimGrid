@@ -2,6 +2,7 @@
   "Navbar": {
     "title": "LifeSimGrid 🎮",
     "privacyHint": "🔒 100% 안전 & 클라이언트 사이드: 모든 처리가 브라우저에서 로컬로 실행됩니다. 이미지나 게임 데이터를 서버에 업로드하지 않습니다.",
+    "privacyShort": "100%로컬 실행",
     "toolAcnh": "ACNH 픽셀 스튜디오",
     "toolMii": "Mii QR 언록",
     "toolVoice": "Tomodachi 보이스 랩",
@@ -48,7 +49,18 @@
     "zoomOut": "축소",
     "zoomReset": "확대/축소 초기화",
     "estimatedTime": "예상 렌더 시간",
-    "maxFileSizeExceeded": "파일이 너무 큽니다(최대 {size}). 최적의 성능을 위해 더 작은 게임 이미지를 사용해 주세요."
+    "maxFileSizeExceeded": "파일이 너무 큽니다(최대 {size}). 최적의 성능을 위해 더 작은 게임 이미지를 사용해 주세요.",
+    "universalTitle": "범용 픽셀 그리드 변환기",
+    "universalDensity": "그리드 상세 밀도",
+    "density16": "16×16 (14px 대형 비즈)",
+    "density128": "128×128 (2px 미세 디테일)",
+    "universalDownloadBtn": "픽셀 그리드 템플릿 다운로드",
+    "universalCanvasPreset": "캔버스 가로세로 비율",
+    "universalPresetSquare": "정사각형 (1:1)",
+    "universalPresetBook": "세로형 (2:3)",
+    "universalPresetWide": "와이드스크린 (16:9)",
+    "universalColorPalette": "픽셀 색상 팔레트 (페인트바이넘버)",
+    "universalHint": "팁: 대비를 높이면 퍼들 비즈나 크로스스티치 같은 실제 공예에서 픽셀 경계가 더 선명해집니다!"
   },
   "AvatarEditor": {
     "title": "Mii QR 코드 편집기 & FFL 프로토콜 권한 언로커",
@@ -388,7 +400,8 @@
     "exploreOtherTools": "다른 도구 탐색",
     "exploreQr": "Mii QR 언록 →",
     "exploreVoice": "Tomodachi 보이스 랩 →",
-    "explorePixelGrid": "범용 픽셀 그리드 스튜디오 →"
+    "explorePixelGrid": "범용 픽셀 그리드 스튜디오 →",
+    "privacyBadge": "🔒 100% 클라이언트 사이드 & 서버리스 — 모든 이미지 처리는 HTML5 Canvas를 통해 브라우저에서 실행됩니다. 백엔드 데이터베이스 없음, 업로드 없음. 디자인과 저작권이 완전히 보호됩니다."
   },
   "MiiQrUnlocker": {
     "metaTitle": "Mii QR 코드 언록 - \"편집할 수 없음\" 오류 온라인 수정",
@@ -422,7 +435,8 @@
     "exploreOtherTools": "다른 도구 탐색",
     "exploreAcnh": "ACNH 픽셀 스튜디오 →",
     "exploreVoice": "Tomodachi 보이스 랩 →",
-    "explorePixelGrid": "범용 픽셀 그리드 스튜디오 →"
+    "explorePixelGrid": "범용 픽셀 그리드 스튜디오 →",
+    "privacyBadge": "🔒 100% 클라이언트 사이드 & 서버리스 — 모든 Mii FFL 바이너리 파싱과 QR 생성은 jsQR을 통해 브라우저에서 실행됩니다. 백엔드 데이터베이스 없음, 업로드 없음. 아바타 데이터와 개인정보가 완전히 보호됩니다."
   },
   "TomodachiVoiceLabPage": {
     "metaTitle": "Tomodachi Life 음성 계산기 & 궁합 체커",
@@ -457,7 +471,19 @@
     "exploreOtherTools": "다른 도구 탐색",
     "exploreAcnh": "ACNH 픽셀 스튜디오 →",
     "exploreQr": "Mii QR 언록 →",
-    "explorePixelGrid": "범용 픽셀 그리드 스튜디오 →"
+    "explorePixelGrid": "범용 픽셀 그리드 스튜디오 →",
+    "personalitySubtypesTitle": "16가지 성격 하위 유형",
+    "subtypeOutgoing": "외향형: 리더, 엔터테이너, 트렌드세터, 낙관주의자 — 활기차고 사교적인 캐릭터.",
+    "subtypeConfident": "자신감형: 디자이너, 모험가, 추진력, 매력쟁이 — 대담하고 자신감 넘치는 캐릭터.",
+    "subtypeIndependent": "독립형: 아티스트, 자유영혼, 사상가, 외톨이 — 창의적이고 자율적인 캐릭터.",
+    "subtypeEasygoing": "온화형: 몽상가, 스윗하트, 소프티, 버디 — 부드럽고 조화를 중시하는 캐릭터.",
+    "techTitle": "작동 원리: 기술 심층 분석",
+    "techAudioTitle": "절차적 오디오 합성",
+    "techAudioDesc": "보이스 랩은 브라우저 네이티브 Web Audio API를 활용하여 실시간으로 수학적 오실레이터를 동적으로 생성합니다. 저작권이 있는 샘플링된 게임 효과음을 재생하는 대신, 각 음성 프리셋은 특정 오실레이터 파형(톱니파 또는 방형파), 기본 주파수, 필터 컷오프, 진폭 엔벨로프를 혼합하여 향수어린 8비트 칩튠 스타일을 재현합니다. 장로 프리셋은 떨림 효과를 위해 Vibrato LFO(5Hz)를 통합하고, 로봇 프리셋은 기계적인 소리를 위해 제로 어택/릴리스 방형파를 사용합니다.",
+    "techCompatTitle": "12×12 별자리 궁합 공식",
+    "techCompatDesc": "궁합 시뮬레이터는 게임의 클래식한 12×12 점성술 별자리 차트(50% 가중치)와 16성격 보완 매트릭스(50% 가중치)를 교차 참조하여 최종 운명 지수를 계산합니다. 보완적 사분면 페어링(예: 외향형 + 독립형)은 로맨스 운명 지수를 높이고, 같은 그룹 페어링은 우정 조화 점수를 최대화합니다.",
+    "shareCta": "절대적인 소울메이트나 혼돈의 라이벌 매치를 발견하셨나요? 관계 리더보드 결과를 복사하여 Reddit(r/tomodachilife)이나 TikTok에서 섬 드라마를 공유하세요!",
+    "privacyBadge": "🔒 100% 클라이언트 사이드 & 서버리스 — 모든 음성 합성과 궁합 계산은 Web Audio API를 통해 브라우저에서 실행됩니다. 백엔드 데이터베이스 없음, 업로드 없음. 섬 주민 명단은 localStorage를 통해 로컬에 저장되며 서버 추적이 없습니다."
   },
   "PixelGridStudio": {
     "metaTitle": "이미지→픽셀아트 변환기 - 무료 온라인 픽셀 그리드 생성기",
@@ -487,6 +513,13 @@
     "exploreOtherTools": "다른 도구 탐색",
     "exploreAcnh": "ACNH 픽셀 스튜디오 →",
     "exploreQr": "Mii QR 언록 →",
-    "exploreVoice": "Tomodachi 보이스 랩 →"
+    "exploreVoice": "Tomodachi 보이스 랩 →",
+    "techTitle": "작동 원리: 이미지 알고리즘 심층 분석",
+    "techDitheringTitle": "오차 확산 디더링",
+    "techDitheringDesc": "이미지를 제한된 색상 팔레트로 줄일 때, 엔진은 error-diffusion dithering을 적용하여 다른 색상의 픽셀을 전략적으로 교차 배치합니다. 이 기술은 32×32와 같은 저해상도에서도 부드러운 색상 그라데이션을 시뮬레이션하여 단순한 색상 양자화가 생성하는 평면적인 띠 모양 외관을 방지합니다. 결과적으로 해상도가 정상적으로 허용하는 것을 훨씬 넘어 시각적 깊이와 디테일을 유지하는 픽셀 그리드를 얻을 수 있습니다.",
+    "techColorTitle": "유클리드 거리 색상 매칭",
+    "techColorDesc": "알고리즘은 각 픽셀의 RGB 값과 대상 팔레트의 각 색상 사이의 Euclidean distance를 계산하여 가장 가까운 일치를 선택합니다. 32색 레트로 게임 팔레트가 활성화되면, 이 수학적 공식은 수백만 개의 입력 색상을 가장 가까운 빈티지 콘솔 색상에 매핑하여 독점적인 색상 데이터를 사용하지 않고도 정확하고 일관된 결과를 보장합니다.",
+    "printTip": "🖨️ 인쇄 최적화: 이 페이지는 브라우저 네이티브 인쇄(Ctrl+P)를 지원합니다. 제어판을 자동으로 숨겨 크로스스티치 추적이나 오프라인 공예에 최적화된 깔끔한 번호가 있는 종이 그리드 청사진을 제공합니다!",
+    "privacyBadge": "🔒 100% 클라이언트 사이드 & 서버리스 — 모든 이미지 처리는 HTML5 Canvas를 통해 브라우저에서 실행됩니다. 백엔드 데이터베이스 없음, 업로드 없음. 이미지와 창작물이 완전히 보호됩니다."
   }
 }

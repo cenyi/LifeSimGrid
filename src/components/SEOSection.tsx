@@ -89,7 +89,7 @@ export default function SEOSection() {
     <div className="mx-auto max-w-6xl px-4 py-10">
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd).replace(/<\/script/g, "<\\/script") }}
       />
 
       <div className="mb-8 rounded-2xl bg-green-50 p-5 text-center">
@@ -98,8 +98,8 @@ export default function SEOSection() {
         </p>
       </div>
 
-      <section className="mb-12 rounded-3xl bg-gray-50 p-6 sm:p-8">
-        <h2 className="mb-8 font-mono text-2xl font-bold text-gray-900 sm:text-3xl">
+      <section aria-labelledby="manual-heading" className="mb-12 rounded-3xl bg-gray-50 p-6 sm:p-8">
+        <h2 id="manual-heading" className="mb-8 font-mono text-2xl font-bold text-gray-900 sm:text-3xl">
           {seo("manualTitle")}
         </h2>
 
@@ -154,8 +154,8 @@ export default function SEOSection() {
         </div>
       </section>
 
-      <section className="mb-8">
-        <h2 className="mb-8 font-mono text-2xl font-bold text-gray-900 sm:text-3xl">
+      <section aria-labelledby="faq-heading" className="mb-8">
+        <h2 id="faq-heading" className="mb-8 font-mono text-2xl font-bold text-gray-900 sm:text-3xl">
           ❓ {seo("faqTitle")}
         </h2>
 

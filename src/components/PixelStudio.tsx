@@ -19,10 +19,12 @@ const PRESET_DIMS: Record<CanvasPreset, PresetConfig> = {
 };
 
 const DENSITY_BRUSH: Record<PixelDensity, number> = {
-  256: 1,
-  85: 3,
-  64: 4,
+  16: 14,
   32: 7,
+  64: 4,
+  85: 3,
+  128: 2,
+  256: 1,
 };
 
 const MAX_PALETTE_COLORS = 24;
@@ -121,7 +123,15 @@ type Rotation = 0 | 90 | 180 | 270;
 
 const ROTATION_CYCLE: Rotation[] = [0, 90, 180, 270];
 
-export default function PixelStudio() {
+/** ACNH vs Universal mode for the PixelStudio component */
+export type PixelStudioMode = "acnh" | "universal";
+
+interface PixelStudioProps {
+  mode?: PixelStudioMode;
+}
+
+export default function PixelStudio({ mode = "acnh" }: PixelStudioProps) {
+  const isUniversal = mode === "universal";
   const t = useTranslations("PixelStudio");
   const ht = useTranslations("History");
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -131,7 +141,7 @@ export default function PixelStudio() {
   const [contrast, setContrast] = useState(100);
   const [fileName, setFileName] = useState<string>("");
   const [preset, setPreset] = useState<CanvasPreset>("square");
-  const [density, setDensity] = useState<PixelDensity>(85);
+  const [density, setDensity] = useState<PixelDensity>(isUniversal ? 32 : 85);
   const [palette, setPalette] = useState<string[]>([]);
   const [highlightColor, setHighlightColor] = useState<string | null>(null);
   const [pixelGrid, setPixelGrid] = useState<string[][]>([]);
@@ -418,7 +428,7 @@ export default function PixelStudio() {
       <div className="flex flex-col gap-6 lg:flex-row lg:gap-4 lg:items-start">
         <div className="w-full space-y-5 lg:w-[40%] lg:shrink-0">
           <h2 className="font-mono text-xl font-bold text-gray-900 sm:text-2xl">
-            {t("title")}
+            {isUniversal ? t("universalTitle") : t("title")}
           </h2>
           <div
             onDragOver={handleDragOver}
@@ -462,14 +472,14 @@ export default function PixelStudio() {
           <div className="space-y-4">
             <div>
               <label className="mb-1.5 block text-sm font-medium text-gray-700">
-                🖼️ {t("canvasPreset")}
+                🖼️ {isUniversal ? t("universalCanvasPreset") : t("canvasPreset")}
               </label>
               <div className="flex gap-2">
                 {(
                   [
-                    ["square", t("presetSquare")],
-                    ["book", t("presetBook")],
-                    ["wide", t("presetWide")],
+                    ["square", isUniversal ? t("universalPresetSquare") : t("presetSquare")],
+                    ["book", isUniversal ? t("universalPresetBook") : t("presetBook")],
+                    ["wide", isUniversal ? t("universalPresetWide") : t("presetWide")],
                   ] as [CanvasPreset, string][]
                 ).map(([key, label]) => (
                   <button
@@ -496,16 +506,23 @@ export default function PixelStudio() {
 
             <div>
               <label className="mb-1.5 block text-sm font-medium text-gray-700">
-                🔍 {t("pixelDensity")}
+                🔍 {isUniversal ? t("universalDensity") : t("pixelDensity")}
               </label>
-              <div className="grid grid-cols-2 gap-2">
+              <div className={isUniversal ? "grid grid-cols-3 gap-2" : "grid grid-cols-2 gap-2"}>
                 {(
-                  [
-                    [256, t("density256")],
-                    [85, t("density85")],
-                    [64, t("density64")],
-                    [32, t("density32")],
-                  ] as [PixelDensity, string][]
+                  isUniversal
+                    ? [
+                        [16, t("density16")],
+                        [32, t("density32")],
+                        [64, t("density64")],
+                        [128, t("density128")],
+                      ] as [PixelDensity, string][]
+                    : [
+                        [256, t("density256")],
+                        [85, t("density85")],
+                        [64, t("density64")],
+                        [32, t("density32")],
+                      ] as [PixelDensity, string][]
                 ).map(([val, label]) => (
                   <button
                     key={val}
@@ -682,7 +699,7 @@ export default function PixelStudio() {
           </div>
 
           <p className="rounded-xl bg-sunshine/10 p-3 text-xs leading-relaxed text-gray-600">
-            💡 {t("hint")}
+            💡 {isUniversal ? t("universalHint") : t("hint")}
           </p>
         </div>
 
@@ -750,7 +767,7 @@ export default function PixelStudio() {
               onClick={handleDownload}
               className="rounded-xl bg-island-blue px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition-all hover:shadow-md active:scale-95"
             >
-              {t("downloadBtn")}
+              {isUniversal ? t("universalDownloadBtn") : t("downloadBtn")}
             </button>
           )}
 
@@ -758,7 +775,7 @@ export default function PixelStudio() {
             <div className="w-full space-y-2">
               <div className="flex items-center justify-between">
                 <span className="text-xs font-semibold text-gray-700">
-                  🎨 {t("colorPalette")}
+                  🎨 {isUniversal ? t("universalColorPalette") : t("colorPalette")}
                 </span>
                 <div className="flex items-center gap-3">
                   {estimatedTime && (
