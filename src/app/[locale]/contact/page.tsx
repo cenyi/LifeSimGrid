@@ -37,7 +37,7 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale } = await params;
   return {
-    title: PAGE_TITLES[locale] || "Contact Us - LifeSimGrid",
+    title: PAGE_TITLES[locale] || "Contact Us",
     description: PAGE_DESCS[locale] || "",
     alternates: {
       canonical: locale === "en" ? `${BASE}/contact` : `${BASE}/${locale}/contact`,
