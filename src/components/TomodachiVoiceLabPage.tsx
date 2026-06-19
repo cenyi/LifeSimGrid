@@ -7,7 +7,7 @@ import Footer from "@/components/Footer";
 import VoiceLab from "@/components/VoiceLab";
 import { Link } from "@/i18n/routing";
 
-/** Tomodachi Voice Lab sub-page with dedicated SEO content */
+/** Tomodachi Voice Lab sub-page - voice synthesizer only */
 export default function TomodachiVoiceLabPage() {
   const t = useTranslations("TomodachiVoiceLabPage");
 
@@ -22,9 +22,7 @@ export default function TomodachiVoiceLabPage() {
   const renderTechDesc = (text: string) => {
     return text
       .replace(/(Web Audio API)/g, '<code class="rounded bg-gray-100 px-1 py-0.5 text-sm font-mono">$1</code>')
-      .replace(/(Vibrato LFO)/g, '<code class="rounded bg-gray-100 px-1 py-0.5 text-sm font-mono">$1</code>')
-      .replace(/(12×12 astrological zodiac chart)/gi, '<code class="rounded bg-gray-100 px-1 py-0.5 text-sm font-mono">$1</code>')
-      .replace(/(16-personality complement matrix)/gi, '<code class="rounded bg-gray-100 px-1 py-0.5 text-sm font-mono">$1</code>');
+      .replace(/(Vibrato LFO)/g, '<code class="rounded bg-gray-100 px-1 py-0.5 text-sm font-mono">$1</code>');
   };
 
   return (
@@ -56,7 +54,7 @@ export default function TomodachiVoiceLabPage() {
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "SoftwareApplication",
-              name: "Tomodachi Life Voice Lab & Compatibility Calculator",
+              name: "Tomodachi Life Voice Lab - 8-Bit Mii Voice Synthesizer",
               applicationCategory: "UtilitiesApplication",
               operatingSystem: "Any (Browser-based)",
               offers: {
@@ -82,42 +80,6 @@ export default function TomodachiVoiceLabPage() {
         <section className="mx-auto max-w-6xl px-4 py-6">
           <div className="rounded-2xl border border-gray-100 bg-white p-4 shadow-md sm:p-8">
             <VoiceLab />
-          </div>
-        </section>
-
-        {/* Personality Matrix */}
-        <section aria-labelledby="personality-title" className="mx-auto max-w-6xl px-4 py-8">
-          <h2 id="personality-title" className="mb-6 font-mono text-2xl font-bold text-gray-900 sm:text-3xl">
-            {t("personalityMatrixTitle")}
-          </h2>
-          <div className="grid gap-6 sm:grid-cols-2">
-            {[
-              { key: "groupOutgoing", bg: "bg-amber-50 border-amber-200" },
-              { key: "groupConfident", bg: "bg-red-50 border-red-200" },
-              { key: "groupIndependent", bg: "bg-purple-50 border-purple-200" },
-              { key: "groupEasygoing", bg: "bg-green-50 border-green-200" },
-            ].map((item, i) => (
-              <div key={i} className={`rounded-2xl border p-5 shadow-sm ${item.bg}`}>
-                <h3 className="font-mono text-lg font-bold text-gray-900">{t(item.key)}</h3>
-              </div>
-            ))}
-          </div>
-          <p className="mt-4 leading-relaxed text-gray-600">{t("personalityDetail")}</p>
-          {/* 16 Personality Sub-types List */}
-          <div className="mt-6 rounded-2xl border border-gray-100 bg-white p-5 shadow-sm">
-            <h3 className="mb-3 font-mono text-lg font-bold text-gray-900">{t("personalitySubtypesTitle")}</h3>
-            <div className="grid gap-3 sm:grid-cols-2">
-              {[
-                { key: "subtypeOutgoing", bg: "bg-amber-50" },
-                { key: "subtypeConfident", bg: "bg-red-50" },
-                { key: "subtypeIndependent", bg: "bg-purple-50" },
-                { key: "subtypeEasygoing", bg: "bg-green-50" },
-              ].map((item, i) => (
-                <div key={i} className={`rounded-xl p-3 ${item.bg}`}>
-                  <p className="text-sm leading-relaxed text-gray-700">{t(item.key)}</p>
-                </div>
-              ))}
-            </div>
           </div>
         </section>
 
@@ -147,10 +109,6 @@ export default function TomodachiVoiceLabPage() {
               <div className="rounded-2xl border border-blue-100 bg-white p-5 shadow-sm">
                 <h3 className="mb-2 font-mono text-lg font-bold text-gray-900">{t("techAudioTitle")}</h3>
                 <p className="leading-relaxed text-gray-700" dangerouslySetInnerHTML={{ __html: renderTechDesc(t("techAudioDesc")) }} />
-              </div>
-              <div className="rounded-2xl border border-blue-100 bg-white p-5 shadow-sm">
-                <h3 className="mb-2 font-mono text-lg font-bold text-gray-900">{t("techCompatTitle")}</h3>
-                <p className="leading-relaxed text-gray-700" dangerouslySetInnerHTML={{ __html: renderTechDesc(t("techCompatDesc")) }} />
               </div>
             </div>
           </div>

@@ -4,7 +4,7 @@ import { useTranslations, useLocale } from "next-intl";
 import { useRouter, usePathname, Link } from "@/i18n/routing";
 import { routing } from "@/i18n/routing";
 import { useState, useRef, useEffect } from "react";
-import { Globe, ChevronDown, Palette, Unlock, Music, Grid3x3 } from "lucide-react";
+import { Globe, ChevronDown, Palette, Unlock, Music, Sparkles, Grid3x3 } from "lucide-react";
 
 const STORAGE_KEY = "lifesimgrid-locale";
 
@@ -70,6 +70,10 @@ export default function Navbar() {
           <Link href="/tomodachi-voice-lab" title={t("toolVoice")} className="flex items-center space-x-1.5 rounded-lg border border-gray-200 bg-white px-2.5 py-1.5 text-xs font-medium text-gray-600 shadow-sm transition-all hover:bg-gray-50 hover:text-gray-900 hover:shadow-md active:scale-95">
             <Music className="h-3.5 w-3.5" />
             <span className="hidden xl:inline">{t("toolVoice")}</span>
+          </Link>
+          <Link href="/tomodachi-life-mbti" title={t("toolMbti")} className="flex items-center space-x-1.5 rounded-lg border border-gray-200 bg-white px-2.5 py-1.5 text-xs font-medium text-gray-600 shadow-sm transition-all hover:bg-gray-50 hover:text-gray-900 hover:shadow-md active:scale-95">
+            <Sparkles className="h-3.5 w-3.5" />
+            <span className="hidden xl:inline">{t("toolMbti")}</span>
           </Link>
           <Link href="/pixel-grid-studio" title={t("toolPixelGrid")} className="flex items-center space-x-1.5 rounded-lg border border-gray-200 bg-white px-2.5 py-1.5 text-xs font-medium text-gray-600 shadow-sm transition-all hover:bg-gray-50 hover:text-gray-900 hover:shadow-md active:scale-95">
             <Grid3x3 className="h-3.5 w-3.5" />

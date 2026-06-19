@@ -40,7 +40,7 @@ export async function generateMetadata({
     title: PAGE_TITLES[locale] || "Contact Us - LifeSimGrid",
     description: PAGE_DESCS[locale] || "",
     alternates: {
-      canonical: `${BASE}/${locale}/contact`,
+      canonical: locale === "en" ? `${BASE}/contact` : `${BASE}/${locale}/contact`,
       languages: {
         en: `${BASE}/contact`,
         "zh-Hant": `${BASE}/zh-Hant/contact`,

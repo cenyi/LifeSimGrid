@@ -7,9 +7,9 @@
        ============================================================ -->
   <url>
     <loc>https://lifesimgrid.org</loc>
-    <lastmod>2026-06-11</lastmod>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://lifesimgrid.org/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://lifesimgrid.org/"/>
+    <lastmod>2026-06-17</lastmod>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://lifesimgrid.org"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://lifesimgrid.org"/>
     <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://lifesimgrid.org/zh-Hant"/>
     <xhtml:link rel="alternate" hreflang="zh-CN" href="https://lifesimgrid.org/zh-CN"/>
     <xhtml:link rel="alternate" hreflang="ja" href="https://lifesimgrid.org/ja"/>
@@ -26,7 +26,7 @@
        ============================================================ -->
   <url>
     <loc>https://lifesimgrid.org/about</loc>
-    <lastmod>2026-06-11</lastmod>
+    <lastmod>2026-06-17</lastmod>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://lifesimgrid.org/about"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://lifesimgrid.org/about"/>
     <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://lifesimgrid.org/zh-Hant/about"/>
@@ -45,7 +45,7 @@
        ============================================================ -->
   <url>
     <loc>https://lifesimgrid.org/contact</loc>
-    <lastmod>2026-06-11</lastmod>
+    <lastmod>2026-06-17</lastmod>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://lifesimgrid.org/contact"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://lifesimgrid.org/contact"/>
     <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://lifesimgrid.org/zh-Hant/contact"/>
@@ -64,7 +64,7 @@
        ============================================================ -->
   <url>
     <loc>https://lifesimgrid.org/privacy</loc>
-    <lastmod>2026-06-11</lastmod>
+    <lastmod>2026-06-17</lastmod>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://lifesimgrid.org/privacy"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://lifesimgrid.org/privacy"/>
     <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://lifesimgrid.org/zh-Hant/privacy"/>
@@ -83,7 +83,7 @@
        ============================================================ -->
   <url>
     <loc>https://lifesimgrid.org/terms</loc>
-    <lastmod>2026-06-11</lastmod>
+    <lastmod>2026-06-17</lastmod>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://lifesimgrid.org/terms"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://lifesimgrid.org/terms"/>
     <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://lifesimgrid.org/zh-Hant/terms"/>
@@ -102,7 +102,7 @@
        ============================================================ -->
   <url>
     <loc>https://lifesimgrid.org/acnh-pixel-studio</loc>
-    <lastmod>2026-06-11</lastmod>
+    <lastmod>2026-06-17</lastmod>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://lifesimgrid.org/acnh-pixel-studio"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://lifesimgrid.org/acnh-pixel-studio"/>
     <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://lifesimgrid.org/zh-Hant/acnh-pixel-studio"/>
@@ -121,7 +121,7 @@
        ============================================================ -->
   <url>
     <loc>https://lifesimgrid.org/mii-qr-unlocker</loc>
-    <lastmod>2026-06-11</lastmod>
+    <lastmod>2026-06-17</lastmod>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://lifesimgrid.org/mii-qr-unlocker"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://lifesimgrid.org/mii-qr-unlocker"/>
     <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://lifesimgrid.org/zh-Hant/mii-qr-unlocker"/>
@@ -140,7 +140,7 @@
        ============================================================ -->
   <url>
     <loc>https://lifesimgrid.org/tomodachi-voice-lab</loc>
-    <lastmod>2026-06-11</lastmod>
+    <lastmod>2026-06-17</lastmod>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://lifesimgrid.org/tomodachi-voice-lab"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://lifesimgrid.org/tomodachi-voice-lab"/>
     <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://lifesimgrid.org/zh-Hant/tomodachi-voice-lab"/>
@@ -159,7 +159,7 @@
        ============================================================ -->
   <url>
     <loc>https://lifesimgrid.org/pixel-grid-studio</loc>
-    <lastmod>2026-06-11</lastmod>
+    <lastmod>2026-06-17</lastmod>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://lifesimgrid.org/pixel-grid-studio"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://lifesimgrid.org/pixel-grid-studio"/>
     <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://lifesimgrid.org/zh-Hant/pixel-grid-studio"/>
@@ -171,5 +171,24 @@
     <xhtml:link rel="alternate" hreflang="de" href="https://lifesimgrid.org/de/pixel-grid-studio"/>
     <xhtml:link rel="alternate" hreflang="it" href="https://lifesimgrid.org/it/pixel-grid-studio"/>
     <xhtml:link rel="alternate" hreflang="nl" href="https://lifesimgrid.org/nl/pixel-grid-studio"/>
+  </url>
+
+  <!-- ============================================================
+       Tomodachi Life MBTI
+       ============================================================ -->
+  <url>
+    <loc>https://lifesimgrid.org/tomodachi-life-mbti</loc>
+    <lastmod>2026-06-19</lastmod>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://lifesimgrid.org/tomodachi-life-mbti"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://lifesimgrid.org/tomodachi-life-mbti"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://lifesimgrid.org/zh-Hant/tomodachi-life-mbti"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://lifesimgrid.org/zh-CN/tomodachi-life-mbti"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://lifesimgrid.org/ja/tomodachi-life-mbti"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://lifesimgrid.org/es/tomodachi-life-mbti"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://lifesimgrid.org/fr/tomodachi-life-mbti"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://lifesimgrid.org/ko/tomodachi-life-mbti"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://lifesimgrid.org/de/tomodachi-life-mbti"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://lifesimgrid.org/it/tomodachi-life-mbti"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://lifesimgrid.org/nl/tomodachi-life-mbti"/>
   </url>
 </urlset>

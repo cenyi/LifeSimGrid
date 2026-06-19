@@ -8,9 +8,9 @@ const BASE = "https://lifesimgrid.org";
 
 /** Metadata for the root-level Tomodachi Voice Lab page (English default). */
 export const metadata: Metadata = {
-  title: { absolute: "Tomodachi Life Voice Calculator & Compatibility Checker - LifeSimGrid" },
+  title: { absolute: "Tomodachi Life Voice Lab - 8-Bit Mii Voice Synthesizer - LifeSimGrid" },
   description:
-    "Free online Tomodachi Life tools: 8-bit voice synthesizer, personality matrix guide, and compatibility calculator. Calculate romance and friendship ratings between Miis.",
+    "Free online Tomodachi Life voice synthesizer. Synthesize 8-bit Mii voices with 5 presets, custom pitch and speed controls, and text-to-speech simulation — all in your browser.",
   alternates: {
     canonical: `${BASE}/tomodachi-voice-lab`,
     languages: {
@@ -28,9 +28,9 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "Tomodachi Life Voice Calculator & Compatibility Checker",
+    title: "Tomodachi Life Voice Lab - 8-Bit Mii Voice Synthesizer",
     description:
-      "Free online Tomodachi Life tools: 8-bit voice synthesizer, personality matrix guide, and compatibility calculator.",
+      "Free online Tomodachi Life voice synthesizer. Synthesize 8-bit Mii voices with 5 presets, custom pitch and speed controls, and text-to-speech simulation.",
     url: `${BASE}/tomodachi-voice-lab`,
     siteName: "LifeSimGrid",
     type: "website",

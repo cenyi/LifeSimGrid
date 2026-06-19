@@ -44,6 +44,31 @@ export function getPersonalityGroup(personality: string): PersonalityGroup {
   return "easygoing";
 }
 
+/** Complete mapping from 16 in-game personality keys to MBTI 4-letter types */
+const MBTI_MAP: Record<string, string> = {
+  "outgoing_leader": "ESTJ",
+  "outgoing_entertainer": "ESFP",
+  "outgoing_trendsetter": "ENFP",
+  "outgoing_optimist": "ESFJ",
+  "confident_designer": "INTJ",
+  "confident_adventurer": "ESTP",
+  "confident_goGetter": "ENTJ",
+  "confident_charmer": "ENTP",
+  "independent_artist": "INFP",
+  "independent_freeSpirit": "INTP",
+  "independent_thinker": "ISTP",
+  "independent_loneWolf": "ISTJ",
+  "easygoing_dreamer": "INFJ",
+  "easygoing_sweetheart": "ISFJ",
+  "easygoing_softie": "INFP",
+  "easygoing_buddy": "ISFP",
+};
+
+/** Maps a personality key to its full 4-letter MBTI type */
+export function getMbtiCode(personality: string): string {
+  return MBTI_MAP[personality] ?? "INFP";
+}
+
 /** Complementary personality pairs for romance calculation */
 const complementaryPairs: [PersonalityGroup, PersonalityGroup][] = [
   ["outgoing", "independent"],
@@ -63,7 +88,13 @@ export function calculateCompatibility(
   zodiacB: Zodiac,
   personalityA: string,
   personalityB: string
-): { romance: number; friendship: number } {
+): { 
+  romance: number; 
+  friendship: number;
+  zodiacScore: number;
+  romanceBreakdown: { zodiac: number; personality: number };
+  friendshipBreakdown: { zodiac: number; personality: number };
+} {
   const idxA = zodiacOrder.indexOf(zodiacA);
   const idxB = zodiacOrder.indexOf(zodiacB);
   const zodiacScore = zodiacMatrix[idxA]?.[idxB] ?? 50;
@@ -89,7 +120,19 @@ export function calculateCompatibility(
   const romance = Math.max(0, Math.min(100, Math.round(zodiacScore * 0.5 + 50 * 0.5 + romanceModifier)));
   const friendship = Math.max(0, Math.min(100, Math.round(zodiacScore * 0.5 + 50 * 0.5 + friendshipModifier)));
 
-  return { romance, friendship };
+  return { 
+    romance, 
+    friendship,
+    zodiacScore,
+    romanceBreakdown: { 
+      zodiac: Math.round(zodiacScore * 0.5), 
+      personality: Math.round(50 * 0.5 + romanceModifier) 
+    },
+    friendshipBreakdown: { 
+      zodiac: Math.round(zodiacScore * 0.5), 
+      personality: Math.round(50 * 0.5 + friendshipModifier) 
+    },
+  };
 }
 
 export type { Zodiac, PersonalityGroup };

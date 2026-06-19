@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#6366f1" />
+      <stop offset="50%" stop-color="#8b5cf6" />
+      <stop offset="100%" stop-color="#ec4899" />
+    </linearGradient>
+    <linearGradient id="cardGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.95" />
+      <stop offset="100%" stop-color="#f8fafc" stop-opacity="0.95" />
+    </linearGradient>
+    <filter id="shadow">
+      <feDropShadow dx="0" dy="4" stdDeviation="20" flood-color="rgba(0,0,0,0.2)" />
+    </filter>
+    <filter id="textShadow">
+      <feDropShadow dx="2" dy="2" stdDeviation="4" flood-color="rgba(0,0,0,0.3)" />
+    </filter>
+    <pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse">
+      <path d="M 20 0 L 0 0 0 20" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="1" />
+    </pattern>
+  </defs>
+  
+  <rect width="1200" height="630" fill="url(#bgGradient)" />
+  <rect width="1200" height="630" fill="url(#grid)" />
+  
+  <rect x="60" y="60" width="1080" height="510" rx="32" fill="url(#cardGradient)" filter="url(#shadow)" />
+  
+  <g transform="translate(120, 120)">
+    <rect x="0" y="0" width="200" height="200" rx="16" fill="#fbbf24" opacity="0.9" />
+    <text x="100" y="70" text-anchor="middle" font-family="Arial, sans-serif" font-size="80" font-weight="bold" fill="white" filter="url(#textShadow)">E</text>
+    <text x="100" y="140" text-anchor="middle" font-family="Arial, sans-serif" font-size="28" font-weight="bold" fill="white">Extravert</text>
+    <circle cx="100" cy="175" r="8" fill="white" />
+  </g>
+  
+  <g transform="translate(350, 120)">
+    <rect x="0" y="0" width="200" height="200" rx="16" fill="#ef4444" opacity="0.9" />
+    <text x="100" y="70" text-anchor="middle" font-family="Arial, sans-serif" font-size="80" font-weight="bold" fill="white" filter="url(#textShadow)">T</text>
+    <text x="100" y="140" text-anchor="middle" font-family="Arial, sans-serif" font-size="28" font-weight="bold" fill="white">Thinking</text>
+    <circle cx="100" cy="175" r="8" fill="white" />
+  </g>
+  
+  <g transform="translate(580, 120)">
+    <rect x="0" y="0" width="200" height="200" rx="16" fill="#8b5cf6" opacity="0.9" />
+    <text x="100" y="70" text-anchor="middle" font-family="Arial, sans-serif" font-size="80" font-weight="bold" fill="white" filter="url(#textShadow)">I</text>
+    <text x="100" y="140" text-anchor="middle" font-family="Arial, sans-serif" font-size="28" font-weight="bold" fill="white">Introvert</text>
+    <circle cx="100" cy="175" r="8" fill="white" />
+  </g>
+  
+  <g transform="translate(810, 120)">
+    <rect x="0" y="0" width="200" height="200" rx="16" fill="#22c55e" opacity="0.9" />
+    <text x="100" y="70" text-anchor="middle" font-family="Arial, sans-serif" font-size="80" font-weight="bold" fill="white" filter="url(#textShadow)">F</text>
+    <text x="100" y="140" text-anchor="middle" font-family="Arial, sans-serif" font-size="28" font-weight="bold" fill="white">Feeling</text>
+    <circle cx="100" cy="175" r="8" fill="white" />
+  </g>
+  
+  <g transform="translate(500, 360)">
+    <rect x="0" y="0" width="200" height="140" rx="16" fill="#3b82f6" opacity="0.9" />
+    <text x="100" y="55" text-anchor="middle" font-family="Arial, sans-serif" font-size="60" font-weight="bold" fill="white" filter="url(#textShadow)">J/P</text>
+    <text x="100" y="105" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="white">Judging / Perceiving</text>
+  </g>
+  
+  <text x="600" y="40" text-anchor="middle" font-family="Arial, sans-serif" font-size="32" font-weight="bold" fill="white" filter="url(#textShadow)">LifeSimGrid</text>
+  
+  <text x="600" y="530" text-anchor="middle" font-family="Arial, sans-serif" font-size="48" font-weight="bold" fill="#1e293b">Tomodachi Life MBTI</text>
+  <text x="600" y="575" text-anchor="middle" font-family="Arial, sans-serif" font-size="28" font-weight="normal" fill="#64748b">16-Personality Type Converter</text>
+  
+  <g transform="translate(1050, 550)">
+    <circle cx="0" cy="0" r="30" fill="#fbbf24" />
+    <text x="0" y="8" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="white">🎮</text>
+  </g>
+  
+  <rect x="60" y="590" width="1080" height="2" rx="1" fill="#e2e8f0" opacity="0.5" />
+</svg>

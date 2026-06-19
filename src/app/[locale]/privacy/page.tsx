@@ -40,7 +40,7 @@ export async function generateMetadata({
     title: PAGE_TITLES[locale] || "Privacy Policy - LifeSimGrid",
     description: PAGE_DESCS[locale] || "",
     alternates: {
-      canonical: `${BASE}/${locale}/privacy`,
+      canonical: locale === "en" ? `${BASE}/privacy` : `${BASE}/${locale}/privacy`,
       languages: {
         en: `${BASE}/privacy`,
         "zh-Hant": `${BASE}/zh-Hant/privacy`,
