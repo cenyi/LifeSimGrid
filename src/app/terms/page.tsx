@@ -6,10 +6,11 @@ import type { Metadata } from "next";
 
 const BASE = "https://lifesimgrid.org";
 
+/** 根级 Terms 页面的元数据（英文默认版本）。 */
 export const metadata: Metadata = {
-  title: "Terms of Service - LifeSimGrid",
+  title: { absolute: "LifeSimGrid Terms — MIT Licensed, Independent Fan Tool" },
   description:
-    "LifeSimGrid terms of service: independent third-party tool, MIT licensed, no affiliation with any game console manufacturers.",
+    "LifeSimGrid terms: independent tool, MIT licensed, no console-maker affiliation. Free ACNH, Mii, Tomodachi tools. No data collection, 100% client-side.",
   alternates: {
     canonical: `${BASE}/terms`,
     languages: {
@@ -23,10 +24,20 @@ export const metadata: Metadata = {
       it: `${BASE}/it/terms`,
       nl: `${BASE}/nl/terms`,
       "zh-CN": `${BASE}/zh-CN/terms`,
+      "x-default": `${BASE}/terms`,
     },
+  },
+  openGraph: {
+    title: "LifeSimGrid Terms — MIT Licensed, No Affiliation",
+    description:
+      "LifeSimGrid terms: independent tool, MIT licensed, no affiliation with console makers. Free ACNH, Mii & Tomodachi tools. No data collection.",
+    url: `${BASE}/terms`,
+    siteName: "LifeSimGrid",
+    type: "website",
   },
 };
 
+/** 根级 Terms 页面组件，渲染于 /terms 路径（英文默认版本）。 */
 export default function RootTermsPage() {
   setRequestLocale("en");
 

@@ -6,10 +6,11 @@ import type { Metadata } from "next";
 
 const BASE = "https://lifesimgrid.org";
 
+/** 根级 Tomodachi Life MBTI 页面的元数据（英文默认版本）。 */
 export const metadata: Metadata = {
-  title: "Tomodachi Life MBTI Mapping - 16-Personality Converter - LifeSimGrid",
+  title: { absolute: "Tomodachi Life MBTI — 16-Personality Calc | LifeSimGrid" },
   description:
-    "Convert 16 Tomodachi Life Mii personality types to MBTI. Interactive tool with Myers-Briggs compatibility calculator.",
+    "Free Tomodachi Life MBTI converter. 16-personality compatibility calculator with zodiac synergy. 100% client-side, no server.",
   alternates: {
     canonical: `${BASE}/tomodachi-life-mbti`,
     languages: {
@@ -27,9 +28,9 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "Tomodachi Life MBTI Mapping - 16-Personality Converter",
+    title: "Tomodachi Life MBTI — 16-Personality Calculator",
     description:
-      "Convert 16 Tomodachi Life Mii personality types to MBTI. Interactive tool with Myers-Briggs compatibility calculator.",
+      "Free Tomodachi Life MBTI converter. 16-personality compatibility calculator with zodiac synergy. 100% client-side.",
     url: `${BASE}/tomodachi-life-mbti`,
     siteName: "LifeSimGrid",
     type: "website",
@@ -44,6 +45,7 @@ export const metadata: Metadata = {
   },
 };
 
+/** 根级 Tomodachi Life MBTI 页面组件，渲染于 /tomodachi-life-mbti 路径（英文默认版本）。 */
 export default function RootTomodachiLifeMbtiPage() {
   setRequestLocale("en");
 

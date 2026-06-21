@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4338ca" />
+      <stop offset="50%" stop-color="#4f46e5" />
+      <stop offset="100%" stop-color="#6366f1" />
+    </linearGradient>
+    <linearGradient id="cardGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.95" />
+      <stop offset="100%" stop-color="#f8fafc" stop-opacity="0.95" />
+    </linearGradient>
+    <filter id="shadow">
+      <feDropShadow dx="0" dy="4" stdDeviation="20" flood-color="rgba(0,0,0,0.2)" />
+    </filter>
+    <filter id="textShadow">
+      <feDropShadow dx="2" dy="2" stdDeviation="4" flood-color="rgba(0,0,0,0.3)" />
+    </filter>
+    <pattern id="qrPattern" width="24" height="24" patternUnits="userSpaceOnUse">
+      <rect width="24" height="24" fill="none" />
+      <rect x="2" y="2" width="10" height="10" fill="rgba(255,255,255,0.06)" rx="1" />
+      <rect x="14" y="14" width="8" height="8" fill="rgba(255,255,255,0.06)" rx="1" />
+    </pattern>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#bgGradient)" />
+  <rect width="1200" height="630" fill="url(#qrPattern)" />
+
+  <rect x="60" y="60" width="1080" height="510" rx="32" fill="url(#cardGradient)" filter="url(#shadow)" />
+
+  <!-- QR code icon -->
+  <g transform="translate(140, 130)">
+    <!-- QR corner squares -->
+    <rect x="0" y="0" width="60" height="60" rx="6" fill="#4338ca" opacity="0.9" />
+    <rect x="10" y="10" width="40" height="40" rx="3" fill="white" />
+    <rect x="18" y="18" width="24" height="24" rx="2" fill="#4338ca" />
+
+    <rect x="120" y="0" width="60" height="60" rx="6" fill="#4338ca" opacity="0.9" />
+    <rect x="130" y="10" width="40" height="40" rx="3" fill="white" />
+    <rect x="138" y="18" width="24" height="24" rx="2" fill="#4338ca" />
+
+    <rect x="0" y="120" width="60" height="60" rx="6" fill="#4338ca" opacity="0.9" />
+    <rect x="10" y="130" width="40" height="40" rx="3" fill="white" />
+    <rect x="18" y="138" width="24" height="24" rx="2" fill="#4338ca" />
+
+    <!-- QR data blocks -->
+    <rect x="80" y="80" width="20" height="20" rx="2" fill="#4f46e5" opacity="0.7" />
+    <rect x="110" y="80" width="20" height="20" rx="2" fill="#6366f1" opacity="0.6" />
+    <rect x="140" y="80" width="20" height="20" rx="2" fill="#4f46e5" opacity="0.7" />
+    <rect x="80" y="110" width="20" height="20" rx="2" fill="#6366f1" opacity="0.6" />
+    <rect x="110" y="110" width="20" height="20" rx="2" fill="#4f46e5" opacity="0.7" />
+    <rect x="140" y="110" width="20" height="20" rx="2" fill="#4338ca" opacity="0.8" />
+    <rect x="80" y="140" width="20" height="20" rx="2" fill="#4338ca" opacity="0.8" />
+    <rect x="110" y="140" width="20" height="20" rx="2" fill="#6366f1" opacity="0.6" />
+    <rect x="140" y="140" width="20" height="20" rx="2" fill="#4f46e5" opacity="0.7" />
+  </g>
+
+  <!-- Unlock icon -->
+  <g transform="translate(880, 150)">
+    <rect x="15" y="50" width="70" height="55" rx="10" fill="#4338ca" opacity="0.9" />
+    <path d="M 30 50 L 30 30 A 20 20 0 0 1 70 30 L 70 40" fill="none" stroke="#4338ca" stroke-width="10" stroke-linecap="round" opacity="0.9" />
+    <circle cx="50" cy="78" r="8" fill="white" />
+  </g>
+
+  <text x="600" y="40" text-anchor="middle" font-family="Arial, sans-serif" font-size="32" font-weight="bold" fill="white" filter="url(#textShadow)">LifeSimGrid</text>
+
+  <text x="600" y="460" text-anchor="middle" font-family="Arial, sans-serif" font-size="48" font-weight="bold" fill="#1e293b">Mii QR Code Unlocker</text>
+  <text x="600" y="510" text-anchor="middle" font-family="Arial, sans-serif" font-size="28" font-weight="normal" fill="#64748b">Fix "Cannot be Edited" Error Instantly</text>
+
+  <rect x="60" y="590" width="1080" height="2" rx="1" fill="#e2e8f0" opacity="0.5" />
+</svg>

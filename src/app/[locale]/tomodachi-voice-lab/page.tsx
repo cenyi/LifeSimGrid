@@ -8,28 +8,28 @@ const BASE = "https://lifesimgrid.org";
 
 /** Localized page titles for Tomodachi Voice Lab (template appends " - LifeSimGrid"). */
 const PAGE_TITLES: Record<string, string> = {
-  "zh-Hant": "Tomodachi 聲音實驗室 - 8-bit Mii 語音合成器",
-  ja: "トモダチコレクション 声ラボ - 8ビットMii音声シンセサイザー",
-  es: "Tomodachi Life Voice Lab - Sintetizador de Voz Mii 8-Bit",
-  fr: "Tomodachi Life Voice Lab - Synthétiseur Vocal Mii 8-Bit",
-  ko: "Tomodachi Life 음성 실험실 - 8비트 Mii 음성 합성기",
-  de: "Tomodachi Life Voice Lab - 8-Bit Mii-Sprachsynthesizer",
-  it: "Tomodachi Life Voice Lab - Sintetizzatore Vocale Mii 8-Bit",
-  nl: "Tomodachi Life Voice Lab - 8-Bit Mii-stemsynthesizer",
-  "zh-CN": "Tomodachi 声音实验室 - 8-bit Mii 语音合成器",
+  "zh-Hant": "Tomodachi 8-bit語音合成 — 免費",
+  ja: "トモダチ8-bit音声合成 — 無料",
+  es: "Sintetizador Voz 8-Bit — Gratis",
+  fr: "Synthétiseur Vocal 8-Bit — Gratuit",
+  ko: "Tomodachi 8-bit음성합성 — 무료",
+  de: "8-Bit-Stimmensynth. — Gratis Tool",
+  it: "Sintetizz. Vocale 8-Bit — Gratis",
+  nl: "8-Bit-stemsynth. — Gratis Tool",
+  "zh-CN": "Tomodachi 8-bit语音合成 — 免费",
 };
 
 /** Localized page descriptions for Tomodachi Voice Lab. */
 const PAGE_DESCS: Record<string, string> = {
-  "zh-Hant": "免費線上 Tomodachi Life 語音合成器。使用5種預設、自訂音高和語速控制，以及文字轉語音模擬來合成8-bit Mii語音。",
-  ja: "無料オンライン トモダチコレクション 音声シンセサイザー。5つのプリセット、カスタムピッチとスピードコントロール、テキスト読み上げシミュレーションで8ビットMii音声を合成。",
-  es: "Sintetizador de voz gratuito de Tomodachi Life. Sintetiza voces Mii 8-bit con 5 presets, controles de tono y velocidad, y simulación de texto a voz.",
-  fr: "Synthétiseur vocal gratuit Tomodachi Life. Synthétisez des voix Mii 8-bit avec 5 préréglages, contrôles de hauteur et vitesse, et simulation texte-parole.",
-  ko: "무료 Tomodachi Life 음성 합성기. 5가지 프리셋, 커스텀 피치 및 속도 제어, 텍스트 음성 변환 시뮬레이션으로 8비트 Mii 음성을 합성합니다.",
-  de: "Kostenloser Tomodachi Life-Sprachsynthesizer. Synthetisieren Sie 8-Bit-Mii-Stimmen mit 5 Voreinstellungen, individueller Tonhöhen- und Geschwindigkeitssteuerung und Text-to-Speech-Simulation.",
-  it: "Sintetizzatore vocale gratuito Tomodachi Life. Sintetizza voci Mii 8-bit con 5 preset, controlli di intonazione e velocità, e simulazione testo-parola.",
-  nl: "Gratis Tomodachi Life-stemsynthesizer. Synthetiseer 8-bit Mii-stemmen met 5 voorinstellingen, aangepaste toonhoogte- en snelheidsregeling, en tekst-naar-spraak-simulatie.",
-  "zh-CN": "免费在线 Tomodachi Life 语音合成器。使用5种预设、自定义音高和语速控制，以及文字转语音模拟来合成8-bit Mii语音。",
+  "zh-Hant": "免費Tomodachi語音合成器。5種預設、音高語速控制、8-bit匯出。100%純前端。",
+  ja: "無料トモダチ音声合成。5プリセット、ピッチ調整、8bitエクスポート。100%クライアント処理。",
+  es: "Sintetizador voz 8-Bit Tomodachi. 5 presets, control tono/velocidad, TTS. Web Audio API, export WAV. 100% cliente, sin servidor.",
+  fr: "Synthétiseur vocal 8-Bit Tomodachi. 5 préréglages, contrôle hauteur/vitesse, TTS. Web Audio API, export WAV. 100% client, sans serveur.",
+  ko: "Tomodachi 8-bit음성합성기. 5종파형, 피치/속도조절, TTS. Web Audio API. 100% 클라이언트.",
+  de: "8-Bit-Sprachsynth. Tomodachi. 5 Presets, Tonhöhe/Tempo, TTS. Web Audio API, WAV-Export. 100% clientseitig, kein Server.",
+  it: "Sintetizzatore vocale 8-Bit Tomodachi. 5 preset, controllo tono/velocità, TTS. Web Audio API, export WAV. 100% lato client, nessun server.",
+  nl: "8-Bit-stemsynth. Tomodachi. 5 voorinstellingen, toonhoogte-/snelheidsregeling, TTS. Web Audio API, WAV-export. 100% clientzijde, geen server.",
+  "zh-CN": "免费Tomodachi 8-bit语音合成器。5种复古波形、音高语速控制、WAV导出。Web Audio API驱动。100%纯前端。",
 };
 
 const FALLBACK_TITLE = "Tomodachi Life Voice Lab - 8-Bit Mii Voice Synthesizer";
@@ -62,6 +62,21 @@ export async function generateMetadata({
         nl: `${BASE}/nl/${path}`,
         "zh-CN": `${BASE}/zh-CN/${path}`,
       },
+    },
+    openGraph: {
+      title: PAGE_TITLES[locale] || FALLBACK_TITLE,
+      description: PAGE_DESCS[locale] || FALLBACK_DESC,
+      url: locale === "en" ? `${BASE}/${path}` : `${BASE}/${locale}/${path}`,
+      siteName: "LifeSimGrid",
+      type: "website",
+      images: [
+        {
+          url: `${BASE}/og/${path}.svg`,
+          width: 1200,
+          height: 630,
+          alt: PAGE_TITLES[locale] || FALLBACK_TITLE,
+        },
+      ],
     },
   };
 }

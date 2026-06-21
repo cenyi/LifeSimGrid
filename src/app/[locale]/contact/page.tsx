@@ -6,28 +6,29 @@ import type { Metadata } from "next";
 
 const BASE = "https://lifesimgrid.org";
 
+/** Localized page titles for Contact (template appends " - LifeSimGrid"). */
 const PAGE_TITLES: Record<string, string> = {
-  "zh-Hant": "聯絡我們 - LifeSimGrid",
-  ja: "お問い合わせ - LifeSimGrid",
-  es: "Contáctanos - LifeSimGrid",
-  fr: "Nous contacter - LifeSimGrid",
-  ko: "문의하기 - LifeSimGrid",
-  de: "Kontakt - LifeSimGrid",
-  it: "Contattaci - LifeSimGrid",
-  nl: "Contact - LifeSimGrid",
-  "zh-CN": "联系我们 - LifeSimGrid",
+  "zh-Hant": "聯絡LifeSimGrid — 技術支援",
+  ja: "LifeSimGridお問い合わせ",
+  es: "Contacto LifeSimGrid — Soporte",
+  fr: "Contact LifeSimGrid — Support",
+  ko: "LifeSimGrid 문의 — 기술지원",
+  de: "LifeSimGrid Kontakt — Support",
+  it: "Contatti LifeSimGrid — Supporto",
+  nl: "Contact LifeSimGrid — Support",
+  "zh-CN": "联系LifeSimGrid — 技术支持",
 };
 
 const PAGE_DESCS: Record<string, string> = {
-  "zh-Hant": "聯繫 LifeSimGrid 團隊：技術支援、錯誤回報或合規諮詢。",
-  ja: "LifeSimGridチームへのお問い合わせ：テクニカルサポート、バグ報告、コンプライアンス相談。",
-  es: "Contacta al equipo de LifeSimGrid: soporte técnico, reporte de errores o consultas de cumplimiento.",
-  fr: "Contactez l'équipe LifeSimGrid : support technique, signalement de bugs ou questions de conformité.",
-  ko: "LifeSimGrid 팀에 문의: 기술 지원, 버그 신고 또는 규정 준수 문의.",
-  de: "Kontaktiere das LifeSimGrid-Team: technischer Support, Fehlerberichte oder Compliance-Anfragen.",
-  it: "Contatta il team LifeSimGrid: supporto tecnico, segnalazione bug o richieste di conformità.",
-  nl: "Neem contact op met het LifeSimGrid-team: technische ondersteuning, bugrapporten of compliance-vragen.",
-  "zh-CN": "联系 LifeSimGrid 团队：技术支持、错误报告或合规咨询。",
+  "zh-Hant": "技術支援、錯誤回報或合規諮詢。歡迎動森我的設計、Mii QR碼工具反饋。100%純前端。",
+  ja: "テクニカルサポート、バグ報告、コンプライアンス相談。マイデザイン・Mii QRツールへのご意見歓迎。100%クライアント処理。",
+  es: "Soporte técnico, reporte de bugs o cumplimiento. Feedback sobre ACNH Custom Designs, Mii y Tomodachi. 100% cliente, sin servidor.",
+  fr: "Support technique, signalement de bugs ou conformité. Feedback sur Custom Designs ACNH, Mii et Tomodachi. 100% client, sans serveur.",
+  ko: "기술 지원, 버그 신고 또는 규정 준수. 커스텀 디자인, Mii QR 도구 피드백 환영. 100% 클라이언트.",
+  de: "Technischer Support, Fehlerberichte oder Compliance. Feedback zu ACNH, Mii und Tomodachi. 100% clientseitig, kein Server.",
+  it: "Supporto tecnico, segnalazione bug o conformità. Feedback su Custom Designs ACNH, Mii e Tomodachi. 100% lato client, senza server.",
+  nl: "Technische ondersteuning, bugrapporten of compliance. Feedback over ACNH Custom Designs, Mii en Tomodachi. 100% clientzijde, geen server.",
+  "zh-CN": "技术支持、错误报告或合规咨询。欢迎动森我的设计、Mii二维码工具反馈。100%纯前端。","
 };
 
 export async function generateMetadata({
@@ -36,6 +37,7 @@ export async function generateMetadata({
   params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
   const { locale } = await params;
+  const path = "contact";
   return {
     title: PAGE_TITLES[locale] || "Contact Us",
     description: PAGE_DESCS[locale] || "",
@@ -52,7 +54,15 @@ export async function generateMetadata({
         it: `${BASE}/it/contact`,
         nl: `${BASE}/nl/contact`,
         "zh-CN": `${BASE}/zh-CN/contact`,
+        "x-default": `${BASE}/contact`,
       },
+    },
+    openGraph: {
+      title: PAGE_TITLES[locale] || "Contact Us",
+      description: PAGE_DESCS[locale] || "",
+      url: locale === "en" ? `${BASE}/${path}` : `${BASE}/${locale}/${path}`,
+      siteName: "LifeSimGrid",
+      type: "website",
     },
   };
 }

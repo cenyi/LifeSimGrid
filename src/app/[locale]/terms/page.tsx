@@ -6,28 +6,29 @@ import type { Metadata } from "next";
 
 const BASE = "https://lifesimgrid.org";
 
+/** Localized page titles for Terms (template appends " - LifeSimGrid"). */
 const PAGE_TITLES: Record<string, string> = {
-  "zh-Hant": "服務條款 - LifeSimGrid",
-  ja: "利用規約 - LifeSimGrid",
-  es: "Términos de servicio - LifeSimGrid",
-  fr: "Conditions d'utilisation - LifeSimGrid",
-  ko: "이용약관 - LifeSimGrid",
-  de: "Nutzungsbedingungen - LifeSimGrid",
-  it: "Termini di servizio - LifeSimGrid",
-  nl: "Gebruiksvoorwaarden - LifeSimGrid",
-  "zh-CN": "服务条款 - LifeSimGrid",
+  "zh-Hant": "LifeSimGrid服務條款 — MIT開源獨立工具",
+  ja: "LifeSimGrid利用規約 — MITライセンス",
+  es: "LifeSimGrid Términos — MIT, Fan Tool",
+  fr: "LifeSimGrid Conditions — MIT, Outil Fan",
+  ko: "LifeSimGrid 이용약관 — MIT독립도구",
+  de: "LifeSimGrid AGB — MIT, Fan-Tool",
+  it: "LifeSimGrid Termini — MIT, Fan Tool",
+  nl: "LifeSimGrid Voorwaarden — MIT, Fan-Tool",
+  "zh-CN": "LifeSimGrid服务条款 — MIT开源独立工具",
 };
 
 const PAGE_DESCS: Record<string, string> = {
-  "zh-Hant": "LifeSimGrid 服務條款：獨立第三方工具，MIT 開源協議，與任何遊戲主機製造商無關。",
-  ja: "LifeSimGrid利用規約：独立したサードパーティツール、MITオープンソースライセンス、ゲーム機メーカーとは無関係。",
-  es: "Términos de servicio de LifeSimGrid: herramienta de terceros independiente, licencia MIT de código abierto, no afiliada a ningún fabricante de consolas.",
-  fr: "Conditions d'utilisation de LifeSimGrid : outil tiers indépendant, licence MIT open source, non affilié à aucun fabricant de consoles.",
-  ko: "LifeSimGrid 이용약관: 독립적인 서드파티 도구, MIT 오픈소스 라이선스, 게임 콘솔 제조사와 무관.",
-  de: "LifeSimGrid Nutzungsbedingungen: unabhängiges Drittanbieter-Tool, MIT-Open-Source-Lizenz, nicht verbunden mit Spielekonsolen-Herstellern.",
-  it: "Termini di servizio di LifeSimGrid: strumento di terze parti indipendente, licenza MIT open source, non affiliato ad alcun produttore di console.",
-  nl: "LifeSimGrid gebruiksvoorwaarden: onafhankelijke third-party tool, MIT open-source licentie, niet gelieerd aan enige consolefabrikant.",
-  "zh-CN": "LifeSimGrid 服务条款：独立第三方工具，MIT 开源协议，与任何游戏主机制造商无关。",
+  "zh-Hant": "獨立第三方工具，MIT開源協議，與遊戲主機製造商無關。免費動森我的設計、Mii QR碼工具。純前端，無數據收集。",
+  ja: "独立サードパーティ、MITライセンス、ゲーム機メーカー無関係。マイデザイン・Mii QR無料ツール。データ収集なし。",
+  es: "Términos: herramienta independiente, licencia MIT. No afiliada con fabricantes de consolas. ACNH Custom Designs, Mii y Tomodachi gratis.",
+  fr: "Conditions : outil tiers indépendant, licence MIT. Non affilié aux fabricants de consoles. Custom Designs ACNH, Mii et Tomodachi gratuits.",
+  ko: "독립 서드파티 도구, MIT 라이선스. 게임 콘솔 제조사와 무관. 커스텀 디자인, Mii QR 무료. 데이터 수집 없음.",
+  de: "AGB: unabhängiges Drittanbieter-Tool, MIT-Lizenz. Keine Verbindung zu Konsolen-Herstellern. Gratis ACNH, Mii, Tomodachi.",
+  it: "Termini: strumento indipendente, licenza MIT. Non affiliato a produttori di console. Custom Designs ACNH, Mii e Tomodachi gratis.",
+  nl: "Voorwaarden: onafhankelijke third-party tool, MIT-licentie. Niet gelieerd aan consolefabrikanten. Gratis ACNH Custom Designs, Mii, Tomodachi.",
+  "zh-CN": "独立第三方工具，MIT开源协议，与游戏主机制造商无关。免费动森我的设计、Mii二维码工具。纯前端，无数据收集。",
 };
 
 export async function generateMetadata({
@@ -36,6 +37,7 @@ export async function generateMetadata({
   params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
   const { locale } = await params;
+  const path = "terms";
   return {
     title: PAGE_TITLES[locale] || "Terms of Service",
     description: PAGE_DESCS[locale] || "",
@@ -52,7 +54,15 @@ export async function generateMetadata({
         it: `${BASE}/it/terms`,
         nl: `${BASE}/nl/terms`,
         "zh-CN": `${BASE}/zh-CN/terms`,
+        "x-default": `${BASE}/terms`,
       },
+    },
+    openGraph: {
+      title: PAGE_TITLES[locale] || "Terms of Service",
+      description: PAGE_DESCS[locale] || "",
+      url: locale === "en" ? `${BASE}/${path}` : `${BASE}/${locale}/${path}`,
+      siteName: "LifeSimGrid",
+      type: "website",
     },
   };
 }

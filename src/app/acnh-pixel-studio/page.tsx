@@ -8,9 +8,9 @@ const BASE = "https://lifesimgrid.org";
 
 /** Metadata for the root-level ACNH Pixel Studio page (English default). */
 export const metadata: Metadata = {
-  title: { absolute: "ACNH Custom Design Pixel Studio - Convert Images to Animal Crossing Patterns - LifeSimGrid" },
+  title: { absolute: "ACNH Pixel Studio — Free Custom Design Tool | LifeSimGrid" },
   description:
-    "Free online tool to convert any image into Animal Crossing: New Horizons custom design pixel patterns. Smart scaling, multi-ratio support, and 8-bit retro palette.",
+    "Free ACNH custom design pixel converter. 32×32 & 64×64, 15-color palette, FFL export, smart scaling. 100% browser-based, no server.",
   alternates: {
     canonical: `${BASE}/acnh-pixel-studio`,
     languages: {
@@ -28,12 +28,20 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "ACNH Custom Design Pixel Studio - Convert Images to Animal Crossing Patterns",
+    title: "ACNH Pixel Studio — Free Custom Design Tool",
     description:
-      "Free online tool to convert any image into Animal Crossing: New Horizons custom design pixel patterns.",
+      "Free online tool to convert images into ACNH custom design pixel patterns. 32×32 & 64×64, 15-color palette, FFL-compatible export. 100% browser-based.",
     url: `${BASE}/acnh-pixel-studio`,
     siteName: "LifeSimGrid",
     type: "website",
+    images: [
+      {
+        url: `${BASE}/og/acnh-pixel-studio.svg`,
+        width: 1200,
+        height: 630,
+        alt: "ACNH Pixel Studio - Free Custom Design Tool",
+      },
+    ],
   },
 };
 

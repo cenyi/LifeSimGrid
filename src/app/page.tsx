@@ -8,9 +8,9 @@ import type { Metadata } from "next";
 const BASE = "https://lifesimgrid.org";
 
 export const metadata: Metadata = {
-  title: "LifeSimGrid - Custom Island Companion Toolset",
+  title: { absolute: "LifeSimGrid — Free ACNH, Mii & Tomodachi Tools" },
   description:
-    "Pixel Studio, Avatar QR Code Unlocker, Voice Simulator &amp; Compatibility Calculator. 100% client-side, no server needed.",
+    "Free ACNH, Mii & Tomodachi Life toolkit: Pixel Studio, QR Unlocker, Voice Lab & MBTI Calc. 100% client-side, no server.",
   alternates: {
     canonical: `${BASE}/`,
     languages: {
@@ -24,12 +24,13 @@ export const metadata: Metadata = {
       it: `${BASE}/it`,
       nl: `${BASE}/nl`,
       "zh-CN": `${BASE}/zh-CN`,
+      "x-default": `${BASE}/`,
     },
   },
   openGraph: {
-    title: "LifeSimGrid - Custom Island Companion Toolset",
+    title: "LifeSimGrid — Free ACNH, Mii & Tomodachi Tools",
     description:
-      "Pixel Studio, QR Unlocker, Voice Lab — all in one. 100% client-side fan tool.",
+      "Free ACNH, Mii & Tomodachi Life toolkit: Pixel Studio, QR Unlocker, Voice Lab & MBTI Calc. 100% client-side.",
     url: BASE,
     siteName: "LifeSimGrid",
     type: "website",

@@ -8,9 +8,9 @@ const BASE = "https://lifesimgrid.org";
 
 /** Metadata for the root-level Mii QR Unlocker page (English default). */
 export const metadata: Metadata = {
-  title: { absolute: "Mii QR Code Unlocker - Fix 'Cannot be Edited' Error Online - LifeSimGrid" },
+  title: { absolute: "Mii QR Unlocker — Fix Edit Error Online | LifeSimGrid" },
   description:
-    "Free online tool to unlock Mii QR codes. Fix 'This Mii Cannot be Edited' and 'Copying Not Allowed' errors instantly. Supports 3DS, Wii U, and Switch Mii data.",
+    "Free Mii QR unlocker. Fix 'Cannot be Edited' & 'Copying Not Allowed' errors. 3DS, Wii U & Switch. 100% browser-based, no server.",
   alternates: {
     canonical: `${BASE}/mii-qr-unlocker`,
     languages: {
@@ -28,12 +28,20 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "Mii QR Code Unlocker - Fix 'Cannot be Edited' Error Online",
+    title: "Mii QR Unlocker — Fix Edit Error Online",
     description:
-      "Free online tool to unlock Mii QR codes. Fix 'This Mii Cannot be Edited' and 'Copying Not Allowed' errors instantly.",
+      "Free Mii QR unlocker. Fix 'Cannot be Edited' & 'Copying Not Allowed' errors. 3DS, Wii U & Switch. 100% browser-based.",
     url: `${BASE}/mii-qr-unlocker`,
     siteName: "LifeSimGrid",
     type: "website",
+    images: [
+      {
+        url: `${BASE}/og/mii-qr-unlocker.svg`,
+        width: 1200,
+        height: 630,
+        alt: "Mii QR Unlocker - Fix Edit Error Online",
+      },
+    ],
   },
 };
 

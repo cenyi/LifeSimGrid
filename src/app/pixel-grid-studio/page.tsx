@@ -8,9 +8,9 @@ const BASE = "https://lifesimgrid.org";
 
 /** Metadata for the root-level Pixel Grid Studio page (English default). */
 export const metadata: Metadata = {
-  title: { absolute: "Image to Pixel Art Converter - Free Online Pixel Grid Generator - LifeSimGrid" },
+  title: { absolute: "Image to Pixel Art — Free Grid Generator | LifeSimGrid" },
   description:
-    "Free online tool to convert any image into pixel art grid patterns. Perfect for Minecraft, Perler Beads, Cross Stitch, and more. Custom grid sizes from 16×16 to 128×128.",
+    "Free pixel art grid converter for Minecraft, Perler Beads & Cross Stitch. 16×16 to 128×128. 100% browser-based, no server.",
   alternates: {
     canonical: `${BASE}/pixel-grid-studio`,
     languages: {
@@ -28,12 +28,20 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "Image to Pixel Art Converter - Free Online Pixel Grid Generator",
+    title: "Image to Pixel Art — Free Grid Generator",
     description:
-      "Free online tool to convert any image into pixel art grid patterns. Perfect for Minecraft, Perler Beads, Cross Stitch, and more.",
+      "Free tool to convert images into pixel art grid patterns. Minecraft, Perler Beads, Cross Stitch & more. Grid 16×16 to 128×128. 100% browser-based.",
     url: `${BASE}/pixel-grid-studio`,
     siteName: "LifeSimGrid",
     type: "website",
+    images: [
+      {
+        url: `${BASE}/og/pixel-grid-studio.svg`,
+        width: 1200,
+        height: 630,
+        alt: "Pixel Grid Studio - Free Image to Pixel Art Converter",
+      },
+    ],
   },
 };
 

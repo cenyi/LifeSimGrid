@@ -6,28 +6,29 @@ import type { Metadata } from "next";
 
 const BASE = "https://lifesimgrid.org";
 
+/** Localized page titles for Privacy (template appends " - LifeSimGrid"). */
 const PAGE_TITLES: Record<string, string> = {
-  "zh-Hant": "隱私政策 - LifeSimGrid",
-  ja: "プライバシーポリシー - LifeSimGrid",
-  es: "Política de privacidad - LifeSimGrid",
-  fr: "Politique de confidentialité - LifeSimGrid",
-  ko: "개인정보 보호정책 - LifeSimGrid",
-  de: "Datenschutzerklärung - LifeSimGrid",
-  it: "Informativa sulla privacy - LifeSimGrid",
-  nl: "Privacybeleid - LifeSimGrid",
-  "zh-CN": "隐私政策 - LifeSimGrid",
+  "zh-Hant": "LifeSimGrid隱私 — 純前端無數據收集",
+  ja: "LifeSimGridプライバシー — データ収集なし",
+  es: "LifeSimGrid Privacidad — 100% Cliente",
+  fr: "LifeSimGrid Confidentialité — 100% Client",
+  ko: "LifeSimGrid 개인정보 — 데이터수집없음",
+  de: "LifeSimGrid Datenschutz — 100% Client",
+  it: "LifeSimGrid Privacy — 100% Lato Client",
+  nl: "LifeSimGrid Privacy — 100% Clientzijde",
+  "zh-CN": "LifeSimGrid隐私 — 纯前端无数据收集",
 };
 
 const PAGE_DESCS: Record<string, string> = {
-  "zh-Hant": "LifeSimGrid 隱私政策：100% 純前端處理，不收集數據，無後端伺服器。",
-  ja: "LifeSimGridプライバシーポリシー：100%クライアントサイド処理、データ収集なし、バックエンドサーバーなし。",
-  es: "Política de privacidad de LifeSimGrid: procesamiento 100% del lado del cliente, sin recopilación de datos, sin servidores backend.",
-  fr: "Politique de confidentialité de LifeSimGrid : traitement 100% côté client, aucune collecte de données, aucun serveur backend.",
-  ko: "LifeSimGrid 개인정보 보호정책: 100% 클라이언트 사이드 처리, 데이터 수집 없음, 백엔드 서버 없음.",
-  de: "LifeSimGrid Datenschutzerklärung: 100% clientseitige Verarbeitung, keine Datenerfassung, kein Backend-Server.",
-  it: "Informativa sulla privacy di LifeSimGrid: elaborazione 100% lato client, nessuna raccolta di dati, nessun server backend.",
-  nl: "LifeSimGrid privacybeleid: 100% verwerking aan de clientzijde, geen gegevensverzameling, geen backend-server.",
-  "zh-CN": "LifeSimGrid 隐私政策：100%纯前端处理，不收集数据，无后端服务器。",
+  "zh-Hant": "100%純前端處理，不收集數據，無追蹤。動森我的設計、Mii QR碼免費工具。無需上傳，無需註冊。",
+  ja: "100%クライアント処理、データ収集なし、トラッキングなし。マイデザイン・Mii QR無料ツール。アカウント不要。",
+  es: "Privacidad: 100% cliente, sin recopilación, sin rastreo. Tools gratis ACNH Custom Designs, Mii y Tomodachi. Sin cuenta.",
+  fr: "Confidentialité : 100% client, aucune collecte, aucun suivi. Outils gratuits Custom Designs ACNH, Mii et Tomodachi. Sans inscription.",
+  ko: "100% 클라이언트, 데이터 수집 없음, 추적 없음. 커스텀 디자인, Mii QR 무료. 계정 불필요.",
+  de: "Datenschutz: 100% clientseitig, keine Datenerfassung, kein Tracking. Gratis ACNH, Mii und Tomodachi. Keine Registrierung.",
+  it: "Privacy: 100% lato client, nessuna raccolta, nessun tracciamento. Strumenti gratis Custom Designs ACNH, Mii e Tomodachi. Senza registrazione.",
+  nl: "Privacy: 100% clientzijde, geen verzameling, geen tracking. Gratis ACNH Custom Designs, Mii en Tomodachi. Zonder registratie.",
+  "zh-CN": "100%纯前端处理，不收集数据，无追踪。动森我的设计、Mii二维码免费工具。无需上传，无需注册。",
 };
 
 export async function generateMetadata({
@@ -36,6 +37,7 @@ export async function generateMetadata({
   params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
   const { locale } = await params;
+  const path = "privacy";
   return {
     title: PAGE_TITLES[locale] || "Privacy Policy",
     description: PAGE_DESCS[locale] || "",
@@ -52,7 +54,15 @@ export async function generateMetadata({
         it: `${BASE}/it/privacy`,
         nl: `${BASE}/nl/privacy`,
         "zh-CN": `${BASE}/zh-CN/privacy`,
+        "x-default": `${BASE}/privacy`,
       },
+    },
+    openGraph: {
+      title: PAGE_TITLES[locale] || "Privacy Policy",
+      description: PAGE_DESCS[locale] || "",
+      url: locale === "en" ? `${BASE}/${path}` : `${BASE}/${locale}/${path}`,
+      siteName: "LifeSimGrid",
+      type: "website",
     },
   };
 }

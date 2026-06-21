@@ -31,15 +31,7 @@ export const metadata: Metadata = {
     default: "LifeSimGrid - Custom Island Companion Toolset",
   },
   description: SITE_DESC,
-  keywords: [
-    "Pixel Converter",
-    "QR Code Unlocker",
-    "Voice Simulator",
-    "Compatibility Calculator",
-    "Island Companion Tool",
-    "Pixel Grid",
-    "85x85",
-  ],
+  keywords: [],
   category: "UtilitiesApplication",
   classification: "Free Web App",
   robots: {
@@ -155,7 +147,7 @@ const jsonLd = {
       sameAs: [],
     },
     {
-      "@type": "SoftwareApplication",
+      "@type": "WebApplication",
       "@id": `${SITE_URL}/#app`,
       name: SITE_NAME,
       url: SITE_URL,

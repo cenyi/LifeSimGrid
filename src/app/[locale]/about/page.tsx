@@ -6,28 +6,29 @@ import type { Metadata } from "next";
 
 const BASE = "https://lifesimgrid.org";
 
+/** Localized page titles for About (template appends " - LifeSimGrid"). */
 const PAGE_TITLES: Record<string, string> = {
-  "zh-Hant": "關於我們 - LifeSimGrid",
-  ja: "私たちについて - LifeSimGrid",
-  es: "Sobre nosotros - LifeSimGrid",
-  fr: "À propos - LifeSimGrid",
-  ko: "소개 - LifeSimGrid",
-  de: "Über uns - LifeSimGrid",
-  it: "Chi siamo - LifeSimGrid",
-  nl: "Over ons - LifeSimGrid",
-  "zh-CN": "关于我们 - LifeSimGrid",
+  "zh-Hant": "關於LifeSimGrid — 免費像素畫工具箱",
+  ja: "LifeSimGridとは — 無料ツールキット",
+  es: "Sobre LifeSimGrid — Pixel Art Open Source",
+  fr: "À propos LifeSimGrid — Outils Open Source",
+  ko: "LifeSimGrid 소개 — 오픈소스 툴킷",
+  de: "Über LifeSimGrid — Open-Source-Toolkit",
+  it: "Chi siamo — LifeSimGrid Open Source",
+  nl: "Over LifeSimGrid — Open-source Toolkit",
+  "zh-CN": "关于LifeSimGrid — 免费像素画工具箱",
 };
 
 const PAGE_DESCS: Record<string, string> = {
-  "zh-Hant": "了解 LifeSimGrid — 獨立開源的像素畫、化身數據配置與 8-bit 語音合成工具箱。",
-  ja: "LifeSimGridについて — ピクセルアート、アバターデータ設定、8ビット音声合成の独立したオープンソースツールキット。",
-  es: "Conoce LifeSimGrid — Un kit de herramientas independiente y de código abierto para arte de píxeles, configuración de datos de avatares y síntesis de voz 8-bit.",
-  fr: "Découvrez LifeSimGrid — Une boîte à outils indépendante et open source pour l'art pixel, la configuration de données d'avatars et la synthèse vocale 8-bit.",
-  ko: "LifeSimGrid 소개 — 픽셀 아트, 아바타 데이터 설정 및 8비트 음성 합성을 위한 독립 오픈소스 툴킷.",
-  de: "Lerne LifeSimGrid kennen — Ein unabhängiges Open-Source-Toolkit für Pixel-Art, Avatar-Datenkonfiguration und 8-Bit-Sprachsynthese.",
-  it: "Scopri LifeSimGrid — Un toolkit indipendente e open source per pixel art, configurazione dati avatar e sintesi vocale 8-bit.",
-  nl: "Maak kennis met LifeSimGrid — Een onafhankelijke open-source toolkit voor pixelkunst, avatar-dataconfiguratie en 8-bit spraaksynthese.",
-  "zh-CN": "了解 LifeSimGrid — 独立开源的像素画、虚拟化身数据配置与 8-bit 语音合成工具箱。",
+  "zh-Hant": "開源像素畫、化身數據與語音合成工具箱。免費動森我的設計、Mii QR碼、MBTI配對工具。100%純前端。",
+  ja: "ピクセルアート・アバターデータ・音声合成のオープンソースツールキット。マイデザイン・Mii QR・MBTI相性無料。100%クライアント処理。",
+  es: "Kit open source para pixel art, avatares y síntesis de voz. Tools gratis ACNH Custom Designs, Mii y Tomodachi con MBTI. 100% cliente, sin servidor.",
+  fr: "Boîte à outils open source pour pixel art, avatars et synthèse vocale. Outils gratuits Custom Designs ACNH, Mii et Tomodachi avec MBTI. 100% client.",
+  ko: "픽셀 아트, 아바타 데이터 및 음성 합성 오픈소스 툴킷. 커스텀 디자인, Mii QR, MBTI 궁합 무료. 100% 클라이언트.",
+  de: "Open-Source-Toolkit für Pixel-Art, Avatare und Sprachsynthese. Gratis Tools für ACNH, Mii und Tomodachi mit MBTI. 100% clientseitig.",
+  it: "Toolkit open source per pixel art, dati avatar e sintesi vocale. Strumenti gratis Custom Designs ACNH, Mii e Tomodachi con MBTI. 100% lato client.",
+  nl: "Open-source toolkit voor pixelart, avatar-data en spraak. Gratis tools voor ACNH Custom Designs, Mii en Tomodachi met MBTI. 100% clientzijde.",
+  "zh-CN": "开源像素画、化身数据与语音合成工具箱。免费动森我的设计、Mii二维码、MBTI配对工具。100%纯前端。",","
 };
 
 export async function generateMetadata({
@@ -36,6 +37,7 @@ export async function generateMetadata({
   params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
   const { locale } = await params;
+  const path = "about";
   return {
     title: PAGE_TITLES[locale] || "About Us",
     description: PAGE_DESCS[locale] || "",
@@ -52,7 +54,15 @@ export async function generateMetadata({
         it: `${BASE}/it/about`,
         nl: `${BASE}/nl/about`,
         "zh-CN": `${BASE}/zh-CN/about`,
+        "x-default": `${BASE}/about`,
       },
+    },
+    openGraph: {
+      title: PAGE_TITLES[locale] || "About Us",
+      description: PAGE_DESCS[locale] || "",
+      url: locale === "en" ? `${BASE}/${path}` : `${BASE}/${locale}/${path}`,
+      siteName: "LifeSimGrid",
+      type: "website",
     },
   };
 }

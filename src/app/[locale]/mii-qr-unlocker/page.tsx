@@ -8,28 +8,28 @@ const BASE = "https://lifesimgrid.org";
 
 /** Localized page titles for Mii QR Unlocker (template appends " - LifeSimGrid"). */
 const PAGE_TITLES: Record<string, string> = {
-  "zh-Hant": "Mii QR碼解鎖器 - 修復「無法編輯」錯誤",
-  ja: "Mii QRコードロック解除 - 編集できないエラー修正",
-  es: "Desbloqueador de códigos QR Mii",
-  fr: "Débloqueur de codes QR Mii",
-  ko: "Mii QR 코드 언록",
-  de: "Mii QR-Code-Entsperrer",
-  it: "Sbloccatore codici QR Mii",
-  nl: "Mii QR-code ontgrendelaar",
-  "zh-CN": "Mii二维码解锁器 - 修复无法编辑错误",
+  "zh-Hant": "Mii QR碼解鎖器 — LifeSimGrid免費修復",
+  ja: "Mii QRロック解除 — 無料ツール",
+  es: "Desbloqueador QR Mii — Repara Gratis",
+  fr: "Débloqueur QR Mii — Corrige Gratuit",
+  ko: "Mii QR 언록 — 편집오류수정 무료",
+  de: "Mii QR-Entsperrer — Fehler Gratis",
+  it: "Sblocca QR Mii — Risolve Gratis",
+  nl: "Mii QR-ontgrendelaar — Fout Gratis",
+  "zh-CN": "Mii二维码解锁器 — LifeSimGrid免费修复",
 };
 
 /** Localized page descriptions for Mii QR Unlocker. */
 const PAGE_DESCS: Record<string, string> = {
-  "zh-Hant": "免費線上 Mii QR 碼解鎖工具。修復「此 Mii 無法編輯」與「不允許複製」錯誤。支援 3DS、Wii U 與 Switch Mii 資料。",
-  ja: "無料オンラインMii QRコードロック解除ツール。「このMiiは編集できません」エラーを即座に修正。3DS・Wii U・Switch対応。",
-  es: "Herramienta gratuita para desbloquear códigos QR Mii. Corrige errores de edición y copia al instante. Compatible con 3DS, Wii U y Switch.",
-  fr: "Outil gratuit pour débloquer les codes QR Mii. Corrige les erreurs de modification et de copie instantanément. Compatible 3DS, Wii U et Switch.",
-  ko: "무료 Mii QR 코드 언록 도구. 편집 및 복사 불가 오류를 즉시 수정. 3DS, Wii U, Switch Mii 데이터 지원.",
-  de: "Kostenloses Tool zum Entsperren von Mii-QR-Codes. Behebt Bearbeitungs- und Kopierfehler sofort. Unterstützt 3DS, Wii U und Switch.",
-  it: "Strumento gratuito per sbloccare codici QR Mii. Corregge istantaneamente errori di modifica e copia. Supporta 3DS, Wii U e Switch.",
-  nl: "Gratis tool voor het ontgrendelen van Mii QR-codes. Lost bewerking- en kopieerfouten direct op. Ondersteunt 3DS, Wii U en Switch.",
-  "zh-CN": "免费在线 Mii 二维码解锁工具。修复「此 Mii 无法编辑」与「不允许复制」错误。支持 3DS、Wii U 与 Switch Mii 数据。",
+  "zh-Hant": "免費Mii QR解鎖器。修復編輯與複製錯誤，支援3DS/Wii U/Switch，FFL二進制解析。100%純前端。",
+  ja: "Mii QRロック解除。編集・コピー禁止を修正。3DS/Wii U/Switch対応、FFLバイナリ解析。100%クライアント処理。",
+  es: "Desbloquea QR Mii. Corrige errores de edición y copia. 3DS, Wii U y Switch. Análisis FFL, modificación offset 0x04. 100% cliente, sin servidor.",
+  fr: "Débloque QR Mii. Corrige erreurs modification et copie. 3DS, Wii U et Switch. Analyse FFL, modification offset 0x04. 100% client, sans serveur.",
+  ko: "Mii QR 언록. 편집/복사 오류 수정. FFL바이너리파싱, 0x04수정. 100% 클라이언트.",
+  de: "Mii-QR entsperren. Behebt Bearbeitungs-/Kopierfehler. 3DS, Wii U, Switch. FFL-Analyse, Offset 0x04. 100% clientseitig, kein Server.",
+  it: "Sblocca QR Mii. Corregge errori modifica e copia. 3DS, Wii U, Switch. Analisi FFL, modifica offset 0x04. 100% lato client, nessun server.",
+  nl: "Mii QR ontgrendelen. Lost bewerkings- en kopieerfouten op. 3DS, Wii U, Switch. FFL-analyse, offset 0x04-wijziging. 100% clientzijde, geen server.",
+  "zh-CN": "免费Mii QR解锁器。修复编辑与复制错误，支持3DS/Wii U/Switch，FFL二进制解析。100%纯前端。",
 };
 
 const FALLBACK_TITLE = "Mii QR Code Unlocker";
@@ -62,6 +62,21 @@ export async function generateMetadata({
         nl: `${BASE}/nl/${path}`,
         "zh-CN": `${BASE}/zh-CN/${path}`,
       },
+    },
+    openGraph: {
+      title: PAGE_TITLES[locale] || FALLBACK_TITLE,
+      description: PAGE_DESCS[locale] || FALLBACK_DESC,
+      url: locale === "en" ? `${BASE}/${path}` : `${BASE}/${locale}/${path}`,
+      siteName: "LifeSimGrid",
+      type: "website",
+      images: [
+        {
+          url: `${BASE}/og/${path}.svg`,
+          width: 1200,
+          height: 630,
+          alt: PAGE_TITLES[locale] || FALLBACK_TITLE,
+        },
+      ],
     },
   };
 }

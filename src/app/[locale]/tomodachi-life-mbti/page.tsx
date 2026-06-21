@@ -7,27 +7,27 @@ import type { Metadata } from "next";
 const BASE = "https://lifesimgrid.org";
 
 const PAGE_TITLES: Record<string, string> = {
-  "zh-Hant": "Tomodachi Life MBTI 性格對照表 - 16型人格轉換工具",
-  ja: "トモダチコレクション MBTI性格対照表 - 16性格タイプ変換",
-  es: "Tomodachi Life MBTI Mapping - Conversor 16 Tipos de Personalidad",
-  fr: "Tomodachi Life MBTI Mapping - Convertisseur 16 Types de Personnalité",
-  ko: "Tomodachi Life MBTI 맵핑 - 16-성격 유형 변환 도구",
-  de: "Tomodachi Life MBTI Mapping - 16-Persönlichkeits-Typ-Konverter",
-  it: "Tomodachi Life MBTI Mapping - Convertitore 16 Tipi di Personalità",
-  nl: "Tomodachi Life MBTI Mapping - 16-Persoonlijkheidstype-converter",
-  "zh-CN": "Tomodachi Life MBTI 性格对照表 - 16型人格转换工具",
+  "zh-Hant": "朋友聚會MBTI 16型配對",
+  ja: "トモダチMBTI 16型相性計算",
+  es: "Tomodachi Life MBTI — Calc. Compat.",
+  fr: "Tomodachi Life MBTI — Calc. Compat.",
+  ko: "Tomodachi Life MBTI 16궁합",
+  de: "Tomodachi Life MBTI — Kompat.rechner",
+  it: "Tomodachi Life MBTI — Calc. Compat.",
+  nl: "Tomodachi Life MBTI — Compat.calc",
+  "zh-CN": "朋友聚会MBTI 16型配对",
 };
 
 const PAGE_DESCS: Record<string, string> = {
-  "zh-Hant": "將16種Mii性格類型轉換為MBTI（邁爾斯-布里格斯）。互動工具可查找角色的MBTI類型與社交相容性。",
-  ja: "16種類のMii性格タイプをMBTI（マイヤーズ＝布里ッグス）に変換。キャラクターのMBTIタイプと社会的互換性を見つけるインタラクティブツール。",
-  es: "Convierte 16 tipos de personalidad Mii a MBTI (Myers-Briggs). Herramienta interactiva para encontrar el tipo MBTI de tu personaje.",
-  fr: "Convertissez 16 types de personnalité Mii en MBTI (Myers-Briggs). Outil interactif pour trouver le type MBTI de votre personnage.",
-  ko: "16가지 Mii 성격 유형을 MBTI(마이어스-브리그스)로 변환합니다. 캐릭터의 MBTI 유형을 찾는 대화형 도구.",
-  de: "Konvertieren Sie 16 Mii-Persönlichkeitstypen in MBTI (Myers-Briggs). Interaktives Tool zum Finden des MBTI-Typs Ihres Charakters.",
-  it: "Converti 16 tipi di personalità Mii in MBTI (Myers-Briggs). Strumento interattivo per trovare il tipo MBTI del tuo personaggio.",
-  nl: "Converteer 16 Mii-persoonlijkheidstypen naar MBTI (Myers-Briggs). Interactief hulpmiddel om het MBTI-type van uw personage te vinden.",
-  "zh-CN": "将16种Mii性格类型转换为MBTI（迈尔斯-布里格斯）。互动工具可查找角色的MBTI类型与社交相容性。",
+  "zh-Hant": "朋友聚會16種Mii性格轉MBTI，互動式配對計算機。性格+星座+友誼三維公式。100%純前端。",
+  ja: "トモダチコレクション16種Mii性格をMBTIに変換、相性計算機。性格+星座+友情の3次元公式。100%クライアント処理。",
+  es: "Convierte 16 tipos Mii a MBTI en Tomodachi Life. Calculadora compatibilidad romance y amistad con sinergia zodiacal. 100% cliente, sin servidor.",
+  fr: "Convertissez 16 types Mii en MBTI dans Tomodachi Life. Calculateur compatibilité romance et amitié avec synergie zodiacale. 100% client, sans serveur.",
+  ko: "Tomodachi Life 16가지 Mii성격을 MBTI로 변환. 로맨스/우정 궁합계산기, 별자리시너지. 100% 클라이언트.",
+  de: "16 Mii-Typen in MBTI in Tomodachi Life. Kompat.rechner Romantik/Freundschaft, Tierkreis-Synergie. 100% clientseitig, kein Server.",
+  it: "Converti 16 tipi Mii in MBTI in Tomodachi Life. Calcol. compat. romantica/amicizia, sinergia zodiacale. 100% lato client, nessun server.",
+  nl: "Converteer 16 Mii-typen naar MBTI in Tomodachi Life. Compat.calc. romantiek/vriendschap, dierenriemsynergie. 100% clientzijde, geen server.",
+  "zh-CN": "朋友聚会16种Mii性格转MBTI，互动式配对计算器。性格+星座+友谊三维公式。100%纯前端。",
 };
 
 const FALLBACK_TITLE = "Tomodachi Life MBTI Mapping - 16-Personality Converter";

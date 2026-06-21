@@ -10,36 +10,27 @@ import type { Metadata } from "next";
 const BASE = "https://lifesimgrid.org";
 
 const LOCALE_TITLES: Record<string, string> = {
-  "zh-Hant": "LifeSimGrid - 自訂島嶼助手工具箱",
-  ja: "LifeSimGrid - カスタム島アシスタントツールキット",
-  es: "LifeSimGrid - Kit de herramientas para tu isla personalizada",
-  fr: "LifeSimGrid - Boîte à outils pour votre île personnalisée",
-  ko: "LifeSimGrid - 맞춤형 섬 어시스턴트 툴킷",
-  de: "LifeSimGrid - Werkzeugkasten für deine personalisierte Insel",
-  it: "LifeSimGrid - Kit di strumenti per la tua isola personalizzata",
-  nl: "LifeSimGrid - Toolkit voor je gepersonaliseerde eiland",
-  "zh-CN": "LifeSimGrid - 自定义岛屿助手工具箱",
+  "zh-Hant": "動森工具箱：像素・QR・語音・MBTI",
+  ja: "どうぶつの森：ピクセル・QR・音声・MBTI",
+  es: "ACNH: Pixel, QR, Voz, MBTI — Gratis",
+  fr: "ACNH: Pixel, QR, Voix, MBTI — Gratuit",
+  ko: "동물의숲：픽셀・QR・음성・MBTI도구",
+  de: "ACNH: Pixel, QR, Sprache, MBTI — Gratis",
+  it: "ACNH: Pixel, QR, Voce, MBTI — Gratis",
+  nl: "ACNH: Pixel, QR, Stem, MBTI — Gratis",
+  "zh-CN": "动森工具箱：像素・QR・语音・MBTI",
 };
 
 const LOCALE_DESCS: Record<string, string> = {
-  "zh-Hant":
-    "像素工作室、QR Code 解鎖器、語音模擬與相容性計算機。100% 純前端，免伺服器。島嶼生活模擬遊戲愛好者工具箱。",
-  ja:
-    "ピクセルスタジオ、QRコードロック解除、ボイスシミュレーター＆相性計算機。100%クライアントサイド、サーバー不要。",
-  es:
-    "Estudio de píxeles, desbloqueador de códigos QR, simulador de voz y calculadora de compatibilidad. 100% del lado del cliente, sin servidor.",
-  fr:
-    "Studio pixel, débloqueur de codes QR, simulateur vocal et calculateur de compatibilité. 100% côté client, sans serveur.",
-  ko:
-    "픽셀 스튜디오, QR 코드 언록, 음성 시뮬레이터 및 궁합 계산기. 100% 클라이언트 사이드, 서버 불필요.",
-  de:
-    "Pixel-Studio, QR-Code-Entsperrer, Sprachsimulator und Kompatibilitätsrechner. 100% clientseitig, kein Server.",
-  it:
-    "Studio pixel, sbloccatore di codici QR, simulatore vocale e calcolatore di compatibilità. 100% lato client, senza server.",
-  nl:
-    "Pixelstudio, QR-code ontgrendelaar, stemsimulator en compatibiliteitscalculator. 100% aan de clientzijde, geen server.",
-  "zh-CN":
-    "像素工作室、QR码解锁器、语音模拟与兼容性计算器。100%纯前端，免服务器。岛屿生活模拟游戏爱好者工具箱。",
+  "zh-Hant": "免費像素工作室、QR碼解鎖器、語音合成器與MBTI配對計算機。100%純前端處理，無需上傳數據，無需伺服器。支援動森我的設計、Mii QR碼、Tomodachi Life語音與性格配對。",
+  ja: "無料ピクセルスタジオ、QR解除、ボイスシミュ・MBTI相性計算機。100%クライアント処理、アップロード不要、サーバー不要。マイデザイン・Mii QR・トモダチ音声・性格相性に対応。",
+  es: "Pixel studio, desbloqueador QR, simulador voz y calc. MBTI. 100% cliente, sin servidor. Tools gratis ACNH Custom Designs, Mii y Tomodachi con análisis de compatibilidad.",
+  fr: "Studio pixel, débloqueur QR, simulateur voix et calculateur MBTI. 100% client, sans serveur. Outils gratuits Custom Designs ACNH, Mii et Tomodachi avec analyse de compatibilité.",
+  ko: "무료 픽셀 스튜디오, QR 언록, 음성 시뮬레이터 및 MBTI 궁합 계산기. 100% 클라이언트 처리, 업로드 불필요, 서버 불필요. 커스텀 디자인, Mii QR, Tomodachi 음성 및 성격 궁합 분석.",
+  de: "Pixel-Studio, QR-Entsperrer, Sprachsimulator und MBTI-Rechner. 100% clientseitig, kein Server. Gratis Tools für ACNH Custom Designs, Mii und Tomodachi mit Kompatibilitätsanalyse.",
+  it: "Studio pixel, sblocca QR, simulatore voce e calcolatore MBTI. 100% lato client, senza server. Strumenti gratuiti Custom Designs ACNH, Mii e Tomodachi con analisi di compatibilità.",
+  nl: "Pixelstudio, QR-ontgrendelaar, stemsimulator en MBTI-calc. 100% clientzijde, geen server. Gratis tools voor ACNH Custom Designs, Mii en Tomodachi met compatibiliteitsanalyse.",
+  "zh-CN": "免费像素工作室、QR码解锁器、语音合成器与MBTI配对计算器。100%纯前端处理，无需上传数据，无需服务器。支持动森我的设计、Mii二维码、Tomodachi Life语音与性格配对。",
 };
 
 export async function generateMetadata({
@@ -52,7 +43,7 @@ export async function generateMetadata({
 
   const path = locale;
   return {
-    title: LOCALE_TITLES[locale] || "LifeSimGrid",
+    title: { absolute: LOCALE_TITLES[locale] || "LifeSimGrid - Custom Island Companion Toolset" },
     description: LOCALE_DESCS[locale] || "",
     alternates: {
       canonical: `${BASE}/${path}`,
@@ -67,6 +58,7 @@ export async function generateMetadata({
         it: `${BASE}/it`,
         nl: `${BASE}/nl`,
         "zh-CN": `${BASE}/zh-CN`,
+        "x-default": BASE,
       },
     },
     openGraph: {

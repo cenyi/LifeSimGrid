@@ -73,8 +73,8 @@ export default function HomePageContent() {
       <Navbar />
 
       <main className="flex-1">
-        <section className="mx-auto max-w-6xl px-4 pt-10 pb-6 text-center">
-          <h1 className="font-mono text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl md:text-5xl">
+        <section aria-labelledby="hero-title" className="mx-auto max-w-6xl px-4 pt-10 pb-6 text-center">
+          <h1 id="hero-title" className="font-mono text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl md:text-5xl">
             {t("title")}
           </h1>
           <p className="mx-auto mt-4 max-w-2xl text-base leading-relaxed text-gray-600 sm:text-lg">
@@ -89,7 +89,8 @@ export default function HomePageContent() {
           </div>
         </div>
 
-        <section className="mx-auto max-w-6xl px-4 pb-4">
+        <section aria-labelledby="hero-tab-nav" className="mx-auto max-w-6xl px-4 pb-4">
+          <h2 id="hero-tab-nav" className="sr-only">Tool Selection</h2>
           <div className="flex flex-wrap justify-center gap-3">
             {tabs.map((tab) => (
               <button
@@ -107,11 +108,12 @@ export default function HomePageContent() {
           </div>
         </section>
 
-        <section className="mx-auto max-w-6xl px-4 py-6">
+        <section aria-labelledby="hero-tool-area" className="mx-auto max-w-6xl px-4 py-6">
+          <h2 id="hero-tool-area" className="sr-only">Interactive Tools</h2>
           <div className="rounded-2xl border border-gray-100 bg-white p-4 shadow-md sm:p-8">
-            <div id="pixel-studio" style={{ scrollMarginTop: "65px" }}>{activeTab === "pixel" && <PixelStudio />}</div>
-            <div id="qr-configurator" style={{ scrollMarginTop: "65px" }}>{activeTab === "qr" && <AvatarEditor />}</div>
-            <div id="voice-lab" style={{ scrollMarginTop: "65px" }}>{activeTab === "voice" && <VoiceLab />}</div>
+            <div id="pixel-studio" className={activeTab !== "pixel" ? "hidden" : ""} style={{ scrollMarginTop: "65px" }}><PixelStudio /></div>
+            <div id="qr-configurator" className={activeTab !== "qr" ? "hidden" : ""} style={{ scrollMarginTop: "65px" }}><AvatarEditor /></div>
+            <div id="voice-lab" className={activeTab !== "voice" ? "hidden" : ""} style={{ scrollMarginTop: "65px" }}><VoiceLab /></div>
           </div>
         </section>
 

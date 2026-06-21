@@ -651,8 +651,8 @@ export default function TomodachiLifeMbtiPage() {
           mainEntity: faqs.map((faq) => ({ "@type": "Question", name: faq.q, acceptedAnswer: { "@type": "Answer", text: faq.a } })),
         }).replace(/<\/script/g, "<\\/script") }} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
-          "@context": "https://schema.org", "@type": "SoftwareApplication",
-          name: t("pageTitle"), applicationCategory: "UtilitiesApplication", operatingSystem: "Any (Browser-based)",
+          "@context": "https://schema.org", "@type": "WebApplication",
+          name: t("pageTitle"), applicationCategory: "GameUtilityApplication", operatingSystem: "Any (Browser-based)",
           offers: { "@type": "Offer", price: "0", priceCurrency: "USD" }, description: t("metaDescription"),
         }).replace(/<\/script/g, "<\\/script") }} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
@@ -1379,6 +1379,10 @@ export default function TomodachiLifeMbtiPage() {
               <div className="rounded-xl bg-white/70 p-4">
                 <h3 className="font-semibold text-indigo-800 mb-2 text-sm">{t("privacyTitle")}</h3>
                 <p className="text-xs sm:text-sm text-gray-700 leading-relaxed">{wrapCodeTerms(t("privacyDesc"))}</p>
+              </div>
+              <div className="rounded-xl bg-white/70 p-4">
+                <h3 className="font-semibold text-indigo-800 mb-2 text-sm">MBTI Disclaimer</h3>
+                <p className="text-xs sm:text-sm text-gray-700 leading-relaxed">{t("mbtiDisclaimer")}</p>
               </div>
             </div>
           </div>

@@ -8,28 +8,28 @@ const BASE = "https://lifesimgrid.org";
 
 /** Localized page titles for Pixel Grid Studio (template appends " - LifeSimGrid"). */
 const PAGE_TITLES: Record<string, string> = {
-  "zh-Hant": "圖片轉像素畫轉換器 - 免費線上像素格子生成器",
-  ja: "画像ドット絵変換 - 無料オンラインピクセルグリッド生成",
-  es: "Convertidor de imagen a pixel art",
-  fr: "Convertisseur image en pixel art",
-  ko: "이미지 픽셀아트 변환기",
-  de: "Bild-zu-Pixel-Art-Konverter",
-  it: "Convertitore da immagine a pixel art",
-  nl: "Afbeelding naar pixelart converter",
-  "zh-CN": "图片转像素画转换器 - 免费在线像素格子生成器",
+  "zh-Hant": "圖片轉像素格子 — 免費工具",
+  ja: "画像→ピクセルグリッド — 無料変換",
+  es: "Imagen a Pixel Grid — Generador Gratis",
+  fr: "Image en Grille Pixel — Générateur Gratuit",
+  ko: "이미지→픽셀그리드 — 무료변환기",
+  de: "Bild zu Pixel-Raster — Gratis Konverter",
+  it: "Immagine in Griglia Pixel — Generatore Gratis",
+  nl: "Afbeelding naar Pixelraster — Gratis Generator",
+  "zh-CN": "图片转像素格子 — 免费工具",
 };
 
 /** Localized page descriptions for Pixel Grid Studio. */
 const PAGE_DESCS: Record<string, string> = {
-  "zh-Hant": "免費線上工具，將圖片轉換為像素畫格子圖案。適用於 Minecraft、拼豆、十字繡等。自訂格子大小從 16×16 到 128×128。",
-  ja: "画像をピクセルアートグリッドパターンに変換する無料オンラインツール。Minecraft、ビーズ、クロスステッチに最適。16×16〜128×128のカスタムグリッド。",
-  es: "Herramienta gratuita para convertir imágenes en patrones de pixel art. Ideal para Minecraft, Perler Beads y más. Tamaños de 16×16 a 128×128.",
-  fr: "Outil gratuit pour convertir des images en grilles pixel art. Parfait pour Minecraft, Perler Beads et plus. Tailles de 16×16 a 128×128.",
-  ko: "이미지를 픽셀아트 그리드 패턴으로 변환하는 무료 도구. 마인크래프트, 퍼들비드 등에 적합. 16×16~128×128 커스텀 그리드.",
-  de: "Kostenloses Tool zur Umwandlung von Bildern in Pixel-Art-Raster. Perfekt für Minecraft, Perler Beads und mehr. Raster von 16×16 bis 128×128.",
-  it: "Strumento gratuito per convertire immagini in griglie pixel art. Perfetto per Minecraft, Perler Beads e altro. Griglie da 16×16 a 128×128.",
-  nl: "Gratis tool om afbeeldingen om te zetten in pixelart-rasterpatronen. Perfect voor Minecraft, Perler Beads en meer. Raster van 16×16 tot 128×128.",
-  "zh-CN": "免费在线工具，将图片转换为像素画格子图案。适用于 Minecraft、拼豆、十字绣等。自定义格子大小从 16×16 到 128×128。",
+  "zh-Hant": "免費圖片轉像素格子工具。適用Minecraft、拼豆、十字繡。100%純前端，無需上傳。",
+  ja: "画像をピクセルグリッドに変換。Minecraft・ビーズ向け。100%クライアント処理。",
+  es: "Convierte imágenes en cuadrículas pixel. Minecraft, Perler Beads y Cross Stitch. 16×16 a 128×128. HTML5 Canvas API. 100% cliente, sin servidor.",
+  fr: "Convertissez images en grilles pixel. Minecraft, Perler Beads et Cross Stitch. 16×16 à 128×128. HTML5 Canvas API. 100% client, sans serveur.",
+  ko: "이미지를 픽셀그리드로 변환. 마인크래프트, 퍼들비드. HTML5 Canvas API. 100% 클라이언트.",
+  de: "Bilder in Pixel-Raster wandeln. Minecraft, Perler Beads, Cross Stitch. 16×16–128×128. HTML5 Canvas API. 100% clientseitig, kein Server.",
+  it: "Converti immagini in griglie pixel. Minecraft, Perler Beads e Cross Stitch. 16×16 a 128×128. HTML5 Canvas API. 100% lato client, nessun server.",
+  nl: "Afbeeldingen omzetten naar pixelraster. Minecraft, Smeltkralen en Cross Stitch. 16×16 tot 128×128. HTML5 Canvas API. 100% clientzijde, geen server.",
+  "zh-CN": "免费图片转像素格子工具。适用Minecraft、拼豆、十字绣。16×16至128×128。HTML5 Canvas API。100%纯前端，无需上传。",
 };
 
 const FALLBACK_TITLE = "Image to Pixel Art Converter";
@@ -62,6 +62,21 @@ export async function generateMetadata({
         nl: `${BASE}/nl/${path}`,
         "zh-CN": `${BASE}/zh-CN/${path}`,
       },
+    },
+    openGraph: {
+      title: PAGE_TITLES[locale] || FALLBACK_TITLE,
+      description: PAGE_DESCS[locale] || FALLBACK_DESC,
+      url: locale === "en" ? `${BASE}/${path}` : `${BASE}/${locale}/${path}`,
+      siteName: "LifeSimGrid",
+      type: "website",
+      images: [
+        {
+          url: `${BASE}/og/${path}.svg`,
+          width: 1200,
+          height: 630,
+          alt: PAGE_TITLES[locale] || FALLBACK_TITLE,
+        },
+      ],
     },
   };
 }

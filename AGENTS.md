@@ -9,17 +9,19 @@ This version has breaking changes — APIs, conventions, and file structure may 
 
 ## Architecture: Topic Clusters SEO Strategy
 - Homepage = "aircraft carrier" (aggregates brand authority)
-- 4 sub-pages = "destroyers" (target vertical keywords):
+- 5 sub-pages = "destroyers" (target vertical keywords):
   - `/acnh-pixel-studio` — ACNH Custom Designs
   - `/mii-qr-unlocker` — Mii QR Code editing
   - `/tomodachi-voice-lab` — Tomodachi Life voice synthesis
+  - `/tomodachi-life-mbti` — Tomodachi Life MBTI 16-personality mapping & compatibility
   - `/pixel-grid-studio` — General-purpose pixel grid conversion
-- Each sub-page shares tool components (PixelStudio, AvatarEditor, VoiceLab) with homepage tabs
+- Each sub-page has its own dedicated page component (AcnhPixelStudioPage, MiiQrUnlockerPage, TomodachiVoiceLabPage, TomodachiLifeMbtiPage, PixelGridStudioPage) and shares tool components (PixelStudio, AvatarEditor, VoiceLab) with homepage tabs
 
 ## Routing & i18n
 - `next-intl` v4 with `localePrefix: "as-needed"` (en has no prefix)
 - Root-level pages (`/acnh-pixel-studio`) serve English with `setRequestLocale("en")`
 - Locale-level pages (`/[locale]/acnh-pixel-studio`) use `generateMetadata` with per-locale titles
+- Canonical URL: `locale === "en"` → canonical points to root-level URL (no `/en/` prefix)
 - 10 locales: en, zh-Hant, zh-CN, ja, ko, es, fr, de, it, nl
 - All pages use static export (`output: "export"`) — no server-side runtime
 
@@ -54,4 +56,54 @@ This version has breaking changes — APIs, conventions, and file structure may 
 
 ## JSON-LD Security
 - All `dangerouslySetInnerHTML` with `JSON.stringify` MUST append `.replace(/<\/script/g, "<\\/script")` to prevent XSS
+
+## JSON-LD Structured Data Rules
+- **WebApplication** (NOT SoftwareApplication): All 5 sub-pages use `WebApplication` schema type
+- **FAQPage**: All sub-pages include FAQ with `<details>`/`<summary>` markup + FAQPage JSON-LD
+- **BreadcrumbList**: MUST dynamically generate URLs based on current locale (`locale === "en"` → no prefix, others → `/${locale}/...`)
+- **HowTo**: Used by sub-pages with step-by-step guides (e.g., tomodachi-life-mbti compatibility calculator steps)
+- **OG Images**: SVG format at `/og/{sub-page-slug}.svg` (1200×630), referenced in `openGraph.images`
+
+## GEO (Generative Engine Optimization) Content Rules
+- FAQ answers: First sentence MUST state the conclusion directly (主谓宾清晰)
+- Use specific numbers, technical terms, and causal relationships for AI citability
+- Algorithm transparency: Declare formula components explicitly (e.g., "Base Score (25) + Personality (25) + Zodiac (25) + Friendship (25)")
+- Avoid absolute claims ("perfectly", "authentic", "unlock") — use measured language ("closely", "characteristic", "explore")
+- Include complete mapping declarations (e.g., "16 MBTI types fully mapped to Tomodachi Life personalities")
+- MBTI and Nintendo are registered trademarks — MUST include disclaimer in privacy/footnote sections
+
+## Meta Title & Description Length Limits (Google SERP Pixel-based)
+Google truncates based on pixel width (Desktop Title ~600px, Description ~920px). Character limits vary by script type. ALWAYS write localized meta tags from scratch — NEVER machine-translate from English (translation typically inflates 20%+ causing truncation).
+
+### Keywords Meta Tag Policy
+- `keywords` in metadata MUST be set to an empty array `[]` — Google does NOT use the keywords meta tag for ranking (official since 2009); populating it wastes bytes and can expose SEO strategy to competitors
+- All pages inherit `keywords: []` from `layout.tsx`; do NOT override in sub-pages
+
+| Locale | Title Max (Desktop) | Description Max (Mobile/Desktop) | Script Group |
+|--------|---------------------|----------------------------------|-------------|
+| en | 55–60 chars | 120 / 155 chars | Standard Latin |
+| zh-Hant | 25–28 字 | 60 字 / 75 字 | Fullwidth (CJK) |
+| zh-CN | 25–28 字 | 60 字 / 75 字 | Fullwidth (CJK) |
+| ja | 25–28 字 | 60 字 / 75 字 | Fullwidth (CJK) |
+| ko | 25–28 字 | 60 字 / 75 字 | Fullwidth (CJK) |
+| de | 40–45 chars | 100 / 135 chars | Long-word Latin |
+| es | 50–55 chars | 115 / 150 chars | Standard Latin |
+| fr | 50–55 chars | 115 / 150 chars | Standard Latin |
+| it | 50–55 chars | 115 / 150 chars | Standard Latin |
+| nl | 50–55 chars | 115 / 150 chars | Standard Latin |
+
+### Three Golden Rules for Cross-locale Meta Tags
+1. **Never machine-translate Meta tags**: A 60-char English Title will typically inflate 20%+ in de/es/fr, causing truncation. Always rewrite for each locale within limits.
+2. **Uppercase trap**: In Western languages, ALL-CAPS letters consume ~1.5× pixel width of lowercase. Avoid ALL-CAPS in Titles.
+3. **Punctuation counts**: ¿? ¡! guillemets «», smart quotes, spaces — all consume pixels. Account for them when counting.
+
+## Tab Content Rendering
+- Sub-page tabs use CSS `hidden` class (NOT React conditional rendering) to ensure Google crawls all tab content
+- Public sections (How It Works, FAQ) are placed outside tabs as fixed page sections
+- Tab navigation uses `justify-center` for center alignment
+
+## Technical Term Rendering
+- Use `renderCodeTerms()` function pattern: regex-replace technical terms (FFL, 0x04, HTML5 Canvas API, Web Audio API, NookLink, NookPhone, Byte Mode, etc.) with `<code>` tags
+- Rendered via `dangerouslySetInnerHTML={{ __html: renderCodeTerms(text) }}` on translated strings
+- Currently used in AcnhPixelStudioPage.tsx; extend to other sub-pages when technical terms appear in i18n strings
 <!-- END:lifesimgrid-project-rules -->
