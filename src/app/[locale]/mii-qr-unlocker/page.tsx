@@ -21,15 +21,15 @@ const PAGE_TITLES: Record<string, string> = {
 
 /** Localized page descriptions for Mii QR Unlocker. */
 const PAGE_DESCS: Record<string, string> = {
-  "zh-Hant": "免費Mii QR解鎖器。修復編輯與複製錯誤，支援3DS/Wii U/Switch，FFL二進制解析。100%純前端。",
-  ja: "Mii QRロック解除。編集・コピー禁止を修正。3DS/Wii U/Switch対応、FFLバイナリ解析。100%クライアント処理。",
-  es: "Desbloquea QR Mii. Corrige errores de edición y copia. 3DS, Wii U y Switch. Análisis FFL, modificación offset 0x04. 100% cliente, sin servidor.",
-  fr: "Débloque QR Mii. Corrige erreurs modification et copie. 3DS, Wii U et Switch. Analyse FFL, modification offset 0x04. 100% client, sans serveur.",
-  ko: "Mii QR 언록. 편집/복사 오류 수정. FFL바이너리파싱, 0x04수정. 100% 클라이언트.",
-  de: "Mii-QR entsperren. Behebt Bearbeitungs-/Kopierfehler. 3DS, Wii U, Switch. FFL-Analyse, Offset 0x04. 100% clientseitig, kein Server.",
-  it: "Sblocca QR Mii. Corregge errori modifica e copia. 3DS, Wii U, Switch. Analisi FFL, modifica offset 0x04. 100% lato client, nessun server.",
-  nl: "Mii QR ontgrendelen. Lost bewerkings- en kopieerfouten op. 3DS, Wii U, Switch. FFL-analyse, offset 0x04-wijziging. 100% clientzijde, geen server.",
-  "zh-CN": "免费Mii QR解锁器。修复编辑与复制错误，支持3DS/Wii U/Switch，FFL二进制解析。100%纯前端。",
+  "zh-Hant": "免費Mii QR解鎖器。修復編輯與複製錯誤。3DS/Wii U/Switch，FFL解析。100%純前端。",
+  ja: "Mii QRロック解除。編集・コピー禁止を修正。3DS/Wii U/Switch対応、FFL解析。100%クライアント。",
+  es: "Desbloquea QR Mii. Corrige errores edición y copia. 3DS/Wii U/Switch. FFL, 0x04. 100% cliente.",
+  fr: "Débloque QR Mii. Corrige erreurs modification et copie. 3DS/Wii U/Switch. FFL, 0x04. 100% client.",
+  ko: "Mii QR 언록. 편집/복사 오류 수정. FFL, 0x04. 100% 클라이언트.",
+  de: "Mii-QR entsperren. Behebt Bearbeitungs-/Kopierfehler. FFL, 0x04. 100% clientseitig.",
+  it: "Sblocca QR Mii. Corregge errori modifica e copia. FFL, 0x04. 100% lato client.",
+  nl: "Mii QR ontgrendelen. Lost bewerkings-/kopieerfouten op. FFL, 0x04. 100% clientzijde.",
+  "zh-CN": "免费Mii QR解锁器。修复编辑与复制错误。3DS/Wii U/Switch，FFL解析。100%纯前端。",
 };
 
 const FALLBACK_TITLE = "Mii QR Code Unlocker";

@@ -22,14 +22,14 @@ const PAGE_TITLES: Record<string, string> = {
 /** Localized page descriptions for Tomodachi Voice Lab. */
 const PAGE_DESCS: Record<string, string> = {
   "zh-Hant": "免費Tomodachi語音合成器。5種預設、音高語速控制、8-bit匯出。100%純前端。",
-  ja: "無料トモダチ音声合成。5プリセット、ピッチ調整、8bitエクスポート。100%クライアント処理。",
-  es: "Sintetizador voz 8-Bit Tomodachi. 5 presets, control tono/velocidad, TTS. Web Audio API, export WAV. 100% cliente, sin servidor.",
-  fr: "Synthétiseur vocal 8-Bit Tomodachi. 5 préréglages, contrôle hauteur/vitesse, TTS. Web Audio API, export WAV. 100% client, sans serveur.",
-  ko: "Tomodachi 8-bit음성합성기. 5종파형, 피치/속도조절, TTS. Web Audio API. 100% 클라이언트.",
-  de: "8-Bit-Sprachsynth. Tomodachi. 5 Presets, Tonhöhe/Tempo, TTS. Web Audio API, WAV-Export. 100% clientseitig, kein Server.",
-  it: "Sintetizzatore vocale 8-Bit Tomodachi. 5 preset, controllo tono/velocità, TTS. Web Audio API, export WAV. 100% lato client, nessun server.",
-  nl: "8-Bit-stemsynth. Tomodachi. 5 voorinstellingen, toonhoogte-/snelheidsregeling, TTS. Web Audio API, WAV-export. 100% clientzijde, geen server.",
-  "zh-CN": "免费Tomodachi 8-bit语音合成器。5种复古波形、音高语速控制、WAV导出。Web Audio API驱动。100%纯前端。",
+  ja: "トモダチ8-bit音声合成。5プリセット、ピッチ/速度調整、WAV出力。100%クライアント。",
+  es: "Sintetizador voz 8-Bit Tomodachi. 5 presets, TTS, Web Audio API. 100% cliente.",
+  fr: "Synthétiseur vocal 8-Bit Tomodachi. 5 préréglages, TTS, Web Audio API. 100% client.",
+  ko: "Tomodachi 8-bit음성합성기. 5종파형, TTS, Web Audio API. 100% 클라이언트.",
+  de: "8-Bit-Sprachsynth. Tomodachi. 5 Presets, TTS, Web Audio API. 100% clientseitig.",
+  it: "Sintetizzatore vocale 8-Bit Tomodachi. 5 preset, TTS, Web Audio API. 100% lato client.",
+  nl: "8-Bit-stemsynth. Tomodachi. 5 voorinstellingen, TTS, Web Audio API. 100% clientzijde.",
+  "zh-CN": "免费Tomodachi 8-bit语音合成器。5种波形、TTS、Web Audio API。100%纯前端。",
 };
 
 const FALLBACK_TITLE = "Tomodachi Life Voice Lab - 8-Bit Mii Voice Synthesizer";

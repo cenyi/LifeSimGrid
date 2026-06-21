@@ -21,14 +21,14 @@ const PAGE_TITLES: Record<string, string> = {
 
 const PAGE_DESCS: Record<string, string> = {
   "zh-Hant": "技術支援、錯誤回報或合規諮詢。歡迎動森我的設計、Mii QR碼工具反饋。100%純前端。",
-  ja: "テクニカルサポート、バグ報告、コンプライアンス相談。マイデザイン・Mii QRツールへのご意見歓迎。100%クライアント処理。",
-  es: "Soporte técnico, reporte de bugs o cumplimiento. Feedback sobre ACNH Custom Designs, Mii y Tomodachi. 100% cliente, sin servidor.",
-  fr: "Support technique, signalement de bugs ou conformité. Feedback sur Custom Designs ACNH, Mii et Tomodachi. 100% client, sans serveur.",
-  ko: "기술 지원, 버그 신고 또는 규정 준수. 커스텀 디자인, Mii QR 도구 피드백 환영. 100% 클라이언트.",
-  de: "Technischer Support, Fehlerberichte oder Compliance. Feedback zu ACNH, Mii und Tomodachi. 100% clientseitig, kein Server.",
-  it: "Supporto tecnico, segnalazione bug o conformità. Feedback su Custom Designs ACNH, Mii e Tomodachi. 100% lato client, senza server.",
-  nl: "Technische ondersteuning, bugrapporten of compliance. Feedback over ACNH Custom Designs, Mii en Tomodachi. 100% clientzijde, geen server.",
-  "zh-CN": "技术支持、错误报告或合规咨询。欢迎动森我的设计、Mii二维码工具反馈。100%纯前端。","
+  ja: "テクニカルサポート、バグ報告。マイデザイン・Mii QRツールへのご意見歓迎。100%クライアント。",
+  es: "Soporte técnico, reporte de bugs. Feedback sobre ACNH Custom Designs, Mii. 100% cliente.",
+  fr: "Support technique, signalement de bugs. Feedback Custom Designs ACNH, Mii. 100% client.",
+  ko: "기술 지원, 버그 신고. 커스텀 디자인, Mii QR 피드백 환영. 100% 클라이언트.",
+  de: "Technischer Support, Fehlerberichte. Feedback zu ACNH, Mii. 100% clientseitig.",
+  it: "Supporto tecnico, segnalazione bug. Feedback Custom Designs ACNH, Mii. 100% lato client.",
+  nl: "Technische ondersteuning, bugrapporten. Feedback ACNH Custom Designs, Mii. 100% clientzijde.",
+  "zh-CN": "技术支持、错误报告或合规咨询。欢迎动森我的设计、Mii二维码工具反馈。100%纯前端。"
 };
 
 export async function generateMetadata({

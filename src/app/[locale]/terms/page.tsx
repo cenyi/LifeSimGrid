@@ -22,12 +22,12 @@ const PAGE_TITLES: Record<string, string> = {
 const PAGE_DESCS: Record<string, string> = {
   "zh-Hant": "獨立第三方工具，MIT開源協議，與遊戲主機製造商無關。免費動森我的設計、Mii QR碼工具。純前端，無數據收集。",
   ja: "独立サードパーティ、MITライセンス、ゲーム機メーカー無関係。マイデザイン・Mii QR無料ツール。データ収集なし。",
-  es: "Términos: herramienta independiente, licencia MIT. No afiliada con fabricantes de consolas. ACNH Custom Designs, Mii y Tomodachi gratis.",
-  fr: "Conditions : outil tiers indépendant, licence MIT. Non affilié aux fabricants de consoles. Custom Designs ACNH, Mii et Tomodachi gratuits.",
-  ko: "독립 서드파티 도구, MIT 라이선스. 게임 콘솔 제조사와 무관. 커스텀 디자인, Mii QR 무료. 데이터 수집 없음.",
-  de: "AGB: unabhängiges Drittanbieter-Tool, MIT-Lizenz. Keine Verbindung zu Konsolen-Herstellern. Gratis ACNH, Mii, Tomodachi.",
-  it: "Termini: strumento indipendente, licenza MIT. Non affiliato a produttori di console. Custom Designs ACNH, Mii e Tomodachi gratis.",
-  nl: "Voorwaarden: onafhankelijke third-party tool, MIT-licentie. Niet gelieerd aan consolefabrikanten. Gratis ACNH Custom Designs, Mii, Tomodachi.",
+  es: "Términos: herramienta independiente, licencia MIT. No afiliada a fabricantes. ACNH, Mii gratis.",
+  fr: "Conditions : outil tiers indépendant, licence MIT. Non affilié consoles. Custom Designs, Mii gratuits.",
+  ko: "독립 서드파티 도구, MIT 라이선스. 콘솔 제조사 무관. 커스텀 디자인, Mii QR 무료.",
+  de: "AGB: unabhängiges Drittanbieter-Tool, MIT-Lizenz. Keine Verbindung zu Konsolen. ACNH, Mii.",
+  it: "Termini: strumento indipendente, licenza MIT. Non affiliato console. Custom Designs, Mii gratis.",
+  nl: "Voorwaarden: onafhankelijke tool, MIT-licentie. Niet gelieerd aan consolefabrikanten. ACNH, Mii.",
   "zh-CN": "独立第三方工具，MIT开源协议，与游戏主机制造商无关。免费动森我的设计、Mii二维码工具。纯前端，无数据收集。",
 };
 

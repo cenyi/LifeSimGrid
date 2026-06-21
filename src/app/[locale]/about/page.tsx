@@ -21,14 +21,14 @@ const PAGE_TITLES: Record<string, string> = {
 
 const PAGE_DESCS: Record<string, string> = {
   "zh-Hant": "開源像素畫、化身數據與語音合成工具箱。免費動森我的設計、Mii QR碼、MBTI配對工具。100%純前端。",
-  ja: "ピクセルアート・アバターデータ・音声合成のオープンソースツールキット。マイデザイン・Mii QR・MBTI相性無料。100%クライアント処理。",
-  es: "Kit open source para pixel art, avatares y síntesis de voz. Tools gratis ACNH Custom Designs, Mii y Tomodachi con MBTI. 100% cliente, sin servidor.",
-  fr: "Boîte à outils open source pour pixel art, avatars et synthèse vocale. Outils gratuits Custom Designs ACNH, Mii et Tomodachi avec MBTI. 100% client.",
-  ko: "픽셀 아트, 아바타 데이터 및 음성 합성 오픈소스 툴킷. 커스텀 디자인, Mii QR, MBTI 궁합 무료. 100% 클라이언트.",
-  de: "Open-Source-Toolkit für Pixel-Art, Avatare und Sprachsynthese. Gratis Tools für ACNH, Mii und Tomodachi mit MBTI. 100% clientseitig.",
-  it: "Toolkit open source per pixel art, dati avatar e sintesi vocale. Strumenti gratis Custom Designs ACNH, Mii e Tomodachi con MBTI. 100% lato client.",
-  nl: "Open-source toolkit voor pixelart, avatar-data en spraak. Gratis tools voor ACNH Custom Designs, Mii en Tomodachi met MBTI. 100% clientzijde.",
-  "zh-CN": "开源像素画、化身数据与语音合成工具箱。免费动森我的设计、Mii二维码、MBTI配对工具。100%纯前端。",","
+  ja: "ピクセルアート・音声合成のオープンソースツールキット。マイデザイン・Mii QR・MBTI無料。100%クライアント。",
+  es: "Kit open source para pixel art y síntesis de voz. ACNH Custom Designs, Mii, MBTI. 100% cliente.",
+  fr: "Boîte à outils open source pixel art et synthèse vocale. Custom Designs, Mii, MBTI. 100% client.",
+  ko: "픽셀 아트, 음성 합성 오픈소스 툴킷. 커스텀 디자인, Mii QR, MBTI 무료. 100% 클라이언트.",
+  de: "Open-Source-Toolkit für Pixel-Art und Sprachsynthese. ACNH, Mii, MBTI. 100% clientseitig.",
+  it: "Toolkit open source per pixel art e sintesi vocale. Custom Designs, Mii, MBTI. 100% lato client.",
+  nl: "Open-source toolkit voor pixelart en spraak. ACNH Custom Designs, Mii, MBTI. 100% clientzijde.",
+  "zh-CN": "开源像素画、化身数据与语音合成工具箱。免费动森我的设计、Mii二维码、MBTI配对工具。100%纯前端。"
 };
 
 export async function generateMetadata({

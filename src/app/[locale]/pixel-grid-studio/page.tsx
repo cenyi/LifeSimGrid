@@ -23,13 +23,13 @@ const PAGE_TITLES: Record<string, string> = {
 const PAGE_DESCS: Record<string, string> = {
   "zh-Hant": "免費圖片轉像素格子工具。適用Minecraft、拼豆、十字繡。100%純前端，無需上傳。",
   ja: "画像をピクセルグリッドに変換。Minecraft・ビーズ向け。100%クライアント処理。",
-  es: "Convierte imágenes en cuadrículas pixel. Minecraft, Perler Beads y Cross Stitch. 16×16 a 128×128. HTML5 Canvas API. 100% cliente, sin servidor.",
-  fr: "Convertissez images en grilles pixel. Minecraft, Perler Beads et Cross Stitch. 16×16 à 128×128. HTML5 Canvas API. 100% client, sans serveur.",
+  es: "Convierte imágenes en cuadrículas pixel. Minecraft, Perler Beads. HTML5 Canvas API. 100% cliente.",
+  fr: "Convertissez images en grilles pixel. Minecraft, Perler Beads. HTML5 Canvas API. 100% client.",
   ko: "이미지를 픽셀그리드로 변환. 마인크래프트, 퍼들비드. HTML5 Canvas API. 100% 클라이언트.",
-  de: "Bilder in Pixel-Raster wandeln. Minecraft, Perler Beads, Cross Stitch. 16×16–128×128. HTML5 Canvas API. 100% clientseitig, kein Server.",
-  it: "Converti immagini in griglie pixel. Minecraft, Perler Beads e Cross Stitch. 16×16 a 128×128. HTML5 Canvas API. 100% lato client, nessun server.",
-  nl: "Afbeeldingen omzetten naar pixelraster. Minecraft, Smeltkralen en Cross Stitch. 16×16 tot 128×128. HTML5 Canvas API. 100% clientzijde, geen server.",
-  "zh-CN": "免费图片转像素格子工具。适用Minecraft、拼豆、十字绣。16×16至128×128。HTML5 Canvas API。100%纯前端，无需上传。",
+  de: "Bilder in Pixel-Raster. Minecraft, Perler Beads. HTML5 Canvas API. 100% clientseitig.",
+  it: "Converti immagini in griglie pixel. Minecraft, Perler Beads. HTML5 Canvas API. 100% lato client.",
+  nl: "Afbeeldingen naar pixelraster. Minecraft, Smeltkralen. HTML5 Canvas API. 100% clientzijde.",
+  "zh-CN": "免费图片转像素格子工具。适用Minecraft、拼豆、十字绣。HTML5 Canvas API。100%纯前端。",
 };
 
 const FALLBACK_TITLE = "Image to Pixel Art Converter";
