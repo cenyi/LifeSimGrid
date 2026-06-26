@@ -10,7 +10,7 @@ const BASE = "https://lifesimgrid.org";
 export const metadata: Metadata = {
   title: { absolute: "Mii QR Unlocker — Fix Edit Error Online | LifeSimGrid" },
   description:
-    "Free Mii QR unlocker. Fix 'Cannot be Edited' & 'Copying Not Allowed' errors. 3DS, Wii U & Switch. 100% browser-based, no server.",
+    "Free Mii QR unlocker for Tomodachi Life: Living the Dream Mii sharing via local wireless. Fix edit errors on 3DS, Wii U & Switch. 100% browser-based.",
   alternates: {
     canonical: `${BASE}/mii-qr-unlocker`,
     languages: {
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Mii QR Unlocker — Fix Edit Error Online",
     description:
-      "Free Mii QR unlocker. Fix 'Cannot be Edited' & 'Copying Not Allowed' errors. 3DS, Wii U & Switch. 100% browser-based.",
+      "Free Mii QR unlocker for Tomodachi Life: Living the Dream Mii sharing. Fix edit errors on 3DS, Wii U & Switch. 100% browser-based.",
     url: `${BASE}/mii-qr-unlocker`,
     siteName: "LifeSimGrid",
     type: "website",

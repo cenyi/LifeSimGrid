@@ -20,6 +20,10 @@ export default function MiiQrUnlockerPage() {
     { q: t("faq4Q"), a: t("faq4A") },
     { q: t("faq5Q"), a: t("faq5A") },
     { q: t("faq6Q"), a: t("faq6A") },
+    { q: t("faq7Q"), a: t("faq7A") },
+    { q: t("faq8Q"), a: t("faq8A") },
+    { q: t("faq9Q"), a: t("faq9A") },
+    { q: t("faq10Q"), a: t("faq10A") },
   ];
 
   /** Render formatIntro with technical terms wrapped in <code> tags */
@@ -38,19 +42,33 @@ export default function MiiQrUnlockerPage() {
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "HowTo",
-              name: t("howToFixTitle"),
-              step: [
-                { "@type": "HowToStep", text: t("howToFixStep1") },
-                { "@type": "HowToStep", text: t("howToFixStep2") },
-                { "@type": "HowToStep", text: t("howToFixStep3") },
-                { "@type": "HowToStep", text: t("howToFixStep4") },
-                { "@type": "HowToStep", text: t("howToFixStep5") },
-                { "@type": "HowToStep", text: t("howToFixStep6") },
-              ],
-            }).replace(/<\/script/g, "<\\/script"),
+            __html: JSON.stringify([
+              {
+                "@context": "https://schema.org",
+                "@type": "HowTo",
+                name: t("howToFixTitle"),
+                step: [
+                  { "@type": "HowToStep", text: t("howToFixStep1") },
+                  { "@type": "HowToStep", text: t("howToFixStep2") },
+                  { "@type": "HowToStep", text: t("howToFixStep3") },
+                  { "@type": "HowToStep", text: t("howToFixStep4") },
+                  { "@type": "HowToStep", text: t("howToFixStep5") },
+                  { "@type": "HowToStep", text: t("howToFixStep6") },
+                ],
+              },
+              {
+                "@context": "https://schema.org",
+                "@type": "HowTo",
+                name: t("howToShareTitle"),
+                step: [
+                  { "@type": "HowToStep", text: t("howToShareStep1") },
+                  { "@type": "HowToStep", text: t("howToShareStep2") },
+                  { "@type": "HowToStep", text: t("howToShareStep3") },
+                  { "@type": "HowToStep", text: t("howToShareStep4") },
+                  { "@type": "HowToStep", text: t("howToShareStep5") },
+                ],
+              },
+            ]).replace(/<\/script/g, "<\\/script"),
           }}
         />
         {/* BreadcrumbList JSON-LD */}
@@ -165,6 +183,22 @@ export default function MiiQrUnlockerPage() {
           </div>
         </section>
 
+        {/* How to Share Miis in Living the Dream */}
+        <section aria-labelledby="how-to-share-title" className="mx-auto max-w-6xl px-4 py-8">
+          <div className="rounded-3xl bg-amber-50 p-6 sm:p-8">
+            <h2 id="how-to-share-title" className="mb-6 font-mono text-2xl font-bold text-gray-900 sm:text-3xl">
+              {t("howToShareTitle")}
+            </h2>
+            <ol className="list-decimal list-inside space-y-2 text-gray-700">
+              <li>{t("howToShareStep1")}</li>
+              <li>{t("howToShareStep2")}</li>
+              <li>{t("howToShareStep3")}</li>
+              <li>{t("howToShareStep4")}</li>
+              <li>{t("howToShareStep5")}</li>
+            </ol>
+          </div>
+        </section>
+
         {/* FFL Format */}
         <section aria-labelledby="format-title" className="mx-auto max-w-6xl px-4 py-8">
           <div className="rounded-3xl bg-blue-50 p-6 sm:p-8">
@@ -235,6 +269,11 @@ export default function MiiQrUnlockerPage() {
             <Link href="/pixel-grid-studio" className="rounded-2xl border border-gray-100 bg-white p-5 shadow-sm transition-shadow hover:shadow-md">
               <h3 className="mb-2 font-mono text-lg font-bold text-gray-900">{t("relatedPixelTitle")}</h3>
               <p className="text-sm leading-relaxed text-gray-600">{t("relatedPixelDesc")}</p>
+            </Link>
+          </div>
+          <div className="mt-6 text-center">
+            <Link href="/tomodachi-life-mbti" className="inline-flex items-center gap-1 text-sm font-medium text-indigo-600 hover:text-indigo-700">
+              {t("relatedMbtiLink")} →
             </Link>
           </div>
         </section>

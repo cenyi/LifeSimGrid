@@ -8,9 +8,9 @@ const BASE = "https://lifesimgrid.org";
 
 /** Metadata for the root-level ACNH Pixel Studio page (English default). */
 export const metadata: Metadata = {
-  title: { absolute: "ACNH Pixel Studio — Free Custom Design Tool | LifeSimGrid" },
+  title: { absolute: "ACNH Pixel Studio — Custom Designs & Pixel Art | LifeSimGrid" },
   description:
-    "Free ACNH custom design pixel converter. 32×32 & 64×64, 15-color palette, FFL export, smart scaling. 100% browser-based, no server.",
+    "Free ACNH custom design & Tomodachi Life pixel art converter. 32×32 Standard & Pro Design grids, paint-by-numbers. 100% browser-based.",
   alternates: {
     canonical: `${BASE}/acnh-pixel-studio`,
     languages: {
@@ -28,9 +28,9 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "ACNH Pixel Studio — Free Custom Design Tool",
+    title: "ACNH Pixel Studio — Custom Designs & Pixel Art",
     description:
-      "Free online tool to convert images into ACNH custom design pixel patterns. 32×32 & 64×64, 15-color palette, FFL-compatible export. 100% browser-based.",
+      "Free online tool to convert images into ACNH custom design & Tomodachi Life pixel patterns. 32×32 Standard & Pro Design grids, paint-by-numbers. 100% browser-based.",
     url: `${BASE}/acnh-pixel-studio`,
     siteName: "LifeSimGrid",
     type: "website",

@@ -20,6 +20,12 @@ export default function TomodachiVoiceLabPage() {
     { q: t("faq4Q"), a: t("faq4A") },
     { q: t("faq5Q"), a: t("faq5A") },
     { q: t("faq6Q"), a: t("faq6A") },
+    { q: t("faq7Q"), a: t("faq7A") },
+    { q: t("faq8Q"), a: t("faq8A") },
+    { q: t("faq9Q"), a: t("faq9A") },
+    { q: t("faq10Q"), a: t("faq10A") },
+    { q: t("faq11Q"), a: t("faq11A") },
+    { q: t("faq12Q"), a: t("faq12A") },
   ];
 
   /** Wraps technical terms in <code> tags for SEO and visual emphasis */
@@ -159,6 +165,84 @@ export default function TomodachiVoiceLabPage() {
           </div>
         </section>
 
+        {/* 16 Personalities × Voice Chart - SEO h2 section */}
+        <section aria-labelledby="voice-16-title" className="mx-auto max-w-6xl px-4 py-8">
+          <div className="rounded-3xl bg-gradient-to-br from-indigo-50 to-purple-50 p-6 sm:p-8">
+            <h2 id="voice-16-title" className="mb-4 font-mono text-2xl font-bold text-gray-900 sm:text-3xl">
+              {t("voice16Title")}
+            </h2>
+            <p className="mb-6 leading-relaxed text-gray-600">{t("voice16Desc")}</p>
+            <Link href="/tomodachi-life-mbti" className="inline-flex items-center gap-2 rounded-xl bg-white px-5 py-3 font-mono text-sm font-bold text-indigo-700 shadow-sm transition-all hover:shadow-md hover:bg-indigo-50">
+              {t("voice16MbtiLink")}
+            </Link>
+          </div>
+        </section>
+
+        {/* Voice Preset × Personality Chart Reference */}
+        <section aria-labelledby="voice-personality-title" className="mx-auto max-w-6xl px-4 py-8">
+          <h2 id="voice-personality-title" className="mb-4 font-mono text-2xl font-bold text-gray-900 sm:text-3xl">
+            {t("voicePersonalityTitle")}
+          </h2>
+          <p className="mb-6 leading-relaxed text-gray-600">{t("voicePersonalityDesc")}</p>
+          <div className="overflow-x-auto rounded-2xl border border-gray-100 bg-white shadow-sm">
+            <table className="w-full text-left text-sm">
+              <thead className="bg-gray-50">
+                <tr>
+                  <th className="px-4 py-3 font-mono font-semibold text-gray-900">{t("voicePersonalityGroup")}</th>
+                  <th className="px-4 py-3 font-mono font-semibold text-gray-900">{t("voicePersonalityType")}</th>
+                  <th className="px-4 py-3 font-mono font-semibold text-gray-900">{t("voicePersonalityMbti")}</th>
+                  <th className="px-4 py-3 font-mono font-semibold text-gray-900">{t("voicePersonalityPreset")}</th>
+                  <th className="px-4 py-3 font-mono font-semibold text-gray-900">{t("voicePersonalityPitch")}</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-gray-100">
+                <tr>
+                  <td className="px-4 py-3 text-amber-700 font-semibold">{t("voicePersonalityOutgoing")}</td>
+                  <td className="px-4 py-3 text-gray-600">{t("voicePersonalityOutgoingType")}</td>
+                  <td className="px-4 py-3 font-mono text-gray-900">{t("voicePersonalityOutgoingMbti")}</td>
+                  <td className="px-4 py-3 text-gray-600">{t("voicePersonalityOutgoingPreset")}</td>
+                  <td className="px-4 py-3 font-mono text-gray-600">{t("voicePersonalityOutgoingPitch")}</td>
+                </tr>
+                <tr>
+                  <td className="px-4 py-3 text-red-700 font-semibold">{t("voicePersonalityConfident")}</td>
+                  <td className="px-4 py-3 text-gray-600">{t("voicePersonalityConfidentType")}</td>
+                  <td className="px-4 py-3 font-mono text-gray-900">{t("voicePersonalityConfidentMbti")}</td>
+                  <td className="px-4 py-3 text-gray-600">{t("voicePersonalityConfidentPreset")}</td>
+                  <td className="px-4 py-3 font-mono text-gray-600">{t("voicePersonalityConfidentPitch")}</td>
+                </tr>
+                <tr>
+                  <td className="px-4 py-3 text-purple-700 font-semibold">{t("voicePersonalityIndependent")}</td>
+                  <td className="px-4 py-3 text-gray-600">{t("voicePersonalityIndependentType")}</td>
+                  <td className="px-4 py-3 font-mono text-gray-900">{t("voicePersonalityIndependentMbti")}</td>
+                  <td className="px-4 py-3 text-gray-600">{t("voicePersonalityIndependentPreset")}</td>
+                  <td className="px-4 py-3 font-mono text-gray-600">{t("voicePersonalityIndependentPitch")}</td>
+                </tr>
+                <tr>
+                  <td className="px-4 py-3 text-green-700 font-semibold">{t("voicePersonalityEasygoing")}</td>
+                  <td className="px-4 py-3 text-gray-600">{t("voicePersonalityEasygoingType")}</td>
+                  <td className="px-4 py-3 font-mono text-gray-900">{t("voicePersonalityEasygoingMbti")}</td>
+                  <td className="px-4 py-3 text-gray-600">{t("voicePersonalityEasygoingPreset")}</td>
+                  <td className="px-4 py-3 font-mono text-gray-600">{t("voicePersonalityEasygoingPitch")}</td>
+                </tr>
+                <tr className="bg-gray-50">
+                  <td className="px-4 py-3 text-gray-700 font-semibold">{t("voicePersonalityChild")}</td>
+                  <td className="px-4 py-3 text-gray-600">—</td>
+                  <td className="px-4 py-3 font-mono text-gray-600">{t("voicePersonalityChildMbti")}</td>
+                  <td className="px-4 py-3 text-gray-600">{t("voicePersonalityChildPreset")}</td>
+                  <td className="px-4 py-3 font-mono text-gray-600">{t("voicePersonalityChildPitch")}</td>
+                </tr>
+                <tr className="bg-gray-50">
+                  <td className="px-4 py-3 text-gray-700 font-semibold">{t("voicePersonalityRobot")}</td>
+                  <td className="px-4 py-3 text-gray-600">—</td>
+                  <td className="px-4 py-3 font-mono text-gray-600">{t("voicePersonalityRobotMbti")}</td>
+                  <td className="px-4 py-3 text-gray-600">{t("voicePersonalityRobotPreset")}</td>
+                  <td className="px-4 py-3 font-mono text-gray-600">{t("voicePersonalityRobotPitch")}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
         {/* Why Choose */}
         <section aria-labelledby="voice-why-choose-title" className="mx-auto max-w-6xl px-4 py-8">
           <h2 id="voice-why-choose-title" className="mb-6 font-mono text-2xl font-bold text-gray-900 sm:text-3xl">{t("whyChooseTitle")}</h2>
@@ -219,6 +303,11 @@ export default function TomodachiVoiceLabPage() {
             <Link href="/pixel-grid-studio" className="rounded-2xl border border-gray-100 bg-white p-5 shadow-sm transition-shadow hover:shadow-md">
               <h3 className="mb-2 font-mono text-lg font-bold text-gray-900">{t("relatedPixelTitle")}</h3>
               <p className="text-sm leading-relaxed text-gray-600">{t("relatedPixelDesc")}</p>
+            </Link>
+          </div>
+          <div className="mt-6 text-center">
+            <Link href="/tomodachi-life-mbti" className="inline-flex items-center gap-1 text-sm font-medium text-indigo-600 hover:text-indigo-700">
+              {t("relatedMbtiLink")} →
             </Link>
           </div>
         </section>

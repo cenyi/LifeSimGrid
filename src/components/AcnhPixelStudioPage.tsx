@@ -20,6 +20,11 @@ export default function AcnhPixelStudioPage() {
     { q: t("faq4Q"), a: t("faq4A") },
     { q: t("faq5Q"), a: t("faq5A") },
     { q: t("faq6Q"), a: t("faq6A") },
+    { q: t("faq7Q"), a: t("faq7A") },
+    { q: t("faq8Q"), a: t("faq8A") },
+    { q: t("faq9Q"), a: t("faq9A") },
+    { q: t("faq10Q"), a: t("faq10A") },
+    { q: t("faq11Q"), a: t("faq11A") },
   ];
 
   /** Render text with technical terms wrapped in <code> tags */
@@ -41,18 +46,32 @@ export default function AcnhPixelStudioPage() {
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "HowTo",
-              name: t("howToImportTitle"),
-              step: [
-                { "@type": "HowToStep", text: t("howToImportStep1") },
-                { "@type": "HowToStep", text: t("howToImportStep2") },
-                { "@type": "HowToStep", text: t("howToImportStep3") },
-                { "@type": "HowToStep", text: t("howToImportStep4") },
-                { "@type": "HowToStep", text: t("howToImportStep5") },
-              ],
-            }).replace(/<\/script/g, "<\\/script"),
+            __html: JSON.stringify([
+              {
+                "@context": "https://schema.org",
+                "@type": "HowTo",
+                name: t("howToImportTitle"),
+                step: [
+                  { "@type": "HowToStep", text: t("howToImportStep1") },
+                  { "@type": "HowToStep", text: t("howToImportStep2") },
+                  { "@type": "HowToStep", text: t("howToImportStep3") },
+                  { "@type": "HowToStep", text: t("howToImportStep4") },
+                  { "@type": "HowToStep", text: t("howToImportStep5") },
+                ],
+              },
+              {
+                "@context": "https://schema.org",
+                "@type": "HowTo",
+                name: t("howToLtdTitle"),
+                step: [
+                  { "@type": "HowToStep", text: t("howToLtdStep1") },
+                  { "@type": "HowToStep", text: t("howToLtdStep2") },
+                  { "@type": "HowToStep", text: t("howToLtdStep3") },
+                  { "@type": "HowToStep", text: t("howToLtdStep4") },
+                  { "@type": "HowToStep", text: t("howToLtdStep5") },
+                ],
+              },
+            ]).replace(/<\/script/g, "<\\/script"),
           }}
         />
         {/* BreadcrumbList JSON-LD */}
@@ -148,6 +167,68 @@ export default function AcnhPixelStudioPage() {
           </div>
         </section>
 
+        {/* How to Use for Living the Dream */}
+        <section aria-labelledby="how-to-ltd-title" className="mx-auto max-w-6xl px-4 py-8">
+          <div className="rounded-3xl bg-amber-50 p-6 sm:p-8">
+            <h2 id="how-to-ltd-title" className="mb-6 font-mono text-2xl font-bold text-gray-900 sm:text-3xl">
+              {t("howToLtdTitle")}
+            </h2>
+            <ol className="list-decimal list-inside space-y-2 text-gray-700">
+              <li>{t("howToLtdStep1")}</li>
+              <li>{t("howToLtdStep2")}</li>
+              <li>{t("howToLtdStep3")}</li>
+              <li>{t("howToLtdStep4")}</li>
+              <li>{t("howToLtdStep5")}</li>
+            </ol>
+          </div>
+        </section>
+
+        {/* Grid Size Reference Table */}
+        <section aria-labelledby="grid-ref-title" className="mx-auto max-w-6xl px-4 py-8">
+          <h2 id="grid-ref-title" className="mb-4 font-mono text-2xl font-bold text-gray-900 sm:text-3xl">
+            {t("gridRefTitle")}
+          </h2>
+          <p className="mb-6 leading-relaxed text-gray-600">{t("gridRefDesc")}</p>
+          <div className="overflow-x-auto rounded-2xl border border-gray-100 bg-white shadow-sm">
+            <table className="w-full text-left text-sm">
+              <thead className="bg-gray-50">
+                <tr>
+                  <th className="px-4 py-3 font-mono font-semibold text-gray-900">{t("gridRefGame")}</th>
+                  <th className="px-4 py-3 font-mono font-semibold text-gray-900">{t("gridRefDesignType")}</th>
+                  <th className="px-4 py-3 font-mono font-semibold text-gray-900">{t("gridRefSize")}</th>
+                  <th className="px-4 py-3 font-mono font-semibold text-gray-900">{t("gridRefToolDensity")}</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-gray-100">
+                <tr>
+                  <td className="px-4 py-3 text-gray-700">{t("gridRefAcnhStandard")}</td>
+                  <td className="px-4 py-3 text-gray-600">{t("gridRefAcnhStandardType")}</td>
+                  <td className="px-4 py-3 font-mono text-gray-900">{t("gridRefAcnhStandardSize")}</td>
+                  <td className="px-4 py-3 text-gray-600">{t("gridRefAcnhStandardDensity")}</td>
+                </tr>
+                <tr>
+                  <td className="px-4 py-3 text-gray-700">{t("gridRefAcnhPro")}</td>
+                  <td className="px-4 py-3 text-gray-600">{t("gridRefAcnhProType")}</td>
+                  <td className="px-4 py-3 font-mono text-gray-900">{t("gridRefAcnhProSize")}</td>
+                  <td className="px-4 py-3 text-gray-600">{t("gridRefAcnhProDensity")}</td>
+                </tr>
+                <tr className="bg-amber-50/50">
+                  <td className="px-4 py-3 text-gray-700">{t("gridRefLtdFacepaint")}</td>
+                  <td className="px-4 py-3 text-gray-600">{t("gridRefLtdFacepaintType")}</td>
+                  <td className="px-4 py-3 font-mono text-gray-900">{t("gridRefLtdFacepaintSize")}</td>
+                  <td className="px-4 py-3 text-gray-600">{t("gridRefLtdFacepaintDensity")}</td>
+                </tr>
+                <tr className="bg-amber-50/50">
+                  <td className="px-4 py-3 text-gray-700">{t("gridRefLtdClothing")}</td>
+                  <td className="px-4 py-3 text-gray-600">{t("gridRefLtdClothingType")}</td>
+                  <td className="px-4 py-3 font-mono text-gray-900">{t("gridRefLtdClothingSize")}</td>
+                  <td className="px-4 py-3 text-gray-600">{t("gridRefLtdClothingDensity")}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
         {/* Why Use */}
         <section aria-labelledby="why-use-title" className="mx-auto max-w-6xl px-4 py-8">
           <h2 id="why-use-title" className="mb-6 font-mono text-2xl font-bold text-gray-900 sm:text-3xl">
@@ -209,6 +290,11 @@ export default function AcnhPixelStudioPage() {
             <Link href="/pixel-grid-studio" className="rounded-2xl border border-gray-100 bg-white p-5 shadow-sm transition-shadow hover:shadow-md">
               <h3 className="mb-2 font-mono text-lg font-bold text-gray-900">{t("relatedPixelTitle")}</h3>
               <p className="text-sm leading-relaxed text-gray-600" dangerouslySetInnerHTML={{ __html: renderCodeTerms(t("relatedPixelDesc")) }} />
+            </Link>
+          </div>
+          <div className="mt-6 text-center">
+            <Link href="/tomodachi-life-mbti" className="inline-flex items-center gap-1 text-sm font-medium text-indigo-600 hover:text-indigo-700">
+              {t("relatedMbtiLink")} →
             </Link>
           </div>
         </section>

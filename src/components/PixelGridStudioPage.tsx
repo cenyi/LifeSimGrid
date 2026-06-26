@@ -20,13 +20,28 @@ export default function PixelGridStudioPage() {
     { q: t("faq4Q"), a: t("faq4A") },
     { q: t("faq5Q"), a: t("faq5A") },
     { q: t("faq6Q"), a: t("faq6A") },
+    { q: t("faq7Q"), a: t("faq7A") },
+    { q: t("faq8Q"), a: t("faq8A") },
+    { q: t("faq9Q"), a: t("faq9A") },
+    { q: t("faq10Q"), a: t("faq10A") },
+    { q: t("faq11Q"), a: t("faq11A") },
+    { q: t("faq12Q"), a: t("faq12A") },
+    { q: t("faq13Q"), a: t("faq13A") },
+    { q: t("faq14Q"), a: t("faq14A") },
+    { q: t("faq15Q"), a: t("faq15A") },
+    { q: t("faq16Q"), a: t("faq16A") },
+    { q: t("faq17Q"), a: t("faq17A") },
+    { q: t("faq18Q"), a: t("faq18A") },
+    { q: t("faq19Q"), a: t("faq19A") },
+    { q: t("faq20Q"), a: t("faq20A") },
   ];
 
   /** Wraps technical terms in <code> tags for SEO and visual emphasis */
   const renderTechDesc = (text: string) => {
     return text
       .replace(/(error-diffusion dithering)/gi, '<code class="rounded bg-gray-100 px-1 py-0.5 text-sm font-mono">$1</code>')
-      .replace(/(Euclidean distance)/gi, '<code class="rounded bg-gray-100 px-1 py-0.5 text-sm font-mono">$1</code>');
+      .replace(/(Euclidean distance)/gi, '<code class="rounded bg-gray-100 px-1 py-0.5 text-sm font-mono">$1</code>')
+      .replace(/(HTML5 Canvas API)/g, '<code class="rounded bg-gray-100 px-1 py-0.5 text-sm font-mono">$1</code>');
   };
 
   return (
@@ -160,6 +175,44 @@ export default function PixelGridStudioPage() {
           </div>
         </section>
 
+        {/* Living the Grid Alternative Comparison */}
+        <section aria-labelledby="ltg-alt-title" className="mx-auto max-w-6xl px-4 py-8">
+          <h2 id="ltg-alt-title" className="mb-4 font-mono text-2xl font-bold text-gray-900 sm:text-3xl">
+            {t("ltgAltTitle")}
+          </h2>
+          <p className="mb-6 leading-relaxed text-gray-600">{t("ltgAltDesc")}</p>
+          <div className="overflow-x-auto rounded-2xl border border-gray-100 bg-white shadow-sm">
+            <table className="w-full text-left text-sm">
+              <thead className="bg-gray-50">
+                <tr>
+                  <th className="px-4 py-3 font-mono font-semibold text-gray-900">{t("ltgAltFeature")}</th>
+                  <th className="px-4 py-3 font-mono font-semibold text-gray-900">{t("ltgAltLtG")}</th>
+                  <th className="px-4 py-3 font-mono font-semibold text-gray-900">{t("ltgAltLsg")}</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-gray-100">
+                {[
+                  { feature: t("ltgAltRow1Feature"), ltg: t("ltgAltRow1LtG"), lsg: t("ltgAltRow1Lsg") },
+                  { feature: t("ltgAltRow2Feature"), ltg: t("ltgAltRow2LtG"), lsg: t("ltgAltRow2Lsg") },
+                  { feature: t("ltgAltRow3Feature"), ltg: t("ltgAltRow3LtG"), lsg: t("ltgAltRow3Lsg") },
+                  { feature: t("ltgAltRow4Feature"), ltg: t("ltgAltRow4LtG"), lsg: t("ltgAltRow4Lsg") },
+                  { feature: t("ltgAltRow5Feature"), ltg: t("ltgAltRow5LtG"), lsg: t("ltgAltRow5Lsg") },
+                  { feature: t("ltgAltRow6Feature"), ltg: t("ltgAltRow6LtG"), lsg: t("ltgAltRow6Lsg") },
+                  { feature: t("ltgAltRow7Feature"), ltg: t("ltgAltRow7LtG"), lsg: t("ltgAltRow7Lsg") },
+                  { feature: t("ltgAltRow8Feature"), ltg: t("ltgAltRow8LtG"), lsg: t("ltgAltRow8Lsg") },
+                  { feature: t("ltgAltRow9Feature"), ltg: t("ltgAltRow9LtG"), lsg: t("ltgAltRow9Lsg") },
+                ].map((row, i) => (
+                  <tr key={i} className={i % 2 === 0 ? "" : "bg-gray-50/50"}>
+                    <td className="px-4 py-3 font-semibold text-gray-900">{row.feature}</td>
+                    <td className="px-4 py-3 text-gray-600">{row.ltg}</td>
+                    <td className="px-4 py-3 text-gray-600">{row.lsg}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </section>
+
         {/* Technical Deep Dive: Dithering & Quantization */}
         <section aria-labelledby="tech-title" className="mx-auto max-w-6xl px-4 py-8">
           <div className="rounded-3xl bg-blue-50 p-6 sm:p-8">
@@ -174,6 +227,10 @@ export default function PixelGridStudioPage() {
               <div className="rounded-2xl border border-blue-100 bg-white p-5 shadow-sm">
                 <h3 className="mb-2 font-mono text-lg font-bold text-gray-900">{t("techColorTitle")}</h3>
                 <p className="leading-relaxed text-gray-700" dangerouslySetInnerHTML={{ __html: renderTechDesc(t("techColorDesc")) }} />
+              </div>
+              <div className="rounded-2xl border border-blue-100 bg-white p-5 shadow-sm">
+                <h3 className="mb-2 font-mono text-lg font-bold text-gray-900">{t("techPaletteTitle")}</h3>
+                <p className="leading-relaxed text-gray-700" dangerouslySetInnerHTML={{ __html: renderTechDesc(t("techPaletteDesc")) }} />
               </div>
             </div>
           </div>
@@ -231,6 +288,11 @@ export default function PixelGridStudioPage() {
             <Link href="/tomodachi-voice-lab" className="rounded-2xl border border-gray-100 bg-white p-5 shadow-sm transition-shadow hover:shadow-md">
               <h3 className="mb-2 font-mono text-lg font-bold text-gray-900">{t("relatedVoiceTitle")}</h3>
               <p className="text-sm leading-relaxed text-gray-600">{t("relatedVoiceDesc")}</p>
+            </Link>
+          </div>
+          <div className="mt-6 text-center print:hidden">
+            <Link href="/tomodachi-life-mbti" className="inline-flex items-center gap-1 text-sm font-medium text-indigo-600 hover:text-indigo-700">
+              {t("relatedMbtiLink")} →
             </Link>
           </div>
         </section>

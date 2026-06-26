@@ -627,6 +627,11 @@ export default function TomodachiLifeMbtiPage() {
     { q: t("faq4Q"), a: t("faq4A") },
     { q: t("faq5Q"), a: t("faq5A") },
     { q: t("faq6Q"), a: t("faq6A") },
+    { q: t("faq7Q"), a: t("faq7A") },
+    { q: t("faq8Q"), a: t("faq8A") },
+    { q: t("faq9Q"), a: t("faq9A") },
+    { q: t("faq10Q"), a: t("faq10A") },
+    { q: t("faq11Q"), a: t("faq11A") },
   ];
 
   /* ================================================================ */
@@ -1432,6 +1437,11 @@ export default function TomodachiLifeMbtiPage() {
               </Link>
               <Link href="/pixel-grid-studio" className="rounded-xl bg-green-50 p-4 transition-all hover:shadow-md">
                 <h3 className="font-semibold text-green-800 text-sm">{t("relatedPixelGrid")}</h3>
+              </Link>
+            </div>
+            <div className="mt-4 text-center">
+              <Link href="/acnh-pixel-studio" className="inline-flex items-center gap-1 text-sm font-medium text-emerald-600 hover:text-emerald-700">
+                {t("relatedAcnhLink")} →
               </Link>
             </div>
           </div>
