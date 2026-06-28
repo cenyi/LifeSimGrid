@@ -11,7 +11,7 @@
   },
   "Hero": {
     "title": "LifeSimGrid：非公式 どうぶつの森マイデザインツール ＆ Mii QR設定エディタ",
-    "subtitle": "100%サーバーレスの究極のウェブユーティリティスイート。Living the Gridの代替として、どうぶつの森（ACNH）＆トモダチコレクション 新生活に対応。カスタムピクセルグリッドの作成、Mii FFLプロトコルデータの修正、トモダチコレクションのMBTI風性格相性診断を数秒で — 登録不要！",
+    "subtitle": "Animal Crossing（ACNH）＆トモダチコレクション 新生活向けのLiving the Grid代替：ピクセルグリッド作成、Mii FFL修正、MBTI相性診断 — 100%ブラウザ実行、登録不要。",
     "tabPixel": "🎨 ACNH ピクセルスタジオ",
     "tabQR": "🔓 Mii QRロック解除",
     "tabVoice": "🎵 トモダチ ボイスラボ (MBTI)"
@@ -463,7 +463,7 @@
     "faq10Q": "このツールはACNH PROデザインを変換できますか？",
     "faq10A": "はい！当ピクセルスタジオは標準マイデザイン（32×32、15色）とPROデザイン（64×64、前/後/左/右の別パネル）の両方に対応しています。PROデザイン用に画像を変換する際、64×64グリッド密度を選択すると、ツールが各パネルのナンバリングテンプレートを生成します。PROデザインはどうぶつの森 新ホライズンの服に使用され、各面に異なる柄を持つ全身衣装が可能です。",
     "faq11Q": "Mii QRコードのFFLと0x04 Byte Modeとは何ですか？",
-    "faq11A": "FFL（Face Library）はMii QRコードで使用されるバイナリ形式で、3dbrewドキュメントによると96バイトのMiiデータを含みます。オフセット0x04には本体を識別する8バイトのSystem IDが格納されています。Byte Modeは3DS Miiスタジオが使用するQRコードエンコード方式（バージョン10 QRコード、57×57モジュール）です。当Mii QRロック解除ツールはこの形式の権限フラグを変更します。注意：ACNHピクセルスタジオはQR直接インポートではなく、ナンバリングテンプレートでゲーム内再現を使用します。",
+    "faq11A": "FFL（Face Library）はMii QRコードで使用されるバイナリ形式で、3dbrewドキュメントによると96バイトのMiiデータを含みます。オフセット0x04には本体を識別する8バイトのSystem IDが格納されています。Byte Modeは3DS Miiスタジオが使用するQRコードエンコード方式（バージョン10 QRコード、57×57モジュール）です。当[[/mii-qr-unlocker:Mii QRロック解除]]ツールはこの形式の権限フラグを変更します。注意：ACNHピクセルスタジオはQR直接インポートではなく、ナンバリングテンプレートでゲーム内再現を使用します。",
     "relatedMbtiLink": "Tomodachi Life MBTIテスト"
   },
   "MiiQrUnlocker": {
@@ -614,14 +614,14 @@
     "faq7Q": "Does the Voice Lab work on my PC browser, or do I need a Nintendo Switch?",
     "faq7A": "The Voice Lab runs entirely in your web browser — no Nintendo Switch required. It uses the Web Audio API to synthesize 8-bit chiptune voices in real time. You can preview and fine-tune voice settings on your computer or phone, then replicate those settings in either the original Tomodachi Life or Living the Dream on your Switch.",
     "faq8Q": "How do the 16 Living the Dream personalities relate to the voice presets?",
-    "faq8A": "Each of the 16 personality types in Living the Dream (Considerate, Reserved, Outgoing, and Ambitious groups) has characteristic voice traits. Our voice presets map to these personality groups: Adult Male suits Outgoing and Ambitious types with lower pitch (150–250 Hz), Adult Female suits Reserved and Considerate types with higher pitch (280–380 Hz), Elder suits Considerate types with gentle vibrato, and Child/Robot presets cover special character types. For the full personality chart and MBTI mapping, visit our Tomodachi Life MBTI page.",
+    "faq8A": "Each of the 16 personality types in Living the Dream (Considerate, Reserved, Outgoing, and Ambitious groups) has characteristic voice traits. Our voice presets map to these personality groups: Adult Male suits Outgoing and Ambitious types with lower pitch (150–250 Hz), Adult Female suits Reserved and Considerate types with higher pitch (280–380 Hz), Elder suits Considerate types with gentle vibrato, and Child/Robot presets cover special character types. For the full personality chart and MBTI mapping, visit our [[/tomodachi-life-mbti:Tomodachi Life MBTI page]].",
     "voice16Title": "16の性格 × ボイスチャート",
     "voice16Desc": "Tomodachi Lifeには16種類の性格があり、4つのグループ（外向的、自信家、独立型、穏やか）に分類され、それぞれに特徴的なボイスのピッチとトーン範囲があります。当ボイスラボはこの16の性格を5つのボイスプリセットにマッピングし、どんなMiiにも適切な声を素早く設定できます。完全なMBTI性格チャートと相性診断計算機は、専用のMBTIページをご覧ください。",
     "voice16MbtiLink": "完全なMBTI性格チャート＆相性診断計算機を見る →",
     "faq9Q": "Tomodachi Lifeの16の性格とそのボイス特徴は何ですか？",
     "faq9A": "Tomodachi Lifeの16の性格は4つのグループに分かれ、それぞれ異なるボイス範囲を持ちます：\n\n外向的（E型）：リーダー（ESTJ、成人男性180–250 Hz）、エンターテイナー（ESFP、成人男性高音）、トレンドセッター（ENFP、成人女性）、オプティミスト（ESFJ、子供のような活力）\n自信家（T/J型）：デザイナー（INTJ、成人男性低音）、アドベンチャラー（ESTP、成人男性）、ゴーゲッター（ENTJ、成人男性）、チャーマー（ENTP、成人女性）\n独立型（I型）：アーティスト（INFP、成人女性280–380 Hz）、フリースピリット（INTP、成人女性）、シンカー（ISTP、成人男性）、ローンウルフ（ISTJ、老人風）\n穏やか（F/P型）：ドリーマー（INFJ、老人120–180 Hz）、スウィートハート（ISFJ、成人女性）、ソフトー（INFP、成人女性柔らか）、バディ（ISFP、子供）\n\n推奨設定は上記の「ボイスプリセット × 性格チャート参考」表をご覧ください。",
     "faq10Q": "Miiを作成する前に異なる性格の声をプレビューできますか？",
-    "faq10A": "はい！当ボイスラボでは、ゲーム内でMiiを設定する前に、5つのボイスプリセット（成人男性、成人女性、老人、子供、ロボット）のカスタムピッチとスピード設定をテストできます。これは新生活の性格を計画する際に特に便利です——思いやり、控えめ、外向的、野心の4グループのキャラクターがどのように聞こえるかを確認してから、ゲームのボイスエディタで設定を再現できます。MBTIページの完全な性格チャートで、16の性格とMBTIタイプの対応をご覧ください。",
+    "faq10A": "はい！当ボイスラボでは、ゲーム内でMiiを設定する前に、5つのボイスプリセット（成人男性、成人女性、老人、子供、ロボット）のカスタムピッチとスピード設定をテストできます。これは新生活の性格を計画する際に特に便利です——思いやり、控えめ、外向的、野心の4グループのキャラクターがどのように聞こえるかを確認してから、ゲームのボイスエディタで設定を再現できます。[[/tomodachi-life-mbti:MBTIページ]]の完全な性格チャートで、16の性格とMBTIタイプの対応をご覧ください。",
     "faq11Q": "ボイスラボでMiiのボイステキスト読み上げはできますか？",
     "faq11A": "はい！当ボイスラボはWeb Audio APIを使用して、あらゆるテキスト入力を8-bit Miiキャラクターのボイスに変換します。テキストを入力し、ボイスプリセット（成人男性、成人女性、老人、子供、ロボット）を選択し、ピッチとスピードのスライダーを調整して、再生をクリックすると合成ボイスが聞こえます。テキスト読み上げエンジンはTomodachi Lifeの特徴的なボイス品質に密接に一致するチップチューンスタイルの音声を生成します。すべての合成はブラウザ内で行われます——サーバー処理は不要です。",
     "faq12Q": "Tomodachi Lifeのボイスピッチとスピードをカスタマイズする方法は？",

@@ -11,7 +11,7 @@
   },
   "Hero": {
     "title": "LifeSimGrid：非官方 Animal Crossing 圖案工具 & Mii QR 配置器",
-    "subtitle": "終極 100% 無伺服器網頁工具套件，Living the Grid 的替代方案，專為 Animal Crossing（ACNH）與 朋友聚會 新生活 打造。精確處理您的自訂像素網格、修復 Mii FFL 協議資料，並在數秒內計算朋友聚會的MBTI風格性格相容性——無需註冊！",
+    "subtitle": "Living the Grid 替代方案，專為 Animal Crossing（ACNH）與朋友聚會 新生活 打造：像素網格、Mii FFL 修復、MBTI 相容性——100%瀏覽器執行，無需註冊。",
     "tabPixel": "🎨 ACNH 像素工作室",
     "tabQR": "🔓 Mii QR 解鎖器",
     "tabVoice": "🎵 朋友聚會 新生活 語音實驗室 (MBTI)"
@@ -463,7 +463,7 @@
     "faq10Q": "這個工具可以轉換 ACNH 專業設計嗎？",
     "faq10A": "可以！我們的像素工作室同時支援標準我的設計（32×32，15 色）和專業設計（64×64，分前/後/左/右面板）。為專業設計轉換圖片時，選擇 64×64 網格密度，工具會為每個面板生成依序編號範本。專業設計用於集合啦！動物森友會的服裝，允許全身服裝在每個面上有不同的圖案。",
     "faq11Q": "Mii QR 碼中的 FFL 和 0x04 Byte Mode 是什麼？",
-    "faq11A": "FFL（Face Library）是 Mii QR 碼中使用的二進位格式，根據 3dbrew 文件包含 96 位元組的 Mii 資料。偏移量 0x04 儲存識別主機的 8 位元組 System ID。Byte Mode 是 3DS Mii 工作室使用的 QR 碼編碼方式（版本 10 QR 碼，57×57 模組）。我們的 Mii QR 解鎖器工具修改此格式中的權限旗標。注意：ACNH 像素工作室使用依序編號範本在遊戲中重現設計，而非直接匯入 QR。",
+    "faq11A": "FFL（Face Library）是 Mii QR 碼中使用的二進位格式，根據 3dbrew 文件包含 96 位元組的 Mii 資料。偏移量 0x04 儲存識別主機的 8 位元組 System ID。Byte Mode 是 3DS Mii 工作室使用的 QR 碼編碼方式（版本 10 QR 碼，57×57 模組）。我們的 [[/mii-qr-unlocker:Mii QR 解鎖器]]工具修改此格式中的權限旗標。注意：ACNH 像素工作室使用依序編號範本在遊戲中重現設計，而非直接匯入 QR。",
     "relatedMbtiLink": "Tomodachi Life MBTI 測試"
   },
   "MiiQrUnlocker": {
@@ -614,14 +614,14 @@
     "faq7Q": "Does the Voice Lab work on my PC browser, or do I need a Nintendo Switch?",
     "faq7A": "The Voice Lab runs entirely in your web browser — no Nintendo Switch required. It uses the Web Audio API to synthesize 8-bit chiptune voices in real time. You can preview and fine-tune voice settings on your computer or phone, then replicate those settings in either the original Tomodachi Life or Living the Dream on your Switch.",
     "faq8Q": "How do the 16 Living the Dream personalities relate to the voice presets?",
-    "faq8A": "Each of the 16 personality types in Living the Dream (Considerate, Reserved, Outgoing, and Ambitious groups) has characteristic voice traits. Our voice presets map to these personality groups: Adult Male suits Outgoing and Ambitious types with lower pitch (150–250 Hz), Adult Female suits Reserved and Considerate types with higher pitch (280–380 Hz), Elder suits Considerate types with gentle vibrato, and Child/Robot presets cover special character types. For the full personality chart and MBTI mapping, visit our Tomodachi Life MBTI page.",
+    "faq8A": "Each of the 16 personality types in Living the Dream (Considerate, Reserved, Outgoing, and Ambitious groups) has characteristic voice traits. Our voice presets map to these personality groups: Adult Male suits Outgoing and Ambitious types with lower pitch (150–250 Hz), Adult Female suits Reserved and Considerate types with higher pitch (280–380 Hz), Elder suits Considerate types with gentle vibrato, and Child/Robot presets cover special character types. For the full personality chart and MBTI mapping, visit our [[/tomodachi-life-mbti:Tomodachi Life MBTI page]].",
     "voice16Title": "16 種性格 × 語音圖表",
     "voice16Desc": "Tomodachi Life 有 16 種不同的性格，分為 4 組（外向、自信、獨立、隨和），每組都有特有的語音音高和音調範圍。我們的語音實驗室將這 16 種性格映射到 5 種語音預設，讓您快速為任何 Mii 配置合適的聲音。如需完整的 MBTI 性格圖表和相容性計算機，請造訪我們的 MBTI 專頁。",
     "voice16MbtiLink": "查看完整 MBTI 性格圖表與相容性計算機 →",
     "faq9Q": "Tomodachi Life 的 16 種性格及其語音特徵是什麼？",
     "faq9A": "Tomodachi Life 的 16 種性格分為 4 組，各有不同的語音範圍：\n\n外向（E 型）：領導者（ESTJ，成人男性 180–250 Hz）、表演者（ESFP，成人男性高音）、潮流引領者（ENFP，成人女性）、樂觀者（ESFJ，孩童般活力）\n自信（T/J 型）：設計師（INTJ，成人男性低音）、冒險者（ESTP，成人男性）、行動派（ENTJ，成人男性）、魅力者（ENTP，成人女性）\n獨立（I 型）：藝術家（INFP，成人女性 280–380 Hz）、自由靈魂（INTP，成人女性）、思考者（ISTP，成人男性）、孤狼（ISTJ，長者風）\n隨和（F/P 型）：夢想家（INFJ，長者 120–180 Hz）、甜蜜心（ISFJ，成人女性）、溫柔者（INFP，成人女性柔和）、夥伴（ISFP，孩童）\n\n請參考上方的「語音預設 × 性格圖表參考」表格獲取推薦設定。",
     "faq10Q": "我可以在建立 Mii 之前預覽不同性格的聲音嗎？",
-    "faq10A": "可以！我們的語音實驗室讓您在遊戲內設定 Mii 之前，先測試 5 種語音預設（成人男性、成人女性、長者、孩童、機器人）的自訂音高和速度設定。這對於規劃新生活的性格特別有用——您可以先聽聽體貼、內斂、外向、雄心四組角色的聲音，再在遊戲的語音編輯器中重現這些設定。造訪我們 MBTI 頁面上的完整性格圖表，查看 16 種性格與 MBTI 類型的對應關係。",
+    "faq10A": "可以！我們的語音實驗室讓您在遊戲內設定 Mii 之前，先測試 5 種語音預設（成人男性、成人女性、長者、孩童、機器人）的自訂音高和速度設定。這對於規劃新生活的性格特別有用——您可以先聽聽體貼、內斂、外向、雄心四組角色的聲音，再在遊戲的語音編輯器中重現這些設定。造訪我們 [[/tomodachi-life-mbti:MBTI 頁面]]上的完整性格圖表，查看 16 種性格與 MBTI 類型的對應關係。",
     "faq11Q": "語音實驗室可以進行 Mii 語音文字轉語音嗎？",
     "faq11A": "可以！我們的語音實驗室使用 Web Audio API 將任何文字輸入轉換為 8-bit Mii 角色語音。輸入文字、選擇語音預設（成人男性、成人女性、長者、孩童或機器人）、調整音高和速度滑桿，然後點擊播放即可聽到合成的語音。文字轉語音引擎生成與 Tomodachi Life 特有語音品質密切匹配的晶片音效風格音訊。所有合成都在您的瀏覽器中進行——無需伺服器處理。",
     "faq12Q": "如何為 Tomodachi Life 自訂語音音高和速度？",

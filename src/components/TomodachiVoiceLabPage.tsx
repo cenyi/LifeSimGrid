@@ -32,7 +32,8 @@ export default function TomodachiVoiceLabPage() {
   const renderTechDesc = (text: string) => {
     return text
       .replace(/(Web Audio API)/g, '<code class="rounded bg-gray-100 px-1 py-0.5 text-sm font-mono">$1</code>')
-      .replace(/(Vibrato LFO)/g, '<code class="rounded bg-gray-100 px-1 py-0.5 text-sm font-mono">$1</code>');
+      .replace(/(Vibrato LFO)/g, '<code class="rounded bg-gray-100 px-1 py-0.5 text-sm font-mono">$1</code>')
+      .replace(/\[\[\/([a-z-]+):([^\]]+)\]\]/g, '<a href="/$1" class="font-medium text-indigo-600 hover:text-indigo-700 underline">$2</a>');
   };
 
   return (

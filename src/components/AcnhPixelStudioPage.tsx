@@ -28,15 +28,16 @@ export default function AcnhPixelStudioPage() {
   ];
 
   /** Render text with technical terms wrapped in <code> tags */
-  const renderCodeTerms = (text: string) => {
-    return text
-      .replace(/(HTML5 Canvas API)/g, '<code class="rounded bg-gray-100 px-1 py-0.5 text-sm font-mono">$1</code>')
-      .replace(/(NookLink)/g, '<code class="rounded bg-gray-100 px-1 py-0.5 text-sm font-mono">$1</code>')
-      .replace(/(NookPhone)/g, '<code class="rounded bg-gray-100 px-1 py-0.5 text-sm font-mono">$1</code>')
-      .replace(/(FFL)/g, '<code class="rounded bg-gray-100 px-1 py-0.5 text-sm font-mono">$1</code>')
-      .replace(/(0x04)/g, '<code class="rounded bg-gray-100 px-1 py-0.5 text-sm font-mono">$1</code>')
-      .replace(/(Web Audio API)/g, '<code class="rounded bg-gray-100 px-1 py-0.5 text-sm font-mono">$1</code>');
-  };
+const renderCodeTerms = (text: string) => {
+return text
+.replace(/(HTML5 Canvas API)/g, '<code class="rounded bg-gray-100 px-1 py-0.5 text-sm font-mono">$1</code>')
+.replace(/(NookLink)/g, '<code class="rounded bg-gray-100 px-1 py-0.5 text-sm font-mono">$1</code>')
+.replace(/(NookPhone)/g, '<code class="rounded bg-gray-100 px-1 py-0.5 text-sm font-mono">$1</code>')
+.replace(/(FFL)/g, '<code class="rounded bg-gray-100 px-1 py-0.5 text-sm font-mono">$1</code>')
+.replace(/(0x04)/g, '<code class="rounded bg-gray-100 px-1 py-0.5 text-sm font-mono">$1</code>')
+.replace(/(Web Audio API)/g, '<code class="rounded bg-gray-100 px-1 py-0.5 text-sm font-mono">$1</code>')
+.replace(/\[\[\/([a-z-]+):([^\]]+)\]\]/g, '<a href="/$1" class="font-medium text-indigo-600 hover:text-indigo-700 underline">$2</a>');
+};
 
   return (
     <div className="flex min-h-screen flex-col">

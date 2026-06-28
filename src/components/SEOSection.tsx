@@ -98,7 +98,7 @@ export default function SEOSection() {
         </p>
       </div>
 
-      <section aria-labelledby="manual-heading" className="mb-12 rounded-3xl bg-gray-50 p-6 sm:p-8">
+      <section aria-labelledby="manual-heading" className="mb-12">
         <h2 id="manual-heading" className="mb-8 font-mono text-2xl font-bold text-gray-900 sm:text-3xl">
           {seo("manualTitle")}
         </h2>

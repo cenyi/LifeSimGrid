@@ -2,7 +2,7 @@
 
 import { useTranslations } from "next-intl";
 import { useState, useEffect } from "react";
-import { Palette, Unlock, Music, Grid3x3, ShieldCheck, UserX, Code } from "lucide-react";
+import { Palette, Unlock, Music, Grid3x3, ShieldCheck, UserX, Code, ArrowRight } from "lucide-react";
 import { Link } from "@/i18n/routing";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -134,8 +134,9 @@ export default function HomePageContent() {
               </div>
               <h3 className="mb-2 font-mono text-lg font-bold text-gray-900">{ft("pixelCardTitle")}</h3>
               <p className="mb-4 text-sm leading-relaxed text-gray-600">{ft("pixelCardDesc")}</p>
-              <Link href="/acnh-pixel-studio" className="inline-flex items-center text-sm font-semibold text-amber-600 transition-colors hover:text-amber-700">
-                {ft("pixelCardCta")} →
+              <Link href="/acnh-pixel-studio" className="inline-flex w-full items-center justify-center gap-1.5 rounded-xl bg-amber-500 px-4 py-2.5 text-sm font-semibold text-white shadow-sm transition-all hover:bg-amber-600 hover:shadow-md active:scale-95 sm:w-auto">
+                {ft("pixelCardCta")}
+                <ArrowRight className="h-4 w-4" />
               </Link>
             </div>
             <div className="group rounded-2xl border border-blue-100 bg-white p-6 shadow-sm transition-all hover:shadow-md">
@@ -144,8 +145,9 @@ export default function HomePageContent() {
               </div>
               <h3 className="mb-2 font-mono text-lg font-bold text-gray-900">{ft("qrCardTitle")}</h3>
               <p className="mb-4 text-sm leading-relaxed text-gray-600">{ft("qrCardDesc")}</p>
-              <Link href="/mii-qr-unlocker" className="inline-flex items-center text-sm font-semibold text-blue-600 transition-colors hover:text-blue-700">
-                {ft("qrCardCta")} →
+              <Link href="/mii-qr-unlocker" className="inline-flex w-full items-center justify-center gap-1.5 rounded-xl bg-blue-500 px-4 py-2.5 text-sm font-semibold text-white shadow-sm transition-all hover:bg-blue-600 hover:shadow-md active:scale-95 sm:w-auto">
+                {ft("qrCardCta")}
+                <ArrowRight className="h-4 w-4" />
               </Link>
             </div>
             <div className="group rounded-2xl border border-purple-100 bg-white p-6 shadow-sm transition-all hover:shadow-md">
@@ -154,8 +156,9 @@ export default function HomePageContent() {
               </div>
               <h3 className="mb-2 font-mono text-lg font-bold text-gray-900">{ft("voiceCardTitle")}</h3>
               <p className="mb-4 text-sm leading-relaxed text-gray-600">{ft("voiceCardDesc")}</p>
-              <Link href="/tomodachi-voice-lab" className="inline-flex items-center text-sm font-semibold text-purple-600 transition-colors hover:text-purple-700">
-                {ft("voiceCardCta")} →
+              <Link href="/tomodachi-voice-lab" className="inline-flex w-full items-center justify-center gap-1.5 rounded-xl bg-purple-500 px-4 py-2.5 text-sm font-semibold text-white shadow-sm transition-all hover:bg-purple-600 hover:shadow-md active:scale-95 sm:w-auto">
+                {ft("voiceCardCta")}
+                <ArrowRight className="h-4 w-4" />
               </Link>
             </div>
             <div className="group rounded-2xl border border-green-100 bg-white p-6 shadow-sm transition-all hover:shadow-md">
@@ -164,8 +167,9 @@ export default function HomePageContent() {
               </div>
               <h3 className="mb-2 font-mono text-lg font-bold text-gray-900">{ft("pixelGridCardTitle")}</h3>
               <p className="mb-4 text-sm leading-relaxed text-gray-600">{ft("pixelGridCardDesc")}</p>
-              <Link href="/pixel-grid-studio" className="inline-flex items-center text-sm font-semibold text-green-600 transition-colors hover:text-green-700">
-                {ft("pixelGridCardCta")} →
+              <Link href="/pixel-grid-studio" className="inline-flex w-full items-center justify-center gap-1.5 rounded-xl bg-green-500 px-4 py-2.5 text-sm font-semibold text-white shadow-sm transition-all hover:bg-green-600 hover:shadow-md active:scale-95 sm:w-auto">
+                {ft("pixelGridCardCta")}
+                <ArrowRight className="h-4 w-4" />
               </Link>
             </div>
           </div>
