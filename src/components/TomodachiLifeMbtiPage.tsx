@@ -1436,7 +1436,7 @@ export default function TomodachiLifeMbtiPage() {
               <Link href="/mii-qr-unlocker" className="rounded-xl bg-blue-50 p-4 transition-all hover:shadow-md">
                 <h3 className="font-semibold text-blue-800 text-sm">{t("relatedMiiQr")}</h3>
               </Link>
-              <Link href="/pixel-grid-studio" className="rounded-xl bg-green-50 p-4 transition-all hover:shadow-md">
+              <Link href="/living-the-grid" className="rounded-xl bg-green-50 p-4 transition-all hover:shadow-md">
                 <h3 className="font-semibold text-green-800 text-sm">{t("relatedPixelGrid")}</h3>
               </Link>
             </div>

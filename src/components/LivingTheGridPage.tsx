@@ -7,9 +7,9 @@ import Footer from "@/components/Footer";
 import PixelStudio from "@/components/PixelStudio";
 import { Link } from "@/i18n/routing";
 
-/** Pixel Grid Studio sub-page with dedicated SEO content */
-export default function PixelGridStudioPage() {
-  const t = useTranslations("PixelGridStudio");
+/** Living the Grid sub-page with dedicated SEO content */
+export default function LivingTheGridPage() {
+  const t = useTranslations("LivingTheGrid");
   const locale = useLocale();
   const BASE = "https://lifesimgrid.org";
 
@@ -34,6 +34,7 @@ export default function PixelGridStudioPage() {
     { q: t("faq18Q"), a: t("faq18A") },
     { q: t("faq19Q"), a: t("faq19A") },
     { q: t("faq20Q"), a: t("faq20A") },
+    { q: t("faq21Q"), a: t("faq21A") },
   ];
 
   /** Wraps technical terms in <code> tags for SEO and visual emphasis */
@@ -75,7 +76,7 @@ export default function PixelGridStudioPage() {
               "@type": "BreadcrumbList",
               itemListElement: [
                 { "@type": "ListItem", position: 1, name: "Home", item: `${BASE}${locale === "en" ? "/" : `/${locale}/`}` },
-                { "@type": "ListItem", position: 2, name: "Pixel Grid Studio", item: `${BASE}${locale === "en" ? "/pixel-grid-studio" : `/${locale}/pixel-grid-studio`}` },
+                { "@type": "ListItem", position: 2, name: "Living the Grid", item: `${BASE}${locale === "en" ? "/living-the-grid" : `/${locale}/living-the-grid`}` },
               ],
             }).replace(/<\/script/g, "<\\/script"),
           }}
@@ -105,7 +106,7 @@ export default function PixelGridStudioPage() {
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "WebApplication",
-              name: "Universal Pixel Grid Studio",
+              name: "Living the Grid",
               applicationCategory: "GameUtilityApplication",
               operatingSystem: "Any (Browser-based)",
               offers: {

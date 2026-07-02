@@ -167,7 +167,7 @@ export default function HomePageContent() {
               </div>
               <h3 className="mb-2 font-mono text-lg font-bold text-gray-900">{ft("pixelGridCardTitle")}</h3>
               <p className="mb-4 text-sm leading-relaxed text-gray-600">{ft("pixelGridCardDesc")}</p>
-              <Link href="/pixel-grid-studio" className="inline-flex w-full items-center justify-center gap-1.5 rounded-xl bg-green-500 px-4 py-2.5 text-sm font-semibold text-white shadow-sm transition-all hover:bg-green-600 hover:shadow-md active:scale-95 sm:w-auto">
+              <Link href="/living-the-grid" className="inline-flex w-full items-center justify-center gap-1.5 rounded-xl bg-green-500 px-4 py-2.5 text-sm font-semibold text-white shadow-sm transition-all hover:bg-green-600 hover:shadow-md active:scale-95 sm:w-auto">
                 {ft("pixelGridCardCta")}
                 <ArrowRight className="h-4 w-4" />
               </Link>

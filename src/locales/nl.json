@@ -7,7 +7,7 @@
     "toolMii": "Mii QR-ontgrendelaar",
     "toolVoice": "Tomodachi Stemlab",
     "toolMbti": "Tomodachi Life MBTI",
-    "toolPixelGrid": "Pixelgrid-studio"
+    "toolLivingTheGrid": "Living the Grid"
   },
   "Hero": {
     "title": "LifeSimGrid: Onofficieel Animal Crossing Patroonhulpmiddel & Mii QR-configurator",
@@ -344,7 +344,7 @@
     "toolAcnh": "🎨 ACNH Pixelstudio",
     "toolMii": "🔓 Mii QR-ontgrendelaar",
     "toolVoice": "🎵 Tomodachi Stemlab",
-    "toolPixelGrid": "🧩 Pixelgrid-studio"
+    "toolLivingTheGrid": "🧩 Living the Grid"
   },
   "History": {
     "title": "📜 Opgeslagen Rastergeschiedenis",
@@ -628,10 +628,10 @@
     "faq12A": "Ons Stemlab biedt twee hoofdregelaars voor het aanpassen van Mii-stemmen: (1) Pitch-schuifregelaar (0–100) — lagere waarden produceren diepere stemmen geschikt voor Volwassen Man en Oudere presets (120–250 Hz), hogere waarden produceren hogere stemmen voor Volwassen Vrouw en Kind presets (280–400+ Hz). (2) Snelheid-schuifregelaar (0–100) — regelt de spreeksnelheid en vibratofrequentie. Pas deze instellingen aan het persoonlijkheidstype van je Mii aan.",
     "relatedMbtiLink": "Tomodachi Life MBTI-test"
   },
-  "PixelGridStudio": {
-    "metaTitle": "Afbeelding naar Pixelart — Gratis",
+  "LivingTheGrid": {
+    "metaTitle": "Living the Grid | LifeSimGrid",
     "metaDesc": "Afbeeldingen naar pixelart-raster. Minecraft, Smeltkralen, 16×16-128×128. 100% clientzijde, geen server.",
-    "title": "Universele Pixelraster Studio",
+    "title": "Living the Grid",
     "subtitle": "Converteer elke afbeelding naar pixelart rasterpatronen voor Minecraft, Smeltkralen, Kruissteek en meer. Aangepaste rasterformaten, 100% lokale verwerking.",
     "turnPhotoTitle": "Hoe Pixelraster Studio te gebruiken: Verander elke foto in pixel art",
     "turnPhotoIntro": "Onze pixelconversie-engine gebruikt intelligente kleurkwantisering en Euclidische afstand matching om je foto's om te zetten in schone pixelart rasters. Het algoritme behoudt belangrijke details terwijl het het kleurenpalet vereenvoudigt tot de gekozen rastergrootte.",
@@ -648,7 +648,7 @@
     "techPaletteDesc": "When you upload an image, our engine automatically quantizes all colors into the top 24 distinct swatches using a bucket-based quantization algorithm. Each swatch gets a number and a name (e.g., 'Retro Red', 'Vintage Teal' in retro mode). Click any swatch to highlight all matching pixels on the canvas with dashed helper borders — this paint-by-numbers approach directly addresses the common 'colors not matching' issue by ensuring you pick the exact same color for every pixel while painting in-game. Increasing contrast before conversion further improves quantization accuracy by making color boundaries sharper.",
     "printTip": "🖨️ Printoptimalisatie: Deze pagina ondersteunt native browser-afdrukken (Ctrl+P). Het verbergt automatisch de bedieningspanelen en geeft je een schoon, genummerd papierraster-blauwdruk perfect geoptimaliseerd voor kruissteek-tracering of offline knutselen!",
     "privacyBadge": "🔒 100% Client-Side & Serverless — Alle afbeeldingsverwerking wordt uitgevoerd in je browser via HTML5 Canvas API. Geen uploads, geen databases. Je afbeeldingen blijven op je apparaat.",
-    "faqTitle": "Pixelraster Studio FAQ",
+    "faqTitle": "Living the Grid FAQ",
     "faq1Q": "Wat is kleur-dithering?",
     "faq1A": "Dithering is een techniek om de illusie van kleurdiepte te creëren in afbeeldingen met beperkte paletten. Het werkt door strategisch pixels van verschillende kleuren naast elkaar te plaatsen om tussenliggende tinten te simuleren. Onze tool gebruikt foutdiffusie-dithering om de beeldkwaliteit bij kleinere rasterformaten te behouden.",
     "faq2Q": "Hoe kies ik de juiste rastergrootte?",
@@ -657,9 +657,9 @@
     "faq3A": "Ja! Schakel de 'Retro Match'-modus in om ons ingebouwde 32-kleuren retro gamepalet te gebruiken, of behoud de originele afbeeldingskleuren voor een nauwkeurigere weergave.",
     "faq4Q": "Welke afbeeldingsformaten worden ondersteund?",
     "faq4A": "Wij ondersteunen JPEG, PNG, GIF, BMP en WebP formaten. Voor de beste resultaten gebruik je afbeeldingen onder 5 MB met scherpe lijnen en effen kleurblokken.",
-    "oneMinTitle": "Pixelraster Studio: Een Living the Grid alternatief — 1-Minuut Gids",
+    "oneMinTitle": "Living the Grid — 1-Minute Guide",
     "oneMinDesc": "De Pixelraster Studio converteert elke afbeelding naar een pixelraster voor kruissteek, smeltkralen en pixelart. Ondersteunt rasterformaten van 16×16 tot 128×128 met foutdiffusie-dithering en een 32-kleuren retropalet. 100% browsergebaseerd — je afbeeldingen verlaten nooit je apparaat.",
-    "whyChooseTitle": "Waarom Pixelraster Studio kiezen? 64×64 rastergrootte en meer",
+    "whyChooseTitle": "Why Choose Living the Grid? 64x64 Grid Size & More",
     "whyChoose1Title": "Flexibele Rasterformaten",
     "whyChoose1": "Ondersteunt 5 rasterformaten van 16×16 tot 128×128. Kies 32×32 voor standaard pixelart of 128×128 voor complexe scènes met fijne details.",
     "whyChoose2Title": "Slimme Kleurmatch",
@@ -739,6 +739,8 @@
     "faq19A": "Tomodachi Life: Living the Dream heeft geen ingebouwde genummerde rasterfunctie voor de Mii Maker face paint- en kledingeditor. Onze Pixelraster Studio lost dit echter op door een paint-by-numbers sjabloon te genereren met genummerde kleurswatches. Elk swatch-nummer komt overeen met een specifieke kleur in je design — klik op een willekeurig nummer om alle overeenkomende pixels in het raster te markeren. Druk het sjabloon af (Ctrl+P) en gebruik het als referentie.",
     "faq20Q": "Hoe maak je Tomodachi Life pixel art met Pixelraster Studio?",
     "faq20A": "Om Tomodachi Life pixel art te maken: (1) Upload je afbeelding (JPEG of PNG) naar Pixelraster Studio, (2) Selecteer 32×32 voor standaard designs of 64×64 voor gedetailleerde kunstwerken, (3) Het automatische kleurenpalet kwantiseert je afbeelding in genummerde swatches, (4) Gebruik de paint-by-numbers gids om de pixel art na te maken in elk spel dat aangepaste designs ondersteunt. Pixelraster Studio is ideaal voor Living the Dream face paint, ACNH Custom Designs en algemene pixel art projecten.",
+    "faq21Q": "Mijn afbeelding is te wazig na conversie, hoe op te lossen?",
+    "faq21A": "Wazige output betekent meestal dat de bronafbeelding te weinig contrast heeft of te klein is voor de gekozen rastergrootte. Los het op in drie stappen: (1) Verhoog de contrastschuifregelaar voor conversie — dit verscherpt kleurgrenzen zodat het kwantisatie-algoritme schonere randen produceert. (2) Gebruik een bronafbeelding met hogere resolutie (minstens 512×512 pixels voor een 64×64-raster). (3) Schakel Retro Match-modus uit indien ingeschakeld, aangezien het 32-kleurenpalet vergelijkbare tinten kan samenvoegen en een modderig uiterlijk kan creëren. Voor Living the Dream face paint produceert een schone hoogcontrast PNG met effen kleurblokken de scherpste referentierasters.",
     "relatedMbtiLink": "Tomodachi Life MBTI-test"
   },
   "TomodachiLifeMbtiPage": {

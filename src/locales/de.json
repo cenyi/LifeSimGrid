@@ -7,7 +7,7 @@
     "toolMii": "Mii QR-Entsperrer",
     "toolVoice": "Tomodachi Sprachlabor",
     "toolMbti": "Tomodachi Life MBTI",
-    "toolPixelGrid": "Pixel-Grid-Studio"
+    "toolLivingTheGrid": "Living the Grid"
   },
   "Hero": {
     "title": "LifeSimGrid: Animal Crossing Eigene Designs Generator & Mii QR-Code Tool",
@@ -344,7 +344,7 @@
     "toolAcnh": "🎨 ACNH Pixel-Studio",
     "toolMii": "🔓 Mii QR-Entsperrer",
     "toolVoice": "🎵 Tomodachi Sprachlabor",
-    "toolPixelGrid": "🧩 Pixel-Grid-Studio"
+    "toolLivingTheGrid": "🧩 Living the Grid"
   },
   "History": {
     "title": "📜 Lokaler Konfigurationsverlauf",
@@ -628,10 +628,10 @@
     "faq12A": "Unser Sprachlabor bietet zwei Hauptregler zur Anpassung von Mii-Stimmen: (1) Pitch-Regler (0–100) — niedrigere Werte erzeugen tiefere Stimmen geeignet für Erwachsener Mann und Älterer Presets (120–250 Hz), höhere Werte erzeugen höhere Stimmen für Erwachsene Frau und Kind Presets (280–400+ Hz). (2) Geschwindigkeits-Regler (0–100) — steuert die Sprechgeschwindigkeit und Vibrato-Frequenz. Passen Sie diese Einstellungen an den Persönlichkeitstyp Ihres Mii an.",
     "relatedMbtiLink": "Tomodachi Life MBTI-Test"
   },
-  "PixelGridStudio": {
-    "metaTitle": "Bild zu Pixel-Art — Gratis Konverter",
+  "LivingTheGrid": {
+    "metaTitle": "Living the Grid | LifeSimGrid",
     "metaDesc": "Bilder in Pixel-Art-Raster. Minecraft, Perler Beads, 16×16 bis 128×128. 100% clientseitig, kein Server.",
-    "title": "Universelles Pixel-Grid-Studio",
+    "title": "Living the Grid",
     "subtitle": "Konvertieren Sie jedes Bild in Pixel-Art-Rastermuster für Minecraft, Perler Beads, Kreuzstich und mehr. Benutzerdefinierte Rastergrößen, 100% lokale Verarbeitung.",
     "turnPhotoTitle": "So nutzen Sie Pixel-Grid-Studio: Verwandeln Sie jedes Bild in Pixel-Art",
     "turnPhotoIntro": "Unsere Pixel-Konvertierungs-Engine verwendet intelligente Farbquantisierung und Euklidische-Distanz-Matching, um Ihre Fotos in saubere Pixel-Art-Raster umzuwandeln. Der Algorithmus bewahrt wichtige Details, während er die Farbpalette auf Ihre gewählte Rastergröße vereinfacht.",
@@ -648,7 +648,7 @@
     "techPaletteDesc": "When you upload an image, our engine automatically quantizes all colors into the top 24 distinct swatches using a bucket-based quantization algorithm. Each swatch gets a number and a name (e.g., 'Retro Red', 'Vintage Teal' in retro mode). Click any swatch to highlight all matching pixels on the canvas with dashed helper borders — this paint-by-numbers approach directly addresses the common 'colors not matching' issue by ensuring you pick the exact same color for every pixel while painting in-game. Increasing contrast before conversion further improves quantization accuracy by making color boundaries sharper.",
     "printTip": "🖨️ Druckoptimierung: Diese Seite unterstützt natives Browser-Drucken (Strg+P). Sie blendet automatisch die Steuerungspanels aus und gibt Ihnen einen sauberen, nummerierten Papierraster-Plan, der gut für Kreuzstich-Nachzeichnung oder Offline-Basteln optimiert ist!",
     "privacyBadge": "🔒 100% Clientseitig & Serverless — Die gesamte Bildverarbeitung läuft in Ihrem Browser über HTML5 Canvas API. Keine Uploads, keine Datenbanken. Ihre Bilder bleiben auf Ihrem Gerät.",
-    "faqTitle": "Pixel-Grid-Studio FAQ",
+    "faqTitle": "Living the Grid FAQ",
     "faq1Q": "Was ist Farb-Dithering?",
     "faq1A": "Dithering ist eine Technik, um die Illusion von Farbtiefe in Bildern mit begrenzten Paletten zu erzeugen. Es funktioniert, indem Pixel unterschiedlicher Farben strategisch nebeneinander platziert werden, um Zwischentöne zu simulieren. Unser Tool verwendet Fehlerdiffusions-Dithering, um die Bildqualität bei niedrigeren Rastergrößen zu erhalten.",
     "faq2Q": "Wie wähle ich die richtige Rastergröße?",
@@ -657,9 +657,9 @@
     "faq3A": "Ja! Schalten Sie den \"Retro-Match\"-Modus um, um unsere eingebaute 32-Farben-Retro-Gaming-Palette zu verwenden, oder behalten Sie die originalen Bildfarben für eine genauere Darstellung.",
     "faq4Q": "Welche Bildformate werden unterstützt?",
     "faq4A": "Wir unterstützen JPEG, PNG, GIF, BMP und WebP-Formate. Für beste Ergebnisse verwenden Sie Bilder unter 5MB mit klaren Linien und einfarbigen Blöcken.",
-    "oneMinTitle": "Pixel-Grid-Studio: Eine Living the Grid Alternative — 1-Minuten-Leitfaden",
+    "oneMinTitle": "Living the Grid — 1-Minute Guide",
     "oneMinDesc": "Das Pixel-Grid-Studio konvertiert jedes Bild in ein Pixelraster für Kreuzstich, Perler Beads und Pixel-Art. Unterstützt Rastergrößen von 16×16 bis 128×128 mit Fehlerdiffusions-Dithering und einer 32-Farben-Retro-Palette. 100 % browserbasiert — Ihre Bilder verlassen niemals Ihr Gerät.",
-    "whyChooseTitle": "Warum Pixel-Grid-Studio wählen? 64×64-Rastergröße und mehr",
+    "whyChooseTitle": "Why Choose Living the Grid? 64x64 Grid Size & More",
     "whyChoose1Title": "Flexible Rastergrößen",
     "whyChoose1": "Unterstützt 5 Rastergrößen von 16×16 bis 128×128. Wählen Sie 32×32 für Standard-Pixel-Art oder 128×128 für komplexe Szenen mit feinen Details.",
     "whyChoose2Title": "Intelligenter Farbabgleich",
@@ -739,6 +739,8 @@
     "faq19A": "Tomodachi Life: Living the Dream hat keine eingebaute nummerierte Rasterfunktion für seinen Mii Maker Face-Paint- und Kleidungs-Editor. Unser Pixel-Grid-Studio löst dies jedoch, indem es eine Paint-by-Numbers-Vorlage mit nummerierten Farb-Swatches generiert. Jede Swatch-Nummer entspricht einer bestimmten Farbe in Ihrem Design — klicken Sie auf eine beliebige Nummer, um alle übereinstimmenden Pixel im Raster hervorzuheben. Drucken Sie die Vorlage (Ctrl+P) und verwenden Sie sie als Referenz.",
     "faq20Q": "Wie macht man Tomodachi Life Pixel-Art mit Pixel-Grid-Studio?",
     "faq20A": "So erstellen Sie Tomodachi Life Pixel-Art: (1) Laden Sie Ihr Bild (JPEG oder PNG) in Pixel-Grid-Studio hoch, (2) Wählen Sie 32×32 für Standard-Designs oder 64×64 für detaillierte Kunstwerke, (3) Die automatische Farbpalette quantisiert Ihr Bild in nummerierte Swatches, (4) Verwenden Sie die Paint-by-Numbers-Anleitung, um die Pixel-Art in jedem Spiel mit Custom-Design-Unterstützung nachzubilden. Pixel-Grid-Studio ist ideal für Living the Dream Face Paint, ACNH Custom Designs und allgemeine Pixel-Art-Projekte.",
+    "faq21Q": "Mein Bild ist nach der Konvertierung zu unscharf, wie beheben?",
+    "faq21A": "Ein unscharfes Ergebnis bedeutet meistens, dass das Quellbild zu wenig Kontrast hat oder für die gewählte Rastergröße zu klein ist. Beheben Sie es in drei Schritten: (1) Erhöhen Sie den Kontrast-Regler vor der Konvertierung — dies schärft Farbgrenzen, sodass der Quantisierungsalgorithmus sauberere Kanten erzeugt. (2) Verwenden Sie ein höher aufgelöstes Quellbild (mindestens 512×512 Pixel für ein 64×64-Raster). (3) Deaktivieren Sie den Retro Match-Modus falls aktiviert, da die 32-Farben-Palette ähnliche Farbtöne verschmelzen und ein matschiges Aussehen erzeugen kann. Für Living the Dream Face Paint erzeugt ein sauberes hochkontrastiges PNG mit einfarbigen Blöcken die schärfsten Referenzraster.",
     "relatedMbtiLink": "Tomodachi Life MBTI-Test"
   },
   "TomodachiLifeMbtiPage": {

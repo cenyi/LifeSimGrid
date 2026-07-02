@@ -75,9 +75,9 @@ export default function Navbar() {
             <Sparkles className="h-3.5 w-3.5" />
             <span className="hidden xl:inline">{t("toolMbti")}</span>
           </Link>
-          <Link href="/pixel-grid-studio" title={t("toolPixelGrid")} className="flex items-center space-x-1.5 rounded-lg border border-gray-200 bg-white px-2.5 py-1.5 text-xs font-medium text-gray-600 shadow-sm transition-all hover:bg-gray-50 hover:text-gray-900 hover:shadow-md active:scale-95">
+          <Link href="/living-the-grid" title={t("toolLivingTheGrid")} className="flex items-center space-x-1.5 rounded-lg border border-gray-200 bg-white px-2.5 py-1.5 text-xs font-medium text-gray-600 shadow-sm transition-all hover:bg-gray-50 hover:text-gray-900 hover:shadow-md active:scale-95">
             <Grid3x3 className="h-3.5 w-3.5" />
-            <span className="hidden xl:inline">{t("toolPixelGrid")}</span>
+            <span className="hidden xl:inline">{t("toolLivingTheGrid")}</span>
           </Link>
         </div>
 

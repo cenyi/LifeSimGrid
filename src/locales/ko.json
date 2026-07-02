@@ -7,7 +7,7 @@
     "toolMii": "Mii QR 언록",
     "toolVoice": "Tomodachi 보이스 랩",
     "toolMbti": "Tomodachi Life MBTI",
-    "toolPixelGrid": "픽셀 그리드 스튜디오"
+    "toolLivingTheGrid": "Living the Grid"
   },
   "Hero": {
     "title": "LifeSimGrid: 비공식 동물의 숲 패턴 도구 & Mii QR 설정기",
@@ -344,7 +344,7 @@
     "toolAcnh": "🎨 ACNH 픽셀 스튜디오",
     "toolMii": "🔓 Mii QR 언록",
     "toolVoice": "🎵 Tomodachi 보이스 랩",
-    "toolPixelGrid": "🧩 픽셀 그리드 스튜디오"
+    "toolLivingTheGrid": "🧩 Living the Grid"
   },
   "History": {
     "title": "📜 저장된 그리드 기록",
@@ -628,10 +628,10 @@
     "faq12A": "당사 보이스 랩은 Mii 음성을 사용자 지정하기 위한 두 가지 주요 컨트롤을 제공합니다: (1) 피치 슬라이더(0–100) — 낮은 값은 성인 남성과 노인 프리셋에 적합한 낮은 음성(120–250 Hz)을 생성하고, 높은 값은 성인 여성과 아이 프리셋에 적합한 높은 음성(280–400+ Hz)을 생성합니다. (2) 속도 슬라이더(0–100) — 말하기 속도와 비브라토 주파수를 제어합니다. 이 설정을 Mii 성격 유형에 맞추세요: 외향적 유형은 보통 중간 피치와 빠른 속도를 사용하고, 내향적 유형은 높은 피치와 느린 속도를 사용합니다.",
     "relatedMbtiLink": "Tomodachi Life MBTI 테스트"
   },
-  "PixelGridStudio": {
-    "metaTitle": "이미지→픽셀아트 변환기 — 무료 도구",
+  "LivingTheGrid": {
+    "metaTitle": "Living the Grid | LifeSimGrid",
     "metaDesc": "이미지를 픽셀아트 그리드로 변환. 마인크래프트, 퍼들비드, 16×16~128×128. 100% 클라이언트 처리.",
-    "title": "범용 픽셀 그리드 스튜디오",
+    "title": "Living the Grid",
     "subtitle": "Minecraft, 퓨즐 비즈, 십자수 등을 위한 픽셀아트 그리드 패턴으로 이미지 변환. 커스텀 그리드 크기, 100% 로컬 처리.",
     "turnPhotoTitle": "픽셀 그리드 스튜디오 사용법: 모든 사진을 픽셀아트로 변환",
     "turnPhotoIntro": "픽셀 변환 엔진은 지능형 컬러 양자화와 유클리드 거리 매칭을 사용하여 사진을 깔끔한 픽셀아트 그리드로 변환합니다. 알고리즘은 선택한 그리드 크기로 컬러 팔레트를 단순화하면서 중요한 디테일을 보존합니다.",
@@ -648,7 +648,7 @@
     "techPaletteDesc": "When you upload an image, our engine automatically quantizes all colors into the top 24 distinct swatches using a bucket-based quantization algorithm. Each swatch gets a number and a name (e.g., 'Retro Red', 'Vintage Teal' in retro mode). Click any swatch to highlight all matching pixels on the canvas with dashed helper borders — this paint-by-numbers approach directly addresses the common 'colors not matching' issue by ensuring you pick the exact same color for every pixel while painting in-game. Increasing contrast before conversion further improves quantization accuracy by making color boundaries sharper.",
     "printTip": "🖨️ 인쇄 최적화: 이 페이지는 브라우저 네이티브 인쇄(Ctrl+P)를 지원합니다. 제어판을 자동으로 숨겨 크로스스티치 추적이나 오프라인 공예에 최적화된 깔끔한 번호가 있는 종이 그리드 청사진을 제공합니다!",
     "privacyBadge": "🔒 100% 클라이언트 사이드 & 서버리스 — 모든 이미지 처리는 HTML5 Canvas API를 통해 브라우저에서 실행됩니다. 업로드 없음, 데이터베이스 없음. 이미지는 기기에 남습니다.",
-    "faqTitle": "픽셀 그리드 스튜디오 FAQ",
+    "faqTitle": "Living the Grid FAQ",
     "faq1Q": "컬러 디더링이란?",
     "faq1A": "디더링은 제한된 팔레트의 이미지에서 컬러 깊이의 착시를 만드는 기술입니다. 다른 색상의 픽셀을 전략적으로 나란히 배치하여 중간 색조를 시뮬레이션합니다. 당사 도구는 오차 확산 디더링을 사용하여 낮은 그리드 크기에서도 이미지 품질을 유지합니다.",
     "faq2Q": "적절한 그리드 크기를 선택하는 방법은?",
@@ -657,9 +657,9 @@
     "faq3A": "네! '레트로 매치' 모드를 전환하여 내장 32색 레트로 게임 팔레트를 사용하거나, 원본 이미지 색상을 유지하여 더 정확한 표현을 얻을 수 있습니다.",
     "faq4Q": "어떤 이미지 포맷을 지원하나요?",
     "faq4A": "JPEG, PNG, GIF, BMP, WebP 포맷을 지원합니다. 최상의 결과를 위해 5MB 이하의 선명한 라인과 단색 블록이 있는 이미지를 사용하세요.",
-    "oneMinTitle": "픽셀 그리드 스튜디오: Living the Grid 대안 — 1분 가이드",
+    "oneMinTitle": "Living the Grid — 1-Minute Guide",
     "oneMinDesc": "픽셀 그리드 스튜디오는 모든 이미지를 십자수, 퓨즐 비즈, 픽셀아트용 픽셀 그리드로 변환합니다. 16×16부터 128×128까지 그리드 크기를 지원하고, 오차 확산 디더링과 32색 레트로 팔레트를 탑재. 100% 브라우저 기반 — 이미지가 기기를 떠나지 않습니다.",
-    "whyChooseTitle": "왜 픽셀 그리드 스튜디오를 선택해야 하나요? 64×64 그리드 크기 등",
+    "whyChooseTitle": "Why Choose Living the Grid? 64x64 Grid Size & More",
     "whyChoose1Title": "유연한 그리드 크기",
     "whyChoose1": "16×16부터 128×128까지 5가지 그리드 크기 지원. 표준 픽셀아트에는 32×32, 미세한 디테일이 필요한 복잡한 장면에는 128×128을 선택.",
     "whyChoose2Title": "스마트 컬러 매칭",
@@ -739,6 +739,8 @@
     "faq19A": "Tomodachi Life Living the Dream의 Mii 스튜디오 페이스페인트 및 의상 에디터에는 넘버링 그리드 기능이 내장되어 있지 않습니다. 하지만 당사 픽셀 그리드 스튜디오는 넘버링 스와치가 포함된 넘버링 템플릿을 생성하여 이를 해결합니다. 각 스와치 번호는 디자인의 특정 색상에 해당합니다 — 아무 번호나 클릭하면 그리드에서 일치하는 모든 픽셀이 하이라이트됩니다. 템플릿을 인쇄(Ctrl+P)하고 Living the Dream에서 디자인을 수동으로 재현할 때 참조로 사용하세요.",
     "faq20Q": "픽셀 그리드 스튜디오로 Tomodachi Life 픽셀 아트를 만드는 방법은?",
     "faq20A": "Tomodachi Life 픽셀 아트를 만드는 단계: (1) 이미지(JPEG 또는 PNG)를 픽셀 그리드 스튜디오에 업로드, (2) 표준 디자인은 32×32, 상세 아트워크는 64×64 선택, (3) 자동 색상 팔레트가 이미지를 넘버링 스와치로 양자화, (4) 넘버링 가이드를 사용하여 커스텀 디자인을 지원하는 모든 게임에서 픽셀 아트 재현. 픽셀 그리드 스튜디오는 Living the Dream 페이스페인트, ACNH 커스텀 디자인 및 일반 픽셀 아트 프로젝트에 이상적입니다 — 모든 처리는 HTML5 Canvas API로 클라이언트 측에서 이루어집니다.",
+    "faq21Q": "변환 후 이미지가 너무 흐려지는데 어떻게 수정하나요?",
+    "faq21A": "흐려진 출력은 일반적으로 원본 이미지의 대비가 부족하거나 선택한 그리드 크기에 비해 너무 작음을 의미합니다. 3단계로 수정: (1) 변환 전 대비 슬라이더를 높이세요 — 이렇게 하면 색상 경계가 선명해져 양자화 알고리즘이 더 깔끔한 가장자리를 생성합니다. (2) 더 높은 해상도의 원본 이미지를 사용하세요 (64×64 그리드에는 최소 512×512 픽셀). (3) 레트로 매치 모드가 활성화된 경우 비활성화하세요. 32색 팔레트는 유사한 색조를 병합하여 흐릿한 외관을 만들 수 있습니다. Living the Dream 페이스페인트에는 깨끗한 고대비 PNG 단색 블록 이미지가 가장 선명한 참조 그리드를 생성합니다.",
     "relatedMbtiLink": "Tomodachi Life MBTI 테스트"
   },
   "TomodachiLifeMbtiPage": {

@@ -7,7 +7,7 @@
     "toolMii": "Desbloqueador QR Mii",
     "toolVoice": "Laboratorio de Voz Tomodachi",
     "toolMbti": "Tomodachi Life MBTI",
-    "toolPixelGrid": "Estudio de Cuadrícula de Píxeles"
+    "toolLivingTheGrid": "Living the Grid"
   },
   "Hero": {
     "title": "LifeSimGrid: Herramienta No Oficial de Patrones de Animal Crossing y Configurador QR de Mii",
@@ -344,7 +344,7 @@
     "toolAcnh": "🎨 Estudio de Píxeles ACNH",
     "toolMii": "🔓 Desbloqueador QR Mii",
     "toolVoice": "🎵 Laboratorio de Voz Tomodachi",
-    "toolPixelGrid": "🧩 Estudio de Cuadrícula de Píxeles"
+    "toolLivingTheGrid": "🧩 Living the Grid"
   },
   "History": {
     "title": "📜 Historial de Cuadrículas Guardadas",
@@ -628,10 +628,10 @@
     "faq12A": "Nuestro Laboratorio de Voz proporciona dos controles principales para personalizar las voces Mii: (1) Control de tono (0–100) — valores más bajos producen voces más graves adecuadas para los presets de Hombre Adulto y Anciano (120–250 Hz), valores más altos producen voces más agudas para los presets de Mujer Adulta y Niño (280–400+ Hz). (2) Control de velocidad (0–100) — controla la velocidad de habla y la frecuencia del vibrato. Ajusta estos ajustes al tipo de personalidad de tu Mii.",
     "relatedMbtiLink": "Test MBTI de Tomodachi Life"
   },
-  "PixelGridStudio": {
-    "metaTitle": "Imagen a Pixel Art — Generador Gratis",
+  "LivingTheGrid": {
+    "metaTitle": "Living the Grid | LifeSimGrid",
     "metaDesc": "Convierte imágenes en patrones pixel art. Minecraft, Perler Beads, 16×16 a 128×128. 100% cliente, sin servidor.",
-    "title": "Estudio Universal de Cuadrícula de Píxeles",
+    "title": "Living the Grid",
     "subtitle": "Convierte cualquier imagen en patrones de cuadrícula de arte de píxeles para Minecraft, Perler Beads, Punto de Cruz y más. Tamaños de cuadrícula personalizables, procesamiento 100% local.",
     "turnPhotoTitle": "Cómo usar Pixel Grid Studio: Convierte cualquier foto en pixel art",
     "turnPhotoIntro": "Nuestro motor de conversión de píxeles usa cuantización de color inteligente y correspondencia por distancia euclidiana para transformar tus fotos en cuadrículas de arte de píxeles limpias. El algoritmo preserva detalles importantes mientras simplifica la paleta de colores al tamaño de cuadrícula elegido.",
@@ -648,7 +648,7 @@
     "techPaletteDesc": "When you upload an image, our engine automatically quantizes all colors into the top 24 distinct swatches using a bucket-based quantization algorithm. Each swatch gets a number and a name (e.g., 'Retro Red', 'Vintage Teal' in retro mode). Click any swatch to highlight all matching pixels on the canvas with dashed helper borders — this paint-by-numbers approach directly addresses the common 'colors not matching' issue by ensuring you pick the exact same color for every pixel while painting in-game. Increasing contrast before conversion further improves quantization accuracy by making color boundaries sharper.",
     "printTip": "🖨️ Optimización de Impresión: Esta página soporta la impresión nativa del navegador (Ctrl+P). Oculta automáticamente los paneles de control, dándote un plano de cuadrícula de papel numerado limpio y de manera fiable optimizado para trazado de punto de cruz o manualidades offline.",
     "privacyBadge": "🔒 100% del Lado del Cliente y Sin Servidor — Todo el procesamiento de imágenes se ejecuta en tu navegador vía HTML5 Canvas API. Sin subidas, sin bases de datos. Tus imágenes se quedan en tu dispositivo.",
-    "faqTitle": "FAQ del Estudio de Cuadrícula de Píxeles",
+    "faqTitle": "Living the Grid FAQ",
     "faq1Q": "¿Qué es el tramado de color (dithering)?",
     "faq1A": "El tramado es una técnica utilizada para crear la ilusión de profundidad de color en imágenes con paletas limitadas. Funciona colocando estratégicamente píxeles de diferentes colores uno al lado del otro para simular tonos intermedios. Nuestra herramienta usa tramado de difusión de error para mantener la calidad de imagen en tamaños de cuadrícula más pequeños.",
     "faq2Q": "¿Cómo elijo el tamaño de cuadrícula correcto?",
@@ -657,9 +657,9 @@
     "faq3A": "¡Sí! Activa el modo 'Coincidencia Retro' para usar nuestra paleta retro de juego integrada de 32 colores, o mantén los colores de la imagen original para una representación más precisa.",
     "faq4Q": "¿Qué formatos de imagen son soportados?",
     "faq4A": "Soportamos formatos JPEG, PNG, GIF, BMP y WebP. Para mejores resultados, usa imágenes de menos de 5MB con líneas limpias y bloques de color sólidos.",
-    "oneMinTitle": "Pixel Grid Studio: Una alternativa a Living the Grid — Guía de 1 minuto",
+    "oneMinTitle": "Living the Grid — 1-Minute Guide",
     "oneMinDesc": "El Estudio de Cuadrícula de Píxeles convierte cualquier imagen en una cuadrícula de píxeles para punto de cruz, Perler Beads y arte de píxeles. Soporta tamaños de cuadrícula de 16×16 a 128×128 con error-diffusion dithering y una paleta retro de 32 colores. 100% basado en el navegador — tus imágenes nunca salen de tu dispositivo.",
-    "whyChooseTitle": "¿Por qué elegir Pixel Grid Studio? Tamaño de cuadrícula 64×64 y más",
+    "whyChooseTitle": "Why Choose Living the Grid? 64x64 Grid Size & More",
     "whyChoose1Title": "Tamaños de Cuadrícula Flexibles",
     "whyChoose1": "Soporta 5 tamaños de cuadrícula de 16×16 a 128×128. Elige 32×32 para arte de píxeles estándar o 128×128 para escenas complejas con detalle fino.",
     "whyChoose2Title": "Correspondencia de Color Inteligente",
@@ -739,6 +739,8 @@
     "faq19A": "Tomodachi Life: Living the Dream no tiene una función de cuadrícula numerada integrada en su editor de face paint y ropa del Mii Maker. Sin embargo, nuestro Pixel Grid Studio resuelve esto generando una plantilla de paint-by-numbers con muestras de colores numeradas. Cada número de muestra corresponde a un color específico en tu diseño — haz clic en cualquier número para resaltar todos los píxeles coincidentes en la cuadrícula. Imprime la plantilla (Ctrl+P) y úsala como referencia.",
     "faq20Q": "¿Cómo hacer pixel art de Tomodachi Life con Pixel Grid Studio?",
     "faq20A": "Para crear pixel art de Tomodachi Life: (1) Sube tu imagen (JPEG o PNG) a Pixel Grid Studio, (2) Selecciona 32×32 para diseños estándar o 64×64 para obras detalladas, (3) La paleta de colores automática cuantiza tu imagen en muestras numeradas, (4) Usa la guía de paint-by-numbers para recrear el pixel art en cualquier juego que soporte diseños personalizados. Pixel Grid Studio es ideal para face paint de Living the Dream, ACNH Custom Designs y proyectos de pixel art generales.",
+    "faq21Q": "¿Mi imagen se ve borrosa después de la conversión, cómo solucionarlo?",
+    "faq21A": "La salida borrosa generalmente significa que la imagen original carece de contraste o es demasiado pequeña para el tamaño de cuadrícula elegido. Soluciónalo en tres pasos: (1) Aumenta el control deslizante de contraste antes de la conversión — esto afila los límites de color para que el algoritmo de cuantización produzca bordes más limpios. (2) Usa una imagen de origen de mayor resolución (al menos 512×512 píxeles para una cuadrícula de 64×64). (3) Desactiva el modo Retro Match si está activado, ya que la paleta de 32 colores puede fusionar tonos similares y crear una apariencia embarrada. Para face paint de Living the Dream, un PNG limpio de alto contraste con bloques de color sólido produce las cuadrículas de referencia más nítidas.",
     "relatedMbtiLink": "Test MBTI de Tomodachi Life"
   },
   "TomodachiLifeMbtiPage": {

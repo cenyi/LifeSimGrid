@@ -7,7 +7,7 @@
     "toolMii": "Mii QRロック解除",
     "toolVoice": "トモダチボイスラボ",
     "toolMbti": "トモダチ MBTI",
-    "toolPixelGrid": "ピクセルグリッドスタジオ"
+    "toolLivingTheGrid": "Living the Grid"
   },
   "Hero": {
     "title": "LifeSimGrid：非公式 どうぶつの森マイデザインツール ＆ Mii QR設定エディタ",
@@ -344,7 +344,7 @@
     "toolAcnh": "🎨 あつ森マイデザインスタジオ",
     "toolMii": "🔓 Mii QRロック解除",
     "toolVoice": "🎵 トモダチボイスラボ",
-    "toolPixelGrid": "🧩 ピクセルグリッドスタジオ"
+    "toolLivingTheGrid": "🧩 Living the Grid"
   },
   "History": {
     "title": "📜 保存済みグリッド履歴",
@@ -628,10 +628,10 @@
     "faq12A": "当ボイスラボはMiiボイスをカスタマイズするための2つの主要コントロールを提供します：（1）ピッチスライダー（0–100）——低い値は成人男性と老人プリセットに適した低音ボイス（120–250 Hz）を生成し、高い値は成人女性と子供プリセットに適した高音ボイス（280–400+ Hz）を生成します。（2）スピードスライダー（0–100）——話速とビブラート周波数を制御します。これらの設定をMiiの性格タイプに合わせてください：外向的タイプは通常中ピッチと速いスピードを使用し、控えめタイプは高ピッチと遅いスピードを使用します。",
     "relatedMbtiLink": "Tomodachi Life MBTIテスト"
   },
-  "PixelGridStudio": {
-    "metaTitle": "画像→ピクセルアート変換 — 無料ツール",
+  "LivingTheGrid": {
+    "metaTitle": "Living the Grid | LifeSimGrid",
     "metaDesc": "画像をピクセルグリッドに変換。Minecraft・ビーズ向け、16×16〜128×128、100%クライアント処理。",
-    "title": "汎用ピクセルグリッドスタジオ",
+    "title": "Living the Grid",
     "subtitle": "Minecraft、アイロンビーズ、クロスステッチなどに対応するピクセルアートグリッドパターン変換。カスタムグリッドサイズ、100%ローカル処理。",
     "turnPhotoTitle": "ピクセルグリッドスタジオの使い方：あらゆる写真をピクセルアートに変換",
     "turnPhotoIntro": "ピクセル変換エンジンはインテリジェントなカラー量子化とユークリッド距離マッチングを使用して、写真をクリーンなピクセルアートグリッドに変換します。アルゴリズムは重要なディテールを保持しながら、選択したグリッドサイズにカラーパレットを簡略化します。",
@@ -648,7 +648,7 @@
     "techPaletteDesc": "When you upload an image, our engine automatically quantizes all colors into the top 24 distinct swatches using a bucket-based quantization algorithm. Each swatch gets a number and a name (e.g., 'Retro Red', 'Vintage Teal' in retro mode). Click any swatch to highlight all matching pixels on the canvas with dashed helper borders — this paint-by-numbers approach directly addresses the common 'colors not matching' issue by ensuring you pick the exact same color for every pixel while painting in-game. Increasing contrast before conversion further improves quantization accuracy by making color boundaries sharper.",
     "printTip": "🖨️ 印刷最適化：このページはブラウザのネイティブ印刷（Ctrl+P）をサポートしています。コントロールパネルを自動的に非表示にし、クロスステッチのトレースやオフラインクラフトに最適化されたクリーンで番号付きの紙グリッドブループリントを提供します！",
     "privacyBadge": "🔒 100%クライアントサイド＆サーバーレス — すべての画像処理はHTML5 Canvas APIを介してブラウザ内で実行されます。アップロードなし、データベースなし。あなたの画像はデバイスに残ります。",
-    "faqTitle": "ピクセルグリッドスタジオ FAQ",
+    "faqTitle": "Living the Grid FAQ",
     "faq1Q": "カラーディザリングとは？",
     "faq1A": "ディザリングは、限られたパレットの画像で色深度の錯覚を作り出す技術です。異なる色のピクセルを戦略的に隣り合わせに配置することで、中間色をシミュレートします。当ツールは誤差拡散ディザリングを使用して、低グリッドサイズでも画質を維持します。",
     "faq2Q": "適切なグリッドサイズの選び方は？",
@@ -657,9 +657,9 @@
     "faq3A": "はい！「レトロマッチ」モードを切り替えて内蔵32色レトロゲームパレットを使用するか、元の画像色を保持してより正確な表現ができます。",
     "faq4Q": "対応画像フォーマットは？",
     "faq4A": "JPEG、PNG、GIF、BMP、WebPフォーマットに対応しています。最良の結果を得るには、5MB未満でクリーンなラインとソリッドカラーブロックの画像を使用してください。",
-    "oneMinTitle": "ピクセルグリッドスタジオ：Living the Grid 代替 — 1分ガイド",
+    "oneMinTitle": "Living the Grid — 1-Minute Guide",
     "oneMinDesc": "ピクセルグリッドスタジオは、あらゆる画像をクロスステッチ、パーラービーズ、ピクセルアート用のピクセルグリッドに変換します。16×16から128×128までのグリッドサイズに対応し、誤差拡散ディザリングと32色レトロパレットを搭載。100%ブラウザ完結 — 画像はデバイスから一切送信されません。",
-    "whyChooseTitle": "なぜピクセルグリッドスタジオを選ぶのか？64×64グリッドサイズ他",
+    "whyChooseTitle": "Why Choose Living the Grid? 64x64 Grid Size & More",
     "whyChoose1Title": "柔軟なグリッドサイズ",
     "whyChoose1": "16×16から128×128まで5種類のグリッドサイズに対応。標準ピクセルアートには32×32、精細なディテールが必要な複雑なシーンには128×128を選択。",
     "whyChoose2Title": "スマートカラーマッチング",
@@ -739,6 +739,8 @@
     "faq19A": "Tomodachi Life 新生活のMiiスタジオフェイスペイントおよび服エディタには、組み込みのナンバリンググリッド機能がありません。しかし、当ピクセルグリッドスタジオはナンバリング済みスウォッチ付きのナンバリングテンプレートを生成することでこれを解決します。各スウォッチ番号はデザインの特定の色に対応します——任意の番号をクリックするとグリッド内の一致する全ピクセルがハイライトされます。テンプレートを印刷（Ctrl+P）し、新生活でデザインを手動再現する際の参考として使用してください。",
     "faq20Q": "ピクセルグリッドスタジオでTomodachi Lifeピクセルアートを作る方法は？",
     "faq20A": "Tomodachi Lifeピクセルアートを作成する手順：（1）画像（JPEGまたはPNG）をピクセルグリッドスタジオにアップロード、（2）標準デザインには32×32、詳細なアートワークには64×64を選択、（3）自動カラーパレットが画像をナンバリング済みスウォッチに量子化、（4）ナンバリングガイドを使用してマイデザインをサポートするゲームでピクセルアートを再現。ピクセルグリッドスタジオは新生活のフェイスペイント、ACNHマイデザイン、一般的なピクセルアートプロジェクトに最適です——すべての処理はHTML5 Canvas APIでクライアント側で行われます。",
+    "faq21Q": "変換後の画像がぼやけすぎている場合、どう直せばいいですか？",
+    "faq21A": "ぼやけた出力は通常、元画像のコントラスト不足または選択したグリッドサイズに対して小さすぎることが原因です。3つのステップで修正：（1）変換前にコントラストスライダーを上げる——これにより色の境界が鋭くなり、量子化アルゴリズムがよりクリーンなエッジを生成します。（2）より高解像度の元画像を使用（64×64グリッドには最低512×512ピクセル）。（3）レトロマッチモードが有効な場合はオフにしてください。32色パレットは似た色調を統合し、濁った外観になる可能性があります。新生活のフェイスペイントには、クリーンな高コントラストPNGの単色ブロック画像が最も鮮明な参照グリッドを生成します。",
     "relatedMbtiLink": "Tomodachi Life MBTIテスト"
   },
   "TomodachiLifeMbtiPage": {

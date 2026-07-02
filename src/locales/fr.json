@@ -7,7 +7,7 @@
     "toolMii": "Débloqueur QR Mii",
     "toolVoice": "Laboratoire Vocal Tomodachi",
     "toolMbti": "Tomodachi Life MBTI",
-    "toolPixelGrid": "Studio Grille de Pixels"
+    "toolLivingTheGrid": "Living the Grid"
   },
   "Hero": {
     "title": "LifeSimGrid : Outil de Motifs Animal Crossing non officiel & Configurateur QR Mii",
@@ -344,7 +344,7 @@
     "toolAcnh": "🎨 Studio Pixel ACNH",
     "toolMii": "🔓 Débloqueur QR Mii",
     "toolVoice": "🎵 Laboratoire Vocal Tomodachi",
-    "toolPixelGrid": "🧩 Studio Grille de Pixels"
+    "toolLivingTheGrid": "🧩 Living the Grid"
   },
   "History": {
     "title": "📜 Historique des Grilles Sauvegardées",
@@ -628,10 +628,10 @@
     "faq12A": "Notre Labo Vocal fournit deux contrôles principaux pour personnaliser les voix Mii : (1) Curseur de hauteur (0–100) — les valeurs basses produisent des voix graves adaptées aux presets Homme Adulte et Aîné (120–250 Hz), les valeurs élevées produisent des voix aiguës pour les presets Femme Adulte et Enfant (280–400+ Hz). (2) Curseur de vitesse (0–100) — contrôle le débit de parole et la fréquence du vibrato. Adaptez ces réglages au type de personnalité de votre Mii.",
     "relatedMbtiLink": "Test MBTI de Tomodachi Life"
   },
-  "PixelGridStudio": {
-    "metaTitle": "Image en Pixel Art — Générateur Gratuit",
+  "LivingTheGrid": {
+    "metaTitle": "Living the Grid | LifeSimGrid",
     "metaDesc": "Convertissez images en grilles pixel art. Minecraft, Perler Beads, 16×16 à 128×128. 100% client, sans serveur.",
-    "title": "Studio Universel de Grille Pixel",
+    "title": "Living the Grid",
     "subtitle": "Convertissez n'importe quelle image en motifs de grille pixel art pour Minecraft, Perles à repasser, Point de croix et plus encore. Tailles de grille personnalisées, traitement 100 % local.",
     "turnPhotoTitle": "Comment utiliser Pixel Grid Studio : Transformez n'importe quelle photo en pixel art",
     "turnPhotoIntro": "Notre moteur de conversion pixel utilise la quantification intelligente des couleurs et la correspondance par distance euclidienne pour transformer vos photos en grilles pixel art nettes. L'algorithme préserve les détails importants tout en simplifiant la palette de couleurs à la taille de grille choisie.",
@@ -648,7 +648,7 @@
     "techPaletteDesc": "When you upload an image, our engine automatically quantizes all colors into the top 24 distinct swatches using a bucket-based quantization algorithm. Each swatch gets a number and a name (e.g., 'Retro Red', 'Vintage Teal' in retro mode). Click any swatch to highlight all matching pixels on the canvas with dashed helper borders — this paint-by-numbers approach directly addresses the common 'colors not matching' issue by ensuring you pick the exact same color for every pixel while painting in-game. Increasing contrast before conversion further improves quantization accuracy by making color boundaries sharper.",
     "printTip": "🖨️ Optimisation d'Impression : Cette page prend en charge l'impression native du navigateur (Ctrl+P). Elle masque automatiquement les panneaux de contrôle, vous offrant un plan de grille papier numéroté propre et de maniere fiable optimisé pour le traçage en point de croix ou l'artisanat hors ligne !",
     "privacyBadge": "🔒 100% Côté Client et Sans Serveur — Tout le traitement d'images s'exécute dans votre navigateur via HTML5 Canvas API. Aucun téléchargement, aucune base de données. Vos images restent sur votre appareil.",
-    "faqTitle": "FAQ Studio Grille Pixel",
+    "faqTitle": "Living the Grid FAQ",
     "faq1Q": "Qu'est-ce que le tramage de couleurs ?",
     "faq1A": "Le tramage est une technique utilisée pour créer l'illusion de profondeur de couleur dans des images à palettes limitées. Il fonctionne en plaçant stratégiquement des pixels de différentes couleurs les uns à côté des autres pour simuler des teintes intermédiaires. Notre outil utilise le tramage à diffusion d'erreur pour maintenir la qualité d'image à des tailles de grille inférieures.",
     "faq2Q": "Comment choisir la bonne taille de grille ?",
@@ -657,9 +657,9 @@
     "faq3A": "Oui ! Activez le mode « Correspondance Rétro » pour utiliser notre palette rétro intégrée de 32 couleurs, ou conservez les couleurs originales de l'image pour une représentation plus fidèle.",
     "faq4Q": "Quels formats d'image sont pris en charge ?",
     "faq4A": "Nous prenons en charge les formats JPEG, PNG, GIF, BMP et WebP. Pour de meilleurs résultats, utilisez des images de moins de 5 Mo avec des lignes nettes et des blocs de couleurs unies.",
-    "oneMinTitle": "Pixel Grid Studio : Une alternative à Living the Grid — Guide en 1 minute",
+    "oneMinTitle": "Living the Grid — 1-Minute Guide",
     "oneMinDesc": "Le Studio Grille Pixel convertit n'importe quelle image en grille pixel pour le point de croix, les perles à repasser et le pixel art. Prend en charge les tailles de grille de 16×16 à 128×128 avec error-diffusion dithering et une palette rétro de 32 couleurs. 100 % basé sur le navigateur — vos images ne quittent jamais votre appareil.",
-    "whyChooseTitle": "Pourquoi choisir Pixel Grid Studio ? Taille de grille 64×64 et plus",
+    "whyChooseTitle": "Why Choose Living the Grid? 64x64 Grid Size & More",
     "whyChoose1Title": "Tailles de Grille Flexibles",
     "whyChoose1": "Prend en charge 5 tailles de grille de 16×16 à 128×128. Choisissez 32×32 pour le pixel art standard ou 128×128 pour les scènes complexes avec des détails fins.",
     "whyChoose2Title": "Correspondance de Couleur Intelligente",
@@ -739,6 +739,8 @@
     "faq19A": "Tomodachi Life: Living the Dream n'a pas de fonction de grille numérotée intégrée dans son éditeur de face paint et de vêtements du Mii Maker. Cependant, notre Pixel Grid Studio résout cela en générant un modèle paint-by-numbers avec des échantillons de couleurs numérotés. Chaque numéro d'échantillon correspond à une couleur spécifique dans votre design — cliquez sur n'importe quel numéro pour surligner tous les pixels correspondants dans la grille. Imprimez le modèle (Ctrl+P) et utilisez-le comme référence.",
     "faq20Q": "Comment faire du pixel art Tomodachi Life avec Pixel Grid Studio ?",
     "faq20A": "Pour créer du pixel art Tomodachi Life : (1) Téléchargez votre image (JPEG ou PNG) dans Pixel Grid Studio, (2) Sélectionnez 32×32 pour les designs standard ou 64×64 pour les œuvres détaillées, (3) La palette de couleurs automatique quantifie votre image en échantillons numérotés, (4) Utilisez le guide paint-by-numbers pour recréer le pixel art dans tout jeu prenant en charge les designs personnalisés. Pixel Grid Studio est idéal pour le face paint de Living the Dream, les ACNH Custom Designs et les projets de pixel art.",
+    "faq21Q": "Mon image est trop floue après la conversion, comment réparer ?",
+    "faq21A": "Un rendu flou signifie généralement que l'image source manque de contraste ou est trop petite pour la taille de grille choisie. Corrigez-le en trois étapes : (1) Augmentez le curseur de contraste avant la conversion — cela affine les limites de couleur pour que l'algorithme de quantification produise des bords plus nets. (2) Utilisez une image source de plus haute résolution (au moins 512×512 pixels pour une grille 64×64). (3) Désactivez le mode Retro Match s'il est activé, car la palette de 32 couleurs peut fusionner des tons similaires et créer une apparence boueuse. Pour le face paint de Living the Dream, un PNG propre à contraste élevé avec des blocs de couleur unis produit les grilles de référence les plus nettes.",
     "relatedMbtiLink": "Test MBTI de Tomodachi Life"
   },
   "TomodachiLifeMbtiPage": {

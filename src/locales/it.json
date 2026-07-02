@@ -7,7 +7,7 @@
     "toolMii": "Sbloccatore QR Mii",
     "toolVoice": "Laboratorio Vocale Tomodachi",
     "toolMbti": "Tomodachi Life MBTI",
-    "toolPixelGrid": "Studio Griglia Pixel"
+    "toolLivingTheGrid": "Living the Grid"
   },
   "Hero": {
     "title": "LifeSimGrid: Strumento Non Ufficiale per Pattern di Animal Crossing & Configuratore QR Mii",
@@ -344,7 +344,7 @@
     "toolAcnh": "🎨 Studio Pixel ACNH",
     "toolMii": "🔓 Sbloccatore QR Mii",
     "toolVoice": "🎵 Laboratorio Vocale Tomodachi",
-    "toolPixelGrid": "🧩 Studio Griglia Pixel"
+    "toolLivingTheGrid": "🧩 Living the Grid"
   },
   "History": {
     "title": "📜 Cronologia Griglie Salvate",
@@ -628,10 +628,10 @@
     "faq12A": "Il nostro Laboratorio Vocale fornisce due controlli principali per personalizzare le voci Mii: (1) Cursore del tono (0–100) — valori più bassi producono voci più gravi adatte ai preset Uomo Adulto e Anziano (120–250 Hz), valori più alti producono voci più acute per i preset Donna Adulta e Bambino (280–400+ Hz). (2) Cursore della velocità (0–100) — controlla la velocità di parlata e la frequenza del vibrato. Adatta queste impostazioni al tipo di personalità del tuo Mii.",
     "relatedMbtiLink": "Test MBTI di Tomodachi Life"
   },
-  "PixelGridStudio": {
-    "metaTitle": "Immagine in Pixel Art — Gratis",
+  "LivingTheGrid": {
+    "metaTitle": "Living the Grid | LifeSimGrid",
     "metaDesc": "Converti immagini in griglie pixel art. Minecraft, Perler Beads, 16×16-128×128. 100% lato client, senza server.",
-    "title": "Studio Universale Griglia Pixel",
+    "title": "Living the Grid",
     "subtitle": "Converti qualsiasi immagine in pattern a griglia pixel art per Minecraft, Perline a fusione, Punto croce e altro ancora. Dimensioni griglia personalizzate, elaborazione 100% locale.",
     "turnPhotoTitle": "Come usare Pixel Grid Studio: Trasforma qualsiasi foto in pixel art",
     "turnPhotoIntro": "Il nostro motore di conversione pixel utilizza la quantizzazione intelligente dei colori e la corrispondenza a distanza euclidea per trasformare le tue foto in griglie pixel art pulite. L'algoritmo preserva i dettagli importanti semplificando la palette dei colori alla dimensione della griglia scelta.",
@@ -648,7 +648,7 @@
     "techPaletteDesc": "When you upload an image, our engine automatically quantizes all colors into the top 24 distinct swatches using a bucket-based quantization algorithm. Each swatch gets a number and a name (e.g., 'Retro Red', 'Vintage Teal' in retro mode). Click any swatch to highlight all matching pixels on the canvas with dashed helper borders — this paint-by-numbers approach directly addresses the common 'colors not matching' issue by ensuring you pick the exact same color for every pixel while painting in-game. Increasing contrast before conversion further improves quantization accuracy by making color boundaries sharper.",
     "printTip": "🖨️ Ottimizzazione Stampa: Questa pagina supporta la stampa nativa del browser (Ctrl+P). Nasconde automaticamente i pannelli di controllo, offrendoti un piano griglia cartaceo numerato pulito e ben ottimizzato per il tracciamento a punto croce o l'artigianato offline!",
     "privacyBadge": "🔒 100% Lato Client & Serverless — Tutta l'elaborazione delle immagini viene eseguita nel tuo browser tramite HTML5 Canvas API. Nessun upload, nessun database. Le tue immagini restano sul tuo dispositivo.",
-    "faqTitle": "FAQ Studio Griglia Pixel",
+    "faqTitle": "Living the Grid FAQ",
     "faq1Q": "Cos'è il dithering dei colori?",
     "faq1A": "Il dithering è una tecnica utilizzata per creare l'illusione di profondità di colore in immagini con palette limitate. Funziona posizionando strategicamente pixel di colori diversi uno accanto all'altro per simulare tonalità intermedie. Il nostro strumento utilizza il dithering a diffusione dell'errore per mantenere la qualità dell'imagem a dimensioni di griglia inferiori.",
     "faq2Q": "Come scegliere la dimensione giusta della griglia?",
@@ -657,9 +657,9 @@
     "faq3A": "Sì! Attiva la modalità «Corrispondenza Retro» per usare la nostra palette retro integrata a 32 colori, o mantieni i colori originali dell'immagine per una rappresentazione più accurata.",
     "faq4Q": "Quali formati immagine sono supportati?",
     "faq4A": "Supportiamo i formati JPEG, PNG, GIF, BMP e WebP. Per risultati migliori, usa immagini inferiori a 5 MB con linee nitide e blocchi di colore uniforme.",
-    "oneMinTitle": "Pixel Grid Studio: Un'alternativa a Living the Grid — Guida di 1 minuto",
+    "oneMinTitle": "Living the Grid — 1-Minute Guide",
     "oneMinDesc": "Lo Studio Griglia Pixel converte qualsiasi immagine in una griglia pixel per punto croce, Perline a fusione e pixel art. Supporta dimensioni griglia da 16×16 a 128×128 con dithering a diffusione dell'errore e una palette retro di 32 colori. 100% basato sul browser — le tue immagini non lasciano mai il tuo dispositivo.",
-    "whyChooseTitle": "Perché scegliere Pixel Grid Studio? Dimensione griglia 64×64 e altro",
+    "whyChooseTitle": "Why Choose Living the Grid? 64x64 Grid Size & More",
     "whyChoose1Title": "Dimensioni Griglia Flessibili",
     "whyChoose1": "Supporta 5 dimensioni di griglia da 16×16 a 128×128. Scegli 32×32 per pixel art standard o 128×128 per scene complesse con dettagli fini.",
     "whyChoose2Title": "Corrispondenza Colore Intelligente",
@@ -739,6 +739,8 @@
     "faq19A": "Tomodachi Life: Living the Dream non ha una funzione di griglia numerata integrata nel suo editor di face paint e abbigliamento del Mii Maker. Tuttavia, il nostro Pixel Grid Studio risolve questo generando un modello paint-by-numbers con campioni di colore numerati. Ogni numero di campione corrisponde a un colore specifico nel tuo design — fai clic su qualsiasi numero per evidenziare tutti i pixel corrispondenti nella griglia. Stampa il modello (Ctrl+P) e usalo come riferimento.",
     "faq20Q": "Come fare pixel art di Tomodachi Life con Pixel Grid Studio?",
     "faq20A": "Per creare pixel art di Tomodachi Life: (1) Carica la tua immagine (JPEG o PNG) in Pixel Grid Studio, (2) Seleziona 32×32 per design standard o 64×64 per opere dettagliate, (3) La tavolozza colori automatica quantizza la tua immagine in campioni numerati, (4) Usa la guida paint-by-numbers per ricreare il pixel art in qualsiasi gioco che supporti design personalizzati. Pixel Grid Studio è ideale per face paint di Living the Dream, ACNH Custom Designs e progetti pixel art generali.",
+    "faq21Q": "La mia immagine è troppo sfocata dopo la conversione, come risolvere?",
+    "faq21A": "Un output sfocato di solito significa che l'immagine sorgente manca di contrasto o è troppo piccola per la dimensione della griglia scelta. Risolvi in tre passaggi: (1) Aumenta il cursore del contrasto prima della conversione — questo affila i limiti di colore in modo che l'algoritmo di quantizzazione produca bordi più puliti. (2) Usa un'immagine sorgente a risoluzione più alta (almeno 512×512 pixel per una griglia 64×64). (3) Disattiva la modalità Retro Match se attivata, poiché la palette di 32 colori può fondere tonalità simili e creare un aspetto fangoso. Per il face paint di Living the Dream, un PNG pulito ad alto contrasto con blocchi di colore solido produce le griglie di riferimento più nitide.",
     "relatedMbtiLink": "Test MBTI di Tomodachi Life"
   },
   "TomodachiLifeMbtiPage": {

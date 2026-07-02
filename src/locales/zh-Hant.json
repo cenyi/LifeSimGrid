@@ -7,7 +7,7 @@
     "toolMii": "Mii QR解鎖器",
     "toolVoice": "朋友聚會 新生活聲音實驗室",
     "toolMbti": "朋友聚會 MBTI",
-    "toolPixelGrid": "像素網格工作室"
+    "toolLivingTheGrid": "Living the Grid"
   },
   "Hero": {
     "title": "LifeSimGrid：非官方 Animal Crossing 圖案工具 & Mii QR 配置器",
@@ -344,7 +344,7 @@
     "toolAcnh": "🎨 動森像素工作室",
     "toolMii": "🔓 Mii QR解鎖器",
     "toolVoice": "🎵 朋友聚會 新生活聲音實驗室",
-    "toolPixelGrid": "🧩 像素網格工作室"
+    "toolLivingTheGrid": "🧩 Living the Grid"
   },
   "History": {
     "title": "📜 已儲存的網格歷史紀錄",
@@ -628,10 +628,10 @@
     "faq12A": "我們的語音實驗室提供兩個主要控制項來自訂 Mii 語音：（1）音高滑桿（0–100）——較低的值產生適合成人男性和長者預設的深沉語音（120–250 Hz），較高的值產生適合成人女性和孩童預設的高音語音（280–400+ Hz）。（2）速度滑桿（0–100）——控制語速和顫音頻率。將這些設定與您的 Mii 性格類型匹配：外向類型通常使用中等音高和較快速度，而內斂類型使用較高音高和較慢速度。",
     "relatedMbtiLink": "Tomodachi Life MBTI 測試"
   },
-  "PixelGridStudio": {
-    "metaTitle": "圖片轉像素畫 — 免費格子生成工具",
+  "LivingTheGrid": {
+    "metaTitle": "Living the Grid | LifeSimGrid",
     "metaDesc": "免費工具，將圖片轉為像素畫格子。適用Minecraft、拼豆、十字繡，16×16至128×128，100%純前端。",
-    "title": "通用像素網格工作室",
+    "title": "Living the Grid",
     "subtitle": "將任何圖片轉換為Minecraft、拼豆、十字繡等用途的像素畫格子圖案。自訂網格尺寸，100%本地處理。",
     "turnPhotoTitle": "如何使用像素網格工作室：將任何照片轉換為像素畫",
     "turnPhotoIntro": "像素轉換引擎使用智慧色彩量化和歐幾里得距離匹配，將照片轉換為清晰的像素畫網格。演算法在簡化色彩至所選網格尺寸的同時保留重要細節。",
@@ -648,7 +648,7 @@
     "techPaletteDesc": "When you upload an image, our engine automatically quantizes all colors into the top 24 distinct swatches using a bucket-based quantization algorithm. Each swatch gets a number and a name (e.g., 'Retro Red', 'Vintage Teal' in retro mode). Click any swatch to highlight all matching pixels on the canvas with dashed helper borders — this paint-by-numbers approach directly addresses the common 'colors not matching' issue by ensuring you pick the exact same color for every pixel while painting in-game. Increasing contrast before conversion further improves quantization accuracy by making color boundaries sharper.",
     "printTip": "🖨️ 列印最佳化：此頁面支援瀏覽器原生列印（Ctrl+P）。自動隱藏控制面板，為您提供乾淨的編號紙本網格藍圖，精確適用於十字繡描圖或離線手作！",
     "privacyBadge": "🔒 100%客戶端運作＆無伺服器 — 所有圖片處理透過HTML5 Canvas API在您的瀏覽器中執行。無上傳、無資料庫。您的圖片留在您的裝置上。",
-    "faqTitle": "像素網格工作室常見問題",
+    "faqTitle": "Living the Grid FAQ",
     "faq1Q": "什麼是色彩抖動（Dithering）？",
     "faq1A": "抖動是一種在有限調色盤的圖像中創造色彩深度錯覺的技術。透過策略性地將不同顏色的像素相鄰放置來模擬中間色調。我們的工具使用誤差擴散抖動在低網格尺寸下維持圖像品質。",
     "faq2Q": "如何選擇適合的網格大小？",
@@ -657,9 +657,9 @@
     "faq3A": "可以！切換「復古匹配」模式使用內建32色復古遊戲調色盤，或保留原始圖片色彩以獲得更準確的呈現。",
     "faq4Q": "支援哪些圖片格式？",
     "faq4A": "支援JPEG、PNG、GIF、BMP和WebP格式。為獲得最佳效果，請使用5MB以下且線條清晰、色塊分明的圖片。",
-    "oneMinTitle": "像素網格工作室：Living the Grid 替代方案 — 1 分鐘指南",
+    "oneMinTitle": "Living the Grid — 1-Minute Guide",
     "oneMinDesc": "像素網格工作室將任何圖片轉換為十字繡、拼豆和像素藝術的像素網格。支援 16×16 到 128×128 的網格尺寸，配備誤差擴散抖動和 32 色復古調色盤。100%瀏覽器端運作——圖片不會離開您的裝置。",
-    "whyChooseTitle": "為什麼選擇像素網格工作室？64×64 網格大小與更多功能",
+    "whyChooseTitle": "Why Choose Living the Grid? 64x64 Grid Size & More",
     "whyChoose1Title": "靈活的網格尺寸",
     "whyChoose1": "支援 16×16 到 128×128 的 5 種網格尺寸。標準像素藝術選 32×32，複雜場景選 128×128 以呈現精細細節。",
     "whyChoose2Title": "智慧色彩匹配",
@@ -739,6 +739,8 @@
     "faq19A": "Tomodachi Life 新生活的 Mii 工作室臉部彩繪和服裝編輯器沒有內建的編號網格功能。但是，我們的像素網格工作室透過生成帶有編號色板的依序編號範本來解決這個問題。每個色板編號對應您設計中的特定顏色——點擊任何編號即可高亮網格中所有匹配的像素。列印範本（Ctrl+P），在新生活中手動重現設計時將其作為參考。",
     "faq20Q": "如何用像素網格工作室製作 Tomodachi Life 像素藝術？",
     "faq20A": "製作 Tomodachi Life 像素藝術的步驟：（1）將您的圖片（JPEG 或 PNG）上傳到像素網格工作室，（2）標準設計選擇 32×32，詳細藝術作品選擇 64×64，（3）自動調色盤將您的圖片量化為編號色板，（4）使用依序編號指引在支援我的設計的任何遊戲中重現像素藝術。像素網格工作室非常適合新生活的臉部彩繪、ACNH 我的設計和一般像素藝術專案——所有處理都透過 HTML5 Canvas API 在客戶端進行。",
+    "faq21Q": "轉換後圖片太模糊，如何修復？",
+    "faq21A": "模糊輸出通常意味著來源圖片缺乏對比度或對所選網格尺寸來說太小。透過三個步驟修復：（1）轉換前增加對比滑桿——這會銳化色彩邊界，使量化演算法產生更清晰的邊緣。（2）使用更高解析度的來源圖片（64×64 網格至少需要 512×512 像素）。（3）如果已啟用復古匹配模式，請關閉它，因為 32 色調色盤可能會合併相似色調並產生渾濁的外觀。對於朋友聚會 新生活的臉部彩繪，乾淨的高對比 PNG 純色塊圖片能產生最清晰的參考網格。",
     "relatedMbtiLink": "Tomodachi Life MBTI 測試"
   },
   "TomodachiLifeMbtiPage": {

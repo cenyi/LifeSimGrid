@@ -267,7 +267,7 @@ return text
               <h3 className="mb-2 font-mono text-lg font-bold text-gray-900">{t("relatedVoiceTitle")}</h3>
               <p className="text-sm leading-relaxed text-gray-600">{t("relatedVoiceDesc")}</p>
             </Link>
-            <Link href="/pixel-grid-studio" className="rounded-2xl border border-gray-100 bg-white p-5 shadow-sm transition-shadow hover:shadow-md">
+            <Link href="/living-the-grid" className="rounded-2xl border border-gray-100 bg-white p-5 shadow-sm transition-shadow hover:shadow-md">
               <h3 className="mb-2 font-mono text-lg font-bold text-gray-900">{t("relatedPixelTitle")}</h3>
               <p className="text-sm leading-relaxed text-gray-600">{t("relatedPixelDesc")}</p>
             </Link>
