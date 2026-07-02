@@ -632,6 +632,7 @@ export default function TomodachiLifeMbtiPage() {
     { q: t("faq9Q"), a: t("faq9A") },
     { q: t("faq10Q"), a: t("faq10A") },
     { q: t("faq11Q"), a: t("faq11A") },
+    { q: t("faq12Q"), a: t("faq12A") },
   ];
 
   /* ================================================================ */
