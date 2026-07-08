@@ -17,6 +17,8 @@ const PAGE_TITLES: Record<string, string> = {
   it: "Sintetizz. Vocale 8-Bit — Gratis",
   nl: "8-Bit-stemsynth. — Gratis Tool",
   "zh-CN": "Tomodachi 8-bit语音合成 — 免费",
+  ru: "8-Bit Синтез Голоса — Бесплатно",
+  pt: "Sintetizador Voz 8-Bit — Grátis",
 };
 
 /** Localized page descriptions for Tomodachi Voice Lab. */
@@ -30,6 +32,8 @@ const PAGE_DESCS: Record<string, string> = {
   it: "Sintetizzatore vocale 8-Bit Tomodachi. 5 preset, TTS, Web Audio API. 100% lato client.",
   nl: "8-Bit-stemsynth. Tomodachi. 5 voorinstellingen, TTS, Web Audio API. 100% clientzijde.",
   "zh-CN": "免费Tomodachi 8-bit语音合成器。5种波形、TTS、Web Audio API。100%纯前端。",
+  ru: "8-bit синтезатор голоса Tomodachi. 5 пресетов, TTS, Web Audio API. 100% клиент.",
+  pt: "Sintetizador voz 8-Bit Tomodachi. 5 presets, TTS, Web Audio API. 100% cliente.",
 };
 
 const FALLBACK_TITLE = "Tomodachi Life Voice Lab - 8-Bit Mii Voice Synthesizer";
@@ -61,6 +65,8 @@ export async function generateMetadata({
         it: `${BASE}/it/${path}`,
         nl: `${BASE}/nl/${path}`,
         "zh-CN": `${BASE}/zh-CN/${path}`,
+        ru: `${BASE}/ru/${path}`,
+        pt: `${BASE}/pt/${path}`,
       },
     },
     openGraph: {
@@ -89,7 +95,7 @@ export default async function LocaleTomodachiVoiceLabPage({
 }) {
   const { locale } = await params;
 
-  if (!routing.locales.includes(locale as "en" | "zh-Hant" | "ja" | "es" | "fr" | "ko" | "de" | "it" | "nl" | "zh-CN")) {
+  if (!routing.locales.includes(locale as "en" | "zh-Hant" | "ja" | "es" | "fr" | "ko" | "de" | "it" | "nl" | "zh-CN" | "ru" | "pt")) {
     notFound();
   }
 

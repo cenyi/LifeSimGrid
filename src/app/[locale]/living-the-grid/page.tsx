@@ -17,7 +17,9 @@ const PAGE_TITLES: Record<string, string> = {
   de: "Living the Grid — Pixel-Raster",
   it: "Living the Grid — Griglia Pixel",
   nl: "Living the Grid — Pixelraster",
-  "zh-CN": "Living the Grid — 像素格子工具",
+    "zh-CN": "Living the Grid — 像素格子工具",
+  ru: "Living the Grid — Пиксельная сетка",
+  pt: "Living the Grid — Grade Pixel",
 };
 
 /** Localized page descriptions for Living the Grid. */
@@ -31,6 +33,8 @@ const PAGE_DESCS: Record<string, string> = {
   it: "Converti immagini in griglie pixel gratis — alternativa web a Living the Grid. Minecraft, Perler Beads, Tomodachi Life. HTML5 Canvas API. 100% lato client.",
   nl: "Afbeeldingen naar pixelraster gratis — web-alternatief voor Living the Grid. Minecraft, Smeltkralen, Tomodachi Life. HTML5 Canvas API. 100% clientzijde.",
   "zh-CN": "免费像素格子转换工具 — Living the Grid 网页替代方案。适用 Minecraft、拼豆、十字绣、朋友聚会 新生活。HTML5 Canvas API。100% 纯前端。",
+  ru: "Бесплатный конвертер пиксельных сеток — веб-альтернатива Living the Grid. Minecraft, Perler Beads, Tomodachi Life. HTML5 Canvas API. 100% клиент.",
+  pt: "Converter imagens em grade pixel grátis — alternativa web a Living the Grid. Minecraft, Perler Beads, Tomodachi Life. HTML5 Canvas API. 100% cliente.",
 };
 
 const FALLBACK_TITLE = "Living the Grid";
@@ -61,6 +65,8 @@ export async function generateMetadata({
         it: `${BASE}/it/${PATH}`,
         nl: `${BASE}/nl/${PATH}`,
         "zh-CN": `${BASE}/zh-CN/${PATH}`,
+        ru: `${BASE}/ru/${PATH}`,
+        pt: `${BASE}/pt/${PATH}`,
       },
     },
     openGraph: {
@@ -89,7 +95,7 @@ export default async function LocaleLivingTheGridPage({
 }) {
   const { locale } = await params;
 
-  if (!routing.locales.includes(locale as "en" | "zh-Hant" | "ja" | "es" | "fr" | "ko" | "de" | "it" | "nl" | "zh-CN")) {
+  if (!routing.locales.includes(locale as "en" | "zh-Hant" | "ja" | "es" | "fr" | "ko" | "de" | "it" | "nl" | "zh-CN" | "ru" | "pt")) {
     notFound();
   }
 

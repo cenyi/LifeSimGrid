@@ -17,6 +17,8 @@ const PAGE_TITLES: Record<string, string> = {
   it: "ACNH Studio Pixel — Custom Designs",
   nl: "ACNH Pixelstudio — Custom Designs",
   "zh-CN": "动森我的设计像素工作室 — 免费",
+  ru: "ACNH Pixel Studio — Custom Designs",
+  pt: "ACNH Pixel Studio — Custom Designs",
 };
 
 /** Localized page descriptions for ACNH Pixel Studio. */
@@ -29,7 +31,9 @@ const PAGE_DESCS: Record<string, string> = {
   de: "Bilder in ACNH-Pixelmuster. 32×32/64×64, FFL-Export, smarte Skalierung. 100% clientseitig.",
   it: "Converti immagini in Custom Designs ACNH. 32×32/64×64, FFL, ridim. smart. 100% lato client.",
   nl: "Afbeeldingen naar ACNH-pixelpatronen. 32×32/64×64, FFL-export, slimme schaling. 100% clientzijde.",
-  "zh-CN": "免费动森我的设计像素转换器。32×32/64×64、FFL导出、8-bit调色盘。100%纯前端。"
+  "zh-CN": "免费动森我的设计像素转换器。32×32/64×64、FFL导出、8-bit调色盘。100%纯前端。",
+  ru: "Конвертер ACNH Custom Designs. 32×32/64×64, FFL, 8-bit палитра. 100% клиент.",
+  pt: "Converter imagens em ACNH Custom Designs. 32×32/64×64, FFL. 100% cliente.",
 };
 
 const FALLBACK_TITLE = "ACNH Custom Design Converter";
@@ -61,6 +65,8 @@ export async function generateMetadata({
         it: `${BASE}/it/${path}`,
         nl: `${BASE}/nl/${path}`,
         "zh-CN": `${BASE}/zh-CN/${path}`,
+        ru: `${BASE}/ru/${path}`,
+        pt: `${BASE}/pt/${path}`,
       },
     },
     openGraph: {
@@ -89,7 +95,7 @@ export default async function LocaleAcnhPixelStudioPage({
 }) {
   const { locale } = await params;
 
-  if (!routing.locales.includes(locale as "en" | "zh-Hant" | "ja" | "es" | "fr" | "ko" | "de" | "it" | "nl" | "zh-CN")) {
+  if (!routing.locales.includes(locale as "en" | "zh-Hant" | "ja" | "es" | "fr" | "ko" | "de" | "it" | "nl" | "zh-CN" | "ru" | "pt")) {
     notFound();
   }
 

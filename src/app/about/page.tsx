@@ -24,6 +24,8 @@ export const metadata: Metadata = {
       it: `${BASE}/it/about`,
       nl: `${BASE}/nl/about`,
       "zh-CN": `${BASE}/zh-CN/about`,
+      ru: `${BASE}/ru/about`,
+      pt: `${BASE}/pt/about`,
       "x-default": `${BASE}/about`,
     },
   },

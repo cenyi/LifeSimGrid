@@ -26,6 +26,8 @@ export const metadata: Metadata = {
       it: `${BASE}/it/${PATH}`,
       nl: `${BASE}/nl/${PATH}`,
       "zh-CN": `${BASE}/zh-CN/${PATH}`,
+      ru: `${BASE}/ru/${PATH}`,
+      pt: `${BASE}/pt/${PATH}`,
     },
   },
   openGraph: {

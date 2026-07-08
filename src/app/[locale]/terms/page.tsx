@@ -17,6 +17,8 @@ const PAGE_TITLES: Record<string, string> = {
   it: "LifeSimGrid Termini — MIT, Fan Tool",
   nl: "LifeSimGrid Voorwaarden — MIT, Fan-Tool",
   "zh-CN": "LifeSimGrid服务条款 — MIT开源独立工具",
+  ru: "LifeSimGrid Условия — MIT, Фан-Тул",
+  pt: "LifeSimGrid Termos — MIT, Fan Tool",
 };
 
 const PAGE_DESCS: Record<string, string> = {
@@ -29,6 +31,8 @@ const PAGE_DESCS: Record<string, string> = {
   it: "Termini: strumento indipendente, licenza MIT. Non affiliato console. Custom Designs, Mii gratis.",
   nl: "Voorwaarden: onafhankelijke tool, MIT-licentie. Niet gelieerd aan consolefabrikanten. ACNH, Mii.",
   "zh-CN": "独立第三方工具，MIT开源协议，与游戏主机制造商无关。免费动森我的设计、Mii二维码工具。纯前端，无数据收集。",
+  ru: "Независимый инструмент, MIT лицензия. Не связан с производителями. ACNH, Mii.",
+  pt: "Termos: ferramenta independente, licença MIT. Não afiliada. ACNH, Mii.",
 };
 
 export async function generateMetadata({
@@ -54,6 +58,8 @@ export async function generateMetadata({
         it: `${BASE}/it/terms`,
         nl: `${BASE}/nl/terms`,
         "zh-CN": `${BASE}/zh-CN/terms`,
+        ru: `${BASE}/ru/terms`,
+        pt: `${BASE}/pt/terms`,
         "x-default": `${BASE}/terms`,
       },
     },

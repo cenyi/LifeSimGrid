@@ -17,6 +17,8 @@ const PAGE_TITLES: Record<string, string> = {
   it: "Chi siamo — LifeSimGrid Open Source",
   nl: "Over LifeSimGrid — Open-source Toolkit",
   "zh-CN": "关于LifeSimGrid — 免费像素画工具箱",
+  ru: "О LifeSimGrid — Пиксель-инструменты",
+  pt: "Sobre LifeSimGrid — Pixel Art",
 };
 
 const PAGE_DESCS: Record<string, string> = {
@@ -28,7 +30,9 @@ const PAGE_DESCS: Record<string, string> = {
   de: "Open-Source-Toolkit für Pixel-Art und Sprachsynthese. ACNH, Mii, MBTI. 100% clientseitig.",
   it: "Toolkit open source per pixel art e sintesi vocale. Custom Designs, Mii, MBTI. 100% lato client.",
   nl: "Open-source toolkit voor pixelart en spraak. ACNH Custom Designs, Mii, MBTI. 100% clientzijde.",
-  "zh-CN": "开源像素画、化身数据与语音合成工具箱。免费动森我的设计、Mii二维码、MBTI配对工具。100%纯前端。"
+  "zh-CN": "开源像素画、化身数据与语音合成工具箱。免费动森我的设计、Mii二维码、MBTI配对工具。100%纯前端。",
+  ru: "Набор пиксель-арт и синтеза голоса. ACNH Custom Designs, Mii, MBTI. 100% клиент.",
+  pt: "Kit pixel art e síntese de voz. ACNH Custom Designs, Mii, MBTI. 100% cliente.",
 };
 
 export async function generateMetadata({
@@ -54,6 +58,8 @@ export async function generateMetadata({
         it: `${BASE}/it/about`,
         nl: `${BASE}/nl/about`,
         "zh-CN": `${BASE}/zh-CN/about`,
+        ru: `${BASE}/ru/about`,
+        pt: `${BASE}/pt/about`,
         "x-default": `${BASE}/about`,
       },
     },

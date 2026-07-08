@@ -1,0 +1,53 @@
+# LifeSimGrid
+
+> LifeSimGrid is an open-source, 100% client-side web toolkit for Animal Crossing: New Horizons (ACNH) and Tomodachi Life enthusiasts. It provides browser-based tools for pixel art pattern conversion, Mii QR code editing, 8-bit voice synthesis, and MBTI personality compatibility — with zero server-side data processing, no sign-ups, and no tracking. All cryptographic parsing, Canvas rendering, and audio synthesis run entirely in the user's browser sandbox.
+
+## Tools & Pages
+
+- [ACNH Pixel Studio](https://lifesimgrid.org/acnh-pixel-studio): Free Animal Crossing Custom Designs pixel grid converter. Converts images into 32x32 Standard and Pro Design patterns with paint-by-numbers color palette, ACNH canvas presets (1:1, 2:3, 16:9), 8-bit retro gaming palette, and grid transformations (rotate, flip, zoom). 100% browser-based, no upload.
+- [Mii QR Unlocker](https://lifesimgrid.org/mii-qr-unlocker): Free Mii QR code editor and FFL protocol permission unlocker. Supports single-file and batch mode for fixing "Copying Not Allowed" errors on 3DS, Wii U, and Switch Mii QR codes. Forces allow-copying and sharing/editing permissions, renames Mii characters, and exports ZIP archives. Uses jsQR for decoding and qrcode for re-encoding.
+- [Tomodachi Voice Lab](https://lifesimgrid.org/tomodachi-voice-lab): Free 8-bit chiptune voice synthesizer for Tomodachi Life: Living the Dream. Features 5 personality-based voice presets, adjustable pitch and speed, and Web Speech API TTS fallback. Generates procedural audio via Web Audio API entirely in-browser.
+- [Tomodachi Life MBTI](https://lifesimgrid.org/tomodachi-life-mbti): Free Tomodachi Life MBTI 16-personality mapping and compatibility calculator. Includes a compatibility calculator (Base Score + Personality + Zodiac + Friendship = 100), 16-type personality chart with color-coded groups, voice tool, fan map, and character roster. Features HowTo structured data and FAQ.
+- [Living the Grid](https://lifesimgrid.org/living-the-grid): Free general-purpose pixel grid converter — the web-based Living the Grid alternative. Supports 16x16 to 128x128 grid densities for cross-stitch patterns, Perler beads templates, and Tomodachi Life face paint references. Print-optimized layout with paint-by-numbers palette.
+- [Homepage](https://lifesimgrid.org): Central hub featuring tab-based tool switching (ACNH Pixel Studio, Mii QR Unlocker, Voice Lab) and CTA cards linking to all 5 dedicated sub-pages. Includes trust and privacy section reinforcing 100% client-side architecture.
+
+## Information Pages
+
+- [About](https://lifesimgrid.org/about): Project background, open-source mission, privacy-first architecture explanation, and technology stack overview.
+- [Contact](https://lifesimgrid.org/contact): Contact form and community links for bug reports, feature requests, and contributions.
+- [Privacy Policy](https://lifesimgrid.org/privacy): Details the 100% client-side data flow — no cloud servers, no databases, no tracking. All data stays in browser localStorage and IndexedDB. Covers COPPA, GDPR, and CCPA compliance.
+- [Terms of Service](https://lifesimgrid.org/terms): Usage terms including nominative fair use disclaimer, Nintendo trademark acknowledgment, and MIT License for open-source code.
+
+## Supported Languages
+
+English (en), Traditional Chinese (zh-Hant), Simplified Chinese (zh-CN), Japanese (ja), Korean (ko), Spanish (es), French (fr), German (de), Italian (it), Dutch (nl), Russian (ru), Portuguese (pt) — 12 locales total. English has no URL prefix; all other locales use `/{locale}/` prefix.
+
+## Technology Stack
+
+- Next.js 16 (App Router, static export `output: "export"`)
+- React 19 + TypeScript 5
+- Tailwind CSS 4
+- next-intl v4 (localePrefix: "as-needed")
+- HTML5 Canvas API (pixel art rendering)
+- jsQR + qrcode (Mii FFL QR code encode/decode)
+- @pretendonetwork/mii-js (Mii binary data parsing)
+- JSZip (batch QR export)
+- Web Audio API (8-bit voice synthesis)
+- Web Speech API (TTS fallback)
+- Lucide Icons
+- Deployed on Cloudflare Pages (CDN)
+
+## Key Technical Details
+
+- All tools run 100% client-side — no backend servers, no databases, no data uploads
+- Mii QR codes use FFL (Friendly Face Library) format with 0x04 Byte Mode cryptographic buffer
+- ACNH Custom Designs support 32x32 (Standard) and Pro Design grid formats
+- MBTI compatibility formula: Base Score (25) + Personality (25) + Zodiac (25) + Friendship (25) = 100
+- Sub-pages use WebApplication and FAQPage JSON-LD structured data
+- FAQ sections use native `<details>`/`<summary>` for Google crawlability
+- Tab content rendered via CSS `hidden` class (not React conditional) for SEO indexing
+
+## Source Code
+
+- GitHub: https://github.com/cenyi/LifeSimGrid
+- License: MIT

@@ -17,6 +17,8 @@ const PAGE_TITLES: Record<string, string> = {
   it: "Sblocca QR Mii — Risolve Gratis",
   nl: "Mii QR-ontgrendelaar — Fout Gratis",
   "zh-CN": "Mii二维码解锁器 — LifeSimGrid免费修复",
+  ru: "Mii QR Разблокировщик — Бесплатно",
+  pt: "Desbloqueador QR Mii — Grátis",
 };
 
 /** Localized page descriptions for Mii QR Unlocker. */
@@ -30,6 +32,8 @@ const PAGE_DESCS: Record<string, string> = {
   it: "Sblocca QR Mii. Corregge errori modifica e copia. FFL, 0x04. 100% lato client.",
   nl: "Mii QR ontgrendelen. Lost bewerkings-/kopieerfouten op. FFL, 0x04. 100% clientzijde.",
   "zh-CN": "免费Mii QR解锁器。修复编辑与复制错误。3DS/Wii U/Switch，FFL解析。100%纯前端。",
+  ru: "Разблокировка Mii QR. Исправление ошибок FFL, 0x04. 100% клиент.",
+  pt: "Desbloquear QR Mii. Corrige erros FFL, 0x04. 100% cliente.",
 };
 
 const FALLBACK_TITLE = "Mii QR Code Unlocker";
@@ -61,6 +65,8 @@ export async function generateMetadata({
         it: `${BASE}/it/${path}`,
         nl: `${BASE}/nl/${path}`,
         "zh-CN": `${BASE}/zh-CN/${path}`,
+        ru: `${BASE}/ru/${path}`,
+        pt: `${BASE}/pt/${path}`,
       },
     },
     openGraph: {
@@ -89,7 +95,7 @@ export default async function LocaleMiiQrUnlockerPage({
 }) {
   const { locale } = await params;
 
-  if (!routing.locales.includes(locale as "en" | "zh-Hant" | "ja" | "es" | "fr" | "ko" | "de" | "it" | "nl" | "zh-CN")) {
+  if (!routing.locales.includes(locale as "en" | "zh-Hant" | "ja" | "es" | "fr" | "ko" | "de" | "it" | "nl" | "zh-CN" | "ru" | "pt")) {
     notFound();
   }
 

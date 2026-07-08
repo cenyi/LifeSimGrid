@@ -25,6 +25,8 @@ export const metadata: Metadata = {
       it: `${BASE}/it/tomodachi-life-mbti`,
       nl: `${BASE}/nl/tomodachi-life-mbti`,
       "zh-CN": `${BASE}/zh-CN/tomodachi-life-mbti`,
+      ru: `${BASE}/ru/tomodachi-life-mbti`,
+      pt: `${BASE}/pt/tomodachi-life-mbti`,
     },
   },
   openGraph: {

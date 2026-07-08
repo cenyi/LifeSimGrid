@@ -25,6 +25,8 @@ export const metadata: Metadata = {
       it: `${BASE}/it/mii-qr-unlocker`,
       nl: `${BASE}/nl/mii-qr-unlocker`,
       "zh-CN": `${BASE}/zh-CN/mii-qr-unlocker`,
+      ru: `${BASE}/ru/mii-qr-unlocker`,
+      pt: `${BASE}/pt/mii-qr-unlocker`,
     },
   },
   openGraph: {

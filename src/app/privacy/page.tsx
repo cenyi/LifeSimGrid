@@ -24,6 +24,8 @@ export const metadata: Metadata = {
       it: `${BASE}/it/privacy`,
       nl: `${BASE}/nl/privacy`,
       "zh-CN": `${BASE}/zh-CN/privacy`,
+      ru: `${BASE}/ru/privacy`,
+      pt: `${BASE}/pt/privacy`,
       "x-default": `${BASE}/privacy`,
     },
   },

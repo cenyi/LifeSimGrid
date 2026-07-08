@@ -25,6 +25,8 @@ export const metadata: Metadata = {
       it: `${BASE}/it/tomodachi-voice-lab`,
       nl: `${BASE}/nl/tomodachi-voice-lab`,
       "zh-CN": `${BASE}/zh-CN/tomodachi-voice-lab`,
+      ru: `${BASE}/ru/tomodachi-voice-lab`,
+      pt: `${BASE}/pt/tomodachi-voice-lab`,
     },
   },
   openGraph: {

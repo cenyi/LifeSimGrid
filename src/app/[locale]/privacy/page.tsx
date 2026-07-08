@@ -17,6 +17,8 @@ const PAGE_TITLES: Record<string, string> = {
   it: "LifeSimGrid Privacy — 100% Lato Client",
   nl: "LifeSimGrid Privacy — 100% Clientzijde",
   "zh-CN": "LifeSimGrid隐私 — 纯前端无数据收集",
+  ru: "LifeSimGrid Конфиденциальность",
+  pt: "LifeSimGrid Privacidade — 100% Cliente",
 };
 
 const PAGE_DESCS: Record<string, string> = {
@@ -29,6 +31,8 @@ const PAGE_DESCS: Record<string, string> = {
   it: "Privacy: 100% lato client, nessuna raccolta, nessun tracciamento. Custom Designs, Mii. Senza registrazione.",
   nl: "Privacy: 100% clientzijde, geen verzameling, geen tracking. ACNH Custom Designs, Mii. Zonder registratie.",
   "zh-CN": "100%纯前端处理，不收集数据，无追踪。动森我的设计、Mii二维码免费工具。无需上传，无需注册。",
+  ru: "100% клиент, без сбора данных, без трекинга. ACNH Custom Designs, Mii. Без аккаунта.",
+  pt: "100% cliente, sem coleta, sem rastreamento. ACNH Custom Designs, Mii. Sem conta.",
 };
 
 export async function generateMetadata({
@@ -54,6 +58,8 @@ export async function generateMetadata({
         it: `${BASE}/it/privacy`,
         nl: `${BASE}/nl/privacy`,
         "zh-CN": `${BASE}/zh-CN/privacy`,
+        ru: `${BASE}/ru/privacy`,
+        pt: `${BASE}/pt/privacy`,
         "x-default": `${BASE}/privacy`,
       },
     },

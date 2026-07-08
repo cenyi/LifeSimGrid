@@ -25,6 +25,8 @@ export const metadata: Metadata = {
       it: `${BASE}/it/acnh-pixel-studio`,
       nl: `${BASE}/nl/acnh-pixel-studio`,
       "zh-CN": `${BASE}/zh-CN/acnh-pixel-studio`,
+      ru: `${BASE}/ru/acnh-pixel-studio`,
+      pt: `${BASE}/pt/acnh-pixel-studio`,
     },
   },
   openGraph: {

@@ -17,6 +17,8 @@ const PAGE_TITLES: Record<string, string> = {
   it: "Contatti LifeSimGrid — Supporto",
   nl: "Contact LifeSimGrid — Support",
   "zh-CN": "联系LifeSimGrid — 技术支持",
+  ru: "Контакт LifeSimGrid — Поддержка",
+  pt: "Contato LifeSimGrid — Suporte",
 };
 
 const PAGE_DESCS: Record<string, string> = {
@@ -28,7 +30,9 @@ const PAGE_DESCS: Record<string, string> = {
   de: "Technischer Support, Fehlerberichte. Feedback zu ACNH, Mii. 100% clientseitig.",
   it: "Supporto tecnico, segnalazione bug. Feedback Custom Designs ACNH, Mii. 100% lato client.",
   nl: "Technische ondersteuning, bugrapporten. Feedback ACNH Custom Designs, Mii. 100% clientzijde.",
-  "zh-CN": "技术支持、错误报告或合规咨询。欢迎动森我的设计、Mii二维码工具反馈。100%纯前端。"
+  "zh-CN": "技术支持、错误报告或合规咨询。欢迎动森我的设计、Mii二维码工具反馈。100%纯前端。",
+  ru: "Техподдержка, отчёты об ошибках. ACNH Custom Designs, Mii. 100% клиент.",
+  pt: "Suporte técnico, relatório de bugs. ACNH Custom Designs, Mii. 100% cliente.",
 };
 
 export async function generateMetadata({
@@ -54,6 +58,8 @@ export async function generateMetadata({
         it: `${BASE}/it/contact`,
         nl: `${BASE}/nl/contact`,
         "zh-CN": `${BASE}/zh-CN/contact`,
+        ru: `${BASE}/ru/contact`,
+        pt: `${BASE}/pt/contact`,
         "x-default": `${BASE}/contact`,
       },
     },

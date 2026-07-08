@@ -19,6 +19,8 @@ const LOCALE_TITLES: Record<string, string> = {
   it: "ACNH: Pixel, QR, Voce, MBTI — Gratis",
   nl: "ACNH: Pixel, QR, Stem, MBTI — Gratis",
   "zh-CN": "动森工具箱：像素・QR・语音・MBTI",
+  ru: "ACNH: Пиксель, QR, Голос, MBTI — Бесплатно",
+  pt: "ACNH: Pixel, QR, Voz, MBTI — Grátis",
 };
 
 const LOCALE_DESCS: Record<string, string> = {
@@ -31,6 +33,8 @@ const LOCALE_DESCS: Record<string, string> = {
   it: "Studio pixel, sblocca QR, simulatore voce e calcolatore MBTI. 100% lato client, senza server. Strumenti gratuiti Custom Designs ACNH, Mii e Tomodachi con analisi di compatibilità.",
   nl: "Pixelstudio, QR-ontgrendelaar, stemsimulator en MBTI-calc. 100% clientzijde, geen server. Gratis tools voor ACNH Custom Designs, Mii en Tomodachi met compatibiliteitsanalyse.",
   "zh-CN": "免费像素工作室、QR码解锁器、语音合成器与MBTI配对计算器。100%纯前端处理，无需上传数据，无需服务器。支持动森我的设计、Mii二维码、Tomodachi Life语音与性格配对。",
+  ru: "Пиксель-студия, QR-разблокировщик, синтез голоса и калькулятор MBTI. 100% в браузере, без сервера. Бесплатные инструменты ACNH Custom Designs, Mii и Tomodachi с анализом совместимости.",
+  pt: "Pixel studio, desbloqueador QR, sintetizador de voz e calc. MBTI. 100% no navegador, sem servidor. Ferramentas grátis ACNH Custom Designs, Mii e Tomodachi com análise de compatibilidade.",
 };
 
 export async function generateMetadata({
@@ -58,6 +62,8 @@ export async function generateMetadata({
         it: `${BASE}/it`,
         nl: `${BASE}/nl`,
         "zh-CN": `${BASE}/zh-CN`,
+        ru: `${BASE}/ru`,
+        pt: `${BASE}/pt`,
         "x-default": BASE,
       },
     },
@@ -67,7 +73,7 @@ export async function generateMetadata({
       url: `${BASE}/${path}`,
       siteName: "LifeSimGrid",
       type: "website",
-      locale: locale === "zh-Hant" ? "zh_TW" : locale === "zh-CN" ? "zh_CN" : locale === "es" ? "es_ES" : locale === "fr" ? "fr_FR" : locale === "ko" ? "ko_KR" : locale === "de" ? "de_DE" : locale === "it" ? "it_IT" : locale === "nl" ? "nl_NL" : locale,
+      locale: locale === "zh-Hant" ? "zh_TW" : locale === "zh-CN" ? "zh_CN" : locale === "es" ? "es_ES" : locale === "fr" ? "fr_FR" : locale === "ko" ? "ko_KR" : locale === "de" ? "de_DE" : locale === "it" ? "it_IT" : locale === "nl" ? "nl_NL" : locale === "ru" ? "ru_RU" : locale === "pt" ? "pt_BR" : locale,
     },
   };
 }
@@ -79,7 +85,7 @@ export default async function LocalePage({
 }) {
   const { locale } = await params;
 
-  if (!routing.locales.includes(locale as "en" | "zh-Hant" | "ja" | "es" | "fr" | "ko" | "de" | "it" | "nl" | "zh-CN")) {
+  if (!routing.locales.includes(locale as "en" | "zh-Hant" | "ja" | "es" | "fr" | "ko" | "de" | "it" | "nl" | "zh-CN" | "ru" | "pt")) {
     notFound();
   }
 

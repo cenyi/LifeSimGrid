@@ -30,6 +30,14 @@ export default function LocaleRedirector() {
       redirected.current = true;
       localStorage.setItem(STORAGE_KEY, "ja");
       router.replace("/ja");
+    } else if (lowerLang.includes("ru")) {
+      redirected.current = true;
+      localStorage.setItem(STORAGE_KEY, "ru");
+      router.replace("/ru");
+    } else if (lowerLang.includes("pt")) {
+      redirected.current = true;
+      localStorage.setItem(STORAGE_KEY, "pt");
+      router.replace("/pt");
     } else {
       localStorage.setItem(STORAGE_KEY, "en");
     }

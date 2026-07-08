@@ -16,6 +16,8 @@ const PAGE_TITLES: Record<string, string> = {
   it: "Tomodachi Life MBTI — Calc. Compat.",
   nl: "Tomodachi Life MBTI — Compat.calc",
   "zh-CN": "朋友聚会MBTI 16型配对",
+  ru: "Tomodachi Life MBTI — Калькулятор",
+  pt: "Tomodachi Life MBTI — Calc. Compat.",
 };
 
 const PAGE_DESCS: Record<string, string> = {
@@ -28,6 +30,8 @@ const PAGE_DESCS: Record<string, string> = {
   it: "16 tipi Mii in MBTI in Tomodachi Life. Calc. compat., sinergia zodiacale. 100% lato client.",
   nl: "16 Mii-typen naar MBTI in Tomodachi Life. Compat.calc., dierenriemsynergie. 100% clientzijde.",
   "zh-CN": "朋友聚会16种Mii性格转MBTI，互动式配对计算器。性格+星座公式。100%纯前端。",
+  ru: "16 типов Mii в MBTI в Tomodachi Life. Калькулятор совместимости, зодиак. 100% клиент.",
+  pt: "16 tipos Mii em MBTI no Tomodachi Life. Calc. compat., sinergia zodiacal. 100% cliente.",
 };
 
 const FALLBACK_TITLE = "Tomodachi Life MBTI Mapping - 16-Personality Converter";
@@ -62,6 +66,8 @@ export async function generateMetadata({
         it: `${BASE}/it/${path}`,
         nl: `${BASE}/nl/${path}`,
         "zh-CN": `${BASE}/zh-CN/${path}`,
+        ru: `${BASE}/ru/${path}`,
+        pt: `${BASE}/pt/${path}`,
       },
     },
     openGraph: {
@@ -89,7 +95,7 @@ export default async function LocaleTomodachiLifeMbtiPage({
 }) {
   const { locale } = await params;
 
-  if (!routing.locales.includes(locale as "en" | "zh-Hant" | "ja" | "es" | "fr" | "ko" | "de" | "it" | "nl" | "zh-CN")) {
+  if (!routing.locales.includes(locale as "en" | "zh-Hant" | "ja" | "es" | "fr" | "ko" | "de" | "it" | "nl" | "zh-CN" | "ru" | "pt")) {
     notFound();
   }
 

@@ -19,6 +19,8 @@ const localeLabels: Record<string, string> = {
   it: "Italiano",
   nl: "Nederlands",
   "zh-CN": "简体中文",
+  ru: "Русский",
+  pt: "Português",
 };
 
 export default function Navbar() {
@@ -45,7 +47,7 @@ export default function Navbar() {
   /** Switches the locale, saves preference to localStorage, and navigates */
   function handleLocaleChange(newLocale: string) {
     localStorage.setItem(STORAGE_KEY, newLocale);
-    router.replace(pathname, { locale: newLocale as "en" | "zh-Hant" | "ja" | "es" | "fr" | "ko" | "de" | "it" | "nl" | "zh-CN" });
+    router.replace(pathname, { locale: newLocale as "en" | "zh-Hant" | "ja" | "es" | "fr" | "ko" | "de" | "it" | "nl" | "zh-CN" | "ru" | "pt" });
     setDropdownOpen(false);
   }
 
