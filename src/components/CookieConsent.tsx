@@ -142,29 +142,22 @@ function grantConsent() {
   // Load Microsoft Clarity if configured
   const clarityId = process.env.NEXT_PUBLIC_CLARITY_PROJECT_ID;
   if (clarityId) {
-    (function (
-      c: typeof window,
-      l: Document,
-      a: string,
-      r: string,
-      i: string,
-      t: HTMLScriptElement | null,
-      y: HTMLScriptElement | null,
-    ) {
-      (c as unknown as Record<string, unknown>)[a] =
-        (c as unknown as Record<string, unknown>)[a] ||
-        function () {
-          ((c as unknown as Record<string, { q: unknown[] }>)[a].q =
-            (c as unknown as Record<string, { q: unknown[] }>)[a].q || []).push(
-            arguments,
-          );
-        };
-      t = l.createElement(r);
-      t.async = 1;
-      t.src = "https://www.clarity.ms/tag/" + i;
-      y = l.getElementsByTagName(r)[0];
-      y?.parentNode?.insertBefore(t, y);
-    })(window, document, "clarity", "script", clarityId, null, null);
+    // Initialize Clarity command queue
+    const cw = window as unknown as Record<
+      string,
+      ((...args: unknown[]) => void) & { q?: unknown[] }
+    >;
+    if (!cw.clarity) {
+      cw.clarity = (...args: unknown[]) => {
+        (cw.clarity.q = cw.clarity.q || []).push(args);
+      };
+    }
+    // Inject Clarity script tag
+    const script = document.createElement("script");
+    script.async = true;
+    script.src = `https://www.clarity.ms/tag/${clarityId}`;
+    const firstScript = document.getElementsByTagName("script")[0];
+    firstScript?.parentNode?.insertBefore(script, firstScript);
   }
 }
 
