@@ -2,7 +2,7 @@
 
 import { useTranslations } from "next-intl";
 import { useState, useEffect } from "react";
-import { Palette, Unlock, Music, Grid3x3, ShieldCheck, UserX, Code, ArrowRight } from "lucide-react";
+import { Palette, Unlock, Music, Grid3x3, ShieldCheck, UserX, Code, ArrowRight, MapPin } from "lucide-react";
 import { Link } from "@/i18n/routing";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -127,7 +127,7 @@ export default function HomePageContent() {
               {ft("subtitle")}
             </p>
           </div>
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-5">
             <div className="group rounded-2xl border border-amber-100 bg-white p-6 shadow-sm transition-all hover:shadow-md">
               <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-amber-50">
                 <Palette className="h-6 w-6 text-amber-600" />
@@ -169,6 +169,17 @@ export default function HomePageContent() {
               <p className="mb-4 text-sm leading-relaxed text-gray-600">{ft("pixelGridCardDesc")}</p>
               <Link href="/living-the-grid" className="inline-flex w-full items-center justify-center gap-1.5 rounded-xl bg-green-500 px-4 py-2.5 text-sm font-semibold text-white shadow-sm transition-all hover:bg-green-600 hover:shadow-md active:scale-95 sm:w-auto">
                 {ft("pixelGridCardCta")}
+                <ArrowRight className="h-4 w-4" />
+              </Link>
+            </div>
+            <div className="group rounded-2xl border border-teal-100 bg-white p-6 shadow-sm transition-all hover:shadow-md">
+              <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-teal-50">
+                <MapPin className="h-6 w-6 text-teal-600" />
+              </div>
+              <h3 className="mb-2 font-mono text-lg font-bold text-gray-900">{ft("islandCardTitle")}</h3>
+              <p className="mb-4 text-sm leading-relaxed text-gray-600">{ft("islandCardDesc")}</p>
+              <Link href="/tomodachi-island-planner" className="inline-flex w-full items-center justify-center gap-1.5 rounded-xl bg-teal-500 px-4 py-2.5 text-sm font-semibold text-white shadow-sm transition-all hover:bg-teal-600 hover:shadow-md active:scale-95 sm:w-auto">
+                {ft("islandCardCta")}
                 <ArrowRight className="h-4 w-4" />
               </Link>
             </div>

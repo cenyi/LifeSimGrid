@@ -4,7 +4,7 @@ import { useTranslations, useLocale } from "next-intl";
 import { useRouter, usePathname, Link } from "@/i18n/routing";
 import { routing } from "@/i18n/routing";
 import { useState, useRef, useEffect } from "react";
-import { Globe, ChevronDown, Palette, Unlock, Music, Sparkles, Grid3x3 } from "lucide-react";
+import { Globe, ChevronDown, Palette, Unlock, Music, Sparkles, Grid3x3, MapPin, Menu, X } from "lucide-react";
 
 const STORAGE_KEY = "lifesimgrid-locale";
 
@@ -29,6 +29,7 @@ export default function Navbar() {
   const router = useRouter();
   const pathname = usePathname();
   const [dropdownOpen, setDropdownOpen] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -81,9 +82,21 @@ export default function Navbar() {
             <Grid3x3 className="h-3.5 w-3.5" />
             <span className="hidden xl:inline">{t("toolLivingTheGrid")}</span>
           </Link>
+          <Link href="/tomodachi-island-planner" title={t("toolIslandPlanner")} className="flex items-center space-x-1.5 rounded-lg border border-gray-200 bg-white px-2.5 py-1.5 text-xs font-medium text-gray-600 shadow-sm transition-all hover:bg-gray-50 hover:text-gray-900 hover:shadow-md active:scale-95">
+            <MapPin className="h-3.5 w-3.5" />
+            <span className="hidden xl:inline">{t("toolIslandPlanner")}</span>
+          </Link>
         </div>
 
         <div className="flex items-center space-x-2">
+          <button
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            className="flex h-9 w-9 items-center justify-center rounded-xl border border-gray-200 bg-white text-gray-600 shadow-sm transition-all hover:bg-gray-50 hover:text-gray-900 active:scale-95 lg:hidden"
+            aria-label="Menu"
+          >
+            {mobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+          </button>
+
           <div className="relative" ref={dropdownRef}>
             <button
               onClick={() => setDropdownOpen(!dropdownOpen)}
@@ -130,6 +143,64 @@ export default function Navbar() {
           </a>
         </div>
       </div>
+
+      {/* Mobile navigation menu — visible below lg breakpoint */}
+      {mobileMenuOpen && (
+        <div className="border-b border-gray-100 bg-white lg:hidden">
+          <div className="mx-auto max-w-7xl px-4 py-3 sm:px-6 lg:px-8">
+            <div className="grid grid-cols-2 gap-2">
+              <Link
+                href="/acnh-pixel-studio"
+                onClick={() => setMobileMenuOpen(false)}
+                className="flex items-center space-x-2 rounded-xl border border-gray-200 bg-white px-3 py-2.5 text-sm font-medium text-gray-600 shadow-sm transition-all hover:bg-gray-50 hover:text-gray-900"
+              >
+                <Palette className="h-4 w-4 text-amber-600" />
+                <span>{t("toolAcnh")}</span>
+              </Link>
+              <Link
+                href="/mii-qr-unlocker"
+                onClick={() => setMobileMenuOpen(false)}
+                className="flex items-center space-x-2 rounded-xl border border-gray-200 bg-white px-3 py-2.5 text-sm font-medium text-gray-600 shadow-sm transition-all hover:bg-gray-50 hover:text-gray-900"
+              >
+                <Unlock className="h-4 w-4 text-blue-600" />
+                <span>{t("toolMii")}</span>
+              </Link>
+              <Link
+                href="/tomodachi-voice-lab"
+                onClick={() => setMobileMenuOpen(false)}
+                className="flex items-center space-x-2 rounded-xl border border-gray-200 bg-white px-3 py-2.5 text-sm font-medium text-gray-600 shadow-sm transition-all hover:bg-gray-50 hover:text-gray-900"
+              >
+                <Music className="h-4 w-4 text-purple-600" />
+                <span>{t("toolVoice")}</span>
+              </Link>
+              <Link
+                href="/tomodachi-life-mbti"
+                onClick={() => setMobileMenuOpen(false)}
+                className="flex items-center space-x-2 rounded-xl border border-gray-200 bg-white px-3 py-2.5 text-sm font-medium text-gray-600 shadow-sm transition-all hover:bg-gray-50 hover:text-gray-900"
+              >
+                <Sparkles className="h-4 w-4 text-green-600" />
+                <span>{t("toolMbti")}</span>
+              </Link>
+              <Link
+                href="/living-the-grid"
+                onClick={() => setMobileMenuOpen(false)}
+                className="flex items-center space-x-2 rounded-xl border border-gray-200 bg-white px-3 py-2.5 text-sm font-medium text-gray-600 shadow-sm transition-all hover:bg-gray-50 hover:text-gray-900"
+              >
+                <Grid3x3 className="h-4 w-4 text-teal-600" />
+                <span>{t("toolLivingTheGrid")}</span>
+              </Link>
+              <Link
+                href="/tomodachi-island-planner"
+                onClick={() => setMobileMenuOpen(false)}
+                className="flex items-center space-x-2 rounded-xl border border-gray-200 bg-white px-3 py-2.5 text-sm font-medium text-gray-600 shadow-sm transition-all hover:bg-gray-50 hover:text-gray-900"
+              >
+                <MapPin className="h-4 w-4 text-rose-600" />
+                <span>{t("toolIslandPlanner")}</span>
+              </Link>
+            </div>
+          </div>
+        </div>
+      )}
     </nav>
   );
 }

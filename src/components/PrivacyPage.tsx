@@ -11,6 +11,8 @@ export default function PrivacyPage() {
     { title: t("corePrinciple"), text: t("corePrincipleText") },
     { title: t("localStorage"), text: t("localStorageText") },
     { title: t("cookies"), text: t("cookiesText") },
+    { title: t("googleAdsense"), text: t("googleAdsenseText") },
+    { title: t("euConsent"), text: t("euConsentText") },
     { title: t("thirdParty"), text: t("thirdPartyText") },
     { title: t("children"), text: t("childrenText") },
     { title: t("gdpr"), text: t("gdprText") },

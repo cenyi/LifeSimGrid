@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import Analytics from "@/components/Analytics";
 import TrailingSlashRedirector from "@/components/TrailingSlashRedirector";
+import CookieConsent from "@/components/CookieConsent";
 
 const SITE_URL = "https://lifesimgrid.org";
 const SITE_NAME = "LifeSimGrid";
@@ -59,6 +60,8 @@ export const metadata: Metadata = {
       it: `${SITE_URL}/it`,
       nl: `${SITE_URL}/nl`,
       "zh-CN": `${SITE_URL}/zh-CN`,
+      ru: `${SITE_URL}/ru`,
+      pt: `${SITE_URL}/pt`,
     },
   },
   openGraph: {
@@ -78,6 +81,8 @@ export const metadata: Metadata = {
       "de_DE",
       "it_IT",
       "nl_NL",
+      "ru_RU",
+      "pt_PT",
     ],
     images: `${SITE_URL}/og-image.svg`,
   },
@@ -100,6 +105,7 @@ export const metadata: Metadata = {
   verification: {
     yandex: "58b4894d924b1d01",
     other: {
+      "msvalidate.01": "57D8507EE5239386A6F15DA1F9DE6841",
       "naver-site-verification": "c2158695ff94758b3a59a282c4abed080b166a2e",
     },
   },
@@ -125,6 +131,8 @@ const jsonLd = {
         "it",
         "nl",
         "zh-CN",
+        "ru",
+        "pt",
       ],
       potentialAction: {
         "@type": "SearchAction",
@@ -172,6 +180,8 @@ const jsonLd = {
         "it",
         "nl",
         "zh-CN",
+        "ru",
+        "pt",
       ],
     },
   ],
@@ -189,10 +199,18 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd).replace(/<\/script/g, "<\\/script") }}
         />
+        {/* Google Consent Mode v2 — must load before gtag.js */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html:
+              "window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('consent','default',{'ad_storage':'denied','ad_user_data':'denied','ad_personalization':'denied','analytics_storage':'denied','wait_for_update':500});",
+          }}
+        />
       </head>
       <body className="min-h-screen bg-cream antialiased">
         <Analytics />
         <TrailingSlashRedirector />
+        <CookieConsent />
         {children}
       </body>
     </html>

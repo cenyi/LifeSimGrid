@@ -211,4 +211,25 @@
     <xhtml:link rel="alternate" hreflang="it" href="https://lifesimgrid.org/it/tomodachi-life-mbti"/>
     <xhtml:link rel="alternate" hreflang="nl" href="https://lifesimgrid.org/nl/tomodachi-life-mbti"/>
   </url>
+
+  <!-- ============================================================
+       Tomodachi Island Planner
+       ============================================================ -->
+  <url>
+    <loc>https://lifesimgrid.org/tomodachi-island-planner</loc>
+    <lastmod>2026-07-15</lastmod>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://lifesimgrid.org/tomodachi-island-planner"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://lifesimgrid.org/tomodachi-island-planner"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://lifesimgrid.org/zh-Hant/tomodachi-island-planner"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://lifesimgrid.org/zh-CN/tomodachi-island-planner"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://lifesimgrid.org/ru/tomodachi-island-planner"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://lifesimgrid.org/pt/tomodachi-island-planner"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://lifesimgrid.org/ja/tomodachi-island-planner"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://lifesimgrid.org/es/tomodachi-island-planner"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://lifesimgrid.org/fr/tomodachi-island-planner"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://lifesimgrid.org/ko/tomodachi-island-planner"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://lifesimgrid.org/de/tomodachi-island-planner"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://lifesimgrid.org/it/tomodachi-island-planner"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://lifesimgrid.org/nl/tomodachi-island-planner"/>
+  </url>
 </urlset>

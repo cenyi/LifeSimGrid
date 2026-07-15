@@ -21,7 +21,9 @@ export default function Footer() {
           <Link href="/acnh-pixel-studio" className="transition-colors hover:text-gray-900">{t("toolAcnh")}</Link>
           <Link href="/mii-qr-unlocker" className="transition-colors hover:text-gray-900">{t("toolMii")}</Link>
           <Link href="/tomodachi-voice-lab" className="transition-colors hover:text-gray-900">{t("toolVoice")}</Link>
+          <Link href="/tomodachi-life-mbti" className="transition-colors hover:text-gray-900">{t("toolMbti")}</Link>
           <Link href="/living-the-grid" className="transition-colors hover:text-gray-900">{t("toolLivingTheGrid")}</Link>
+          <Link href="/tomodachi-island-planner" className="transition-colors hover:text-gray-900">{t("toolIslandPlanner")}</Link>
         </div>
 
         <div className="flex flex-col items-center justify-between gap-4 md:flex-row">
