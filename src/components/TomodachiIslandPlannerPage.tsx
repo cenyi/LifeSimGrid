@@ -393,7 +393,12 @@ export default function TomodachiIslandPlannerPage() {
   const locale = useLocale();
 
   /* ---- Tab state ---- */
-  const [activeTab, setActiveTab] = useState<"planner" | "templates" | "optimizer">("planner");
+  const [activeTab, setActiveTab] = useState<"planner" | "templates" | "optimizer" | "names">("planner");
+
+  /* ---- Name Generator state ---- */
+  const [nameTheme, setNameTheme] = useState<string>("nature");
+  const [generatedNames, setGeneratedNames] = useState<string[]>([]);
+  const [copiedName, setCopiedName] = useState<string | null>(null);
 
   /* ---- Grid state ---- */
   const [gridSize, setGridSize] = useState(16);
@@ -587,6 +592,41 @@ export default function TomodachiIslandPlannerPage() {
     setActiveTab("planner");
   }
 
+  /* ---- Name Generator ---- */
+  // Name bases are creative English-derived content (proper nouns / fantasy words).
+  // Suffixes are i18n-aware via nameSuffix_0..9 translation keys.
+  const NAME_POOLS: Record<string, string[]> = {
+    nature: ["Maple", "Cedar", "Willow", "Coral", "Sage", "River", "Dawn", "Fern", "Brook", "Hazel", "Breeze", "Petal", "Meadow", "Autumn", "Sky", "Reef", "Lagoon", "Harbor"],
+    fantasy: ["Aether", "Lumina", "Celestia", "Drakon", "Mythral", "Zephyr", "Eldoria", "Avalon", "Nyx", "Solstice", "Crystal", "Ember", "Frost", "Starfall", "Moonshade", "Thornwood", "Glimmer", "Enigma"],
+    cute: ["Mochi", "Bunny", "Pudding", "Cupcake", "Sprinkle", "Honey", "Berry", "Cookie", "Daisy", "Cotton", "Bubbles", "Marshmallow", "Teddy", "Peaches", "Sunny", "Cherry", "Twinkle", "Cinnamon"],
+    japanese: ["Sakura", "Tsuki", "Kaze", "Hana", "Yuki", "Sora", "Mizu", "Hikari", "Aoba", "Niji", "Haru", "Kumo", "Tsubaki", "Asagi", "Rin", "Kohaku", "Sumire", "Arisu"],
+    cool: ["Neon", "Cipher", "Vector", "Pulse", "Rogue", "Apex", "Volt", "Titan", "Blade", "Echo", "Storm", "Vortex", "Falcon", "Onyx", "Phantom", "Razor", "Drift", "Surge"],
+  };
+  const nameSuffixes = Array.from({ length: 10 }, (_, i) => t(`nameSuffix_${i}` as never));
+
+  function generateNames() {
+    const pool = NAME_POOLS[nameTheme] || NAME_POOLS.nature;
+    const names: string[] = [];
+    const used = new Set<string>();
+    while (names.length < 8) {
+      const base = pool[Math.floor(Math.random() * pool.length)];
+      const suffix = nameSuffixes[Math.floor(Math.random() * nameSuffixes.length)];
+      const name = base + suffix;
+      if (!used.has(name)) { used.add(name); names.push(name); }
+    }
+    setGeneratedNames(names);
+    setCopiedName(null);
+  }
+
+  function copyName(name: string) {
+    if (typeof navigator !== "undefined" && navigator.clipboard) {
+      navigator.clipboard.writeText(name).then(() => {
+        setCopiedName(name);
+        setTimeout(() => setCopiedName(null), 2000);
+      }).catch(() => {});
+    }
+  }
+
   /* ---- Stats ---- */
   const stats = {
     buildings: 0,
@@ -727,12 +767,14 @@ export default function TomodachiIslandPlannerPage() {
               { key: "planner", label: t("tabPlanner"), icon: Grid3x3, color: "teal" },
               { key: "templates", label: t("tabTemplates"), icon: Layout, color: "amber" },
               { key: "optimizer", label: t("tabOptimizer"), icon: Users, color: "purple" },
+              { key: "names", label: t("tabNames"), icon: Sparkles, color: "rose" },
             ] as const).map((tab) => {
               const isActive = activeTab === tab.key;
               const colorClasses: Record<string, { active: string; inactive: string }> = {
                 teal: { active: "bg-teal-500 text-white shadow-md", inactive: "bg-white text-gray-600 hover:bg-teal-50" },
                 amber: { active: "bg-amber-500 text-white shadow-md", inactive: "bg-white text-gray-600 hover:bg-amber-50" },
                 purple: { active: "bg-purple-500 text-white shadow-md", inactive: "bg-white text-gray-600 hover:bg-purple-50" },
+                rose: { active: "bg-rose-500 text-white shadow-md", inactive: "bg-white text-gray-600 hover:bg-rose-50" },
               };
               const c = colorClasses[tab.color];
               return (
@@ -752,7 +794,7 @@ export default function TomodachiIslandPlannerPage() {
         {/* ===== Tab Content ===== */}
         <section aria-labelledby="island-tab-content" className="mx-auto max-w-6xl px-4 py-4 sm:py-6">
           <h2 id="island-tab-content" className="sr-only">
-            {activeTab === "planner" ? t("tabPlanner") : activeTab === "templates" ? t("tabTemplates") : t("tabOptimizer")}
+            {activeTab === "planner" ? t("tabPlanner") : activeTab === "templates" ? t("tabTemplates") : activeTab === "optimizer" ? t("tabOptimizer") : t("tabNames")}
           </h2>
 
           {/* ===== PLANNER TAB ===== */}
@@ -1055,6 +1097,72 @@ export default function TomodachiIslandPlannerPage() {
 
               {!optResult && optResidents.length < 2 && (
                 <p className="text-center text-sm text-gray-400">{t("optimizationEmpty")}</p>
+              )}
+            </div>
+          </div>
+
+          {/* ===== NAMES TAB ===== */}
+          <div className={activeTab !== "names" ? "hidden" : ""}>
+            <div className="rounded-2xl border border-gray-100 bg-white p-4 sm:p-6 shadow-sm">
+              <h3 className="font-mono text-lg sm:text-xl font-bold text-gray-900 mb-2">{t("nameGenTitle")}</h3>
+              <p className="text-sm text-gray-600 mb-4 leading-relaxed">{t("nameGenDesc")}</p>
+
+              {/* Theme selector */}
+              <div className="mb-4">
+                <label className="mb-2 block text-sm font-medium text-gray-700">{t("nameGenTheme")}:</label>
+                <div className="flex flex-wrap gap-2">
+                  {([
+                    { key: "nature", label: t("nameGenThemeNature") },
+                    { key: "fantasy", label: t("nameGenThemeFantasy") },
+                    { key: "cute", label: t("nameGenThemeCute") },
+                    { key: "japanese", label: t("nameGenThemeJapanese") },
+                    { key: "cool", label: t("nameGenThemeCool") },
+                  ]).map((theme) => (
+                    <button
+                      key={theme.key}
+                      onClick={() => setNameTheme(theme.key)}
+                      className={`rounded-lg px-3 py-1.5 text-xs font-semibold transition-all active:scale-95 ${
+                        nameTheme === theme.key
+                          ? "bg-rose-500 text-white shadow-sm"
+                          : "bg-gray-100 text-gray-600 hover:bg-rose-50"
+                      }`}
+                    >
+                      {theme.label}
+                    </button>
+                  ))}
+                </div>
+              </div>
+
+              {/* Generate button */}
+              <button
+                onClick={generateNames}
+                className="mb-4 flex items-center gap-2 rounded-xl bg-rose-500 px-5 py-2.5 text-sm font-bold text-white shadow-sm transition-all hover:bg-rose-600 active:scale-95"
+              >
+                <Sparkles className="h-4 w-4" /> {t("nameGenGenerate")}
+              </button>
+
+              {/* Results */}
+              {generatedNames.length > 0 && (
+                <div>
+                  <h4 className="mb-2 font-mono text-sm font-bold text-gray-900">{t("nameGenResult")}</h4>
+                  <p className="mb-3 text-xs text-gray-500">{t("nameGenHint")}</p>
+                  <div className="grid gap-2 sm:grid-cols-2">
+                    {generatedNames.map((name, i) => (
+                      <button
+                        key={i}
+                        onClick={() => copyName(name)}
+                        className={`flex items-center justify-between rounded-xl border px-4 py-3 text-sm font-medium transition-all hover:shadow-md active:scale-95 ${
+                          copiedName === name
+                            ? "border-green-300 bg-green-50 text-green-700"
+                            : "border-gray-200 bg-gray-50 text-gray-800 hover:bg-rose-50"
+                        }`}
+                      >
+                        <span>{name}</span>
+                        {copiedName === name && <span className="text-xs text-green-600">{t("nameGenCopy")}</span>}
+                      </button>
+                    ))}
+                  </div>
+                </div>
               )}
             </div>
           </div>

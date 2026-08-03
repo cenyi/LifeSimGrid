@@ -52,7 +52,7 @@ LifeSimGrid uses a **Topic Clusters SEO strategy**: the homepage acts as an "air
 *   Features 16-Personality Matrix with color-coded groups (amber/red/purple/green), Voice Guide, Why Choose section, and FAQ with JSON-LD.
 *   Targets vertical keywords like "Tomodachi Life voice calculator", "Tomodachi personality types".
 
-#### 🔲 Pixel Grid Studio (`/pixel-grid-studio`)
+#### 🔲 Living the Grid (`/living-the-grid`)
 *   Dedicated sub-page for **general-purpose pixel grid** conversion (cross-stitch, Perler beads, pixel art templates).
 *   Features Turn-Photo guide, Why Choose section, print-optimized layout, and FAQ with JSON-LD.
 *   Targets vertical keywords like "pixel art grid converter", "cross stitch pattern generator", "Perler beads template".
@@ -62,8 +62,34 @@ LifeSimGrid uses a **Topic Clusters SEO strategy**: the homepage acts as an "air
 *   Features 5-tab layout (Compatibility Calculator, Personality Chart, Voice Tool, Fan Map, Character Roster), How It Works section, FAQ with JSON-LD, and BreadcrumbList/HowTo structured data.
 *   Targets vertical keywords like "Tomodachi Life MBTI", "Tomodachi Life personality types", "Tomodachi Life compatibility".
 
+#### 🗺️ Tomodachi Island Planner (`/tomodachi-island-planner`)
+*   Dedicated sub-page for **Tomodachi Life island planning** with a random island name generator.
+*   Features 5 themes × 18 names generation, HowTo guide, FAQ with JSON-LD, and BreadcrumbList structured data.
+*   Targets vertical keywords like "Tomodachi Life island names", "Tomodachi island planner", "Tomodachi Life name generator".
+
+#### 🎲 Tomodachi Character Ideas (`/tomodachi-character-ideas`)
+*   Dedicated sub-page for **Tomodachi Life character idea generation** with random personality, zodiac, voice, and archetype suggestions.
+*   Features 16 personalities × 12 zodiacs × 12 archetypes random generation, save collection (up to 8), HowTo guide, and FAQ with JSON-LD.
+*   Targets vertical keywords like "Tomodachi Life character ideas", "Tomodachi Life character generator", "Mii personality ideas".
+
+#### 🏠 Tomodachi Apartment Design (`/tomodachi-apartment-design`)
+*   Dedicated sub-page for **Tomodachi Life apartment room layout design** with an interactive furniture placement grid.
+*   Features 8×8/10×10/12×12 grid sizes, 12 furniture types, 6 preset templates, 6 theme styles, PNG/JSON export & import, and FAQ with JSON-LD.
+*   Targets vertical keywords like "Tomodachi Life apartment design", "Tomodachi room layout", "Tomodachi furniture placement".
+
+#### 👕 Tomodachi Clothes Template (`/tomodachi-clothes-template`)
+*   Dedicated sub-page for **Tomodachi Life clothes pixel art design** with a full pixel editor.
+*   Features 16×16/24×24/32×32 grid sizes, pencil/fill/eraser tools, 32 preset colors + custom picker, undo/redo (30 steps), 6 preset templates, PNG export, and FAQ with JSON-LD.
+*   Targets vertical keywords like "Tomodachi Life clothes template", "Tomodachi clothes design", "Tomodachi pixel art clothes".
+
+#### 👁️ Mii Eyes Design Guide (`/mii-eyes`)
+*   Dedicated sub-page for **Mii eyes design** with interactive SVG parameter sliders and a style gallery.
+*   Features 8 eye shapes × 3 sizes × 3 heights × 3 spacings × 3 angles × 6 colors (3,800+ combinations), 6 preset gallery styles, parameter cheat sheet, and FAQ with JSON-LD.
+*   Targets vertical keywords like "Mii eyes design", "Mii eye shapes", "Tomodachi Life Mii eyes guide".
+
 #### 🏠 Homepage Hub
-*   The homepage features tab-based tool switching for returning users and 5 CTA cards linking to sub-pages for new search-traffic users.
+*   The homepage features tab-based tool switching for returning users and CTA cards linking to sub-pages for new search-traffic users.
+*   Navigation bar organizes 10 tools into 3 category dropdowns: ACNH, Mii, and Tomodachi Life.
 *   Trust & Privacy section reinforces the 100% client-side, zero-data-upload commitment.
 
 ### 🔒 Privacy-First Architecture
@@ -155,14 +181,24 @@ src/
 │   │   ├── terms/          # Terms of service
 │   │   ├── acnh-pixel-studio/    # ACNH Custom Designs sub-page
 │   │   ├── mii-qr-unlocker/     # Mii QR Code sub-page
+│   │   ├── mii-eyes/            # Mii Eyes Design Guide sub-page
 │   │   ├── tomodachi-voice-lab/ # Tomodachi Voice sub-page
 │   │   ├── tomodachi-life-mbti/ # Tomodachi Life MBTI sub-page
-│   │   └── pixel-grid-studio/   # Pixel Grid Studio sub-page
+│   │   ├── tomodachi-island-planner/   # Island Planner sub-page
+│   │   ├── tomodachi-character-ideas/  # Character Ideas sub-page
+│   │   ├── tomodachi-apartment-design/ # Apartment Design sub-page
+│   │   ├── tomodachi-clothes-template/ # Clothes Template sub-page
+│   │   └── living-the-grid/    # Living the Grid sub-page
 │   ├── acnh-pixel-studio/  # Root-level EN sub-page
 │   ├── mii-qr-unlocker/   # Root-level EN sub-page
+│   ├── mii-eyes/           # Root-level EN sub-page
 │   ├── tomodachi-voice-lab/ # Root-level EN sub-page
 │   ├── tomodachi-life-mbti/ # Root-level EN sub-page
-│   ├── pixel-grid-studio/  # Root-level EN sub-page
+│   ├── tomodachi-island-planner/   # Root-level EN sub-page
+│   ├── tomodachi-character-ideas/  # Root-level EN sub-page
+│   ├── tomodachi-apartment-design/ # Root-level EN sub-page
+│   ├── tomodachi-clothes-template/ # Root-level EN sub-page
+│   └── living-the-grid/    # Root-level EN sub-page
 │   ├── layout.tsx          # Root layout + metadataBase
 │   └── globals.css         # Global styles + anchor link CSS
 ├── components/             # React components
@@ -171,7 +207,11 @@ src/
 │   ├── MiiQrUnlockerPage.tsx    # Mii QR sub-page component
 │   ├── TomodachiVoiceLabPage.tsx # Voice Lab sub-page component
 │   ├── TomodachiLifeMbtiPage.tsx # MBTI sub-page component
-│   ├── PixelGridStudioPage.tsx  # Pixel Grid sub-page component
+│   ├── TomodachiIslandPlannerPage.tsx  # Island Planner sub-page component
+│   ├── TomodachiCharacterIdeasPage.tsx # Character Ideas sub-page component
+│   ├── TomodachiApartmentDesignPage.tsx # Apartment Design sub-page component
+│   ├── TomodachiClothesTemplatePage.tsx # Clothes Template sub-page component
+│   ├── TomodachiMiiEyesPage.tsx       # Mii Eyes sub-page component
 │   ├── AboutPage.tsx       # About page component
 │   ├── ContactPage.tsx     # Contact page component
 │   ├── PrivacyPage.tsx     # Privacy page component
@@ -345,7 +385,7 @@ Instead, report it responsibly via email to **hi@lifesimgrid.org**. Our core eng
 
 作為一款免費的瀏覽器網頁工具套件，所有二進位密碼學解析、HTML5 Canvas 取樣與晶片音訊合成均在用戶端完整執行。這確保了絕對 100% 的資料隱私與閃電般的本機效能——無需雲端伺服器、無需帳號註冊、無需資料庫追蹤。
 
-### ✨ 五大核心工作室
+### ✨ 十大核心工作室
 
 #### 🎨 像素工作室（Animal Crossing 自訂設計圖案工具）
 *   **多比例網格畫布**：完美適配**沙盒社交模擬遊戲**中的進階紋理繪圖規範。原生支援正方形 1:1（標準圖案）、長方形 2:3（畫架肖像、專輯封面）與寬螢幕 16:9（大面積自訂室內牆壁壁紙）裁切比例。
@@ -368,11 +408,37 @@ Instead, report it responsibly via email to **hi@lifesimgrid.org**. Our core eng
 *   **相容性計算器**：5 個分頁式佈局（相容性計算器、人格圖表、語音工具、粉絲地圖、角色名冊），搭配 How It Works 說明區塊與 FAQ，支援 BreadcrumbList/HowTo 結構化資料。
 *   **演算法透明宣告**：明確標示公式組成——Base Score (25) + Personality (25) + Zodiac (25) + Friendship (25)，確保結果可追溯。
 
-#### 🔲 像素網格工作室（通用像素網格轉換器）
+#### 🔲 Living the Grid（通用像素網格轉換器）
 *   **通用像素網格轉換**：將任何影像轉換為像素網格圖案，支援十字繡（cross-stitch）、Perler beads 拼豆、Minecraft 像素藝術與 Tomodachi Life 自訂設計模板。
 *   **彈性網格尺寸與智慧色彩匹配**：提供 5 種網格尺寸（16×16 至 128×128），採用 Euclidean distance 色彩匹配演算法搭配 error-diffusion dithering，即使使用 32 色復古調色盤也能產出準確結果。
 *   **照片轉換指南與列印優化佈局**：提供逐步照片轉像素藝術指南。支援原生瀏覽器列印（Ctrl+P），自動隱藏控制面板，輸出乾淨的編號紙本網格藍圖，完美適配十字繡臨摹與離線手工創作。
 *   **100% 用戶端架構**：所有影像處理均透過 HTML5 Canvas API 在你的瀏覽器內執行，無需上傳，無資料庫追蹤。
+
+
+#### 🗺️ 島嶼規劃器（Tomodachi Life 島嶼名稱產生器）
+*   **隨機島嶼名稱產生**：5 種主題 × 18 個名稱組合，一鍵產生適合 Tomodachi Life 的島嶼名稱。
+*   **HowTo 指南與 FAQ**：提供逐步命名指南與 JSON-LD 結構化資料 FAQ。
+*   **100% 用戶端架構**：所有名稱產生均在瀏覽器內執行。
+
+#### 🎲 角色創意產生器（Tomodachi Life 角色靈感工具）
+*   **隨機角色產生**：16 種性格 × 12 星座 × 12 種角色原型，一鍵產生完整角色設定。
+*   **收藏功能**：最多儲存 8 個角色創意至本機 localStorage。
+*   **HowTo 指南與 FAQ**：提供角色創作指南與 JSON-LD 結構化資料。
+
+#### 🏠 公寓設計工具（Tomodachi Life 房間佈局規劃）
+*   **互動式傢俱放置網格**：支援 8×8、10×10、12×12 三種網格尺寸，12 種傢俱類型。
+*   **6 種預設模板與主題風格**：快速套用預設佈局，支援 PNG/JSON 匯入匯出。
+*   **FAQ 與 JSON-LD**：提供公寓設計 FAQ 與結構化資料。
+
+#### 👕 服裝模板工具（Tomodachi Life 像素藝術服裝設計）
+*   **完整像素編輯器**：支援 16×16、24×24、32×32 網格尺寸，鉛筆/填充/橡皮擦工具。
+*   **32 色預設調色盤 + 自訂色彩**：支援 undo/redo（30 步），6 種預設模板，PNG 匯出。
+*   **FAQ 與 JSON-LD**：提供服裝設計 FAQ 與結構化資料。
+
+#### 👁️ Mii 眼睛設計指南（Mii Eyes Design Guide）
+*   **互動式 SVG 參數滑桿**：8 種眼形 × 3 種尺寸 × 3 種高度 × 3 種間距 × 3 種角度 × 6 種顏色（3,800+ 組合）。
+*   **6 種預設風格畫廊**：快速預覽經典 Mii 眼睛風格，附參數速查表。
+*   **FAQ 與 JSON-LD**：提供 Mii 眼睛設計 FAQ 與結構化資料。
 
 ### 🔒 隱私優先架構
 
@@ -469,12 +535,22 @@ src/
 │   │   ├── mii-qr-unlocker/     # Mii QR Code 子頁面
 │   │   ├── tomodachi-voice-lab/ # Tomodachi Voice 子頁面
 │   │   ├── tomodachi-life-mbti/ # Tomodachi Life MBTI 子頁面
-│   │   └── pixel-grid-studio/   # Pixel Grid Studio 子頁面
+│   │   ├── mii-eyes/            # Mii 眼睛設計指南子頁面
+│   │   ├── tomodachi-island-planner/   # 島嶼規劃器子頁面
+│   │   ├── tomodachi-character-ideas/  # 角色創意子頁面
+│   │   ├── tomodachi-apartment-design/ # 公寓設計子頁面
+│   │   ├── tomodachi-clothes-template/ # 服裝模板子頁面
+│   │   └── living-the-grid/    # Living the Grid 子頁面
 │   ├── acnh-pixel-studio/  # 根層級 EN 子頁面
 │   ├── mii-qr-unlocker/   # 根層級 EN 子頁面
 │   ├── tomodachi-voice-lab/ # 根層級 EN 子頁面
 │   ├── tomodachi-life-mbti/ # 根層級 EN 子頁面
-│   ├── pixel-grid-studio/  # 根層級 EN 子頁面
+│   ├── mii-eyes/           # 根層級 EN 子頁面
+│   ├── tomodachi-island-planner/   # 根層級 EN 子頁面
+│   ├── tomodachi-character-ideas/  # 根層級 EN 子頁面
+│   ├── tomodachi-apartment-design/ # 根層級 EN 子頁面
+│   ├── tomodachi-clothes-template/ # 根層級 EN 子頁面
+│   └── living-the-grid/    # 根層級 EN 子頁面
 │   ├── layout.tsx          # 根佈局 + metadataBase
 │   └── globals.css         # 全域樣式 + 錨點連結 CSS
 ├── components/             # React 元件
@@ -483,7 +559,11 @@ src/
 │   ├── MiiQrUnlockerPage.tsx    # Mii QR 子頁面元件
 │   ├── TomodachiVoiceLabPage.tsx # Voice Lab 子頁面元件
 │   ├── TomodachiLifeMbtiPage.tsx # MBTI 子頁面元件
-│   ├── PixelGridStudioPage.tsx  # Pixel Grid 子頁面元件
+│   ├── TomodachiIslandPlannerPage.tsx  # 島嶼規劃器子頁面元件
+│   ├── TomodachiCharacterIdeasPage.tsx # 角色創意子頁面元件
+│   ├── TomodachiApartmentDesignPage.tsx # 公寓設計子頁面元件
+│   ├── TomodachiClothesTemplatePage.tsx # 服裝模板子頁面元件
+│   ├── TomodachiMiiEyesPage.tsx       # Mii 眼睛子頁面元件
 │   ├── AboutPage.tsx       # 關於頁面元件
 │   ├── ContactPage.tsx     # 聯絡頁面元件
 │   ├── PrivacyPage.tsx     # 隱私政策頁面元件
@@ -653,7 +733,7 @@ LifeSimGrid 為完全獨立的非官方第三方社群粉絲工具套件，以�
 
 無料のブラウザベースのウェブツールキットとして、すべてのバイナリ暗号解析、HTML5 Canvas サンプリング、チップチューン音声合成が完全にクライアントサイドで実行されます。これにより、絶対的な 100% のデータプライバシーと超高速のローカルパフォーマンスが保証されます——クラウドサーバーなし、アカウント登録なし、データベース追跡なし。
 
-### ✨ 5つのコアスタジオ
+### ✨ 10個のコアスタジオ
 
 #### 🎨 ピクセルスタジオ（Animal Crossing マイデザインツール）
 *   **マルチ比率グリッドキャンバス**：**サンドボックスソーシャルシミュレーションゲーム**の高度なテクスチャ描画仕様に完全対応。正方形 1:1（標準マイデザイン）、長方形 2:3（イーゼル肖像画、アルバムカバー）、ワイドスクリーン 16:9（広範なカスタム室内壁紙）のクロップアスペクト比をネイティブサポート。
@@ -676,11 +756,37 @@ LifeSimGrid 為完全獨立的非官方第三方社群粉絲工具套件，以�
 *   **相性計算機**：5タブレイアウト（相性計算機、パーソナリティチャート、ボイスツール、ファンマップ、キャラクターリスト）、How It Works セクション、FAQ、BreadcrumbList/HowTo 構造化データ対応。
 *   **アルゴリズム透明性宣言**：公式構成要素を明示——Base Score (25) + Personality (25) + Zodiac (25) + Friendship (25)、結果のトレーサビリティを確保。
 
-#### 🔲 ピクセルグリッドスタジオ（汎用ピクセルグリッドコンバーター）
+#### 🔲 Living the Grid（汎用ピクセルグリッドコンバーター）
 *   **汎用ピクセルグリッド変換**：あらゆる画像をピクセルグリッドパターンに変換。クロスステッチ、Perler beads、Minecraftピクセルアート、Tomodachi Lifeのカスタムデザインテンプレートに対応。
 *   **柔軟なグリッドサイズ＆スマートカラー matching**：5種類のグリッドサイズ（16×16〜128×128）を提供。Euclidean distance カラーマッチングと error-diffusion ditheringを採用し、32色レトロパレットでも正確な結果を生成。
 *   **写真変換ガイド＆印刷最適化レイアウト**：写真をピクセルアートに変換するステップバイステップガイド。ネイティブブラウザ印刷（Ctrl+P）をサポートし、コントロールパネルを自動非表示してクリーンな番号付き紙グリッドブループリントを出力。クロスステッチのトレースやオフラインクラフトに最適。
 *   **100%クライアントサイド**：すべての画像処理は HTML5 Canvas API でブラウザ内で実行。アップロード不要、データベース追跡なし。
+
+
+#### 🗺️ 島プランナー（Tomodachi Life 島名ジェネレーター）
+*   **ランダム島名生成**：5テーマ × 18名の組み合わせで、Tomodachi Lifeに最適な島名をワンクリック生成。
+*   **HowToガイド＆FAQ**：ステップバイステップの命名ガイドとJSON-LD構造化データFAQを提供。
+*   **100%クライアントサイド**：すべての名前生成はブラウザ内で実行。
+
+#### 🎲 キャラアイデアジェネレーター（Tomodachi Life キャラクターインスピレーションツール）
+*   **ランダムキャラ生成**：16性格 × 12星座 × 12アーキタイプで、完全なキャラ設定をワンクリック生成。
+*   **コレクション機能**：最大8つのキャライデアをローカルlocalStorageに保存。
+*   **HowToガイド＆FAQ**：キャラ作成ガイドとJSON-LD構造化データを提供。
+
+#### 🏠 アパートデザインツール（Tomodachi Life 部屋レイアウトプランナー）
+*   **インタラクティブ家具配置グリッド**：8×8、10×10、12×12の3種類のグリッドサイズ、12種類の家具タイプをサポート。
+*   **6種類のプリセットテンプレート＆テーマスタイル**：プリセットレイアウトをすばやく適用、PNG/JSONインポート・エクスポート対応。
+*   **FAQ＆JSON-LD**：アパートデザインFAQと構造化データを提供。
+
+#### 👕 服テンプレートツール（Tomodachi Life ピクセルアート衣装デザイン）
+*   **フルピクセルエディター**：16×16、24×24、32×32グリッドサイズ、鉛筆/塗りつぶし/消しゴムツールをサポート。
+*   **32色プリセットパレット + カスタムカラー**：undo/redo（30ステップ）、6種類のプリセットテンプレート、PNGエクスポート対応。
+*   **FAQ＆JSON-LD**：衣装デザインFAQと構造化データを提供。
+
+#### 👁️ Mii 目デザインガイド（Mii Eyes Design Guide）
+*   **インタラクティブSVGパラメータースライダー**：8種類の目の形 × 3サイズ × 3高さ × 3間隔 × 3角度 × 6色（3,800+組み合わせ）。
+*   **6種類のプリセットスタイルギャラリー**：クラシックなMii目のスタイルをすばやくプレビュー、パラメーターチートシート付き。
+*   **FAQ＆JSON-LD**：Mii目デザインFAQと構造化データを提供。
 
 ### 🔒 プライバシーファースト設計
 
@@ -778,12 +884,22 @@ src/
 │   │   ├── mii-qr-unlocker/     # Mii QR Code サブページ
 │   │   ├── tomodachi-voice-lab/ # Tomodachi Voice サブページ
 │   │   ├── tomodachi-life-mbti/ # Tomodachi Life MBTI サブページ
-│   │   └── pixel-grid-studio/   # Pixel Grid Studio サブページ
+│   │   ├── mii-eyes/            # Mii 目デザインガイドサブページ
+│   │   ├── tomodachi-island-planner/   # 島プランナーサブページ
+│   │   ├── tomodachi-character-ideas/  # キャラアイデアサブページ
+│   │   ├── tomodachi-apartment-design/ # アパートデザインサブページ
+│   │   ├── tomodachi-clothes-template/ # 服テンプレートサブページ
+│   │   └── living-the-grid/    # Living the Grid サブページ
 │   ├── acnh-pixel-studio/  # ルートレベル EN サブページ
 │   ├── mii-qr-unlocker/   # ルートレベル EN サブページ
 │   ├── tomodachi-voice-lab/ # ルートレベル EN サブページ
 │   ├── tomodachi-life-mbti/ # ルートレベル EN サブページ
-│   ├── pixel-grid-studio/  # ルートレベル EN サブページ
+│   ├── mii-eyes/           # ルートレベル EN サブページ
+│   ├── tomodachi-island-planner/   # ルートレベル EN サブページ
+│   ├── tomodachi-character-ideas/  # ルートレベル EN サブページ
+│   ├── tomodachi-apartment-design/ # ルートレベル EN サブページ
+│   ├── tomodachi-clothes-template/ # ルートレベル EN サブページ
+│   └── living-the-grid/    # ルートレベル EN サブページ
 │   ├── layout.tsx          # ルートレイアウト + metadataBase
 │   └── globals.css         # グローバルスタイル + アンカーリンク CSS
 ├── components/             # React コンポーネント
@@ -792,7 +908,11 @@ src/
 │   ├── MiiQrUnlockerPage.tsx    # Mii QR サブページコンポーネント
 │   ├── TomodachiVoiceLabPage.tsx # Voice Lab サブページコンポーネント
 │   ├── TomodachiLifeMbtiPage.tsx # MBTI サブページコンポーネント
-│   ├── PixelGridStudioPage.tsx  # Pixel Grid サブページコンポーネント
+│   ├── TomodachiIslandPlannerPage.tsx  # 島プランナーサブページコンポーネント
+│   ├── TomodachiCharacterIdeasPage.tsx # キャラアイデアサブページコンポーネント
+│   ├── TomodachiApartmentDesignPage.tsx # アパートデザインサブページコンポーネント
+│   ├── TomodachiClothesTemplatePage.tsx # 服テンプレートサブページコンポーネント
+│   ├── TomodachiMiiEyesPage.tsx       # Mii 目サブページコンポーネント
 │   ├── AboutPage.tsx        # About ページコンポーネント
 │   ├── ContactPage.tsx      # お問い合わせページコンポーネント
 │   ├── PrivacyPage.tsx      # プライバシーポリシーページコンポーネント
@@ -962,7 +1082,7 @@ LifeSimGrid は、完全に独立した非公式のサードパーティコミ�
 
 Como kit de herramientas web gratuito basado en el navegador, todo el análisis criptográfico binario, el muestreo de HTML5 Canvas y la síntesis de audio chiptune se ejecutan completamente del lado del cliente. Esto garantiza una privacidad de datos absoluta del 100% y un rendimiento local ultrarrápido — sin servidores en la nube, sin registro de cuentas y sin seguimiento de bases de datos.
 
-### ✨ Cinco Estudios Dedicados
+### ✨ Diez Estudios Dedicados
 
 #### 🎨 Estudio de Píxeles (Herramienta de Patrones de Diseño Personalizado de Animal Crossing)
 *   **Lienzo de Cuadrícula Multi-Proporción**: Se adapta perfectamente a las especificaciones avanzadas de dibujo de texturas en **juegos de simulación social de sandbox**. Soporta nativamente las proporciones de recorte cuadrada 1:1 (patrones estándar), rectangular 2:3 (retratos de caballete, portadas de álbum) y panorámica 16:9 (papeles tapiz personalizados de pared interior).
@@ -985,11 +1105,37 @@ Como kit de herramientas web gratuito basado en el navegador, todo el análisis 
 *   **Calculadora de compatibilidad**: Diseño de 5 pestañas (Calculadora de compatibilidad, Gráfico de personalidad, Herramienta de voz, Mapa de fans, Lista de personajes), sección How It Works, FAQ con datos estructurados BreadcrumbList/HowTo.
 *   **Declaración de transparencia del algoritmo**: Componentes de la fórmula declarados explícitamente——Base Score (25) + Personality (25) + Zodiac (25) + Friendship (25), trazabilidad de resultados garantizada.
 
-#### 🔲 Estudio de Cuadrícula de Píxeles (Convertidor Universal de Cuadrícula de Píxeles)
+#### 🔲 Living the Grid (Convertidor Universal de Cuadrícula de Píxeles)
 *   **Conversión de Propósito General**: Convierte cualquier imagen en patrones de cuadrícula de píxeles para cross-stitch, Perler beads, pixel art de Minecraft y diseños personalizados de Tomodachi Life.
 *   **Tamaños de Cuadrícula Flexibles y Coincidencia de Color Inteligente**: Ofrece 5 tamaños de cuadrícula (16×16 a 128×128) con coincidencia de color Euclidean distance y error-diffusion dithering para resultados precisos.
 *   **Guía de Conversión de Fotos y Diseño Optimizado para Impresión**: Guía paso a paso para transformar fotos en pixel art. Soporta impresión nativa del navegador (Ctrl+P) con ocultación automática de paneles, generando un blueprint en papel numerado ideal para manualidades offline.
 *   **100% del Lado del Cliente**: Todo el procesamiento de imágenes se ejecuta en tu navegador mediante HTML5 Canvas API. Sin subidas, sin bases de datos.
+
+
+#### 🗺️ Planificador de Isla (Generador de Nombres de Isla Tomodachi Life)
+*   **Generación Aleatoria de Nombres**: 5 temas × 18 nombres, genera nombres de isla adecuados para Tomodachi Life con un clic.
+*   **Guía HowTo y FAQ**: Guía paso a paso de nombramiento con datos estructurados JSON-LD FAQ.
+*   **100% Lado del Cliente**: Toda la generación de nombres se ejecuta en el navegador.
+
+#### 🎲 Generador de Ideas de Personajes (Herramienta de Inspiración Tomodachi Life)
+*   **Generación Aleatoria de Personajes**: 16 personalidades × 12 zodiacos × 12 arquetipos, genera configuraciones completas de personaje con un clic.
+*   **Función de Colección**: Guarda hasta 8 ideas de personajes en localStorage local.
+*   **Guía HowTo y FAQ**: Guía de creación de personajes con datos estructurados JSON-LD.
+
+#### 🏠 Herramienta de Diseño de Apartamento (Planificador de Diseño de Habitación Tomodachi Life)
+*   **Cuadrícula Interactiva de Colocación de Muebles**: Soporta tamaños de cuadrícula 8×8, 10×10, 12×12, 12 tipos de muebles.
+*   **6 Plantillas Predeterminadas y Estilos de Tema**: Aplica rápidamente diseños predeterminados, soporta importación/exportación PNG/JSON.
+*   **FAQ y JSON-LD**: Proporciona FAQ de diseño de apartamento y datos estructurados.
+
+#### 👕 Herramienta de Plantilla de Ropa (Diseño de Ropa Pixel Art Tomodachi Life)
+*   **Editor de Píxeles Completo**: Soporta tamaños de cuadrícula 16×16, 24×24, 32×32, herramientas de lápiz/relleno/borrador.
+*   **Paleta de 32 Colores Predeterminados + Color Personalizado**: Soporta undo/redo (30 pasos), 6 plantillas predeterminadas, exportación PNG.
+*   **FAQ y JSON-LD**: Proporciona FAQ de diseño de ropa y datos estructurados.
+
+#### 👁️ Guía de Diseño de Ojos Mii (Mii Eyes Design Guide)
+*   **Deslizadores de Parámetros SVG Interactivos**: 8 formas de ojos × 3 tamaños × 3 alturas × 3 espaciados × 3 ángulos × 6 colores (3,800+ combinaciones).
+*   **Galería de 6 Estilos Predeterminados**: Previsualiza rápidamente estilos clásicos de ojos Mii, con hoja de referencia de parámetros.
+*   **FAQ y JSON-LD**: Proporciona FAQ de diseño de ojos Mii y datos estructurados.
 
 ### 🔒 Arquitectura Privacidad Primero
 
@@ -1087,12 +1233,22 @@ src/
 │   │   ├── mii-qr-unlocker/     # Subpágina Mii QR Code
 │   │   ├── tomodachi-voice-lab/ # Subpágina Tomodachi Voice
 │   │   ├── tomodachi-life-mbti/ # Subpágina Tomodachi Life MBTI
-│   │   └── pixel-grid-studio/   # Subpágina Pixel Grid Studio
+│   │   ├── mii-eyes/            # Subpágina Guía Ojos Mii
+│   │   ├── tomodachi-island-planner/   # Subpágina Planificador Isla
+│   │   ├── tomodachi-character-ideas/  # Subpágina Ideas Personajes
+│   │   ├── tomodachi-apartment-design/ # Subpágina Diseño Apartamento
+│   │   ├── tomodachi-clothes-template/ # Subpágina Plantilla Ropa
+│   │   └── living-the-grid/    # Subpágina Living the Grid
 │   ├── acnh-pixel-studio/  # Subpágina EN nivel raíz
 │   ├── mii-qr-unlocker/   # Subpágina EN nivel raíz
 │   ├── tomodachi-voice-lab/ # Subpágina EN nivel raíz
 │   ├── tomodachi-life-mbti/ # Subpágina EN nivel raíz
-│   ├── pixel-grid-studio/  # Subpágina EN nivel raíz
+│   ├── mii-eyes/           # Subpágina EN nivel raíz
+│   ├── tomodachi-island-planner/   # Subpágina EN nivel raíz
+│   ├── tomodachi-character-ideas/  # Subpágina EN nivel raíz
+│   ├── tomodachi-apartment-design/ # Subpágina EN nivel raíz
+│   ├── tomodachi-clothes-template/ # Subpágina EN nivel raíz
+│   └── living-the-grid/    # Subpágina EN nivel raíz
 │   ├── layout.tsx          # Layout raíz + metadataBase
 │   └── globals.css         # Estilos globales + CSS de enlace ancla
 ├── components/             # Componentes React
@@ -1101,7 +1257,11 @@ src/
 │   ├── MiiQrUnlockerPage.tsx    # Componente subpágina Mii QR
 │   ├── TomodachiVoiceLabPage.tsx # Componente subpágina Voice Lab
 │   ├── TomodachiLifeMbtiPage.tsx # Componente subpágina MBTI
-│   ├── PixelGridStudioPage.tsx  # Componente subpágina Pixel Grid
+│   ├── TomodachiIslandPlannerPage.tsx  # Componente subpágina Planificador Isla
+│   ├── TomodachiCharacterIdeasPage.tsx # Componente subpágina Ideas Personajes
+│   ├── TomodachiApartmentDesignPage.tsx # Componente subpágina Diseño Apartamento
+│   ├── TomodachiClothesTemplatePage.tsx # Componente subpágina Plantilla Ropa
+│   ├── TomodachiMiiEyesPage.tsx       # Componente subpágina Ojos Mii
 │   ├── AboutPage.tsx       # Componente página Acerca de
 │   ├── ContactPage.tsx     # Componente página de contacto
 │   ├── PrivacyPage.tsx     # Componente página de privacidad
@@ -1271,7 +1431,7 @@ En su lugar, repórtalo de manera responsable por correo electrónico a **hi@lif
 
 En tant que boîte à outils web gratuite basée sur le navigateur, toute l'analyse cryptographique binaire, l'échantillonnage HTML5 Canvas et la synthèse audio chiptune s'exécutent entièrement côté client. Cela garantit une confidentialité des données absolue à 100% et des performances locales ultra-rapides — aucun serveur cloud, aucune inscription de compte et aucun suivi de base de données requis.
 
-### ✨ Cinq Studios Dédiés
+### ✨ Dix Studios Dédiés
 
 #### 🎨 Studio Pixel (Outil de Motifs de Design Personnalisé Animal Crossing)
 *   **Canevas Grille Multi-Ratio** : S'adapte parfaitement aux spécifications avancées de dessin de textures dans les **jeux de simulation sociale en bac à sable**. Prend en charge nativement les ratios de recadrage carré 1:1 (motifs standard), rectangulaire 2:3 (portraits sur chevalet, pochettes d'album) et panoramique 16:9 (papiers peints muraux intérieurs personnalisés étendus).
@@ -1294,11 +1454,37 @@ En tant que boîte à outils web gratuite basée sur le navigateur, toute l'anal
 *   **Calculateur de compatibilité**: Disposition en 5 onglets (Calculateur de compatibilité, Graphique de personnalité, Outil vocal, Carte des fans, Liste de personnages), section How It Works, FAQ avec données structurées BreadcrumbList/HowTo.
 *   **Déclaration de transparence de l'algorithme**: Composants de la formule déclarés explicitement——Base Score (25) + Personality (25) + Zodiac (25) + Friendship (25), traçabilité des résultats garantie.
 
-#### 🔲 Studio Grille de Pixels (Convertisseur Universel de Grille de Pixels)
+#### 🔲 Living the Grid (Convertisseur Universel de Grille de Pixels)
 *   **Conversion de Grille Universelle** : Convertit n'importe quelle image en motifs de grille de pixels pour cross-stitch, Perler beads, pixel art Minecraft et designs personnalisés Tomodachi Life.
 *   **Tailles de Grille Flexibles et Correspondance de Couleurs Intelligente** : Offre 5 tailles de grille (16×16 à 128×128) avec correspondance de couleurs Euclidean distance et error-diffusion dithering pour des résultats précis.
 *   **Guide de Conversion de Photos et Mise en Page Optimisée pour l'Impression** : Guide étape par étape pour transformer des photos en pixel art. Supporte l'impression native du navigateur (Ctrl+P) avec masquage automatique des panneaux de contrôle, générant un blueprint papier numéroté idéal pour le crafting hors ligne.
 *   **100% Côté Client** : Tout le traitement d'image s'exécute dans votre navigateur via HTML5 Canvas API. Aucun upload, aucune base de données.
+
+
+#### 🗺️ Planificateur d'Île (Générateur de Noms d'Île Tomodachi Life)
+*   **Génération Aléatoire de Noms** : 5 thèmes × 18 noms, génère des noms d'île adaptés à Tomodachi Life en un clic.
+*   **Guide HowTo et FAQ** : Guide de nommage étape par étape avec données structurées JSON-LD FAQ.
+*   **100% Côté Client** : Toute la génération de noms s'exécute dans le navigateur.
+
+#### 🎲 Générateur d'Idées de Personnages (Outil d'Inspiration Tomodachi Life)
+*   **Génération Aléatoire de Personnages** : 16 personnalités × 12 zodiacs × 12 archétypes, génère des configurations complètes de personnage en un clic.
+*   **Fonction Collection** : Sauvegarde jusqu'à 8 idées de personnages dans localStorage local.
+*   **Guide HowTo et FAQ** : Guide de création de personnages avec données structurées JSON-LD.
+
+#### 🏠 Outil de Design d'Appartement (Planificateur de Layout de Chambre Tomodachi Life)
+*   **Grille Interactive de Placement de Meubles** : Supporte tailles de grille 8×8, 10×10, 12×12, 12 types de meubles.
+*   **6 Modèles Prédéfinis et Styles de Thème** : Application rapide de layouts prédéfinis, supporte import/export PNG/JSON.
+*   **FAQ et JSON-LD** : Fournit FAQ de design d'appartement et données structurées.
+
+#### 👕 Outil de Modèle de Vêtements (Design de Vêtements Pixel Art Tomodachi Life)
+*   **Éditeur de Pixels Complet** : Supporte tailles de grille 16×16, 24×24, 32×32, outils crayon/remplissage/gomme.
+*   **Palette de 32 Couleurs Prédéfinies + Couleur Personnalisée** : Supporte undo/redo (30 étapes), 6 modèles prédéfinis, export PNG.
+*   **FAQ et JSON-LD** : Fournit FAQ de design de vêtements et données structurées.
+
+#### 👁️ Guide de Design d'Yeux Mii (Mii Eyes Design Guide)
+*   **Curseurs de Paramètres SVG Interactifs** : 8 formes d'yeux × 3 tailles × 3 hauteurs × 3 espacements × 3 angles × 6 couleurs (3,800+ combinaisons).
+*   **Galerie de 6 Styles Prédéfinis** : Prévisualisation rapide des styles classiques d'yeux Mii, avec feuille de référence des paramètres.
+*   **FAQ et JSON-LD** : Fournit FAQ de design d'yeux Mii et données structurées.
 
 ### 🔒 Architecture Respectueuse de la Vie Privée
 
@@ -1396,12 +1582,22 @@ src/
 │   │   ├── mii-qr-unlocker/     # Sous-page Mii QR Code
 │   │   ├── tomodachi-voice-lab/ # Sous-page Tomodachi Voice
 │   │   ├── tomodachi-life-mbti/ # Sous-page Tomodachi Life MBTI
-│   │   └── pixel-grid-studio/   # Sous-page Pixel Grid Studio
+│   │   ├── mii-eyes/            # Sous-page Guide Yeux Mii
+│   │   ├── tomodachi-island-planner/   # Sous-page Planificateur Île
+│   │   ├── tomodachi-character-ideas/  # Sous-page Idées Personnages
+│   │   ├── tomodachi-apartment-design/ # Sous-page Design Appartement
+│   │   ├── tomodachi-clothes-template/ # Sous-page Modèle Vêtements
+│   │   └── living-the-grid/    # Sous-page Living the Grid
 │   ├── acnh-pixel-studio/  # Sous-page EN niveau racine
 │   ├── mii-qr-unlocker/   # Sous-page EN niveau racine
 │   ├── tomodachi-voice-lab/ # Sous-page EN niveau racine
 │   ├── tomodachi-life-mbti/ # Sous-page EN niveau racine
-│   ├── pixel-grid-studio/  # Sous-page EN niveau racine
+│   ├── mii-eyes/           # Sous-page EN niveau racine
+│   ├── tomodachi-island-planner/   # Sous-page EN niveau racine
+│   ├── tomodachi-character-ideas/  # Sous-page EN niveau racine
+│   ├── tomodachi-apartment-design/ # Sous-page EN niveau racine
+│   ├── tomodachi-clothes-template/ # Sous-page EN niveau racine
+│   └── living-the-grid/    # Sous-page EN niveau racine
 │   ├── layout.tsx          # Layout racine + metadataBase
 │   └── globals.css         # Styles globaux + CSS lien ancre
 ├── components/             # Composants React
@@ -1410,7 +1606,11 @@ src/
 │   ├── MiiQrUnlockerPage.tsx    # Composant sous-page Mii QR
 │   ├── TomodachiVoiceLabPage.tsx # Composant sous-page Voice Lab
 │   ├── TomodachiLifeMbtiPage.tsx # Composant sous-page MBTI
-│   ├── PixelGridStudioPage.tsx  # Composant sous-page Pixel Grid
+│   ├── TomodachiIslandPlannerPage.tsx  # Composant sous-page Planificateur Île
+│   ├── TomodachiCharacterIdeasPage.tsx # Composant sous-page Idées Personnages
+│   ├── TomodachiApartmentDesignPage.tsx # Composant sous-page Design Appartement
+│   ├── TomodachiClothesTemplatePage.tsx # Composant sous-page Modèle Vêtements
+│   ├── TomodachiMiiEyesPage.tsx       # Composant sous-page Yeux Mii
 │   ├── AboutPage.tsx       # Composant page À propos
 │   ├── ContactPage.tsx     # Composant page de contact
 │   ├── PrivacyPage.tsx     # Composant page de confidentialité
@@ -1580,7 +1780,7 @@ Nous sommes profondément engagés envers la sécurité des données et le bac �
 
 무료 브라우저 기반 웹 툴킷으로서, 모든 바이너리 암호 해석, HTML5 Canvas 샘플링, 칩튠 오디오 합성이 완전히 클라이언트 사이드에서 실행됩니다. 이를 통해 절대적인 100% 데이터 프라이버시와 번개같은 로컬 성능을 보장합니다 — 클라우드 서버 없음, 계정 가입 없음, 데이터베이스 추적 없음.
 
-### ✨ 다섯 가지 전용 스튜디오
+### ✨ 열 가지 전용 스튜디오
 
 #### 🎨 픽셀 스튜디오 (Animal Crossing 커스텀 디자인 패턴 도구)
 *   **멀티 비율 그리드 캔버스**：**샌드박스 소셜 시뮬레이션 게임**의 고급 텍스처 드로잉 사양에 완벽 대응. 정사각형 1:1(표준 패턴), 직사각형 2:3(이젤 초상화, 앨범 커버), 와이드스크린 16:9(대규모 커스텀 실내 벽지) 크롭 비율을 네이티브 지원.
@@ -1603,11 +1803,37 @@ Nous sommes profondément engagés envers la sécurité des données et le bac �
 *   **궁합 계산기**: 5개 탭 레이아웃(궁합 계산기, 성격 차트, 음성 도구, 팬 맵, 캐릭터 목록), How It Works 섹션, FAQ, BreadcrumbList/HowTo 구조화 데이터 지원.
 *   **알고리즘 투명성 선언**: 공식 구성 요소 명시——Base Score (25) + Personality (25) + Zodiac (25) + Friendship (25), 결과 추적 가능성 보장.
 
-#### 🔲 픽셀 그리드 스튜디오 (범용 픽셀 그리드 컨버터)
+#### 🔲 Living the Grid (범용 픽셀 그리드 컨버터)
 *   **범용 픽셀 그리드 변환**: 모든 이미지를 픽셀 그리드 패턴으로 변환. cross-stitch, Perler beads, Minecraft 픽셀 아트, Tomodachi Life 커스텀 디자인 템플릿 지원.
 *   **유연한 그리드 사이즈 & 스마트 컬러 매칭**: 5가지 그리드 사이즈(16×16~128×128) 제공. Euclidean distance 컬러 매칭과 error-diffusion dithering을 채택하여 32색 레트로 팔레트로도 정확한 결과 생성.
 *   **사진 변환 가이드 & 인쇄 최적화 레이아웃**: 사진을 픽셀 아트로 변환하는 단계별 가이드. 네이티브 브라우저 인쇄(Ctrl+P)를 지원하며 컨트롤 패널을 자동 숨김 처리하여 깔끔한 번호 매겨진 종이 그리드 청사진 출력. 오프라인 크래프팅에 최적.
 *   **100% 클라이언트 사이드**: 모든 이미지 처리는 HTML5 Canvas API로 브라우저 내에서 실행. 업로드 불필요, 데이터베이스 추적 없음.
+
+
+#### 🗺️ 섬 플래너 (Tomodachi Life 섬 이름 생성기)
+*   **랜덤 섬 이름 생성**: 5가지 테마 × 18개 이름 조합으로 Tomodachi Life에 적합한 섬 이름을 원클릭 생성.
+*   **HowTo 가이드 & FAQ**: 단계별 이름 짓기 가이드와 JSON-LD 구조화 데이터 FAQ 제공.
+*   **100% 클라이언트 사이드**: 모든 이름 생성은 브라우저 내에서 실행.
+
+#### 🎲 캐릭터 아이디어 생성기 (Tomodachi Life 캐릭터 영감 도구)
+*   **랜덤 캐릭터 생성**: 16가지 성격 × 12 별자리 × 12가지 아키타입으로 완전한 캐릭터 설정을 원클릭 생성.
+*   **컬렉션 기능**: 최대 8개의 캐릭터 아이디어를 로컬 localStorage에 저장.
+*   **HowTo 가이드 & FAQ**: 캐릭터 작성 가이드와 JSON-LD 구조화 데이터 제공.
+
+#### 🏠 아파트 디자인 도구 (Tomodachi Life 방 레이아웃 플래너)
+*   **인터랙티브 가구 배치 그리드**: 8×8, 10×10, 12×12 세 가지 그리드 크기, 12가지 가구 타입 지원.
+*   **6가지 프리셋 템플릿 & 테마 스타일**: 프리셋 레이아웃 빠른 적용, PNG/JSON 가져오기/내보내기 지원.
+*   **FAQ & JSON-LD**: 아파트 디자인 FAQ와 구조화 데이터 제공.
+
+#### 👕 옷 템플릿 도구 (Tomodachi Life 픽셀 아트 옷 디자인)
+*   **풀 픽셀 에디터**: 16×16, 24×24, 32×32 그리드 크기, 연필/채우기/지우개 도구 지원.
+*   **32색 프리셋 팔레트 + 커스텀 컬러**: undo/redo(30단계), 6가지 프리셋 템플릿, PNG 내보내기 지원.
+*   **FAQ & JSON-LD**: 옷 디자인 FAQ와 구조화 데이터 제공.
+
+#### 👁️ Mii 눈 디자인 가이드 (Mii Eyes Design Guide)
+*   **인터랙티브 SVG 파라미터 슬라이더**: 8가지 눈 모양 × 3 크기 × 3 높이 × 3 간격 × 3 각도 × 6 색상 (3,800+ 조합).
+*   **6가지 프리셋 스타일 갤러리**: 클래식 Mii 눈 스타일 빠른 미리보기, 파라미터 치트시트 포함.
+*   **FAQ & JSON-LD**: Mii 눈 디자인 FAQ와 구조화 데이터 제공.
 
 ### 🔒 프라이버시 우선 아키텍처
 
@@ -1704,12 +1930,22 @@ src/
 │   │   ├── mii-qr-unlocker/     # Mii QR Code 서브페이지
 │   │   ├── tomodachi-voice-lab/ # Tomodachi Voice 서브페이지
 │   │   ├── tomodachi-life-mbti/ # Tomodachi Life MBTI 서브페이지
-│   │   └── pixel-grid-studio/   # Pixel Grid Studio 서브페이지
+│   │   ├── mii-eyes/            # Mii 눈 디자인 가이드 서브페이지
+│   │   ├── tomodachi-island-planner/   # 섬 플래너 서브페이지
+│   │   ├── tomodachi-character-ideas/  # 캐릭터 아이디어 서브페이지
+│   │   ├── tomodachi-apartment-design/ # 아파트 디자인 서브페이지
+│   │   ├── tomodachi-clothes-template/ # 옷 템플릿 서브페이지
+│   │   └── living-the-grid/    # Living the Grid 서브페이지
 │   ├── acnh-pixel-studio/  # 루트 레벨 EN 서브페이지
 │   ├── mii-qr-unlocker/   # 루트 레벨 EN 서브페이지
 │   ├── tomodachi-voice-lab/ # 루트 레벨 EN 서브페이지
 │   ├── tomodachi-life-mbti/ # 루트 레벨 EN 서브페이지
-│   ├── pixel-grid-studio/  # 루트 레벨 EN 서브페이지
+│   ├── mii-eyes/           # 루트 레벨 EN 서브페이지
+│   ├── tomodachi-island-planner/   # 루트 레벨 EN 서브페이지
+│   ├── tomodachi-character-ideas/  # 루트 레벨 EN 서브페이지
+│   ├── tomodachi-apartment-design/ # 루트 레벨 EN 서브페이지
+│   ├── tomodachi-clothes-template/ # 루트 레벨 EN 서브페이지
+│   └── living-the-grid/    # 루트 레벨 EN 서브페이지
 │   ├── layout.tsx          # 루트 레이아웃 + metadataBase
 │   └── globals.css         # 글로벌 스타일 + 앵커 링크 CSS
 ├── components/             # React 컴포넌트
@@ -1718,7 +1954,11 @@ src/
 │   ├── MiiQrUnlockerPage.tsx    # Mii QR 서브페이지 컴포넌트
 │   ├── TomodachiVoiceLabPage.tsx # Voice Lab 서브페이지 컴포넌트
 │   ├── TomodachiLifeMbtiPage.tsx # MBTI 서브페이지 컴포넌트
-│   ├── PixelGridStudioPage.tsx  # Pixel Grid 서브페이지 컴포넌트
+│   ├── TomodachiIslandPlannerPage.tsx  # 섬 플래너 서브페이지 컴포넌트
+│   ├── TomodachiCharacterIdeasPage.tsx # 캐릭터 아이디어 서브페이지 컴포넌트
+│   ├── TomodachiApartmentDesignPage.tsx # 아파트 디자인 서브페이지 컴포넌트
+│   ├── TomodachiClothesTemplatePage.tsx # 옷 템플릿 서브페이지 컴포넌트
+│   ├── TomodachiMiiEyesPage.tsx       # Mii 눈 서브페이지 컴포넌트
 │   ├── AboutPage.tsx       # 소개 페이지 컴포넌트
 │   ├── ContactPage.tsx     # 연락처 페이지 컴포넌트
 │   ├── PrivacyPage.tsx     # 개인정보 처리방침 페이지 컴포넌트
@@ -1888,7 +2128,7 @@ LifeSimGrid은 완전히 독립적인 비공식 제3자 커뮤니티 팬 유틸�
 
 Als kostenloses, browserbasiertes Web-Toolkit erfolgen gesamte binäre kryptografische Analyse, HTML5-Canvas-Abtastung und Chiptune-Audiosynthese vollständig auf der Client-Seite. Dies gewährleistet absolute 100%ige Datenschutzprivatsphäre und blitzschnelle lokale Leistung — keine Cloud-Server, keine Kontoregistrierung und keine Datenbankverfolgung erforderlich.
 
-### ✨ Fünf Dedizierte Studios
+### ✨ Zehn Dedizierte Studios
 
 #### 🎨 Pixel-Studio (Animal Crossing Custom Design Musterwerkzeug)
 *   **Multi-Verhältnis-Raster-Leinwand** : Passt perfekt zu den fortschrittlichen Texturzeichnungsspezifikationen in **Sandkasten-Sozialsimulationsspielen**. Es unterstützt nativ quadratische 1:1 (Standardmuster), rechteckige 2:3 (Staffelei-Porträts, Albumcover) und Breitbild-16:9 (weitläufige individuelle Innenwandtapeten) Zuschnitt-Seitenverhältnisse.
@@ -1911,11 +2151,37 @@ Als kostenloses, browserbasiertes Web-Toolkit erfolgen gesamte binäre kryptogra
 *   **Kompatibilitätsrechner**: 5-Tab-Layout (Kompatibilitätsrechner, Persönlichkeitsdiagramm, Voice-Tool, Fan-Map, Charakterliste), How-It-Works-Bereich, FAQ mit BreadcrumbList/HowTo strukturierten Daten.
 *   **Algorithmus-Transparenz**: Formelbestandteile explizit deklariert——Base Score (25) + Personality (25) + Zodiac (25) + Friendship (25), Ergebnisnachvollziehbarkeit gewährleistet.
 
-#### 🔲 Pixel-Grid-Studio (Universeller Pixel-Grid-Konverter)
+#### 🔲 Living the Grid (Universeller Pixel-Grid-Konverter)
 *   **Universelle Pixel-Grid-Konvertierung**: Konvertiert jedes Bild in Pixel-Grid-Muster für cross-stitch, Perler beads, Minecraft-Pixel-Art und Tomodachi Life Custom Designs.
 *   **Flexible Grid-Größen & Intelligente Farbzuordnung**: Bietet 5 Grid-Größen (16×16 bis 128×128) mit Euclidean distance Farbzuordnung und error-diffusion dithering für präzise Ergebnisse.
 *   **Foto-Konvertierungs-Guide & Druckoptimiertes Layout**: Schritt-für-Schritt-Anleitung zur Umwandlung von Fotos in Pixel-Art. Unterstützt nativen Browserdruck (Ctrl+P) mit automatischer Ausblendung der Bedienfelder und erzeugt einen sauberen, nummerierten Papier-Grid-Blueprint ideal für Offline-Crafting.
 *   **100% Client-Seitig**: Die gesamte Bildverarbeitung läuft in Ihrem Browser über HTML5 Canvas API. Keine Uploads, keine Datenbanken.
+
+
+#### 🗺️ Inselplaner (Tomodachi Life Inselnamen-Generator)
+*   **Zufällige Inselnamen-Generierung**: 5 Themen × 18 Namen, generiert passende Inselnamen für Tomodachi Life mit einem Klick.
+*   **HowTo-Anleitung & FAQ**: Schritt-für-Schritt-Benennungsanleitung mit JSON-LD strukturierten Daten FAQ.
+*   **100% Client-Seite**: Alle Namensgenerierungen werden im Browser ausgeführt.
+
+#### 🎲 Charakter-Ideen-Generator (Tomodachi Life Charakter-Inspirations-Tool)
+*   **Zufällige Charakter-Generierung**: 16 Persönlichkeiten × 12 Tierkreise × 12 Archetypen, generiert vollständige Charakterkonfigurationen mit einem Klick.
+*   **Sammlungs-Funktion**: Speichert bis zu 8 Charakter-Ideen im lokalen localStorage.
+*   **HowTo-Anleitung & FAQ**: Charakter-Erstellungsanleitung mit JSON-LD strukturierten Daten.
+
+#### 🏠 Wohnung-Design-Werkzeug (Tomodachi Life Raum-Layout-Planer)
+*   **Interaktive Möbel-Platzierungs-Raster**: Unterstützt Rastergrößen 8×8, 10×10, 12×12, 12 Möbeltypen.
+*   **6 Vorlagen-Templates & Thema-Stile**: Schnelle Anwendung von Vorlagelayouts, unterstützt PNG/JSON-Import/-Export.
+*   **FAQ & JSON-LD**: Bietet Wohnung-Design-FAQ und strukturierte Daten.
+
+#### 👕 Kleidungs-Vorlagen-Werkzeug (Tomodachi Life Pixel-Art Kleidungs-Design)
+*   **Vollständiger Pixel-Editor**: Unterstützt Rastergrößen 16×16, 24×24, 32×32, Stift/Füllen/Radierer-Werkzeuge.
+*   **32-Farben-Vorlagen-Palette + Benutzerdefinierte Farbe**: Unterstützt Undo/Redo (30 Schritte), 6 Vorlagen-Templates, PNG-Export.
+*   **FAQ & JSON-LD**: Bietet Kleidungs-Design-FAQ und strukturierte Daten.
+
+#### 👁️ Mii Augen Design Guide (Mii Eyes Design Guide)
+*   **Interaktive SVG-Parameter-Schieberegler**: 8 Augenformen × 3 Größen × 3 Höhen × 3 Abstände × 3 Winkel × 6 Farben (3.800+ Kombinationen).
+*   **6 Vorlagen-Stil-Galerie**: Schnelle Vorschau klassischer Mii-Augen-Stile, mit Parameter-Spickzettel.
+*   **FAQ & JSON-LD**: Bietet Mii-Augen-Design-FAQ und strukturierte Daten.
 
 ### 🔒 Datenschutz-Erst-Architektur
 
@@ -2013,12 +2279,22 @@ src/
 │   │   ├── mii-qr-unlocker/     # Mii QR Code Unterseite
 │   │   ├── tomodachi-voice-lab/ # Tomodachi Voice Unterseite
 │   │   ├── tomodachi-life-mbti/ # Tomodachi Life MBTI Unterseite
-│   │   └── pixel-grid-studio/   # Pixel Grid Studio Unterseite
+│   │   ├── mii-eyes/            # Mii Augen Design Guide Unterseite
+│   │   ├── tomodachi-island-planner/   # Inselplaner Unterseite
+│   │   ├── tomodachi-character-ideas/  # Charakter-Ideen Unterseite
+│   │   ├── tomodachi-apartment-design/ # Wohnung Design Unterseite
+│   │   ├── tomodachi-clothes-template/ # Kleidungs-Vorlagen Unterseite
+│   │   └── living-the-grid/    # Living the Grid Unterseite
 │   ├── acnh-pixel-studio/  # Root-Level EN Unterseite
 │   ├── mii-qr-unlocker/   # Root-Level EN Unterseite
 │   ├── tomodachi-voice-lab/ # Root-Level EN Unterseite
 │   ├── tomodachi-life-mbti/ # Root-Level EN Unterseite
-│   ├── pixel-grid-studio/  # Root-Level EN Unterseite
+│   ├── mii-eyes/           # Root-Level EN Unterseite
+│   ├── tomodachi-island-planner/   # Root-Level EN Unterseite
+│   ├── tomodachi-character-ideas/  # Root-Level EN Unterseite
+│   ├── tomodachi-apartment-design/ # Root-Level EN Unterseite
+│   ├── tomodachi-clothes-template/ # Root-Level EN Unterseite
+│   └── living-the-grid/    # Root-Level EN Unterseite
 │   ├── layout.tsx          # Root-Layout + metadataBase
 │   └── globals.css         # Globale Stile + Anker-Link CSS
 ├── components/             # React Komponenten
@@ -2027,7 +2303,11 @@ src/
 │   ├── MiiQrUnlockerPage.tsx    # Mii QR Unterseiten-Komponente
 │   ├── TomodachiVoiceLabPage.tsx # Voice Lab Unterseiten-Komponente
 │   ├── TomodachiLifeMbtiPage.tsx # MBTI Unterseiten-Komponente
-│   ├── PixelGridStudioPage.tsx  # Pixel Grid Unterseiten-Komponente
+│   ├── TomodachiIslandPlannerPage.tsx  # Inselplaner Unterseiten-Komponente
+│   ├── TomodachiCharacterIdeasPage.tsx # Charakter-Ideen Unterseiten-Komponente
+│   ├── TomodachiApartmentDesignPage.tsx # Wohnung Design Unterseiten-Komponente
+│   ├── TomodachiClothesTemplatePage.tsx # Kleidungs-Vorlagen Unterseiten-Komponente
+│   ├── TomodachiMiiEyesPage.tsx       # Mii Augen Unterseiten-Komponente
 │   ├── AboutPage.tsx       # Über-Seiten-Komponente
 │   ├── ContactPage.tsx     # Kontaktseiten-Komponente
 │   ├── PrivacyPage.tsx     # Datenschutz-Seiten-Komponente
@@ -2197,7 +2477,7 @@ Melden Sie es stattdessen verantwortungsvoll per E-Mail an **hi@lifesimgrid.org*
 
 Come toolkit web gratuito e basato sul browser, tutta l'analisi crittografica binaria, il campionamento HTML5 Canvas e la sintesi audio chiptune avvengono interamente lato client. Ciò garantisce una privacy dei dati assoluta al 100% e prestazioni locali fulminee — nessun server cloud, nessuna registrazione account e nessun tracciamento database richiesto.
 
-### ✨ Cinque Studi Dedicati
+### ✨ Dieci Studi Dedicati
 
 #### 🎨 Studio Pixel (Strumento per Pattern Custom Design di Animal Crossing)
 *   **Griglia Canvas Multi-Rapporto**: Si adatta perfettamente alle specifiche avanzate di disegno texture nei **giochi di simulazione sociale sandbox**. Supporta nativamente i rapporti di aspetto Quadrato 1:1 (pattern standard), Rettangolare 2:3 (ritratti da cavalletto, copertine album) e Panoramico 16:9 (carta da parati personalizzata per pareti interne) per il ritaglio.
@@ -2220,11 +2500,37 @@ Come toolkit web gratuito e basato sul browser, tutta l'analisi crittografica bi
 *   **Calcolatore di compatibilità**: Layout a 5 schede (Calcolatore di compatibilità, Grafico della personalità, Strumento vocale, Mappa dei fan, Elenco dei personaggi), sezione How It Works, FAQ con dati strutturati BreadcrumbList/HowTo.
 *   **Dichiarazione di trasparenza dell'algoritmo**: Componenti della formula dichiarati esplicitamente——Base Score (25) + Personality (25) + Zodiac (25) + Friendship (25), tracciabilità dei risultati garantita.
 
-#### 🔲 Studio Griglia di Pixel (Convertitore Universale di Griglia di Pixel)
+#### 🔲 Living the Grid (Convertitore Universale di Griglia di Pixel)
 *   **Conversione Griglia Universale**: Converte qualsiasi immagine in motivi di griglia di pixel per cross-stitch, Perler beads, pixel art di Minecraft e design personalizzati di Tomodachi Life.
 *   **Dimensioni Griglia Flessibili e Corrispondenza Colori Intelligente**: Offre 5 dimensioni di griglia (16×16 a 128×128) con corrispondenza colori Euclidean distance ed error-diffusion dithering per risultati precisi.
 *   **Guida alla Conversione di Foto e Layout Ottimizzato per la Stampa**: Guida passo-passo per trasformare foto in pixel art. Supporta la stampa nativa del browser (Ctrl+P) con nascondimento automatico dei pannelli di controllo, generando un blueprint cartaceo numerato ideale per crafting offline.
 *   **100% Lato Client**: Tutta l'elaborazione delle immagini viene eseguita nel tuo browser tramite HTML5 Canvas API. Nessun upload, nessun database.
+
+
+#### 🗺️ Pianificatore Isola (Generatore Nomi Isola Tomodachi Life)
+*   **Generazione Casuale Nomi**: 5 temi × 18 nomi, genera nomi di isola adatti per Tomodachi Life con un clic.
+*   **Guida HowTo e FAQ**: Guida passo-passo per la denominazione con dati strutturati JSON-LD FAQ.
+*   **100% Lato Client**: Tutta la generazione dei nomi viene eseguita nel browser.
+
+#### 🎲 Generatore Idee Personaggi (Strumento Ispirazione Tomodachi Life)
+*   **Generazione Casuale Personaggi**: 16 personalità × 12 zodiaci × 12 archetipi, genera configurazioni complete di personaggio con un clic.
+*   **Funzione Collezione**: Salva fino a 8 idee di personaggi in localStorage locale.
+*   **Guida HowTo e FAQ**: Guida alla creazione di personaggi con dati strutturati JSON-LD.
+
+#### 🏠 Strumento Design Appartamento (Pianificatore Layout Stanza Tomodachi Life)
+*   **Griglia Interattiva Posizionamento Mobili**: Supporta dimensioni griglia 8×8, 10×10, 12×12, 12 tipi di mobili.
+*   **6 Modelli Predefiniti e Stili Tema**: Applicazione rapida di layout predefiniti, supporta import/export PNG/JSON.
+*   **FAQ e JSON-LD**: Fornisce FAQ design appartamento e dati strutturati.
+
+#### 👕 Strumento Modello Abiti (Design Abiti Pixel Art Tomodachi Life)
+*   **Editor Pixel Completo**: Supporta dimensioni griglia 16×16, 24×24, 32×32, strumenti matita/riempimento/gomma.
+*   **Tavolozza 32 Colori Predefiniti + Colore Personalizzato**: Supporta undo/redo (30 passaggi), 6 modelli predefiniti, export PNG.
+*   **FAQ e JSON-LD**: Fornisce FAQ design abiti e dati strutturati.
+
+#### 👁️ Guida Design Occhi Mii (Mii Eyes Design Guide)
+*   **Cursori Parametri SVG Interattivi**: 8 forme di occhi × 3 dimensioni × 3 altezze × 3 spaziature × 3 angoli × 6 colori (3.800+ combinazioni).
+*   **Galleria 6 Stili Predefiniti**: Anteprima rapida stili classici occhi Mii, con foglio di riferimento parametri.
+*   **FAQ e JSON-LD**: Fornisce FAQ design occhi Mii e dati strutturati.
 
 ### 🔒 Architettura Privacy-First
 
@@ -2320,12 +2626,22 @@ src/
 │   │   ├── mii-qr-unlocker/     # Sottopagina Mii QR Code
 │   │   ├── tomodachi-voice-lab/ # Sottopagina Tomodachi Voice
 │   │   ├── tomodachi-life-mbti/ # Sottopagina Tomodachi Life MBTI
-│   │   └── pixel-grid-studio/   # Sottopagina Pixel Grid Studio
+│   │   ├── mii-eyes/            # Sottopagina Guida Occhi Mii
+│   │   ├── tomodachi-island-planner/   # Sottopagina Pianificatore Isola
+│   │   ├── tomodachi-character-ideas/  # Sottopagina Idee Personaggi
+│   │   ├── tomodachi-apartment-design/ # Sottopagina Design Appartamento
+│   │   ├── tomodachi-clothes-template/ # Sottopagina Modello Abiti
+│   │   └── living-the-grid/    # Sottopagina Living the Grid
 │   ├── acnh-pixel-studio/  # Sottopagina EN livello root
 │   ├── mii-qr-unlocker/   # Sottopagina EN livello root
 │   ├── tomodachi-voice-lab/ # Sottopagina EN livello root
 │   ├── tomodachi-life-mbti/ # Sottopagina EN livello root
-│   ├── pixel-grid-studio/  # Sottopagina EN livello root
+│   ├── mii-eyes/           # Sottopagina EN livello root
+│   ├── tomodachi-island-planner/   # Sottopagina EN livello root
+│   ├── tomodachi-character-ideas/  # Sottopagina EN livello root
+│   ├── tomodachi-apartment-design/ # Sottopagina EN livello root
+│   ├── tomodachi-clothes-template/ # Sottopagina EN livello root
+│   └── living-the-grid/    # Sottopagina EN livello root
 │   ├── layout.tsx          # Layout root + metadataBase
 │   └── globals.css         # Stili globali + CSS collegamento ancora
 ├── components/             # Componenti React
@@ -2334,7 +2650,11 @@ src/
 │   ├── MiiQrUnlockerPage.tsx    # Componente sottopagina Mii QR
 │   ├── TomodachiVoiceLabPage.tsx # Componente sottopagina Voice Lab
 │   ├── TomodachiLifeMbtiPage.tsx # Componente sottopagina MBTI
-│   ├── PixelGridStudioPage.tsx  # Componente sottopagina Pixel Grid
+│   ├── TomodachiIslandPlannerPage.tsx  # Componente sottopagina Pianificatore Isola
+│   ├── TomodachiCharacterIdeasPage.tsx # Componente sottopagina Idee Personaggi
+│   ├── TomodachiApartmentDesignPage.tsx # Componente sottopagina Design Appartamento
+│   ├── TomodachiClothesTemplatePage.tsx # Componente sottopagina Modello Abiti
+│   ├── TomodachiMiiEyesPage.tsx       # Componente sottopagina Occhi Mii
 │   ├── AboutPage.tsx       # Componente pagina Chi siamo
 │   ├── ContactPage.tsx     # Componente pagina Contatti
 │   ├── PrivacyPage.tsx     # Componente pagina Privacy
@@ -2504,7 +2824,7 @@ Segnalalo invece in modo responsabile via e-mail a **hi@lifesimgrid.org**. I nos
 
 Als een gratis, op de browser gebaseerde web-toolkit vinden alle binaire cryptografische parsing, HTML5 Canvas-sampling en chiptune-audiosynthese volledig aan de clientzijde plaats. Dit garandeert absolute 100% gegevensprivacy en bliksemsnelle lokale prestaties — geen cloudservers, geen accountregistraties en geen database-tracking vereist.
 
-### ✨ Vijf Toegewijde Studio's
+### ✨ Tien Toegewijde Studio's
 
 #### 🎨 Pixelstudio (Animal Crossing Custom Design Patroonhulpmiddel)
 *   **Multi-Verhouding Raster Canvas**: Past zich perfect aan bij de geavanceerde textuurtekenpecificaties in **sandbox-socialsimulatiegames**. Het ondersteunt native Vierkant 1:1 (standaardpatronen), Rechthoekig 2:3 (ezelpoortretten, albumhoezen) en Breedbeeld 16:9 (grootschalige aangepaste binnenmuur-behang) uitsnijdbeeldverhoudingen.
@@ -2527,11 +2847,37 @@ Als een gratis, op de browser gebaseerde web-toolkit vinden alle binaire cryptog
 *   **Compatibiliteitscalculator**: 5-tab-layout (Compatibiliteitscalculator, Persoonlijkheidsdiagram, Voice-tool, Fan-map, Personagelijst), How It Works-sectie, FAQ met BreadcrumbList/HowTo gestructureerde gegevens.
 *   **Algoritme-transparantieverklaring**: Formulecomponenten expliciet verklaard——Base Score (25) + Personality (25) + Zodiac (25) + Friendship (25), resultaattraceerbaarheid gewaarborgd.
 
-#### 🔲 Pixel Grid Studio (Universele Pixel Grid Converter)
+#### 🔲 Living the Grid (Universele Pixel Grid Converter)
 *   **Universele Pixel Grid Conversie**: Converteert elke afbeelding naar pixel grid patronen voor cross-stitch, Perler beads, Minecraft pixel art en Tomodachi Life custom designs.
 *   **Flexibele Grid-formaten & Intelligente Kleurmatching**: Biedt 5 grid-formaten (16×16 tot 128×128) met Euclidean distance kleurmatching en error-diffusion dithering voor nauwkeurige resultaten.
 *   **Fotoconversie-gids & Printgeoptimaliseerde Layout**: Stapsgewijze gids voor het transformeren van foto's naar pixel art. Ondersteunt native browserprinting (Ctrl+P) met automatische verberging van bedieningspanelen, wat een schoon, genummerd papier grid-blueprint oplevert ideaal voor offline crafting.
 *   **100% Client-Zijde**: Alle beeldverwerking wordt uitgevoerd in uw browser via HTML5 Canvas API. Geen uploads, geen databases.
+
+
+#### 🗺️ Eiland Planner (Tomodachi Life Eilandnaam Generator)
+*   **Willekeurige Eilandnaam Generatie**: 5 thema's × 18 namen, genereert geschikte eilandnamen voor Tomodachi Life met één klik.
+*   **HowTo Gids en FAQ**: Stap-voor-stap naamgevingsgids met JSON-LD gestructureerde gegevens FAQ.
+*   **100% Client-Zijde**: Alle naamgeneratie wordt uitgevoerd in de browser.
+
+#### 🎲 Karakter Ideeën Generator (Tomodachi Life Karakter Inspiratie Tool)
+*   **Willekeurige Karakter Generatie**: 16 persoonlijkheden × 12 dierenriemen × 12 archetypen, genereert complete karakterconfiguraties met één klik.
+*   **Collectie Functie**: Slaat tot 8 karakterideeën op in lokale localStorage.
+*   **HowTo Gids en FAQ**: Karaktercreatiegids met JSON-LD gestructureerde gegevens.
+
+#### 🏠 Appartement Ontwerp Tool (Tomodachi Life Kamer Layout Planner)
+*   **Interactieve Meubel Plaatsingsraster**: Ondersteunt rasterformaten 8×8, 10×10, 12×12, 12 meubeltypen.
+*   **6 Vooraf Ingestelde Sjablonen en Themastijlen**: Snelle toepassing van vooraf ingestelde layouts, ondersteunt PNG/JSON import/export.
+*   **FAQ en JSON-LD**: Biedt appartement ontwerp FAQ en gestructureerde gegevens.
+
+#### 👕 Kleding Sjabloon Tool (Tomodachi Life Pixel Art Kleding Ontwerp)
+*   **Volledige Pixel Editor**: Ondersteunt rasterformaten 16×16, 24×24, 32×32, potlood/vullen/gum gereedschappen.
+*   **32-Kleuren Vooraf Ingestelde Palet + Aangepaste Kleur**: Ondersteunt undo/redo (30 stappen), 6 vooraf ingestelde sjablonen, PNG export.
+*   **FAQ en JSON-LD**: Biedt kleding ontwerp FAQ en gestructureerde gegevens.
+
+#### 👁️ Mii Ogen Ontwerp Gids (Mii Eyes Design Guide)
+*   **Interactieve SVG Parameter Schuifregelaars**: 8 oogvormen × 3 formaten × 3 hoogtes × 3 afstanden × 3 hoeken × 6 kleuren (3.800+ combinaties).
+*   **6 Vooraf Ingestelde Stijl Galerij**: Snelle voorvertoning van klassieke Mii ogen stijlen, met parameter spiekbriefje.
+*   **FAQ en JSON-LD**: Biedt Mii ogen ontwerp FAQ en gestructureerde gegevens.
 
 ### 🔒 Privacy-First Architectuur
 
@@ -2628,12 +2974,22 @@ src/
 │   │   ├── mii-qr-unlocker/     # Mii QR Code subpagina
 │   │   ├── tomodachi-voice-lab/ # Tomodachi Voice subpagina
 │   │   ├── tomodachi-life-mbti/ # Tomodachi Life MBTI subpagina
-│   │   └── pixel-grid-studio/   # Pixel Grid Studio subpagina
+│   │   ├── mii-eyes/            # Mii Ogen Ontwerp Gids subpagina
+│   │   ├── tomodachi-island-planner/   # Eiland Planner subpagina
+│   │   ├── tomodachi-character-ideas/  # Karakter Ideeën subpagina
+│   │   ├── tomodachi-apartment-design/ # Appartement Ontwerp subpagina
+│   │   ├── tomodachi-clothes-template/ # Kleding Sjabloon subpagina
+│   │   └── living-the-grid/    # Living the Grid subpagina
 │   ├── acnh-pixel-studio/  # Root-niveau EN subpagina
 │   ├── mii-qr-unlocker/   # Root-niveau EN subpagina
 │   ├── tomodachi-voice-lab/ # Root-niveau EN subpagina
 │   ├── tomodachi-life-mbti/ # Root-niveau EN subpagina
-│   ├── pixel-grid-studio/  # Root-niveau EN subpagina
+│   ├── mii-eyes/           # Root-niveau EN subpagina
+│   ├── tomodachi-island-planner/   # Root-niveau EN subpagina
+│   ├── tomodachi-character-ideas/  # Root-niveau EN subpagina
+│   ├── tomodachi-apartment-design/ # Root-niveau EN subpagina
+│   ├── tomodachi-clothes-template/ # Root-niveau EN subpagina
+│   └── living-the-grid/    # Root-niveau EN subpagina
 │   ├── layout.tsx          # Root-layout + metadataBase
 │   └── globals.css         # Globale stijlen + ankerlink CSS
 ├── components/             # React componenten
@@ -2642,7 +2998,11 @@ src/
 │   ├── MiiQrUnlockerPage.tsx    # Mii QR subpagina-component
 │   ├── TomodachiVoiceLabPage.tsx # Voice Lab subpagina-component
 │   ├── TomodachiLifeMbtiPage.tsx # MBTI subpagina-component
-│   ├── PixelGridStudioPage.tsx  # Pixel Grid subpagina-component
+│   ├── TomodachiIslandPlannerPage.tsx  # Eiland Planner subpagina-component
+│   ├── TomodachiCharacterIdeasPage.tsx # Karakter Ideeën subpagina-component
+│   ├── TomodachiApartmentDesignPage.tsx # Appartement Ontwerp subpagina-component
+│   ├── TomodachiClothesTemplatePage.tsx # Kleding Sjabloon subpagina-component
+│   ├── TomodachiMiiEyesPage.tsx       # Mii Ogen subpagina-component
 │   ├── AboutPage.tsx       # Over-pagina component
 │   ├── ContactPage.tsx     # Contactpagina component
 │   ├── PrivacyPage.tsx     # Privacy-pagina component
@@ -2812,7 +3172,7 @@ Rapporteer het in plaats daarvan verantwoord via e-mail naar **hi@lifesimgrid.or
 
 作为一款免费的浏览器网页工具套件，所有二进制密码学解析、HTML5 Canvas 采样与芯片音频合成均在客户端完整执行。这确保了绝对 100% 的数据隐私与闪电般的本地性能——无需云服务器、无需账号注册、无需数据库追踪。
 
-### ✨ 五大核心工作室
+### ✨ 十大核心工作室
 
 #### 🎨 像素工作室（Animal Crossing 自定义设计图案工具）
 *   **多比例网格画布**：完美适配**沙盒社交模拟游戏**中的高级纹理绘图规范。原生支持正方形 1:1（标准图案）、长方形 2:3（画架肖像、专辑封面）与宽屏 16:9（大面积自定义室内墙壁壁纸）裁切比例。
@@ -2835,11 +3195,37 @@ Rapporteer het in plaats daarvan verantwoord via e-mail naar **hi@lifesimgrid.or
 *   **兼容性计算器**：5 个标签页式布局（兼容性计算器、人格图表、语音工具、粉丝地图、角色名册），搭配 How It Works 说明区块与 FAQ，支持 BreadcrumbList/HowTo 结构化数据。
 *   **算法透明声明**：明确标示公式组成——Base Score (25) + Personality (25) + Zodiac (25) + Friendship (25)，确保结果可追溯。
 
-#### 🔲 像素网格工作室（通用像素网格转换器）
+#### 🔲 Living the Grid（通用像素网格转换器）
 *   **通用像素网格转换**：将任何图像转换为像素网格图案，支持十字绣（cross-stitch）、Perler beads 拼豆、Minecraft 像素艺术与 Tomodachi Life 自定义设计模板。
 *   **弹性网格尺寸与智能色彩匹配**：提供 5 种网格尺寸（16×16 至 128×128），采用 Euclidean distance 色彩匹配算法搭配 error-diffusion dithering，即使使用 32 色复古调色盘也能产出准确结果。
 *   **照片转换指南与打印优化布局**：提供逐步照片转像素艺术指南。支持原生浏览器打印（Ctrl+P），自动隐藏控制面板，输出干净的编号纸本网格蓝图，完美适配十字绣临摹与离线手工创作。
 *   **100% 客户端架构**：所有图像处理均通过 HTML5 Canvas API 在你的浏览器内执行，无需上传，无数据库追踪。
+
+
+#### 🗺️ 岛屿规划器（Tomodachi Life 岛屿名称生成器）
+*   **随机岛屿名称生成**：5 种主题 × 18 个名称组合，一键生成适合 Tomodachi Life 的岛屿名称。
+*   **HowTo 指南与 FAQ**：提供逐步命名指南与 JSON-LD 结构化数据 FAQ。
+*   **100% 客户端架构**：所有名称生成均在浏览器内执行。
+
+#### 🎲 角色创意生成器（Tomodachi Life 角色灵感工具）
+*   **随机角色生成**：16 种性格 × 12 星座 × 12 种角色原型，一键生成完整角色设定。
+*   **收藏功能**：最多储存 8 个角色创意至本机 localStorage。
+*   **HowTo 指南与 FAQ**：提供角色创作指南与 JSON-LD 结构化数据。
+
+#### 🏠 公寓设计工具（Tomodachi Life 房间布局规划）
+*   **互动式家具放置网格**：支援 8×8、10×10、12×12 三种网格尺寸，12 种家具类型。
+*   **6 种预设模板与主题风格**：快速套用预设布局，支援 PNG/JSON 汇入汇出。
+*   **FAQ 与 JSON-LD**：提供公寓设计 FAQ 与结构化数据。
+
+#### 👕 服装模板工具（Tomodachi Life 像素艺术服装设计）
+*   **完整像素编辑器**：支援 16×16、24×24、32×32 网格尺寸，铅笔/填充/橡皮擦工具。
+*   **32 色预设调色盘 + 自订色彩**：支援 undo/redo（30 步），6 种预设模板，PNG 汇出。
+*   **FAQ 与 JSON-LD**：提供服装设计 FAQ 与结构化数据。
+
+#### 👁️ Mii 眼睛设计指南（Mii Eyes Design Guide）
+*   **互动式 SVG 参数滑杆**：8 种眼形 × 3 种尺寸 × 3 种高度 × 3 种间距 × 3 种角度 × 6 种颜色（3,800+ 组合）。
+*   **6 种预设风格画廊**：快速预览经典 Mii 眼睛风格，附参数速查表。
+*   **FAQ 与 JSON-LD**：提供 Mii 眼睛设计 FAQ 与结构化数据。
 
 ### 🔒 隐私优先架构
 
@@ -2936,12 +3322,22 @@ src/
 │   │   ├── mii-qr-unlocker/     # Mii QR Code 子页面
 │   │   ├── tomodachi-voice-lab/ # Tomodachi Voice 子页面
 │   │   ├── tomodachi-life-mbti/ # Tomodachi Life MBTI 子页面
-│   │   └── pixel-grid-studio/   # Pixel Grid Studio 子页面
+│   │   ├── mii-eyes/            # Mii 眼睛设计指南子页面
+│   │   ├── tomodachi-island-planner/   # 岛屿规划器子页面
+│   │   ├── tomodachi-character-ideas/  # 角色创意子页面
+│   │   ├── tomodachi-apartment-design/ # 公寓设计子页面
+│   │   ├── tomodachi-clothes-template/ # 服装模板子页面
+│   │   └── living-the-grid/    # Living the Grid 子页面
 │   ├── acnh-pixel-studio/  # 根层级 EN 子页面
 │   ├── mii-qr-unlocker/   # 根层级 EN 子页面
 │   ├── tomodachi-voice-lab/ # 根层级 EN 子页面
 │   ├── tomodachi-life-mbti/ # 根层级 EN 子页面
-│   ├── pixel-grid-studio/  # 根层级 EN 子页面
+│   ├── mii-eyes/           # 根层级 EN 子页面
+│   ├── tomodachi-island-planner/   # 根层级 EN 子页面
+│   ├── tomodachi-character-ideas/  # 根层级 EN 子页面
+│   ├── tomodachi-apartment-design/ # 根层级 EN 子页面
+│   ├── tomodachi-clothes-template/ # 根层级 EN 子页面
+│   └── living-the-grid/    # 根层级 EN 子页面
 │   ├── layout.tsx          # 根布局 + metadataBase
 │   └── globals.css         # 全局样式 + 锚点链接 CSS
 ├── components/             # React 组件
@@ -2950,7 +3346,11 @@ src/
 │   ├── MiiQrUnlockerPage.tsx    # Mii QR 子页面组件
 │   ├── TomodachiVoiceLabPage.tsx # Voice Lab 子页面组件
 │   ├── TomodachiLifeMbtiPage.tsx # MBTI 子页面组件
-│   ├── PixelGridStudioPage.tsx  # Pixel Grid 子页面组件
+│   ├── TomodachiIslandPlannerPage.tsx  # 岛屿规划器子页面组件
+│   ├── TomodachiCharacterIdeasPage.tsx # 角色创意子页面组件
+│   ├── TomodachiApartmentDesignPage.tsx # 公寓设计子页面组件
+│   ├── TomodachiClothesTemplatePage.tsx # 服装模板子页面组件
+│   ├── TomodachiMiiEyesPage.tsx       # Mii 眼睛子页面组件
 │   ├── AboutPage.tsx       # 关于页面组件
 │   ├── ContactPage.tsx     # 联系页面组件
 │   ├── PrivacyPage.tsx     # 隐私政策页面组件

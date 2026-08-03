@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#6366f1" />
+      <stop offset="50%" stop-color="#4f46e5" />
+      <stop offset="100%" stop-color="#4338ca" />
+    </linearGradient>
+    <linearGradient id="cardGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.95" />
+      <stop offset="100%" stop-color="#eef2ff" stop-opacity="0.95" />
+    </linearGradient>
+    <filter id="shadow">
+      <feDropShadow dx="0" dy="4" stdDeviation="20" flood-color="rgba(0,0,0,0.2)" />
+    </filter>
+    <filter id="textShadow">
+      <feDropShadow dx="2" dy="2" stdDeviation="4" flood-color="rgba(0,0,0,0.3)" />
+    </filter>
+    <pattern id="grid" width="30" height="30" patternUnits="userSpaceOnUse">
+      <path d="M 30 0 L 0 0 0 30" fill="none" stroke="rgba(255,255,255,0.06)" stroke-width="1" />
+    </pattern>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#bgGradient)" />
+  <rect width="1200" height="630" fill="url(#grid)" />
+
+  <rect x="60" y="60" width="1080" height="510" rx="32" fill="url(#cardGradient)" filter="url(#shadow)" />
+
+  <!-- Mii face preview with eyes -->
+  <g transform="translate(100, 130)">
+    <!-- Face circle -->
+    <circle cx="140" cy="140" r="120" fill="#fef3c7" stroke="#fde68a" stroke-width="3"/>
+    <!-- Left eye (round, medium) -->
+    <ellipse cx="95" cy="115" rx="22" ry="28" fill="white" stroke="#1e293b" stroke-width="2"/>
+    <circle cx="95" cy="120" r="14" fill="#1e293b"/>
+    <circle cx="100" cy="115" r="5" fill="white"/>
+    <!-- Right eye (round, medium) -->
+    <ellipse cx="185" cy="115" rx="22" ry="28" fill="white" stroke="#1e293b" stroke-width="2"/>
+    <circle cx="185" cy="120" r="14" fill="#1e293b"/>
+    <circle cx="190" cy="115" r="5" fill="white"/>
+    <!-- Eyebrows -->
+    <rect x="75" y="85" width="40" height="4" rx="2" fill="#92400e"/>
+    <rect x="165" y="85" width="40" height="4" rx="2" fill="#92400e"/>
+    <!-- Mouth (smile) -->
+    <path d="M 120 175 Q 140 195 160 175" stroke="#1e293b" stroke-width="3" fill="none" stroke-linecap="round"/>
+    <!-- Parameter labels -->
+    <text x="20" y="285" font-family="Arial, sans-serif" font-size="13" fill="#4f46e5" font-weight="bold">Shape: Round</text>
+    <text x="20" y="305" font-family="Arial, sans-serif" font-size="13" fill="#4f46e5" font-weight="bold">Size: Medium</text>
+    <text x="160" y="285" font-family="Arial, sans-serif" font-size="13" fill="#4f46e5" font-weight="bold">Color: Black</text>
+    <text x="160" y="305" font-family="Arial, sans-serif" font-size="13" fill="#4f46e5" font-weight="bold">Angle: Straight</text>
+  </g>
+
+  <!-- Title section -->
+  <text x="600" y="120" text-anchor="middle" font-family="Arial, sans-serif" font-size="32" font-weight="bold" fill="white" filter="url(#textShadow)">LifeSimGrid</text>
+
+  <text x="600" y="230" text-anchor="middle" font-family="Arial, sans-serif" font-size="42" font-weight="bold" fill="#1e293b">Mii Eyes</text>
+  <text x="600" y="285" text-anchor="middle" font-family="Arial, sans-serif" font-size="42" font-weight="bold" fill="#4f46e5">Design Guide</text>
+  <text x="600" y="330" text-anchor="middle" font-family="Arial, sans-serif" font-size="22" font-weight="normal" fill="#64748b">Interactive Parameter Sliders &amp; Style Gallery</text>
+
+  <!-- Feature tags -->
+  <g transform="translate(350, 380)">
+    <rect x="0" y="0" width="150" height="36" rx="18" fill="#4f46e5" opacity="0.1"/>
+    <text x="75" y="24" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#4f46e5">👁️ Eye Parameters</text>
+  </g>
+  <g transform="translate(520, 380)">
+    <rect x="0" y="0" width="130" height="36" rx="18" fill="#f59e0b" opacity="0.1"/>
+    <text x="65" y="24" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#f59e0b">🎨 Live Preview</text>
+  </g>
+  <g transform="translate(670, 380)">
+    <rect x="0" y="0" width="140" height="36" rx="18" fill="#22c55e" opacity="0.1"/>
+    <text x="70" y="24" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#22c55e">📋 Cheat Sheet</text>
+  </g>
+
+  <!-- Eye icon decoration -->
+  <g transform="translate(1050, 550)">
+    <circle cx="0" cy="0" r="30" fill="#4f46e5"/>
+    <text x="0" y="8" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="white">👁️</text>
+  </g>
+
+  <rect x="60" y="590" width="1080" height="2" rx="1" fill="#e2e8f0" opacity="0.5"/>
+</svg>

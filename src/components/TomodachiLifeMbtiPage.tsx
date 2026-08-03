@@ -167,7 +167,8 @@ export default function TomodachiLifeMbtiPage() {
   const locale = useLocale();
 
   /* ---- Tab state ---- */
-  const [activeTab, setActiveTab] = useState<"calc" | "chart" | "tool" | "fan-map" | "roster">("calc");
+  const [activeTab, setActiveTab] = useState<"calc" | "chart" | "guide" | "tool" | "fan-map" | "roster">("calc");
+  const [guideSelected, setGuideSelected] = useState<string>("outgoing_leader");
 
   /* ---- Compatibility Calculator state ---- */
   const [zodiacA, setZodiacA] = useState<Zodiac>("aries");
@@ -757,6 +758,7 @@ export default function TomodachiLifeMbtiPage() {
             {[
               { key: "calc", label: tVoice("calcSection"), icon: Heart, color: "pink" },
               { key: "chart", label: t("tabChart"), icon: Star, color: "amber" },
+              { key: "guide", label: t("tabGuide"), icon: Info, color: "teal" },
               { key: "tool", label: t("tabTool"), icon: Zap, color: "purple" },
               { key: "fan-map", label: t("tabFanMap"), icon: Users, color: "blue" },
               { key: "roster", label: tVoice("leaderboard"), icon: Crown, color: "emerald" },
@@ -767,6 +769,7 @@ export default function TomodachiLifeMbtiPage() {
                 purple:  { active: "bg-purple-50 text-purple-700 border-purple-200", hover: "hover:bg-purple-50/50", iconActive: "text-purple-500", iconInactive: "text-purple-400" },
                 blue:    { active: "bg-blue-50 text-blue-700 border-blue-200", hover: "hover:bg-blue-50/50", iconActive: "text-blue-500", iconInactive: "text-blue-400" },
                 emerald: { active: "bg-emerald-50 text-emerald-700 border-emerald-200", hover: "hover:bg-emerald-50/50", iconActive: "text-emerald-500", iconInactive: "text-emerald-400" },
+                teal:    { active: "bg-teal-50 text-teal-700 border-teal-200", hover: "hover:bg-teal-50/50", iconActive: "text-teal-500", iconInactive: "text-teal-400" },
               };
               const c = colorMap[tab.color];
               const isActive = activeTab === tab.key;
@@ -787,7 +790,7 @@ export default function TomodachiLifeMbtiPage() {
 
         {/* ===== TAB CONTENT ===== */}
         <section aria-labelledby="mbti-tab-content" className="mx-auto max-w-6xl px-4 py-4 sm:py-6">
-          <h2 id="mbti-tab-content" className="sr-only">{activeTab === "calc" ? tVoice("calcSection") : activeTab === "chart" ? t("tabChart") : activeTab === "tool" ? t("tabTool") : activeTab === "fan-map" ? t("tabFanMap") : tVoice("leaderboard")}</h2>
+          <h2 id="mbti-tab-content" className="sr-only">{activeTab === "calc" ? tVoice("calcSection") : activeTab === "chart" ? t("tabChart") : activeTab === "guide" ? t("tabGuide") : activeTab === "tool" ? t("tabTool") : activeTab === "fan-map" ? t("tabFanMap") : tVoice("leaderboard")}</h2>
 
           {/* ===== 2. MBTI MAPPING CHART TAB ===== */}
           <div className={activeTab !== "chart" ? "hidden" : ""}>
@@ -873,6 +876,159 @@ export default function TomodachiLifeMbtiPage() {
                         </td>
                       </tr>
                     ))}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+          {/* ===== 2-B. PERSONALITY GUIDE TAB ===== */}
+          <div className={activeTab !== "guide" ? "hidden" : ""}>
+            <div className="space-y-6">
+              {/* Guide Intro */}
+              <div className="rounded-2xl border border-gray-100 bg-gradient-to-br from-teal-50 to-cyan-50 p-4 sm:p-6 shadow-sm">
+                <h3 className="font-mono text-lg sm:text-xl font-bold text-gray-900 mb-3">{t("guideIntroTitle")}</h3>
+                <p className="text-sm sm:text-base text-gray-700 leading-relaxed">{t("guideIntroDesc")}</p>
+              </div>
+
+              {/* Interactive 4x4 Personality Grid */}
+              <div className="rounded-2xl border border-gray-100 bg-white p-4 sm:p-6 shadow-sm">
+                <h3 className="font-mono text-lg sm:text-xl font-bold text-gray-900 mb-2">{t("guideGridTitle")}</h3>
+                <p className="text-sm text-gray-600 mb-4 leading-relaxed">{t("guideGridDesc")}</p>
+                <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 sm:gap-3">
+                  {personalityData.map((p) => {
+                    const personalityKey = PERSONALITIES.find(pp => pp.includes(p.id)) || "";
+                    const isSelected = guideSelected === personalityKey;
+                    return (
+                      <button
+                        key={p.id}
+                        onClick={() => setGuideSelected(personalityKey)}
+                        className={`rounded-xl border p-3 text-left transition-all hover:shadow-md ${isSelected ? "ring-2 ring-teal-400 shadow-md" : ""} ${getGroupColorFn(p.group)}`}
+                      >
+                        <div className="flex items-center justify-between mb-1">
+                          <span className="font-mono text-sm sm:text-base font-bold">{p.mbti}</span>
+                          <span className={`rounded-full px-1.5 py-0.5 text-[10px] font-medium ${getGroupBadgeColorFn(p.group)}`}>
+                            {t(`group${p.group.charAt(0).toUpperCase() + p.group.slice(1)}`)}
+                          </span>
+                        </div>
+                        <p className="text-xs sm:text-sm font-semibold text-gray-900">{p.gameName}</p>
+                      </button>
+                    );
+                  })}
+                </div>
+              </div>
+
+              {/* Selected Personality Detail Card */}
+              {(() => {
+                const selectedData = personalityData.find(p => {
+                  const key = PERSONALITIES.find(pp => pp.includes(p.id));
+                  return key === guideSelected;
+                });
+                if (!selectedData) return null;
+                const selectedKey = selectedData.id;
+                return (
+                  <div className="rounded-2xl border border-gray-100 bg-white p-4 sm:p-6 shadow-sm">
+                    <div className="flex items-center gap-3 mb-4">
+                      <span className="font-mono text-2xl sm:text-3xl font-bold" style={{ color: getGroupColor(selectedData.group) }}>{selectedData.mbti}</span>
+                      <div>
+                        <h4 className="font-semibold text-gray-900 text-base sm:text-lg">{selectedData.gameName}</h4>
+                        <span className={`rounded-full px-2 py-0.5 text-xs font-medium ${getGroupBadgeColorFn(selectedData.group)}`}>
+                          {t(`group${selectedData.group.charAt(0).toUpperCase() + selectedData.group.slice(1)}`)}
+                        </span>
+                      </div>
+                    </div>
+                    <div className="grid gap-4 sm:grid-cols-2">
+                      <div className="rounded-xl bg-teal-50 p-3 sm:p-4">
+                        <h5 className="font-semibold text-teal-800 text-sm mb-2">{t("guideBehaviorTitle")}</h5>
+                        <p className="text-xs sm:text-sm text-gray-700 leading-relaxed">{t(`guideBehavior_${selectedKey}` as never)}</p>
+                      </div>
+                      <div className="rounded-xl bg-amber-50 p-3 sm:p-4">
+                        <h5 className="font-semibold text-amber-800 text-sm mb-2">{t("guideStrengthsTitle")}</h5>
+                        <p className="text-xs sm:text-sm text-gray-700 leading-relaxed">{t(`guideStrengths_${selectedKey}` as never)}</p>
+                      </div>
+                      <div className="rounded-xl bg-rose-50 p-3 sm:p-4">
+                        <h5 className="font-semibold text-rose-800 text-sm mb-2">{t("guideWeaknessesTitle")}</h5>
+                        <p className="text-xs sm:text-sm text-gray-700 leading-relaxed">{t(`guideWeaknesses_${selectedKey}` as never)}</p>
+                      </div>
+                      <div className="rounded-xl bg-purple-50 p-3 sm:p-4">
+                        <h5 className="font-semibold text-purple-800 text-sm mb-2">{t("guideInteractionsTitle")}</h5>
+                        <p className="text-xs sm:text-sm text-gray-700 leading-relaxed">{t(`guideInteractions_${selectedKey}` as never)}</p>
+                      </div>
+                    </div>
+                  </div>
+                );
+              })()}
+
+              {/* Group Interaction Matrix */}
+              <div className="rounded-2xl border border-gray-100 bg-white p-4 sm:p-6 shadow-sm overflow-x-auto">
+                <h3 className="font-mono text-lg sm:text-xl font-bold text-gray-900 mb-2">{t("guideMatrixTitle")}</h3>
+                <p className="text-sm text-gray-600 mb-4 leading-relaxed">{t("guideMatrixDesc")}</p>
+                <table className="w-full text-sm min-w-[500px]">
+                  <thead>
+                    <tr className="bg-gray-50 border-b border-gray-200">
+                      <th className="px-3 py-2 text-left font-semibold text-gray-700">{t("guideMatrixGroup")}</th>
+                      <th className="px-3 py-2 text-left font-semibold text-gray-700">{t("groupOutgoing")}</th>
+                      <th className="px-3 py-2 text-left font-semibold text-gray-700">{t("groupConfident")}</th>
+                      <th className="px-3 py-2 text-left font-semibold text-gray-700">{t("groupIndependent")}</th>
+                      <th className="px-3 py-2 text-left font-semibold text-gray-700">{t("groupEasygoing")}</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {(["outgoing", "confident", "independent", "easygoing"] as const).map((rowGroup) => (
+                      <tr key={rowGroup} className="border-b border-gray-100">
+                        <td className="px-3 py-2.5">
+                          <span className={`rounded-full px-2 py-0.5 text-xs font-medium ${getGroupBadgeColorFn(rowGroup)}`}>
+                            {t(`group${rowGroup.charAt(0).toUpperCase() + rowGroup.slice(1)}`)}
+                          </span>
+                        </td>
+                        {(["outgoing", "confident", "independent", "easygoing"] as const).map((colGroup) => {
+                          const matrixKey = `guideMatrix_${rowGroup}_${colGroup}`;
+                          return (
+                            <td key={colGroup} className="px-3 py-2.5 text-xs text-gray-600">
+                              {t(matrixKey as never)}
+                            </td>
+                          );
+                        })}
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+
+              {/* Living the Dream Rename Comparison */}
+              <div className="rounded-2xl border border-gray-100 bg-white p-4 sm:p-6 shadow-sm overflow-x-auto">
+                <h3 className="font-mono text-lg sm:text-xl font-bold text-gray-900 mb-2">{t("guideRenameTitle")}</h3>
+                <p className="text-sm text-gray-600 mb-4 leading-relaxed">{t("guideRenameDesc")}</p>
+                <table className="w-full text-sm min-w-[500px]">
+                  <thead>
+                    <tr className="bg-gray-50 border-b border-gray-200">
+                      <th className="px-3 py-2 text-left font-semibold text-gray-700">{t("guideRenameOriginal")}</th>
+                      <th className="px-3 py-2 text-left font-semibold text-gray-700">{t("guideRenameLTD")}</th>
+                      <th className="px-3 py-2 text-left font-semibold text-gray-700">{t("quickRefMbti")}</th>
+                      <th className="px-3 py-2 text-left font-semibold text-gray-700">{t("guideRenameNote")}</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {([
+                      { group: "outgoing", ltd: "Outgoing", note: t("guideRenameNoteUnchanged") },
+                      { group: "confident", ltd: "Ambitious", note: t("guideRenameNoteRenamed") },
+                      { group: "independent", ltd: "Reserved", note: t("guideRenameNoteRenamed") },
+                      { group: "easygoing", ltd: "Considerate", note: t("guideRenameNoteRenamed") },
+                    ]).map((row) => {
+                      const groupPersonalities = personalityData.filter(p => p.group === row.group);
+                      return (
+                        <tr key={row.group} className="border-b border-gray-100">
+                          <td className="px-3 py-2.5">
+                            <span className={`rounded-full px-2 py-0.5 text-xs font-medium ${getGroupBadgeColorFn(row.group)}`}>
+                              {t(`group${row.group.charAt(0).toUpperCase() + row.group.slice(1)}`)}
+                            </span>
+                          </td>
+                          <td className="px-3 py-2.5 font-medium text-gray-700">{row.ltd}</td>
+                          <td className="px-3 py-2.5 text-xs text-gray-600">{groupPersonalities.map(p => p.mbti).join(", ")}</td>
+                          <td className="px-3 py-2.5 text-xs text-gray-500">{row.note}</td>
+                        </tr>
+                      );
+                    })}
                   </tbody>
                 </table>
               </div>
@@ -1440,9 +1596,18 @@ export default function TomodachiLifeMbtiPage() {
                 <h3 className="font-semibold text-green-800 text-sm">{t("relatedPixelGrid")}</h3>
               </Link>
             </div>
-            <div className="mt-4 text-center">
+            <div className="mt-4 flex flex-wrap justify-center gap-x-6 gap-y-2 text-center">
               <Link href="/acnh-pixel-studio" className="inline-flex items-center gap-1 text-sm font-medium text-emerald-600 hover:text-emerald-700">
                 {t("relatedAcnhLink")} →
+              </Link>
+              <Link href="/tomodachi-apartment-design" className="inline-flex items-center gap-1 text-sm font-medium text-sky-600 hover:text-sky-700">
+                {t("relatedApartmentLink")} →
+              </Link>
+              <Link href="/tomodachi-clothes-template" className="inline-flex items-center gap-1 text-sm font-medium text-pink-600 hover:text-pink-700">
+                {t("relatedClothesLink")} →
+              </Link>
+              <Link href="/mii-eyes" className="inline-flex items-center gap-1 text-sm font-medium text-indigo-600 hover:text-indigo-700">
+                {t("relatedMiiEyesLink")} →
               </Link>
             </div>
           </div>

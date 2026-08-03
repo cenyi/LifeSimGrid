@@ -4,7 +4,10 @@ import { useTranslations, useLocale } from "next-intl";
 import { useRouter, usePathname, Link } from "@/i18n/routing";
 import { routing } from "@/i18n/routing";
 import { useState, useRef, useEffect } from "react";
-import { Globe, ChevronDown, Palette, Unlock, Music, Sparkles, Grid3x3, MapPin, Menu, X } from "lucide-react";
+import {
+  Globe, ChevronDown, Palette, Unlock, Music, Sparkles, Grid3x3,
+  MapPin, Menu, X, Home, Shirt, Eye, Dice5, Layers,
+} from "lucide-react";
 
 const STORAGE_KEY = "lifesimgrid-locale";
 
@@ -23,22 +26,146 @@ const localeLabels: Record<string, string> = {
   pt: "Português",
 };
 
+/* ------------------------------------------------------------------ */
+/*  Tool category config                                              */
+/* ------------------------------------------------------------------ */
+
+interface ToolLink {
+  href: string;
+  labelKey: string;
+  icon: React.ComponentType<{ className?: string }>;
+  color: string;
+}
+
+interface ToolCategory {
+  labelKey: string;
+  icon: React.ComponentType<{ className?: string }>;
+  color: string;
+  tools: ToolLink[];
+}
+
+const CATEGORIES: ToolCategory[] = [
+  {
+    labelKey: "navAcnh",
+    icon: Palette,
+    color: "text-amber-600",
+    tools: [
+      { href: "/acnh-pixel-studio", labelKey: "toolAcnh", icon: Palette, color: "text-amber-600" },
+      { href: "/living-the-grid", labelKey: "toolLivingTheGrid", icon: Grid3x3, color: "text-teal-600" },
+    ],
+  },
+  {
+    labelKey: "navMii",
+    icon: Unlock,
+    color: "text-blue-600",
+    tools: [
+      { href: "/mii-qr-unlocker", labelKey: "toolMii", icon: Unlock, color: "text-blue-600" },
+      { href: "/mii-eyes", labelKey: "toolMiiEyes", icon: Eye, color: "text-indigo-600" },
+    ],
+  },
+  {
+    labelKey: "navTomodachi",
+    icon: Sparkles,
+    color: "text-green-600",
+    tools: [
+      { href: "/tomodachi-life-mbti", labelKey: "toolMbti", icon: Sparkles, color: "text-green-600" },
+      { href: "/tomodachi-voice-lab", labelKey: "toolVoice", icon: Music, color: "text-purple-600" },
+      { href: "/tomodachi-island-planner", labelKey: "toolIslandPlanner", icon: MapPin, color: "text-rose-600" },
+      { href: "/tomodachi-character-ideas", labelKey: "toolCharacterIdeas", icon: Dice5, color: "text-purple-600" },
+      { href: "/tomodachi-apartment-design", labelKey: "toolApartment", icon: Home, color: "text-sky-600" },
+      { href: "/tomodachi-clothes-template", labelKey: "toolClothesTemplate", icon: Shirt, color: "text-pink-600" },
+    ],
+  },
+];
+
+/* ------------------------------------------------------------------ */
+/*  Dropdown for a single category (desktop)                          */
+/* ------------------------------------------------------------------ */
+
+function CategoryDropdown({
+  category,
+  t,
+  onNavigate,
+}: {
+  category: ToolCategory;
+  t: ReturnType<typeof useTranslations>;
+  onNavigate: () => void;
+}) {
+  const [open, setOpen] = useState(false);
+  const ref = useRef<HTMLDivElement>(null);
+  const Icon = category.icon;
+
+  useEffect(() => {
+    function handleClickOutside(e: MouseEvent) {
+      if (ref.current && !ref.current.contains(e.target as Node)) {
+        setOpen(false);
+      }
+    }
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
+
+  return (
+    <div
+      ref={ref}
+      className="relative"
+      onMouseEnter={() => setOpen(true)}
+      onMouseLeave={() => setOpen(false)}
+    >
+      <button
+        onClick={() => setOpen((v) => !v)}
+        className="flex items-center space-x-1.5 rounded-lg border border-gray-200 bg-white px-2.5 py-1.5 text-xs font-medium text-gray-600 shadow-sm transition-all hover:bg-gray-50 hover:text-gray-900 hover:shadow-md active:scale-95"
+      >
+        <Icon className={`h-3.5 w-3.5 ${category.color}`} />
+        <span>{t(category.labelKey)}</span>
+        <ChevronDown className={`h-3 w-3 text-gray-400 transition-transform duration-200 ${open ? "rotate-180" : ""}`} />
+      </button>
+
+      {open && (
+        <div className="absolute left-0 top-full z-50 mt-1 w-max min-w-full origin-top-left animate-[dropdownIn_150ms_ease-out] rounded-2xl border border-gray-100 bg-white p-1.5 shadow-xl ring-1 ring-black/5">
+          {category.tools.map((tool) => {
+            const ToolIcon = tool.icon;
+            return (
+              <Link
+                key={tool.href}
+                href={tool.href}
+                onClick={() => {
+                  setOpen(false);
+                  onNavigate();
+                }}
+                className="flex items-center space-x-2 rounded-xl px-3 py-2 text-left text-sm font-medium text-gray-600 transition-all hover:bg-gray-50 hover:text-gray-900 hover:shadow-sm active:scale-[0.98]"
+              >
+                <ToolIcon className={`h-4 w-4 ${tool.color}`} />
+                <span>{t(tool.labelKey)}</span>
+              </Link>
+            );
+          })}
+        </div>
+      )}
+    </div>
+  );
+}
+
+/* ------------------------------------------------------------------ */
+/*  Main Navbar                                                        */
+/* ------------------------------------------------------------------ */
+
 export default function Navbar() {
   const t = useTranslations("Navbar");
   const locale = useLocale();
   const router = useRouter();
   const pathname = usePathname();
-  const [dropdownOpen, setDropdownOpen] = useState(false);
+  const [localeDropdownOpen, setLocaleDropdownOpen] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const dropdownRef = useRef<HTMLDivElement>(null);
+  const localeDropdownRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
       if (
-        dropdownRef.current &&
-        !dropdownRef.current.contains(event.target as Node)
+        localeDropdownRef.current &&
+        !localeDropdownRef.current.contains(event.target as Node)
       ) {
-        setDropdownOpen(false);
+        setLocaleDropdownOpen(false);
       }
     }
     document.addEventListener("mousedown", handleClickOutside);
@@ -49,7 +176,7 @@ export default function Navbar() {
   function handleLocaleChange(newLocale: string) {
     localStorage.setItem(STORAGE_KEY, newLocale);
     router.replace(pathname, { locale: newLocale as "en" | "zh-Hant" | "ja" | "es" | "fr" | "ko" | "de" | "it" | "nl" | "zh-CN" | "ru" | "pt" });
-    setDropdownOpen(false);
+    setLocaleDropdownOpen(false);
   }
 
   return (
@@ -61,33 +188,19 @@ export default function Navbar() {
           </span>
         </Link>
 
-        <div className="hidden items-center space-x-1 lg:flex">
-          <Link href="/acnh-pixel-studio" title={t("toolAcnh")} className="flex items-center space-x-1.5 rounded-lg border border-gray-200 bg-white px-2.5 py-1.5 text-xs font-medium text-gray-600 shadow-sm transition-all hover:bg-gray-50 hover:text-gray-900 hover:shadow-md active:scale-95">
-            <Palette className="h-3.5 w-3.5" />
-            <span className="hidden xl:inline">{t("toolAcnh")}</span>
-          </Link>
-          <Link href="/mii-qr-unlocker" title={t("toolMii")} className="flex items-center space-x-1.5 rounded-lg border border-gray-200 bg-white px-2.5 py-1.5 text-xs font-medium text-gray-600 shadow-sm transition-all hover:bg-gray-50 hover:text-gray-900 hover:shadow-md active:scale-95">
-            <Unlock className="h-3.5 w-3.5" />
-            <span className="hidden xl:inline">{t("toolMii")}</span>
-          </Link>
-          <Link href="/tomodachi-voice-lab" title={t("toolVoice")} className="flex items-center space-x-1.5 rounded-lg border border-gray-200 bg-white px-2.5 py-1.5 text-xs font-medium text-gray-600 shadow-sm transition-all hover:bg-gray-50 hover:text-gray-900 hover:shadow-md active:scale-95">
-            <Music className="h-3.5 w-3.5" />
-            <span className="hidden xl:inline">{t("toolVoice")}</span>
-          </Link>
-          <Link href="/tomodachi-life-mbti" title={t("toolMbti")} className="flex items-center space-x-1.5 rounded-lg border border-gray-200 bg-white px-2.5 py-1.5 text-xs font-medium text-gray-600 shadow-sm transition-all hover:bg-gray-50 hover:text-gray-900 hover:shadow-md active:scale-95">
-            <Sparkles className="h-3.5 w-3.5" />
-            <span className="hidden xl:inline">{t("toolMbti")}</span>
-          </Link>
-          <Link href="/living-the-grid" title={t("toolLivingTheGrid")} className="flex items-center space-x-1.5 rounded-lg border border-gray-200 bg-white px-2.5 py-1.5 text-xs font-medium text-gray-600 shadow-sm transition-all hover:bg-gray-50 hover:text-gray-900 hover:shadow-md active:scale-95">
-            <Grid3x3 className="h-3.5 w-3.5" />
-            <span className="hidden xl:inline">{t("toolLivingTheGrid")}</span>
-          </Link>
-          <Link href="/tomodachi-island-planner" title={t("toolIslandPlanner")} className="flex items-center space-x-1.5 rounded-lg border border-gray-200 bg-white px-2.5 py-1.5 text-xs font-medium text-gray-600 shadow-sm transition-all hover:bg-gray-50 hover:text-gray-900 hover:shadow-md active:scale-95">
-            <MapPin className="h-3.5 w-3.5" />
-            <span className="hidden xl:inline">{t("toolIslandPlanner")}</span>
-          </Link>
+        {/* Desktop: 3 category dropdowns */}
+        <div className="hidden items-center space-x-1.5 lg:flex">
+          {CATEGORIES.map((cat) => (
+            <CategoryDropdown
+              key={cat.labelKey}
+              category={cat}
+              t={t}
+              onNavigate={() => {}}
+            />
+          ))}
         </div>
 
+        {/* Right side: mobile menu button + locale + GitHub */}
         <div className="flex items-center space-x-2">
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -97,23 +210,23 @@ export default function Navbar() {
             {mobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
           </button>
 
-          <div className="relative" ref={dropdownRef}>
+          <div className="relative" ref={localeDropdownRef}>
             <button
-              onClick={() => setDropdownOpen(!dropdownOpen)}
+              onClick={() => setLocaleDropdownOpen(!localeDropdownOpen)}
               className={`flex items-center space-x-2 rounded-xl border px-3 py-2 text-sm font-medium shadow-sm transition-all active:scale-95 ${
-                dropdownOpen
+                localeDropdownOpen
                   ? "border-[#FFCC00]/40 bg-[#FFCC00]/5 text-gray-900 shadow-md"
                   : "border-gray-200 bg-white text-gray-700 hover:bg-gray-50 hover:shadow-md"
               }`}
             >
-              <Globe className={`h-4 w-4 transition-colors ${dropdownOpen ? "text-[#E6B800]" : "text-gray-500"}`} />
+              <Globe className={`h-4 w-4 transition-colors ${localeDropdownOpen ? "text-[#E6B800]" : "text-gray-500"}`} />
               <span>{localeLabels[locale] || locale}</span>
               <ChevronDown
-                className={`h-4 w-4 text-gray-400 transition-transform duration-200 ${dropdownOpen ? "rotate-180" : ""}`}
+                className={`h-4 w-4 text-gray-400 transition-transform duration-200 ${localeDropdownOpen ? "rotate-180" : ""}`}
               />
             </button>
 
-            {dropdownOpen && (
+            {localeDropdownOpen && (
               <div className="absolute right-0 mt-2 w-40 origin-top-right animate-[dropdownIn_150ms_ease-out] rounded-2xl border border-gray-100 bg-white p-1.5 shadow-xl ring-1 ring-black/5">
                 {routing.locales.map((l) => (
                   <button
@@ -144,60 +257,37 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* Mobile navigation menu — visible below lg breakpoint */}
+      {/* Mobile navigation menu — categorized, visible below lg breakpoint */}
       {mobileMenuOpen && (
         <div className="border-b border-gray-100 bg-white lg:hidden">
           <div className="mx-auto max-w-7xl px-4 py-3 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-2 gap-2">
-              <Link
-                href="/acnh-pixel-studio"
-                onClick={() => setMobileMenuOpen(false)}
-                className="flex items-center space-x-2 rounded-xl border border-gray-200 bg-white px-3 py-2.5 text-sm font-medium text-gray-600 shadow-sm transition-all hover:bg-gray-50 hover:text-gray-900"
-              >
-                <Palette className="h-4 w-4 text-amber-600" />
-                <span>{t("toolAcnh")}</span>
-              </Link>
-              <Link
-                href="/mii-qr-unlocker"
-                onClick={() => setMobileMenuOpen(false)}
-                className="flex items-center space-x-2 rounded-xl border border-gray-200 bg-white px-3 py-2.5 text-sm font-medium text-gray-600 shadow-sm transition-all hover:bg-gray-50 hover:text-gray-900"
-              >
-                <Unlock className="h-4 w-4 text-blue-600" />
-                <span>{t("toolMii")}</span>
-              </Link>
-              <Link
-                href="/tomodachi-voice-lab"
-                onClick={() => setMobileMenuOpen(false)}
-                className="flex items-center space-x-2 rounded-xl border border-gray-200 bg-white px-3 py-2.5 text-sm font-medium text-gray-600 shadow-sm transition-all hover:bg-gray-50 hover:text-gray-900"
-              >
-                <Music className="h-4 w-4 text-purple-600" />
-                <span>{t("toolVoice")}</span>
-              </Link>
-              <Link
-                href="/tomodachi-life-mbti"
-                onClick={() => setMobileMenuOpen(false)}
-                className="flex items-center space-x-2 rounded-xl border border-gray-200 bg-white px-3 py-2.5 text-sm font-medium text-gray-600 shadow-sm transition-all hover:bg-gray-50 hover:text-gray-900"
-              >
-                <Sparkles className="h-4 w-4 text-green-600" />
-                <span>{t("toolMbti")}</span>
-              </Link>
-              <Link
-                href="/living-the-grid"
-                onClick={() => setMobileMenuOpen(false)}
-                className="flex items-center space-x-2 rounded-xl border border-gray-200 bg-white px-3 py-2.5 text-sm font-medium text-gray-600 shadow-sm transition-all hover:bg-gray-50 hover:text-gray-900"
-              >
-                <Grid3x3 className="h-4 w-4 text-teal-600" />
-                <span>{t("toolLivingTheGrid")}</span>
-              </Link>
-              <Link
-                href="/tomodachi-island-planner"
-                onClick={() => setMobileMenuOpen(false)}
-                className="flex items-center space-x-2 rounded-xl border border-gray-200 bg-white px-3 py-2.5 text-sm font-medium text-gray-600 shadow-sm transition-all hover:bg-gray-50 hover:text-gray-900"
-              >
-                <MapPin className="h-4 w-4 text-rose-600" />
-                <span>{t("toolIslandPlanner")}</span>
-              </Link>
-            </div>
+            {CATEGORIES.map((cat) => {
+              const CatIcon = cat.icon;
+              return (
+                <div key={cat.labelKey} className="mb-5 last:mb-0">
+                  <p className="mb-2 flex items-center gap-1.5 text-xs font-bold text-gray-400 uppercase tracking-wide">
+                    <CatIcon className={`h-3.5 w-3.5 ${cat.color}`} />
+                    {t(cat.labelKey)}
+                  </p>
+                  <div className="grid grid-cols-2 gap-2">
+                    {cat.tools.map((tool) => {
+                      const ToolIcon = tool.icon;
+                      return (
+                        <Link
+                          key={tool.href}
+                          href={tool.href}
+                          onClick={() => setMobileMenuOpen(false)}
+                          className="flex items-center space-x-2 rounded-xl border border-gray-200 bg-white px-3 py-2.5 text-sm font-medium text-gray-600 shadow-sm transition-all hover:bg-gray-50 hover:text-gray-900"
+                        >
+                          <ToolIcon className={`h-4 w-4 ${tool.color}`} />
+                          <span>{t(tool.labelKey)}</span>
+                        </Link>
+                      );
+                    })}
+                  </div>
+                </div>
+              );
+            })}
           </div>
         </div>
       )}

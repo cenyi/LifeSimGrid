@@ -1,0 +1,90 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f472b6" />
+      <stop offset="50%" stop-color="#ec4899" />
+      <stop offset="100%" stop-color="#db2777" />
+    </linearGradient>
+    <linearGradient id="cardGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.95" />
+      <stop offset="100%" stop-color="#fdf2f8" stop-opacity="0.95" />
+    </linearGradient>
+    <filter id="shadow">
+      <feDropShadow dx="0" dy="4" stdDeviation="20" flood-color="rgba(0,0,0,0.2)" />
+    </filter>
+    <filter id="textShadow">
+      <feDropShadow dx="2" dy="2" stdDeviation="4" flood-color="rgba(0,0,0,0.3)" />
+    </filter>
+    <pattern id="grid" width="30" height="30" patternUnits="userSpaceOnUse">
+      <path d="M 30 0 L 0 0 0 30" fill="none" stroke="rgba(255,255,255,0.06)" stroke-width="1" />
+    </pattern>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#bgGradient)" />
+  <rect width="1200" height="630" fill="url(#grid)" />
+
+  <rect x="60" y="60" width="1080" height="510" rx="32" fill="url(#cardGradient)" filter="url(#shadow)" />
+
+  <!-- Pixel art canvas preview -->
+  <g transform="translate(100, 130)">
+    <!-- Canvas background -->
+    <rect x="0" y="0" width="280" height="280" rx="16" fill="#fdf2f8" stroke="#fbcfe8" stroke-width="2"/>
+    <!-- Pixel grid -->
+    <g stroke="#fce7f3" stroke-width="1">
+      <line x1="35" y1="0" x2="35" y2="280"/>
+      <line x1="70" y1="0" x2="70" y2="280"/>
+      <line x1="105" y1="0" x2="105" y2="280"/>
+      <line x1="140" y1="0" x2="140" y2="280"/>
+      <line x1="175" y1="0" x2="175" y2="280"/>
+      <line x1="210" y1="0" x2="210" y2="280"/>
+      <line x1="245" y1="0" x2="245" y2="280"/>
+      <line x1="0" y1="35" x2="280" y2="35"/>
+      <line x1="0" y1="70" x2="280" y2="70"/>
+      <line x1="0" y1="105" x2="280" y2="105"/>
+      <line x1="0" y1="140" x2="280" y2="140"/>
+      <line x1="0" y1="175" x2="280" y2="175"/>
+      <line x1="0" y1="210" x2="280" y2="210"/>
+      <line x1="0" y1="245" x2="280" y2="245"/>
+    </g>
+    <!-- Pixel art: striped shirt -->
+    <rect x="35" y="35" width="210" height="35" fill="#60a5fa"/>
+    <rect x="35" y="70" width="210" height="35" fill="#ffffff"/>
+    <rect x="35" y="105" width="210" height="35" fill="#60a5fa"/>
+    <rect x="35" y="140" width="210" height="35" fill="#ffffff"/>
+    <rect x="35" y="175" width="210" height="35" fill="#60a5fa"/>
+    <rect x="35" y="210" width="210" height="35" fill="#ffffff"/>
+    <!-- Star accent -->
+    <rect x="105" y="105" width="35" height="35" fill="#fbbf24"/>
+    <rect x="105" y="70" width="35" height="35" fill="#fbbf24" opacity="0.5"/>
+    <rect x="105" y="140" width="35" height="35" fill="#fbbf24" opacity="0.5"/>
+  </g>
+
+  <!-- Title section -->
+  <text x="600" y="120" text-anchor="middle" font-family="Arial, sans-serif" font-size="32" font-weight="bold" fill="white" filter="url(#textShadow)">LifeSimGrid</text>
+
+  <text x="600" y="240" text-anchor="middle" font-family="Arial, sans-serif" font-size="42" font-weight="bold" fill="#1e293b">Tomodachi Life</text>
+  <text x="600" y="295" text-anchor="middle" font-family="Arial, sans-serif" font-size="42" font-weight="bold" fill="#db2777">Clothes Template</text>
+  <text x="600" y="340" text-anchor="middle" font-family="Arial, sans-serif" font-size="22" font-weight="normal" fill="#64748b">Pixel Art Clothing Designer &amp; Templates</text>
+
+  <!-- Feature tags -->
+  <g transform="translate(370, 390)">
+    <rect x="0" y="0" width="120" height="36" rx="18" fill="#db2777" opacity="0.1"/>
+    <text x="60" y="24" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#db2777">👕 Pixel Grid</text>
+  </g>
+  <g transform="translate(510, 390)">
+    <rect x="0" y="0" width="140" height="36" rx="18" fill="#f59e0b" opacity="0.1"/>
+    <text x="70" y="24" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#f59e0b">🎨 Color Palette</text>
+  </g>
+  <g transform="translate(670, 390)">
+    <rect x="0" y="0" width="120" height="36" rx="18" fill="#22c55e" opacity="0.1"/>
+    <text x="60" y="24" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#22c55e">📤 Export PNG</text>
+  </g>
+
+  <!-- Pixel icon decoration -->
+  <g transform="translate(1050, 550)">
+    <circle cx="0" cy="0" r="30" fill="#db2777"/>
+    <text x="0" y="8" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="white">👕</text>
+  </g>
+
+  <rect x="60" y="590" width="1080" height="2" rx="1" fill="#e2e8f0" opacity="0.5"/>
+</svg>
