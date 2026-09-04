@@ -22,7 +22,11 @@
     "subtitle": "The Living the Grid alternative for Animal Crossing (ACNH) & Tomodachi Life: pixel grids, Mii FFL fixes, and MBTI compatibility — 100% browser-based, no sign-up.",
     "tabPixel": "🎨 ACNH Pixel Studio",
     "tabQR": "🔓 Mii QR Code Unlocker",
-    "tabVoice": "🎵 Tomodachi Voice Lab (MBTI)"
+    "tabVoice": "🎵 Tomodachi Voice Lab (MBTI)",
+    "notFoundTitle": "Page Not Found",
+    "notFoundText": "The page you are looking for does not exist or has been moved. Let's get you back on track.",
+    "notFoundHome": "Back to Home",
+    "notFoundExplore": "Or explore our tools:"
   },
   "PixelStudio": {
     "title": "Animal Crossing (ACNH) Custom Designs Pixel Grid Converter",
@@ -308,7 +312,10 @@
     "gdpr": "8. GDPR & CCPA Regulatory Compliance",
     "gdprText": "Because LifeSimGrid handles 100% of data flows within the user's browser sandbox and never collects, archives, or leaks personal identifiable information (PII), it fully complies with the General Data Protection Regulation (GDPR - European Union) and the California Consumer Privacy Act (CCPA - United States). There is no user data to access, rectify, export, or erase because we never possess it in our infrastructure. Clearing your browser's local cache permanently removes your locally managed island resident rosters and history logs.",
     "security": "9. End-to-End Data Security",
-    "securityText": "With zero data leaving your local device, the structural risk of server-side data breaches, leaks, or cloud hacking is entirely eliminated. We are deeply committed to open-source software transparency; you can self-audit our entire front-end data flow at any time via our public GitHub repository. Furthermore, the web application is served exclusively over a secure HTTPS protocol to block any man-in-the-middle (MITM) interceptions during initial page delivery."
+    "securityText": "With zero data leaving your local device, the structural risk of server-side data breaches, leaks, or cloud hacking is entirely eliminated. We are deeply committed to open-source software transparency; you can self-audit our entire front-end data flow at any time via our public GitHub repository. Furthermore, the web application is served exclusively over a secure HTTPS protocol to block any man-in-the-middle (MITM) interceptions during initial page delivery.",
+    "cookieManageTitle": "Manage Your Cookie Preferences",
+    "cookieManageText": "You can review, change, or withdraw your cookie consent preferences at any time. Click the button below to reopen the cookie consent banner and adjust your settings.",
+    "cookieManageButton": "Manage cookie preferences"
   },
   "Terms": {
     "title": "Terms of Service",

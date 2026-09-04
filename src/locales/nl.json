@@ -22,7 +22,11 @@
     "subtitle": "Het Living the Grid-alternatief voor Animal Crossing (ACNH) & Tomodachi Life: pixelrasters, Mii FFL-correcties en MBTI-compatibiliteit — 100% in de browser, geen registratie.",
     "tabPixel": "🎨 ACNH Pixelstudio",
     "tabQR": "🔓 Mii QR-ontgrendelaar",
-    "tabVoice": "🎵 Tomodachi Stemlab (MBTI)"
+    "tabVoice": "🎵 Tomodachi Stemlab (MBTI)",
+    "notFoundTitle": "Pagina niet gevonden",
+    "notFoundText": "De pagina die u zoekt bestaat niet of is verplaatst. Laten we u terugbrengen.",
+    "notFoundHome": "Terug naar home",
+    "notFoundExplore": "Of ontdek onze tools:"
   },
   "PixelStudio": {
     "title": "Animal Crossing (ACNH) Aangepast Ontwerp Pixelrasterconverter",
@@ -308,7 +312,10 @@
     "gdpr": "8. GDPR & CCPA Regelgevingsnaleving",
     "gdprText": "Omdat LifeSimGrid 100% van de gegevensstromen binnen de browsersandbox van de gebruiker verwerkt en nooit persoonlijk identificeerbare informatie (PII) verzamelt, archiveert of lekt, voldoet het volledig aan de Algemene Verordening Gegevensbescherming (GDPR - Europese Unie) en de California Consumer Privacy Act (CCPA - Verenigde Staten). Er zijn geen gebruikersgegevens om toegang te krijgen, te rectificeren, te exporteren of te wissen omdat we ze nooit in onze infrastructuur bezitten. Het wissen van de lokale cache van uw browser verwijdert permanent uw lokaal beheerde eilandbewonerroosters en geschiedenislogboeken.",
     "security": "9. End-to-End Gegevensbeveiliging",
-    "securityText": "Aangezien nul gegevens uw lokale apparaat verlaten, is het structurele risico op server-side data-inbreuken, lekken of cloud-hacking volledig geëlimineerd. Zijn zijn diep toegewijd aan open-source softwaretransparantie; u kunt onze volledige front-end gegevensstroom op elk moment zelf auditen via onze openbare GitHub-repository. Bovendien wordt de webapplicatie uitsluitend geleverd via het beveiligde HTTPS-protocol om eventuele man-in-the-middle (MITM) onderscheppingen tijdens initiële paginalevering te blokkeren."
+    "securityText": "Aangezien nul gegevens uw lokale apparaat verlaten, is het structurele risico op server-side data-inbreuken, lekken of cloud-hacking volledig geëlimineerd. Zijn zijn diep toegewijd aan open-source softwaretransparantie; u kunt onze volledige front-end gegevensstroom op elk moment zelf auditen via onze openbare GitHub-repository. Bovendien wordt de webapplicatie uitsluitend geleverd via het beveiligde HTTPS-protocol om eventuele man-in-the-middle (MITM) onderscheppingen tijdens initiële paginalevering te blokkeren.",
+    "cookieManageTitle": "Beheer uw cookievoorkeuren",
+    "cookieManageText": "U kunt uw cookie-toestemmingsvoorkeuren op elk moment bekijken, wijzigen of intrekken. Klik op de onderstaande knop om de cookie-toestemmingsbanner opnieuw te openen en uw instellingen aan te passen.",
+    "cookieManageButton": "Cookievoorkeuren beheren"
   },
   "Terms": {
     "title": "Servicevoorwaarden",

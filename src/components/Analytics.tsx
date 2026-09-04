@@ -2,32 +2,28 @@
 
 import Script from "next/script";
 
-const GA_ID = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
+const ADSENSE_CLIENT_ID = "ca-pub-5844297701493718";
 
 /**
- * Loads Google Analytics 4.
+ * Analytics component — renders the AdSense script tag.
  *
- * Consent Mode v2 defaults (all denied) are set in layout.tsx <head>.
- * The CookieConsent component handles granting consent and loading
- * Microsoft Clarity only after the user accepts.
+ * Google Consent Mode v2 defaults (all denied) are set in layout.tsx <head>.
+ * GA4 and Microsoft Clarity are loaded dynamically by CookieConsent.tsx
+ * only after the user grants consent.
+ *
+ * AdSense auto-ads script is loaded here unconditionally (it respects
+ * Consent Mode v2 signals — ads will not serve personalized content
+ * when ad_storage is "denied").
  */
 export default function Analytics() {
   return (
     <>
-      {GA_ID && (
-        <>
-          <Script
-            src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
-            strategy="afterInteractive"
-          />
-          <Script id="ga-init" strategy="afterInteractive">
-            {`
-              gtag('js', new Date());
-              gtag('config', '${GA_ID}', { 'anonymize_ip': true });
-            `}
-          </Script>
-        </>
-      )}
+      {/* Google AdSense auto-ads script — respects Consent Mode v2 */}
+      <Script
+        src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${ADSENSE_CLIENT_ID}`}
+        strategy="afterInteractive"
+        crossOrigin="anonymous"
+      />
     </>
   );
 }

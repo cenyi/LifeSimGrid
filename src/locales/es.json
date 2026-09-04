@@ -22,7 +22,11 @@
     "subtitle": "La alternativa a Living the Grid para Animal Crossing (ACNH) y Tomodachi Life: cuadrículas de píxeles, corrección FFL de Mii y compatibilidad MBTI — 100% en el navegador, sin registro.",
     "tabPixel": "🎨 Estudio de Píxeles ACNH",
     "tabQR": "🔓 Desbloqueador QR de Mii",
-    "tabVoice": "🎵 Laboratorio de Voz Tomodachi (MBTI)"
+    "tabVoice": "🎵 Laboratorio de Voz Tomodachi (MBTI)",
+    "notFoundTitle": "Página no encontrada",
+    "notFoundText": "La página que buscas no existe o ha sido movida. Volvamos al inicio.",
+    "notFoundHome": "Volver al inicio",
+    "notFoundExplore": "O explora nuestras herramientas:"
   },
   "PixelStudio": {
     "title": "Convertidor de Cuadrícula de Píxeles de Diseño Personalizado de Animal Crossing (ACNH)",
@@ -308,7 +312,10 @@
     "gdpr": "8. Cumplimiento Regulatorio GDPR y CCPA",
     "gdprText": "Porque LifeSimGrid maneja el 100% de los flujos de datos dentro de la sandbox del navegador del usuario y nunca recopila, archiva ni filtra información personal identificable (PII), cumple plenamente con el Reglamento General de Protección de Datos (GDPR - Unión Europea) y la Ley de Privacidad del Consumidor de California (CCPA - Estados Unidos). No hay datos de usuario para acceder, rectificar, exportar o borrar porque nunca los poseemos en nuestra infraestructura. Limpiar la caché local de tu navegador elimina permanentemente tus listas de residentes de isla gestionadas localmente y registros de historial.",
     "security": "9. Seguridad de Datos de Extremo a Extremo",
-    "securityText": "Con cero datos saliendo de tu dispositivo local, el riesgo estructural de brechas de datos del lado del servidor, filtraciones o hackeo en la nube se elimina completamente. Estamos profundamente comprometidos con la transparencia del software de código abierto; puedes auditar automáticamente todo nuestro flujo de datos front-end en cualquier momento a través de nuestro repositorio público de GitHub. Además, la aplicación web se sirve exclusivamente a través del protocolo seguro HTTPS para bloquear cualquier intercepción de hombre en el medio (MITM) durante la entrega inicial de la página."
+    "securityText": "Con cero datos saliendo de tu dispositivo local, el riesgo estructural de brechas de datos del lado del servidor, filtraciones o hackeo en la nube se elimina completamente. Estamos profundamente comprometidos con la transparencia del software de código abierto; puedes auditar automáticamente todo nuestro flujo de datos front-end en cualquier momento a través de nuestro repositorio público de GitHub. Además, la aplicación web se sirve exclusivamente a través del protocolo seguro HTTPS para bloquear cualquier intercepción de hombre en el medio (MITM) durante la entrega inicial de la página.",
+    "cookieManageTitle": "Gestiona tus preferencias de cookies",
+    "cookieManageText": "Puedes revisar, cambiar o retirar tus preferencias de consentimiento de cookies en cualquier momento. Haz clic en el botón siguiente para volver a abrir el banner de consentimiento de cookies y ajustar tu configuración.",
+    "cookieManageButton": "Gestionar preferencias de cookies"
   },
   "Terms": {
     "title": "Términos de Servicio",

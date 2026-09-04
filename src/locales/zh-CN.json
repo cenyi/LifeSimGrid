@@ -22,7 +22,11 @@
     "subtitle": "Living the Grid 替代方案，专为 Animal Crossing（ACNH）与朋友聚会 新生活 打造：像素网格、Mii FFL 修复、MBTI 兼容性——100%浏览器运行，无需注册。",
     "tabPixel": "🎨 ACNH 像素工作室",
     "tabQR": "🔓 Mii QR 解锁器",
-    "tabVoice": "🎵 朋友聚会 新生活 语音实验室 (MBTI)"
+    "tabVoice": "🎵 朋友聚会 新生活 语音实验室 (MBTI)",
+    "notFoundTitle": "找不到页面",
+    "notFoundText": "你寻找的页面不存在或已移动。让我们带你回到正轨。",
+    "notFoundHome": "返回首页",
+    "notFoundExplore": "或探索我们的工具："
   },
   "PixelStudio": {
     "title": "Animal Crossing（ACNH）我的设计像素网格转换器",
@@ -308,7 +312,10 @@
     "gdpr": "8. GDPR 与 CCPA 法规合规",
     "gdprText": "由于 LifeSimGrid 在用户浏览器沙盒内处理 100% 的数据流，从不收集、归档或泄露个人身份信息（PII），它完全符合《通用数据保护条例》（GDPR - 欧盟）和《加州消费者隐私法》（CCPA - 美国）。不存在需要访问、更正、导出或删除的用户数据，因为我们从未在基础设施中持有这些数据。清除浏览器的本地缓存即可永久删除你本地管理的岛屿居民名册和历史日志。",
     "security": "9. 端到端数据安全",
-    "securityText": "由于零数据离开你的本地设备，服务器端数据泄露、泄漏或云端黑客攻击的结构性风险被完全消除。我们深度致力于开源软件透明度；你可以随时通过我们的公共 GitHub 仓库自行审计整个前端数据流。此外，网页应用完全通过安全的 HTTPS 协议提供服务，以阻止初始页面交付期间的任何中间人（MITM）拦截。"
+    "securityText": "由于零数据离开你的本地设备，服务器端数据泄露、泄漏或云端黑客攻击的结构性风险被完全消除。我们深度致力于开源软件透明度；你可以随时通过我们的公共 GitHub 仓库自行审计整个前端数据流。此外，网页应用完全通过安全的 HTTPS 协议提供服务，以阻止初始页面交付期间的任何中间人（MITM）拦截。",
+    "cookieManageTitle": "管理你的 Cookie 偏好",
+    "cookieManageText": "你可以随时审查、更改或撤回你的 Cookie 同意偏好。点击下方按钮重新打开 Cookie 同意横幅并调整你的设置。",
+    "cookieManageButton": "管理 Cookie 偏好"
   },
   "Terms": {
     "title": "服务条款",

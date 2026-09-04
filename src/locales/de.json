@@ -22,7 +22,11 @@
     "subtitle": "Die Living-the-Grid-Alternative für Animal Crossing (ACNH) & Tomodachi Life: Pixelraster, Mii-FFL-Korrekturen und MBTI-Kompatibilität — 100% browserbasiert, ohne Registrierung.",
     "tabPixel": "🎨 ACNH-Pixel-Studio",
     "tabQR": "🔓 Mii-QR-Freischalter",
-    "tabVoice": "🎵 Tomodachi-Sprachlabor (MBTI)"
+    "tabVoice": "🎵 Tomodachi-Sprachlabor (MBTI)",
+    "notFoundTitle": "Seite nicht gefunden",
+    "notFoundText": "Die gesuchte Seite existiert nicht oder wurde verschoben. Zurück zur Startseite.",
+    "notFoundHome": "Zur Startseite",
+    "notFoundExplore": "Oder entdecken Sie unsere Tools:"
   },
   "PixelStudio": {
     "title": "Animal Crossing (ACNH) Benutzerdefinierter Design-Pixelraster-Konverter",
@@ -308,7 +312,10 @@
     "gdpr": "8. GDPR- & CCPA-Regulierungskonformität",
     "gdprText": "Da LifeSimGrid 100 % der Datenflüsse innerhalb der Browser-Sandbox des Nutzers verarbeitet und niemals personenbezogene Informationen (PII) erfasst, archiviert oder weitergibt, entspricht es vollständig der Datenschutz-Grundverordnung (GDPR — Europäische Union) und dem California Consumer Privacy Act (CCPA — Vereinigte Staaten). Es gibt keine Nutzerdaten, auf die zugegriffen, die berichtigt, exportiert oder gelöscht werden könnten, da wir diese niemals in unserer Infrastruktur besitzen. Das Löschen des lokalen Caches Ihres Browsers entfernt dauerhaft Ihre lokal verwalteten Inselaufstellungen und Verlaufsprotokolle.",
     "security": "9. Durchgängige Datensicherheit",
-    "securityText": "Da keine Daten Ihr lokales Gerät verlassen, ist das strukturelle Risiko von serverseitigen Datenpannen, Datenlecks oder Cloud-Hacking vollständig eliminiert. Wir bekennen uns tief zur Transparenz von Open-Source-Software; Sie können unseren gesamten Frontend-Datenfluss jederzeit über unser öffentliches GitHub-Repository selbst überprüfen. Darüber hinaus wird die Webanwendung ausschließlich über das sichere HTTPS-Protokoll bereitgestellt, um Man-in-the-Middle-(MITM)-Angriffe bei der initialen Seitenauslieferung zu blockieren."
+    "securityText": "Da keine Daten Ihr lokales Gerät verlassen, ist das strukturelle Risiko von serverseitigen Datenpannen, Datenlecks oder Cloud-Hacking vollständig eliminiert. Wir bekennen uns tief zur Transparenz von Open-Source-Software; Sie können unseren gesamten Frontend-Datenfluss jederzeit über unser öffentliches GitHub-Repository selbst überprüfen. Darüber hinaus wird die Webanwendung ausschließlich über das sichere HTTPS-Protokoll bereitgestellt, um Man-in-the-Middle-(MITM)-Angriffe bei der initialen Seitenauslieferung zu blockieren.",
+    "cookieManageTitle": "Verwalten Sie Ihre Cookie-Einstellungen",
+    "cookieManageText": "Sie können Ihre Cookie-Einwilligungspräferenzen jederzeit überprüfen, ändern oder widerrufen. Klicken Sie auf die Schaltfläche unten, um das Cookie-Einwilligungsbanner erneut zu öffnen und Ihre Einstellungen anzupassen.",
+    "cookieManageButton": "Cookie-Einstellungen verwalten"
   },
   "Terms": {
     "title": "Nutzungsbedingungen",

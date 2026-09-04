@@ -1,6 +1,7 @@
 "use client";
 
 import { useTranslations } from "next-intl";
+import { useCallback } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
@@ -18,6 +19,11 @@ export default function PrivacyPage() {
     { title: t("gdpr"), text: t("gdprText") },
     { title: t("security"), text: t("securityText") },
   ];
+
+  const reopenConsent = useCallback(() => {
+    window.dispatchEvent(new CustomEvent("lifesimgrid-reopen-consent"));
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, []);
 
   return (
     <div className="flex min-h-screen flex-col">
@@ -44,6 +50,22 @@ export default function PrivacyPage() {
                 <p className="leading-relaxed text-gray-600">{section.text}</p>
               </div>
             ))}
+          </div>
+
+          {/* Cookie consent management button */}
+          <div className="mt-8 rounded-2xl border border-amber-100 bg-amber-50 p-6">
+            <h2 className="mb-2 font-mono text-lg font-bold text-amber-800">
+              {t("cookieManageTitle")}
+            </h2>
+            <p className="mb-4 leading-relaxed text-amber-700">
+              {t("cookieManageText")}
+            </p>
+            <button
+              onClick={reopenConsent}
+              className="inline-block rounded-xl bg-amber-500 px-4 py-2 text-sm font-semibold text-white shadow-sm transition-all hover:bg-amber-600 active:scale-95"
+            >
+              {t("cookieManageButton")}
+            </button>
           </div>
         </section>
       </main>

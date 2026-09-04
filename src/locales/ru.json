@@ -22,7 +22,11 @@
     "subtitle": "Веб-альтернатива Living the Grid для Animal Crossing (ACNH) и Tomodachi Life: пиксельные сетки, исправление Mii FFL и совместимость MBTI — 100% в браузере, без регистрации.",
     "tabPixel": "🎨 ACNH Pixel Studio",
     "tabQR": "🔓 Mii QR Unlocker",
-    "tabVoice": "🎵 Tomodachi Voice Lab (MBTI)"
+    "tabVoice": "🎵 Tomodachi Voice Lab (MBTI)",
+    "notFoundTitle": "Страница не найдена",
+    "notFoundText": "Страница, которую вы ищете, не существует или была перемещена.",
+    "notFoundHome": "На главную",
+    "notFoundExplore": "Или изучите инструменты:"
   },
   "PixelStudio": {
     "title": "Конвертер пиксельных сеток Custom Designs Animal Crossing (ACNH)",
@@ -308,7 +312,10 @@
     "gdpr": "8. GDPR и CCPA",
     "gdprText": "100% в браузере, не собирает PII. Соответствует GDPR (ЕС) и CCPA (США). Нет данных для доступа или удаления. Очистка кэша удаляет данные.",
     "security": "9. Безопасность",
-    "securityText": "Нулевой объём данных покидает устройство. Риск утечек устранён. Открытый код на GitHub. HTTPS для защиты от MITM."
+    "securityText": "Нулевой объём данных покидает устройство. Риск утечек устранён. Открытый код на GitHub. HTTPS для защиты от MITM.",
+    "cookieManageTitle": "Управление настройками файлов cookie",
+    "cookieManageText": "Вы можете в любое время просмотреть, изменить или отозвать свои настройки согласия на использование файлов cookie. Нажмите кнопку ниже, чтобы снова открыть баннер согласия на использование файлов cookie и изменить настройки.",
+    "cookieManageButton": "Управление настройками cookie"
   },
   "Terms": {
     "title": "Условия использования",
