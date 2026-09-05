@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f59e0b" />
+      <stop offset="50%" stop-color="#ef4444" />
+      <stop offset="100%" stop-color="#ec4899" />
+    </linearGradient>
+    <linearGradient id="cardGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.95" />
+      <stop offset="100%" stop-color="#f8fafc" stop-opacity="0.95" />
+    </linearGradient>
+    <filter id="shadow">
+      <feDropShadow dx="0" dy="4" stdDeviation="20" flood-color="rgba(0,0,0,0.2)" />
+    </filter>
+    <filter id="textShadow">
+      <feDropShadow dx="2" dy="2" stdDeviation="4" flood-color="rgba(0,0,0,0.3)" />
+    </filter>
+    <pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse">
+      <path d="M 20 0 L 0 0 0 20" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="1" />
+    </pattern>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#bgGradient)" />
+  <rect width="1200" height="630" fill="url(#grid)" />
+
+  <rect x="60" y="60" width="1080" height="510" rx="32" fill="url(#cardGradient)" filter="url(#shadow)" />
+
+  <g transform="translate(120, 100)">
+    <rect x="0" y="0" width="160" height="160" rx="16" fill="#fbbf24" opacity="0.9" />
+    <text x="80" y="60" text-anchor="middle" font-family="Arial, sans-serif" font-size="64" font-weight="bold" fill="white" filter="url(#textShadow)">E</text>
+    <text x="80" y="110" text-anchor="middle" font-family="Arial, sans-serif" font-size="64" font-weight="bold" fill="white" filter="url(#textShadow)">S</text>
+    <text x="80" y="160" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="white">T J</text>
+
+    <rect x="180" y="0" width="160" height="160" rx="16" fill="#3b82f6" opacity="0.9" />
+    <text x="260" y="60" text-anchor="middle" font-family="Arial, sans-serif" font-size="64" font-weight="bold" fill="white" filter="url(#textShadow)">I</text>
+    <text x="260" y="110" text-anchor="middle" font-family="Arial, sans-serif" font-size="64" font-weight="bold" fill="white" filter="url(#textShadow)">N</text>
+    <text x="260" y="160" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="white">F P</text>
+  </g>
+
+  <g transform="translate(120, 310)">
+    <text x="0" y="40" font-family="Arial, sans-serif" font-size="42" font-weight="bold" fill="#1e293b">Tomodachi Life</text>
+    <text x="0" y="90" font-family="Arial, sans-serif" font-size="36" font-weight="bold" fill="#6366f1">Personality Calculator</text>
+    <text x="0" y="130" font-family="Arial, sans-serif" font-size="18" fill="#64748b">16 MBTI types mapped to in-game personalities</text>
+    <text x="0" y="160" font-family="Arial, sans-serif" font-size="18" fill="#64748b">Adjust 4 sliders to find your Mii personality</text>
+  </g>
+
+  <g transform="translate(820, 350)">
+    <rect x="0" y="0" width="280" height="60" rx="8" fill="#fbbf24" opacity="0.2" />
+    <text x="140" y="40" text-anchor="middle" font-family="Arial, sans-serif" font-size="28" font-weight="bold" fill="#92400e">Movement</text>
+
+    <rect x="0" y="70" width="280" height="60" rx="8" fill="#3b82f6" opacity="0.2" />
+    <text x="140" y="110" text-anchor="middle" font-family="Arial, sans-serif" font-size="28" font-weight="bold" fill="#1e3a8a">Speech</text>
+
+    <rect x="0" y="140" width="280" height="60" rx="8" fill="#10b981" opacity="0.2" />
+    <text x="140" y="180" text-anchor="middle" font-family="Arial, sans-serif" font-size="28" font-weight="bold" fill="#065f46">Energy</text>
+
+    <rect x="0" y="210" width="280" height="60" rx="8" fill="#ec4899" opacity="0.2" />
+    <text x="140" y="250" text-anchor="middle" font-family="Arial, sans-serif" font-size="28" font-weight="bold" fill="#9d174d">Thinking</text>
+  </g>
+
+  <text x="600" y="540" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#94a3b8">LifeSimGrid.org — Fan-made tool, not affiliated with Nintendo</text>
+</svg>

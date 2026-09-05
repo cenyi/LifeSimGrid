@@ -12,10 +12,25 @@ import { Link } from "@/i18n/routing";
 import { useState, useEffect, useRef, useCallback } from "react";
 import {
   calculateCompatibility,
-  getPersonalityGroup,
-  getMbtiCode,
   type Zodiac,
 } from "@/lib/compatibility";
+import {
+  PERSONALITIES,
+  ZODIAC_ORDER,
+  getPersonalityGroup,
+  getMbtiCode,
+  type MiiCharacter,
+  type BuildingCategory,
+  type MapCell,
+  LEGACY_STORAGE_KEYS,
+} from "@/lib/types";
+import {
+  getGroupColor,
+} from "@/lib/personality-data";
+import {
+  loadCharactersSync,
+  saveCharactersSync,
+} from "@/lib/character-db";
 
 /* ------------------------------------------------------------------ */
 /*  Constants                                                          */
@@ -23,9 +38,11 @@ import {
 
 const BASE = "https://lifesimgrid.org";
 
-type BuildingType =
-  | "empty" | "house" | "apartment" | "cafe" | "shop" | "park"
-  | "fountain" | "restaurant" | "tower" | "beach" | "bridge" | "tree" | "flower";
+/** BuildingType aliased to the unified BuildingCategory type. */
+type BuildingType = BuildingCategory;
+
+/** Re-exported for internal convenience. */
+export type { BuildingType };
 
 interface BuildingDef {
   type: BuildingType;
@@ -55,20 +72,9 @@ const BUILDING_MAP: Record<string, BuildingDef> = Object.fromEntries(
   BUILDINGS.map((b) => [b.type, b])
 );
 
-const PERSONALITIES = [
-  "outgoing_leader", "outgoing_entertainer", "outgoing_trendsetter", "outgoing_optimist",
-  "confident_designer", "confident_adventurer", "confident_goGetter", "confident_charmer",
-  "independent_artist", "independent_freeSpirit", "independent_thinker", "independent_loneWolf",
-  "easygoing_dreamer", "easygoing_sweetheart", "easygoing_softie", "easygoing_buddy",
-] as const;
-
-const ZODIACS: Zodiac[] = [
-  "aries", "taurus", "gemini", "cancer", "leo", "virgo",
-  "libra", "scorpio", "sagittarius", "capricorn", "aquarius", "pisces",
-];
-
-const STORAGE_KEY = "lifesimgrid-island-planner";
-const RESIDENTS_KEY = "lifesimgrid-island-residents";
+// PERSONALITIES and ZODIAC_ORDER now imported from lib/types.ts
+// Storage keys for grid data (residents now use unified character-db.ts)
+const STORAGE_KEY = LEGACY_STORAGE_KEYS.islandGrid;
 const MAX_RESIDENTS = 15;
 
 const CANVAS_CELL_SIZE = 28;
@@ -79,18 +85,11 @@ const CANVAS_GRID_LINE = "#e2e8f0";
 /*  Types                                                              */
 /* ------------------------------------------------------------------ */
 
-interface GridCell {
-  type: BuildingType;
-  residentName?: string;
-  residentPersonality?: string;
-}
+/** GridCell now uses the unified MapCell type from lib/types.ts. */
+type GridCell = MapCell;
 
-interface OptimizerResident {
-  id: string;
-  name: string;
-  zodiac: Zodiac;
-  personality: string;
-}
+/** OptimizerResident now uses the unified MiiCharacter type. */
+type OptimizerResident = MiiCharacter;
 
 interface OptimizationPair {
   a: OptimizerResident;
@@ -216,19 +215,14 @@ function saveGrid(size: number, cells: GridCell[][]) {
   localStorage.setItem(STORAGE_KEY, JSON.stringify({ size, cells }));
 }
 
+/** Load optimizer residents from unified character storage. */
 function loadOptimizerResidents(): OptimizerResident[] {
-  if (typeof window === "undefined") return [];
-  try {
-    const raw = localStorage.getItem(RESIDENTS_KEY);
-    return raw ? JSON.parse(raw) : [];
-  } catch {
-    return [];
-  }
+  return loadCharactersSync();
 }
 
+/** Save optimizer residents to unified character storage. */
 function saveOptimizerResidents(residents: OptimizerResident[]) {
-  if (typeof window === "undefined") return;
-  localStorage.setItem(RESIDENTS_KEY, JSON.stringify(residents));
+  saveCharactersSync(residents);
 }
 
 function generateId(): string {
@@ -241,14 +235,7 @@ function createEmptyGrid(size: number): GridCell[][] {
   );
 }
 
-function getGroupColor(group: string): string {
-  switch (group) {
-    case "outgoing": return "#f59e0b";
-    case "confident": return "#ef4444";
-    case "independent": return "#8b5cf6";
-    default: return "#22c55e";
-  }
-}
+// getGroupColor now imported from lib/personality-data.ts
 
 /* ------------------------------------------------------------------ */
 /*  Canvas Grid Renderer                                              */
@@ -980,7 +967,7 @@ export default function TomodachiIslandPlannerPage() {
                       onChange={(e) => setOptZodiac(e.target.value as Zodiac)}
                       className="w-full rounded-lg border border-gray-200 bg-white px-3 py-2 text-sm outline-none focus:border-purple-400"
                     >
-                      {ZODIACS.map((z) => (
+                      {ZODIAC_ORDER.map((z) => (
                         <option key={z} value={z}>
                           {z.charAt(0).toUpperCase() + z.slice(1)}
                         </option>

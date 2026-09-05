@@ -14,7 +14,7 @@ import {
   getPersonalityGroup,
   getMbtiCode,
   type Zodiac,
-} from "@/lib/compatibility";
+} from "@/lib/types";
 
 /* ------------------------------------------------------------------ */
 /*  Constants                                                          */

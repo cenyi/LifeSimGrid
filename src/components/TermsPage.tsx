@@ -22,7 +22,7 @@ export default function TermsPage() {
     <div className="flex min-h-screen flex-col">
       <Navbar />
       <main className="flex-1">
-        <section aria-labelledby="terms-heading" className="mx-auto max-w-4xl px-4 py-12">
+        <section aria-labelledby="terms-heading" className="mx-auto max-w-6xl px-4 py-12">
           <h1 id="terms-heading" className="mb-2 font-mono text-3xl font-bold text-gray-900 sm:text-4xl">
             {t("title")}
           </h1>

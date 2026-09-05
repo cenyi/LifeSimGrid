@@ -316,4 +316,583 @@
     <xhtml:link rel="alternate" hreflang="it" href="https://lifesimgrid.org/it/mii-eyes"/>
     <xhtml:link rel="alternate" hreflang="nl" href="https://lifesimgrid.org/nl/mii-eyes"/>
   </url>
+
+  <!-- ============================================================
+       Tomodachi Life Personality Calculator
+       ============================================================ -->
+  <url>
+    <loc>https://lifesimgrid.org/tomodachi-life-personality-calculator</loc>
+    <lastmod>2026-09-04</lastmod>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://lifesimgrid.org/tomodachi-life-personality-calculator"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://lifesimgrid.org/tomodachi-life-personality-calculator"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://lifesimgrid.org/zh-Hant/tomodachi-life-personality-calculator"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://lifesimgrid.org/zh-CN/tomodachi-life-personality-calculator"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://lifesimgrid.org/ru/tomodachi-life-personality-calculator"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://lifesimgrid.org/pt/tomodachi-life-personality-calculator"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://lifesimgrid.org/ja/tomodachi-life-personality-calculator"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://lifesimgrid.org/es/tomodachi-life-personality-calculator"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://lifesimgrid.org/fr/tomodachi-life-personality-calculator"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://lifesimgrid.org/ko/tomodachi-life-personality-calculator"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://lifesimgrid.org/de/tomodachi-life-personality-calculator"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://lifesimgrid.org/it/tomodachi-life-personality-calculator"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://lifesimgrid.org/nl/tomodachi-life-personality-calculator"/>
+  </url>
+
+  <!-- ============================================================
+       Tomodachi Life Personality Chart
+       ============================================================ -->
+  <url>
+    <loc>https://lifesimgrid.org/tomodachi-life-personality-chart</loc>
+    <lastmod>2026-09-04</lastmod>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://lifesimgrid.org/tomodachi-life-personality-chart"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://lifesimgrid.org/tomodachi-life-personality-chart"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://lifesimgrid.org/zh-Hant/tomodachi-life-personality-chart"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://lifesimgrid.org/zh-CN/tomodachi-life-personality-chart"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://lifesimgrid.org/ru/tomodachi-life-personality-chart"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://lifesimgrid.org/pt/tomodachi-life-personality-chart"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://lifesimgrid.org/ja/tomodachi-life-personality-chart"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://lifesimgrid.org/es/tomodachi-life-personality-chart"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://lifesimgrid.org/fr/tomodachi-life-personality-chart"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://lifesimgrid.org/ko/tomodachi-life-personality-chart"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://lifesimgrid.org/de/tomodachi-life-personality-chart"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://lifesimgrid.org/it/tomodachi-life-personality-chart"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://lifesimgrid.org/nl/tomodachi-life-personality-chart"/>
+  </url>
+
+  <!-- ============================================================
+       Tomodachi Life Personality Detail Pages (16 types)
+       ============================================================ -->
+  <url>
+    <loc>https://lifesimgrid.org/tomodachi-life-personality/leader</loc>
+    <lastmod>2026-09-04</lastmod>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://lifesimgrid.org/tomodachi-life-personality/leader"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://lifesimgrid.org/tomodachi-life-personality/leader"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://lifesimgrid.org/zh-Hant/tomodachi-life-personality/leader"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://lifesimgrid.org/zh-CN/tomodachi-life-personality/leader"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://lifesimgrid.org/ru/tomodachi-life-personality/leader"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://lifesimgrid.org/pt/tomodachi-life-personality/leader"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://lifesimgrid.org/ja/tomodachi-life-personality/leader"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://lifesimgrid.org/es/tomodachi-life-personality/leader"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://lifesimgrid.org/fr/tomodachi-life-personality/leader"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://lifesimgrid.org/ko/tomodachi-life-personality/leader"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://lifesimgrid.org/de/tomodachi-life-personality/leader"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://lifesimgrid.org/it/tomodachi-life-personality/leader"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://lifesimgrid.org/nl/tomodachi-life-personality/leader"/>
+  </url>
+  <url>
+    <loc>https://lifesimgrid.org/tomodachi-life-personality/entertainer</loc>
+    <lastmod>2026-09-04</lastmod>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://lifesimgrid.org/tomodachi-life-personality/entertainer"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://lifesimgrid.org/tomodachi-life-personality/entertainer"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://lifesimgrid.org/zh-Hant/tomodachi-life-personality/entertainer"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://lifesimgrid.org/zh-CN/tomodachi-life-personality/entertainer"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://lifesimgrid.org/ru/tomodachi-life-personality/entertainer"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://lifesimgrid.org/pt/tomodachi-life-personality/entertainer"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://lifesimgrid.org/ja/tomodachi-life-personality/entertainer"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://lifesimgrid.org/es/tomodachi-life-personality/entertainer"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://lifesimgrid.org/fr/tomodachi-life-personality/entertainer"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://lifesimgrid.org/ko/tomodachi-life-personality/entertainer"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://lifesimgrid.org/de/tomodachi-life-personality/entertainer"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://lifesimgrid.org/it/tomodachi-life-personality/entertainer"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://lifesimgrid.org/nl/tomodachi-life-personality/entertainer"/>
+  </url>
+  <url>
+    <loc>https://lifesimgrid.org/tomodachi-life-personality/trendsetter</loc>
+    <lastmod>2026-09-04</lastmod>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://lifesimgrid.org/tomodachi-life-personality/trendsetter"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://lifesimgrid.org/tomodachi-life-personality/trendsetter"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://lifesimgrid.org/zh-Hant/tomodachi-life-personality/trendsetter"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://lifesimgrid.org/zh-CN/tomodachi-life-personality/trendsetter"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://lifesimgrid.org/ru/tomodachi-life-personality/trendsetter"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://lifesimgrid.org/pt/tomodachi-life-personality/trendsetter"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://lifesimgrid.org/ja/tomodachi-life-personality/trendsetter"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://lifesimgrid.org/es/tomodachi-life-personality/trendsetter"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://lifesimgrid.org/fr/tomodachi-life-personality/trendsetter"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://lifesimgrid.org/ko/tomodachi-life-personality/trendsetter"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://lifesimgrid.org/de/tomodachi-life-personality/trendsetter"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://lifesimgrid.org/it/tomodachi-life-personality/trendsetter"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://lifesimgrid.org/nl/tomodachi-life-personality/trendsetter"/>
+  </url>
+  <url>
+    <loc>https://lifesimgrid.org/tomodachi-life-personality/optimist</loc>
+    <lastmod>2026-09-04</lastmod>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://lifesimgrid.org/tomodachi-life-personality/optimist"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://lifesimgrid.org/tomodachi-life-personality/optimist"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://lifesimgrid.org/zh-Hant/tomodachi-life-personality/optimist"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://lifesimgrid.org/zh-CN/tomodachi-life-personality/optimist"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://lifesimgrid.org/ru/tomodachi-life-personality/optimist"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://lifesimgrid.org/pt/tomodachi-life-personality/optimist"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://lifesimgrid.org/ja/tomodachi-life-personality/optimist"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://lifesimgrid.org/es/tomodachi-life-personality/optimist"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://lifesimgrid.org/fr/tomodachi-life-personality/optimist"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://lifesimgrid.org/ko/tomodachi-life-personality/optimist"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://lifesimgrid.org/de/tomodachi-life-personality/optimist"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://lifesimgrid.org/it/tomodachi-life-personality/optimist"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://lifesimgrid.org/nl/tomodachi-life-personality/optimist"/>
+  </url>
+  <url>
+    <loc>https://lifesimgrid.org/tomodachi-life-personality/designer</loc>
+    <lastmod>2026-09-04</lastmod>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://lifesimgrid.org/tomodachi-life-personality/designer"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://lifesimgrid.org/tomodachi-life-personality/designer"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://lifesimgrid.org/zh-Hant/tomodachi-life-personality/designer"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://lifesimgrid.org/zh-CN/tomodachi-life-personality/designer"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://lifesimgrid.org/ru/tomodachi-life-personality/designer"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://lifesimgrid.org/pt/tomodachi-life-personality/designer"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://lifesimgrid.org/ja/tomodachi-life-personality/designer"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://lifesimgrid.org/es/tomodachi-life-personality/designer"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://lifesimgrid.org/fr/tomodachi-life-personality/designer"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://lifesimgrid.org/ko/tomodachi-life-personality/designer"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://lifesimgrid.org/de/tomodachi-life-personality/designer"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://lifesimgrid.org/it/tomodachi-life-personality/designer"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://lifesimgrid.org/nl/tomodachi-life-personality/designer"/>
+  </url>
+  <url>
+    <loc>https://lifesimgrid.org/tomodachi-life-personality/adventurer</loc>
+    <lastmod>2026-09-04</lastmod>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://lifesimgrid.org/tomodachi-life-personality/adventurer"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://lifesimgrid.org/tomodachi-life-personality/adventurer"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://lifesimgrid.org/zh-Hant/tomodachi-life-personality/adventurer"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://lifesimgrid.org/zh-CN/tomodachi-life-personality/adventurer"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://lifesimgrid.org/ru/tomodachi-life-personality/adventurer"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://lifesimgrid.org/pt/tomodachi-life-personality/adventurer"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://lifesimgrid.org/ja/tomodachi-life-personality/adventurer"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://lifesimgrid.org/es/tomodachi-life-personality/adventurer"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://lifesimgrid.org/fr/tomodachi-life-personality/adventurer"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://lifesimgrid.org/ko/tomodachi-life-personality/adventurer"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://lifesimgrid.org/de/tomodachi-life-personality/adventurer"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://lifesimgrid.org/it/tomodachi-life-personality/adventurer"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://lifesimgrid.org/nl/tomodachi-life-personality/adventurer"/>
+  </url>
+  <url>
+    <loc>https://lifesimgrid.org/tomodachi-life-personality/goGetter</loc>
+    <lastmod>2026-09-04</lastmod>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://lifesimgrid.org/tomodachi-life-personality/goGetter"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://lifesimgrid.org/tomodachi-life-personality/goGetter"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://lifesimgrid.org/zh-Hant/tomodachi-life-personality/goGetter"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://lifesimgrid.org/zh-CN/tomodachi-life-personality/goGetter"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://lifesimgrid.org/ru/tomodachi-life-personality/goGetter"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://lifesimgrid.org/pt/tomodachi-life-personality/goGetter"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://lifesimgrid.org/ja/tomodachi-life-personality/goGetter"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://lifesimgrid.org/es/tomodachi-life-personality/goGetter"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://lifesimgrid.org/fr/tomodachi-life-personality/goGetter"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://lifesimgrid.org/ko/tomodachi-life-personality/goGetter"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://lifesimgrid.org/de/tomodachi-life-personality/goGetter"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://lifesimgrid.org/it/tomodachi-life-personality/goGetter"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://lifesimgrid.org/nl/tomodachi-life-personality/goGetter"/>
+  </url>
+  <url>
+    <loc>https://lifesimgrid.org/tomodachi-life-personality/charmer</loc>
+    <lastmod>2026-09-04</lastmod>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://lifesimgrid.org/tomodachi-life-personality/charmer"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://lifesimgrid.org/tomodachi-life-personality/charmer"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://lifesimgrid.org/zh-Hant/tomodachi-life-personality/charmer"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://lifesimgrid.org/zh-CN/tomodachi-life-personality/charmer"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://lifesimgrid.org/ru/tomodachi-life-personality/charmer"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://lifesimgrid.org/pt/tomodachi-life-personality/charmer"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://lifesimgrid.org/ja/tomodachi-life-personality/charmer"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://lifesimgrid.org/es/tomodachi-life-personality/charmer"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://lifesimgrid.org/fr/tomodachi-life-personality/charmer"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://lifesimgrid.org/ko/tomodachi-life-personality/charmer"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://lifesimgrid.org/de/tomodachi-life-personality/charmer"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://lifesimgrid.org/it/tomodachi-life-personality/charmer"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://lifesimgrid.org/nl/tomodachi-life-personality/charmer"/>
+  </url>
+  <url>
+    <loc>https://lifesimgrid.org/tomodachi-life-personality/artist</loc>
+    <lastmod>2026-09-04</lastmod>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://lifesimgrid.org/tomodachi-life-personality/artist"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://lifesimgrid.org/tomodachi-life-personality/artist"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://lifesimgrid.org/zh-Hant/tomodachi-life-personality/artist"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://lifesimgrid.org/zh-CN/tomodachi-life-personality/artist"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://lifesimgrid.org/ru/tomodachi-life-personality/artist"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://lifesimgrid.org/pt/tomodachi-life-personality/artist"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://lifesimgrid.org/ja/tomodachi-life-personality/artist"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://lifesimgrid.org/es/tomodachi-life-personality/artist"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://lifesimgrid.org/fr/tomodachi-life-personality/artist"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://lifesimgrid.org/ko/tomodachi-life-personality/artist"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://lifesimgrid.org/de/tomodachi-life-personality/artist"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://lifesimgrid.org/it/tomodachi-life-personality/artist"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://lifesimgrid.org/nl/tomodachi-life-personality/artist"/>
+  </url>
+  <url>
+    <loc>https://lifesimgrid.org/tomodachi-life-personality/freeSpirit</loc>
+    <lastmod>2026-09-04</lastmod>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://lifesimgrid.org/tomodachi-life-personality/freeSpirit"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://lifesimgrid.org/tomodachi-life-personality/freeSpirit"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://lifesimgrid.org/zh-Hant/tomodachi-life-personality/freeSpirit"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://lifesimgrid.org/zh-CN/tomodachi-life-personality/freeSpirit"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://lifesimgrid.org/ru/tomodachi-life-personality/freeSpirit"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://lifesimgrid.org/pt/tomodachi-life-personality/freeSpirit"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://lifesimgrid.org/ja/tomodachi-life-personality/freeSpirit"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://lifesimgrid.org/es/tomodachi-life-personality/freeSpirit"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://lifesimgrid.org/fr/tomodachi-life-personality/freeSpirit"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://lifesimgrid.org/ko/tomodachi-life-personality/freeSpirit"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://lifesimgrid.org/de/tomodachi-life-personality/freeSpirit"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://lifesimgrid.org/it/tomodachi-life-personality/freeSpirit"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://lifesimgrid.org/nl/tomodachi-life-personality/freeSpirit"/>
+  </url>
+  <url>
+    <loc>https://lifesimgrid.org/tomodachi-life-personality/thinker</loc>
+    <lastmod>2026-09-04</lastmod>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://lifesimgrid.org/tomodachi-life-personality/thinker"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://lifesimgrid.org/tomodachi-life-personality/thinker"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://lifesimgrid.org/zh-Hant/tomodachi-life-personality/thinker"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://lifesimgrid.org/zh-CN/tomodachi-life-personality/thinker"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://lifesimgrid.org/ru/tomodachi-life-personality/thinker"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://lifesimgrid.org/pt/tomodachi-life-personality/thinker"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://lifesimgrid.org/ja/tomodachi-life-personality/thinker"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://lifesimgrid.org/es/tomodachi-life-personality/thinker"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://lifesimgrid.org/fr/tomodachi-life-personality/thinker"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://lifesimgrid.org/ko/tomodachi-life-personality/thinker"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://lifesimgrid.org/de/tomodachi-life-personality/thinker"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://lifesimgrid.org/it/tomodachi-life-personality/thinker"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://lifesimgrid.org/nl/tomodachi-life-personality/thinker"/>
+  </url>
+  <url>
+    <loc>https://lifesimgrid.org/tomodachi-life-personality/loneWolf</loc>
+    <lastmod>2026-09-04</lastmod>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://lifesimgrid.org/tomodachi-life-personality/loneWolf"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://lifesimgrid.org/tomodachi-life-personality/loneWolf"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://lifesimgrid.org/zh-Hant/tomodachi-life-personality/loneWolf"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://lifesimgrid.org/zh-CN/tomodachi-life-personality/loneWolf"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://lifesimgrid.org/ru/tomodachi-life-personality/loneWolf"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://lifesimgrid.org/pt/tomodachi-life-personality/loneWolf"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://lifesimgrid.org/ja/tomodachi-life-personality/loneWolf"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://lifesimgrid.org/es/tomodachi-life-personality/loneWolf"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://lifesimgrid.org/fr/tomodachi-life-personality/loneWolf"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://lifesimgrid.org/ko/tomodachi-life-personality/loneWolf"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://lifesimgrid.org/de/tomodachi-life-personality/loneWolf"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://lifesimgrid.org/it/tomodachi-life-personality/loneWolf"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://lifesimgrid.org/nl/tomodachi-life-personality/loneWolf"/>
+  </url>
+
+  <url>
+    <loc>https://lifesimgrid.org/tomodachi-life-personality/dreamer</loc>
+    <lastmod>2026-09-04</lastmod>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://lifesimgrid.org/tomodachi-life-personality/dreamer"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://lifesimgrid.org/tomodachi-life-personality/dreamer"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://lifesimgrid.org/zh-Hant/tomodachi-life-personality/dreamer"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://lifesimgrid.org/zh-CN/tomodachi-life-personality/dreamer"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://lifesimgrid.org/ru/tomodachi-life-personality/dreamer"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://lifesimgrid.org/pt/tomodachi-life-personality/dreamer"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://lifesimgrid.org/ja/tomodachi-life-personality/dreamer"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://lifesimgrid.org/es/tomodachi-life-personality/dreamer"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://lifesimgrid.org/fr/tomodachi-life-personality/dreamer"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://lifesimgrid.org/ko/tomodachi-life-personality/dreamer"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://lifesimgrid.org/de/tomodachi-life-personality/dreamer"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://lifesimgrid.org/it/tomodachi-life-personality/dreamer"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://lifesimgrid.org/nl/tomodachi-life-personality/dreamer"/>
+  </url>
+  <url>
+    <loc>https://lifesimgrid.org/tomodachi-life-personality/sweetheart</loc>
+    <lastmod>2026-09-04</lastmod>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://lifesimgrid.org/tomodachi-life-personality/sweetheart"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://lifesimgrid.org/tomodachi-life-personality/sweetheart"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://lifesimgrid.org/zh-Hant/tomodachi-life-personality/sweetheart"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://lifesimgrid.org/zh-CN/tomodachi-life-personality/sweetheart"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://lifesimgrid.org/ru/tomodachi-life-personality/sweetheart"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://lifesimgrid.org/pt/tomodachi-life-personality/sweetheart"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://lifesimgrid.org/ja/tomodachi-life-personality/sweetheart"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://lifesimgrid.org/es/tomodachi-life-personality/sweetheart"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://lifesimgrid.org/fr/tomodachi-life-personality/sweetheart"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://lifesimgrid.org/ko/tomodachi-life-personality/sweetheart"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://lifesimgrid.org/de/tomodachi-life-personality/sweetheart"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://lifesimgrid.org/it/tomodachi-life-personality/sweetheart"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://lifesimgrid.org/nl/tomodachi-life-personality/sweetheart"/>
+  </url>
+  <url>
+    <loc>https://lifesimgrid.org/tomodachi-life-personality/softie</loc>
+    <lastmod>2026-09-04</lastmod>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://lifesimgrid.org/tomodachi-life-personality/softie"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://lifesimgrid.org/tomodachi-life-personality/softie"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://lifesimgrid.org/zh-Hant/tomodachi-life-personality/softie"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://lifesimgrid.org/zh-CN/tomodachi-life-personality/softie"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://lifesimgrid.org/ru/tomodachi-life-personality/softie"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://lifesimgrid.org/pt/tomodachi-life-personality/softie"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://lifesimgrid.org/ja/tomodachi-life-personality/softie"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://lifesimgrid.org/es/tomodachi-life-personality/softie"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://lifesimgrid.org/fr/tomodachi-life-personality/softie"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://lifesimgrid.org/ko/tomodachi-life-personality/softie"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://lifesimgrid.org/de/tomodachi-life-personality/softie"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://lifesimgrid.org/it/tomodachi-life-personality/softie"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://lifesimgrid.org/nl/tomodachi-life-personality/softie"/>
+  </url>
+  <url>
+    <loc>https://lifesimgrid.org/tomodachi-life-personality/buddy</loc>
+    <lastmod>2026-09-04</lastmod>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://lifesimgrid.org/tomodachi-life-personality/buddy"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://lifesimgrid.org/tomodachi-life-personality/buddy"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://lifesimgrid.org/zh-Hant/tomodachi-life-personality/buddy"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://lifesimgrid.org/zh-CN/tomodachi-life-personality/buddy"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://lifesimgrid.org/ru/tomodachi-life-personality/buddy"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://lifesimgrid.org/pt/tomodachi-life-personality/buddy"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://lifesimgrid.org/ja/tomodachi-life-personality/buddy"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://lifesimgrid.org/es/tomodachi-life-personality/buddy"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://lifesimgrid.org/fr/tomodachi-life-personality/buddy"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://lifesimgrid.org/ko/tomodachi-life-personality/buddy"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://lifesimgrid.org/de/tomodachi-life-personality/buddy"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://lifesimgrid.org/it/tomodachi-life-personality/buddy"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://lifesimgrid.org/nl/tomodachi-life-personality/buddy"/>
+  </url>
+
+  <!-- ============================================================
+       Tomodachi Life MBTI Detail Pages (16 types)
+       ============================================================ -->
+  <url>
+    <loc>https://lifesimgrid.org/tomodachi-life-mbti/estj</loc>
+    <lastmod>2026-09-04</lastmod>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://lifesimgrid.org/tomodachi-life-mbti/estj"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://lifesimgrid.org/tomodachi-life-mbti/estj"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://lifesimgrid.org/zh-Hant/tomodachi-life-mbti/estj"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://lifesimgrid.org/zh-CN/tomodachi-life-mbti/estj"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://lifesimgrid.org/ru/tomodachi-life-mbti/estj"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://lifesimgrid.org/pt/tomodachi-life-mbti/estj"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://lifesimgrid.org/ja/tomodachi-life-mbti/estj"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://lifesimgrid.org/es/tomodachi-life-mbti/estj"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://lifesimgrid.org/fr/tomodachi-life-mbti/estj"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://lifesimgrid.org/ko/tomodachi-life-mbti/estj"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://lifesimgrid.org/de/tomodachi-life-mbti/estj"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://lifesimgrid.org/it/tomodachi-life-mbti/estj"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://lifesimgrid.org/nl/tomodachi-life-mbti/estj"/>
+  </url>
+  <url>
+    <loc>https://lifesimgrid.org/tomodachi-life-mbti/esfp</loc>
+    <lastmod>2026-09-04</lastmod>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://lifesimgrid.org/tomodachi-life-mbti/esfp"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://lifesimgrid.org/tomodachi-life-mbti/esfp"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://lifesimgrid.org/zh-Hant/tomodachi-life-mbti/esfp"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://lifesimgrid.org/zh-CN/tomodachi-life-mbti/esfp"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://lifesimgrid.org/ru/tomodachi-life-mbti/esfp"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://lifesimgrid.org/pt/tomodachi-life-mbti/esfp"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://lifesimgrid.org/ja/tomodachi-life-mbti/esfp"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://lifesimgrid.org/es/tomodachi-life-mbti/esfp"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://lifesimgrid.org/fr/tomodachi-life-mbti/esfp"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://lifesimgrid.org/ko/tomodachi-life-mbti/esfp"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://lifesimgrid.org/de/tomodachi-life-mbti/esfp"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://lifesimgrid.org/it/tomodachi-life-mbti/esfp"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://lifesimgrid.org/nl/tomodachi-life-mbti/esfp"/>
+  </url>
+  <url>
+    <loc>https://lifesimgrid.org/tomodachi-life-mbti/enfp</loc>
+    <lastmod>2026-09-04</lastmod>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://lifesimgrid.org/tomodachi-life-mbti/enfp"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://lifesimgrid.org/tomodachi-life-mbti/enfp"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://lifesimgrid.org/zh-Hant/tomodachi-life-mbti/enfp"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://lifesimgrid.org/zh-CN/tomodachi-life-mbti/enfp"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://lifesimgrid.org/ru/tomodachi-life-mbti/enfp"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://lifesimgrid.org/pt/tomodachi-life-mbti/enfp"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://lifesimgrid.org/ja/tomodachi-life-mbti/enfp"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://lifesimgrid.org/es/tomodachi-life-mbti/enfp"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://lifesimgrid.org/fr/tomodachi-life-mbti/enfp"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://lifesimgrid.org/ko/tomodachi-life-mbti/enfp"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://lifesimgrid.org/de/tomodachi-life-mbti/enfp"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://lifesimgrid.org/it/tomodachi-life-mbti/enfp"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://lifesimgrid.org/nl/tomodachi-life-mbti/enfp"/>
+  </url>
+  <url>
+    <loc>https://lifesimgrid.org/tomodachi-life-mbti/esfj</loc>
+    <lastmod>2026-09-04</lastmod>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://lifesimgrid.org/tomodachi-life-mbti/esfj"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://lifesimgrid.org/tomodachi-life-mbti/esfj"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://lifesimgrid.org/zh-Hant/tomodachi-life-mbti/esfj"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://lifesimgrid.org/zh-CN/tomodachi-life-mbti/esfj"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://lifesimgrid.org/ru/tomodachi-life-mbti/esfj"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://lifesimgrid.org/pt/tomodachi-life-mbti/esfj"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://lifesimgrid.org/ja/tomodachi-life-mbti/esfj"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://lifesimgrid.org/es/tomodachi-life-mbti/esfj"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://lifesimgrid.org/fr/tomodachi-life-mbti/esfj"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://lifesimgrid.org/ko/tomodachi-life-mbti/esfj"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://lifesimgrid.org/de/tomodachi-life-mbti/esfj"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://lifesimgrid.org/it/tomodachi-life-mbti/esfj"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://lifesimgrid.org/nl/tomodachi-life-mbti/esfj"/>
+  </url>
+  <url>
+    <loc>https://lifesimgrid.org/tomodachi-life-mbti/intj</loc>
+    <lastmod>2026-09-04</lastmod>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://lifesimgrid.org/tomodachi-life-mbti/intj"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://lifesimgrid.org/tomodachi-life-mbti/intj"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://lifesimgrid.org/zh-Hant/tomodachi-life-mbti/intj"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://lifesimgrid.org/zh-CN/tomodachi-life-mbti/intj"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://lifesimgrid.org/ru/tomodachi-life-mbti/intj"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://lifesimgrid.org/pt/tomodachi-life-mbti/intj"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://lifesimgrid.org/ja/tomodachi-life-mbti/intj"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://lifesimgrid.org/es/tomodachi-life-mbti/intj"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://lifesimgrid.org/fr/tomodachi-life-mbti/intj"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://lifesimgrid.org/ko/tomodachi-life-mbti/intj"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://lifesimgrid.org/de/tomodachi-life-mbti/intj"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://lifesimgrid.org/it/tomodachi-life-mbti/intj"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://lifesimgrid.org/nl/tomodachi-life-mbti/intj"/>
+  </url>
+  <url>
+    <loc>https://lifesimgrid.org/tomodachi-life-mbti/estp</loc>
+    <lastmod>2026-09-04</lastmod>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://lifesimgrid.org/tomodachi-life-mbti/estp"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://lifesimgrid.org/tomodachi-life-mbti/estp"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://lifesimgrid.org/zh-Hant/tomodachi-life-mbti/estp"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://lifesimgrid.org/zh-CN/tomodachi-life-mbti/estp"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://lifesimgrid.org/ru/tomodachi-life-mbti/estp"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://lifesimgrid.org/pt/tomodachi-life-mbti/estp"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://lifesimgrid.org/ja/tomodachi-life-mbti/estp"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://lifesimgrid.org/es/tomodachi-life-mbti/estp"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://lifesimgrid.org/fr/tomodachi-life-mbti/estp"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://lifesimgrid.org/ko/tomodachi-life-mbti/estp"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://lifesimgrid.org/de/tomodachi-life-mbti/estp"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://lifesimgrid.org/it/tomodachi-life-mbti/estp"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://lifesimgrid.org/nl/tomodachi-life-mbti/estp"/>
+  </url>
+  <url>
+    <loc>https://lifesimgrid.org/tomodachi-life-mbti/entj</loc>
+    <lastmod>2026-09-04</lastmod>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://lifesimgrid.org/tomodachi-life-mbti/entj"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://lifesimgrid.org/tomodachi-life-mbti/entj"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://lifesimgrid.org/zh-Hant/tomodachi-life-mbti/entj"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://lifesimgrid.org/zh-CN/tomodachi-life-mbti/entj"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://lifesimgrid.org/ru/tomodachi-life-mbti/entj"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://lifesimgrid.org/pt/tomodachi-life-mbti/entj"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://lifesimgrid.org/ja/tomodachi-life-mbti/entj"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://lifesimgrid.org/es/tomodachi-life-mbti/entj"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://lifesimgrid.org/fr/tomodachi-life-mbti/entj"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://lifesimgrid.org/ko/tomodachi-life-mbti/entj"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://lifesimgrid.org/de/tomodachi-life-mbti/entj"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://lifesimgrid.org/it/tomodachi-life-mbti/entj"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://lifesimgrid.org/nl/tomodachi-life-mbti/entj"/>
+  </url>
+  <url>
+    <loc>https://lifesimgrid.org/tomodachi-life-mbti/entp</loc>
+    <lastmod>2026-09-04</lastmod>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://lifesimgrid.org/tomodachi-life-mbti/entp"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://lifesimgrid.org/tomodachi-life-mbti/entp"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://lifesimgrid.org/zh-Hant/tomodachi-life-mbti/entp"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://lifesimgrid.org/zh-CN/tomodachi-life-mbti/entp"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://lifesimgrid.org/ru/tomodachi-life-mbti/entp"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://lifesimgrid.org/pt/tomodachi-life-mbti/entp"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://lifesimgrid.org/ja/tomodachi-life-mbti/entp"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://lifesimgrid.org/es/tomodachi-life-mbti/entp"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://lifesimgrid.org/fr/tomodachi-life-mbti/entp"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://lifesimgrid.org/ko/tomodachi-life-mbti/entp"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://lifesimgrid.org/de/tomodachi-life-mbti/entp"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://lifesimgrid.org/it/tomodachi-life-mbti/entp"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://lifesimgrid.org/nl/tomodachi-life-mbti/entp"/>
+  </url>
+  <url>
+    <loc>https://lifesimgrid.org/tomodachi-life-mbti/infp</loc>
+    <lastmod>2026-09-04</lastmod>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://lifesimgrid.org/tomodachi-life-mbti/infp"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://lifesimgrid.org/tomodachi-life-mbti/infp"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://lifesimgrid.org/zh-Hant/tomodachi-life-mbti/infp"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://lifesimgrid.org/zh-CN/tomodachi-life-mbti/infp"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://lifesimgrid.org/ru/tomodachi-life-mbti/infp"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://lifesimgrid.org/pt/tomodachi-life-mbti/infp"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://lifesimgrid.org/ja/tomodachi-life-mbti/infp"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://lifesimgrid.org/es/tomodachi-life-mbti/infp"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://lifesimgrid.org/fr/tomodachi-life-mbti/infp"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://lifesimgrid.org/ko/tomodachi-life-mbti/infp"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://lifesimgrid.org/de/tomodachi-life-mbti/infp"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://lifesimgrid.org/it/tomodachi-life-mbti/infp"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://lifesimgrid.org/nl/tomodachi-life-mbti/infp"/>
+  </url>
+  <url>
+    <loc>https://lifesimgrid.org/tomodachi-life-mbti/intp</loc>
+    <lastmod>2026-09-04</lastmod>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://lifesimgrid.org/tomodachi-life-mbti/intp"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://lifesimgrid.org/tomodachi-life-mbti/intp"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://lifesimgrid.org/zh-Hant/tomodachi-life-mbti/intp"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://lifesimgrid.org/zh-CN/tomodachi-life-mbti/intp"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://lifesimgrid.org/ru/tomodachi-life-mbti/intp"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://lifesimgrid.org/pt/tomodachi-life-mbti/intp"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://lifesimgrid.org/ja/tomodachi-life-mbti/intp"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://lifesimgrid.org/es/tomodachi-life-mbti/intp"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://lifesimgrid.org/fr/tomodachi-life-mbti/intp"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://lifesimgrid.org/ko/tomodachi-life-mbti/intp"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://lifesimgrid.org/de/tomodachi-life-mbti/intp"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://lifesimgrid.org/it/tomodachi-life-mbti/intp"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://lifesimgrid.org/nl/tomodachi-life-mbti/intp"/>
+  </url>
+  <url>
+    <loc>https://lifesimgrid.org/tomodachi-life-mbti/istp</loc>
+    <lastmod>2026-09-04</lastmod>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://lifesimgrid.org/tomodachi-life-mbti/istp"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://lifesimgrid.org/tomodachi-life-mbti/istp"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://lifesimgrid.org/zh-Hant/tomodachi-life-mbti/istp"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://lifesimgrid.org/zh-CN/tomodachi-life-mbti/istp"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://lifesimgrid.org/ru/tomodachi-life-mbti/istp"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://lifesimgrid.org/pt/tomodachi-life-mbti/istp"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://lifesimgrid.org/ja/tomodachi-life-mbti/istp"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://lifesimgrid.org/es/tomodachi-life-mbti/istp"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://lifesimgrid.org/fr/tomodachi-life-mbti/istp"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://lifesimgrid.org/ko/tomodachi-life-mbti/istp"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://lifesimgrid.org/de/tomodachi-life-mbti/istp"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://lifesimgrid.org/it/tomodachi-life-mbti/istp"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://lifesimgrid.org/nl/tomodachi-life-mbti/istp"/>
+  </url>
+  <url>
+    <loc>https://lifesimgrid.org/tomodachi-life-mbti/istj</loc>
+    <lastmod>2026-09-04</lastmod>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://lifesimgrid.org/tomodachi-life-mbti/istj"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://lifesimgrid.org/tomodachi-life-mbti/istj"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://lifesimgrid.org/zh-Hant/tomodachi-life-mbti/istj"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://lifesimgrid.org/zh-CN/tomodachi-life-mbti/istj"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://lifesimgrid.org/ru/tomodachi-life-mbti/istj"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://lifesimgrid.org/pt/tomodachi-life-mbti/istj"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://lifesimgrid.org/ja/tomodachi-life-mbti/istj"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://lifesimgrid.org/es/tomodachi-life-mbti/istj"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://lifesimgrid.org/fr/tomodachi-life-mbti/istj"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://lifesimgrid.org/ko/tomodachi-life-mbti/istj"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://lifesimgrid.org/de/tomodachi-life-mbti/istj"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://lifesimgrid.org/it/tomodachi-life-mbti/istj"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://lifesimgrid.org/nl/tomodachi-life-mbti/istj"/>
+  </url>
+  <url>
+    <loc>https://lifesimgrid.org/tomodachi-life-mbti/infj</loc>
+    <lastmod>2026-09-04</lastmod>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://lifesimgrid.org/tomodachi-life-mbti/infj"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://lifesimgrid.org/tomodachi-life-mbti/infj"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://lifesimgrid.org/zh-Hant/tomodachi-life-mbti/infj"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://lifesimgrid.org/zh-CN/tomodachi-life-mbti/infj"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://lifesimgrid.org/ru/tomodachi-life-mbti/infj"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://lifesimgrid.org/pt/tomodachi-life-mbti/infj"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://lifesimgrid.org/ja/tomodachi-life-mbti/infj"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://lifesimgrid.org/es/tomodachi-life-mbti/infj"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://lifesimgrid.org/fr/tomodachi-life-mbti/infj"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://lifesimgrid.org/ko/tomodachi-life-mbti/infj"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://lifesimgrid.org/de/tomodachi-life-mbti/infj"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://lifesimgrid.org/it/tomodachi-life-mbti/infj"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://lifesimgrid.org/nl/tomodachi-life-mbti/infj"/>
+  </url>
+  <url>
+    <loc>https://lifesimgrid.org/tomodachi-life-mbti/isfj</loc>
+    <lastmod>2026-09-04</lastmod>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://lifesimgrid.org/tomodachi-life-mbti/isfj"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://lifesimgrid.org/tomodachi-life-mbti/isfj"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://lifesimgrid.org/zh-Hant/tomodachi-life-mbti/isfj"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://lifesimgrid.org/zh-CN/tomodachi-life-mbti/isfj"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://lifesimgrid.org/ru/tomodachi-life-mbti/isfj"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://lifesimgrid.org/pt/tomodachi-life-mbti/isfj"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://lifesimgrid.org/ja/tomodachi-life-mbti/isfj"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://lifesimgrid.org/es/tomodachi-life-mbti/isfj"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://lifesimgrid.org/fr/tomodachi-life-mbti/isfj"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://lifesimgrid.org/ko/tomodachi-life-mbti/isfj"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://lifesimgrid.org/de/tomodachi-life-mbti/isfj"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://lifesimgrid.org/it/tomodachi-life-mbti/isfj"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://lifesimgrid.org/nl/tomodachi-life-mbti/isfj"/>
+  </url>
+  <url>
+    <loc>https://lifesimgrid.org/tomodachi-life-mbti/isfp</loc>
+    <lastmod>2026-09-04</lastmod>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://lifesimgrid.org/tomodachi-life-mbti/isfp"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://lifesimgrid.org/tomodachi-life-mbti/isfp"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://lifesimgrid.org/zh-Hant/tomodachi-life-mbti/isfp"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://lifesimgrid.org/zh-CN/tomodachi-life-mbti/isfp"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://lifesimgrid.org/ru/tomodachi-life-mbti/isfp"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://lifesimgrid.org/pt/tomodachi-life-mbti/isfp"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://lifesimgrid.org/ja/tomodachi-life-mbti/isfp"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://lifesimgrid.org/es/tomodachi-life-mbti/isfp"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://lifesimgrid.org/fr/tomodachi-life-mbti/isfp"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://lifesimgrid.org/ko/tomodachi-life-mbti/isfp"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://lifesimgrid.org/de/tomodachi-life-mbti/isfp"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://lifesimgrid.org/it/tomodachi-life-mbti/isfp"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://lifesimgrid.org/nl/tomodachi-life-mbti/isfp"/>
+  </url>
+
 </urlset>

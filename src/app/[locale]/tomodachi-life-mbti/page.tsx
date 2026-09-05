@@ -34,9 +34,9 @@ const PAGE_DESCS: Record<string, string> = {
   pt: "16 tipos Mii em MBTI no Tomodachi Life. Calc. compat., sinergia zodiacal. 100% cliente.",
 };
 
-const FALLBACK_TITLE = "Tomodachi Life MBTI Mapping - 16-Personality Converter";
+const FALLBACK_TITLE = "Tomodachi Life Personality → MBTI Mapping";
 const FALLBACK_DESC =
-  "Convert 16 Tomodachi Life Mii personality types to MBTI. Interactive tool with Myers-Briggs compatibility calculator.";
+  "Free Tomodachi Life personality to MBTI mapping chart for Living the Dream. 16 types, compatibility calculator with zodiac synergy. 100% client-side.";
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));

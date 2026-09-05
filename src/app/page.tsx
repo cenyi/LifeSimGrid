@@ -2,7 +2,6 @@ import { setRequestLocale } from "next-intl/server";
 import { NextIntlClientProvider } from "next-intl";
 import en from "@/locales/en.json";
 import HomePageContent from "@/components/HomePageContent";
-import LocaleRedirector from "@/components/LocaleRedirector";
 import type { Metadata } from "next";
 
 const BASE = "https://lifesimgrid.org";
@@ -44,7 +43,6 @@ export default function RootPage() {
 
   return (
     <NextIntlClientProvider messages={en} locale="en">
-      <LocaleRedirector />
       <HomePageContent />
     </NextIntlClientProvider>
   );

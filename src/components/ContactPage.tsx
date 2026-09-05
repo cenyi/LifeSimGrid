@@ -22,7 +22,7 @@ export default function ContactPage() {
     <div className="flex min-h-screen flex-col">
       <Navbar />
       <main className="flex-1">
-        <section aria-labelledby="contact-heading" className="mx-auto max-w-4xl px-4 py-12">
+        <section aria-labelledby="contact-heading" className="mx-auto max-w-6xl px-4 py-12">
           <h1 id="contact-heading" className="mb-4 font-mono text-3xl font-bold text-gray-900 sm:text-4xl">
             {t("title")}
           </h1>

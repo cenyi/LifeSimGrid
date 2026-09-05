@@ -3,6 +3,7 @@ import "./globals.css";
 import Analytics from "@/components/Analytics";
 import TrailingSlashRedirector from "@/components/TrailingSlashRedirector";
 import CookieConsent from "@/components/CookieConsent";
+import LocaleRedirector from "@/components/LocaleRedirector";
 
 const SITE_URL = "https://lifesimgrid.org";
 const SITE_NAME = "LifeSimGrid";
@@ -211,6 +212,7 @@ export default function RootLayout({
         <Analytics />
         <TrailingSlashRedirector />
         <CookieConsent />
+        <LocaleRedirector />
         {children}
       </body>
     </html>

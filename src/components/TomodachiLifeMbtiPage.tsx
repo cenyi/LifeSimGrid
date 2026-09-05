@@ -11,12 +11,25 @@ import { Link } from "@/i18n/routing";
 import { useState, useEffect, useMemo, useCallback, useRef } from "react";
 import {
   calculateCompatibility,
-  zodiacOrder,
-  getPersonalityGroup,
-  getMbtiCode,
   type Zodiac,
   type PersonalityGroup,
 } from "@/lib/compatibility";
+import {
+  PERSONALITIES,
+  ZODIAC_ORDER,
+  getPersonalityGroup,
+  getMbtiCode,
+  type MiiCharacter,
+  LEGACY_STORAGE_KEYS,
+} from "@/lib/types";
+import {
+  loadCharactersSync,
+  saveCharactersSync,
+} from "@/lib/character-db";
+import {
+  getGroupPosition,
+  getGroupColor,
+} from "@/lib/personality-data";
 
 /* ------------------------------------------------------------------ */
 /*  Constants                                                          */
@@ -38,12 +51,8 @@ interface PersonalityType {
 
 type CompatibilityResultNew = ReturnType<typeof calculateCompatibility>;
 
-interface Resident {
-  id: string;
-  name: string;
-  zodiac: Zodiac;
-  personality: string;
-}
+/** Uses the unified MiiCharacter type from lib/types.ts */
+type Resident = MiiCharacter;
 
 interface PairingResult {
   residentA: Resident;
@@ -56,33 +65,22 @@ interface PairingResult {
 /*  Constants                                                          */
 /* ------------------------------------------------------------------ */
 
-const PERSONALITIES = [
-  "outgoing_leader", "outgoing_entertainer", "outgoing_trendsetter", "outgoing_optimist",
-  "confident_designer", "confident_adventurer", "confident_goGetter", "confident_charmer",
-  "independent_artist", "independent_freeSpirit", "independent_thinker", "independent_loneWolf",
-  "easygoing_dreamer", "easygoing_sweetheart", "easygoing_softie", "easygoing_buddy",
-] as const;
-
-const STORAGE_KEY = "lifesimgrid-residents-mbti";
+// PERSONALITIES and MBTI mapping now imported from lib/types.ts
+// Storage now handled by lib/character-db.ts (IndexedDB + localStorage fallback)
 const MAX_RESIDENTS = 15;
 
 /* ------------------------------------------------------------------ */
 /*  Helpers                                                            */
 /* ------------------------------------------------------------------ */
 
-/** Load residents from localStorage */
+/** Load residents from unified storage (localStorage sync fallback) */
 function loadResidents(): Resident[] {
-  if (typeof window === "undefined") return [];
-  try {
-    const raw = localStorage.getItem(STORAGE_KEY);
-    return raw ? JSON.parse(raw) : [];
-  } catch { return []; }
+  return loadCharactersSync();
 }
 
-/** Save residents to localStorage */
+/** Save residents to unified storage (localStorage sync fallback) */
 function saveResidents(residents: Resident[]) {
-  if (typeof window === "undefined") return;
-  localStorage.setItem(STORAGE_KEY, JSON.stringify(residents));
+  saveCharactersSync(residents);
 }
 
 /** Generate unique ID */
@@ -90,68 +88,79 @@ function generateId(): string {
   return Date.now().toString(36) + Math.random().toString(36).slice(2, 7);
 }
 
-/** Get grid position for a personality group */
-function getGroupPosition(group: PersonalityGroup): { x: number; y: number } {
-  switch (group) {
-    case "outgoing": return { x: 75, y: 25 };
-    case "confident": return { x: 75, y: 75 };
-    case "independent": return { x: 25, y: 75 };
-    case "easygoing": return { x: 25, y: 25 };
-  }
-}
+// getGroupPosition and getGroupColor now imported from lib/personality-data.ts
 
-/** Get color for a personality group */
-function getGroupColor(group: PersonalityGroup): string {
-  switch (group) {
-    case "outgoing": return "#f59e0b";
-    case "confident": return "#ef4444";
-    case "independent": return "#8b5cf6";
-    case "easygoing": return "#22c55e";
-  }
-}
-
-/** Convert 5-dimension sliders to MBTI result based on game's actual 4-quadrant system */
-function sliderToMbti(sliders: { speed: number; speech: number; expression: number; mood: number; uniqueness: number }) {
-  /* Game uses 2 primary axes:
-   *   Axis 1: Speed + Mood -> Outgoing(E-like) vs Independent(I-like)
-   *   Axis 2: Speech + Expression -> Confident(T/J-like) vs Easygoing(F/P-like)
-   * Uniqueness determines sub-type within the quadrant (4 sub-types per quadrant = 16 total)
-   */
-  const outgoingScore = (sliders.speed + sliders.mood) / 2;
-  const confidentScore = (sliders.speech + sliders.expression) / 2;
-  const subType = sliders.uniqueness;
+/** Convert 4-dimension sliders to MBTI result based on Living the Dream's system.
+ *
+ * Living the Dream uses 4 personality-determining dimensions:
+ *   Movement, Speech, Energy, Thinking
+ *
+ * Each dimension maps to one MBTI axis (binary high/low = 2^4 = 16):
+ *   Movement → E/I (high=E, low=I)  → determines outgoing vs independent group
+ *   Energy   → S/N (high=S, low=N)  → distinguishes sub-types within group
+ *   Speech   → T/F (high=T, low=F)  → determines confident vs easygoing pair
+ *   Thinking → J/P (high=J, low=P)  → distinguishes sub-types within pair
+ */
+function sliderToMbti(sliders: { movement: number; speech: number; energy: number; thinking: number }) {
+  const isE = sliders.movement > 50;        // E vs I
+  const isS = sliders.energy > 50;          // S vs N
+  const isT = sliders.speech > 50;          // T vs F
+  const isJ = sliders.thinking > 50;        // J vs P
 
   let group: PersonalityGroup;
   let gamePersonality: string;
 
-  if (outgoingScore > 50 && confidentScore > 50) {
-    // Outgoing + Confident quadrant
-    group = "outgoing";
-    if (subType < 25) gamePersonality = "outgoing_leader";
-    else if (subType < 50) gamePersonality = "outgoing_entertainer";
-    else if (subType < 75) gamePersonality = "outgoing_trendsetter";
-    else gamePersonality = "outgoing_optimist";
-  } else if (outgoingScore <= 50 && confidentScore > 50) {
-    // Confident quadrant (low outgoing + high confident)
-    group = "confident";
-    if (subType < 25) gamePersonality = "confident_designer";
-    else if (subType < 50) gamePersonality = "confident_adventurer";
-    else if (subType < 75) gamePersonality = "confident_goGetter";
-    else gamePersonality = "confident_charmer";
-  } else if (outgoingScore <= 50 && confidentScore <= 50) {
-    // Independent quadrant (low outgoing + low confident)
-    group = "independent";
-    if (subType < 25) gamePersonality = "independent_artist";
-    else if (subType < 50) gamePersonality = "independent_freeSpirit";
-    else if (subType < 75) gamePersonality = "independent_thinker";
-    else gamePersonality = "independent_loneWolf";
+  // E + S + T + J → ESTJ → outgoing_leader
+  // E + S + T + P → ESTP → confident_adventurer
+  // E + S + F + J → ESFJ → outgoing_optimist
+  // E + S + F + P → ESFP → outgoing_entertainer
+  // E + N + T + J → ENTJ → confident_goGetter
+  // E + N + T + P → ENTP → confident_charmer
+  // E + N + F + J → ENFJ → (no direct match; closest: outgoing_trendsetter ENFP)
+  // E + N + F + P → ENFP → outgoing_trendsetter
+  // I + S + T + J → ISTJ → independent_loneWolf
+  // I + S + T + P → ISTP → independent_thinker
+  // I + S + F + J → ISFJ → easygoing_sweetheart
+  // I + S + F + P → ISFP → easygoing_buddy
+  // I + N + T + J → INTJ → confident_designer
+  // I + N + T + P → INTP → independent_freeSpirit
+  // I + N + F + J → INFJ → easygoing_dreamer
+  // I + N + F + P → INFP → independent_artist (or easygoing_softie)
+
+  if (isE && isS && isT && isJ) {
+    group = "outgoing"; gamePersonality = "outgoing_leader";
+  } else if (isE && isS && isT && !isJ) {
+    group = "confident"; gamePersonality = "confident_adventurer";
+  } else if (isE && isS && !isT && isJ) {
+    group = "outgoing"; gamePersonality = "outgoing_optimist";
+  } else if (isE && isS && !isT && !isJ) {
+    group = "outgoing"; gamePersonality = "outgoing_entertainer";
+  } else if (isE && !isS && isT && isJ) {
+    group = "confident"; gamePersonality = "confident_goGetter";
+  } else if (isE && !isS && isT && !isJ) {
+    group = "confident"; gamePersonality = "confident_charmer";
+  } else if (isE && !isS && !isT && isJ) {
+    // ENFJ — not in MBTI_MAP; map to closest: outgoing_trendsetter (ENFP)
+    group = "outgoing"; gamePersonality = "outgoing_trendsetter";
+  } else if (isE && !isS && !isT && !isJ) {
+    group = "outgoing"; gamePersonality = "outgoing_trendsetter";
+  } else if (!isE && isS && isT && isJ) {
+    group = "independent"; gamePersonality = "independent_loneWolf";
+  } else if (!isE && isS && isT && !isJ) {
+    group = "independent"; gamePersonality = "independent_thinker";
+  } else if (!isE && isS && !isT && isJ) {
+    group = "easygoing"; gamePersonality = "easygoing_sweetheart";
+  } else if (!isE && isS && !isT && !isJ) {
+    group = "easygoing"; gamePersonality = "easygoing_buddy";
+  } else if (!isE && !isS && isT && isJ) {
+    group = "confident"; gamePersonality = "confident_designer";
+  } else if (!isE && !isS && isT && !isJ) {
+    group = "independent"; gamePersonality = "independent_freeSpirit";
+  } else if (!isE && !isS && !isT && isJ) {
+    group = "easygoing"; gamePersonality = "easygoing_dreamer";
   } else {
-    // Easygoing quadrant (high outgoing + low confident)
-    group = "easygoing";
-    if (subType < 25) gamePersonality = "easygoing_dreamer";
-    else if (subType < 50) gamePersonality = "easygoing_sweetheart";
-    else if (subType < 75) gamePersonality = "easygoing_softie";
-    else gamePersonality = "easygoing_buddy";
+    // !isE && !isS && !isT && !isJ → INFP → independent_artist
+    group = "independent"; gamePersonality = "independent_artist";
   }
 
   return { mbti: getMbtiCode(gamePersonality), group, gamePersonality };
@@ -190,9 +199,9 @@ export default function TomodachiLifeMbtiPage() {
   const importRef = useRef<HTMLInputElement>(null);
   const calcTabRef = useRef<HTMLDivElement>(null);
 
-  /* ---- Slider state ---- */
+  /* ---- Slider state (4-dimension system for Living the Dream) ---- */
   const [sliders, setSliders] = useState({
-    speed: 50, speech: 50, expression: 50, mood: 50, uniqueness: 50,
+    movement: 50, speech: 50, energy: 50, thinking: 50,
   });
 
   /* ---- Hero search state ---- */
@@ -202,7 +211,7 @@ export default function TomodachiLifeMbtiPage() {
   /* ---- Persist residents ---- */
   useEffect(() => {
     if (residents.length > 0) saveResidents(residents);
-    else localStorage.removeItem(STORAGE_KEY);
+    else localStorage.removeItem(LEGACY_STORAGE_KEYS.mbtiResidents);
   }, [residents]);
 
   /* ---- Personality data ---- */
@@ -266,25 +275,16 @@ export default function TomodachiLifeMbtiPage() {
   /* ---- Load resident personality to sliders ---- */
   const handleLoadResidentToSliders = useCallback((resident: Resident) => {
     const group = getPersonalityGroup(resident.personality);
-    /* Reverse-engineer slider values from the game's 4-quadrant system:
-     *   Axis 1: Speed + Mood -> Outgoing vs Independent
-     *   Axis 2: Speech + Expression -> Confident vs Easygoing
+    const mbti = getMbtiCode(resident.personality);
+    /* Reverse-engineer slider values from MBTI type:
+     *   Movement → E/I, Speech → T/F, Energy → S/N, Thinking → J/P
      */
-    const isOutgoing = group === "outgoing" || group === "easygoing";
-    const isConfident = group === "outgoing" || group === "confident";
+    const movement = mbti[0] === "E" ? 70 + Math.floor(Math.random() * 26) : 10 + Math.floor(Math.random() * 26);
+    const speech = mbti[2] === "T" ? 70 + Math.floor(Math.random() * 26) : 10 + Math.floor(Math.random() * 26);
+    const energy = mbti[1] === "S" ? 70 + Math.floor(Math.random() * 26) : 10 + Math.floor(Math.random() * 26);
+    const thinking = mbti[3] === "J" ? 70 + Math.floor(Math.random() * 26) : 10 + Math.floor(Math.random() * 26);
 
-    const speed = isOutgoing ? 70 + Math.floor(Math.random() * 26) : 10 + Math.floor(Math.random() * 26);
-    const mood = isOutgoing ? 70 + Math.floor(Math.random() * 26) : 10 + Math.floor(Math.random() * 26);
-    const speech = isConfident ? 70 + Math.floor(Math.random() * 26) : 10 + Math.floor(Math.random() * 26);
-    const expression = isConfident ? 70 + Math.floor(Math.random() * 26) : 10 + Math.floor(Math.random() * 26);
-
-    const groupPersonalities = PERSONALITIES.filter(p => p.startsWith(group));
-    const indexInGroup = groupPersonalities.indexOf(resident.personality as typeof groupPersonalities[number]);
-    const uniqueness = groupPersonalities.length > 1
-      ? Math.round((indexInGroup / (groupPersonalities.length - 1)) * 100)
-      : 50;
-
-    setSliders({ speed, speech, expression, mood, uniqueness });
+    setSliders({ movement, speech, energy, thinking });
     setActiveTab("tool");
   }, []);
 
@@ -357,7 +357,7 @@ export default function TomodachiLifeMbtiPage() {
     const newResident: Resident = {
       id: generateId(),
       name: `${randomNames[Math.floor(Math.random() * randomNames.length)]}${residents.length + 1}`,
-      zodiac: zodiacOrder[Math.floor(Math.random() * zodiacOrder.length)],
+      zodiac: ZODIAC_ORDER[Math.floor(Math.random() * ZODIAC_ORDER.length)],
       personality: PERSONALITIES[Math.floor(Math.random() * PERSONALITIES.length)],
     };
     setResidents([...residents, newResident]);
@@ -385,7 +385,7 @@ export default function TomodachiLifeMbtiPage() {
       try {
         const imported = JSON.parse(event.target?.result as string);
         if (Array.isArray(imported)) {
-          const validZodiacs = new Set(zodiacOrder);
+          const validZodiacs = new Set(ZODIAC_ORDER);
           const validPersonalities = new Set(PERSONALITIES);
           const validResidents = imported.filter(
             (r: unknown) => {
@@ -432,17 +432,16 @@ export default function TomodachiLifeMbtiPage() {
   }
 
   /* ---- Slider handlers ---- */
-  function handleResetSliders() {
-    setSliders({ speed: 50, speech: 50, expression: 50, mood: 50, uniqueness: 50 });
+function handleResetSliders() {
+setSliders({ movement: 50, speech: 50, energy: 50, thinking: 50 });
   }
 
   const handleRandomSliders = useCallback(() => {
     setSliders({
-      speed: Math.floor(Math.random() * 101),
+      movement: Math.floor(Math.random() * 101),
       speech: Math.floor(Math.random() * 101),
-      expression: Math.floor(Math.random() * 101),
-      mood: Math.floor(Math.random() * 101),
-      uniqueness: Math.floor(Math.random() * 101),
+      energy: Math.floor(Math.random() * 101),
+      thinking: Math.floor(Math.random() * 101),
     });
   }, []);
 
@@ -453,7 +452,7 @@ export default function TomodachiLifeMbtiPage() {
     const newResident: Resident = {
       id: generateId(),
       name,
-      zodiac: zodiacOrder[Math.floor(Math.random() * zodiacOrder.length)],
+      zodiac: ZODIAC_ORDER[Math.floor(Math.random() * ZODIAC_ORDER.length)],
       personality: sliderMbtiResult.gamePersonality,
     };
     setResidents([...residents, newResident]);
@@ -811,32 +810,32 @@ export default function TomodachiLifeMbtiPage() {
               </div>
               {/* 16 personality cards - 2 cols on mobile, 4 on desktop */}
               <div className="grid gap-3 sm:gap-4 grid-cols-2 lg:grid-cols-4">
-                {personalityData.map((p) => (
-                  <div key={p.id} className={`rounded-xl border p-3 sm:p-4 shadow-sm transition-all hover:shadow-md cursor-pointer ${getGroupColorFn(p.group)}`}
-                    onClick={() => {
-                      const personalityKey = PERSONALITIES.find(pp => pp.includes(p.id));
-                      if (personalityKey) handleLoadResidentToSliders({ id: "", name: "", zodiac: "aries", personality: personalityKey });
-                    }}
-                  >
-                    <div className="flex items-center justify-between mb-1 sm:mb-2">
-                      <span className="font-mono text-base sm:text-lg font-bold">{p.mbti}</span>
-                      <ArrowRight className="h-3.5 w-3.5 sm:h-4 sm:w-4 opacity-70" />
-                    </div>
-                    <h4 className="font-semibold text-gray-900 text-sm sm:text-base mb-0.5 sm:mb-1">{p.gameName}</h4>
-                    <p className="text-xs text-gray-600 line-clamp-2">{p.traits}</p>
-                  </div>
-                ))}
+                {personalityData.map((p) => {
+                  const mbtiSlug = p.mbti.toLowerCase();
+                  const personalityKey = PERSONALITIES.find(pp => pp.includes(p.id));
+                  return (
+                    <Link key={p.id} href={`/tomodachi-life-mbti/${mbtiSlug}`}
+                      className={`rounded-xl border p-3 sm:p-4 shadow-sm transition-all hover:shadow-md cursor-pointer block ${getGroupColorFn(p.group)}`}
+                    >
+                      <div className="flex items-center justify-between mb-1 sm:mb-2">
+                        <span className="font-mono text-base sm:text-lg font-bold">{p.mbti}</span>
+                        <ArrowRight className="h-3.5 w-3.5 sm:h-4 sm:w-4 opacity-70" />
+                      </div>
+                      <h4 className="font-semibold text-gray-900 text-sm sm:text-base mb-0.5 sm:mb-1">{p.gameName}</h4>
+                      <p className="text-xs text-gray-600 line-clamp-2">{p.traits}</p>
+                    </Link>
+                  );
+                })}
               </div>
               {/* Slider Guide */}
               <div className="rounded-2xl border border-gray-100 bg-white p-4 sm:p-6 shadow-sm">
                 <h3 className="font-mono text-lg sm:text-xl font-bold text-gray-900 mb-4">{t("sliderGuideTitle")}</h3>
-                <div className="grid gap-3 sm:gap-4 grid-cols-2 lg:grid-cols-5">
+                <div className="grid gap-3 sm:gap-4 grid-cols-2 lg:grid-cols-4">
                   {[
                     { title: t("slider1Title"), desc: t("slider1Desc"), e: t("slider1E"), i: t("slider1I"), bg: "bg-amber-50", eColor: "text-amber-700", iColor: "text-purple-700" },
                     { title: t("slider2Title"), desc: t("slider2Desc"), e: t("slider2T"), i: t("slider2F"), bg: "bg-red-50", eColor: "text-red-700", iColor: "text-green-700" },
-                    { title: t("slider3Title"), desc: t("slider3Desc"), e: t("slider3J"), i: t("slider3P"), bg: "bg-purple-50", eColor: "text-red-700", iColor: "text-green-700" },
-                    { title: t("slider4Title"), desc: t("slider4Desc"), e: t("slider4E"), i: t("slider4I"), bg: "bg-green-50", eColor: "text-amber-700", iColor: "text-purple-700" },
-                    { title: t("slider5Title"), desc: t("slider5Desc"), e: t("slider5Tips"), i: "", bg: "bg-blue-50", eColor: "text-blue-700", iColor: "" },
+                    { title: t("slider3Title"), desc: t("slider3Desc"), e: t("slider3E"), i: t("slider3I"), bg: "bg-purple-50", eColor: "text-amber-700", iColor: "text-purple-700" },
+                    { title: t("slider4Title"), desc: t("slider4Desc"), e: t("slider4J"), i: t("slider4P"), bg: "bg-green-50", eColor: "text-red-700", iColor: "text-green-700" },
                   ].map((s, i) => (
                     <div key={i} className={`rounded-xl ${s.bg} p-3 sm:p-4`}>
                       <h4 className="font-semibold text-gray-900 text-sm mb-1">{s.title}</h4>
@@ -1053,11 +1052,10 @@ export default function TomodachiLifeMbtiPage() {
                     </div>
                   </div>
                   <div className="space-y-5">
-                    {renderSlider("speed", t("slider1Title"), sliders.speed, "bg-amber-200", t("sliderSlowI"), t("sliderFastE"), "text-amber-600", "accent-amber-600")}
-                    {renderSlider("speech", t("slider2Title"), sliders.speech, "bg-red-200", t("sliderGentleF"), t("sliderDirectT"), "text-red-600", "accent-red-600")}
-                    {renderSlider("expression", t("slider3Title"), sliders.expression, "bg-purple-200", t("sliderRelaxedP"), t("sliderConfidentJ"), "text-purple-600", "accent-purple-600")}
-                    {renderSlider("mood", t("slider4Title"), sliders.mood, "bg-green-200", t("sliderCalmI"), t("sliderUpbeatE"), "text-green-600", "accent-green-600")}
-                    {renderSlider("uniqueness", t("slider5Title"), sliders.uniqueness, "bg-blue-200", t("sliderVariantA"), t("sliderVariantD"), "text-blue-600", "accent-blue-600")}
+{renderSlider("movement", t("slider1Title"), sliders.movement, "bg-amber-200", t("sliderSlowI"), t("sliderFastE"), "text-amber-600", "accent-amber-600")}
+{renderSlider("speech", t("slider2Title"), sliders.speech, "bg-red-200", t("sliderGentleF"), t("sliderDirectT"), "text-red-600", "accent-red-600")}
+{renderSlider("energy", t("slider3Title"), sliders.energy, "bg-purple-200", t("sliderCalmI"), t("sliderUpbeatE"), "text-purple-600", "accent-purple-600")}
+{renderSlider("thinking", t("slider4Title"), sliders.thinking, "bg-green-200", t("sliderRelaxedP"), t("sliderConfidentJ"), "text-green-600", "accent-green-600")}
                   </div>
                 </div>
                 {/* Right: Result */}
@@ -1189,6 +1187,16 @@ export default function TomodachiLifeMbtiPage() {
           {/* ===== 1. COMPATIBILITY CALCULATOR TAB (default) ===== */}
           <div ref={calcTabRef} className={activeTab !== "calc" ? "hidden" : ""}>
             <div className="space-y-6">
+              {/* CTA: Point to dedicated Personality Calculator page */}
+              <div className="rounded-xl border border-amber-200 bg-amber-50 p-4 flex items-center justify-between gap-4">
+                <div className="flex items-center gap-2">
+                  <Sparkles className="w-5 h-5 text-amber-500 flex-shrink-0" />
+                  <p className="text-sm text-amber-800">{t("personalityCalculatorCta")}</p>
+                </div>
+                <Link href="/tomodachi-life-personality-calculator" className="shrink-0 rounded-lg bg-amber-500 px-4 py-2 text-sm font-medium text-white transition-all hover:bg-amber-600">
+                  {t("personalityCalculatorBtn")}
+                </Link>
+              </div>
               <div className="rounded-2xl border border-gray-100 bg-gradient-to-br from-pink-50 to-purple-50 p-4 sm:p-6 shadow-sm">
                 <h3 className="font-mono text-lg sm:text-xl font-bold text-gray-900 mb-3">{tVoice("calcSection")}</h3>
                 <p className="text-sm sm:text-base text-gray-700 leading-relaxed">{tVoice("calcSectionDesc")}</p>
@@ -1204,7 +1212,7 @@ export default function TomodachiLifeMbtiPage() {
                         <select value={zodiacA} onChange={(e) => setZodiacA(e.target.value as Zodiac)}
                           className="w-full rounded-lg border border-gray-200 bg-white px-3 py-2 text-sm outline-none focus:border-island-blue"
                         >
-                          {zodiacOrder.map((z) => <option key={z} value={z}>{tVoice(`zodiacs.${z}`)}</option>)}
+                          {ZODIAC_ORDER.map((z) => <option key={z} value={z}>{tVoice(`zodiacs.${z}`)}</option>)}
                         </select>
                       </div>
                       <div>
@@ -1226,7 +1234,7 @@ export default function TomodachiLifeMbtiPage() {
                         <select value={zodiacB} onChange={(e) => setZodiacB(e.target.value as Zodiac)}
                           className="w-full rounded-lg border border-gray-200 bg-white px-3 py-2 text-sm outline-none focus:border-island-blue"
                         >
-                          {zodiacOrder.map((z) => <option key={z} value={z}>{tVoice(`zodiacs.${z}`)}</option>)}
+                          {ZODIAC_ORDER.map((z) => <option key={z} value={z}>{tVoice(`zodiacs.${z}`)}</option>)}
                         </select>
                       </div>
                       <div>
@@ -1307,6 +1315,11 @@ export default function TomodachiLifeMbtiPage() {
                       </div>
                       <p className="mt-1 text-xs text-gray-500">{getComment("friend", result.friendship)}</p>
                     </div>
+                    {/* Compatibility model disclaimer */}
+                    <div className="rounded-lg bg-amber-50 border border-amber-200 p-3 flex items-start gap-2">
+                      <Shield className="w-4 h-4 text-amber-600 flex-shrink-0 mt-0.5" />
+                      <p className="text-xs text-amber-800">{t("compatibilityModelDisclaimer")}</p>
+                    </div>
                   </div>
                 )}
               </div>
@@ -1340,7 +1353,7 @@ export default function TomodachiLifeMbtiPage() {
                     <div className="flex gap-2">
                       <select value={newResidentZodiac} onChange={(e) => setNewResidentZodiac(e.target.value as Zodiac)}
                         className="flex-1 rounded-lg border border-gray-200 bg-white px-3 py-2 text-sm outline-none focus:border-island-blue">
-                        {zodiacOrder.map((z) => <option key={z} value={z}>{tVoice(`zodiacs.${z}`)}</option>)}
+                        {ZODIAC_ORDER.map((z) => <option key={z} value={z}>{tVoice(`zodiacs.${z}`)}</option>)}
                       </select>
                       <select value={newResidentPersonality} onChange={(e) => setNewResidentPersonality(e.target.value)}
                         className="flex-1 rounded-lg border border-gray-200 bg-white px-3 py-2 text-sm outline-none focus:border-island-blue">
@@ -1419,7 +1432,7 @@ export default function TomodachiLifeMbtiPage() {
                         <select value={editingResident.zodiac}
                           onChange={(e) => setEditingResident({ ...editingResident, zodiac: e.target.value as Zodiac })}
                           className="w-full rounded-lg border border-gray-200 bg-white px-3 py-2 text-sm outline-none focus:border-island-blue">
-                          {zodiacOrder.map((z) => <option key={z} value={z}>{tVoice(`zodiacs.${z}`)}</option>)}
+                          {ZODIAC_ORDER.map((z) => <option key={z} value={z}>{tVoice(`zodiacs.${z}`)}</option>)}
                         </select>
                       </div>
                       <div>
@@ -1577,6 +1590,17 @@ export default function TomodachiLifeMbtiPage() {
                   </div>
                 </details>
               ))}
+            </div>
+          </div>
+        </section>
+
+        {/* ===== MBTI MAPPING DISCLAIMER (always visible) ===== */}
+        <section aria-labelledby="mbti-mapping-disclaimer-title" className="mx-auto max-w-6xl px-4 pb-4 sm:pb-6">
+          <div className="rounded-lg bg-amber-50 border border-amber-200 p-4 flex items-start gap-3">
+            <Shield className="w-5 h-5 text-amber-600 flex-shrink-0 mt-0.5" />
+            <div>
+              <h3 id="mbti-mapping-disclaimer-title" className="text-sm font-semibold text-amber-900 mb-1">{t("mbtiMappingDisclaimerTitle")}</h3>
+              <p className="text-xs text-amber-800">{t("mbtiMappingDisclaimer")}</p>
             </div>
           </div>
         </section>

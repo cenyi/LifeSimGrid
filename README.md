@@ -35,7 +35,7 @@ As a free, browser-based web toolkit, all binary cryptographic parsing, HTML5 Ca
 
 ### ✨ Topic Clusters Architecture & Dedicated Studios
 
-LifeSimGrid uses a **Topic Clusters SEO strategy**: the homepage acts as an "aircraft carrier" aggregating brand authority, while 5 dedicated sub-pages serve as "destroyers" targeting specific vertical keywords for search-traffic acquisition.
+LifeSimGrid uses a **Topic Clusters SEO strategy**: the homepage acts as an "aircraft carrier" aggregating brand authority, while dedicated sub-pages serve as "destroyers" targeting specific vertical keywords for search-traffic acquisition.
 
 #### 🎨 ACNH Pixel Studio (`/acnh-pixel-studio`)
 *   Dedicated sub-page for **Animal Crossing Custom Designs** pattern conversion.
@@ -61,6 +61,21 @@ LifeSimGrid uses a **Topic Clusters SEO strategy**: the homepage acts as an "air
 *   Dedicated sub-page for **Tomodachi Life MBTI** 16-personality mapping and compatibility calculator.
 *   Features 5-tab layout (Compatibility Calculator, Personality Chart, Voice Tool, Fan Map, Character Roster), How It Works section, FAQ with JSON-LD, and BreadcrumbList/HowTo structured data.
 *   Targets vertical keywords like "Tomodachi Life MBTI", "Tomodachi Life personality types", "Tomodachi Life compatibility".
+
+#### 🧪 Tomodachi Life Personality Calculator (`/tomodachi-life-personality-calculator`)
+*   Dedicated sub-page for the **Tomodachi Life personality calculator** with 4 slider inputs (Movement, Speech, Energy, Thinking).
+*   Features interactive 4-slider tool that maps slider values to 16 Tomodachi Life personalities and MBTI types, random generate button, result display with personality group/traits, FAQ with JSON-LD, and WebApplication structured data.
+*   Targets vertical keywords like "Tomodachi Life personality calculator", "Tomodachi Life sliders", "Tomodachi Life personality type finder".
+
+#### 📊 Tomodachi Life Personality Chart (`/tomodachi-life-personality-chart`)
+*   Dedicated sub-page for the **Tomodachi Life personality chart** — a complete 16-personality reference table.
+*   Features a color-coded 4-group × 4-type chart (Outgoing, Confident, Independent, Easygoing), individual personality detail pages with slider settings and compatibility data, FAQ with JSON-LD, and BreadcrumbList structured data.
+*   Targets vertical keywords like "Tomodachi Life personality chart", "Tomodachi Life personality types list", "Tomodachi Life personality guide".
+
+#### 🔗 Tomodachi Life Personality Detail (`/tomodachi-life-personality/[type]`)
+*   Dynamic sub-page for **individual Tomodachi Life personality types** (16 pages, one per type).
+*   Features personality traits, slider settings, compatibility scores (romance/friendship), fan insights, cross-links to MBTI mapping, FAQ with JSON-LD, and BreadcrumbList structured data.
+*   Targets vertical keywords like "Tomodachi Life [personality name]", "Tomodachi Life personality [name] sliders", "Tomodachi Life [name] compatibility".
 
 #### 🗺️ Tomodachi Island Planner (`/tomodachi-island-planner`)
 *   Dedicated sub-page for **Tomodachi Life island planning** with a random island name generator.
@@ -183,7 +198,11 @@ src/
 │   │   ├── mii-qr-unlocker/     # Mii QR Code sub-page
 │   │   ├── mii-eyes/            # Mii Eyes Design Guide sub-page
 │   │   ├── tomodachi-voice-lab/ # Tomodachi Voice sub-page
-│   │   ├── tomodachi-life-mbti/ # Tomodachi Life MBTI sub-page
+│   │   ├── tomodachi-life-mbti/        # Tomodachi Life MBTI sub-page
+│   │   │   └── [type]/      # MBTI detail page (16 dynamic pages)
+│   │   ├── tomodachi-life-personality-calculator/  # Personality Calculator sub-page
+│   │   ├── tomodachi-life-personality-chart/       # Personality Chart sub-page
+│   │   ├── tomodachi-life-personality/[type]/      # Personality Detail (16 dynamic pages)
 │   │   ├── tomodachi-island-planner/   # Island Planner sub-page
 │   │   ├── tomodachi-character-ideas/  # Character Ideas sub-page
 │   │   ├── tomodachi-apartment-design/ # Apartment Design sub-page
@@ -194,6 +213,10 @@ src/
 │   ├── mii-eyes/           # Root-level EN sub-page
 │   ├── tomodachi-voice-lab/ # Root-level EN sub-page
 │   ├── tomodachi-life-mbti/ # Root-level EN sub-page
+│   │   └── [type]/          # Root-level EN MBTI detail page
+│   ├── tomodachi-life-personality-calculator/  # Root-level EN sub-page
+│   ├── tomodachi-life-personality-chart/       # Root-level EN sub-page
+│   ├── tomodachi-life-personality/[type]/      # Root-level EN personality detail
 │   ├── tomodachi-island-planner/   # Root-level EN sub-page
 │   ├── tomodachi-character-ideas/  # Root-level EN sub-page
 │   ├── tomodachi-apartment-design/ # Root-level EN sub-page
@@ -207,6 +230,10 @@ src/
 │   ├── MiiQrUnlockerPage.tsx    # Mii QR sub-page component
 │   ├── TomodachiVoiceLabPage.tsx # Voice Lab sub-page component
 │   ├── TomodachiLifeMbtiPage.tsx # MBTI sub-page component
+│   ├── TomodachiLifeMbtiDetailPage.tsx  # MBTI detail page component
+│   ├── TomodachiLifePersonalityCalculatorPage.tsx # Personality Calculator sub-page
+│   ├── TomodachiLifePersonalityChartPage.tsx       # Personality Chart sub-page
+│   ├── TomodachiLifePersonalityDetailPage.tsx      # Personality Detail page
 │   ├── TomodachiIslandPlannerPage.tsx  # Island Planner sub-page component
 │   ├── TomodachiCharacterIdeasPage.tsx # Character Ideas sub-page component
 │   ├── TomodachiApartmentDesignPage.tsx # Apartment Design sub-page component
@@ -229,6 +256,9 @@ src/
 │   └── request.ts          # Server-side i18n setup
 ├── lib/                    # Core logic
 │   ├── compatibility.ts    # Zodiac & personality algorithms
+│   ├── personality-data.ts  # 16 personality types data & slider mappings
+│   ├── character-db.ts      # Character database (fan-created entries)
+│   ├── types.ts             # Shared TypeScript type definitions
 │   ├── qr-handler.ts       # QR decode/encode logic
 │   └── history-db.ts       # History database (IndexedDB wrapper)
 └── locales/                # Translation files (12 languages)
@@ -364,10 +394,10 @@ Instead, report it responsibly via email to **hi@lifesimgrid.org**. Our core eng
 
 ### 📋 Project Roadmap
 
-- [x] **Topic Clusters SEO Architecture**: 5 dedicated sub-pages targeting vertical keywords with JSON-LD structured data, semantic HTML, and internal link network.
+- [x] **Topic Clusters SEO Architecture**: 15 dedicated sub-page routes (including 3 Tomodachi Life personality tools and 2 dynamic detail routes generating 32 pages) targeting vertical keywords with JSON-LD structured data, semantic HTML, and internal link network.
 - [x] **Semantic HTML & Accessibility**: `<details>`/`<summary>` FAQ accordions, `<ol>`/`<li>` step lists, `aria-labelledby` sections, `aria-live` loading states, print-optimized layouts.
 - [x] **Official Game Terminology Alignment**: All 12 locales use correct in-game terms (マイデザイン, PROデザイン, タヌポータル, 我的設計, 朋友聚會 新生活, 커스텀 디자인, 프로 디자인, etc.).
-- [x] **Full 12-Language Localization Quality Audit**: All 10 non-en/de locale files audited and corrected against en/de baselines — technical entity words kept in English (European languages), official game terminology enforced (Asian languages), information density parity achieved, legal disclaimers standardized (448 keys per file, all validated).
+- [x] **Full 12-Language Localization Quality Audit**: All 10 non-en/de locale files audited and corrected against en/de baselines — technical entity words kept in English (European languages), official game terminology enforced (Asian languages), information density parity achieved, legal disclaimers standardized (1729 keys per file, all validated).
 - [ ] **PWA Support**: Full Progressive Web App capability offering 100% offline functionality via custom Service Worker caching.
 - [ ] **Dark Mode Toggle**: Fluid, system-adaptive dark theme implementation utilizing Tailwind CSS atomic styling.
 - [x] **Expanded Localization**: Added `ru` (Russian) and `pt` (Portuguese) locale integrations. Future targets: `th`, and `vi`.
@@ -407,6 +437,18 @@ Instead, report it responsibly via email to **hi@lifesimgrid.org**. Our core eng
 *   **16 種 MBTI 人格完整映射**：將 MBTI 16 種人格類型完整對應至 Tomodachi Life 遊戲中的性格分組，包含 INFP 雙映射（Sweet/Softie）的特殊處理。
 *   **相容性計算器**：5 個分頁式佈局（相容性計算器、人格圖表、語音工具、粉絲地圖、角色名冊），搭配 How It Works 說明區塊與 FAQ，支援 BreadcrumbList/HowTo 結構化資料。
 *   **演算法透明宣告**：明確標示公式組成——Base Score (25) + Personality (25) + Zodiac (25) + Friendship (25)，確保結果可追溯。
+
+#### 🧪 性格計算器（Tomodachi Life 性格計算器）
+*   **4 滑桿互動工具**：透過移動、說話、活力、思考 4 個滑桿輸入值，即時對應至 16 種 Tomodachi Life 性格與 MBTI 類型。
+*   **隨機產生與結果展示**：提供隨機產生按鈕、結果顯示性格分組與特質，搭配 FAQ 與 WebApplication 結構化資料。
+
+#### 📊 性格圖表（Tomodachi Life 16 性格一覽表）
+*   **色彩編碼 4 群組 × 4 類型圖表**：外向、自信、獨立、隨和四大群組的完整性格參考表。
+*   **個別性格詳細頁面**：每種性格專屬頁面，含滑桿設定值與相容性分數，搭配 FAQ 與 BreadcrumbList 結構化資料。
+
+#### 🔗 性格詳細頁面（Tomodachi Life 個別性格詳解）
+*   **16 個動態頁面**：每種 Tomodachi Life 性格類型一個專屬頁面。
+*   **完整資訊展示**：性格特質、滑桿設定值、相容性分數（浪漫/友誼）、粉絲洞察、MBTI 對應交叉連結，搭配 FAQ 與 BreadcrumbList 結構化資料。
 
 #### 🔲 Living the Grid（通用像素網格轉換器）
 *   **通用像素網格轉換**：將任何影像轉換為像素網格圖案，支援十字繡（cross-stitch）、Perler beads 拼豆、Minecraft 像素藝術與 Tomodachi Life 自訂設計模板。
@@ -534,7 +576,11 @@ src/
 │   │   ├── acnh-pixel-studio/    # ACNH 自訂設計子頁面
 │   │   ├── mii-qr-unlocker/     # Mii QR Code 子頁面
 │   │   ├── tomodachi-voice-lab/ # Tomodachi Voice 子頁面
-│   │   ├── tomodachi-life-mbti/ # Tomodachi Life MBTI 子頁面
+│   │   ├── tomodachi-life-mbti/        # Tomodachi Life MBTI 子頁面
+│   │   │   └── [type]/      # MBTI 詳細頁面（16 個動態頁面）
+│   │   ├── tomodachi-life-personality-calculator/  # 性格計算器子頁面
+│   │   ├── tomodachi-life-personality-chart/       # 性格圖表子頁面
+│   │   ├── tomodachi-life-personality/[type]/      # 性格詳細頁面（16 個動態頁面）
 │   │   ├── mii-eyes/            # Mii 眼睛設計指南子頁面
 │   │   ├── tomodachi-island-planner/   # 島嶼規劃器子頁面
 │   │   ├── tomodachi-character-ideas/  # 角色創意子頁面
@@ -545,6 +591,10 @@ src/
 │   ├── mii-qr-unlocker/   # 根層級 EN 子頁面
 │   ├── tomodachi-voice-lab/ # 根層級 EN 子頁面
 │   ├── tomodachi-life-mbti/ # 根層級 EN 子頁面
+│   │   └── [type]/          # 根層級 EN MBTI 詳細頁面
+│   ├── tomodachi-life-personality-calculator/  # 根層級 EN 子頁面
+│   ├── tomodachi-life-personality-chart/       # 根層級 EN 子頁面
+│   ├── tomodachi-life-personality/[type]/      # 根層級 EN 性格詳細頁面
 │   ├── mii-eyes/           # 根層級 EN 子頁面
 │   ├── tomodachi-island-planner/   # 根層級 EN 子頁面
 │   ├── tomodachi-character-ideas/  # 根層級 EN 子頁面
@@ -559,6 +609,10 @@ src/
 │   ├── MiiQrUnlockerPage.tsx    # Mii QR 子頁面元件
 │   ├── TomodachiVoiceLabPage.tsx # Voice Lab 子頁面元件
 │   ├── TomodachiLifeMbtiPage.tsx # MBTI 子頁面元件
+│   ├── TomodachiLifeMbtiDetailPage.tsx  # MBTI 詳細頁面元件
+│   ├── TomodachiLifePersonalityCalculatorPage.tsx # 性格計算器子頁面
+│   ├── TomodachiLifePersonalityChartPage.tsx       # 性格圖表子頁面
+│   ├── TomodachiLifePersonalityDetailPage.tsx      # 性格詳細頁面元件
 │   ├── TomodachiIslandPlannerPage.tsx  # 島嶼規劃器子頁面元件
 │   ├── TomodachiCharacterIdeasPage.tsx # 角色創意子頁面元件
 │   ├── TomodachiApartmentDesignPage.tsx # 公寓設計子頁面元件
@@ -581,6 +635,9 @@ src/
 │   └── request.ts          # 伺服器端國際化設定
 ├── lib/                    # 核心邏輯
 │   ├── compatibility.ts    # 星座與性格演算法
+│   ├── personality-data.ts  # 16 種性格類型資料與滑桿對應
+│   ├── character-db.ts      # 角色資料庫（粉絲創作條目）
+│   ├── types.ts             # 共用 TypeScript 型別定義
 │   ├── qr-handler.ts       # QR 解碼/編碼邏輯
 │   └── history-db.ts       # 歷史資料庫（IndexedDB 封裝）
 └── locales/                # 翻譯檔案（12 種語言）
@@ -716,9 +773,13 @@ LifeSimGrid 為完全獨立的非官方第三方社群粉絲工具套件，以�
 
 ### 📋 專案路線圖
 
+- [x] **Topic Clusters SEO 架構**：15 個獨立子頁面路由（含 3 個 Tomodachi Life 性格工具與 2 個動態詳細路由，生成 32 個頁面），針對垂直關鍵字搭配 JSON-LD 結構化資料、語意化 HTML 與內部連結網路。
+- [x] **語意化 HTML 與無障礙性**：`<details>`/`<summary>` FAQ 手風琴、`<ol>`/`<li>` 步驟清單、`aria-labelledby` 區塊、`aria-live` 載入狀態、列印優化佈局。
+- [x] **官方遊戲術語對齊**：全部 12 種語言使用正確的遊戲內術語（マイデザイン、PROデザイン、ーゾポータル、我的設計、朋友聚會 新生活、커스텀 디자인、프로 디자인 等）。
+- [x] **完整 12 語言本地化品質審計**：所有 10 個非 en/de 語言檔案已對齊 en/de 基準審計修正——歐洲語言保留英文技術實體詞彙、亞洲語言強制官方遊戲術語、資訊密度對等、法律免責聲明標準化（每檔 1729 個鍵，全數驗證）。
 - [ ] **PWA 支援**：完整的 Progressive Web App 功能，透過自訂 Service Worker 快取提供 100% 離線運作能力。
 - [ ] **深色模式切換**：流暢的系統自適應深色主題實作，運用 Tailwind CSS 原子化樣式。
-- [ ] **擴展國際化**：新增 `pt-BR`、`ru`、`th` 與 `vi` 等 i18n 語言整合。
+- [x] **擴展國際化**：已新增 `ru`（俄文）與 `pt`（葡萄牙文）語言整合。未來目標：`th` 與 `vi`。
 - [ ] **像素工作室升級**：支援超越標準資產規範的自訂使用者定義像素網格畫布尺寸。
 - [ ] **語音實驗室視覺化**：即時 HTML5 Canvas 波形音訊視覺化，鏡像即時 Web Audio API 頻率輸出。
 - [ ] **無障礙最佳化**：嚴格遵循 WCAG 2.1 AA 國際網頁標準的全面結構審計。
@@ -1065,9 +1126,13 @@ LifeSimGrid は、完全に独立した非公式のサードパーティコミ�
 
 ### 📋 プロジェクトロードマップ
 
+- [x] **Topic Clusters SEO アーキテクチャ**：15の専用サブページルート（3つのTomodachi Life性格ツールと32ページを生成する2つの動的詳細ルートを含む）、垂直キーワード向けJSON-LD構造化データ、セマンティックHTML、内部リンクネットワーク。
+- [x] **セマンティックHTML & アクセシビリティ**：`<details>`/`<summary>` FAQ アコーディオン、`<ol>`/`<li>` ステップリスト、`aria-labelledby` セクション、`aria-live` ローディング状態、印刷最適化レイアウト。
+- [x] **公式ゲーム用語アライメント**：全12ロケールが正しいゲーム内术语を使用（マイデザイン、PROデザイン、ーゾポータル、我的設計、朋友聚會 新生活、커스텀 디자인、프로 디자イン 等）。
+- [x] **完全12言語ローカリゼーション品質監査**：en/de 基準に対する全10非en/deロケールファイルの監査・修正完了——欧州言語は技術実体語を英語保持、アジア言語は公式ゲーム用語を強制、情報密度の均等化、法的免責事項の標準化（1ファイルあたり1729キー、全て検証済み）。
 - [ ] **PWA サポート**：カスタム Service Worker キャッシュによる 100% オフライン機能を提供する完全な Progressive Web App 対応。
 - [ ] **ダークモード切替**：Tailwind CSS 原子スタイリングを活用した、スムーズなシステムアダプティブダークテーマ実装。
-- [ ] **拡張国際化**：`pt-BR`、`ru`、`th`、`vi` をカバーする追加 i18n ロケール統合。
+- [x] **拡張国際化**：`ru`（ロシア語）と `pt`（ポルトガル語）のロケール統合を追加済み。将来の目標：`th`、`vi`。
 - [ ] **ピクセルスタジオアップグレード**：標準アセット仕様を超えたカスタムユーザー定義ピクセルグリッドキャンバスサイズのサポート。
 - [ ] **ボイスラブビジュアライゼーション**：リアルタイム Web Audio API 周波数出力をミラーリングするライブ HTML5 Canvas 波形オーディオビジュアライゼーション。
 - [ ] **アクセシビリティ最適化**：WCAG 2.1 AA 国際ウェブ標準に厳格に準拠した包括的な構造監査。
@@ -1414,9 +1479,13 @@ En su lugar, repórtalo de manera responsable por correo electrónico a **hi@lif
 
 ### 📋 Hoja de Ruta
 
+- [x] **Arquitectura SEO Topic Clusters**: 15 rutas de subpáginas dedicadas (incluyendo 3 herramientas de personalidad Tomodachi Life y 2 rutas de detalle dinámicas que generan 32 páginas) dirigidas a keywords verticales con datos estructurados JSON-LD, HTML semántico y red de enlaces internos.
+- [x] **HTML Semántico y Accesibilidad**: acordeones FAQ `<details>`/`<summary>`, listas de pasos `<ol>`/`<li>`, secciones `aria-labelledby`, estados de carga `aria-live`, diseños optimizados para impresión.
+- [x] **Alineación de Terminología Oficial del Juego**: los 12 locales usan términos correctos del juego (マイデザイン, PROデザイン, ーゾータル, 我的設計, 朋友聚會 新生活, 커스텀 디자인, 프로 디자인, etc.).
+- [x] **Auditoría de Calidad de Localización Completa de 12 Idiomas**: los 10 archivos de locale no en/de auditados y corregidos contra las baselines en/de — términos técnicos mantenidos en inglés (idiomas europeos), terminología oficial del juego aplicada (idiomas asiáticos), paridad de densidad de información, descargos legales estandarizados (1729 keys por archivo, todas validadas).
 - [ ] **Soporte PWA**: Capacidad completa de Progressive Web App que ofrece funcionalidad 100% offline mediante caché personalizado de Service Worker.
 - [ ] **Alternancia de Modo Oscuro**: Implementación fluida de tema oscuro adaptativo al sistema utilizando estilado atómico de Tailwind CSS.
-- [ ] **Internacionalización Expandida**: Integraciones de locale i18n adicionales que cubren `pt-BR`, `ru`, `th` y `vi`.
+- [x] **Internacionalización Expandida**: Se han añadido integraciones de locale `ru` (ruso) y `pt` (portugués). Futuros objetivos: `th` y `vi`.
 - [ ] **Actualización del Estudio de Píxeles**: Soporte para tamaños de lienzo de cuadrícula de píxeles personalizados definidos por el usuario más allá de las especificaciones de activos estándar.
 - [ ] **Visualización del Lab de Voz**: Visualización de audio de forma de onda en vivo con HTML5 Canvas que refleja las salidas de frecuencia de Web Audio API en tiempo real.
 - [ ] **Optimización de Accesibilidad**: Auditoría estructural integral que cumple estrictamente con los estándares web internacionales WCAG 2.1 AA.
@@ -1763,9 +1832,13 @@ Nous sommes profondément engagés envers la sécurité des données et le bac �
 
 ### 📋 Feuille de Route
 
+- [x] **Architecture SEO Topic Clusters** : 15 routes de sous-pages dédiées (incluant 3 outils de personnalité Tomodachi Life et 2 routes de détail dynamiques générant 32 pages) ciblant des mots-clés verticaux avec données structurées JSON-LD, HTML sémantique et réseau de liens internes.
+- [x] **HTML Sémantique et Accessibilité** : accordéons FAQ `<details>`/`<summary>`, listes d'étapes `<ol>`/`<li>`, sections `aria-labelledby`, états de chargement `aria-live`, dispositions optimisées pour l'impression.
+- [x] **Alignement de la Terminologie Officielle du Jeu** : les 12 locales utilisent les bons termes du jeu (マイデザイン, PROデザイン, ーゾータル, 我的設計, 朋友聚會 新生活, 커스텀 디자인, 프로 디자인, etc.).
+- [x] **Audit de Qualité de Localisation Complète de 12 Langues** : les 10 fichiers de locale non en/de audités et corrigés contre les baselines en/de — termes techniques conservés en anglais (langues européennes), terminologie officielle du jeu appliquée (langues asiatiques), parité de densité d'information, mentions légales standardisées (1729 clés par fichier, toutes validées).
 - [ ] **Support PWA** : Capacité complète de Progressive Web App offrant une fonctionnalité 100% hors ligne via la mise en cache personnalisée de Service Worker.
 - [ ] **Basculement Mode Sombre** : Implémentation fluide de thème sombre adaptatif au système utilisant le stylage atomique de Tailwind CSS.
-- [ ] **Internationalisation Étendue** : Intégrations de locale i18n supplémentaires couvrant `pt-BR`, `ru`, `th` et `vi`.
+- [x] **Internationalisation Étendue** : Intégrations de locale `ru` (russe) et `pt` (portugais) ajoutées. Futurs objectifs : `th` et `vi`.
 - [ ] **Mise à Niveau du Studio Pixel** : Prise en charge des tailles de canevas de grille de pixels personnalisées définies par l'utilisateur au-delà des spécifications d'actifs standard.
 - [ ] **Visualisation du Lab Vocal** : Visualisation audio de forme d'onde en direct avec HTML5 Canvas reflétant les sorties de fréquence de Web Audio API en temps réel.
 - [ ] **Optimisation de l'Accessibilité** : Audit structurel complet conformément strictement aux standards web internationaux WCAG 2.1 AA.
@@ -2111,9 +2184,13 @@ LifeSimGrid은 완전히 독립적인 비공식 제3자 커뮤니티 팬 유틸�
 
 ### 📋 프로젝트 로드맵
 
+- [x] **Topic Clusters SEO 아키텍처**: 15개 전용 서브페이지 루트(3개 Tomodachi Life 성격 도구 및 32개 페이지를 생성하는 2개 동적 상세 루트 포함)가 JSON-LD 구조화 데이터, 시맨틱 HTML, 내부 링크 네트워크로 수직 키워드를 타겟팅.
+- [x] **시맨틱 HTML 및 접근성**: `<details>`/`<summary>` FAQ 아코디언, `<ol>`/`<li>` 단계 목록, `aria-labelledby` 섹션, `aria-live` 로딩 상태, 인쇄 최적화 레이아웃.
+- [x] **공식 게임 용어 정렬**: 전체 12 로케일이 올바른 게임 내 용어 사용（マイデザイン, PROデザイン, ーゾポートル, 我的設計, 朋友聚會 新生活, 커스텀 디자인, 프로 디자인 등）.
+- [x] **완전 12언어 로컬리제이션 품질 감사**: en/de 기준에 대한 10개 비-en/de 로케일 파일 감사·수정 완료——유럽 언어는 기술 실체어를 영어로 유지, 아시아 언어는 공식 게임 용어 강제, 정보 밀도 균등화, 법적 면책 사항 표준화(파일당 1729키, 전수 검증).
 - [ ] **PWA 지원**：커스텀 Service Worker 캐싱을 통해 100% 오프라인 기능을 제공하는 완전한 Progressive Web App 지원.
 - [ ] **다크 모드 전환**：Tailwind CSS 원자 스타일링을 활용한 유려한 시스템 적응형 다크 테마 구현.
-- [ ] **확장 국제화**：`pt-BR`, `ru`, `th`, `vi`를 포함한 추가 i18n 로케일 통합.
+- [x] **확장 국제화**：`ru`(러시아어)와 `pt`(포르투갈어) 로케일 통합 추가 완료. 향후 목표: `th`, `vi`.
 - [ ] **픽셀 스튜디오 업그레이드**：표준 에셋 사양을 넘어선 커스텀 사용자 정의 픽셀 그리드 캔버스 크기 지원.
 - [ ] **보이스 랩 비주얼라이제이션**：실시간 Web Audio API 주파수 출력을 미러링하는 라이브 HTML5 Canvas 파형 오디오 비주얼라이제이션.
 - [ ] **접근성 최적화**：WCAG 2.1 AA 국제 웹 표준에 엄격하게 준수하는 포괄적인 구조 감사.
@@ -2460,9 +2537,13 @@ Melden Sie es stattdessen verantwortungsvoll per E-Mail an **hi@lifesimgrid.org*
 
 ### 📋 Roadmap
 
+- [x] **Topic Clusters SEO-Architektur**: 15 dedizierte Subpage-Routen (einschließlich 3 Tomodachi Life Persönlichkeits-Tools und 2 dynamischer Detailrouten, die 32 Seiten generieren), die auf vertikale Keywords mit JSON-LD strukturierten Daten, semantischem HTML und internem Linknetzwerk abzielen.
+- [x] **Semantisches HTML & Barrierefreiheit**: `<details>`/`<summary>` FAQ-Akkordeons, `<ol>`/`<li>` Schrittlisten, `aria-labelledby` Sektionen, `aria-live` Ladezustände, druckoptimierte Layouts.
+- [x] **Offizielle Spielterminologie-Ausrichtung**: Alle 12 Locales verwenden korrekte In-Game-Terme (マイデザイン, PROデザイン, ーゾータル, 我的設計, 朋友聚會 新生活, 커스텀 디자인, 프로 디자인, etc.).
+- [x] **Vollständige 12-Sprachen-Lokalisierungsqualitätsaudit**: Alle 10 nicht-en/de Locale-Dateien gegen en/de-Baselines auditiert und korrigiert — technische Fachbegriffe auf Englisch belassen (europäische Sprachen), offizielle Spielterminologie erzwungen (asiatische Sprachen), Informationsdichte-Parität erreicht, rechtliche Hinweise standardisiert (1729 Keys pro Datei, alle validiert).
 - [ ] **PWA-Unterstützung** : Vollständige Progressive-Web-App-Fähigkeit, die 100% Offline-Funktionalität über benutzerdefiniertes Service-Worker-Caching bietet.
 - [ ] **Dunkelmodus-Umschaltung** : Flüssige, systemadaptive Dunkelthema-Implementierung unter Nutzung von Tailwind CSS atomarem Styling.
-- [ ] **Erweiterte Internationalisierung** : Zusätzliche i18n-Locale-Integrationen, die `pt-BR`, `ru`, `th` und `vi` abdecken.
+- [x] **Erweiterte Internationalisierung** : `ru` (Russisch) und `pt` (Portugiesisch) Locale-Integrationen hinzugefügt. Zukünftige Ziele: `th` und `vi`.
 - [ ] **Pixel-Studio-Upgrade** : Unterstützung für benutzerdefinierte Pixelraster-Leinwandgrößen über Standard-Asset-Spezifikationen hinaus.
 - [ ] **Sprach-Lab-Visualisierung** : Live-HTML5-Canvas-Wellenform-Audiovisualisierung, die Echtzeit-Web-Audio-API-Frequenzausgaben spiegelt.
 - [ ] **Barrierefreiheitsoptimierung** : Umfassende Struktur-Auditierung, die streng den WCAG 2.1 AA internationalen Webstandards entspricht.
@@ -2807,9 +2888,13 @@ Segnalalo invece in modo responsabile via e-mail a **hi@lifesimgrid.org**. I nos
 
 ### 📋 Roadmap del Progetto
 
+- [x] **Architettura SEO Topic Clusters**: 15 route di sottopagine dedicate (inclusi 3 strumenti di personalità Tomodachi Life e 2 route di dettaglio dinamiche che generano 32 pagine) mirate a keyword verticali con dati strutturati JSON-LD, HTML semantico e rete di link interni.
+- [x] **HTML Semantico e Accessibilità**: fisarmoniche FAQ `<details>`/`<summary>`, liste di passaggi `<ol>`/`<li>`, sezioni `aria-labelledby`, stati di caricamento `aria-live`, layout ottimizzati per la stampa.
+- [x] **Allineamento Terminologia Ufficiale del Gioco**: tutti i 12 locale usano i termini corretti del gioco (マイデザイン, PROデザイン, ーゾータル, 我的設計, 朋友聚會 新生活, 커스텀 디자인, 프로 디자인, etc.).
+- [x] **Audit di Qualità di Localizzazione Completo di 12 Lingue**: tutti i 10 file di locale non en/de auditati e corretti rispetto alle baseline en/de — termini tecnici mantenuti in inglese (lingue europee), terminologia ufficiale del gioco applicata (lingue asiatiche), parità di densità di informazione, dichiarazioni legali standardizzate (1729 chiavi per file, tutte convalidate).
 - [ ] **Supporto PWA**: Funzionalità completa Progressive Web App che offre funzionalità offline al 100% tramite caching Service Worker personalizzato.
 - [ ] **Attivazione Modalità Scura**: Implementazione fluida del tema scuro adattivo al sistema utilizzando lo styling atomico Tailwind CSS.
-- [ ] **Localizzazione Espansa**: Integrazioni i18n locali aggiuntive che coprono `pt-BR`, `ru`, `th` e `vi`.
+- [x] **Localizzazione Espansa**: Integrate locale `ru` (russo) e `pt` (portoghese). Obiettivi futuri: `th` e `vi`.
 - [ ] **Aggiornamento Studio Pixel**: Supporto per dimensioni canvas griglia pixel personalizzate definite dall'utente oltre le specifiche standard degli asset.
 - [ ] **Visualizzazione Lab Vocale**: Visualizzazione audio forma d'onda HTML5 Canvas dal vivo che rispecchia le uscite di frequenza Web Audio API in tempo reale.
 - [ ] **Ottimizzazione Accessibilità**: Audit strutturale completo conforme rigorosamente agli standard web internazionali WCAG 2.1 AA.
@@ -3155,9 +3240,13 @@ Rapporteer het in plaats daarvan verantwoord via e-mail naar **hi@lifesimgrid.or
 
 ### 📋 Projectroutekaart
 
+- [x] **Topic Clusters SEO-architectuur**: 15 toegewijde subpage-routes (inclusief 3 Tomodachi Life persoonlijkheids-tools en 2 dynamische detailroutes die 32 pagina's genereren) gericht op verticale keywords met JSON-LD gestructureerde data, semantische HTML en intern linknetwerk.
+- [x] **Semantische HTML en Toegankelijkheid**: `<details>`/`<summary>` FAQ-accoordions, `<ol>`/`<li>` staplijsten, `aria-labelledby` secties, `aria-live` laadstatussen, afdrukgeoptimaliseerde lay-outs.
+- [x] **Officiële Spelterminologie-uitlijning**: Alle 12 locales gebruiken correcte in-game termen (マイデザイン, PROデザイン, ーゾータル, 我的設計, 朋友聚會 新生活, 커스텀 디자인, 프로 디자인, etc.).
+- [x] **Volledige 12-talige Lokalisatiekwaliteitsaudit**: Alle 10 niet-en/de locale-bestanden geauditeerd en gecorrigeerd tegen en/de-baselines — technische entiteitswoorden in het Engels behouden (Europese talen), officiële spelterminologie afgedwongen (Aziatische talen), informatiedichtheid-pariteit bereikt, juridische disclaimers gestandaardiseerd (1729 keys per bestand, allemaal gevalideerd).
 - [ ] **PWA-ondersteuning**: Volledige Progressive Web App-mogelijkheid die 100% offline functionaliteit biedt via aangepaste Service Worker-caching.
 - [ ] **Donkermodus-schakelaar**: Vloeiende, systeem-adaptieve donkerthemaimplementatie gebruikmakend van Tailwind CSS atomair stylen.
-- [ ] **Uitgebreide Localisatie**: Aanvullende i18n locale-integraties die `pt-BR`, `ru`, `th` en `vi` dekken.
+- [x] **Uitgebreide Localisatie**: `ru` (Russisch) en `pt` (Portugees) locale-integraties toegevoegd. Toekomstige doelen: `th` en `vi`.
 - [ ] **Pixelstudio-upgrade**: Ondersteuning voor aangepaste door de gebruiker gedefinieerde pixelraster canvasformaten buiten standaard assetspecificaties.
 - [ ] **Stemlab Visualisatie**: Live HTML5 Canvas golfvorm-audiovisualisatie die realtime Web Audio API frequentie-uitvoeren weerspiegelt.
 - [ ] **Toegankelijkheidsoptimalisatie**: Uitgebreid structureel audit strikt voldoend aan WCAG 2.1 AA internationale webstandaarden.
@@ -3321,7 +3410,11 @@ src/
 │   │   ├── acnh-pixel-studio/    # ACNH 自定义设计子页面
 │   │   ├── mii-qr-unlocker/     # Mii QR Code 子页面
 │   │   ├── tomodachi-voice-lab/ # Tomodachi Voice 子页面
-│   │   ├── tomodachi-life-mbti/ # Tomodachi Life MBTI 子页面
+│   │   ├── tomodachi-life-mbti/        # Tomodachi Life MBTI 子页面
+│   │   │   └── [type]/      # MBTI 详情页面（16 个动态页面）
+│   │   ├── tomodachi-life-personality-calculator/  # 性格计算器子页面
+│   │   ├── tomodachi-life-personality-chart/       # 性格图表子页面
+│   │   ├── tomodachi-life-personality/[type]/      # 性格详情页面（16 个动态页面）
 │   │   ├── mii-eyes/            # Mii 眼睛设计指南子页面
 │   │   ├── tomodachi-island-planner/   # 岛屿规划器子页面
 │   │   ├── tomodachi-character-ideas/  # 角色创意子页面
@@ -3332,6 +3425,10 @@ src/
 │   ├── mii-qr-unlocker/   # 根层级 EN 子页面
 │   ├── tomodachi-voice-lab/ # 根层级 EN 子页面
 │   ├── tomodachi-life-mbti/ # 根层级 EN 子页面
+│   │   └── [type]/          # 根层级 EN MBTI 详情页面
+│   ├── tomodachi-life-personality-calculator/  # 根层级 EN 子页面
+│   ├── tomodachi-life-personality-chart/       # 根层级 EN 子页面
+│   ├── tomodachi-life-personality/[type]/      # 根层级 EN 性格详情页面
 │   ├── mii-eyes/           # 根层级 EN 子页面
 │   ├── tomodachi-island-planner/   # 根层级 EN 子页面
 │   ├── tomodachi-character-ideas/  # 根层级 EN 子页面
@@ -3346,6 +3443,10 @@ src/
 │   ├── MiiQrUnlockerPage.tsx    # Mii QR 子页面组件
 │   ├── TomodachiVoiceLabPage.tsx # Voice Lab 子页面组件
 │   ├── TomodachiLifeMbtiPage.tsx # MBTI 子页面组件
+│   ├── TomodachiLifeMbtiDetailPage.tsx  # MBTI 详情页面组件
+│   ├── TomodachiLifePersonalityCalculatorPage.tsx # 性格计算器子页面
+│   ├── TomodachiLifePersonalityChartPage.tsx       # 性格图表子页面
+│   ├── TomodachiLifePersonalityDetailPage.tsx      # 性格详情页面组件
 │   ├── TomodachiIslandPlannerPage.tsx  # 岛屿规划器子页面组件
 │   ├── TomodachiCharacterIdeasPage.tsx # 角色创意子页面组件
 │   ├── TomodachiApartmentDesignPage.tsx # 公寓设计子页面组件
@@ -3368,6 +3469,9 @@ src/
 │   └── request.ts          # 服务器端国际化设置
 ├── lib/                    # 核心逻辑
 │   ├── compatibility.ts    # 星座与性格算法
+│   ├── personality-data.ts  # 16 种性格类型数据与滑杆对应
+│   ├── character-db.ts      # 角色数据库（粉丝创作条目）
+│   ├── types.ts             # 共用 TypeScript 类型定义
 │   ├── qr-handler.ts       # QR 解码/编码逻辑
 │   └── history-db.ts       # 历史数据库（IndexedDB 封装）
 └── locales/                # 翻译文件（12 种语言）
@@ -3503,9 +3607,13 @@ LifeSimGrid 为完全独立的非官方第三方社群粉丝工具套件，以�
 
 ### 📋 项目路线图
 
+- [x] **Topic Clusters SEO 架构**：15 个独立子页面路由（含 3 个 Tomodachi Life 性格工具与 2 个动态详情路由，生成 32 个页面），针对垂直关键词搭配 JSON-LD 结构化数据、语义化 HTML 与内部链接网络。
+- [x] **语义化 HTML 与无障碍性**：`<details>`/`<summary>` FAQ 手风琴、`<ol>`/`<li>` 步骤列表、`aria-labelledby` 区块、`aria-live` 加载状态、打印优化布局。
+- [x] **官方游戏术语对齐**：全部 12 种语言使用正确的游戏内术语（マイデザイン、PROデザイン、ーゾポータル、我的设计、朋友聚会 新生活、커스텀 디자인、프로 디자인 等）。
+- [x] **完整 12 语言本地化品质审计**：所有 10 个非 en/de 语言文件已对齐 en/de 基准审计修正——欧洲语言保留英文技术实体词汇、亚洲语言强制官方游戏术语、信息密度对等、法律免责声明标准化（每档 1729 个键，全数验证）。
 - [ ] **PWA 支持**：完整的 Progressive Web App 功能，通过自定义 Service Worker 缓存提供 100% 离线运行能力。
 - [ ] **深色模式切换**：流畅的系统自适应深色主题实现，运用 Tailwind CSS 原子化样式。
-- [ ] **扩展国际化**：新增 `pt-BR`、`ru`、`th` 与 `vi` 等 i18n 语言集成。
+- [x] **扩展国际化**：已新增 `ru`（俄文）与 `pt`（葡萄牙文）语言集成。未来目标：`th` 与 `vi`。
 - [ ] **像素工作室升级**：支持超越标准资产规范的自定义用户定义像素网格画布尺寸。
 - [ ] **语音实验室可视化**：实时 HTML5 Canvas 波形音频可视化，镜像实时 Web Audio API 频率输出。
 - [ ] **无障碍优化**：严格遵循 WCAG 2.1 AA 国际网页标准的全面结构审计。

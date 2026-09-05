@@ -8,9 +8,9 @@ const BASE = "https://lifesimgrid.org";
 
 /** 根级 Tomodachi Life MBTI 页面的元数据（英文默认版本）。 */
 export const metadata: Metadata = {
-  title: { absolute: "Tomodachi Life MBTI & Personality Chart | LifeSimGrid" },
+  title: { absolute: "Tomodachi Life Personality → MBTI Mapping | LifeSimGrid" },
   description:
-    "Free Tomodachi Life MBTI & personality chart for Living the Dream. Compatibility calculator with zodiac synergy. 100% client-side.",
+    "Free Tomodachi Life personality to MBTI mapping chart for Living the Dream. 16 types, compatibility calculator with zodiac synergy. 100% client-side.",
   alternates: {
     canonical: `${BASE}/tomodachi-life-mbti`,
     languages: {
@@ -30,9 +30,9 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "Tomodachi Life MBTI & Personality Chart",
+    title: "Tomodachi Life Personality → MBTI Mapping",
     description:
-      "Free Tomodachi Life MBTI & personality chart for Living the Dream. Compatibility calculator with zodiac synergy. 100% client-side.",
+      "Free Tomodachi Life personality to MBTI mapping chart for Living the Dream. 16 types, compatibility calculator with zodiac synergy.",
     url: `${BASE}/tomodachi-life-mbti`,
     siteName: "LifeSimGrid",
     type: "website",

@@ -175,7 +175,14 @@ export default function Navbar() {
   /** Switches the locale, saves preference to localStorage, and navigates */
   function handleLocaleChange(newLocale: string) {
     localStorage.setItem(STORAGE_KEY, newLocale);
-    router.replace(pathname, { locale: newLocale as "en" | "zh-Hant" | "ja" | "es" | "fr" | "ko" | "de" | "it" | "nl" | "zh-CN" | "ru" | "pt" });
+    if (newLocale === "en") {
+      // next-intl forces a /en/ prefix when changing locales, but with
+      // localePrefix: "as-needed" the English version lives at the root
+      // (no /en/ prefix). Navigate directly to avoid a broken /en/ URL.
+      window.location.replace(pathname);
+    } else {
+      router.replace(pathname, { locale: newLocale as "en" | "zh-Hant" | "ja" | "es" | "fr" | "ko" | "de" | "it" | "nl" | "zh-CN" | "ru" | "pt" });
+    }
     setLocaleDropdownOpen(false);
   }
 
