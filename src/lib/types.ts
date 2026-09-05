@@ -91,6 +91,20 @@ export function getMbtiCode(personality: string): string {
   return MBTI_MAP[personality] ?? "INFP";
 }
 
+/** Extracts the sub-type slug from a full personality key (e.g. "outgoing_leader" → "leader"). */
+export function getPersonalitySlug(personality: string): string {
+  const parts = personality.split("_");
+  return parts.length >= 2 ? parts[1] : personality;
+}
+
+/** Finds the full personality key from a slug (e.g. "leader" → "outgoing_leader"). */
+export function getPersonalityFromSlug(slug: string): string | undefined {
+  return PERSONALITIES.find((p) => getPersonalitySlug(p) === slug);
+}
+
+/** All valid MBTI types (lowercase slugs). */
+export const MBTI_SLUGS: string[] = Object.values(MBTI_MAP).map((m) => m.toLowerCase());
+
 /* ------------------------------------------------------------------ */
 /*  Voice                                                              */
 /* ------------------------------------------------------------------ */

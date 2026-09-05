@@ -1,8 +1,8 @@
 import { setRequestLocale } from "next-intl/server";
 import { NextIntlClientProvider } from "next-intl";
 import en from "@/locales/en.json";
-import TomodachiLifeMbtiDetailPage, { MBTI_SLUGS } from "@/components/TomodachiLifeMbtiDetailPage";
-import { MBTI_MAP, PERSONALITIES } from "@/lib/types";
+import TomodachiLifeMbtiDetailPage from "@/components/TomodachiLifeMbtiDetailPage";
+import { MBTI_MAP, PERSONALITIES, MBTI_SLUGS } from "@/lib/types";
 import type { Metadata } from "next";
 
 const BASE = "https://lifesimgrid.org";

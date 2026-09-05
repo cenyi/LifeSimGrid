@@ -25,9 +25,6 @@ const BASE = "https://lifesimgrid.org";
 /*  Helpers                                                            */
 /* ------------------------------------------------------------------ */
 
-/** All valid MBTI types (lowercase slugs). */
-export const MBTI_SLUGS: string[] = Object.values(MBTI_MAP).map((m) => m.toLowerCase());
-
 /** Finds the primary personality key for a given MBTI type (lowercase). */
 export function getPersonalityByMbti(mbtiSlug: string): string | undefined {
   const mbtiUpper = mbtiSlug.toUpperCase();

@@ -1,8 +1,8 @@
 import { setRequestLocale } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
-import TomodachiLifeMbtiDetailPage, { MBTI_SLUGS } from "@/components/TomodachiLifeMbtiDetailPage";
-import { MBTI_MAP, PERSONALITIES } from "@/lib/types";
+import TomodachiLifeMbtiDetailPage from "@/components/TomodachiLifeMbtiDetailPage";
+import { MBTI_MAP, PERSONALITIES, MBTI_SLUGS } from "@/lib/types";
 import type { Metadata } from "next";
 
 const BASE = "https://lifesimgrid.org";

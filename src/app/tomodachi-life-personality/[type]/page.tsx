@@ -1,8 +1,8 @@
 import { setRequestLocale } from "next-intl/server";
 import { NextIntlClientProvider } from "next-intl";
 import en from "@/locales/en.json";
-import TomodachiLifePersonalityDetailPage, { getPersonalitySlug } from "@/components/TomodachiLifePersonalityDetailPage";
-import { PERSONALITIES, getMbtiCode } from "@/lib/types";
+import TomodachiLifePersonalityDetailPage from "@/components/TomodachiLifePersonalityDetailPage";
+import { PERSONALITIES, getMbtiCode, getPersonalitySlug } from "@/lib/types";
 import type { Metadata } from "next";
 
 const BASE = "https://lifesimgrid.org";
