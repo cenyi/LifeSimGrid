@@ -3,6 +3,7 @@ import { NextIntlClientProvider } from "next-intl";
 import en from "@/locales/en.json";
 import TomodachiMiiEyesPage from "@/components/TomodachiMiiEyesPage";
 import type { Metadata } from "next";
+import { languageAlternates } from "@/lib/locale-urls";
 
 const BASE = "https://lifesimgrid.org";
 
@@ -14,21 +15,7 @@ export const metadata: Metadata = {
   keywords: [],
   alternates: {
     canonical: `${BASE}/mii-eyes`,
-    languages: {
-      "x-default": `${BASE}/mii-eyes`,
-      en: `${BASE}/mii-eyes`,
-      "zh-Hant": `${BASE}/zh-Hant/mii-eyes`,
-      ja: `${BASE}/ja/mii-eyes`,
-      es: `${BASE}/es/mii-eyes`,
-      fr: `${BASE}/fr/mii-eyes`,
-      ko: `${BASE}/ko/mii-eyes`,
-      de: `${BASE}/de/mii-eyes`,
-      it: `${BASE}/it/mii-eyes`,
-      nl: `${BASE}/nl/mii-eyes`,
-      "zh-CN": `${BASE}/zh-CN/mii-eyes`,
-      ru: `${BASE}/ru/mii-eyes`,
-      pt: `${BASE}/pt/mii-eyes`,
-    },
+    languages: languageAlternates("mii-eyes", { xDefaultFirst: true }),
   },
   openGraph: {
     title: "Mii Eyes Design Guide for Tomodachi Life",

@@ -2,14 +2,15 @@ import { setRequestLocale } from "next-intl/server";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
 import { notFound } from "next/navigation";
-import { routing } from "@/i18n/routing";
+import { routing, type Locale, type NonEnLocale } from "@/i18n/routing";
 import HomePageContent from "@/components/HomePageContent";
 import EnRedirect from "@/components/EnRedirect";
+import { languageAlternates, OG_LOCALE_PAGE } from "@/lib/locale-urls";
 import type { Metadata } from "next";
 
 const BASE = "https://lifesimgrid.org";
 
-const LOCALE_TITLES: Record<string, string> = {
+const LOCALE_TITLES: Record<NonEnLocale, string> = {
   "zh-Hant": "動森工具箱：像素・QR・語音・MBTI",
   ja: "どうぶつの森：ピクセル・QR・音声・MBTI",
   es: "ACNH: Pixel, QR, Voz, MBTI — Gratis",
@@ -23,7 +24,7 @@ const LOCALE_TITLES: Record<string, string> = {
   pt: "ACNH: Pixel, QR, Voz, MBTI — Grátis",
 };
 
-const LOCALE_DESCS: Record<string, string> = {
+const LOCALE_DESCS: Record<NonEnLocale, string> = {
   "zh-Hant": "免費像素工作室、QR碼解鎖器、語音合成器與MBTI配對計算機。100%純前端處理，無需上傳數據，無需伺服器。支援動森我的設計、Mii QR碼、Tomodachi Life語音與性格配對。",
   ja: "無料ピクセルスタジオ、QR解除、ボイスシミュ・MBTI相性計算機。100%クライアント処理、アップロード不要、サーバー不要。マイデザイン・Mii QR・トモダチ音声・性格相性に対応。",
   es: "Pixel studio, desbloqueador QR, simulador voz y calc. MBTI. 100% cliente, sin servidor. Tools gratis ACNH Custom Designs, Mii y Tomodachi con análisis de compatibilidad.",
@@ -47,33 +48,19 @@ export async function generateMetadata({
 
   const path = locale;
   return {
-    title: { absolute: LOCALE_TITLES[locale] || "LifeSimGrid - Custom Island Companion Toolset" },
-    description: LOCALE_DESCS[locale] || "",
+    title: { absolute: LOCALE_TITLES[locale as NonEnLocale] || "LifeSimGrid - Custom Island Companion Toolset" },
+    description: LOCALE_DESCS[locale as NonEnLocale] || "",
     alternates: {
       canonical: `${BASE}/${path}`,
-      languages: {
-        en: BASE,
-        "zh-Hant": `${BASE}/zh-Hant`,
-        ja: `${BASE}/ja`,
-        es: `${BASE}/es`,
-        fr: `${BASE}/fr`,
-        ko: `${BASE}/ko`,
-        de: `${BASE}/de`,
-        it: `${BASE}/it`,
-        nl: `${BASE}/nl`,
-        "zh-CN": `${BASE}/zh-CN`,
-        ru: `${BASE}/ru`,
-        pt: `${BASE}/pt`,
-        "x-default": BASE,
-      },
+      languages: languageAlternates(""),
     },
     openGraph: {
-      title: LOCALE_TITLES[locale] || "LifeSimGrid",
-      description: LOCALE_DESCS[locale] || "",
+      title: LOCALE_TITLES[locale as NonEnLocale] || "LifeSimGrid",
+      description: LOCALE_DESCS[locale as NonEnLocale] || "",
       url: `${BASE}/${path}`,
       siteName: "LifeSimGrid",
       type: "website",
-      locale: locale === "zh-Hant" ? "zh_TW" : locale === "zh-CN" ? "zh_CN" : locale === "es" ? "es_ES" : locale === "fr" ? "fr_FR" : locale === "ko" ? "ko_KR" : locale === "de" ? "de_DE" : locale === "it" ? "it_IT" : locale === "nl" ? "nl_NL" : locale === "ru" ? "ru_RU" : locale === "pt" ? "pt_BR" : locale,
+      locale: OG_LOCALE_PAGE[locale as Locale],
     },
   };
 }
@@ -85,7 +72,7 @@ export default async function LocalePage({
 }) {
   const { locale } = await params;
 
-  if (!routing.locales.includes(locale as "en" | "zh-Hant" | "ja" | "es" | "fr" | "ko" | "de" | "it" | "nl" | "zh-CN" | "ru" | "pt")) {
+  if (!routing.locales.includes(locale as Locale)) {
     notFound();
   }
 

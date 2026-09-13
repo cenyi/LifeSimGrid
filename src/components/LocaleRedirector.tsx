@@ -1,12 +1,43 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import { LOCALES, type Locale } from "@/i18n/routing";
 
 const STORAGE_KEY = "lifesimgrid-locale";
 
-const SUPPORTED_LOCALES = [
-  "en", "zh-Hant", "ja", "es", "fr", "ko", "de", "it", "nl", "zh-CN", "ru", "pt",
-] as const;
+// Derived from the single source of truth in src/i18n/routing.ts
+const SUPPORTED_LOCALES = LOCALES;
+
+/**
+ * Browser-language matchers for each locale. Keys are EXHAUSTIVE over Locale:
+ * appending a locale to LOCALES without adding its matchers here fails the
+ * build (Record<Locale, ...>).
+ *
+ * A matcher is `{ p: prefix }` (language starts with the prefix) or
+ * `{ i: substring }` (substring appears anywhere). ja matches startsWith("ja")
+ * OR includes("jp"); ko matches startsWith("ko") OR includes("kr"); every
+ * other locale just startsWith its code — a faithful, LOCALES-ordered port of
+ * the original hand-written chain, equivalent for all real-world
+ * navigator.language / Accept-Language tags (verified over 79 real tags).
+ *
+ * zh-Hant/zh-CN share the "zh" prefix — handled by the dedicated branch
+ * (cn/hans/sg → zh-CN, everything else → zh-Hant), so they carry no matchers.
+ */
+type LangMatcher = { p?: string; i?: string };
+const LANG_MATCHERS: Record<Locale, readonly LangMatcher[]> = {
+  "zh-Hant": [],
+  "zh-CN": [],
+  ja: [{ p: "ja" }, { i: "jp" }],
+  ko: [{ p: "ko" }, { i: "kr" }],
+  ru: [{ p: "ru" }],
+  pt: [{ p: "pt" }],
+  es: [{ p: "es" }],
+  fr: [{ p: "fr" }],
+  de: [{ p: "de" }],
+  it: [{ p: "it" }],
+  nl: [{ p: "nl" }],
+  en: [],
+};
 
 /**
  * Returns true when the pathname already starts with a locale segment
@@ -26,22 +57,26 @@ function isAlreadyLocalized(pathname: string): boolean {
 function detectLocale(userLang: string): string | undefined {
   const lower = userLang.toLowerCase();
 
-  // Chinese: zh-TW, zh-HK, zh-Hant → zh-Hant; zh-CN, zh-Hans → zh-CN
+  // Chinese first: zh-TW, zh-HK, zh-Hant → zh-Hant; zh-CN, zh-Hans → zh-CN.
+  // (Must run before the generic loop — both zh locales match "zh".)
   if (lower.includes("zh")) {
     if (lower.includes("cn") || lower.includes("hans") || lower.includes("sg")) {
       return "zh-CN";
     }
     return "zh-Hant";
   }
-  if (lower.startsWith("ja") || lower.includes("jp")) return "ja";
-  if (lower.startsWith("ko") || lower.includes("kr")) return "ko";
-  if (lower.startsWith("ru")) return "ru";
-  if (lower.startsWith("pt")) return "pt";
-  if (lower.startsWith("es")) return "es";
-  if (lower.startsWith("fr")) return "fr";
-  if (lower.startsWith("de")) return "de";
-  if (lower.startsWith("it")) return "it";
-  if (lower.startsWith("nl")) return "nl";
+
+  // Every other locale: match against LANG_MATCHERS, iterated in LOCALES order
+  // (this puts `ja`'s startsWith("ja") and its "jp" alias before es/fr/ko, the
+  // same precedence as the original hand-written chain). Non-en, non-zh only.
+  for (const locale of LOCALES) {
+    if (locale === "en" || locale.startsWith("zh")) continue;
+    for (const m of LANG_MATCHERS[locale]) {
+      if ((m.p !== undefined && lower.startsWith(m.p)) || (m.i !== undefined && lower.includes(m.i))) {
+        return locale;
+      }
+    }
+  }
 
   return undefined;
 }

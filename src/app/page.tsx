@@ -2,6 +2,7 @@ import { setRequestLocale } from "next-intl/server";
 import { NextIntlClientProvider } from "next-intl";
 import en from "@/locales/en.json";
 import HomePageContent from "@/components/HomePageContent";
+import { languageAlternates } from "@/lib/locale-urls";
 import type { Metadata } from "next";
 
 const BASE = "https://lifesimgrid.org";
@@ -12,21 +13,7 @@ export const metadata: Metadata = {
     "Free ACNH, Mii & Tomodachi Life toolkit: Pixel Studio, QR Unlocker, Voice Lab & MBTI Calc. 100% client-side, no server.",
   alternates: {
     canonical: `${BASE}/`,
-    languages: {
-      en: `${BASE}/`,
-      "zh-Hant": `${BASE}/zh-Hant`,
-      ja: `${BASE}/ja`,
-      es: `${BASE}/es`,
-      fr: `${BASE}/fr`,
-      ko: `${BASE}/ko`,
-      de: `${BASE}/de`,
-      it: `${BASE}/it`,
-      nl: `${BASE}/nl`,
-      "zh-CN": `${BASE}/zh-CN`,
-      ru: `${BASE}/ru`,
-      pt: `${BASE}/pt`,
-      "x-default": `${BASE}/`,
-    },
+    languages: languageAlternates(""),
   },
   openGraph: {
     title: "LifeSimGrid — Free ACNH, Mii & Tomodachi Tools",

@@ -1,12 +1,13 @@
 import { setRequestLocale } from "next-intl/server";
 import { notFound } from "next/navigation";
-import { routing } from "@/i18n/routing";
+import { routing, type Locale, type NonEnLocale } from "@/i18n/routing";
 import TomodachiLifePersonalityChartPage from "@/components/TomodachiLifePersonalityChartPage";
 import type { Metadata } from "next";
+import { languageAlternates, localizedUrl } from "@/lib/locale-urls";
 
 const BASE = "https://lifesimgrid.org";
 
-const PAGE_TITLES: Record<string, string> = {
+const PAGE_TITLES: Record<NonEnLocale, string> = {
   "zh-Hant": "朋友聚會性格一覽表：16種性格完整對照表與MBTI",
   ja: "トモダチコレクション 新生活 性格一覧表：16種類とMBTI対応",
   es: "Tabla de Personalidades Tomodachi Life: 16 Tipos y MBTI",
@@ -20,7 +21,7 @@ const PAGE_TITLES: Record<string, string> = {
   pt: "Tabela de Personalidades Tomodachi Life: 16 Tipos e MBTI",
 };
 
-const PAGE_DESCS: Record<string, string> = {
+const PAGE_DESCS: Record<NonEnLocale, string> = {
   "zh-Hant": "朋友聚會：新生活16種性格完整一覽表。查看每種性格的群組分類、MBTI對應關係、性格特徵描述與房屋顏色。本表涵蓋全部性格類型，幫助你快速找到所需資訊，是規劃島嶼居民的必備參考。",
   ja: "トモダチコレクション 新生活の全16種類の性格を完全一覧。各性格のグループ分類、MBTI対応、特徴、家の色を確認でき、すべての性格タイプを総合的に理解できます。",
   es: "Tabla con las 16 personalidades de Tomodachi Life. Consulta grupo, MBTI, rasgos y color de casa de cada personalidad.",
@@ -50,30 +51,16 @@ export async function generateMetadata({
   const { locale } = await params;
   const path = "tomodachi-life-personality-chart";
   return {
-    title: PAGE_TITLES[locale] || FALLBACK_TITLE,
-    description: PAGE_DESCS[locale] || FALLBACK_DESC,
+    title: PAGE_TITLES[locale as NonEnLocale] || FALLBACK_TITLE,
+    description: PAGE_DESCS[locale as NonEnLocale] || FALLBACK_DESC,
     alternates: {
-      canonical: locale === "en" ? `${BASE}/${path}` : `${BASE}/${locale}/${path}`,
-      languages: {
-        "x-default": `${BASE}/${path}`,
-        en: `${BASE}/${path}`,
-        "zh-Hant": `${BASE}/zh-Hant/${path}`,
-        ja: `${BASE}/ja/${path}`,
-        es: `${BASE}/es/${path}`,
-        fr: `${BASE}/fr/${path}`,
-        ko: `${BASE}/ko/${path}`,
-        de: `${BASE}/de/${path}`,
-        it: `${BASE}/it/${path}`,
-        nl: `${BASE}/nl/${path}`,
-        "zh-CN": `${BASE}/zh-CN/${path}`,
-        ru: `${BASE}/ru/${path}`,
-        pt: `${BASE}/pt/${path}`,
-      },
+          canonical: localizedUrl(locale as Locale, path),
+      languages: languageAlternates(path, { xDefaultFirst: true }),
     },
     openGraph: {
-      title: PAGE_TITLES[locale] || FALLBACK_TITLE,
-      description: PAGE_DESCS[locale] || FALLBACK_DESC,
-      url: locale === "en" ? `${BASE}/${path}` : `${BASE}/${locale}/${path}`,
+      title: PAGE_TITLES[locale as NonEnLocale] || FALLBACK_TITLE,
+      description: PAGE_DESCS[locale as NonEnLocale] || FALLBACK_DESC,
+        url: localizedUrl(locale as Locale, path),
       siteName: "LifeSimGrid",
       type: "website",
       images: [
@@ -95,7 +82,7 @@ export default async function LocaleTomodachiLifePersonalityChartPage({
 }) {
   const { locale } = await params;
 
-  if (!routing.locales.includes(locale as "en" | "zh-Hant" | "ja" | "es" | "fr" | "ko" | "de" | "it" | "nl" | "zh-CN" | "ru" | "pt")) {
+  if (!routing.locales.includes(locale as Locale)) {
     notFound();
   }
 

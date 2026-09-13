@@ -2,7 +2,7 @@
 
 import { useTranslations, useLocale } from "next-intl";
 import { useRouter, usePathname, Link } from "@/i18n/routing";
-import { routing } from "@/i18n/routing";
+import { routing, type Locale } from "@/i18n/routing";
 import { useState, useRef, useEffect } from "react";
 import {
   Globe, ChevronDown, Palette, Unlock, Music, Sparkles, Grid3x3,
@@ -11,7 +11,9 @@ import {
 
 const STORAGE_KEY = "lifesimgrid-locale";
 
-const localeLabels: Record<string, string> = {
+// Record<Locale, string> forces every locale in src/i18n/routing.ts to have a
+// display label here — adding a locale without a label fails the build.
+const localeLabels: Record<Locale, string> = {
   en: "English",
   "zh-Hant": "繁體中文",
   ja: "日本語",
@@ -181,7 +183,7 @@ export default function Navbar() {
       // (no /en/ prefix). Navigate directly to avoid a broken /en/ URL.
       window.location.replace(pathname);
     } else {
-      router.replace(pathname, { locale: newLocale as "en" | "zh-Hant" | "ja" | "es" | "fr" | "ko" | "de" | "it" | "nl" | "zh-CN" | "ru" | "pt" });
+      router.replace(pathname, { locale: newLocale as Locale });
     }
     setLocaleDropdownOpen(false);
   }
@@ -227,7 +229,7 @@ export default function Navbar() {
               }`}
             >
               <Globe className={`h-4 w-4 transition-colors ${localeDropdownOpen ? "text-[#E6B800]" : "text-gray-500"}`} />
-              <span>{localeLabels[locale] || locale}</span>
+              <span>{localeLabels[locale as Locale] ?? locale}</span>
               <ChevronDown
                 className={`h-4 w-4 text-gray-400 transition-transform duration-200 ${localeDropdownOpen ? "rotate-180" : ""}`}
               />

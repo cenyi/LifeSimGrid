@@ -3,6 +3,7 @@ import { NextIntlClientProvider } from "next-intl";
 import en from "@/locales/en.json";
 import TomodachiLifeMbtiPage from "@/components/TomodachiLifeMbtiPage";
 import type { Metadata } from "next";
+import { languageAlternates } from "@/lib/locale-urls";
 
 const BASE = "https://lifesimgrid.org";
 
@@ -13,21 +14,7 @@ export const metadata: Metadata = {
     "Free Tomodachi Life personality to MBTI mapping chart for Living the Dream. 16 types, compatibility calculator with zodiac synergy. 100% client-side.",
   alternates: {
     canonical: `${BASE}/tomodachi-life-mbti`,
-    languages: {
-      "x-default": `${BASE}/tomodachi-life-mbti`,
-      en: `${BASE}/tomodachi-life-mbti`,
-      "zh-Hant": `${BASE}/zh-Hant/tomodachi-life-mbti`,
-      ja: `${BASE}/ja/tomodachi-life-mbti`,
-      es: `${BASE}/es/tomodachi-life-mbti`,
-      fr: `${BASE}/fr/tomodachi-life-mbti`,
-      ko: `${BASE}/ko/tomodachi-life-mbti`,
-      de: `${BASE}/de/tomodachi-life-mbti`,
-      it: `${BASE}/it/tomodachi-life-mbti`,
-      nl: `${BASE}/nl/tomodachi-life-mbti`,
-      "zh-CN": `${BASE}/zh-CN/tomodachi-life-mbti`,
-      ru: `${BASE}/ru/tomodachi-life-mbti`,
-      pt: `${BASE}/pt/tomodachi-life-mbti`,
-    },
+    languages: languageAlternates("tomodachi-life-mbti", { xDefaultFirst: true }),
   },
   openGraph: {
     title: "Tomodachi Life Personality → MBTI Mapping",

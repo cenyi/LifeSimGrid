@@ -3,11 +3,13 @@ import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
 import ContactPage from "@/components/ContactPage";
 import type { Metadata } from "next";
+import type { Locale, NonEnLocale } from "@/i18n/routing";
+import { languageAlternates, localizedUrl } from "@/lib/locale-urls";
 
 const BASE = "https://lifesimgrid.org";
 
 /** Localized page titles for Contact (template appends " - LifeSimGrid"). */
-const PAGE_TITLES: Record<string, string> = {
+const PAGE_TITLES: Record<NonEnLocale, string> = {
   "zh-Hant": "聯絡LifeSimGrid — 技術支援",
   ja: "LifeSimGridお問い合わせ",
   es: "Contacto LifeSimGrid — Soporte",
@@ -21,7 +23,7 @@ const PAGE_TITLES: Record<string, string> = {
   pt: "Contato LifeSimGrid — Suporte",
 };
 
-const PAGE_DESCS: Record<string, string> = {
+const PAGE_DESCS: Record<NonEnLocale, string> = {
   "zh-Hant": "技術支援、錯誤回報或合規諮詢。歡迎動森我的設計、Mii QR碼工具反饋。100%純前端。",
   ja: "テクニカルサポート、バグ報告。マイデザイン・Mii QRツールへのご意見歓迎。100%クライアント。",
   es: "Soporte técnico, reporte de bugs. Feedback sobre ACNH Custom Designs, Mii. 100% cliente.",
@@ -43,30 +45,16 @@ export async function generateMetadata({
   const { locale } = await params;
   const path = "contact";
   return {
-    title: PAGE_TITLES[locale] || "Contact Us",
-    description: PAGE_DESCS[locale] || "",
+    title: PAGE_TITLES[locale as NonEnLocale] || "Contact Us",
+    description: PAGE_DESCS[locale as NonEnLocale] || "",
     alternates: {
-      canonical: locale === "en" ? `${BASE}/contact` : `${BASE}/${locale}/contact`,
-      languages: {
-        en: `${BASE}/contact`,
-        "zh-Hant": `${BASE}/zh-Hant/contact`,
-        ja: `${BASE}/ja/contact`,
-        es: `${BASE}/es/contact`,
-        fr: `${BASE}/fr/contact`,
-        ko: `${BASE}/ko/contact`,
-        de: `${BASE}/de/contact`,
-        it: `${BASE}/it/contact`,
-        nl: `${BASE}/nl/contact`,
-        "zh-CN": `${BASE}/zh-CN/contact`,
-        ru: `${BASE}/ru/contact`,
-        pt: `${BASE}/pt/contact`,
-        "x-default": `${BASE}/contact`,
-      },
+      canonical: localizedUrl(locale as Locale, path),
+      languages: languageAlternates("contact"),
     },
     openGraph: {
-      title: PAGE_TITLES[locale] || "Contact Us",
-      description: PAGE_DESCS[locale] || "",
-      url: locale === "en" ? `${BASE}/${path}` : `${BASE}/${locale}/${path}`,
+      title: PAGE_TITLES[locale as NonEnLocale] || "Contact Us",
+      description: PAGE_DESCS[locale as NonEnLocale] || "",
+        url: localizedUrl(locale as Locale, path),
       siteName: "LifeSimGrid",
       type: "website",
     },

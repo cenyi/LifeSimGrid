@@ -3,6 +3,7 @@ import { NextIntlClientProvider } from "next-intl";
 import en from "@/locales/en.json";
 import PrivacyPage from "@/components/PrivacyPage";
 import type { Metadata } from "next";
+import { languageAlternates } from "@/lib/locale-urls";
 
 const BASE = "https://lifesimgrid.org";
 
@@ -13,21 +14,7 @@ export const metadata: Metadata = {
     "LifeSimGrid privacy: 100% client-side, no data collection, no backend, no tracking. Your data never leaves your device. Free ACNH, Mii & Tomodachi tools.",
   alternates: {
     canonical: `${BASE}/privacy`,
-    languages: {
-      en: `${BASE}/privacy`,
-      "zh-Hant": `${BASE}/zh-Hant/privacy`,
-      ja: `${BASE}/ja/privacy`,
-      es: `${BASE}/es/privacy`,
-      fr: `${BASE}/fr/privacy`,
-      ko: `${BASE}/ko/privacy`,
-      de: `${BASE}/de/privacy`,
-      it: `${BASE}/it/privacy`,
-      nl: `${BASE}/nl/privacy`,
-      "zh-CN": `${BASE}/zh-CN/privacy`,
-      ru: `${BASE}/ru/privacy`,
-      pt: `${BASE}/pt/privacy`,
-      "x-default": `${BASE}/privacy`,
-    },
+    languages: languageAlternates("privacy"),
   },
   openGraph: {
     title: "LifeSimGrid Privacy — No Data Collection",

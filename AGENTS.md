@@ -22,7 +22,11 @@ This version has breaking changes — APIs, conventions, and file structure may 
 - Root-level pages (`/acnh-pixel-studio`) serve English with `setRequestLocale("en")`
 - Locale-level pages (`/[locale]/acnh-pixel-studio`) use `generateMetadata` with per-locale titles
 - Canonical URL: `locale === "en"` → canonical points to root-level URL (no `/en/` prefix)
-- 10 locales: en, zh-Hant, zh-CN, ja, ko, es, fr, de, it, nl
+- 12 locales: en, zh-Hant, zh-CN, ja, ko, es, fr, de, it, nl, ru, pt
+- Locale single source of truth: `LOCALES` const + `Locale` type in `src/i18n/routing.ts` — NEVER hardcode locale unions elsewhere; add a new language by appending its code to `LOCALES` and everything else derives from it
+- Per-page meta maps (`PAGE_TITLES`/`PAGE_DESCS`/`LOCALE_TITLES`/`LOCALE_DESCS` in `[locale]/**/page.tsx`) MUST be typed `Record<NonEnLocale, string>` (exhaustive — a new locale without hand-written meta fails the build; en stays out of the maps, served by `FALLBACK_*` constants)
+- All hreflang `alternates.languages` blocks MUST be `languageAlternates(path, opts?)` from `src/lib/locale-urls.ts` (derived from LOCALES) — NEVER hand-write locale URL lists. Same for JSON-LD `inLanguage` (`[...LOCALES]`), OG `alternateLocale` (`OG_LOCALE_ALTERNATES`), homepage `og:locale` (`OG_LOCALE_PAGE`), and browser-language detection prefixes (`LANG_PREFIXES` in LocaleRedirector.tsx) — all exhaustive Records that fail the build when a new locale is added unconfigured
+- Hand-maintained locale lists (only place left to touch): `public/sitemap.xml` hreflang entries, `public/llms.txt`, `public/_redirects` trailing-slash rules
 - All pages use static export (`output: "export"`) — no server-side runtime
 
 ## HTML Semantic Structure (SEO-critical)
@@ -48,7 +52,7 @@ This version has breaking changes — APIs, conventions, and file structure may 
 - **European languages (de, es, fr, it, nl)**: ALL technical entity words MUST stay in English — HTML5 Canvas API, Web Audio API, jsQR, localStorage, IndexedDB, Promise.all, ArrayBuffer, qrcode, JSZip, Lucide Icons, Cloudflare Pages, Next.js 16 App Router, TypeScript, Tailwind CSS, next-intl, SSG, CDN, MIT License, ISC License, Google Analytics 4, GA4, Microsoft Clarity, Google AdSense, Carbon Ads, EthicalAds, COPPA, GDPR, CCPA, PII, HTTPS, MITM, DevTools, Network tab, FFL, 0x04, Byte Mode
 - **Asian languages (ja, zh-Hant, zh-CN)**: Technical entity words stay in English; game terminology MUST use official in-game terms (see table above)
 - **Korean (ko)**: Technical entity words stay in English; game terminology uses official Korean in-game terms (커스텀 디자인, 프로 디자인, 누크폰, Mii 스튜디오); "Tomodachi Life" stays in English (not released in Korean); ACNH full title uses 모여봐요 동물의 숲
-- **All locales**: Must maintain 448 keys matching en.json exactly; information density must match en/de baselines; legal disclaimers (COPPA, GDPR, CCPA, PII, HTTPS, MITM) always in English
+- **All locales**: Must maintain key sets identical to en.json exactly (1760 keys as of 2026-09 — re-count before trusting this number); information density must match en/de baselines; legal disclaimers (COPPA, GDPR, CCPA, PII, HTTPS, MITM) always in English
 
 ## next-intl Rich Text Tags
 - `<pixel>`, `<qr>`, `<voice>` — internal cross-links in SEOSection

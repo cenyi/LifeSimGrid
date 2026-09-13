@@ -1,14 +1,15 @@
 import { setRequestLocale } from "next-intl/server";
 import { notFound } from "next/navigation";
-import { routing } from "@/i18n/routing";
+import { routing, type Locale, type NonEnLocale } from "@/i18n/routing";
 import LivingTheGridPage from "@/components/LivingTheGridPage";
 import type { Metadata } from "next";
+import { languageAlternates, localizedUrl } from "@/lib/locale-urls";
 
 const BASE = "https://lifesimgrid.org";
 const PATH = "living-the-grid";
 
 /** Localized page titles for Living the Grid (template appends " - LifeSimGrid"). */
-const PAGE_TITLES: Record<string, string> = {
+const PAGE_TITLES: Record<NonEnLocale, string> = {
   "zh-Hant": "Living the Grid — 像素格子工具",
   ja: "Living the Grid — ピクセルグリッド",
   es: "Living the Grid — Pixel Grid",
@@ -23,7 +24,7 @@ const PAGE_TITLES: Record<string, string> = {
 };
 
 /** Localized page descriptions for Living the Grid. */
-const PAGE_DESCS: Record<string, string> = {
+const PAGE_DESCS: Record<NonEnLocale, string> = {
   "zh-Hant": "免費像素格子轉換工具 — Living the Grid 網頁替代方案。適用 Minecraft、拼豆、十字繡、朋友聚會 新生活。100% 瀏覽器執行。",
   ja: "無料ピクセルグリッド変換 — Living the Grid の Web 版代替。Minecraft・ビーズ・トモダチコレクション 新生活対応。100%ブラウザ処理。",
   es: "Convierte imágenes en pixel grid gratis — alternativa web a Living the Grid. Minecraft, Perler Beads, Tomodachi Life. HTML5 Canvas API. 100% cliente.",
@@ -49,30 +50,16 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale } = await params;
   return {
-    title: PAGE_TITLES[locale] || FALLBACK_TITLE,
-    description: PAGE_DESCS[locale] || FALLBACK_DESC,
+    title: PAGE_TITLES[locale as NonEnLocale] || FALLBACK_TITLE,
+    description: PAGE_DESCS[locale as NonEnLocale] || FALLBACK_DESC,
     alternates: {
-      canonical: locale === "en" ? `${BASE}/${PATH}` : `${BASE}/${locale}/${PATH}`,
-      languages: {
-        "x-default": `${BASE}/${PATH}`,
-        en: `${BASE}/${PATH}`,
-        "zh-Hant": `${BASE}/zh-Hant/${PATH}`,
-        ja: `${BASE}/ja/${PATH}`,
-        es: `${BASE}/es/${PATH}`,
-        fr: `${BASE}/fr/${PATH}`,
-        ko: `${BASE}/ko/${PATH}`,
-        de: `${BASE}/de/${PATH}`,
-        it: `${BASE}/it/${PATH}`,
-        nl: `${BASE}/nl/${PATH}`,
-        "zh-CN": `${BASE}/zh-CN/${PATH}`,
-        ru: `${BASE}/ru/${PATH}`,
-        pt: `${BASE}/pt/${PATH}`,
-      },
+          canonical: localizedUrl(locale as Locale, PATH),
+      languages: languageAlternates(PATH, { xDefaultFirst: true }),
     },
     openGraph: {
-      title: PAGE_TITLES[locale] || FALLBACK_TITLE,
-      description: PAGE_DESCS[locale] || FALLBACK_DESC,
-      url: locale === "en" ? `${BASE}/${PATH}` : `${BASE}/${locale}/${PATH}`,
+      title: PAGE_TITLES[locale as NonEnLocale] || FALLBACK_TITLE,
+      description: PAGE_DESCS[locale as NonEnLocale] || FALLBACK_DESC,
+        url: localizedUrl(locale as Locale, PATH),
       siteName: "LifeSimGrid",
       type: "website",
       images: [
@@ -80,7 +67,7 @@ export async function generateMetadata({
           url: `${BASE}/og/${PATH}.svg`,
           width: 1200,
           height: 630,
-          alt: PAGE_TITLES[locale] || FALLBACK_TITLE,
+          alt: PAGE_TITLES[locale as NonEnLocale] || FALLBACK_TITLE,
         },
       ],
     },
@@ -95,7 +82,7 @@ export default async function LocaleLivingTheGridPage({
 }) {
   const { locale } = await params;
 
-  if (!routing.locales.includes(locale as "en" | "zh-Hant" | "ja" | "es" | "fr" | "ko" | "de" | "it" | "nl" | "zh-CN" | "ru" | "pt")) {
+  if (!routing.locales.includes(locale as Locale)) {
     notFound();
   }
 

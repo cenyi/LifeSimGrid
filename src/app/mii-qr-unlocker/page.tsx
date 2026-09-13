@@ -3,6 +3,7 @@ import { NextIntlClientProvider } from "next-intl";
 import en from "@/locales/en.json";
 import MiiQrUnlockerPage from "@/components/MiiQrUnlockerPage";
 import type { Metadata } from "next";
+import { languageAlternates } from "@/lib/locale-urls";
 
 const BASE = "https://lifesimgrid.org";
 
@@ -13,21 +14,7 @@ export const metadata: Metadata = {
     "Free Mii QR unlocker for Tomodachi Life: Living the Dream Mii sharing via local wireless. Fix edit errors on 3DS, Wii U & Switch. 100% browser-based.",
   alternates: {
     canonical: `${BASE}/mii-qr-unlocker`,
-    languages: {
-        "x-default": `${BASE}/mii-qr-unlocker`,
-        en: `${BASE}/mii-qr-unlocker`,
-      "zh-Hant": `${BASE}/zh-Hant/mii-qr-unlocker`,
-      ja: `${BASE}/ja/mii-qr-unlocker`,
-      es: `${BASE}/es/mii-qr-unlocker`,
-      fr: `${BASE}/fr/mii-qr-unlocker`,
-      ko: `${BASE}/ko/mii-qr-unlocker`,
-      de: `${BASE}/de/mii-qr-unlocker`,
-      it: `${BASE}/it/mii-qr-unlocker`,
-      nl: `${BASE}/nl/mii-qr-unlocker`,
-      "zh-CN": `${BASE}/zh-CN/mii-qr-unlocker`,
-      ru: `${BASE}/ru/mii-qr-unlocker`,
-      pt: `${BASE}/pt/mii-qr-unlocker`,
-    },
+    languages: languageAlternates("mii-qr-unlocker", { xDefaultFirst: true }),
   },
   openGraph: {
     title: "Mii QR Unlocker — Fix Edit Error Online",

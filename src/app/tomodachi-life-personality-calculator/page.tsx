@@ -3,6 +3,7 @@ import { NextIntlClientProvider } from "next-intl";
 import en from "@/locales/en.json";
 import TomodachiLifePersonalityCalculatorPage from "@/components/TomodachiLifePersonalityCalculatorPage";
 import type { Metadata } from "next";
+import { languageAlternates } from "@/lib/locale-urls";
 
 const BASE = "https://lifesimgrid.org";
 
@@ -12,21 +13,7 @@ export const metadata: Metadata = {
     "Free Tomodachi Life personality calculator. Adjust 4 sliders to get your Mii personality type and MBTI mapping. 100% client-side, no upload needed.",
   alternates: {
     canonical: `${BASE}/tomodachi-life-personality-calculator`,
-    languages: {
-      "x-default": `${BASE}/tomodachi-life-personality-calculator`,
-      en: `${BASE}/tomodachi-life-personality-calculator`,
-      "zh-Hant": `${BASE}/zh-Hant/tomodachi-life-personality-calculator`,
-      ja: `${BASE}/ja/tomodachi-life-personality-calculator`,
-      es: `${BASE}/es/tomodachi-life-personality-calculator`,
-      fr: `${BASE}/fr/tomodachi-life-personality-calculator`,
-      ko: `${BASE}/ko/tomodachi-life-personality-calculator`,
-      de: `${BASE}/de/tomodachi-life-personality-calculator`,
-      it: `${BASE}/it/tomodachi-life-personality-calculator`,
-      nl: `${BASE}/nl/tomodachi-life-personality-calculator`,
-      "zh-CN": `${BASE}/zh-CN/tomodachi-life-personality-calculator`,
-      ru: `${BASE}/ru/tomodachi-life-personality-calculator`,
-      pt: `${BASE}/pt/tomodachi-life-personality-calculator`,
-    },
+    languages: languageAlternates("tomodachi-life-personality-calculator", { xDefaultFirst: true }),
   },
   openGraph: {
     title: "Tomodachi Life Personality Calculator",

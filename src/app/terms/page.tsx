@@ -3,6 +3,7 @@ import { NextIntlClientProvider } from "next-intl";
 import en from "@/locales/en.json";
 import TermsPage from "@/components/TermsPage";
 import type { Metadata } from "next";
+import { languageAlternates } from "@/lib/locale-urls";
 
 const BASE = "https://lifesimgrid.org";
 
@@ -13,21 +14,7 @@ export const metadata: Metadata = {
     "LifeSimGrid terms: independent tool, MIT licensed, no console-maker affiliation. Free ACNH, Mii, Tomodachi tools. No data collection, 100% client-side.",
   alternates: {
     canonical: `${BASE}/terms`,
-    languages: {
-      en: `${BASE}/terms`,
-      "zh-Hant": `${BASE}/zh-Hant/terms`,
-      ja: `${BASE}/ja/terms`,
-      es: `${BASE}/es/terms`,
-      fr: `${BASE}/fr/terms`,
-      ko: `${BASE}/ko/terms`,
-      de: `${BASE}/de/terms`,
-      it: `${BASE}/it/terms`,
-      nl: `${BASE}/nl/terms`,
-      "zh-CN": `${BASE}/zh-CN/terms`,
-      ru: `${BASE}/ru/terms`,
-      pt: `${BASE}/pt/terms`,
-      "x-default": `${BASE}/terms`,
-    },
+    languages: languageAlternates("terms"),
   },
   openGraph: {
     title: "LifeSimGrid Terms — MIT Licensed, No Affiliation",

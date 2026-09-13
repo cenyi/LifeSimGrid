@@ -3,6 +3,7 @@ import { NextIntlClientProvider } from "next-intl";
 import en from "@/locales/en.json";
 import TomodachiCharacterIdeasPage from "@/components/TomodachiCharacterIdeasPage";
 import type { Metadata } from "next";
+import { languageAlternates } from "@/lib/locale-urls";
 
 const BASE = "https://lifesimgrid.org";
 
@@ -14,21 +15,7 @@ export const metadata: Metadata = {
   keywords: [],
   alternates: {
     canonical: `${BASE}/tomodachi-character-ideas`,
-    languages: {
-      "x-default": `${BASE}/tomodachi-character-ideas`,
-      en: `${BASE}/tomodachi-character-ideas`,
-      "zh-Hant": `${BASE}/zh-Hant/tomodachi-character-ideas`,
-      ja: `${BASE}/ja/tomodachi-character-ideas`,
-      es: `${BASE}/es/tomodachi-character-ideas`,
-      fr: `${BASE}/fr/tomodachi-character-ideas`,
-      ko: `${BASE}/ko/tomodachi-character-ideas`,
-      de: `${BASE}/de/tomodachi-character-ideas`,
-      it: `${BASE}/it/tomodachi-character-ideas`,
-      nl: `${BASE}/nl/tomodachi-character-ideas`,
-      "zh-CN": `${BASE}/zh-CN/tomodachi-character-ideas`,
-      ru: `${BASE}/ru/tomodachi-character-ideas`,
-      pt: `${BASE}/pt/tomodachi-character-ideas`,
-    },
+    languages: languageAlternates("tomodachi-character-ideas", { xDefaultFirst: true }),
   },
   openGraph: {
     title: "Tomodachi Life Character Ideas Generator",

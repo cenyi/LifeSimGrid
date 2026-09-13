@@ -3,6 +3,7 @@ import { NextIntlClientProvider } from "next-intl";
 import en from "@/locales/en.json";
 import AboutPage from "@/components/AboutPage";
 import type { Metadata } from "next";
+import { languageAlternates } from "@/lib/locale-urls";
 
 const BASE = "https://lifesimgrid.org";
 
@@ -13,21 +14,7 @@ export const metadata: Metadata = {
     "LifeSimGrid: open-source toolkit for pixel art, avatar config & 8-bit voice. Free ACNH, Mii & Tomodachi Life tools. 100% client-side.",
   alternates: {
     canonical: `${BASE}/about`,
-    languages: {
-      en: `${BASE}/about`,
-      "zh-Hant": `${BASE}/zh-Hant/about`,
-      ja: `${BASE}/ja/about`,
-      es: `${BASE}/es/about`,
-      fr: `${BASE}/fr/about`,
-      ko: `${BASE}/ko/about`,
-      de: `${BASE}/de/about`,
-      it: `${BASE}/it/about`,
-      nl: `${BASE}/nl/about`,
-      "zh-CN": `${BASE}/zh-CN/about`,
-      ru: `${BASE}/ru/about`,
-      pt: `${BASE}/pt/about`,
-      "x-default": `${BASE}/about`,
-    },
+    languages: languageAlternates("about"),
   },
   openGraph: {
     title: "About LifeSimGrid — Open-Source ACNH & Mii Tools",

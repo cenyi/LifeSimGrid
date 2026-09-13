@@ -3,6 +3,7 @@ import { NextIntlClientProvider } from "next-intl";
 import en from "@/locales/en.json";
 import TomodachiIslandPlannerPage from "@/components/TomodachiIslandPlannerPage";
 import type { Metadata } from "next";
+import { languageAlternates } from "@/lib/locale-urls";
 
 const BASE = "https://lifesimgrid.org";
 
@@ -13,21 +14,7 @@ export const metadata: Metadata = {
     "Free Tomodachi Life island planner: interactive grid, drag-and-drop buildings, MBTI resident optimization, export templates. 100% client-side.",
   alternates: {
     canonical: `${BASE}/tomodachi-island-planner`,
-    languages: {
-      "x-default": `${BASE}/tomodachi-island-planner`,
-      en: `${BASE}/tomodachi-island-planner`,
-      "zh-Hant": `${BASE}/zh-Hant/tomodachi-island-planner`,
-      ja: `${BASE}/ja/tomodachi-island-planner`,
-      es: `${BASE}/es/tomodachi-island-planner`,
-      fr: `${BASE}/fr/tomodachi-island-planner`,
-      ko: `${BASE}/ko/tomodachi-island-planner`,
-      de: `${BASE}/de/tomodachi-island-planner`,
-      it: `${BASE}/it/tomodachi-island-planner`,
-      nl: `${BASE}/nl/tomodachi-island-planner`,
-      "zh-CN": `${BASE}/zh-CN/tomodachi-island-planner`,
-      ru: `${BASE}/ru/tomodachi-island-planner`,
-      pt: `${BASE}/pt/tomodachi-island-planner`,
-    },
+    languages: languageAlternates("tomodachi-island-planner", { xDefaultFirst: true }),
   },
   openGraph: {
     title: "Tomodachi Life Island Planner & Layout Designer",

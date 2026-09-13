@@ -1,9 +1,10 @@
 import { setRequestLocale } from "next-intl/server";
 import { notFound } from "next/navigation";
-import { routing } from "@/i18n/routing";
+import { routing, type Locale, type NonEnLocale } from "@/i18n/routing";
 import TomodachiLifeMbtiDetailPage from "@/components/TomodachiLifeMbtiDetailPage";
 import { MBTI_MAP, PERSONALITIES, MBTI_SLUGS } from "@/lib/types";
 import type { Metadata } from "next";
+import { languageAlternates, localizedUrl } from "@/lib/locale-urls";
 
 const BASE = "https://lifesimgrid.org";
 
@@ -11,7 +12,7 @@ const FALLBACK_TITLE = "in Tomodachi Life";
 const FALLBACK_DESC =
   "See slider settings, compatibility, and fan insights for this MBTI type in Tomodachi Life: Living the Dream.";
 
-const PAGE_TITLES: Record<string, string> = {
+const PAGE_TITLES: Record<NonEnLocale, string> = {
   "zh-Hant": "{mbti}在朋友聚會：新生活的性格對應與滑桿設定詳解指南",
   ja: "トモダチの{mbti}性格対応とスライダー設定値の詳解",
   es: "{mbti} en Tomodachi Life: Personalidad, Sliders y Compat.",
@@ -25,7 +26,7 @@ const PAGE_TITLES: Record<string, string> = {
   pt: "{mbti} em Tomodachi Life: Personalidade, Sliders e Compat",
 };
 
-const PAGE_DESCS: Record<string, string> = {
+const PAGE_DESCS: Record<NonEnLocale, string> = {
   "zh-Hant": "查看{mbti}在朋友聚會：新生活中的性格對應、滑桿設定值、與其他性格的相容性以及玩家心得。完整的MBTI性格分析，幫助你全面深入地了解此性格類型的特徵與表現方式。",
   ja: "トモダチコレクション 新生活における{mbti}の性格対応、スライダー設定値、他の性格との相性、ファンインサイトを確認。完全なMBTI性格分析を提供し、全体像を把握できます。",
   es: "Consulta la personalidad correspondiente a {mbti} en Tomodachi Life: ajustes de sliders, compatibilidad con otras personalidades y análisis de los fans.",
@@ -59,8 +60,8 @@ export async function generateMetadata({
   const personality = PERSONALITIES.find((p) => MBTI_MAP[p] === mbti);
   const path = `tomodachi-life-mbti/${type}`;
 
-  const titleTemplate = PAGE_TITLES[locale];
-  const descTemplate = PAGE_DESCS[locale];
+  const titleTemplate = PAGE_TITLES[locale as NonEnLocale];
+  const descTemplate = PAGE_DESCS[locale as NonEnLocale];
   const title = titleTemplate
     ? titleTemplate.replace("{mbti}", mbti)
     : `${mbti} ${FALLBACK_TITLE}`;
@@ -72,27 +73,13 @@ export async function generateMetadata({
     title,
     description,
     alternates: {
-      canonical: locale === "en" ? `${BASE}/${path}` : `${BASE}/${locale}/${path}`,
-      languages: {
-        "x-default": `${BASE}/${path}`,
-        en: `${BASE}/${path}`,
-        "zh-Hant": `${BASE}/zh-Hant/${path}`,
-        ja: `${BASE}/ja/${path}`,
-        es: `${BASE}/es/${path}`,
-        fr: `${BASE}/fr/${path}`,
-        ko: `${BASE}/ko/${path}`,
-        de: `${BASE}/de/${path}`,
-        it: `${BASE}/it/${path}`,
-        nl: `${BASE}/nl/${path}`,
-        "zh-CN": `${BASE}/zh-CN/${path}`,
-        ru: `${BASE}/ru/${path}`,
-        pt: `${BASE}/pt/${path}`,
-      },
+          canonical: localizedUrl(locale as Locale, path),
+      languages: languageAlternates(path, { xDefaultFirst: true }),
     },
     openGraph: {
       title,
       description,
-      url: locale === "en" ? `${BASE}/${path}` : `${BASE}/${locale}/${path}`,
+        url: localizedUrl(locale as Locale, path),
       siteName: "LifeSimGrid",
       type: "website",
     },
@@ -106,7 +93,7 @@ export default async function LocaleMbtiDetailPage({
 }) {
   const { locale, type } = await params;
 
-  if (!routing.locales.includes(locale as "en" | "zh-Hant" | "ja" | "es" | "fr" | "ko" | "de" | "it" | "nl" | "zh-CN" | "ru" | "pt")) {
+  if (!routing.locales.includes(locale as Locale)) {
     notFound();
   }
 

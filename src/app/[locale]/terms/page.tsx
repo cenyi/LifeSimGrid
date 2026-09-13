@@ -3,11 +3,13 @@ import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
 import TermsPage from "@/components/TermsPage";
 import type { Metadata } from "next";
+import type { Locale, NonEnLocale } from "@/i18n/routing";
+import { languageAlternates, localizedUrl } from "@/lib/locale-urls";
 
 const BASE = "https://lifesimgrid.org";
 
 /** Localized page titles for Terms (template appends " - LifeSimGrid"). */
-const PAGE_TITLES: Record<string, string> = {
+const PAGE_TITLES: Record<NonEnLocale, string> = {
   "zh-Hant": "LifeSimGrid服務條款 — MIT開源獨立工具",
   ja: "LifeSimGrid利用規約 — MITライセンス",
   es: "LifeSimGrid Términos — MIT, Fan Tool",
@@ -21,7 +23,7 @@ const PAGE_TITLES: Record<string, string> = {
   pt: "LifeSimGrid Termos — MIT, Fan Tool",
 };
 
-const PAGE_DESCS: Record<string, string> = {
+const PAGE_DESCS: Record<NonEnLocale, string> = {
   "zh-Hant": "獨立第三方工具，MIT開源協議，與遊戲主機製造商無關。免費動森我的設計、Mii QR碼工具。純前端，無數據收集。",
   ja: "独立サードパーティ、MITライセンス、ゲーム機メーカー無関係。マイデザイン・Mii QR無料ツール。データ収集なし。",
   es: "Términos: herramienta independiente, licencia MIT. No afiliada a fabricantes. ACNH, Mii gratis.",
@@ -43,30 +45,16 @@ export async function generateMetadata({
   const { locale } = await params;
   const path = "terms";
   return {
-    title: PAGE_TITLES[locale] || "Terms of Service",
-    description: PAGE_DESCS[locale] || "",
+    title: PAGE_TITLES[locale as NonEnLocale] || "Terms of Service",
+    description: PAGE_DESCS[locale as NonEnLocale] || "",
     alternates: {
-      canonical: locale === "en" ? `${BASE}/terms` : `${BASE}/${locale}/terms`,
-      languages: {
-        en: `${BASE}/terms`,
-        "zh-Hant": `${BASE}/zh-Hant/terms`,
-        ja: `${BASE}/ja/terms`,
-        es: `${BASE}/es/terms`,
-        fr: `${BASE}/fr/terms`,
-        ko: `${BASE}/ko/terms`,
-        de: `${BASE}/de/terms`,
-        it: `${BASE}/it/terms`,
-        nl: `${BASE}/nl/terms`,
-        "zh-CN": `${BASE}/zh-CN/terms`,
-        ru: `${BASE}/ru/terms`,
-        pt: `${BASE}/pt/terms`,
-        "x-default": `${BASE}/terms`,
-      },
+      canonical: localizedUrl(locale as Locale, path),
+      languages: languageAlternates("terms"),
     },
     openGraph: {
-      title: PAGE_TITLES[locale] || "Terms of Service",
-      description: PAGE_DESCS[locale] || "",
-      url: locale === "en" ? `${BASE}/${path}` : `${BASE}/${locale}/${path}`,
+      title: PAGE_TITLES[locale as NonEnLocale] || "Terms of Service",
+      description: PAGE_DESCS[locale as NonEnLocale] || "",
+        url: localizedUrl(locale as Locale, path),
       siteName: "LifeSimGrid",
       type: "website",
     },

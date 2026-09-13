@@ -4,6 +4,8 @@ import Analytics from "@/components/Analytics";
 import TrailingSlashRedirector from "@/components/TrailingSlashRedirector";
 import CookieConsent from "@/components/CookieConsent";
 import LocaleRedirector from "@/components/LocaleRedirector";
+import { LOCALES } from "@/i18n/routing";
+import { languageAlternates, nonEnLocales, OG_LOCALE_ALTERNATES } from "@/lib/locale-urls";
 
 const SITE_URL = "https://lifesimgrid.org";
 const SITE_NAME = "LifeSimGrid";
@@ -49,21 +51,7 @@ export const metadata: Metadata = {
   },
   alternates: {
     canonical: `${SITE_URL}/`,
-    languages: {
-      "x-default": `${SITE_URL}/`,
-      en: `${SITE_URL}/`,
-      "zh-Hant": `${SITE_URL}/zh-Hant`,
-      ja: `${SITE_URL}/ja`,
-      es: `${SITE_URL}/es`,
-      fr: `${SITE_URL}/fr`,
-      ko: `${SITE_URL}/ko`,
-      de: `${SITE_URL}/de`,
-      it: `${SITE_URL}/it`,
-      nl: `${SITE_URL}/nl`,
-      "zh-CN": `${SITE_URL}/zh-CN`,
-      ru: `${SITE_URL}/ru`,
-      pt: `${SITE_URL}/pt`,
-    },
+    languages: languageAlternates("", { xDefaultFirst: true }),
   },
   openGraph: {
     type: "website",
@@ -72,19 +60,7 @@ export const metadata: Metadata = {
     description: SITE_DESC,
     url: SITE_URL,
     locale: "en_US",
-    alternateLocale: [
-      "zh_TW",
-      "zh_CN",
-      "ja_JP",
-      "es_ES",
-      "fr_FR",
-      "ko_KR",
-      "de_DE",
-      "it_IT",
-      "nl_NL",
-      "ru_RU",
-      "pt_PT",
-    ],
+    alternateLocale: nonEnLocales().map((l) => OG_LOCALE_ALTERNATES[l]),
     images: `${SITE_URL}/og-image.svg`,
   },
   twitter: {
@@ -121,20 +97,7 @@ const jsonLd = {
       url: SITE_URL,
       name: SITE_NAME,
       description: SITE_DESC,
-      inLanguage: [
-        "en",
-        "zh-Hant",
-        "ja",
-        "es",
-        "fr",
-        "ko",
-        "de",
-        "it",
-        "nl",
-        "zh-CN",
-        "ru",
-        "pt",
-      ],
+      inLanguage: [...LOCALES],
       potentialAction: {
         "@type": "SearchAction",
         target: {
@@ -170,20 +133,7 @@ const jsonLd = {
         priceCurrency: "USD",
       },
       browserRequirements: "Requires modern browser with JavaScript enabled",
-      inLanguage: [
-        "en",
-        "zh-Hant",
-        "ja",
-        "es",
-        "fr",
-        "ko",
-        "de",
-        "it",
-        "nl",
-        "zh-CN",
-        "ru",
-        "pt",
-      ],
+      inLanguage: [...LOCALES],
     },
   ],
 };

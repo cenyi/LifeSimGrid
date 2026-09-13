@@ -3,11 +3,13 @@ import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
 import PrivacyPage from "@/components/PrivacyPage";
 import type { Metadata } from "next";
+import type { Locale, NonEnLocale } from "@/i18n/routing";
+import { languageAlternates, localizedUrl } from "@/lib/locale-urls";
 
 const BASE = "https://lifesimgrid.org";
 
 /** Localized page titles for Privacy (template appends " - LifeSimGrid"). */
-const PAGE_TITLES: Record<string, string> = {
+const PAGE_TITLES: Record<NonEnLocale, string> = {
   "zh-Hant": "LifeSimGrid隱私 — 純前端無數據收集",
   ja: "LifeSimGridプライバシー — データ収集なし",
   es: "LifeSimGrid Privacidad — 100% Cliente",
@@ -21,7 +23,7 @@ const PAGE_TITLES: Record<string, string> = {
   pt: "LifeSimGrid Privacidade — 100% Cliente",
 };
 
-const PAGE_DESCS: Record<string, string> = {
+const PAGE_DESCS: Record<NonEnLocale, string> = {
   "zh-Hant": "100%純前端處理，不收集數據，無追蹤。動森我的設計、Mii QR碼免費工具。無需上傳，無需註冊。",
   ja: "100%クライアント処理、データ収集なし、トラッキングなし。マイデザイン・Mii QR無料ツール。アカウント不要。",
   es: "Privacidad: 100% cliente, sin recopilación, sin rastreo. ACNH Custom Designs, Mii. Sin cuenta.",
@@ -43,30 +45,16 @@ export async function generateMetadata({
   const { locale } = await params;
   const path = "privacy";
   return {
-    title: PAGE_TITLES[locale] || "Privacy Policy",
-    description: PAGE_DESCS[locale] || "",
+    title: PAGE_TITLES[locale as NonEnLocale] || "Privacy Policy",
+    description: PAGE_DESCS[locale as NonEnLocale] || "",
     alternates: {
-      canonical: locale === "en" ? `${BASE}/privacy` : `${BASE}/${locale}/privacy`,
-      languages: {
-        en: `${BASE}/privacy`,
-        "zh-Hant": `${BASE}/zh-Hant/privacy`,
-        ja: `${BASE}/ja/privacy`,
-        es: `${BASE}/es/privacy`,
-        fr: `${BASE}/fr/privacy`,
-        ko: `${BASE}/ko/privacy`,
-        de: `${BASE}/de/privacy`,
-        it: `${BASE}/it/privacy`,
-        nl: `${BASE}/nl/privacy`,
-        "zh-CN": `${BASE}/zh-CN/privacy`,
-        ru: `${BASE}/ru/privacy`,
-        pt: `${BASE}/pt/privacy`,
-        "x-default": `${BASE}/privacy`,
-      },
+      canonical: localizedUrl(locale as Locale, path),
+      languages: languageAlternates("privacy"),
     },
     openGraph: {
-      title: PAGE_TITLES[locale] || "Privacy Policy",
-      description: PAGE_DESCS[locale] || "",
-      url: locale === "en" ? `${BASE}/${path}` : `${BASE}/${locale}/${path}`,
+      title: PAGE_TITLES[locale as NonEnLocale] || "Privacy Policy",
+      description: PAGE_DESCS[locale as NonEnLocale] || "",
+        url: localizedUrl(locale as Locale, path),
       siteName: "LifeSimGrid",
       type: "website",
     },

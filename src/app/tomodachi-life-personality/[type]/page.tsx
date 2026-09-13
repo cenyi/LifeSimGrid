@@ -3,6 +3,7 @@ import { NextIntlClientProvider } from "next-intl";
 import en from "@/locales/en.json";
 import TomodachiLifePersonalityDetailPage from "@/components/TomodachiLifePersonalityDetailPage";
 import { PERSONALITIES, getMbtiCode, getPersonalitySlug } from "@/lib/types";
+import { languageAlternates } from "@/lib/locale-urls";
 import type { Metadata } from "next";
 
 const BASE = "https://lifesimgrid.org";
@@ -29,21 +30,7 @@ export async function generateMetadata({
     description: `${displayName} is a ${mbti} personality type in Tomodachi Life: Living the Dream. Learn its group, traits, slider settings, and compatibility info.`,
     alternates: {
       canonical: `${BASE}/tomodachi-life-personality/${slug}`,
-      languages: {
-        "x-default": `${BASE}/tomodachi-life-personality/${slug}`,
-        en: `${BASE}/tomodachi-life-personality/${slug}`,
-        "zh-Hant": `${BASE}/zh-Hant/tomodachi-life-personality/${slug}`,
-        ja: `${BASE}/ja/tomodachi-life-personality/${slug}`,
-        es: `${BASE}/es/tomodachi-life-personality/${slug}`,
-        fr: `${BASE}/fr/tomodachi-life-personality/${slug}`,
-        ko: `${BASE}/ko/tomodachi-life-personality/${slug}`,
-        de: `${BASE}/de/tomodachi-life-personality/${slug}`,
-        it: `${BASE}/it/tomodachi-life-personality/${slug}`,
-        nl: `${BASE}/nl/tomodachi-life-personality/${slug}`,
-        "zh-CN": `${BASE}/zh-CN/tomodachi-life-personality/${slug}`,
-        ru: `${BASE}/ru/tomodachi-life-personality/${slug}`,
-        pt: `${BASE}/pt/tomodachi-life-personality/${slug}`,
-      },
+      languages: languageAlternates(`tomodachi-life-personality/${slug}`, { xDefaultFirst: true }),
     },
     openGraph: {
       title: `${displayName} Personality (${mbti}) — Tomodachi Life`,

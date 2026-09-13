@@ -1,12 +1,13 @@
 import { setRequestLocale } from "next-intl/server";
 import { notFound } from "next/navigation";
-import { routing } from "@/i18n/routing";
+import { routing, type Locale, type NonEnLocale } from "@/i18n/routing";
 import TomodachiLifePersonalityCalculatorPage from "@/components/TomodachiLifePersonalityCalculatorPage";
 import type { Metadata } from "next";
+import { languageAlternates, localizedUrl } from "@/lib/locale-urls";
 
 const BASE = "https://lifesimgrid.org";
 
-const PAGE_TITLES: Record<string, string> = {
+const PAGE_TITLES: Record<NonEnLocale, string> = {
   "zh-Hant": "朋友聚會性格計算機｜滑桿判定Mii性格與MBTI對應",
   ja: "トモダチ性格計算機｜スライダーでMii性格とMBTIを判定",
   es: "Calculadora Personalidad Tomodachi Life: Sliders MBTI",
@@ -20,7 +21,7 @@ const PAGE_TITLES: Record<string, string> = {
   pt: "Calculadora Personalidade Tomodachi: Sliders MBTI",
 };
 
-const PAGE_DESCS: Record<string, string> = {
+const PAGE_DESCS: Record<NonEnLocale, string> = {
   "zh-Hant": "免費朋友聚會性格計算機，調整4個滑桿即可瞬間判定Mii性格類型與MBTI對應關係。基於MBTI四軸設計，100%純前端運算，無需上傳任何資料，隱私安全有保障，操作簡單快速。",
   ja: "無料のトモダチ性格計算機。4つのスライダーを調整してMiiの性格タイプとMBTIマッピングを瞬時に判定します。MBTI四軸に基づく設計、100%クライアント側で処理、データのアップロード不要。",
   es: "Calculadora de personalidad Tomodachi Life. Ajusta 4 deslizadores para obtener el tipo de tu Mii y su MBTI. 100% en el lado del cliente.",
@@ -50,30 +51,16 @@ export async function generateMetadata({
   const { locale } = await params;
   const path = "tomodachi-life-personality-calculator";
   return {
-    title: PAGE_TITLES[locale] || FALLBACK_TITLE,
-    description: PAGE_DESCS[locale] || FALLBACK_DESC,
+    title: PAGE_TITLES[locale as NonEnLocale] || FALLBACK_TITLE,
+    description: PAGE_DESCS[locale as NonEnLocale] || FALLBACK_DESC,
     alternates: {
-      canonical: locale === "en" ? `${BASE}/${path}` : `${BASE}/${locale}/${path}`,
-      languages: {
-        "x-default": `${BASE}/${path}`,
-        en: `${BASE}/${path}`,
-        "zh-Hant": `${BASE}/zh-Hant/${path}`,
-        ja: `${BASE}/ja/${path}`,
-        es: `${BASE}/es/${path}`,
-        fr: `${BASE}/fr/${path}`,
-        ko: `${BASE}/ko/${path}`,
-        de: `${BASE}/de/${path}`,
-        it: `${BASE}/it/${path}`,
-        nl: `${BASE}/nl/${path}`,
-        "zh-CN": `${BASE}/zh-CN/${path}`,
-        ru: `${BASE}/ru/${path}`,
-        pt: `${BASE}/pt/${path}`,
-      },
+          canonical: localizedUrl(locale as Locale, path),
+      languages: languageAlternates(path, { xDefaultFirst: true }),
     },
     openGraph: {
-      title: PAGE_TITLES[locale] || FALLBACK_TITLE,
-      description: PAGE_DESCS[locale] || FALLBACK_DESC,
-      url: locale === "en" ? `${BASE}/${path}` : `${BASE}/${locale}/${path}`,
+      title: PAGE_TITLES[locale as NonEnLocale] || FALLBACK_TITLE,
+      description: PAGE_DESCS[locale as NonEnLocale] || FALLBACK_DESC,
+        url: localizedUrl(locale as Locale, path),
       siteName: "LifeSimGrid",
       type: "website",
       images: [
@@ -95,7 +82,7 @@ export default async function LocaleTomodachiLifePersonalityCalculatorPage({
 }) {
   const { locale } = await params;
 
-  if (!routing.locales.includes(locale as "en" | "zh-Hant" | "ja" | "es" | "fr" | "ko" | "de" | "it" | "nl" | "zh-CN" | "ru" | "pt")) {
+  if (!routing.locales.includes(locale as Locale)) {
     notFound();
   }
 

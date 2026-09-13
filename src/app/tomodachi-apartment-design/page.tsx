@@ -3,6 +3,7 @@ import { NextIntlClientProvider } from "next-intl";
 import en from "@/locales/en.json";
 import TomodachiApartmentDesignPage from "@/components/TomodachiApartmentDesignPage";
 import type { Metadata } from "next";
+import { languageAlternates } from "@/lib/locale-urls";
 
 const BASE = "https://lifesimgrid.org";
 
@@ -14,21 +15,7 @@ export const metadata: Metadata = {
   keywords: [],
   alternates: {
     canonical: `${BASE}/tomodachi-apartment-design`,
-    languages: {
-      "x-default": `${BASE}/tomodachi-apartment-design`,
-      en: `${BASE}/tomodachi-apartment-design`,
-      "zh-Hant": `${BASE}/zh-Hant/tomodachi-apartment-design`,
-      ja: `${BASE}/ja/tomodachi-apartment-design`,
-      es: `${BASE}/es/tomodachi-apartment-design`,
-      fr: `${BASE}/fr/tomodachi-apartment-design`,
-      ko: `${BASE}/ko/tomodachi-apartment-design`,
-      de: `${BASE}/de/tomodachi-apartment-design`,
-      it: `${BASE}/it/tomodachi-apartment-design`,
-      nl: `${BASE}/nl/tomodachi-apartment-design`,
-      "zh-CN": `${BASE}/zh-CN/tomodachi-apartment-design`,
-      ru: `${BASE}/ru/tomodachi-apartment-design`,
-      pt: `${BASE}/pt/tomodachi-apartment-design`,
-    },
+    languages: languageAlternates("tomodachi-apartment-design", { xDefaultFirst: true }),
   },
   openGraph: {
     title: "Tomodachi Life Apartment Design Guide",

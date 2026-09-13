@@ -1,13 +1,14 @@
 import { setRequestLocale } from "next-intl/server";
 import { notFound } from "next/navigation";
-import { routing } from "@/i18n/routing";
+import { routing, type Locale, type NonEnLocale } from "@/i18n/routing";
 import TomodachiVoiceLabPage from "@/components/TomodachiVoiceLabPage";
 import type { Metadata } from "next";
+import { languageAlternates, localizedUrl } from "@/lib/locale-urls";
 
 const BASE = "https://lifesimgrid.org";
 
 /** Localized page titles for Tomodachi Voice Lab (template appends " - LifeSimGrid"). */
-const PAGE_TITLES: Record<string, string> = {
+const PAGE_TITLES: Record<NonEnLocale, string> = {
   "zh-Hant": "Tomodachi 8-bit語音合成 — 免費",
   ja: "トモダチ8-bit音声合成 — 無料",
   es: "Sintetizador Voz 8-Bit — Gratis",
@@ -22,7 +23,7 @@ const PAGE_TITLES: Record<string, string> = {
 };
 
 /** Localized page descriptions for Tomodachi Voice Lab. */
-const PAGE_DESCS: Record<string, string> = {
+const PAGE_DESCS: Record<NonEnLocale, string> = {
   "zh-Hant": "免費Tomodachi語音合成器。5種預設、音高語速控制、8-bit匯出。100%純前端。",
   ja: "トモダチ8-bit音声合成。5プリセット、ピッチ/速度調整、WAV出力。100%クライアント。",
   es: "Sintetizador voz 8-Bit Tomodachi. 5 presets, TTS, Web Audio API. 100% cliente.",
@@ -49,30 +50,16 @@ export async function generateMetadata({
   const { locale } = await params;
   const path = "tomodachi-voice-lab";
   return {
-    title: PAGE_TITLES[locale] || FALLBACK_TITLE,
-    description: PAGE_DESCS[locale] || FALLBACK_DESC,
+    title: PAGE_TITLES[locale as NonEnLocale] || FALLBACK_TITLE,
+    description: PAGE_DESCS[locale as NonEnLocale] || FALLBACK_DESC,
     alternates: {
-      canonical: locale === "en" ? `${BASE}/${path}` : `${BASE}/${locale}/${path}`,
-      languages: {
-        "x-default": `${BASE}/${path}`,
-        en: `${BASE}/${path}`,
-        "zh-Hant": `${BASE}/zh-Hant/${path}`,
-        ja: `${BASE}/ja/${path}`,
-        es: `${BASE}/es/${path}`,
-        fr: `${BASE}/fr/${path}`,
-        ko: `${BASE}/ko/${path}`,
-        de: `${BASE}/de/${path}`,
-        it: `${BASE}/it/${path}`,
-        nl: `${BASE}/nl/${path}`,
-        "zh-CN": `${BASE}/zh-CN/${path}`,
-        ru: `${BASE}/ru/${path}`,
-        pt: `${BASE}/pt/${path}`,
-      },
+          canonical: localizedUrl(locale as Locale, path),
+      languages: languageAlternates(path, { xDefaultFirst: true }),
     },
     openGraph: {
-      title: PAGE_TITLES[locale] || FALLBACK_TITLE,
-      description: PAGE_DESCS[locale] || FALLBACK_DESC,
-      url: locale === "en" ? `${BASE}/${path}` : `${BASE}/${locale}/${path}`,
+      title: PAGE_TITLES[locale as NonEnLocale] || FALLBACK_TITLE,
+      description: PAGE_DESCS[locale as NonEnLocale] || FALLBACK_DESC,
+        url: localizedUrl(locale as Locale, path),
       siteName: "LifeSimGrid",
       type: "website",
       images: [
@@ -80,7 +67,7 @@ export async function generateMetadata({
           url: `${BASE}/og/${path}.svg`,
           width: 1200,
           height: 630,
-          alt: PAGE_TITLES[locale] || FALLBACK_TITLE,
+          alt: PAGE_TITLES[locale as NonEnLocale] || FALLBACK_TITLE,
         },
       ],
     },
@@ -95,7 +82,7 @@ export default async function LocaleTomodachiVoiceLabPage({
 }) {
   const { locale } = await params;
 
-  if (!routing.locales.includes(locale as "en" | "zh-Hant" | "ja" | "es" | "fr" | "ko" | "de" | "it" | "nl" | "zh-CN" | "ru" | "pt")) {
+  if (!routing.locales.includes(locale as Locale)) {
     notFound();
   }
 

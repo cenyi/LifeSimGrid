@@ -3,6 +3,7 @@ import { NextIntlClientProvider } from "next-intl";
 import en from "@/locales/en.json";
 import ContactPage from "@/components/ContactPage";
 import type { Metadata } from "next";
+import { languageAlternates } from "@/lib/locale-urls";
 
 const BASE = "https://lifesimgrid.org";
 
@@ -13,21 +14,7 @@ export const metadata: Metadata = {
     "Contact LifeSimGrid for technical support, bug reports or compliance inquiries. Free ACNH, Mii & Tomodachi Life tools. 100% client-side.",
   alternates: {
     canonical: `${BASE}/contact`,
-    languages: {
-      en: `${BASE}/contact`,
-      "zh-Hant": `${BASE}/zh-Hant/contact`,
-      ja: `${BASE}/ja/contact`,
-      es: `${BASE}/es/contact`,
-      fr: `${BASE}/fr/contact`,
-      ko: `${BASE}/ko/contact`,
-      de: `${BASE}/de/contact`,
-      it: `${BASE}/it/contact`,
-      nl: `${BASE}/nl/contact`,
-      "zh-CN": `${BASE}/zh-CN/contact`,
-      ru: `${BASE}/ru/contact`,
-      pt: `${BASE}/pt/contact`,
-      "x-default": `${BASE}/contact`,
-    },
+    languages: languageAlternates("contact"),
   },
   openGraph: {
     title: "Contact LifeSimGrid — Support & Bug Reports",

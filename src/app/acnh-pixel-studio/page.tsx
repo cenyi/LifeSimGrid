@@ -3,6 +3,7 @@ import { NextIntlClientProvider } from "next-intl";
 import en from "@/locales/en.json";
 import AcnhPixelStudioPage from "@/components/AcnhPixelStudioPage";
 import type { Metadata } from "next";
+import { languageAlternates } from "@/lib/locale-urls";
 
 const BASE = "https://lifesimgrid.org";
 
@@ -13,21 +14,7 @@ export const metadata: Metadata = {
     "Free ACNH custom design & Tomodachi Life pixel art converter. 32×32 Standard & Pro Design grids, paint-by-numbers. 100% browser-based.",
   alternates: {
     canonical: `${BASE}/acnh-pixel-studio`,
-    languages: {
-        "x-default": `${BASE}/acnh-pixel-studio`,
-        en: `${BASE}/acnh-pixel-studio`,
-      "zh-Hant": `${BASE}/zh-Hant/acnh-pixel-studio`,
-      ja: `${BASE}/ja/acnh-pixel-studio`,
-      es: `${BASE}/es/acnh-pixel-studio`,
-      fr: `${BASE}/fr/acnh-pixel-studio`,
-      ko: `${BASE}/ko/acnh-pixel-studio`,
-      de: `${BASE}/de/acnh-pixel-studio`,
-      it: `${BASE}/it/acnh-pixel-studio`,
-      nl: `${BASE}/nl/acnh-pixel-studio`,
-      "zh-CN": `${BASE}/zh-CN/acnh-pixel-studio`,
-      ru: `${BASE}/ru/acnh-pixel-studio`,
-      pt: `${BASE}/pt/acnh-pixel-studio`,
-    },
+    languages: languageAlternates("acnh-pixel-studio", { xDefaultFirst: true }),
   },
   openGraph: {
     title: "ACNH Pixel Studio — Custom Designs & Pixel Art",

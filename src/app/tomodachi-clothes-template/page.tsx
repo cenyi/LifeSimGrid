@@ -3,6 +3,7 @@ import { NextIntlClientProvider } from "next-intl";
 import en from "@/locales/en.json";
 import TomodachiClothesTemplatePage from "@/components/TomodachiClothesTemplatePage";
 import type { Metadata } from "next";
+import { languageAlternates } from "@/lib/locale-urls";
 
 const BASE = "https://lifesimgrid.org";
 
@@ -14,21 +15,7 @@ export const metadata: Metadata = {
   keywords: [],
   alternates: {
     canonical: `${BASE}/tomodachi-clothes-template`,
-    languages: {
-      "x-default": `${BASE}/tomodachi-clothes-template`,
-      en: `${BASE}/tomodachi-clothes-template`,
-      "zh-Hant": `${BASE}/zh-Hant/tomodachi-clothes-template`,
-      ja: `${BASE}/ja/tomodachi-clothes-template`,
-      es: `${BASE}/es/tomodachi-clothes-template`,
-      fr: `${BASE}/fr/tomodachi-clothes-template`,
-      ko: `${BASE}/ko/tomodachi-clothes-template`,
-      de: `${BASE}/de/tomodachi-clothes-template`,
-      it: `${BASE}/it/tomodachi-clothes-template`,
-      nl: `${BASE}/nl/tomodachi-clothes-template`,
-      "zh-CN": `${BASE}/zh-CN/tomodachi-clothes-template`,
-      ru: `${BASE}/ru/tomodachi-clothes-template`,
-      pt: `${BASE}/pt/tomodachi-clothes-template`,
-    },
+    languages: languageAlternates("tomodachi-clothes-template", { xDefaultFirst: true }),
   },
   openGraph: {
     title: "Tomodachi Life Clothes Template Designer",

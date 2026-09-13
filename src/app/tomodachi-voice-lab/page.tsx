@@ -3,6 +3,7 @@ import { NextIntlClientProvider } from "next-intl";
 import en from "@/locales/en.json";
 import TomodachiVoiceLabPage from "@/components/TomodachiVoiceLabPage";
 import type { Metadata } from "next";
+import { languageAlternates } from "@/lib/locale-urls";
 
 const BASE = "https://lifesimgrid.org";
 
@@ -13,21 +14,7 @@ export const metadata: Metadata = {
     "Free Tomodachi Life: Living the Dream 8-bit voice synthesizer. 5 presets, pitch/speed & TTS. 100% browser-based.",
   alternates: {
     canonical: `${BASE}/tomodachi-voice-lab`,
-    languages: {
-        "x-default": `${BASE}/tomodachi-voice-lab`,
-        en: `${BASE}/tomodachi-voice-lab`,
-      "zh-Hant": `${BASE}/zh-Hant/tomodachi-voice-lab`,
-      ja: `${BASE}/ja/tomodachi-voice-lab`,
-      es: `${BASE}/es/tomodachi-voice-lab`,
-      fr: `${BASE}/fr/tomodachi-voice-lab`,
-      ko: `${BASE}/ko/tomodachi-voice-lab`,
-      de: `${BASE}/de/tomodachi-voice-lab`,
-      it: `${BASE}/it/tomodachi-voice-lab`,
-      nl: `${BASE}/nl/tomodachi-voice-lab`,
-      "zh-CN": `${BASE}/zh-CN/tomodachi-voice-lab`,
-      ru: `${BASE}/ru/tomodachi-voice-lab`,
-      pt: `${BASE}/pt/tomodachi-voice-lab`,
-    },
+    languages: languageAlternates("tomodachi-voice-lab", { xDefaultFirst: true }),
   },
   openGraph: {
     title: "Tomodachi Voice Lab — Living the Dream",

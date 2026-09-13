@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { LOCALES } from "@/i18n/routing";
 
 const CONSENT_KEY = "lifesimgrid-consent";
 
@@ -210,19 +211,10 @@ const ALL_DENIED: ConsentPreferences = {
   analytics_storage: "denied",
 };
 
-const SUPPORTED_LOCALES = [
-  "zh-Hant",
-  "zh-CN",
-  "ja",
-  "ko",
-  "es",
-  "fr",
-  "de",
-  "it",
-  "nl",
-  "ru",
-  "pt",
-];
+// Derived from the single source of truth in src/i18n/routing.ts.
+// Includes "en" harmlessly: English pages live at the root, so a path segment
+// "en" only appears if a stray /en/ URL arrives before EnRedirect rewrites it.
+const SUPPORTED_LOCALES: readonly string[] = LOCALES;
 
 function detectLocale(): string {
   if (typeof window === "undefined") return "en";

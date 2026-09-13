@@ -1,13 +1,14 @@
 import { setRequestLocale } from "next-intl/server";
 import { notFound } from "next/navigation";
-import { routing } from "@/i18n/routing";
+import { routing, type Locale, type NonEnLocale } from "@/i18n/routing";
 import TomodachiLifePersonalityDetailPage from "@/components/TomodachiLifePersonalityDetailPage";
 import { PERSONALITIES, getMbtiCode, getPersonalitySlug } from "@/lib/types";
 import type { Metadata } from "next";
+import { languageAlternates, localizedUrl } from "@/lib/locale-urls";
 
 const BASE = "https://lifesimgrid.org";
 
-const PAGE_TITLES: Record<string, string> = {
+const PAGE_TITLES: Record<NonEnLocale, string> = {
   "zh-Hant": "{name}性格（{mbti}）— 朋友聚會性格詳解與相容性",
   ja: "{name}の性格（{mbti}）— 詳解と相性まとめ",
   es: "{name} ({mbti}) en Tomodachi Life: Rasgos y Compatibilidad",
@@ -21,7 +22,7 @@ const PAGE_TITLES: Record<string, string> = {
   pt: "Personalidade {name} ({mbti}) em Tomodachi Life: Traços",
 };
 
-const PAGE_DESCS: Record<string, string> = {
+const PAGE_DESCS: Record<NonEnLocale, string> = {
   "zh-Hant": "{name}是朋友聚會：新生活中的{mbti}性格類型。了解其性格群組分類、詳細特徵描述、滑桿設定值與其他性格的相容性資訊，幫助你全面深入認識此一性格類型的特色。",
   ja: "{name}はトモダチコレクション 新生活における{mbti}性格タイプ。性格グループ、詳細な特徴、スライダー設定値、他の性格との相性情報を詳しく解説し、全体像を把握できます。",
   es: "{name} es personalidad {mbti} en Tomodachi Life. Conoce su grupo, rasgos, sliders y compatibilidad con otras personalidades.",
@@ -58,8 +59,8 @@ export async function generateMetadata({
   const path = `tomodachi-life-personality/${slug}`;
   const displayName = slug.charAt(0).toUpperCase() + slug.slice(1);
 
-  const titleTemplate = PAGE_TITLES[locale];
-  const descTemplate = PAGE_DESCS[locale];
+  const titleTemplate = PAGE_TITLES[locale as NonEnLocale];
+  const descTemplate = PAGE_DESCS[locale as NonEnLocale];
   const title = titleTemplate
     ? titleTemplate.replace("{name}", displayName).replace("{mbti}", mbti)
     : `${displayName} Personality (${mbti}) — Tomodachi Life`;
@@ -71,27 +72,13 @@ export async function generateMetadata({
     title,
     description,
     alternates: {
-      canonical: locale === "en" ? `${BASE}/${path}` : `${BASE}/${locale}/${path}`,
-      languages: {
-        "x-default": `${BASE}/${path}`,
-        en: `${BASE}/${path}`,
-        "zh-Hant": `${BASE}/zh-Hant/${path}`,
-        ja: `${BASE}/ja/${path}`,
-        es: `${BASE}/es/${path}`,
-        fr: `${BASE}/fr/${path}`,
-        ko: `${BASE}/ko/${path}`,
-        de: `${BASE}/de/${path}`,
-        it: `${BASE}/it/${path}`,
-        nl: `${BASE}/nl/${path}`,
-        "zh-CN": `${BASE}/zh-CN/${path}`,
-        ru: `${BASE}/ru/${path}`,
-        pt: `${BASE}/pt/${path}`,
-      },
+          canonical: localizedUrl(locale as Locale, path),
+      languages: languageAlternates(path, { xDefaultFirst: true }),
     },
     openGraph: {
       title,
       description,
-      url: locale === "en" ? `${BASE}/${path}` : `${BASE}/${locale}/${path}`,
+        url: localizedUrl(locale as Locale, path),
       siteName: "LifeSimGrid",
       type: "website",
     },
@@ -105,7 +92,7 @@ export default async function LocalePersonalityDetailPage({
 }) {
   const { locale, type } = await params;
 
-  if (!routing.locales.includes(locale as "en" | "zh-Hant" | "ja" | "es" | "fr" | "ko" | "de" | "it" | "nl" | "zh-CN" | "ru" | "pt")) {
+  if (!routing.locales.includes(locale as Locale)) {
     notFound();
   }
 

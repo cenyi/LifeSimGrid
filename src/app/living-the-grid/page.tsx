@@ -3,6 +3,7 @@ import { NextIntlClientProvider } from "next-intl";
 import en from "@/locales/en.json";
 import LivingTheGridPage from "@/components/LivingTheGridPage";
 import type { Metadata } from "next";
+import { languageAlternates } from "@/lib/locale-urls";
 
 const BASE = "https://lifesimgrid.org";
 const PATH = "living-the-grid";
@@ -14,21 +15,7 @@ export const metadata: Metadata = {
     "Free pixel grid converter — the web-based Living the Grid alternative. 64×64 for Tomodachi Life: Living the Dream face paint & clothing reference. 100% browser-based, no download.",
   alternates: {
     canonical: `${BASE}/${PATH}`,
-    languages: {
-      "x-default": `${BASE}/${PATH}`,
-      en: `${BASE}/${PATH}`,
-      "zh-Hant": `${BASE}/zh-Hant/${PATH}`,
-      ja: `${BASE}/ja/${PATH}`,
-      es: `${BASE}/es/${PATH}`,
-      fr: `${BASE}/fr/${PATH}`,
-      ko: `${BASE}/ko/${PATH}`,
-      de: `${BASE}/de/${PATH}`,
-      it: `${BASE}/it/${PATH}`,
-      nl: `${BASE}/nl/${PATH}`,
-      "zh-CN": `${BASE}/zh-CN/${PATH}`,
-      ru: `${BASE}/ru/${PATH}`,
-      pt: `${BASE}/pt/${PATH}`,
-    },
+    languages: languageAlternates(PATH, { xDefaultFirst: true }),
   },
   openGraph: {
     title: "Living the Grid | LifeSimGrid",
