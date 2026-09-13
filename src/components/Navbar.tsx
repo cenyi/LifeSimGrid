@@ -6,7 +6,7 @@ import { routing, type Locale } from "@/i18n/routing";
 import { useState, useRef, useEffect } from "react";
 import {
   Globe, ChevronDown, Palette, Unlock, Music, Sparkles, Grid3x3,
-  MapPin, Menu, X, Home, Shirt, Eye, Dice5, Layers,
+  MapPin, Menu, X, Home, Shirt, Eye, Dice5, Info, Mail,
 } from "lucide-react";
 
 const STORAGE_KEY = "lifesimgrid-locale";
@@ -95,7 +95,23 @@ function CategoryDropdown({
 }) {
   const [open, setOpen] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
+  const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const Icon = category.icon;
+
+  // Hover intent: opening is instant, closing waits a short grace period so
+  // the cursor can cross the gap between trigger and panel without the menu
+  // vanishing. Moving back into the menu cancels the pending close.
+  function cancelClose() {
+    if (closeTimer.current) {
+      clearTimeout(closeTimer.current);
+      closeTimer.current = null;
+    }
+  }
+  function scheduleClose() {
+    cancelClose();
+    closeTimer.current = setTimeout(() => setOpen(false), 180);
+  }
+  useEffect(() => cancelClose, []);
 
   useEffect(() => {
     function handleClickOutside(e: MouseEvent) {
@@ -111,11 +127,17 @@ function CategoryDropdown({
     <div
       ref={ref}
       className="relative"
-      onMouseEnter={() => setOpen(true)}
-      onMouseLeave={() => setOpen(false)}
+      onMouseEnter={() => {
+        cancelClose();
+        setOpen(true);
+      }}
+      onMouseLeave={scheduleClose}
     >
       <button
-        onClick={() => setOpen((v) => !v)}
+        onClick={() => {
+          cancelClose();
+          setOpen((v) => !v);
+        }}
         className="flex items-center space-x-1.5 rounded-lg border border-gray-200 bg-white px-2.5 py-1.5 text-xs font-medium text-gray-600 shadow-sm transition-all hover:bg-gray-50 hover:text-gray-900 hover:shadow-md active:scale-95"
       >
         <Icon className={`h-3.5 w-3.5 ${category.color}`} />
@@ -160,6 +182,7 @@ export default function Navbar() {
   const [localeDropdownOpen, setLocaleDropdownOpen] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const localeDropdownRef = useRef<HTMLDivElement>(null);
+  const localeCloseTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
@@ -173,6 +196,18 @@ export default function Navbar() {
     document.addEventListener("mousedown", handleClickOutside);
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
+
+  function cancelLocaleClose() {
+    if (localeCloseTimer.current) {
+      clearTimeout(localeCloseTimer.current);
+      localeCloseTimer.current = null;
+    }
+  }
+  function scheduleLocaleClose() {
+    cancelLocaleClose();
+    localeCloseTimer.current = setTimeout(() => setLocaleDropdownOpen(false), 180);
+  }
+  useEffect(() => cancelLocaleClose, []);
 
   /** Switches the locale, saves preference to localStorage, and navigates */
   function handleLocaleChange(newLocale: string) {
@@ -197,7 +232,7 @@ export default function Navbar() {
           </span>
         </Link>
 
-        {/* Desktop: 3 category dropdowns */}
+        {/* Desktop: 3 category dropdowns + About/Contact site links */}
         <div className="hidden items-center space-x-1.5 lg:flex">
           {CATEGORIES.map((cat) => (
             <CategoryDropdown
@@ -207,6 +242,20 @@ export default function Navbar() {
               onNavigate={() => {}}
             />
           ))}
+          <Link
+            href="/about"
+            className="flex items-center space-x-1.5 rounded-lg border border-gray-200 bg-white px-2.5 py-1.5 text-xs font-medium text-gray-600 shadow-sm transition-all hover:bg-gray-50 hover:text-gray-900 hover:shadow-md active:scale-95"
+          >
+            <Info className="h-3.5 w-3.5 text-gray-500" />
+            <span>{t("navAbout")}</span>
+          </Link>
+          <Link
+            href="/contact"
+            className="flex items-center space-x-1.5 rounded-lg border border-gray-200 bg-white px-2.5 py-1.5 text-xs font-medium text-gray-600 shadow-sm transition-all hover:bg-gray-50 hover:text-gray-900 hover:shadow-md active:scale-95"
+          >
+            <Mail className="h-3.5 w-3.5 text-gray-500" />
+            <span>{t("navContact")}</span>
+          </Link>
         </div>
 
         {/* Right side: mobile menu button + locale + GitHub */}
@@ -219,9 +268,20 @@ export default function Navbar() {
             {mobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
           </button>
 
-          <div className="relative" ref={localeDropdownRef}>
+          <div
+            className="relative"
+            ref={localeDropdownRef}
+            onMouseEnter={() => {
+              cancelLocaleClose();
+              setLocaleDropdownOpen(true);
+            }}
+            onMouseLeave={scheduleLocaleClose}
+          >
             <button
-              onClick={() => setLocaleDropdownOpen(!localeDropdownOpen)}
+              onClick={() => {
+                cancelLocaleClose();
+                setLocaleDropdownOpen((v) => !v);
+              }}
               className={`flex items-center space-x-2 rounded-xl border px-3 py-2 text-sm font-medium shadow-sm transition-all active:scale-95 ${
                 localeDropdownOpen
                   ? "border-[#FFCC00]/40 bg-[#FFCC00]/5 text-gray-900 shadow-md"
@@ -297,6 +357,29 @@ export default function Navbar() {
                 </div>
               );
             })}
+            <div className="mb-5 border-t border-gray-100 pt-4 last:mb-0">
+              <p className="mb-2 text-xs font-bold text-gray-400 uppercase tracking-wide">
+                {t("navSite")}
+              </p>
+              <div className="grid grid-cols-2 gap-2">
+                <Link
+                  href="/about"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="flex items-center gap-2 rounded-xl border border-gray-200 bg-white px-3 py-2.5 text-sm font-medium text-gray-600 shadow-sm transition-all hover:bg-gray-50 hover:text-gray-900"
+                >
+                  <Info className="h-4 w-4 shrink-0 text-gray-500" />
+                  {t("navAbout")}
+                </Link>
+                <Link
+                  href="/contact"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="flex items-center gap-2 rounded-xl border border-gray-200 bg-white px-3 py-2.5 text-sm font-medium text-gray-600 shadow-sm transition-all hover:bg-gray-50 hover:text-gray-900"
+                >
+                  <Mail className="h-4 w-4 shrink-0 text-gray-500" />
+                  {t("navContact")}
+                </Link>
+              </div>
+            </div>
           </div>
         </div>
       )}

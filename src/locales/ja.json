@@ -15,7 +15,10 @@
     "toolApartment": "アパートデザイン",
     "toolCharacterIdeas": "キャラアイデア",
     "toolClothesTemplate": "服テンプレート",
-    "toolMiiEyes": "Miiスタジオ 目"
+    "toolMiiEyes": "Miiスタジオ 目",
+    "navAbout": "概要",
+    "navContact": "連絡",
+    "navSite": "サイト"
   },
   "Hero": {
     "title": "LifeSimGrid：非公式 どうぶつの森マイデザインツール ＆ Mii QR設定エディタ",

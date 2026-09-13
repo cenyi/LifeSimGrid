@@ -25,6 +25,82 @@ const TAB_HASH_MAP: Record<TabKey, string> = {
   voice: "#voice-lab",
 };
 
+/**
+ * The five tool CTA cards shown under the "Powerful Tools" heading.
+ * Data-driven so the visual styling lives in one place; each entry maps a
+ * card to its icon, accent color, and the i18n keys already defined in the
+ * FeatureSection namespace (no new translations required).
+ */
+type FeatureCard = {
+  href: string;
+  titleKey: string;
+  descKey: string;
+  ctaKey: string;
+  icon: React.ComponentType<{ className?: string }>;
+  iconBg: string;
+  iconColor: string;
+  accent: string;
+  focusRing: string;
+};
+
+const FEATURE_CARDS: FeatureCard[] = [
+  {
+    href: "/acnh-pixel-studio",
+    titleKey: "pixelCardTitle",
+    descKey: "pixelCardDesc",
+    ctaKey: "pixelCardCta",
+    icon: Palette,
+    iconBg: "bg-gradient-to-br from-amber-50 to-amber-100",
+    iconColor: "text-amber-600",
+    accent: "text-amber-600 group-hover:text-amber-700",
+    focusRing: "focus-visible:outline-amber-500",
+  },
+  {
+    href: "/mii-qr-unlocker",
+    titleKey: "qrCardTitle",
+    descKey: "qrCardDesc",
+    ctaKey: "qrCardCta",
+    icon: Unlock,
+    iconBg: "bg-gradient-to-br from-blue-50 to-blue-100",
+    iconColor: "text-blue-600",
+    accent: "text-blue-600 group-hover:text-blue-700",
+    focusRing: "focus-visible:outline-blue-500",
+  },
+  {
+    href: "/tomodachi-voice-lab",
+    titleKey: "voiceCardTitle",
+    descKey: "voiceCardDesc",
+    ctaKey: "voiceCardCta",
+    icon: Music,
+    iconBg: "bg-gradient-to-br from-purple-50 to-purple-100",
+    iconColor: "text-purple-600",
+    accent: "text-purple-600 group-hover:text-purple-700",
+    focusRing: "focus-visible:outline-purple-500",
+  },
+  {
+    href: "/living-the-grid",
+    titleKey: "pixelGridCardTitle",
+    descKey: "pixelGridCardDesc",
+    ctaKey: "pixelGridCardCta",
+    icon: Grid3x3,
+    iconBg: "bg-gradient-to-br from-green-50 to-green-100",
+    iconColor: "text-green-600",
+    accent: "text-green-600 group-hover:text-green-700",
+    focusRing: "focus-visible:outline-green-500",
+  },
+  {
+    href: "/tomodachi-island-planner",
+    titleKey: "islandCardTitle",
+    descKey: "islandCardDesc",
+    ctaKey: "islandCardCta",
+    icon: MapPin,
+    iconBg: "bg-gradient-to-br from-teal-50 to-teal-100",
+    iconColor: "text-teal-600",
+    accent: "text-teal-600 group-hover:text-teal-700",
+    focusRing: "focus-visible:outline-teal-500",
+  },
+];
+
 export default function HomePageContent() {
   const t = useTranslations("Hero");
   const nt = useTranslations("Navbar");
@@ -119,7 +195,7 @@ export default function HomePageContent() {
 
         {/* Feature Section - CTA Cards */}
         <section aria-labelledby="feature-title" className="mx-auto max-w-6xl px-4 py-12">
-          <div className="mb-8 text-center">
+          <div className="mb-10 text-center">
             <h2 id="feature-title" className="font-mono text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl">
               {ft("title")}
             </h2>
@@ -127,62 +203,31 @@ export default function HomePageContent() {
               {ft("subtitle")}
             </p>
           </div>
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-5">
-            <div className="group rounded-2xl border border-amber-100 bg-white p-6 shadow-sm transition-all hover:shadow-md">
-              <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-amber-50">
-                <Palette className="h-6 w-6 text-amber-600" />
-              </div>
-              <h3 className="mb-2 font-mono text-lg font-bold text-gray-900">{ft("pixelCardTitle")}</h3>
-              <p className="mb-4 text-sm leading-relaxed text-gray-600">{ft("pixelCardDesc")}</p>
-              <Link href="/acnh-pixel-studio" className="inline-flex w-full items-center justify-center gap-1.5 rounded-xl bg-amber-500 px-4 py-2.5 text-sm font-semibold text-white shadow-sm transition-all hover:bg-amber-600 hover:shadow-md active:scale-95 sm:w-auto">
-                {ft("pixelCardCta")}
-                <ArrowRight className="h-4 w-4" />
-              </Link>
-            </div>
-            <div className="group rounded-2xl border border-blue-100 bg-white p-6 shadow-sm transition-all hover:shadow-md">
-              <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-blue-50">
-                <Unlock className="h-6 w-6 text-blue-600" />
-              </div>
-              <h3 className="mb-2 font-mono text-lg font-bold text-gray-900">{ft("qrCardTitle")}</h3>
-              <p className="mb-4 text-sm leading-relaxed text-gray-600">{ft("qrCardDesc")}</p>
-              <Link href="/mii-qr-unlocker" className="inline-flex w-full items-center justify-center gap-1.5 rounded-xl bg-blue-500 px-4 py-2.5 text-sm font-semibold text-white shadow-sm transition-all hover:bg-blue-600 hover:shadow-md active:scale-95 sm:w-auto">
-                {ft("qrCardCta")}
-                <ArrowRight className="h-4 w-4" />
-              </Link>
-            </div>
-            <div className="group rounded-2xl border border-purple-100 bg-white p-6 shadow-sm transition-all hover:shadow-md">
-              <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-purple-50">
-                <Music className="h-6 w-6 text-purple-600" />
-              </div>
-              <h3 className="mb-2 font-mono text-lg font-bold text-gray-900">{ft("voiceCardTitle")}</h3>
-              <p className="mb-4 text-sm leading-relaxed text-gray-600">{ft("voiceCardDesc")}</p>
-              <Link href="/tomodachi-voice-lab" className="inline-flex w-full items-center justify-center gap-1.5 rounded-xl bg-purple-500 px-4 py-2.5 text-sm font-semibold text-white shadow-sm transition-all hover:bg-purple-600 hover:shadow-md active:scale-95 sm:w-auto">
-                {ft("voiceCardCta")}
-                <ArrowRight className="h-4 w-4" />
-              </Link>
-            </div>
-            <div className="group rounded-2xl border border-green-100 bg-white p-6 shadow-sm transition-all hover:shadow-md">
-              <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-green-50">
-                <Grid3x3 className="h-6 w-6 text-green-600" />
-              </div>
-              <h3 className="mb-2 font-mono text-lg font-bold text-gray-900">{ft("pixelGridCardTitle")}</h3>
-              <p className="mb-4 text-sm leading-relaxed text-gray-600">{ft("pixelGridCardDesc")}</p>
-              <Link href="/living-the-grid" className="inline-flex w-full items-center justify-center gap-1.5 rounded-xl bg-green-500 px-4 py-2.5 text-sm font-semibold text-white shadow-sm transition-all hover:bg-green-600 hover:shadow-md active:scale-95 sm:w-auto">
-                {ft("pixelGridCardCta")}
-                <ArrowRight className="h-4 w-4" />
-              </Link>
-            </div>
-            <div className="group rounded-2xl border border-teal-100 bg-white p-6 shadow-sm transition-all hover:shadow-md">
-              <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-teal-50">
-                <MapPin className="h-6 w-6 text-teal-600" />
-              </div>
-              <h3 className="mb-2 font-mono text-lg font-bold text-gray-900">{ft("islandCardTitle")}</h3>
-              <p className="mb-4 text-sm leading-relaxed text-gray-600">{ft("islandCardDesc")}</p>
-              <Link href="/tomodachi-island-planner" className="inline-flex w-full items-center justify-center gap-1.5 rounded-xl bg-teal-500 px-4 py-2.5 text-sm font-semibold text-white shadow-sm transition-all hover:bg-teal-600 hover:shadow-md active:scale-95 sm:w-auto">
-                {ft("islandCardCta")}
-                <ArrowRight className="h-4 w-4" />
-              </Link>
-            </div>
+          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            {FEATURE_CARDS.map((card) => {
+              const Icon = card.icon;
+              return (
+                <Link
+                  key={card.href}
+                  href={card.href}
+                  className={`group relative flex flex-col rounded-2xl border border-gray-100 bg-white p-6 shadow-sm transition-all duration-200 hover:-translate-y-1 hover:border-gray-200 hover:shadow-lg focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 ${card.focusRing}`}
+                >
+                  <div className={`mb-5 flex h-12 w-12 items-center justify-center rounded-2xl ${card.iconBg} transition-transform duration-200 group-hover:scale-110`}>
+                    <Icon className={`h-6 w-6 ${card.iconColor}`} />
+                  </div>
+                  <h3 className="mb-2 font-sans text-lg font-bold tracking-tight text-gray-900">
+                    {ft(card.titleKey)}
+                  </h3>
+                  <p className="mb-5 flex-1 text-sm leading-relaxed text-gray-600">
+                    {ft(card.descKey)}
+                  </p>
+                  <span className={`inline-flex items-center gap-1.5 text-sm font-semibold ${card.accent}`}>
+                    {ft(card.ctaKey)}
+                    <ArrowRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1" />
+                  </span>
+                </Link>
+              );
+            })}
           </div>
         </section>
 

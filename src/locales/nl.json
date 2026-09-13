@@ -15,7 +15,10 @@
     "toolApartment": "Appartement Ontwerp",
     "toolCharacterIdeas": "Karakter Ideeën",
     "toolClothesTemplate": "Kleding Sjabloon",
-    "toolMiiEyes": "Mii Ogen"
+    "toolMiiEyes": "Mii Ogen",
+    "navAbout": "Over",
+    "navContact": "Contact",
+    "navSite": "Site"
   },
   "Hero": {
     "title": "LifeSimGrid: Onofficieel Animal Crossing Patroonhulpmiddel & Mii QR-configurator",

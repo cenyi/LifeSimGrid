@@ -15,7 +15,10 @@
     "toolApartment": "아파트 디자인",
     "toolCharacterIdeas": "캐릭터 아이디어",
     "toolClothesTemplate": "옷 템플릿",
-    "toolMiiEyes": "Mii 눈"
+    "toolMiiEyes": "Mii 눈",
+    "navAbout": "소개",
+    "navContact": "문의",
+    "navSite": "사이트"
   },
   "Hero": {
     "title": "LifeSimGrid: 비공식 동물의 숲 패턴 도구 & Mii QR 설정기",

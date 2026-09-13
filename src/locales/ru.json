@@ -15,7 +15,10 @@
     "toolApartment": "Дизайн Квартиры",
     "toolCharacterIdeas": "Идеи Персонажей",
     "toolClothesTemplate": "Шаблон Одежды",
-    "toolMiiEyes": "Глаза Mii"
+    "toolMiiEyes": "Глаза Mii",
+    "navAbout": "О сайте",
+    "navContact": "Контакты",
+    "navSite": "Сайт"
   },
   "Hero": {
     "title": "LifeSimGrid: Неофициальный инструмент Animal Crossing и Mii QR",

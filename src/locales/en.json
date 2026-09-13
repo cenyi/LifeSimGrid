@@ -15,7 +15,10 @@
     "toolApartment": "Apartment Design",
     "toolCharacterIdeas": "Character Ideas",
     "toolClothesTemplate": "Clothes Template",
-    "toolMiiEyes": "Mii Eyes"
+    "toolMiiEyes": "Mii Eyes",
+    "navAbout": "About",
+    "navContact": "Contact",
+    "navSite": "Site"
   },
   "Hero": {
     "title": "LifeSimGrid: Unofficial Animal Crossing Pattern Tool & Mii QR Configurator",

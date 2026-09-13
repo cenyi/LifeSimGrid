@@ -15,7 +15,10 @@
     "toolApartment": "Wohnung Design",
     "toolCharacterIdeas": "Charakter-Ideen",
     "toolClothesTemplate": "Kleidungs-Vorlagen",
-    "toolMiiEyes": "Mii Augen"
+    "toolMiiEyes": "Mii Augen",
+    "navAbout": "Über",
+    "navContact": "Kontakt",
+    "navSite": "Website"
   },
   "Hero": {
     "title": "LifeSimGrid: Animal Crossing Eigene Designs Generator & Mii QR-Code Tool",

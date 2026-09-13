@@ -15,7 +15,10 @@
     "toolApartment": "公寓設計",
     "toolCharacterIdeas": "角色創意",
     "toolClothesTemplate": "服裝模板",
-    "toolMiiEyes": "Mii眼睛"
+    "toolMiiEyes": "Mii眼睛",
+    "navAbout": "關於",
+    "navContact": "聯絡",
+    "navSite": "網站"
   },
   "Hero": {
     "title": "LifeSimGrid：非官方 Animal Crossing 圖案工具 & Mii QR 配置器",
