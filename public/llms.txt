@@ -11,6 +11,23 @@
 - [Living the Grid](https://lifesimgrid.org/living-the-grid): Free general-purpose pixel grid converter — the web-based Living the Grid alternative. Supports 16x16 to 128x128 grid densities for cross-stitch patterns, Perler beads templates, and Tomodachi Life face paint references. Print-optimized layout with paint-by-numbers palette.
 - [Homepage](https://lifesimgrid.org): Central hub featuring tab-based tool switching (ACNH Pixel Studio, Mii QR Unlocker, Voice Lab) and CTA cards linking to all 5 dedicated sub-pages. Includes trust and privacy section reinforcing 100% client-side architecture.
 
+
+- [Tomodachi Life Compatibility Calculator](https://lifesimgrid.org/tomodachi-life-compatibility): Free romance and friendship score calculator for any two Mii. Combine zodiac sign + 16 MBTI personality types (Base Score 25 + Personality 25 + Zodiac 25 + Friendship 25 = 100). 100% client-side, no data uploaded.
+- [Mii Height Chart & Calculator](https://lifesimgrid.org/tomodachi-life-mii-height-chart): Converts the 3-step Mii Maker height slider to cm / ft-in with age reference (child / adult / senior) and real-world male/female average comparison. 100% client-side, community-estimate model.
+- [Tomodachi Life Food Chart & Tracker](https://lifesimgrid.org/tomodachi-life-food-chart): Tomodachi Life food database with reaction chart and a localStorage food tracker. 40 foods across 8 categories, per-personality reaction prediction, and a persistent tested-food checklist. 100% in your browser, no upload.
+
+- [Mii Creator & Character Planner](https://lifesimgrid.org/tomodachi-life-mii-creator): Design a Mii face, predict personality and MBTI from 4 sliders, and generate Mii names. Export as JSON for sharing. 100% in your browser, no upload.
+
+- [Personality Quiz](https://lifesimgrid.org/tomodachi-life-personality-quiz): 8-question personality quiz that reveals your Tomodachi Life personality type, MBTI code and group. Each question maps to one of the 4 in-game sliders (Movement / Speech / Energy / Thinking). 100% in your browser, no upload.
+
+- [Romance Matcher](https://lifesimgrid.org/tomodachi-life-romance-matcher): Romance-focused compatibility tool. Pick two Miis (zodiac + 16 personality) to get a romance score, friendship bonus, best-couple explorer and a best-day-for-a-date hint. 100% in your browser, no upload.
+
+- [Quest Party Builder](https://lifesimgrid.org/tomodachi-life-quest-party-builder): Quest team builder for Tomodachi Life. Pick 4 Mii personalities from 16 types to build a team. Assigns roles (leader/support/scout/wildcard) and computes a synergy score with a harmony bonus. 100% in your browser, no upload.
+
+- [Gift & Item Database](https://lifesimgrid.org/tomodachi-life-gift-item-db): Gift finder for Tomodachi Life. Search gifts by category, check affinity scores per personality, add items to a wishlist or pick a random gift. 100% in your browser.
+
+- [Regional Name Translator](https://lifesimgrid.org/tomodachi-life-regional-translator): Mii name translator across Tomodachi Life regions (Japan, North America, Europe, Korea, China). Enter a name and source region for equivalents, compare regional naming conventions, or generate region-authentic names. 100% in your browser.
+
 ## Information Pages
 
 - [About](https://lifesimgrid.org/about): Project background, open-source mission, privacy-first architecture explanation, and technology stack overview.

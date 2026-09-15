@@ -2,7 +2,7 @@
 
 import { useTranslations, useLocale } from "next-intl";
 import {
-  Shield, ArrowRight, Star, Heart, Users, Sparkles, Dice5,
+  Shield, ArrowRight, Star, Heart, Users, Sparkles, Dice5, MapPin, Music,
 } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -11,6 +11,7 @@ import {
   PERSONALITIES,
   getPersonalityGroup,
   getMbtiCode,
+  getPersonalitySlug,
 } from "@/lib/types";
 import {
   getGroupColor,
@@ -22,12 +23,6 @@ const BASE = "https://lifesimgrid.org";
 /* ------------------------------------------------------------------ */
 /*  Helpers                                                            */
 /* ------------------------------------------------------------------ */
-
-/** Extracts the sub-type slug from a full personality key. */
-export function getPersonalitySlug(personality: string): string {
-  const parts = personality.split("_");
-  return parts.length >= 2 ? parts[1] : personality;
-}
 
 /** Finds the full personality key from a slug (e.g. "leader" → "outgoing_leader"). */
 export function getPersonalityFromSlug(slug: string): string | undefined {
@@ -64,6 +59,46 @@ function getCompatibilityInfo(group: string): { romance: string[]; friendship: s
   };
 }
 
+/**
+ * Builds the related-entity list for the 16-personality cross-link matrix:
+ *   - the 3 other personalities in the SAME group (closest kin)
+ *   - one personality from the romance-complementary group (attraction target)
+ * Each entry carries its display key + entity slug so the card can deep-link
+ * to the peer's /tomodachi-life-personality/{slug} page.
+ */
+function getRelatedPersonalities(personality: string): {
+  sameGroup: { key: string; slug: string; labelKey: string }[];
+  romanceTargets: { key: string; slug: string; labelKey: string }[];
+} {
+  const group = getPersonalityGroup(personality);
+  const complement = getCompatibilityInfo(group).romance[0] ?? group;
+  const mk = (p: string) => ({
+    key: p,
+    slug: getPersonalitySlug(p),
+    labelKey: getPersonalityLabelKey(p),
+  });
+  const sameGroup = PERSONALITIES.filter(
+    (p) => getPersonalityGroup(p) === group && p !== personality
+  ).map(mk);
+  const romanceTargets = PERSONALITIES.filter(
+    (p) => getPersonalityGroup(p) === complement
+  ).map(mk);
+  return { sameGroup, romanceTargets };
+}
+
+/**
+ * Voice suggestion per personality group (fan-made, data reused from the
+ * TomodachiVoiceLabPage voice-personality table). Each group maps to one of
+ * the 5 Web Audio API presets + a pitch range.
+ */
+function getVoiceSuggestion(group: string): { presetKey: string; pitchKey: string } {
+  const cap = group.charAt(0).toUpperCase() + group.slice(1);
+  return {
+    presetKey: `voicePersonality${cap}Preset`,
+    pitchKey: `voicePersonality${cap}Pitch`,
+  };
+}
+
 /* ------------------------------------------------------------------ */
 /*  Main Component                                                     */
 /* ------------------------------------------------------------------ */
@@ -90,6 +125,8 @@ export default function TomodachiLifePersonalityDetailPage({
   const fanReasonKey = `fanReason${labelKey.replace("personality", "")}`;
   const slider = getSliderTendency(validPersonality);
   const compat = getCompatibilityInfo(group);
+  const related = getRelatedPersonalities(validPersonality);
+  const voice = getVoiceSuggestion(group);
   const personalityName = tMbti(labelKey);
   const groupName = tMbti(`group${group.charAt(0).toUpperCase() + group.slice(1)}`);
 
@@ -231,6 +268,86 @@ export default function TomodachiLifePersonalityDetailPage({
         </div>
       </section>
 
+      {/* Related Personalities — 16-entity cross-link matrix */}
+      <section aria-labelledby="personality-detail-related-title" className="mx-auto max-w-6xl px-4 py-6">
+        <h2 id="personality-detail-related-title" className="text-xl sm:text-2xl font-bold text-gray-900 mb-1">
+          {t("relatedTitle")}
+        </h2>
+        <p className="text-sm text-gray-500 mb-4">{t("relatedHint")}</p>
+        <div className="grid gap-4 sm:grid-cols-2">
+          <div className="rounded-xl border border-gray-100 bg-white p-4 shadow-sm">
+            <h3 className="text-xs font-semibold text-gray-500 mb-3 uppercase tracking-wide">
+              {t("compatFriendship")} · {groupName}
+            </h3>
+            <div className="grid grid-cols-1 xs:grid-cols-2 gap-2">
+              {related.sameGroup.map((r) => {
+                const rc = getGroupColor(getPersonalityGroup(r.key));
+                return (
+                  <Link
+                    key={r.key}
+                    href={`/tomodachi-life-personality/${r.slug}`}
+                    className="flex items-center gap-2 rounded-lg border border-gray-100 px-3 py-2 text-sm font-medium text-gray-700 hover:border-gray-200 hover:bg-gray-50 transition-all"
+                  >
+                    <span className="inline-block h-2.5 w-2.5 rounded-full" style={{ backgroundColor: rc }} />
+                    {tMbti(r.labelKey)}
+                    <span className="ml-auto font-mono text-xs text-gray-400">{getMbtiCode(r.key)}</span>
+                  </Link>
+                );
+              })}
+            </div>
+          </div>
+          <div className="rounded-xl border border-gray-100 bg-white p-4 shadow-sm">
+            <h3 className="text-xs font-semibold text-gray-500 mb-3 uppercase tracking-wide">
+              {t("compatRomance")} · {tMbti(`group${(compat.romance[0] ?? group).charAt(0).toUpperCase() + (compat.romance[0] ?? group).slice(1)}`)}
+            </h3>
+            <div className="grid grid-cols-1 xs:grid-cols-2 gap-2">
+              {related.romanceTargets.map((r) => {
+                const rc = getGroupColor(getPersonalityGroup(r.key));
+                return (
+                  <Link
+                    key={r.key}
+                    href={`/tomodachi-life-personality/${r.slug}`}
+                    className="flex items-center gap-2 rounded-lg border border-gray-100 px-3 py-2 text-sm font-medium text-gray-700 hover:border-gray-200 hover:bg-gray-50 transition-all"
+                  >
+                    <span className="inline-block h-2.5 w-2.5 rounded-full" style={{ backgroundColor: rc }} />
+                    {tMbti(r.labelKey)}
+                    <span className="ml-auto font-mono text-xs text-gray-400">{getMbtiCode(r.key)}</span>
+                  </Link>
+                );
+              })}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Voice Preview Suggestion (fan-made, links into Voice Lab) */}
+      <section aria-labelledby="personality-detail-voice-title" className="mx-auto max-w-6xl px-4 py-6">
+        <h2 id="personality-detail-voice-title" className="text-xl sm:text-2xl font-bold text-gray-900 mb-4">
+          {t("voiceTitle")}
+        </h2>
+        <div className="rounded-xl border border-gray-100 bg-white p-6 shadow-sm">
+          <p className="text-xs text-gray-500 mb-4">{t("voiceHint")}</p>
+          <div className="flex flex-wrap items-center gap-x-8 gap-y-3">
+            <div>
+              <div className="text-xs text-gray-500 mb-1">{tVoice("voicePersonalityGroup")}</div>
+              <div className="font-mono text-sm font-bold text-gray-900">{groupName}</div>
+            </div>
+            <div>
+              <div className="text-xs text-gray-500 mb-1">{tVoice("voicePersonalityPreset")}</div>
+              <div className="font-mono text-sm font-bold" style={{ color: groupColor }}>{tVoice(voice.presetKey)}</div>
+            </div>
+            <div>
+              <div className="text-xs text-gray-500 mb-1">{tVoice("voicePersonalityPitch")}</div>
+              <div className="font-mono text-sm font-bold text-gray-900">{tVoice(voice.pitchKey)}</div>
+            </div>
+            <Link href="/tomodachi-voice-lab" className="ml-auto inline-flex items-center gap-1.5 rounded-lg border border-gray-200 bg-white px-3 py-2 text-xs font-semibold text-gray-700 shadow-sm hover:bg-gray-50 transition-all">
+              {t("ctaVoice")}
+              <ArrowRight className="h-3.5 w-3.5" />
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* Disclaimer */}
       <section aria-labelledby="personality-detail-disclaimer-title" className="mx-auto max-w-6xl px-4 py-4">
         <div className="rounded-lg bg-amber-50 border border-amber-200 p-4 flex items-start gap-3">
@@ -276,6 +393,18 @@ export default function TomodachiLifePersonalityDetailPage({
           <Link href="/tomodachi-life-mbti" className="flex items-center gap-2 rounded-xl border border-gray-100 bg-white p-4 shadow-sm hover:shadow-md transition-all">
             <Heart className="w-5 h-5 text-red-400" />
             <span className="text-sm font-medium text-gray-900">{t("ctaMbti")}</span>
+          </Link>
+          <Link href="/tomodachi-island-planner" className="flex items-center gap-2 rounded-xl border border-gray-100 bg-white p-4 shadow-sm hover:shadow-md transition-all">
+            <MapPin className="w-5 h-5 text-teal-500" />
+            <span className="text-sm font-medium text-gray-900">{t("ctaIsland")}</span>
+          </Link>
+          <Link href="/tomodachi-character-ideas" className="flex items-center gap-2 rounded-xl border border-gray-100 bg-white p-4 shadow-sm hover:shadow-md transition-all">
+            <Dice5 className="w-5 h-5 text-purple-500" />
+            <span className="text-sm font-medium text-gray-900">{t("ctaCharacter")}</span>
+          </Link>
+          <Link href="/tomodachi-voice-lab" className="flex items-center gap-2 rounded-xl border border-gray-100 bg-white p-4 shadow-sm hover:shadow-md transition-all">
+            <Music className="w-5 h-5 text-pink-500" />
+            <span className="text-sm font-medium text-gray-900">{t("ctaVoice")}</span>
           </Link>
         </div>
       </section>

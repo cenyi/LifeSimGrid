@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f5f3ff"/>
+      <stop offset="0.5" stop-color="#ede9fe"/>
+      <stop offset="1" stop-color="#e0e7ff"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+
+  <!-- Left: quiz card mock -->
+  <rect x="80" y="120" width="400" height="390" rx="20" fill="#ffffff" stroke="#ddd6fe" stroke-width="3"/>
+  <rect x="120" y="170" width="320" height="8" rx="4" fill="#ede9fe"/>
+  <rect x="120" y="170" width="140" height="8" rx="4" fill="#7c3aed"/>
+  <text x="120" y="225" font-family="system-ui, sans-serif" font-size="22" font-weight="bold" fill="#374151">Q3 / 8</text>
+  <text x="120" y="265" font-family="system-ui, sans-serif" font-size="20" fill="#4b5563">How much energy do you carry?</text>
+  <g font-family="system-ui, sans-serif" font-size="18" fill="#4b5563">
+    <rect x="120" y="290" width="320" height="52" rx="10" fill="#faf5ff" stroke="#ddd6fe"/>
+    <text x="136" y="322">A — High, always on the go</text>
+    <rect x="120" y="352" width="320" height="52" rx="10" fill="#faf5ff" stroke="#ddd6fe"/>
+    <text x="136" y="384">B — Active</text>
+    <rect x="120" y="414" width="320" height="52" rx="10" fill="#faf5ff" stroke="#ddd6fe"/>
+    <text x="136" y="446">C — Moderate</text>
+  </g>
+
+  <!-- Right side text -->
+  <text x="560" y="200" font-family="Courier New, monospace" font-size="42" font-weight="bold" fill="#4c1d95">Personality Quiz</text>
+  <text x="560" y="252" font-family="system-ui, sans-serif" font-size="28" fill="#6d28d9">Tomodachi Life · 8 Questions</text>
+
+  <g font-family="system-ui, sans-serif" font-size="24" fill="#374151">
+    <circle cx="575" cy="315" r="7" fill="#8b5cf6"/>
+    <text x="600" y="323">8 quick multiple-choice questions</text>
+    <circle cx="575" cy="370" r="7" fill="#6366f1"/>
+    <text x="600" y="378">Reveals type, MBTI &amp; personality group</text>
+    <circle cx="575" cy="425" r="7" fill="#10b981"/>
+    <text x="600" y="433">Community-estimate · not a guarantee</text>
+  </g>
+
+  <rect x="560" y="490" width="560" height="60" rx="30" fill="#4c1d95"/>
+  <text x="600" y="528" font-family="system-ui, sans-serif" font-size="22" fill="#ffffff">100% in your browser · No sign-up</text>
+
+  <text x="600" y="605" font-family="Courier New, monospace" font-size="20" fill="#64748b">lifesimgrid.org</text>
+</svg>

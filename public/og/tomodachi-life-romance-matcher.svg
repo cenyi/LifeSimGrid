@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#fdf2f8"/>
+      <stop offset="0.5" stop-color="#fce7f3"/>
+      <stop offset="1" stop-color="#fee2e2"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+
+  <!-- Two character cards -->
+  <g transform="translate(80,150)">
+    <rect width="220" height="260" rx="16" fill="#ffffff" stroke="#fbcfe8" stroke-width="3"/>
+    <circle cx="110" cy="80" r="42" fill="#fde68a"/>
+    <text x="110" y="155" text-anchor="middle" font-family="system-ui, sans-serif" font-size="22" font-weight="bold" fill="#374151">Mii A</text>
+    <text x="110" y="185" text-anchor="middle" font-family="system-ui, sans-serif" font-size="16" fill="#6b7280">Aries + Leader</text>
+    <rect x="40" y="205" width="140" height="26" rx="13" fill="#fef3c7"/>
+    <text x="110" y="223" text-anchor="middle" font-family="system-ui, sans-serif" font-size="14" font-weight="bold" fill="#92400e">ESTJ</text>
+  </g>
+  <text x="320" y="285" font-family="system-ui, sans-serif" font-size="42" fill="#ec4899">+</text>
+  <g transform="translate(360,150)">
+    <rect width="220" height="260" rx="16" fill="#ffffff" stroke="#fbcfe8" stroke-width="3"/>
+    <circle cx="110" cy="80" r="42" fill="#bfdbfe"/>
+    <text x="110" y="155" text-anchor="middle" font-family="system-ui, sans-serif" font-size="22" font-weight="bold" fill="#374151">Mii B</text>
+    <text x="110" y="185" text-anchor="middle" font-family="system-ui, sans-serif" font-size="16" fill="#6b7280">Taurus + Buddy</text>
+    <rect x="40" y="205" width="140" height="26" rx="13" fill="#dbeafe"/>
+    <text x="110" y="223" text-anchor="middle" font-family="system-ui, sans-serif" font-size="14" font-weight="bold" fill="#1e40af">ISFP</text>
+  </g>
+
+  <!-- Score circle -->
+  <g transform="translate(650,280)">
+    <circle r="105" fill="#ffffff" stroke="#f9a8d4" stroke-width="6"/>
+    <path d="M -70 0 A 70 70 0 1 1 55 -44" fill="none" stroke="#ec4899" stroke-width="14" stroke-linecap="round"/>
+    <text x="0" y="-8" text-anchor="middle" font-family="Courier New, monospace" font-size="58" font-weight="bold" fill="#be185d">82%</text>
+    <text x="0" y="32" text-anchor="middle" font-family="system-ui, sans-serif" font-size="20" font-weight="bold" fill="#831843">Romance</text>
+    <text x="0" y="56" text-anchor="middle" font-family="system-ui, sans-serif" font-size="16" fill="#9d174d">Great match</text>
+  </g>
+
+  <!-- Text block -->
+  <text x="900" y="190" font-family="Courier New, monospace" font-size="42" font-weight="bold" fill="#831843">Romance Matcher</text>
+  <text x="900" y="240" font-family="system-ui, sans-serif" font-size="26" fill="#be185d">Tomodachi Life · 16 personalities</text>
+  <g font-family="system-ui, sans-serif" font-size="22" fill="#4a5568">
+    <text x="900" y="300">· Romance + friendship scores</text>
+    <text x="900" y="342">· Best-couple explorer</text>
+    <text x="900" y="384">· Best day for a date hint</text>
+  </g>
+  <rect x="900" y="430" width="230" height="44" rx="22" fill="#be185d"/>
+  <text x="1015" y="459" text-anchor="middle" font-family="system-ui, sans-serif" font-size="18" fill="#ffffff">100% in your browser</text>
+  <text x="900" y="580" font-family="Courier New, monospace" font-size="20" fill="#64748b">lifesimgrid.org</text>
+</svg>

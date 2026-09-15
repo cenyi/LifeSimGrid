@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f5f3ff"/>
+      <stop offset="0.5" stop-color="#ede9fe"/>
+      <stop offset="1" stop-color="#e0e7ff"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+
+  <!-- 4 character cards -->
+  <g transform="translate(80,130)">
+    <rect width="160" height="180" rx="14" fill="#ffffff" stroke="#ddd6fe" stroke-width="3"/>
+    <circle cx="80" cy="58" r="34" fill="#fcd34d"/>
+    <text x="80" y="122" text-anchor="middle" font-family="system-ui, sans-serif" font-size="18" font-weight="bold" fill="#374151">Leader</text>
+    <text x="80" y="148" text-anchor="middle" font-family="system-ui, sans-serif" font-size="14" fill="#6b7280">ESTJ</text>
+  </g>
+  <g transform="translate(260,130)">
+    <rect width="160" height="180" rx="14" fill="#ffffff" stroke="#ddd6fe" stroke-width="3"/>
+    <circle cx="80" cy="58" r="34" fill="#bfdbfe"/>
+    <text x="80" y="122" text-anchor="middle" font-family="system-ui, sans-serif" font-size="18" font-weight="bold" fill="#374151">Support</text>
+    <text x="80" y="148" text-anchor="middle" font-family="system-ui, sans-serif" font-size="14" fill="#6b7280">ISFJ</text>
+  </g>
+  <g transform="translate(80,330)">
+    <rect width="160" height="180" rx="14" fill="#ffffff" stroke="#ddd6fe" stroke-width="3"/>
+    <circle cx="80" cy="58" r="34" fill="#c4b5fd"/>
+    <text x="80" y="122" text-anchor="middle" font-family="system-ui, sans-serif" font-size="18" font-weight="bold" fill="#374151">Scout</text>
+    <text x="80" y="148" text-anchor="middle" font-family="system-ui, sans-serif" font-size="14" fill="#6b7280">INTP</text>
+  </g>
+  <g transform="translate(260,330)">
+    <rect width="160" height="180" rx="14" fill="#ffffff" stroke="#ddd6fe" stroke-width="3"/>
+    <circle cx="80" cy="58" r="34" fill="#86efac"/>
+    <text x="80" y="122" text-anchor="middle" font-family="system-ui, sans-serif" font-size="18" font-weight="bold" fill="#374151">Wildcard</text>
+    <text x="80" y="148" text-anchor="middle" font-family="system-ui, sans-serif" font-size="14" fill="#6b7280">ENFP</text>
+  </g>
+
+  <!-- Synergy -->
+  <g transform="translate(520,300)">
+    <circle r="90" fill="#ffffff" stroke="#c4b5fd" stroke-width="6"/>
+    <path d="M -60 0 A 60 60 0 1 1 48 -37" fill="none" stroke="#8b5cf6" stroke-width="12" stroke-linecap="round"/>
+    <text x="0" y="-6" text-anchor="middle" font-family="Courier New, monospace" font-size="48" font-weight="bold" fill="#4c1d95">85%</text>
+    <text x="0" y="28" text-anchor="middle" font-family="system-ui, sans-serif" font-size="18" font-weight="bold" fill="#5b21b6">Synergy</text>
+  </g>
+
+  <!-- Text block -->
+  <text x="700" y="180" font-family="Courier New, monospace" font-size="40" font-weight="bold" fill="#4c1d95">Quest Party Builder</text>
+  <text x="700" y="230" font-family="system-ui, sans-serif" font-size="26" fill="#6d28d9">Tomodachi Life · 16 personalities</text>
+
+  <g font-family="system-ui, sans-serif" font-size="22" fill="#374151">
+    <text x="700" y="290">· 4-slot team: leader / support / scout / wildcard</text>
+    <text x="700" y="330">· Synergy score + role fit breakdown</text>
+    <text x="700" y="370">· Random team generator</text>
+    <text x="700" y="410">· 100% in your browser, no sign-up</text>
+  </g>
+
+  <text x="700" y="560" font-family="Courier New, monospace" font-size="20" fill="#64748b">lifesimgrid.org</text>
+</svg>

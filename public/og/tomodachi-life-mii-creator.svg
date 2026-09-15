@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#fdf2f8"/>
+      <stop offset="0.5" stop-color="#eef2ff"/>
+      <stop offset="1" stop-color="#f0fdfa"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <!-- Left face preview area -->
+  <rect x="80" y="120" width="380" height="380" rx="24" fill="#ffffff" opacity="0.85"/>
+  <!-- simplified Mii face illustration -->
+  <ellipse cx="270" cy="310" rx="120" ry="135" fill="#f6e4d3" stroke="#f2c89b" stroke-width="4"/>
+  <path d="M 150 250 Q 170 140 270 135 Q 370 140 390 250 Q 330 215 270 210 Q 210 215 150 250 Z" fill="#5b3a29"/>
+  <ellipse cx="222" cy="300" rx="18" ry="24" fill="white" stroke="#1e293b" stroke-width="3"/>
+  <ellipse cx="318" cy="300" rx="18" ry="24" fill="white" stroke="#1e293b" stroke-width="3"/>
+  <circle cx="224" cy="304" r="10" fill="#2b3a55"/>
+  <circle cx="316" cy="304" r="10" fill="#2b3a55"/>
+  <path d="M 235 360 Q 270 385 305 360" stroke="#7a3b2e" stroke-width="5" fill="none" stroke-linecap="round"/>
+  <ellipse cx="190" cy="345" rx="16" ry="8" fill="rgba(255,120,120,0.4)"/>
+  <ellipse cx="350" cy="345" rx="16" ry="8" fill="rgba(255,120,120,0.4)"/>
+
+  <!-- Right side text -->
+  <text x="560" y="220" font-family="Courier New, monospace" font-size="44" font-weight="bold" fill="#1e1b4b">Mii Creator</text>
+  <text x="560" y="275" font-family="system-ui, sans-serif" font-size="30" fill="#4c1d95">Tomodachi Life · Character Planner</text>
+
+  <!-- Feature bullets -->
+  <g font-family="system-ui, sans-serif" font-size="24" fill="#374151">
+    <circle cx="575" cy="330" r="7" fill="#ec4899"/>
+    <text x="600" y="338">Design face, hair, &amp; skin tone</text>
+
+    <circle cx="575" cy="385" r="7" fill="#6366f1"/>
+    <text x="600" y="393">Predict personality &amp; MBTI from 4 sliders</text>
+
+    <circle cx="575" cy="440" r="7" fill="#10b981"/>
+    <text x="600" y="448">Generate Mii names &amp; export JSON</text>
+  </g>
+
+  <!-- Privacy badge -->
+  <rect x="560" y="495" width="560" height="60" rx="30" fill="#0f172a"/>
+  <text x="600" y="533" font-family="system-ui, sans-serif" font-size="22" fill="#ffffff">100% in your browser · No sign-up</text>
+
+  <!-- Brand -->
+  <text x="600" y="605" font-family="Courier New, monospace" font-size="20" fill="#64748b">lifesimgrid.org</text>
+</svg>

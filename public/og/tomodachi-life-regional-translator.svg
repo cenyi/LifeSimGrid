@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#eff6ff"/>
+      <stop offset="0.5" stop-color="#93c5fd"/>
+      <stop offset="1" stop-color="#dbeafe"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+
+  <!-- Region cards -->
+  <g transform="translate(60,100)">
+    <rect width="140" height="140" rx="12" fill="#ffffff" stroke="#93c5fd" stroke-width="4"/>
+    <text x="70" y="85" text-anchor="middle" font-family="system-ui, sans-serif" font-size="24" font-weight="bold" fill="#1e40af">日本</text>
+    <text x="70" y="115" text-anchor="middle" font-family="system-ui, sans-serif" font-size="16" font-weight="bold" fill="#374151">Hiroshi</text>
+    <text x="70" y="220" text-anchor="middle" font-family="system-ui, sans-serif" font-size="15" font-weight="bold" fill="#374151">JP</text>
+  </g>
+  <g transform="translate(220,100)">
+    <rect width="140" height="140" rx="12" fill="#ffffff" stroke="#93c5fd" stroke-width="4"/>
+    <text x="70" y="85" text-anchor="middle" font-family="Courier New, monospace" font-size="22" font-weight="bold" fill="#1e40af">James</text>
+    <text x="70" y="115" text-anchor="middle" font-family="system-ui, sans-serif" font-size="16" fill="#6b7280">strength</text>
+    <text x="70" y="220" text-anchor="middle" font-family="system-ui, sans-serif" font-size="15" font-weight="bold" fill="#374151">NA</text>
+  </g>
+  <g transform="translate(380,100)">
+    <rect width="140" height="140" rx="12" fill="#ffffff" stroke="#93c5fd" stroke-width="4"/>
+    <text x="70" y="85" text-anchor="middle" font-family="system-ui, sans-serif" font-size="22" font-weight="bold" fill="#1e40af">민수</text>
+    <text x="70" y="115" text-anchor="middle" font-family="system-ui, sans-serif" font-size="16" fill="#6b7280">Minsu</text>
+    <text x="70" y="220" text-anchor="middle" font-family="system-ui, sans-serif" font-size="15" font-weight="bold" fill="#374151">KR</text>
+  </g>
+
+  <!-- Region pills -->
+  <g font-family="system-ui, sans-serif" font-size="18" font-weight="bold" fill="#1e3a8a">
+    <rect x="540" y="80" width="110" height="36" rx="8" fill="#ffffff" stroke="#bfdbfe" stroke-width="2"/>
+    <text x="595" y="103" text-anchor="middle">Japan</text>
+    <rect x="660" y="80" width="110" height="36" rx="8" fill="#ffffff" stroke="#bfdbfe" stroke-width="2"/>
+    <text x="715" y="103" text-anchor="middle">N. America</text>
+    <rect x="780" y="80" width="110" height="36" rx="8" fill="#ffffff" stroke="#bfdbfe" stroke-width="2"/>
+    <text x="835" y="103" text-anchor="middle">Europe</text>
+    <rect x="900" y="80" width="110" height="36" rx="8" fill="#ffffff" stroke="#bfdbfe" stroke-width="2"/>
+    <text x="955" y="103" text-anchor="middle">Korea</text>
+    <rect x="540" y="130" width="110" height="36" rx="8" fill="#ffffff" stroke="#bfdbfe" stroke-width="2"/>
+    <text x="595" y="153" text-anchor="middle">China</text>
+    <rect x="660" y="130" width="230" height="36" rx="8" fill="#2563eb"/>
+    <text x="775" y="153" text-anchor="middle" fill="#ffffff">36 name groups</text>
+  </g>
+
+  <!-- Translation arrow strip -->
+  <g transform="translate(540,230)">
+    <text x="0" y="0" font-family="Courier New, monospace" font-size="28" font-weight="bold" fill="#1e3a8a">Hiroshi → James → 민수 → 伟</text>
+    <text x="0" y="40" font-family="system-ui, sans-serif" font-size="16" fill="#1e3a8a">strength · shared cultural role</text>
+  </g>
+
+  <!-- Text block -->
+  <g font-family="system-ui, sans-serif" font-size="22" fill="#374151">
+    <text x="540" y="330">· Name translator: source region → 5 equivalents</text>
+    <text x="540" y="370">· Region-authentic name generator</text>
+    <text x="540" y="410">· Script + naming convention table</text>
+    <text x="540" y="450">· 100% in your browser, no sign-up</text>
+  </g>
+
+  <text x="540" y="520" font-family="Courier New, monospace" font-size="40" font-weight="bold" fill="#1e3a8a">Regional Name Translator</text>
+  <text x="540" y="560" font-family="system-ui, sans-serif" font-size="20" fill="#1e3a8a">Tomodachi Life · JP / NA / EU / KR / CN</text>
+
+  <text x="540" y="610" font-family="Courier New, monospace" font-size="20" fill="#64748b">lifesimgrid.org</text>
+</svg>
