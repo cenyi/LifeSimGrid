@@ -1,4 +1,4 @@
-﻿# =========================================================
+# =========================================================
 #  LifeSimGrid robots.txt
 #  Explicit rules for major search engine crawlers.
 #  Cốc Cốc / Google / Bing / Yandex / Naver / Baidu / etc.
@@ -255,7 +255,6 @@ Disallow: /
 
 # ---------- Sitemap ----------
 Sitemap: https://lifesimgrid.org/sitemap.xml
-Sitemap: https://lifesimgrid.org/robots.txt
 
 # ---------- Host (helps Yandex / Cốc Cốc pick canonical) ----------
 Host: https://lifesimgrid.org

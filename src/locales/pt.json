@@ -278,7 +278,7 @@
     "title": "Sobre o Projeto LifeSimGrid",
     "intro": "Somos uma equipe de desenvolvimento independente de código aberto criando utilitários de produtividade de front-end puro e configuradores binários de avatar, servindo como a alternativa web de próxima geração ao Living the Grid para fãs de Tomodachi Life: Living the Dream e Animal Crossing em todo o mundo.",
     "coreMission": "Nossa Missão Aberta",
-    "coreMissionText": "Nossa missão é fornecer um kit de ferramentas abrangente e com foco em privacidade para jogadores de simulação de vida sandbox e entusiastas de retro 8 bits. Todos os três estúdios dedicados operam inteiramente em padrões web abertos e universais — não requerendo downloads de software, registros de conta ou dependência de servidor em nuvem:",
+    "coreMissionText": "Nossa missão é fornecer um kit de ferramentas abrangente e com foco em privacidade para jogadores de simulação de vida sandbox e entusiastas de retro 8 bits. Todos os nossos estúdios dedicados operam inteiramente em padrões web abertos e universais — não requerendo downloads de software, registros de conta ou dependência de servidor em nuvem:",
     "feature1Title": "1. Estúdio de Design de Píxeis",
     "feature1": "Utiliza a HTML5 Canvas API para realizar amostragem de grelha multi-proporção de alta fidelidade (Quadrado 1:1, Capa de Livro 2:3, Widescreen 16:9) em quatro níveis distintos de densidade de pixels. A paleta de 32 cores gerada automaticamente e a correspondência de cor por distância euclidiana garantem autenticidade de era 8-bit.",
     "feature2Title": "2. Configurador de dados Mii",
@@ -292,18 +292,18 @@
     "privacyFirst": "Engenharia de Privacidade Verificada",
     "privacyFirstText": "Cada módulo no LifeSimGrid é executado 100% no lado do cliente. Não há bases de dados de backend nem APIs de servidor. Todo o processamento acontece localmente no seu navegador.",
     "community": "Comunidade e Contribuição",
-    "communityText": "LifeSimGrid é um projeto de código aberto movido pela comunidade. Seja você um desenvolvedor full-stack, um tradutor de localização ou um jogador apaixonado de jogos de simulação de vida — damos as boas-vindas à sua ajuda! Envie Issues, abra Pull Requests ou melhore traduções em nossos 10 idiomas suportados no GitHub. Juntos, construímos o melhor kit de ferramentas de fãs da web."
+    "communityText": "LifeSimGrid é um projeto de código aberto movido pela comunidade. Seja você um desenvolvedor full-stack, um tradutor de localização ou um jogador apaixonado de jogos de simulação de vida — damos as boas-vindas à sua ajuda! Envie Issues, abra Pull Requests ou melhore traduções em nossos 12 idiomas suportados no GitHub. Juntos, construímos o melhor kit de ferramentas de fãs da web."
   },
   "Privacy": {
     "title": "Política de Privacidade",
-    "lastUpdated": "Última Atualização: Julho de 2026",
+    "lastUpdated": "Última Atualização: Setembro de 2026",
     "intro": "Esta Política de Privacidade descreve como o LifeSimGrid ('nós', 'nosso' ou 'o site') processa dados e respeita a sua privacidade.",
     "corePrinciple": "1. Princípio de Processamento Local 100% no Lado do Cliente",
     "corePrincipleText": "Este site opera numa arquitetura 100% sem servidor e do lado do cliente. Quando envia fotos, avatares de jogos ou códigos QR de Mii, os dados são processados inteiramente no seu navegador. Nenhum dado é enviado para servidores.",
     "localStorage": "2. Mecanismo de Armazenamento Local (localStorage e IndexedDB)",
     "localStorageText": "A Tabela de Relacionamento do Laboratório de Voz de Tomodachi guarda a sua lista de moradores de ilha personalizada (até 15 moradores, incluindo nome, personalidade e aniversário) no localStorage do navegador. Isto permite que os seus dados persistam entre sessões.",
     "cookies": "3. Cookies e Publicidade de Terceiros",
-    "cookiesText": "Para manter os custos globais de hospedagem CDN web e infraestrutura de domínio, este site poderá exibir anúncios de alta qualidade de tecnologia e design através do Google AdSense.",
+    "cookiesText": "Para manter os custos globais de hospedagem CDN web e infraestrutura de domínio, este site exibe anúncios de alta qualidade de tecnologia e design através do Google AdSense.",
     "googleAdsense": "4. Divulgação de Recolha de Dados do Google AdSense",
     "googleAdsenseText": "O Google AdSense usa cookies e web beacons para recolher e armazenar informações quando visita este site. Isto ajuda a otimizar a exibição de anúncios com base nas suas interações anteriores.",
     "euConsent": "5. Consentimento de Usuários da UE e EEE",
@@ -2282,7 +2282,9 @@
     "categoryMusic": "Música",
     "affinityHigh": "Uma forte correspondência. Estima-se que este grupo goste de presentes desta categoria, logo é uma escolha segura quando ainda não conheces os gostos ocultos do Mii.",
     "affinityMedium": "Uma correspondência moderada. O presente pode ou não funcionar; combina-o com os interesses do Mii para melhorar as hipóteses.",
-    "affinityLow": "Uma correspondência fraca. Raramente esta categoria é a primeira escolha do grupo, então tenta outra categoria ou outra personalidade."
+    "affinityLow": "Uma correspondência fraca. Raramente esta categoria é a primeira escolha do grupo, então tenta outra categoria ou outra personalidade.",
+    "disclaimerTitle": "Modelo de estimação da comunidade",
+    "modelDisclaimer": "Aproximações de fãs. Marcas da Nintendo. Sem afiliação."
   },
   "TomodachiLifeRegionalTranslatorPage": {
     "navHome": "Início",

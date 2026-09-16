@@ -9,7 +9,7 @@
 - [Tomodachi Voice Lab](https://lifesimgrid.org/tomodachi-voice-lab): Free 8-bit chiptune voice synthesizer for Tomodachi Life: Living the Dream. Features 5 personality-based voice presets, adjustable pitch and speed, and Web Speech API TTS fallback. Generates procedural audio via Web Audio API entirely in-browser.
 - [Tomodachi Life MBTI](https://lifesimgrid.org/tomodachi-life-mbti): Free Tomodachi Life MBTI 16-personality mapping and compatibility calculator. Includes a compatibility calculator (Base Score + Personality + Zodiac + Friendship = 100), 16-type personality chart with color-coded groups, voice tool, fan map, and character roster. Features HowTo structured data and FAQ.
 - [Living the Grid](https://lifesimgrid.org/living-the-grid): Free general-purpose pixel grid converter — the web-based Living the Grid alternative. Supports 16x16 to 128x128 grid densities for cross-stitch patterns, Perler beads templates, and Tomodachi Life face paint references. Print-optimized layout with paint-by-numbers palette.
-- [Homepage](https://lifesimgrid.org): Central hub featuring tab-based tool switching (ACNH Pixel Studio, Mii QR Unlocker, Voice Lab) and CTA cards linking to all 5 dedicated sub-pages. Includes trust and privacy section reinforcing 100% client-side architecture.
+- [Homepage](https://lifesimgrid.org): Central hub featuring tab-based tool switching (ACNH Pixel Studio, Mii QR Unlocker, Voice Lab) and CTA cards linking to all dedicated sub-pages. Includes trust and privacy section reinforcing 100% client-side architecture.
 
 
 - [Tomodachi Life Compatibility Calculator](https://lifesimgrid.org/tomodachi-life-compatibility): Free romance and friendship score calculator for any two Mii. Combine zodiac sign + 16 MBTI personality types (Base Score 25 + Personality 25 + Zodiac 25 + Friendship 25 = 100). 100% client-side, no data uploaded.
@@ -27,6 +27,14 @@
 - [Gift & Item Database](https://lifesimgrid.org/tomodachi-life-gift-item-db): Gift finder for Tomodachi Life. Search gifts by category, check affinity scores per personality, add items to a wishlist or pick a random gift. 100% in your browser.
 
 - [Regional Name Translator](https://lifesimgrid.org/tomodachi-life-regional-translator): Mii name translator across Tomodachi Life regions (Japan, North America, Europe, Korea, China). Enter a name and source region for equivalents, compare regional naming conventions, or generate region-authentic names. 100% in your browser.
+- [Tomodachi Island Planner](https://lifesimgrid.org/tomodachi-island-planner): Grid-based island and apartment layout planner with building placement and a resident compatibility optimizer. Autosaves to localStorage. 100% in your browser.
+- [Tomodachi Life Personality Calculator](https://lifesimgrid.org/tomodachi-life-personality-calculator): 4-slider tool (Movement / Speech / Energy / Thinking) that maps values to 16 Tomodachi Life personalities and MBTI types. 100% in your browser.
+- [Tomodachi Life Personality Chart](https://lifesimgrid.org/tomodachi-life-personality-chart): Complete color-coded 16-personality reference table (Outgoing / Confident / Independent / Easygoing groups), with individual personality detail pages under /tomodachi-life-personality/{type}. 100% static reference content.
+- [Tomodachi Character Ideas](https://lifesimgrid.org/tomodachi-character-ideas): Character concept generator for Tomodachi Life Miis (traits, backstory seeds, style tags). 100% in your browser.
+- [Tomodachi Apartment Design](https://lifesimgrid.org/tomodachi-apartment-design): Apartment layout and furniture inspiration planner for Tomodachi Life: Living the Dream. 100% in your browser.
+- [Tomodachi Clothes Template](https://lifesimgrid.org/tomodachi-clothes-template): Pixel-grid clothing design templates for Tomodachi Life custom outfits. 100% in your browser.
+- [Mii Eyes Reference](https://lifesimgrid.org/mii-eyes): Visual reference chart of Mii Maker eye styles with selection guidance. 100% static reference content.
+- [MBTI Personality Detail Pages](https://lifesimgrid.org/tomodachi-life-mbti/intj): 16 static pages (one per MBTI type, /tomodachi-life-mbti/{type}) mapping each type to its Tomodachi Life personality, slider settings, and compatibility scores.
 
 ## Information Pages
 

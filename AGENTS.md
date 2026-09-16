@@ -52,7 +52,7 @@ This version has breaking changes — APIs, conventions, and file structure may 
 - **European languages (de, es, fr, it, nl)**: ALL technical entity words MUST stay in English — HTML5 Canvas API, Web Audio API, jsQR, localStorage, IndexedDB, Promise.all, ArrayBuffer, qrcode, JSZip, Lucide Icons, Cloudflare Pages, Next.js 16 App Router, TypeScript, Tailwind CSS, next-intl, SSG, CDN, MIT License, ISC License, Google Analytics 4, GA4, Microsoft Clarity, Google AdSense, Carbon Ads, EthicalAds, COPPA, GDPR, CCPA, PII, HTTPS, MITM, DevTools, Network tab, FFL, 0x04, Byte Mode
 - **Asian languages (ja, zh-Hant, zh-CN)**: Technical entity words stay in English; game terminology MUST use official in-game terms (see table above)
 - **Korean (ko)**: Technical entity words stay in English; game terminology uses official Korean in-game terms (커스텀 디자인, 프로 디자인, 누크폰, Mii 스튜디오); "Tomodachi Life" stays in English (not released in Korean); ACNH full title uses 모여봐요 동물의 숲
-- **All locales**: Must maintain key sets identical to en.json exactly (1760 keys as of 2026-09 — re-count before trusting this number); information density must match en/de baselines; legal disclaimers (COPPA, GDPR, CCPA, PII, HTTPS, MITM) always in English
+- **All locales**: Must maintain key sets identical to en.json exactly (2338 keys as of 2026-09 — re-count before trusting this number); information density must match en/de baselines; legal disclaimers (COPPA, GDPR, CCPA, PII, HTTPS, MITM) always in English
 
 ## next-intl Rich Text Tags
 - `<pixel>`, `<qr>`, `<voice>` — internal cross-links in SEOSection

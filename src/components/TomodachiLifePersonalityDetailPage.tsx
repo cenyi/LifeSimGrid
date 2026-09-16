@@ -110,7 +110,7 @@ export default function TomodachiLifePersonalityDetailPage({
 }) {
   const t = useTranslations("TomodachiLifePersonalityDetailPage");
   const tMbti = useTranslations("TomodachiLifeMbtiPage");
-  const tVoice = useTranslations("VoiceLab");
+  const tVoice = useTranslations("TomodachiVoiceLabPage");
   const locale = useLocale();
 
   const personality = getPersonalityFromSlug(personalitySlug);

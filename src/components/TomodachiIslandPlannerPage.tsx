@@ -402,12 +402,18 @@ export default function TomodachiIslandPlannerPage() {
 
   /* ---- Hydrate from localStorage ---- */
   useEffect(() => {
+    // Static export: SSR HTML always renders the default 16x16 grid, so
+    // restoring saved state after mount cannot cause a hydration mismatch.
     const saved = loadGrid();
     if (saved && saved.cells.length === saved.size) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect -- localStorage hydration is an external-system read
       setGridSize(saved.size);
+       
       setCells(saved.cells);
     }
+     
     setOptResidents(loadOptimizerResidents());
+     
     setHydrated(true);
   }, []);
 

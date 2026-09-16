@@ -288,16 +288,17 @@ function loadGA4() {
 export default function CookieConsent() {
   const [visible, setVisible] = useState(false);
   const [showPreferences, setShowPreferences] = useState(false);
-  const [locale, setLocale] = useState("en");
+  // Detect locale once on the client via lazy initializer (banner renders null
+  // on first paint, so a server/client difference here cannot cause a mismatch).
+  const [locale] = useState<string>(() =>
+    typeof window === "undefined" ? "en" : detectLocale(),
+  );
 
   // Granular preferences (local state for the toggle UI)
   const [adConsent, setAdConsent] = useState(true);
   const [analyticsConsent, setAnalyticsConsent] = useState(true);
 
   useEffect(() => {
-    const detected = detectLocale();
-    setLocale(detected);
-
     const stored = localStorage.getItem(CONSENT_KEY);
     if (!stored) {
       // Brief delay to avoid layout shift during initial page render
@@ -318,7 +319,9 @@ export default function CookieConsent() {
         try {
           const parsed = JSON.parse(storedPrefs) as ConsentPreferences;
           applyConsent(parsed);
+          // eslint-disable-next-line react-hooks/set-state-in-effect -- restoring consent toggles from localStorage (external system)
           setAdConsent(parsed.ad_storage === "granted");
+           
           setAnalyticsConsent(parsed.analytics_storage === "granted");
           if (parsed.analytics_storage === "granted") {
             loadGA4();
