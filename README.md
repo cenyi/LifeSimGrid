@@ -25,13 +25,18 @@
 
 ### 🎯 What is LifeSimGrid?
 
-**LifeSimGrid** is an advanced **unofficial Animal Crossing pattern tool** and an open-source, web-based **Mii QR code editor**. It serves as the ultimate 100% serverless **alternative to Living the Grid** for modern life simulation games. 
+**LifeSimGrid** is an open-source, **100% client-side** companion toolkit for creating, planning, and customizing a **Tomodachi Life** island — plan layouts, design Mii characters, map personalities to MBTI, and export shareable results, all in your browser. 
 
-As a free, browser-based web toolkit, all binary cryptographic parsing, HTML5 Canvas sampling, and chiptune audio synthesis happen entirely on the client-side. This ensures absolute 100% data privacy and lightning-fast local performance — no cloud servers, no account sign-ups, and no database tracking required.
+As a free, browser-based web toolkit, all binary cryptographic parsing, HTML5 Canvas sampling, and chiptune audio synthesis happen entirely on the client-side. This gives fast local performance with no cloud servers, no account sign-ups, and no database tracking. Your island roster and characters are stored only in your browser's `localStorage` / `IndexedDB`. Network requests are limited to the ad and analytics services you approve in the consent banner — see the [privacy policy](https://lifesimgrid.org/privacy) for what that means.
 
-### 📸 Screenshots
+### 📸 Screenshots & demos
 
-> *Coming soon — community contributions and Pull Requests with live screenshots are highly welcome!*
+> Static screenshots coming soon — community screenshots via Pull Request are welcome. Until then, every tool below is live:
+
+- [**Island Planner**](/tomodachi-island-planner) — pick a template or build your island by hand, then export a PNG
+- [**Personality Calculator**](/tomodachi-life-personality-calculator) — fan-made slider → 16-type mapping
+- [**Mii Creator**](/tomodachi-life-mii-creator) — design a character card end to end
+- [**Compatibility**](/tomodachi-life-compatibility) — compare two characters' chemistry
 
 ### ✨ Topic Clusters Architecture & Dedicated Studios
 
@@ -346,7 +351,7 @@ docker compose up -d
 
 ### 🤝 Contributing
 
-We love community contributions! Here's how you can help:
+We love community contributions! See **[CONTRIBUTING.md](CONTRIBUTING.md)** for a contributor-friendly guide (players, translators, designers, and developers all welcome). Quick start:
 
 1. **Fork** the repository
 2. **Create** a feature branch: `git checkout -b feature/amazing-feature`

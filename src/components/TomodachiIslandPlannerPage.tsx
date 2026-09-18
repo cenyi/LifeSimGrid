@@ -5,6 +5,7 @@ import {
   ChevronDown, MapPin, Layout, Users, Download, Upload, Trash2, Plus, X,
   Grid3x3, Home, Building2, Coffee, ShoppingBag, Trees, Sparkles, UtensilsCrossed,
   Binoculars, Waves, Anchor, Flower, Eraser, Crown, Heart, Star, Save, Shield,
+  Share2,
 } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -112,6 +113,8 @@ function generateTemplate(id: number, size: number): GridCell[][] {
     if (r >= 0 && r < size && c >= 0 && c < size) grid[r][c] = { type };
   };
 
+  const mid = Math.floor(size / 2);
+
   switch (id) {
     case 1: // Romance District — houses around fountain
       set(Math.floor(size / 2), Math.floor(size / 2), "fountain");
@@ -191,6 +194,61 @@ function generateTemplate(id: number, size: number): GridCell[][] {
       set(Math.floor(size / 2), size - 3, "beach");
       set(2, Math.floor(size / 2), "cafe");
       set(size - 3, Math.floor(size / 2), "house");
+      break;
+
+    case 7: // Beach Resort — beach ring + food on the shore
+      for (let i = 1; i < size - 1; i += 2) {
+        set(1, i, "beach");
+        set(size - 2, i, "beach");
+        if (i % 4 === 1) { set(i, 1, "tree"); set(i, size - 2, "tree"); }
+        if (i % 4 === 3) { set(i, 1, "flower"); set(i, size - 2, "flower"); }
+      }
+      set(2, 2, "restaurant");
+      set(2, size - 3, "cafe");
+      set(size - 3, 2, "house");
+      set(size - 3, size - 3, "apartment");
+      set(mid, mid, "fountain");
+      set(mid, mid - 2, "beach");
+      set(mid, mid + 2, "beach");
+      set(mid - 2, mid, "beach");
+      set(mid + 2, mid, "beach");
+      break;
+
+    case 8: // Food District
+      for (let r = mid - 1; r <= mid + 1; r++)
+        for (let c = mid - 1; c <= mid + 1; c++) {
+          set(r, c, (r % 2 === c % 2) ? "restaurant" : "cafe");
+        }
+      set(mid, mid, "fountain");
+      set(2, 2, "house");
+      set(size - 3, 2, "shop");
+      set(size - 3, size - 3, "apartment");
+      for (let i = 1; i < size - 1; i += 2) {
+        set(1, i, "flower");
+        set(size - 2, i, "flower");
+        if (i % 4 === 1) set(i, 1, "tree");
+        if (i % 4 === 3) set(i, size - 2, "tree");
+      }
+      break;
+
+    case 9: // Skyline Tower
+      set(mid, mid, "tower");
+      set(mid - 1, mid, "house");
+      set(mid + 1, mid, "house");
+      set(mid, mid - 1, "house");
+      set(mid, mid + 1, "house");
+      set(mid - 1, mid - 1, "apartment");
+      set(mid - 1, mid + 1, "apartment");
+      set(mid + 1, mid - 1, "apartment");
+      set(mid + 1, mid + 1, "apartment");
+      set(1, 1, "park");
+      set(size - 2, size - 2, "park");
+      for (let i = 1; i < size - 1; i += 2) {
+        set(1, i, "tree");
+        set(i, 1, "flower");
+        set(size - 2, i, "tree");
+        set(i, size - 2, "flower");
+      }
       break;
   }
   return grid;
@@ -471,6 +529,49 @@ export default function TomodachiIslandPlannerPage() {
     link.download = "tomodachi-island-layout.png";
     link.href = canvas.toDataURL("image/png");
     link.click();
+  }
+
+  /**
+   * Build a shareable PNG from the grid canvas: copy the island grid onto a
+   * fresh canvas and stamp a small source banner so the image still credits
+   * LifeSimGrid after it's shared elsewhere.
+   */
+  function buildShareablePng(): HTMLCanvasElement | null {
+    const src = document.querySelector("canvas[aria-label='Island layout grid']") as HTMLCanvasElement;
+    if (!src) return null;
+    const banner = 28;
+    const out = document.createElement("canvas");
+    out.width = src.width;
+    out.height = src.height + banner;
+    const ctx = out.getContext("2d");
+    if (!ctx) return null;
+    ctx.fillStyle = "#ffffff";
+    ctx.fillRect(0, 0, out.width, out.height);
+    ctx.drawImage(src, 0, banner);
+    ctx.fillStyle = "#000000";
+    ctx.font = "600 14px system-ui, sans-serif";
+    ctx.textAlign = "right";
+    ctx.textBaseline = "middle";
+    ctx.fillText("lifesimgrid.org", out.width - 8, banner / 2);
+    return out;
+  }
+
+  function shareIsland() {
+    const canvas = buildShareablePng();
+    if (canvas) {
+      // Offer native share where available (mobile / supported browsers),
+      // otherwise fall back to downloading the stamped PNG.
+      canvas.toBlob((blob) => {
+        if (!blob) return;
+        const files = [new File([blob], "tomodachi-island-layout.png", { type: "image/png" })];
+        const nav = navigator as Navigator & { canShare?: (d: { files: File[] }) => boolean; share?: (d: { files?: File[]; title?: string; text?: string }) => Promise<void> };
+        if (nav.share && nav.canShare && nav.canShare({ files })) {
+          nav.share({ files, title: t("shareTitle"), text: t("shareText") }).catch(() => {});
+        } else {
+          exportPng();
+        }
+      }, "image/png");
+    }
   }
 
   function exportJson() {
@@ -855,6 +956,9 @@ export default function TomodachiIslandPlannerPage() {
                 <button onClick={exportPng} className="flex items-center gap-1.5 rounded-lg bg-teal-500 px-4 py-2 text-sm font-semibold text-white shadow-sm transition-all hover:bg-teal-600 active:scale-95">
                   <Download className="h-4 w-4" /> {t("exportPng")}
                 </button>
+                <button onClick={shareIsland} className="flex items-center gap-1.5 rounded-lg bg-emerald-500 px-4 py-2 text-sm font-semibold text-white shadow-sm transition-all hover:bg-emerald-600 active:scale-95">
+                  <Share2 className="h-4 w-4" /> {t("shareIsland")}
+                </button>
                 <button onClick={exportJson} className="flex items-center gap-1.5 rounded-lg bg-blue-500 px-4 py-2 text-sm font-semibold text-white shadow-sm transition-all hover:bg-blue-600 active:scale-95">
                   <Save className="h-4 w-4" /> {t("exportJson")}
                 </button>
@@ -899,7 +1003,7 @@ export default function TomodachiIslandPlannerPage() {
               <h3 className="font-mono text-lg sm:text-xl font-bold text-gray-900 mb-2">{t("templatesTitle")}</h3>
               <p className="text-sm text-gray-600 mb-4 leading-relaxed">{t("templatesDesc")}</p>
               <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-                {[1, 2, 3, 4, 5, 6].map((id) => {
+                {[1, 2, 3, 4, 5, 6, 7, 8, 9].map((id) => {
                   const icons: Record<number, React.ReactElement> = {
                     1: <Heart className="h-5 w-5 text-rose-500" />,
                     2: <Users className="h-5 w-5 text-blue-500" />,
@@ -907,6 +1011,9 @@ export default function TomodachiIslandPlannerPage() {
                     4: <Star className="h-5 w-5 text-purple-500" />,
                     5: <ShoppingBag className="h-5 w-5 text-amber-500" />,
                     6: <Trees className="h-5 w-5 text-green-500" />,
+                    7: <Waves className="h-5 w-5 text-cyan-500" />,
+                    8: <UtensilsCrossed className="h-5 w-5 text-orange-500" />,
+                    9: <Crown className="h-5 w-5 text-slate-500" />,
                   };
                   return (
                     <div key={id} className="rounded-xl border border-gray-100 bg-gray-50 p-4 transition-all hover:shadow-md">
