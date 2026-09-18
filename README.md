@@ -351,7 +351,7 @@ docker compose up -d
 
 ### 🤝 Contributing
 
-We love community contributions! See **[CONTRIBUTING.md](CONTRIBUTING.md)** for a contributor-friendly guide (players, translators, designers, and developers all welcome). Quick start:
+We love community contributions! Here's how you can help:
 
 1. **Fork** the repository
 2. **Create** a feature branch: `git checkout -b feature/amazing-feature`
