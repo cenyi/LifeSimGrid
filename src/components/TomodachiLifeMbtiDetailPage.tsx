@@ -6,6 +6,7 @@ import {
 } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import TypeInsights from "@/components/TypeInsights";
 import { Link } from "@/i18n/routing";
 import {
   PERSONALITIES,
@@ -249,6 +250,13 @@ export default function TomodachiLifeMbtiDetailPage({
           </div>
         </div>
       </section>
+
+      {/* Deep-Dive Insights (five-block content for the primary personality) */}
+      <TypeInsights
+        personalityKey={primaryPersonality}
+        personalityName={personalityName}
+        accentColor={groupColor}
+      />
 
       {/* Disclaimer */}
       <section aria-labelledby="mbti-detail-disclaimer-title" className="mx-auto max-w-6xl px-4 py-4">

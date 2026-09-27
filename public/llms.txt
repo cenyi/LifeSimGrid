@@ -36,6 +36,12 @@
 - [Mii Eyes Reference](https://lifesimgrid.org/mii-eyes): Visual reference chart of Mii Maker eye styles with selection guidance. 100% static reference content.
 - [MBTI Personality Detail Pages](https://lifesimgrid.org/tomodachi-life-mbti/intj): 16 static pages (one per MBTI type, /tomodachi-life-mbti/{type}) mapping each type to its Tomodachi Life personality, slider settings, and compatibility scores.
 
+## Blog
+
+- [LifeSimGrid Blog](https://lifesimgrid.org/blog): Deep technical guides for ACNH custom designs, Mii QR codes, and Tomodachi Life systems — written from the code that powers the tools. English-only.
+- [How Tomodachi Life's 16 Personalities Map to MBTI](https://lifesimgrid.org/blog/tomodachi-life-mbti-mapping-explained): Full methodology of the personality-to-MBTI pipeline: 3-band slider quantization (0-33/34-66/67-100), 4-group cascade, letter-by-letter MBTI derivation, the INFP dual mapping (Artist and Softie), and the compatibility scoring formula with modifiers.
+- [How Tomodachi Voice Lab Synthesizes 8-Bit Voices](https://lifesimgrid.org/blog/tomodachi-life-voice-synthesis-guide): Node-by-node breakdown of the Web Audio API voice pipeline: OscillatorNode → BiquadFilterNode (lowpass) → GainNode signal chain, the five presets (adult male 180 Hz sawtooth to 600 Hz child), per-character beep scheduling with pitch offsets from char codes, and why there is no Web Speech API fallback.
+- [Finding Every Mii's Favorite Food: A Testing Method](https://lifesimgrid.org/blog/tomodachi-life-food-favorites-guide): The 48-food search space across 8 categories, the five reaction levels with affinity bands (90+/75+/40-74/25-39/<25), the AFFINITY_PRESETS matrix per personality group, and a seven-step protocol for confirming each Mii's randomly assigned favorite.
 ## Information Pages
 
 - [About](https://lifesimgrid.org/about): Project background, open-source mission, privacy-first architecture explanation, and technology stack overview.

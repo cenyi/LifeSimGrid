@@ -48,3 +48,12 @@
 /*/tomodachi-life-gift-item-db/  /:splat/tomodachi-life-gift-item-db  301
 /tomodachi-life-regional-translator/  /tomodachi-life-regional-translator  301
 /*/tomodachi-life-regional-translator/  /:splat/tomodachi-life-regional-translator  301
+
+# /tomodachi-life-personality has no list page (only [type] detail pages).
+# Redirect the bare hub URL to the personality chart page (root + locale variants).
+/tomodachi-life-personality  /tomodachi-life-personality-chart  301
+/*/tomodachi-life-personality  /:splat/tomodachi-life-personality-chart  301
+
+# Blog (EN-only pages — no locale variants exist)
+/blog/                    /blog                    301
+/blog/:slug/              /blog/:slug              301
