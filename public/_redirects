@@ -54,6 +54,8 @@
 /tomodachi-life-personality  /tomodachi-life-personality-chart  301
 /*/tomodachi-life-personality  /:splat/tomodachi-life-personality-chart  301
 
-# Blog (EN-only pages — no locale variants exist)
+# Blog (root EN pages + /[locale]/blog variants)
 /blog/                    /blog                    301
 /blog/:slug/              /blog/:slug              301
+/*/blog/                  /:splat/blog             301
+/*/blog/:slug/            /:splat/blog/:slug       301

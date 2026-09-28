@@ -256,14 +256,14 @@ export default function Navbar() {
             <Mail className="h-3.5 w-3.5 text-gray-500" />
             <span>{t("navContact")}</span>
           </Link>
-          {/* Blog is EN-only: plain <a> avoids next-intl locale prefixing. */}
-          <a
+          {/* Blog: next-intl Link prefixes the locale (/de/blog) automatically. */}
+          <Link
             href="/blog"
             className="flex items-center space-x-1.5 rounded-lg border border-gray-200 bg-white px-2.5 py-1.5 text-xs font-medium text-gray-600 shadow-sm transition-all hover:bg-gray-50 hover:text-gray-900 hover:shadow-md active:scale-95"
           >
             <BookOpen className="h-3.5 w-3.5 text-amber-500" />
             <span>{t("navBlog")}</span>
-          </a>
+          </Link>
         </div>
 
         {/* Right side: mobile menu button + locale + GitHub */}
@@ -386,15 +386,15 @@ export default function Navbar() {
                   <Mail className="h-4 w-4 shrink-0 text-gray-500" />
                   {t("navContact")}
                 </Link>
-                {/* Blog is EN-only: plain <a> avoids next-intl locale prefixing. */}
-                <a
+                {/* Blog: next-intl Link prefixes the locale (/de/blog) automatically. */}
+                <Link
                   href="/blog"
                   onClick={() => setMobileMenuOpen(false)}
                   className="flex items-center gap-2 rounded-xl border border-gray-200 bg-white px-3 py-2.5 text-sm font-medium text-gray-600 shadow-sm transition-all hover:bg-gray-50 hover:text-gray-900"
                 >
                   <BookOpen className="h-4 w-4 shrink-0 text-amber-500" />
                   {t("navBlog")}
-                </a>
+                </Link>
               </div>
             </div>
           </div>

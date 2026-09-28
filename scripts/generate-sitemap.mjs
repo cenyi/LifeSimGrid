@@ -57,21 +57,47 @@ const staticPages = fs
 /* ------------------------------------------------------------------ */
 /*  Blog posts (optional — skipped until posts dir exists)             */
 /*                                                                     */
-/*  The blog is EN-only: /blog pages exist solely at the root level,   */
-/*  so blog URLs are emitted WITHOUT locale variants (a /<locale>/blog */
-/*  path would 404).                                                   */
+/*  EN posts live at posts/*.ts; translated posts at                   */
+/*  posts/<locale>/<slug>.ts. A post's hreflang cluster covers          */
+/*  exactly the locales in which it exists (EN is always included).    */
 /* ------------------------------------------------------------------ */
 
 let blogSlugs = [];
+/** slug → Set of locales the post exists in (always contains "en"). */
+const blogLocaleSlugs = new Map();
 const postsDir = path.join(ROOT, "src/lib/blog/posts");
 if (fs.existsSync(postsDir)) {
-  blogSlugs = fs
-    .readdirSync(postsDir)
-    .filter((f) => f.endsWith(".ts"))
-    .flatMap((f) => {
-      const src = fs.readFileSync(path.join(postsDir, f), "utf8");
-      return [...src.matchAll(/slug:\s*"([^"]+)"/g)].map((m) => m[1]);
-    });
+  const postEntries = fs.readdirSync(postsDir, { withFileTypes: true });
+  for (const entry of postEntries) {
+    if (entry.isFile() && entry.name.endsWith(".ts")) {
+      const src = fs.readFileSync(path.join(postsDir, entry.name), "utf8");
+      for (const m of src.matchAll(/slug:\s*"([^"]+)"/g)) {
+        // readdirSync order puts locale dirs before these root files, so
+        // locale Sets may already exist here — merge "en" in, never reset.
+        const existing = blogLocaleSlugs.get(m[1]);
+        if (existing) {
+          existing.add("en");
+        } else {
+          blogSlugs.push(m[1]);
+          blogLocaleSlugs.set(m[1], new Set(["en"]));
+        }
+      }
+    } else if (entry.isDirectory() && entry.name !== "en") {
+      const localeDir = path.join(postsDir, entry.name);
+      for (const f of fs.readdirSync(localeDir)) {
+        if (!f.endsWith(".ts")) continue;
+        const src = fs.readFileSync(path.join(localeDir, f), "utf8");
+        for (const m of src.matchAll(/slug:\s*"([^"]+)"/g)) {
+          if (!blogLocaleSlugs.has(m[1])) {
+            // Locale file without an EN counterpart — register defensively.
+            blogSlugs.push(m[1]);
+            blogLocaleSlugs.set(m[1], new Set());
+          }
+          blogLocaleSlugs.get(m[1]).add(entry.name);
+        }
+      }
+    }
+  }
 }
 
 /* ------------------------------------------------------------------ */
@@ -107,14 +133,35 @@ lines.push('  xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"');
 lines.push('  xmlns:xhtml="http://www.w3.org/1999/xhtml">');
 
 for (const canonicalPath of canonicalPaths) {
-  // Blog pages are EN-only: emit a single <loc> entry with no locale
-  // variants and no hreflang cluster (no translated versions exist).
-  const isBlog = canonicalPath === "/blog" || canonicalPath.startsWith("/blog/");
-  if (isBlog) {
-    lines.push("  <url>");
-    lines.push(`    <loc>${BASE}${canonicalPath}</loc>`);
-    lines.push(`    <lastmod>${today}</lastmod>`);
-    lines.push("  </url>");
+  // Blog index: locale index pages exist for every locale (full cluster,
+  // same treatment as any other page).
+  // Blog posts: hreflang cluster restricted to the locales the post is
+  // translated into; EN-only posts keep the legacy single <url> entry.
+  const isBlogPost = canonicalPath.startsWith("/blog/");
+  if (isBlogPost) {
+    const slug = canonicalPath.slice("/blog/".length);
+    const available = [...LOCALES].filter((l) => blogLocaleSlugs.get(slug)?.has(l));
+    if (available.length <= 1) {
+      lines.push("  <url>");
+      lines.push(`    <loc>${BASE}${canonicalPath}</loc>`);
+      lines.push(`    <lastmod>${today}</lastmod>`);
+      lines.push("  </url>");
+      continue;
+    }
+    for (const locale of available) {
+      lines.push("  <url>");
+      lines.push(`    <loc>${localeUrl(canonicalPath, locale)}</loc>`);
+      lines.push(`    <lastmod>${today}</lastmod>`);
+      lines.push(
+        `    <xhtml:link rel="alternate" hreflang="x-default" href="${localeUrl(canonicalPath, "en")}"/>`
+      );
+      for (const l of available) {
+        lines.push(
+          `    <xhtml:link rel="alternate" hreflang="${l}" href="${localeUrl(canonicalPath, l)}"/>`
+        );
+      }
+      lines.push("  </url>");
+    }
     continue;
   }
 
@@ -141,10 +188,22 @@ lines.push("");
 
 fs.writeFileSync(OUT, lines.join("\n"), "utf8");
 
-const localeUrlCount = canonicalPaths.filter((p) => p !== "/blog" && !p.startsWith("/blog/")).length;
-const blogUrlCount = canonicalPaths.length - localeUrlCount;
+const blogPostPaths = canonicalPaths.filter((p) => p.startsWith("/blog/"));
+let blogUrlCount = 0;
+let localizedBlogPosts = 0;
+for (const p of blogPostPaths) {
+  const available = [...LOCALES].filter((l) => blogLocaleSlugs.get(p.slice("/blog/".length))?.has(l));
+  if (available.length <= 1) {
+    blogUrlCount += 1;
+  } else {
+    blogUrlCount += available.length;
+    localizedBlogPosts += 1;
+  }
+}
+const enOnlyBlogPosts = blogPostPaths.length - localizedBlogPosts;
+const localeUrlCount = canonicalPaths.filter((p) => !p.startsWith("/blog/")).length;
 const urlCount = localeUrlCount * LOCALES.length + blogUrlCount;
 console.log(`Sitemap written: ${OUT}`);
 console.log(`  Canonical page sets : ${canonicalPaths.length}`);
-console.log(`    static: ${staticPages.length + 1}, personality: ${personalitySlugs.length}, mbti: ${mbtiSlugs.length}, blog: ${blogSlugs.length} (EN-only)`);
-console.log(`  Total <loc> entries : ${urlCount} (${localeUrlCount} x ${LOCALES.length} locales + ${blogUrlCount} EN-only blog)`);
+console.log(`    static: ${staticPages.length + 1}, personality: ${personalitySlugs.length}, mbti: ${mbtiSlugs.length}, blog: ${blogSlugs.length} (${localizedBlogPosts} localized, ${enOnlyBlogPosts} EN-only)`);
+console.log(`  Total <loc> entries : ${urlCount} (${localeUrlCount} x ${LOCALES.length} locales + ${blogUrlCount} blog URLs)`);

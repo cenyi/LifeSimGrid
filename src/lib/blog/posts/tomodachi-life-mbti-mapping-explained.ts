@@ -24,7 +24,7 @@ export const postMbtiMapping: BlogPost = {
     { type: "h2", text: "The four sliders that decide everything" },
     {
       type: "p",
-      text: "When you register a Mii, the game lets you fine-tune four personality axes. Different fan communities give them slightly different names; on this site we call them **Movement**, **Speech**, **Energy**, and **Thinking**, and each one is a continuous value from `0` to `100`. None of the 16 personalities is reachable through a single slider alone — the personality is a *pattern* across all four, which is why two Miis can feel completely different while sharing a single slider value.",
+      text: "When you register a Mii, the game lets you fine-tune four personality axes. Different fan communities give them slightly different names; on this site we call them **Movement**, **Speech**, **Energy**, and **Thinking**, and each one is a continuous value from `0` to `100`. None of the 16 personalities is reachable through a single slider alone — the personality is a **pattern** across all four, which is why two Miis can feel completely different while sharing a single slider value.",
     },
     {
       type: "p",
@@ -61,7 +61,7 @@ export const postMbtiMapping: BlogPost = {
       type: "ul",
       items: [
         "**Active signal** — the sum of the Movement, Speech, and Energy bands (a number from `0` to `6`). High values mean the Mii leans social and energetic.",
-        "**Intro signal** — the Thinking band alone, read with reversed polarity: a *high* Thinking band means the Mii leans reserved and inward.",
+        "**Intro signal** — the Thinking band alone, read with reversed polarity: a **high** Thinking band means the Mii leans reserved and inward.",
       ],
     },
     {
@@ -119,8 +119,29 @@ export const postMbtiMapping: BlogPost = {
     },
     {
       type: "p",
-      text: "Notice that the code is fully determined by the four-axis signature — Movement speed, Energy style, Speech style, and Thinking structure — and *not* by the group. The group is a fifth piece of information, and the mapping needs it, as the next section shows.",
+      text: "Notice that the code is fully determined by the four-axis signature — Movement speed, Energy style, Speech style, and Thinking structure — and **not** by the group. The group is a fifth piece of information, and the mapping needs it, as the next section shows.",
     },
+
+    { type: "h2", text: "Questions players ask about the mapping" },
+    { type: "h3", text: "Do identical sliders always produce the same personality?" },
+    { type: "p", text: "Yes — the pipeline is fully deterministic. The same four slider values always quantize to the same bands, land in the same cell of the `81`, resolve to the same group through the cascade, and pick the same sub-type. Two Miis registered with identical personality settings will always come out identical, on this site and, as far as long-term player observation goes, in the game. The only way a seemingly unchanged Mii can flip is a one-point nudge across a band edge — `33` to `34`, or `66` to `67` — which is why borderline sliders deserve a second look before you commit to a roster plan." },
+    { type: "h3", text: "Which of the four sliders matters most?" },
+    { type: "p", text: "**Movement** carries the most weight. It is the only axis that decides a letter on its own (fast is E, slow is I), it is one of the three inputs to the active signal, and it breaks the tie between **Outgoing** and **Easygoing** when the active signal is middling. **Thinking** runs a close second: it alone drives the intro signal that routes quiet, inward Miis into the Independent group, and it steers several sub-type tie-breakers. Speech and Energy matter, but mostly as multipliers on the other two." },
+    { type: "h3", text: "Why does a result sometimes feel wrong even with sensible sliders?" },
+    { type: "p", text: "Almost always because of the mid bands. A slider parked between `34` and `66` carries almost no information — the model reads it as neutral — so two Miis that feel different in play can quantize identically and come out the same. The cascade order compounds this: the first matching rule wins, so an energetic but gentle Mii and an energetic but direct Mii can be separated by a single band. If a prediction clashes with how a Mii actually behaves in your game, trust the behavior and treat the code as the approximation it is." },
+    { type: "h3", text: "Does the personality change how a Mii behaves in game?" },
+    { type: "p", text: "Player observation says yes, in broad strokes: direct-speech Miis are the ones who blurt things out during quarrels and confess early, imaginative Miis are the ones who suggest odd activities, and structured Miis keep the routines the game lets them set. What the personality demonstrably does not do is lock fate — friendship levels, gift history, and random events all sit outside this system, which is exactly why our compatibility scores ship with breakdowns instead of promises." },
+    { type: "h3", text: "Is this the same MBTI test people take online?" },
+    { type: "p", text: "No — and keeping the two apart matters. The Myers-Briggs Type Indicator is a questionnaire about real people; this mapping is a translation layer between a video game's slider system and that questionnaire's four-letter vocabulary. The letters mean the same things at the axis level, but a Tomodachi Mii cannot be introverted the way a person can — it can only hold a slider value. Treat a Mii's code as a shared shorthand for its slider pattern, not as a psychological assessment of the character, and certainly not of its owner." },
+    { type: "h2", text: "Using the mapping in reverse: from MBTI code to sliders" },
+    { type: "p", text: "The table also works backwards, which is the direction most visitors actually need: you know your own MBTI code and want a Mii to match. Read the code as four slider positions and set them accordingly:" },
+    { type: "ol", items: [
+      "**First letter → Movement.** E wants Movement pushed toward fast (`67` or higher); I wants it pulled toward slow (`33` or lower).",
+      "**Second letter → Energy.** S sits at the practical end (`33` or lower); N at the imaginative end (`67` or higher).",
+      "**Third letter → Speech.** T wants direct (`67` or higher); F wants gentle (`33` or lower).",
+      "**Fourth letter → Thinking.** J wants structured (`67` or higher); P wants flexible (`33` or lower).",
+    ] },
+    { type: "p", text: "Aim for the ends of each axis rather than the middle — mid-band values are the model's soft spot, as the limits section below explains. One code needs a decision instead of a dial: [INFP](/tomodachi-life-mbti/infp) matches both the [Artist](/tomodachi-life-personality/artist) and the [Softie](/tomodachi-life-personality/softie), so pick the row whose group matches the temperament you want — self-contained **Independent** for the Artist, warm-hearted **Easygoing** for the Softie — and set the sliders to that row's signature." },
     { type: "h2", text: "The INFP anomaly: 16 personalities, 15 codes" },
     {
       type: "p",
@@ -144,7 +165,7 @@ export const postMbtiMapping: BlogPost = {
       items: [
         "**Zodiac term (50%).** A symmetric 12 × 12 zodiac matrix supplies a base chemistry score between `40` and `90` for any pair of signs. Same-sign and classic element pairs sit at the top of that range.",
         "**Base term (50%).** A flat `50` representing the model's neutral starting point before personality is considered.",
-        "**Personality modifiers.** Complementary groups (Outgoing with Independent, or Confident with Easygoing) add `+20` to romance. Two Miis from the same group lose `10` romance but gain `+20` friendship. Two Miis of the *exact same* personality lose a further `5` romance and gain a further `+10` friendship.",
+        "**Personality modifiers.** Complementary groups (Outgoing with Independent, or Confident with Easygoing) add `+20` to romance. Two Miis from the same group lose `10` romance but gain `+20` friendship. Two Miis of the **exact same** personality lose a further `5` romance and gain a further `+10` friendship.",
       ],
     },
     {

@@ -1,11 +1,15 @@
 /**
- * LifeSimGrid — Blog content model (EN-only)
+ * LifeSimGrid — Blog content model
  *
  * Blog articles are structured TS data (typed blocks) rendered by
  * BlogArticleRenderer. Keeping posts as typed data (not MDX) means:
  *   - zero new build dependencies,
  *   - the sitemap generator can parse slugs from source,
  *   - inline formatting is a tiny, XSS-safe parser (no raw HTML).
+ *
+ * EN posts live in ./posts/<slug>.ts; translations in
+ * ./posts/<locale>/<slug>.ts (same shape, same slug — only the
+ * text content is localized).
  *
  * Inline formatting supported inside any `text`/`items` string:
  *   **bold**         → <strong>
