@@ -18,21 +18,21 @@ export const postFoodFavorites: BlogPost = {
   blocks: [
     {
       type: "p",
-      text: "Every Mii in Tomodachi Life carries two hidden food assignments: a randomly generated favorite food and a randomly generated disliked food. Because the game never shows you either value, the only reliable way to know what a specific Mii loves is to feed it and watch the reaction — and the cheapest way to do that is to start with the foods its personality group favors. This guide turns that idea into a repeatable protocol: how the 48-food database behind our [food chart](/tomodachi-life-food-chart) is organized, how the five reaction levels work, what the community-estimate affinity model predicts for each of the four personality groups, and a seven-step testing loop that converts guesswork into a logged, reproducible search. Every number below comes from the site's own data files, so you can reproduce the whole method by hand.",
+      text: "Every Mii in Tomodachi Life carries two hidden food assignments: a randomly generated favorite food and a randomly generated disliked food. Because the game never shows you either value, the only reliable way to know what a specific Mii loves is to feed it and watch the reaction — and the cheapest way to do that is to start with the foods its personality group favors. This guide turns that idea into a repeatable protocol: how the 48-food database behind our [food chart](/tomodachi-life-food-chart) is organized, how the five reaction levels work, what the community-estimate affinity model predicts for each of the four personality groups, and how a seven-step testing loop converts guesswork into a logged, reproducible search. Every number below comes from the site's own data files, so you can reproduce the whole method by hand.",
     },
     { type: "h2", text: "Why favorite foods matter on your island" },
     {
       type: "p",
-      text: "Feeding a Mii its favorite food produces the strongest positive reaction in the game's food system, and that reaction is worth planning around. Community wikis and long-running player reports describe the favorite-food scene as one of the most dramatic happy animations on the island: the Mii celebrates, its mood visibly jumps, and a satisfied resident tends to show up smiling in the social events that drive friendships, romance, and proposals. Feeding the disliked food does the opposite — a clearly negative reaction. Knowing both hidden assignments therefore does two jobs at once: it gives you a reliable daily happiness lever, and it keeps you from accidentally serving the one item that ruins the mood.",
+      text: "Feeding a Mii its favorite food produces the strongest positive reaction in the game's food system, and that reaction is worth planning around. Community wikis and long-running player reports describe the favorite-food reaction as one of the most dramatic happy animations on the island: the Mii celebrates, its mood visibly jumps, and a satisfied resident tends to show up smiling in the social events that drive friendships, romance, and proposals. Feeding the disliked food does the opposite — a clearly negative reaction. Knowing both hidden assignments therefore does two jobs at once: it gives you a reliable daily happiness lever, and it keeps you from accidentally serving the one item that ruins the mood.",
     },
     {
       type: "p",
-      text: "There is a second, less obvious reason to hunt favorites: food testing is one of the few island activities that produces clean, per-Mii information. Each feeding is a controlled experiment — one resident, one food, one observable reaction — and the reaction vocabulary is small enough to log in a single tap. Once a favorite is confirmed and written down, later decisions about that resident get easier: who gets the good stuff on your daily rounds, which reactions to expect when planning [compatibility](/tomodachi-life-compatibility), and which foods to keep away from the dinner table. The rest of this guide is about making that experiment cheap — fewer feedings per confirmed favorite, and zero lost notes.",
+      text: "There is a second, less obvious reason to hunt favorites: food testing is one of the few island activities that produces clean, per-Mii information. Each feeding is a controlled experiment — one resident, one food, one observable reaction — and the reaction vocabulary is small enough to log in a single tap. Once a favorite is confirmed and written down, later decisions about that resident get easier: who gets the good stuff on your daily rounds, which reactions to expect when checking [compatibility](/tomodachi-life-compatibility), and which foods to keep away from the dinner table. The rest of this guide is about making that experiment cheap — fewer feedings per confirmed favorite, and zero lost notes.",
     },
     { type: "h2", text: "The search space: 8 categories, 48 foods, 16 common favorites" },
     {
       type: "p",
-      text: "Your search space is exactly 48 foods organized into 8 categories — drink, dessert, candy, snack, main, fruit, vegetable, and other — and knowing its shape is what makes efficient testing possible. The database is the one behind the [food chart](/tomodachi-life-food-chart). Each entry carries three properties that matter for the protocol: a stable `id` that the tracker keys on, a category, and a `commonFavorite` flag marking the 16 items the community most often sees land as favorites. The full breakdown:",
+      text: "Your search space is exactly 48 foods organized into 8 categories — drink, dessert, candy, snack, main, fruit, vegetable, and other — and knowing its shape is what makes efficient testing possible. The database is the one behind the [food chart](/tomodachi-life-food-chart). Each entry carries three properties that matter for the protocol: a stable `id` that the tracker keys on, a category, and a `commonFavorite` flag marking the 16 items that most often land as favorites. The full breakdown:",
     },
     {
       type: "table",
@@ -118,9 +118,9 @@ export const postFoodFavorites: BlogPost = {
     {
       type: "ul",
       items: [
-        "Feedings 1–5 — Chocolate, Gum, Caramel, Licorice, Candy: Chocolate lands a clear `like`, Candy another `like`, the rest `neutral`. No top-level reaction, so candy is out — and because the first session happens to cover the entire candy category, five feedings eliminated it completely.",
+        "Feedings 1–5 — Chocolate, Gum, Caramel, Licorice, Candy: Chocolate lands a clear `like`, Candy another `like`, the rest `neutral`. No top-level reaction, so candy is out — and because the first session happens to cover the entire candy category, those five feedings eliminate it completely.",
         "Feedings 6–8 — Cola, Juice, Soda: all `neutral`. Three flat common-favorite drinks in a row is weak evidence against the whole 9-item drink category, so the player parks the six untested drinks (Coffee, Tea, Milk, Water, Beer, Sake) and jumps tiers rather than grinding them out.",
-        "Feedings 9–10 — Cake, Ice Cream: Cake is `neutral`, and Ice Cream produces the unmistakable strongest positive reaction. That is the favorite.",
+        "Feedings 9–10 — Cake, Ice Cream: Cake is `neutral`, and Ice Cream produces unmistakably the strongest positive reaction. That is the favorite.",
         "Confirmation — Ice Cream goes into the favorite picker, the chart now forces `love` for it, and the progress counter reads 10 of 48 foods tested — about 21% of the database for a confirmed winner.",
       ],
     },
@@ -131,7 +131,7 @@ export const postFoodFavorites: BlogPost = {
     { type: "h2", text: "Why favorites are random — and why fixed-answer guides fail" },
     {
       type: "p",
-      text: "Any guide that prints a fixed favorite food for a given personality is describing one save file, not the game. The data file behind our chart states the situation plainly: Tomodachi Life does not publish an official food-reaction matrix, and each Mii receives a randomly generated favorite food and a randomly generated disliked food. The randomization is per resident, not per personality — two Miis with the identical personality, name, and even identical editor sliders can carry different hidden favorites.",
+      text: "Any guide that prints a fixed favorite food for a given personality is describing one save file, not the game. The data file behind our chart states the situation plainly: Nintendo publishes no official food-reaction matrix for Tomodachi Life, and each Mii receives a randomly generated favorite food and a randomly generated disliked food. The randomization is per resident, not per personality — two Miis with an identical personality, name, and even editor sliders can carry different hidden favorites.",
     },
     {
       type: "p",
@@ -140,7 +140,7 @@ export const postFoodFavorites: BlogPost = {
     { type: "h2", text: "Limits of the model (read this part)" },
     {
       type: "p",
-      text: "The affinity numbers in this guide are a community estimate, not extracted game data — Nintendo has never published the food system's internals. The presets are explicitly tuned so each group shows a distinct ranking across the categories, because a distinct ranking is what makes a 'which food to try first' recommendation possible at all. That tuning is a modeling choice. It approximates community observation closely enough to be useful for ordering your tests, and like all models it is wrong about something.",
+      text: "The affinity numbers in this guide are a community estimate, not extracted game data — Nintendo has never published the food system's internals. The presets are explicitly tuned so each group shows a distinct ranking across the categories, because that distinctness is what makes a 'which food to try first' recommendation possible at all. That tuning is a modeling choice. It approximates community observation closely enough to be useful for ordering your tests, and like all models it is wrong about something.",
     },
     {
       type: "p",

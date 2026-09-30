@@ -29,11 +29,11 @@ export const postMbtiMapping: BlogPost = {
     },
     {
       type: "p",
-      text: "**Beweging** loopt van langzaam naar snel. Een Mii met een hoge Beweging steekt het eiland over in zichtbaar minder stappen, klopt zelf op deuren aan en verschijnt in groepsscènes meestal als eerste. **Spraak** loopt van zacht naar direct. Directe Mii's geven botte antwoorden, bekennen hun gevoelens vroeg en komen tijdens ruzies met de hardere uitspraken. **Energie** loopt van praktisch naar verbeeldingsvol — praktische Mii's houden zich bezig met wat zich vlak voor hen bevindt, verbeeldingsvolle Mii's dagdromen, bedenken nieuwe activiteiten en reageren sterk op alles wat nieuw is. **Denken** loopt van flexibel naar gestructureerd: gestructureerde Mii's houden vast aan routines, houden hun meningen op orde en houden de stand bij.",
+      text: "**Beweging** loopt van langzaam naar snel. Een Mii met een hoge Beweging steekt het eiland over in zichtbaar minder stappen, klopt zelf aan de deuren en verschijnt in groepsscènes meestal als eerste. **Spraak** loopt van zacht naar direct. Directe Mii's geven botte antwoorden, bekennen hun gevoelens vroeg en komen tijdens ruzies met de hardere uitspraken. **Energie** loopt van praktisch naar verbeeldingsvol — praktische Mii's houden zich bezig met wat zich vlak voor hen bevindt, verbeeldingsvolle Mii's dagdromen, bedenken nieuwe activiteiten en reageren sterk op alles wat nieuw is. **Denken** loopt van flexibel naar gestructureerd: gestructureerde Mii's houden vast aan routines, hebben hun meningen op orde en houden de stand bij.",
     },
     {
       type: "p",
-      text: "De vier assen zijn niet willekeurig gekozen. Elke as komt overeen met precies één letter van de MBTI-code, en juist dat maakt een strakke koppeling van alle 16 typen mogelijk. Voordat het zo ver is, moet het model echter vier doorlopende waarden samenvatten tot één van 16 discrete persoonlijkheden — en dat gebeurt in drie stappen: banden, groep, daarna subtype.",
+      text: "De vier assen zijn niet willekeurig gekozen. Elke as komt overeen met precies één letter van de MBTI-code, en juist dat maakt een eenduidige koppeling van alle 16 typen mogelijk. Voordat het zo ver is, moet het model echter vier doorlopende waarden samenvatten tot één van 16 discrete persoonlijkheden — en dat gebeurt in drie stappen: banden, groep, daarna subtype.",
     },
     { type: "h2", text: "Stap 1: elke schuifregelaar wordt een van drie banden" },
     {
@@ -67,7 +67,7 @@ export const postMbtiMapping: BlogPost = {
     },
     {
       type: "p",
-      text: "Vervolgens werken de regels als een cascade in vaste volgorde. Is het intro-signaal hoog terwijl het actieve signaal laag is, dan belandt de Mii in **Groep Onafhankelijk** — de thuisbasis van de Kunstenaar, de Vrije geest, de Denker en de Eenling. Is het actieve signaal zeer hoog (`4` of meer), dan is de Mii sociaal: staat Spraak eveneens in de hoge band, dan volgt **Groep Sociaal**, anders **Groep Zelfverzekerd**. Een gemiddeld actief signaal wordt opgesplitst op basis van Beweging — een hoge Beweging houdt de Mii bij **Groep Sociaal**, al het andere schuift door naar **Groep Meegaand**. En is het actieve signaal laag zonder een sterk intro-signaal, dan belandt de Mii standaard in **Groep Meegaand**. De volgorde van de cascade is belangrijk: een introverte maar energieke Mii wordt opgelost door de eerste regel die van toepassing is, niet door middeling.",
+      text: "Vervolgens werken de regels als een cascade in vaste volgorde. Is het intro-signaal hoog terwijl het actieve signaal laag is, dan belandt de Mii in **Groep Onafhankelijk** — de thuisbasis van de Kunstenaar, de Vrije geest, de Denker en de Eenling. Is het actieve signaal zeer hoog (`4` of meer), dan is de Mii sociaal: staat Spraak eveneens in de hoge band, dan volgt **Groep Sociaal**, anders **Groep Zelfverzekerd**. Een gemiddeld actief signaal wordt opgesplitst op basis van Beweging — een hoge Beweging houdt de Mii bij **Groep Sociaal**, al het andere schuift door naar **Groep Meegaand**. En is het actieve signaal laag zonder een sterk intro-signaal, dan belandt de Mii standaard in **Groep Meegaand**. De volgorde van de cascade is belangrijk: een introverte maar energieke Mii wordt bepaald door de eerste regel die van toepassing is, niet door middeling.",
     },
     {
       type: "p",
@@ -76,7 +76,7 @@ export const postMbtiMapping: BlogPost = {
     { type: "h2", text: "Stap 3: een tweede aflezing kiest het subtype" },
     {
       type: "p",
-      text: "Zodra de groep vaststaat, kiest een tweede ronde over dezelfde banden één van de vier leden. Elke groep heeft zijn eigen beslissingsregels. In Groep Sociaal levert bijvoorbeeld een hoge Energie samen met een hoge Spraak de **Entertainer** op; een hoge Beweging met minimaal een middelste band voor Spraak geeft de **Trendsetter**; een middelste of hogere band voor Denken stuurt richting de **Leider**; en al het andere wordt de **Optimist**. De andere drie groepen volgen hetzelfde patroon met andere prioriteitsassen, en precies dat geeft elk subtype zijn herkenbare silhouet.",
+      text: "Zodra de groep vaststaat, kiest een tweede ronde over dezelfde banden één van de vier leden. Elke groep heeft zijn eigen beslissingsregels. In Groep Sociaal levert bijvoorbeeld een hoge Energie samen met een hoge Spraak de **Entertainer** op; een hoge Beweging met minimaal een middelste band voor Spraak geeft de **Trendsetter**; een middelste of hogere band voor Denken stuurt richting de **Leider**; en al het andere wordt de **Optimist**. De andere drie groepen volgen hetzelfde patroon met andere prioriteitsassen.",
     },
     {
       type: "p",
@@ -112,37 +112,37 @@ export const postMbtiMapping: BlogPost = {
     {
       type: "ol",
       items: [
-        "**E of I ← Beweging.** Een snel Mii is extravert (E); een langzaam Mii is introvert (I). Beweging is de enige as die de eerste letter bepaalt, en dat klopt met wat spelers waarnemen: de loopsnelheid is het zichtbaarste persoonlijkheidskenmerk in het spel.",
-        "**S of N ← Energie.** Een praktisch Mii is sensorisch (S); een verbeeldingsvol Mii is intuïtief (N). Deze as bepaalt hoe de Mii reageert op nieuwe items, gebeurtenissen en bewoners.",
-        "**T of F ← Spraak.** Een direct Mii is denkend (T); een zacht Mii is voelend (F). Dezelfde schuifregelaar die ruzies scherp of zacht maakt, is ook de schuifregelaar die de derde letter bepaalt.",
-        "**J of P ← Denken.** Een gestructureerd Mii is oordelend (J); een flexibel Mii is waarnemend (P). Mii's die van routines houden dragen de J, improvisatoren dragen de P.",
+        "**E of I ← Beweging.** Een snelle Mii is extravert (E); een langzame Mii is introvert (I). Beweging is de enige as die de eerste letter bepaalt, en dat klopt met wat spelers waarnemen: de loopsnelheid is het zichtbaarste persoonlijkheidskenmerk in het spel.",
+        "**S of N ← Energie.** Een praktische Mii is sensorisch (S); een verbeeldingsvolle Mii is intuïtief (N). Deze as bepaalt hoe de Mii reageert op nieuwe items, gebeurtenissen en bewoners.",
+        "**T of F ← Spraak.** Een directe Mii is denkend (T); een zachte Mii is voelend (F). Dezelfde schuifregelaar die ruzies scherp of zacht maakt, is ook de schuifregelaar die de derde letter bepaalt.",
+        "**J of P ← Denken.** Een gestructureerde Mii is oordelend (J); een flexibele Mii is waarnemend (P). Mii's die van routines houden, dragen de J, improvisatoren dragen de P.",
       ],
     },
     {
       type: "p",
-      text: "Merk op dat de code volledig bepaald wordt door de vier-assige signatuur — bewegingstempo, energiestijl, spreekstijl en denkstructuur — en **niet** door de groep. De groep is een vijfde stuk informatie, en de koppeling heeft het nodig, zoals de volgende sectie laat zien.",
+      text: "Merk op dat de code volledig bepaald wordt door de vier-assige signatuur — bewegingstempo, energiestijl, spreekstijl en denkstructuur — en **niet** door de groep. De groep is een vijfde stuk informatie, en de koppeling heeft die nodig, zoals de volgende sectie laat zien.",
     },
 
     { type: "h2", text: "Vragen die spelers over de mapping hebben" },
     { type: "h3", text: "Geven identieke schuifregelaars altijd dezelfde persoonlijkheid?" },
-    { type: "p", text: "Ja — de pijplijn is volledig deterministisch. Dezelfde vier waarden landen altijd in dezelfde banden, in dezelfde cel van de `81`, lossen in de cascade op naar dezelfde groep en kiezen hetzelfde subtype. Twee Mii's met identieke persoonlijkheidsinstellingen komen er altijd identiek uit — op deze site en, voor zover langdurige spelersobservatie reikt, ook in het spel. De enige manier waarop een ogenschijnlijk onveranderde Mii kan omslaan, is een verschuiving van één punt over een bandgrens — van `33` naar `34`, of van `66` naar `67`. Daarom verdienen grenswaarden een tweede blik voordat je je eilandplan vastlegt." },
+    { type: "p", text: "Ja — de pipeline is volledig deterministisch. Dezelfde vier waarden landen altijd in dezelfde banden, in dezelfde cel van de `81`, monden in de cascade uit in dezelfde groep en kiezen hetzelfde subtype. Twee Mii's met identieke persoonlijkheidsinstellingen komen er altijd identiek uit — op deze site en, voor zover langdurige spelersobservatie reikt, ook in het spel. De enige manier waarop een ogenschijnlijk onveranderde Mii kan omslaan, is een verschuiving van één punt over een bandgrens — van `33` naar `34`, of van `66` naar `67`. Daarom verdienen grenswaarden een tweede blik voordat je je eilandplan vastlegt." },
     { type: "h3", text: "Welke van de vier schuifregelaars weegt het zwaarst?" },
-    { type: "p", text: "**Beweging** draagt het meeste gewicht. Het is de enige as die alleen al een letter beslist (snel is E, traag is I), het is een van de drie invoeren van het actieve signaal, en het beslist de knoop tussen **Sociaal** en **Meegaand** als het actieve signaal middelmatig is. **Denken** volgt op korte afstand: het drijft alleen het introductiesignaal dat stille, naar binnen gekeerde Mii's naar de Groep Onafhankelijk stuurt, en stuurt meerdere subtype-knoppen aan. Spraak en Energie tellen mee, maar vooral als versterkers van de andere twee." },
+    { type: "p", text: "**Beweging** draagt het meeste gewicht. Het is de enige as die alleen al de eerste letter beslist (snel is E, traag is I), het is een van de drie invoeren van het actieve signaal, en het hakt de knoop door tussen **Sociaal** en **Meegaand** als het actieve signaal middelmatig is. **Denken** volgt op korte afstand: het drijft alleen het intro-signaal dat stille, naar binnen gekeerde Mii's naar de Groep Onafhankelijk stuurt, en zet daarnaast meerdere subtype-beslissingen in gang. Spraak en Energie tellen mee, maar vooral als versterkers van de andere twee." },
     { type: "h3", text: "Waarom voelt een resultaat soms verkeerd aan, ook met verstandige schuifregelaars?" },
-    { type: "p", text: "Bijna altijd door de middenbanden. Een schuifregelaar geparkeerd tussen `34` en `66` draagt bijna geen informatie — het model leest hem als neutraal — waardoor twee Mii's die zich in het spel anders voelen, identiek gekwantiseerd kunnen worden en hetzelfde opleveren. De volgorde van de cascade versterkt dat: de eerste regel die past wint, zodat een energiek en zacht Mii en een energiek en direct Mii door één enkele band gescheiden kunnen zijn. Als een voorspelling botst met hoe je Mii zich echt gedraagt, vertrouw dan op het gedrag en behandel de code als wat hij is: een benadering." },
+    { type: "p", text: "Bijna altijd door de middenbanden. Een schuifregelaar geparkeerd tussen `34` en `66` draagt bijna geen informatie — het model leest hem als neutraal — waardoor twee Mii's die zich in het spel anders voelen, in dezelfde banden kunnen landen en hetzelfde opleveren. De volgorde van de cascade versterkt dat: de eerste regel die past wint, zodat een energieke en zachte Mii en een energieke en directe Mii door één enkele band gescheiden kunnen zijn. Als een voorspelling botst met hoe je Mii zich echt gedraagt, vertrouw dan op het gedrag en behandel de code als wat hij is: een benadering." },
     { type: "h3", text: "Verandert de persoonlijkheid hoe een Mii zich in het spel gedraagt?" },
-    { type: "p", text: "Spelersobservatie zegt ja, in grote lijnen: Mii's met directe spraak gooien er tijdens ruzies alles uit en belijden vroeg, fantasierijke Mii's stellen vreemde activiteiten voor, en gestructureerde Mii's volhouden de routines die het spel ze biedt. Wat de persoonlijkheid aantoonbaar níet doet, is het lot vastzetten — vriendschapsniveaus, cadeaugeschiedenis en willekeurige gebeurtenissen zitten buiten dit systeem. Precies daarom komen onze compatibiliteitsscores met onderbouwing in plaats van beloftes." },
+    { type: "p", text: "Spelersobservatie zegt ja, in grote lijnen: Mii's met directe spraak gooien er tijdens ruzies alles uit en bekennen vroeg wat ze voelen, fantasierijke Mii's stellen vreemde activiteiten voor, en gestructureerde Mii's volhouden de routines die het spel ze biedt. Wat de persoonlijkheid aantoonbaar níet doet, is het lot vastzetten — vriendschapsniveaus, cadeaugeschiedenis en willekeurige gebeurtenissen zitten buiten dit systeem. Precies daarom komen onze compatibiliteitsscores met onderbouwing in plaats van beloftes." },
     { type: "h3", text: "Is dit dezelfde MBTI-test die mensen online doen?" },
-    { type: "p", text: "Nee — en dat onderscheid is belangrijk. De Myers-Briggs Type Indicator is een vragenlijst voor echte mensen; deze mapping is een vertaallaag tussen het schuifregelaarsysteem van een videogame en de vierletterse woordenschat van die vragenlijst. Op asniveau betekenen de letters hetzelfde, maar een Mii kan niet introvert zijn zoals een mens dat kan — het kan alleen een schuifregelaarwaarde vasthouden. Behandel de code van een Mii als een gedeelde steno voor zijn schuifregelaarpatroon, niet als een psychologische beoordeling van het personage, en zeker niet van de eigenaar." },
+    { type: "p", text: "Nee — en dat onderscheid is belangrijk. De Myers-Briggs Type Indicator is een vragenlijst voor echte mensen; deze mapping is een vertaallaag tussen het schuifregelaarsysteem van een videogame en de vierletterse woordenschat van die vragenlijst. Op het niveau van de assen betekenen de letters hetzelfde, maar een Mii kan niet introvert zijn zoals een mens dat kan — hij kan alleen een schuifregelaarwaarde vasthouden. Behandel de code van een Mii als een gedeelde steno voor zijn schuifregelaarpatroon, niet als een psychologische beoordeling van het personage, en zeker niet van de eigenaar." },
     { type: "h2", text: "Omgekeerd gebruiken: van MBTI-code naar schuifregelaars" },
-    { type: "p", text: "De tabel werkt ook achterstevoren — en dat is de richting die de meeste bezoekers eigenlijk nodig hebben: je kent je eigen MBTI-code en wilt een Mii die past. Lees de code als vier schuifregelaarposities en zet ze zo af:" },
+    { type: "p", text: "De tabel werkt ook achterstevoren — en dat is de richting die de meeste bezoekers eigenlijk nodig hebben: je kent je eigen MBTI-code en wilt een Mii die past. Lees de code als vier schuifregelaarposities en stel ze zo in:" },
     { type: "ol", items: [
       "**Eerste letter → Beweging.** E wil Beweging richting snel (`67` of hoger); I richting traag (`33` of lager).",
       "**Tweede letter → Energie.** S zit aan het praktische uiteinde (`33` of lager); N aan het fantasierijke (`67` of hoger).",
       "**Derde letter → Spraak.** T wil direct (`67` of hoger); F wil zacht (`33` of lager).",
       "**Vierde letter → Denken.** J wil gestructureerd (`67` of hoger); P wil flexibel (`33` of lager).",
     ] },
-    { type: "p", text: "Streef naar de uiteinden van elke as, niet naar het midden — middenbanden zijn de zwakke plek van het model, zoals de limietenparagraaf hieronder uitlegt. Eén code vraagt om een keuze in plaats van een instelling: [INFP](/nl/tomodachi-life-mbti/infp) past bij zowel de [Kunstenaar](/nl/tomodachi-life-personality/artist) als de [Zachtmoedig](/nl/tomodachi-life-personality/softie). Kies de rij waarvan de groep bij het gewenste temperament hoort — teruggetrokken **Onafhankelijk** voor de Kunstenaar, hartelijk **Meegaand** voor de Zachtmoedig — en zet de schuifregelaars op de signatuur van die rij." },
+    { type: "p", text: "Streef naar de uiteinden van elke as, niet naar het midden — middenbanden zijn de zwakke plek van het model, zoals de paragraaf over de grenzen hieronder uitlegt. Eén code vraagt om een keuze in plaats van een instelling: [INFP](/nl/tomodachi-life-mbti/infp) past bij zowel de [Kunstenaar](/nl/tomodachi-life-personality/artist) als de [Zachtmoedig](/nl/tomodachi-life-personality/softie). Kies de rij waarvan de groep bij het gewenste temperament hoort — teruggetrokken **Onafhankelijk** voor de Kunstenaar, hartelijk **Meegaand** voor de Zachtmoedig — en zet de schuifregelaars op de signatuur van die rij." },
     { type: "h2", text: "De INFP-anomalie: 16 persoonlijkheden, 15 codes" },
     {
       type: "p",
@@ -154,7 +154,7 @@ export const postMbtiMapping: BlogPost = {
     },
     {
       type: "p",
-      text: "De praktische consequentie: met MBTI alleen kun je een [Kunstenaar](/nl/tomodachi-life-personality/artist) niet van een [Zachtmoedig](/nl/tomodachi-life-personality/softie) onderscheiden. Als je een eilandbezetting op basis van MBTI-codes plant, onthoud dan dat INFP dubbelzinnig is, en controleer de groep (of de persoonlijkheidspagina) om te zien welke van de twee een bepaald Mii werkelijk is. Elke andere code in de tabel koppelt aan precies één persoonlijkheid.",
+      text: "De praktische consequentie: met MBTI alleen kun je een [Kunstenaar](/nl/tomodachi-life-personality/artist) niet van een [Zachtmoedig](/nl/tomodachi-life-personality/softie) onderscheiden. Als je een eilandbezetting op basis van MBTI-codes plant, onthoud dan dat INFP dubbelzinnig is, en controleer de groep (of de persoonlijkheidspagina) om te zien welke van de twee een bepaalde Mii werkelijk is. Elke andere code in de tabel koppelt aan precies één persoonlijkheid.",
     },
     { type: "h2", text: "Hoe het compatibiliteitsmodel dezelfde groepen gebruikt" },
     {
@@ -164,7 +164,7 @@ export const postMbtiMapping: BlogPost = {
     {
       type: "ul",
       items: [
-        "**Dierenriemterm (50%).** Een symmetrische 12 × 12 dierenriemmatrix levert voor elk willekeurig paar tekens een basischemiescore op tussen `40` en `90`. Paren met hetzelfde teken en klassieke elementparen staan bovenaan dat bereik.",
+        "**Dierenriemterm (50%).** Een symmetrische 12 × 12 dierenriemmatrix levert voor elk willekeurig paar dierenriemtekens een basischemiescore op tussen `40` en `90`. Paren met hetzelfde teken en klassieke elementparen staan bovenaan dat bereik.",
         "**Basisterm (50%).** Een vlakke `50` die het neutrale startpunt van het model vertegenwoordigt, voordat persoonlijkheid wordt meegewogen.",
         "**Persoonlijkheidsmodificatoren.** Aanvullende groepen (Sociaal met Onafhankelijk, of Zelfverzekerd met Meegaand) tellen `+20` op bij romantiek. Twee Mii's uit dezelfde groep verliezen `10` romantiek maar winnen `+20` vriendschap. Twee Mii's met **exact dezelfde** persoonlijkheid verliezen nog eens `5` romantiek en winnen nog eens `+10` vriendschap.",
       ],
@@ -175,7 +175,7 @@ export const postMbtiMapping: BlogPost = {
     },
     {
       type: "callout",
-      text: "De aanvullendheidbonus per groep codeert de meest consistente waarneming van de community over relaties in Tomodachi Life: paren met tegengesteld temperament (snel met langzaam, direct met zacht) genereren de meeste romantiekgebeurtenissen, terwijl paren uit dezelfde groep de stabielste vriendschappen voortbrengen. Het is een modelkeuze, geen constante in het spel.",
+      text: "De bonus voor aanvullende groepen codeert de meest consistente waarneming van de community over relaties in Tomodachi Life: paren met tegengesteld temperament (snel met langzaam, direct met zacht) genereren de meeste romantiekgebeurtenissen, terwijl paren uit dezelfde groep de stabielste vriendschappen voortbrengen. Het is een modelkeuze, geen constante in het spel.",
     },
     { type: "h2", text: "Probeer het model zelf uit" },
     {
@@ -198,7 +198,7 @@ export const postMbtiMapping: BlogPost = {
     },
     {
       type: "p",
-      text: "Drie kanttekeningen om in je achterhoofd te houden. Ten eerste zijn schuifregelaars in de middelste band (`34 – 66`) de zachte plek van het model: kleine aanpassingen vlak bij de drempels kunnen een band doen omslaan en daarmee de voorspelde persoonlijkheid wijzigen, dus behandel resultaten vlak bij de grens als voorlopig. Ten tweede betekent de hierboven beschreven INFP-botsing dat plannen op basis van MBTI informatie verliest die plannen op basis van persoonlijkheid juist wél bewaart. Ten derde hangen uitkomsten in het spel ook af van factoren die dit model niet aanraakt — eilandgebeurtenissen, de cadeaugeschiedenis en de random seed achter de reacties van elke Mii — dus compatibiliteitsscores zijn vertrekpunten voor verhalen, geen garanties daarvoor.",
+      text: "Drie kanttekeningen om in je achterhoofd te houden. Ten eerste zijn schuifregelaars in de middelste band (`34 – 66`) de zwakke plek van het model: kleine aanpassingen vlak bij de drempels kunnen een band doen omslaan en daarmee de voorspelde persoonlijkheid wijzigen, dus behandel resultaten vlak bij de grens als voorlopig. Ten tweede betekent de hierboven beschreven INFP-botsing dat plannen op basis van MBTI informatie verliest die plannen op basis van persoonlijkheid juist wél bewaart. Ten derde hangen uitkomsten in het spel ook af van factoren die dit model niet aanraakt — eilandgebeurtenissen, de cadeaugeschiedenis en de random seed achter de reacties van elke Mii — dus compatibiliteitsscores zijn vertrekpunten voor verhalen, geen garanties daarvoor.",
     },
     {
       type: "callout",

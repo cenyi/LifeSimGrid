@@ -43,22 +43,24 @@ export default function AvatarEditor() {
 
   const isBatchMode = batchItems.length > 0;
 
-  /** Parses avatar binary data from a QR code and extracts basic properties */
+  /** Parses avatar binary data from a QR code and extracts basic properties.
+   *  Field offsets follow the documented Mii format (3dbrew / @pretendonetwork/mii-js):
+   *  name UTF-16LE at 0x1A–0x2D, copy-allow flag at 0x01 bit 0, gender bit at 0x18 bit 0,
+   *  share-disable flag at 0x30 bit 0. */
   function parseAvatarFromBuffer(buffer: Uint8Array): AvatarData | null {
     try {
-      const nameBytes = buffer.slice(2, 22);
+      const nameBytes = buffer.slice(0x1a, 0x2e);
       let name = "";
       for (let i = 0; i < nameBytes.length; i += 2) {
-        const charCode = (nameBytes[i] << 8) | nameBytes[i + 1];
+        const charCode = nameBytes[i] | (nameBytes[i + 1] << 8);
         if (charCode === 0) break;
         name += String.fromCharCode(charCode);
       }
 
-      const sharingByte = buffer[0x04] ?? 0;
-      const copying = (sharingByte & 0x01) !== 0;
-      const sharing = (sharingByte & 0x02) !== 0;
+      const copying = ((buffer[0x01] ?? 0) & 0x01) !== 0;
+      const sharing = ((buffer[0x30] ?? 0) & 0x01) === 0;
 
-      const genderByte = buffer[0x01] ?? 0;
+      const genderByte = buffer[0x18] ?? 0;
       const gender = genderByte & 0x01;
 
       return { name, copying, sharing, gender, buffer };
@@ -71,6 +73,11 @@ export default function AvatarEditor() {
   function applyUnlock(buffer: Uint8Array, copy: boolean, share: boolean, name?: string): Uint8Array {
     const newBuffer = new Uint8Array(buffer);
 
+    // Documented permission flags: copy-allow at 0x01 bit 0, share-disable at 0x30 bit 0.
+    if (copy) newBuffer[0x01] = (newBuffer[0x01] ?? 0) | 0x01;
+    if (share) newBuffer[0x30] = (newBuffer[0x30] ?? 0) & 0xfe;
+
+    // Ownership rewrite at 0x04 (first System ID byte) — established unlock mechanism.
     if (copy || share) {
       let flags = newBuffer[0x04] ?? 0;
       if (copy) flags |= 0x01;
@@ -82,10 +89,10 @@ export default function AvatarEditor() {
       const nameBuffer = new Uint8Array(20);
       for (let i = 0; i < Math.min(name.length, 10); i++) {
         const code = name.charCodeAt(i);
-        nameBuffer[i * 2] = (code >> 8) & 0xff;
-        nameBuffer[i * 2 + 1] = code & 0xff;
+        nameBuffer[i * 2] = code & 0xff;
+        nameBuffer[i * 2 + 1] = (code >> 8) & 0xff;
       }
-      newBuffer.set(nameBuffer, 2);
+      newBuffer.set(nameBuffer, 0x1a);
     }
 
     return newBuffer;

@@ -29,11 +29,11 @@ export const postMbtiMapping: BlogPost = {
     },
     {
       type: "p",
-      text: "O **Movimento** vai de lento a rápido. Um Mii com Movimento alto atravessa a ilha em visivelmente menos passos, bate às portas por iniciativa própria e tende a aparecer primeiro nas cenas de grupo. A **Fala** vai de suave a direta. Os Miis diretos dão respostas cruas, confessam sentimentos cedo e largam as frases mais duras nas discussões. A **Energia** vai do prático ao imaginativo — os Miis práticos ocupam-se do que têm à frente, os Miis imaginativos sonham acordados, propõem novas atividades e reagem com força às novidades. O **Pensamento** vai do flexível ao estruturado: os Miis estruturados mantêm rotinas, mantêm as opiniões arrumadas e não perdem as contas.",
+      text: "O **Movimento** vai de lento a rápido. Um Mii com Movimento alto atravessa a ilha em visivelmente menos passos, bate às portas por iniciativa própria e tende a aparecer primeiro nas cenas de grupo. A **Fala** vai de suave a direta. Os Miis diretos dão respostas cruas, confessam sentimentos cedo e largam as frases mais duras nas discussões. A **Energia** vai do prático ao imaginativo — os Miis práticos ocupam-se do que têm pela frente, os Miis imaginativos sonham acordados, propõem novas atividades e reagem com força às novidades. O **Pensamento** vai do flexível ao estruturado: os Miis estruturados mantêm rotinas, têm as opiniões arrumadas e nunca perdem a conta.",
     },
     {
       type: "p",
-      text: "Os quatro eixos não foram escolhidos ao acaso. Cada um corresponde exatamente a uma letra do código MBTI, e é isso que torna sequer possível um mapeamento limpo de 16 tipos. Antes de lá chegarmos, porém, o modelo tem de comprimir quatro valores contínuos numa de 16 personalidades discretas — e fá-lo em três passagens: bandas, grupo e depois subtipo.",
+      text: "Os quatro eixos não foram escolhidos ao acaso. Cada um corresponde exatamente a uma letra do código MBTI, e é isso que torna possível um mapeamento limpo de 16 tipos. Antes de lá chegarmos, porém, o modelo tem de comprimir quatro valores contínuos numa de 16 personalidades discretas — e fá-lo em três passagens: bandas, grupo e depois subtipo.",
     },
     { type: "h2", text: "Passagem 1: cada controlo torna-se uma de três bandas" },
     {
@@ -51,7 +51,7 @@ export const postMbtiMapping: BlogPost = {
     },
     {
       type: "p",
-      text: "Três bandas por controlo, em quatro controlos, dão `3 × 3 × 3 × 3 = 81` células de controlo possíveis. São claramente mais do que as 16 personalidades que o jogo na verdade oferece — por isso é necessária uma segunda passagem para fundir células semelhantes, e é por isso que várias combinações diferentes de controlos podem acabar na mesma personalidade. Se alguma vez juraste que dois dos teus Miis tinham posições de controlo diferentes mas a mesma personalidade, esta é a razão: os 16 resultados do jogo são mais grosseiros do que as suas entradas de controlo.",
+      text: "Três bandas por controlo, em quatro controlos, dão `3 × 3 × 3 × 3 = 81` células de controlo possíveis. São claramente mais do que as 16 personalidades que o jogo na verdade oferece — por isso é necessária uma segunda passagem para fundir células semelhantes; daí que várias combinações diferentes de controlos possam acabar na mesma personalidade. Se alguma vez juraste que dois dos teus Miis tinham posições de controlo diferentes mas a mesma personalidade, esta é a razão: os 16 resultados do jogo são mais grosseiros do que as suas entradas de controlo.",
     },
     { type: "h2", text: "Passagem 2: as bandas escolhem um de quatro grupos" },
     {
@@ -67,7 +67,7 @@ export const postMbtiMapping: BlogPost = {
     },
     {
       type: "p",
-      text: "As regras aplicam-se depois em cascata e por ordem. Se o sinal intro está alto enquanto o sinal ativo está baixo, o Mii fica no **Grupo Independente** — a casa do Artista, do Espírito Livre, do Pensador e do Lobo Solitário. Se o sinal ativo é muito alto (`4` ou mais), o Mii é sociável: entra no **Grupo Extrovertido** quando a Fala também está na banda alta, e no **Grupo Confiante** caso contrário. Um sinal ativo intermédio divide-se pelo Movimento — o Movimento alto mantém o Mii no **Grupo Extrovertido**, tudo o resto desliza para o **Grupo Calmo**. E quando o sinal ativo está baixo sem um sinal intro forte, o Mii acomoda-se por defeito no **Grupo Calmo**. A ordem da cascata importa: um Mii introvertido mas enérgico resolve-se pela primeira regra que cumpre, não por média.",
+      text: "As regras aplicam-se depois em cascata e por ordem. Se o sinal intro está alto enquanto o sinal ativo está baixo, o Mii fica no **Grupo Independente** — a casa do Artista, do Espírito Livre, do Pensador e do Lobo Solitário. Se o sinal ativo é muito alto (`4` ou mais), o Mii é sociável: entra no **Grupo Extrovertido** quando a Fala também está na banda alta, e no **Grupo Confiante** caso contrário. Um sinal ativo intermédio resolve-se pelo Movimento — o Movimento alto mantém o Mii no **Grupo Extrovertido**, tudo o resto desliza para o **Grupo Calmo**. E quando o sinal ativo está baixo sem um sinal intro forte, o Mii fica, por defeito, no **Grupo Calmo**. A ordem da cascata importa: um Mii introvertido mas enérgico resolve-se pela primeira regra que cumpre, não por média.",
     },
     {
       type: "p",
@@ -76,7 +76,7 @@ export const postMbtiMapping: BlogPost = {
     { type: "h2", text: "Passagem 3: uma segunda leitura escolhe o subtipo" },
     {
       type: "p",
-      text: "Logo que o grupo está definido, uma segunda passagem sobre as mesmas bandas seleciona um dos seus quatro membros. Cada grupo tem os seus próprios critérios de desempate. No Grupo Extrovertido, por exemplo, Energia alta juntamente com Fala alta produz o **Animador**; Movimento alto com pelo menos Fala média dá o **Inovador**; uma banda de Pensamento média ou mais alta encaminha para o **Líder**; e tudo o resto se torna o **Otimista**. Os outros três grupos seguem o mesmo padrão com eixos prioritários diferentes, e é isso que dá a cada subtipo a sua silhueta reconhecível.",
+      text: "Logo que o grupo está definido, uma segunda passagem sobre as mesmas bandas seleciona um dos seus quatro membros. Cada grupo tem os seus próprios critérios de desempate. No Grupo Extrovertido, por exemplo, Energia alta juntamente com Fala alta produz o **Animador**; Movimento alto com pelo menos Fala média dá o **Inovador**; uma banda de Pensamento média ou mais alta encaminha para o **Líder**; e tudo o resto se torna o **Otimista**. Os outros três grupos seguem o mesmo padrão com eixos prioritários diferentes.",
     },
     {
       type: "p",
@@ -112,49 +112,49 @@ export const postMbtiMapping: BlogPost = {
     {
       type: "ol",
       items: [
-        "**E ou I ← Movimento.** Um Mii rápido é extravertido (E); um Mii lento é introvertido (I). O Movimento é o único eixo que decide a primeira letra, o que corresponde ao que os jogadores observam: a velocidade de marcha é o sinal de personalidade mais visível do jogo.",
+        "**E ou I ← Movimento.** Um Mii rápido é extrovertido (E); um Mii lento é introvertido (I). O Movimento é o único eixo que decide a primeira letra, o que corresponde ao que os jogadores observam: a velocidade de marcha é o sinal de personalidade mais visível do jogo.",
         "**S ou N ← Energia.** Um Mii prático é sensorial (S); um Mii imaginativo é intuitivo (N). Este eixo governa a forma como o Mii reage a novos itens, eventos e residentes.",
-        "**T ou F ← Fala.** Um Mii direto é de Pensamento (T); um Mii suave é de Sentimento (F). O mesmo controlo que torna as discussões afiadas ou suaves é o que decide a terceira letra.",
-        "**J ou P ← Pensamento.** Um Mii estruturado é julgador (J); um Mii flexível é perceptivo (P). Os Miis que amam rotinas carregam o J, os improvisadores carregam o P.",
+        "**T ou F ← Fala.** Um Mii direto decide pela razão (T); um Mii suave decide pelo sentimento (F). O mesmo controlo que torna as discussões afiadas ou suaves é o que decide a terceira letra.",
+        "**J ou P ← Pensamento.** Um Mii estruturado é julgador (J); um Mii flexível é perceptivo (P). Os Miis que amam rotinas têm o J; os improvisadores têm o P.",
       ],
     },
     {
       type: "p",
-      text: "Repara que o código é totalmente determinado pela assinatura dos quatro eixos — velocidade de Movimento, estilo de Energia, estilo de Fala e estrutura de Pensamento — e **não** pelo grupo. O grupo é uma quinta informação, e o mapeamento precisa dela, como a próxima secção mostra.",
+      text: "Repara que o código é totalmente determinado pela assinatura dos quatro eixos — velocidade de Movimento, estilo de Energia, estilo de Fala e estrutura de Pensamento — e **não** pelo grupo. O grupo é uma quinta informação, e o mapeamento precisa dela, como a secção sobre compatibilidade mostra.",
     },
 
     { type: "h2", text: "Perguntas que os jogadores fazem sobre o mapeamento" },
     { type: "h3", text: "Controlos iguais produzem sempre a mesma personalidade?" },
-    { type: "p", text: "Sim — o processo é totalmente determinista. Os mesmos quatro valores caem sempre nas mesmas bandas, aterram na mesma célula das `81`, resolvem-se no mesmo grupo na cascata e escolhem o mesmo subtipo. Dois Miis registados com definições idênticas sairão sempre idênticos, neste site e, por tudo o que os jogadores observaram ao longo do tempo, também no jogo. A única forma de um Mii aparentemente inalterado mudar é um empurrão de um ponto através do limite de uma banda — de `33` para `34`, ou de `66` para `67` — e é por isso que os valores fronteira merecem um segundo olhar antes de fechar o plano da ilha." },
+    { type: "p", text: "Sim — o processo é totalmente determinista. Os mesmos quatro valores caem sempre nas mesmas bandas, aterram na mesma célula das `81`, resolvem-se no mesmo grupo na cascata e escolhem o mesmo subtipo. Dois Miis registados com definições idênticas sairão sempre idênticos, neste site e, por tudo o que os jogadores observaram ao longo do tempo, também no jogo. A única forma de um Mii aparentemente inalterado mudar é um empurrão de um único ponto através do limiar de uma banda — de `33` para `34`, ou de `66` para `67` — e é por isso que os valores fronteira merecem uma segunda olhadela antes de fechar o plano da ilha." },
     { type: "h3", text: "Qual dos quatro controlos pesa mais?" },
-    { type: "p", text: "**Movimento** carrega o maior peso. É o único eixo que decide sozinho uma letra (rápido é E, lento é I), alimenta o sinal ativo e desempata entre **Extrovertido** e **Calmo** quando o sinal ativo é morno. **Pensamento** vem logo a seguir: sozinho move o sinal de introspeção que leva os Miis reservados ao Grupo Independente e orienta vários desempates de subtipo. Fala e Energia contam, mas sobretudo como multiplicadores dos outros dois." },
+    { type: "p", text: "**Movimento** carrega o maior peso. É o único eixo que decide sozinho a primeira letra (rápido é E, lento é I), alimenta o sinal ativo e desempata entre **Extrovertido** e **Calmo** quando o sinal ativo é morno. **Pensamento** vem logo a seguir: sozinho move o sinal intro que leva os Miis reservados ao Grupo Independente e orienta vários desempates de subtipo. Fala e Energia contam, mas sobretudo como multiplicadores dos outros dois." },
     { type: "h3", text: "Porque é que um resultado às vezes parece errado mesmo com controlos sensatos?" },
     { type: "p", text: "Quase sempre por causa das bandas médias. Um controlo estacionado entre `34` e `66` quase não transporta informação — o modelo lê-no como neutro —, pelo que dois Miis que se sentem diferentes em jogo podem ser quantizados da mesma forma e sair iguais. A ordem da cascata agrava isto: ganha a primeira regra que se aplica, e um Mii enérgico e doce pode ficar separado de um enérgico e direto por uma única banda. Se uma previsão contradiz o comportamento real do teu Mii, confia no comportamento e trata o código como o que é: uma aproximação." },
     { type: "h3", text: "A personalidade muda o comportamento do Mii no jogo?" },
     { type: "p", text: "A observação dos jogadores diz que sim, em traços gerais: os Miis de fala direta soltam as coisas durante as discussões e confessam cedo, os imaginativos sugerem atividades estranhas e os estruturados mantêm as rotinas que o jogo lhes permite definir. O que a personalidade claramente não faz é fixar o destino — níveis de amizade, histórico de presentes e eventos aleatórios vivem fora deste sistema. É precisamente por isso que as nossas pontuações de compatibilidade chegam com desdobramento em vez de promessas." },
     { type: "h3", text: "É o mesmo teste MBTI que as pessoas fazem online?" },
-    { type: "p", text: "Não — e manter os dois separados importa. O Myers-Briggs Type Indicator é um questionário sobre pessoas reais; este mapeamento é uma camada de tradução entre o sistema de controlos de um videojogo e o vocabulário de quatro letras desse questionário. As letras significam o mesmo ao nível dos eixos, mas um Mii não pode ser introvertido como uma pessoa é — só pode ter um valor de controlo. Trata o código de um Mii como uma abreviatura partilhada do seu padrão de controlos, não como uma avaliação psicológica da personagem e muito menos do dono." },
-    { type: "h2", text: "A usar o mapeamento ao contrário: do código MBTI aos controlos" },
+    { type: "p", text: "Não — e importa manter os dois separados. O Myers-Briggs Type Indicator é um questionário sobre pessoas reais; este mapeamento é uma camada de tradução entre o sistema de controlos de um videojogo e o vocabulário de quatro letras desse questionário. As letras significam o mesmo ao nível dos eixos, mas um Mii não pode ser introvertido da forma como uma pessoa o é — só pode ter um valor de controlo. Trata o código de um Mii como uma abreviatura partilhada do seu padrão de controlos, não como uma avaliação psicológica da personagem e muito menos do dono." },
+    { type: "h2", text: "Usar o mapeamento ao contrário: do código MBTI aos controlos" },
     { type: "p", text: "A tabela também funciona ao contrário — e é a direção de que a maioria dos visitantes precisa: conheces o teu código MBTI e queres um Mii à altura. Lê o código como quatro posições de controlo e ajusta-as assim:" },
     { type: "ol", items: [
-      "**Primeira letra → Movimento.** E quer Movimento para rápido (`67` ou mais); I para lento (`33` ou menos).",
+      "**Primeira letra → Movimento.** E quer Movimento rápido (`67` ou mais); I quer Movimento lento (`33` ou menos).",
       "**Segunda letra → Energia.** S senta-se no extremo prático (`33` ou menos); N no imaginativo (`67` ou mais).",
       "**Terceira letra → Fala.** T quer direto (`67` ou mais); F quer doce (`33` ou menos).",
       "**Quarta letra → Pensamento.** J quer estruturado (`67` ou mais); P quer flexível (`33` ou menos).",
     ] },
-    { type: "p", text: "Mira nas extremidades de cada eixo e não no meio — as bandas médias são o ponto fraco do modelo, como a secção de limites explica. Um código pede uma decisão em vez de um ajuste: [INFP](/pt/tomodachi-life-mbti/infp) corresponde tanto ao [Artista](/pt/tomodachi-life-personality/artist) como ao [Sensível](/pt/tomodachi-life-personality/softie); escolhe a linha cujo grupo corresponde ao temperamento pretendido — **Independente** contido para o Artista, **Calmo** afetuoso para o Sensível — e põe os controlos na assinatura dessa linha." },
+    { type: "p", text: "Olha para as extremidades de cada eixo e não para o meio — as bandas médias são o ponto fraco do modelo, como explica a secção de limites. Um código pede uma decisão em vez de um ajuste: [INFP](/pt/tomodachi-life-mbti/infp) corresponde tanto ao [Artista](/pt/tomodachi-life-personality/artist) como ao [Sensível](/pt/tomodachi-life-personality/softie); escolhe a linha cujo grupo corresponde ao temperamento pretendido — **Independente** contido para o Artista, **Calmo** afetuoso para o Sensível — e põe os controlos de acordo com a assinatura dessa linha." },
     { type: "h2", text: "A anomalia INFP: 16 personalidades, 15 códigos" },
     {
       type: "p",
-      text: "Conta as entradas da coluna MBTI na tabela acima e vais encontrar apenas 15 códigos únicos. Duas personalidades — o **Artista** e o **Sensível** — mapeiam ambas para [INFP](/pt/tomodachi-life-mbti/infp). Não é um erro de escrita; é uma propriedade estrutural de qualquer mapeamento de 16 para 16 que passe por quatro eixos.",
+      text: "Conta as entradas da coluna MBTI na tabela acima e vais encontrar apenas 15 códigos únicos. Duas personalidades — o **Artista** e o **Sensível** — mapeiam ambas para [INFP](/pt/tomodachi-life-mbti/infp). Não é um erro de escrita; é uma propriedade estrutural de qualquer tentativa de mapear 16 personalidades em 16 códigos que passe por quatro eixos.",
     },
     {
       type: "p",
-      text: "O Artista e o Sensível partilham exatamente a mesma assinatura de controlos: lento, suave, imaginativo e flexível. O que os separa é o grupo. O Artista vive no Grupo Independente, onde o modelo lê essa assinatura como a de um sonhador reservado, voltado para o mundo interior. O Sensível vive no Grupo Calmo, onde a assinatura idêntica se torna um residente manso e abertamente afetuoso. Em termos de jogo, podes pensar neles como as mesmas quatro leituras de eixos vestidas com dois trajes sociais diferentes — um guarda as distâncias, o outro aproxima-se.",
+      text: "O Artista e o Sensível partilham exatamente a mesma assinatura de controlos: lento, suave, imaginativo e flexível. O que os separa é o grupo. O Artista vive no Grupo Independente, onde o modelo lê essa assinatura como a de alguém reservado, voltado para o mundo interior. O Sensível vive no Grupo Calmo, onde a assinatura idêntica produz um residente manso e abertamente afetuoso. Em termos de jogo, podes pensar neles como as mesmas quatro leituras de eixos vestidas com dois trajes sociais diferentes — um guarda as distâncias, o outro aproxima-se.",
     },
     {
       type: "p",
-      text: "A consequência prática: o MBTI sozinho não consegue distinguir um [Artista](/pt/tomodachi-life-personality/artist) de um [Sensível](/pt/tomodachi-life-personality/softie). Se estás a planear o plantel da ilha por códigos MBTI, lembra-te de que o INFP é ambíguo e verifica o grupo (ou a página da personalidade) para ver qual dos dois um dado Mii afinal é. Todos os outros códigos da tabela mapeiam exatamente para uma personalidade.",
+      text: "A consequência prática: o MBTI sozinho não consegue distinguir um [Artista](/pt/tomodachi-life-personality/artist) de um [Sensível](/pt/tomodachi-life-personality/softie). Se estás a planear o plantel da ilha por códigos MBTI, lembra-te de que o INFP é ambíguo e verifica o grupo (ou a página da personalidade) para ver qual dos dois um dado Mii afinal é. Todos os outros códigos da tabela mapeiam para exatamente uma personalidade.",
     },
     { type: "h2", text: "Como o modelo de compatibilidade usa os mesmos grupos" },
     {
@@ -166,12 +166,12 @@ export const postMbtiMapping: BlogPost = {
       items: [
         "**Termo zodiacal (50%).** Uma matriz zodiacal simétrica de 12 × 12 fornece uma pontuação base de química entre `40` e `90` para qualquer par de signos. Os pares do mesmo signo e os pares clássicos de elementos situam-se no topo dessa gama.",
         "**Termo base (50%).** Um `50` fixo que representa o ponto de partida neutro do modelo antes de a personalidade ser considerada.",
-        "**Modificadores de personalidade.** Grupos complementares (Grupo Extrovertido com Grupo Independente, ou Grupo Confiante com Grupo Calmo) somam `+20` ao romance. Dois Miis do mesmo grupo perdem `10` de romance mas ganham `+20` de amizade. Dois Miis com a personalidade **exatamente igual** perdem mais `5` de romance e ganham mais `+10` de amizade.",
+        "**Modificadores de personalidade.** Grupos complementares (Grupo Extrovertido com Grupo Independente, ou Grupo Confiante com Grupo Calmo) somam `+20` ao romance. Dois Miis do mesmo grupo perdem `10` de romance mas ganham `+20` de amizade. Dois Miis com a personalidade **exatamente igual** perdem `5` adicionais de romance e ganham `+10` adicionais de amizade.",
       ],
     },
     {
       type: "p",
-      text: "A pontuação final é a soma dos dois termos mais o modificador, arredondada e limitada a `0 – 100`. A fórmula é deliberadamente simples e é a mesma que o nosso [matchmaker de romance](/pt/tomodachi-life-romance-matcher) usa: `romance = zodiacScore × 0.5 + 50 × 0.5 + romanceModifier`. A transparência é o ponto — um número que não podes decompor é um número em que não podes confiar, e cada pontuação que o site mostra vem com o seu desdobramento.",
+      text: "A pontuação final é a soma dos dois termos mais o modificador, arredondada e limitada a `0 – 100`. A fórmula é deliberadamente simples e é a mesma que o nosso [matchmaker de romance](/pt/tomodachi-life-romance-matcher) usa: `romance = zodiacScore × 0.5 + 50 × 0.5 + romanceModifier`. A transparência é o objetivo — um número que não podes decompor é um número em que não podes confiar, e cada pontuação que o site mostra vem com o seu desdobramento.",
     },
     {
       type: "callout",

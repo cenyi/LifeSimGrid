@@ -34,7 +34,7 @@ export const postVoiceSynthesis: BlogPost = {
     { type: "h2", text: "Die Synthese-Pipeline, Knoten für Knoten" },
     {
       type: "p",
-      text: "Jeder Klang, den das Labor erzeugt, durchläuft genau drei Verarbeitungsknoten zwischen dem Oszillator und Ihren Lautsprechern. Für jede Wiedergabe wird ein frischer `AudioContext` erstellt — das Labor hält nie einen globalen Audiographen am Leben —, und jede Silbe plant darin ihr eigenes Set an Knoten:",
+      text: "Jeder Klang, den das Labor erzeugt, entsteht im selben Drei-Knoten-Graphen — Oszillator, Filter, Gain — und erreicht über die letzten beiden Ihre Lautsprecher. Für jede Wiedergabe wird ein frischer `AudioContext` erstellt — das Labor hält nie einen globalen Audiographen am Leben —, und jede Silbe plant darin ihr eigenes Set an Knoten:",
     },
     {
       type: "code",
@@ -42,7 +42,7 @@ export const postVoiceSynthesis: BlogPost = {
     },
     {
       type: "p",
-      text: "Der `OscillatorNode` ist die Klangquelle. Sein `type` stammt aus dem gewählten Preset (`sawtooth` bei vier der fünf Presets, `square` beim Roboter), und seine `frequency` wird vom Tonhöhen-Regler gesetzt. Weil ein Oszillator ein nackter Wellenform-Generator ist, hat er keine eigenen Klangfarben-Regler — alles, was ein Preset anders klingen lässt als ein anderes, ist nachgelagertes Parameter-Scheduling.",
+      text: "Der `OscillatorNode` ist die Klangquelle. Sein `type` stammt aus dem gewählten Preset (`sawtooth` bei vier der fünf Presets, `square` beim Roboter), und seine `frequency` wird vom Tonhöhen-Regler gesetzt. Weil ein Oszillator ein bloßer Wellenform-Generator ist, hat er keine eigenen Klangfarben-Regler — alles, was ein Preset anders klingen lässt als ein anderes, ist nachgelagertes Parameter-Scheduling.",
     },
     {
       type: "p",
@@ -50,16 +50,16 @@ export const postVoiceSynthesis: BlogPost = {
     },
     {
       type: "p",
-      text: "Im `GainNode` lebt die Hüllkurve, geplant mit vier Automatisierungspunkten. Die Verstärkung beginnt bei `0` zum Startzeitpunkt der Silbe, steigt über die Attack-Zeit linear auf den Zielwert des Presets (`0.2 – 0.3`), hält diesen Wert bis eine Release-Zeit vor dem Ende und fällt dann linear auf `0` zurück. Die Aufrufe sind `setValueAtTime()` für die Anker und `linearRampToValueAtTime()` für die Rampen — eine schlichte Attack/Hold/Release-Hüllkurve ohne exponentielle Kurven, was den Klang charakteristisch abrupt hält, wie es zur 8-Bit-Gestaltung passt.",
+      text: "Im `GainNode` lebt die Hüllkurve, geplant mit vier Automatisierungspunkten. Die Verstärkung beginnt bei `0` zum Startzeitpunkt der Silbe, steigt über die Attack-Zeit linear auf den Zielwert des Presets (`0.2 – 0.3`), hält diesen Wert, bis eine Release-Zeit vor dem Ende erreicht ist, und fällt dann linear auf `0` zurück. Die Aufrufe sind `setValueAtTime()` für die Anker und `linearRampToValueAtTime()` für die Rampen — eine schlichte Attack/Hold/Release-Hüllkurve ohne exponentielle Kurven, was den Klang charakteristisch abrupt hält, wie es zur 8-Bit-Gestaltung passt.",
     },
     {
       type: "p",
-      text: "Ein optionales viertes Knoten-Paar existiert: Vibrato. Wenn ein Preset es aktiviert, läuft ein zweiter `OscillatorNode` als LFO (Niederfrequenzoszillator) mit der `vibratoRate` des Presets und speist einen `GainNode`, der auf die `vibratoDepth` gesetzt und mit dem `frequency`-Parameter des Haupt-Oszillators verbunden ist. Das ist klassische Frequenzmodulation — im Preset „Ältere Person“ versetzt ein `5 Hz`-LFO die Tonhöhe um `±15 Hz` in Schwingung und erzeugt so die bebende Qualität, die mit gealterten Stimmen assoziiert wird. Nur das Preset „Ältere Person“ schaltet sie ein; die anderen vier lassen Vibrato vollständig deaktiviert.",
+      text: "Es gibt ein optionales viertes Knoten-Paar: Vibrato. Wenn ein Preset es aktiviert, läuft ein zweiter `OscillatorNode` als LFO (Niederfrequenzoszillator) mit der `vibratoRate` des Presets und speist einen `GainNode`, der auf die `vibratoDepth` gesetzt und mit dem `frequency`-Parameter des Haupt-Oszillators verbunden ist. Das ist klassische Frequenzmodulation — im Preset „Ältere Person“ versetzt ein `5 Hz`-LFO die Tonhöhe um `±15 Hz` in Schwingung und erzeugt so die bebende Qualität, die mit gealterten Stimmen assoziiert wird. Nur das Preset „Ältere Person“ schaltet das Vibrato ein; die anderen vier lassen es vollständig deaktiviert.",
     },
     { type: "h2", text: "Wie jede Wellenform klingt (und wann Sie welche wählen)" },
     {
       type: "p",
-      text: "Die Wahl der Wellenform ist die größte Klangfarben-Entscheidung der gesamten Pipeline, denn sie bestimmt den Oberton-Gehalt, den Filter und Hüllkurve anschließend formen. Der `OscillatorNode` der Web Audio API bietet vier Standardtypen, und jeder hat einen eigenen Charakter:",
+      text: "Die Wahl der Wellenform ist die größte Klangfarben-Entscheidung der gesamten Pipeline, denn sie bestimmt den Oberton-Gehalt, den anschließend Filter und Hüllkurve formen. Der `OscillatorNode` der Web Audio API bietet vier Standardtypen, und jeder hat einen eigenen Charakter:",
     },
     {
       type: "table",
@@ -73,7 +73,7 @@ export const postVoiceSynthesis: BlogPost = {
     },
     {
       type: "p",
-      text: "Die Presets des Labors verwenden nur zwei der vier: `sawtooth` trägt die vier organischen Stimmen, und `square` trägt den Roboter. Diese Aufteilung ist Absicht. Ein Sägezahn enthält Energie bei jedem Oberton, was nach der Tiefpass-Filterung einen dichten, stimmenartigen Kern hinterlässt — der Grund, warum er gesungene oder gesprochene Töne besser annähert als jede andere Basis-Wellenform. Eine Rechteckwelle behält nur ungerade Obertöne mit mehr Energie in den Höhen, was die hohle, nasale, unverwechselbar elektronische Qualität erzeugt, die das Roboter-Preset anstrebt. `Sine` und `triangle` verwendet kein aktuelles Preset, doch sie bleiben über dasselbe `OscillatorType`-Feld Ein-Zeilen-Änderungen: Sinus passt zu reinen Soundeffekten wie Glockenspielen, und Dreieck passt zu weichen Hintergrund-Blips, wo ein Sägezahn zu aggressiv wäre.",
+      text: "Die Presets des Labors verwenden nur zwei der vier: `sawtooth` trägt die vier organischen Stimmen, und `square` trägt den Roboter. Diese Aufteilung ist Absicht. Ein Sägezahn enthält Energie bei jedem Oberton, was nach der Tiefpass-Filterung einen dichten, stimmenartigen Kern hinterlässt — der Grund, warum er sich gesungenen oder gesprochenen Tönen besser annähert als jede andere Basis-Wellenform. Eine Rechteckwelle behält nur ungerade Obertöne mit mehr Energie in den Höhen, was die hohle, nasale, unverwechselbar elektronische Qualität erzeugt, die das Roboter-Preset anstrebt. `Sine` und `triangle` verwendet kein aktuelles Preset, doch sie bleiben über dasselbe `OscillatorType`-Feld Ein-Zeilen-Änderungen: Sinus passt zu reinen Soundeffekten wie Glockenspielen, und Dreieck passt zu weichen Hintergrund-Blips, wo ein Sägezahn zu aggressiv wäre.",
     },
     { type: "h2", text: "Die fünf Stimm-Presets, entschlüsselt" },
     {
@@ -101,7 +101,7 @@ export const postVoiceSynthesis: BlogPost = {
     },
     {
       type: "p",
-      text: "**Kind** kehrt fast jede Entscheidung des Presets „Ältere Person“ um: die höchste Basisfrequenz (`600 Hz`), der hellste Filter (`2500 Hz`), die niedrigste Verstärkung (`0.20`) und die schnellste Hüllkurve (`0.01 s` Attack, `0.03 s` Release). Schnelle Hüllkurven auf hohen Tonhöhen sind das klassische Rezept für kleine Kreatur-Stimmen — jede Silbe landet wie ein kurzer Zwitscher. **Roboter** ist der Sonderfall auf zwei Achsen: Er ist die einzige `square`-Welle und das einzige Preset mit null Attack und null Release, das heißt, die Verstärkung schaltet augenblicklich ein und aus. Diese abrupten Kanten erzeugen die harte, abgehackt-mechanische Qualität, die das Preset will — keine Rampe bedeutet keine Weichheit, per Konstruktion.",
+      text: "**Kind** kehrt fast jede Entscheidung des Presets „Ältere Person“ um: die höchste Basisfrequenz (`600 Hz`), der hellste Filter (`2500 Hz`), die niedrigste Verstärkung (`0.20`) und die schnellste Hüllkurve (`0.01 s` Attack, `0.03 s` Release). Schnelle Hüllkurven auf hohen Tonhöhen sind das klassische Rezept für kleine Kreatur-Stimmen — jede Silbe landet wie ein kurzes Zwitschern. **Roboter** ist der Sonderfall auf zwei Achsen: Er ist die einzige `square`-Welle und das einzige Preset mit null Attack und null Release, das heißt, die Verstärkung schaltet augenblicklich ein und aus. Diese abrupten Kanten erzeugen die harte, abgehackt-mechanische Qualität, die das Preset will — keine Rampe bedeutet keine Weichheit, per Konstruktion.",
     },
     { type: "h2", text: "Wie Tonhöhe und Geschwindigkeit den Oszillator wirklich steuern" },
     {
@@ -110,7 +110,7 @@ export const postVoiceSynthesis: BlogPost = {
     },
     {
       type: "p",
-      text: "Die Tonhöhe setzt die Oszillatorfrequenz direkt, mit einer einzigen Schutzklemme: Im Kind-Preset ist die gespielte Frequenz `Math.max(pitch, 500)`, deshalb bewirkt das Ziehen des Reglers unter `500 Hz` im Kind-Modus nichts — der Oszillator sinkt nie unter diesen Boden. Diese Klemme schützt den Charakter des Presets, denn eine Kinderstimme bei `150 Hz` würde schlicht wie ein leiser erwachsener Mann klingen.",
+      text: "Die Tonhöhe setzt die Oszillatorfrequenz direkt, mit einer einzigen Schutzklemme: Im Kind-Preset ist die gespielte Frequenz `Math.max(pitch, 500)`, deshalb bewirkt das Ziehen des Reglers unter `500 Hz` im Kind-Modus nichts — der Oszillator sinkt nie unter diese Untergrenze. Diese Klemme schützt den Charakter des Presets, denn eine Kinderstimme bei `150 Hz` würde schlicht wie ein leiser erwachsener Mann klingen.",
     },
     {
       type: "p",
@@ -119,7 +119,7 @@ export const postVoiceSynthesis: BlogPost = {
     { type: "h2", text: "Von Text zu Sprache, ein Beep pro Zeichen" },
     {
       type: "p",
-      text: "Der Text-Sprechen-Modus des Labors ist keine Sprach-Engine — es ist dieselbe Drei-Knoten-Oszillator-Pipeline, einmal pro Zeichen geplant. Wenn Sie bis zu `100` Zeichen eintippen und auf Sprechen drücken, wird die Eingabe in einzelne Zeichen aufgeteilt, und jedes Zeichen außer Leerzeichen wird zu einem geplanten Silben-Beep mit einem Tonhöhen-Offset, der aus seinem Zeichencode abgeleitet wird. Die Zeitkonstanten, alle durch die Geschwindigkeit geteilt:",
+      text: "Der Text-Sprechen-Modus des Labors ist keine Sprach-Engine — sondern dieselbe Drei-Knoten-Oszillator-Pipeline, einmal pro Zeichen geplant. Wenn Sie bis zu `100` Zeichen eintippen und auf Sprechen drücken, wird die Eingabe in einzelne Zeichen aufgeteilt, und jedes Zeichen außer Leerzeichen wird zu einem geplanten Silben-Beep mit einem Tonhöhen-Offset, der aus seinem Zeichencode abgeleitet wird. Die Zeitkonstanten, alle durch die Geschwindigkeit geteilt:",
     },
     {
       type: "ul",
@@ -127,13 +127,13 @@ export const postVoiceSynthesis: BlogPost = {
         "**Zeichenton** — `0.08 / speed` Sekunden pro Zeichen (`0.08 s` bei `1.0x`).",
         "**Lücke zwischen Zeichen** — `0.03 / speed` Sekunden zwischen aufeinanderfolgenden Zeichen.",
         "**Wortlücke** — ein Leerzeichen fügt `0.12 / speed` Sekunden Stille ein, rund 1,5 Zeichenlängen.",
-        "**Phrasenpause** — jedes 5. Zeichen (`i % 5 === 4`) fügt eine zusätzliche Pause von `gap × 2` hinzu, was dem Output eine Kadenz gibt statt eines flachen Stroms.",
+        "**Phrasenpause** — jedes 5. Zeichen (`i % 5 === 4`) fügt eine zusätzliche Pause von `gap × 2` hinzu, was dem Output eine Kadenz statt eines flachen Stroms gibt.",
         "**Vorlauf** — das Scheduling startet bei `currentTime + 0.05` Sekunden, damit der Audiograph vor dem ersten Ton bereit ist.",
       ],
     },
     {
       type: "p",
-      text: "Die Tonhöhen-Variation ist der clevere Teil. Der Frequenz-Offset jedes Zeichens wird als `((charCode % 20) - 10) × 3` berechnet, was eine deterministische Streuung zwischen `-30 Hz` und `+27 Hz` um die Grundtonhöhe ergibt. Deterministisch ist entscheidend: Dasselbe Wort erzeugt immer dieselbe melodische Kontur, deshalb wird eine bestimmte Phrase so wiedererkennbar, wie die Stimme eines Mii wiedererkennbar ist. Weil die Offsets aus Zeichencodes stammen statt aus Phonetik, folgt der Output dem Rhythmus des Textes eng, während er nicht-lexikalischer Kauderwelsch bleibt — genau der Beep-Sprach-Effekt, den das Labor anzunähern versucht.",
+      text: "Die Tonhöhen-Variation ist der clevere Teil. Der Frequenz-Offset jedes Zeichens wird als `((charCode % 20) - 10) × 3` berechnet, was eine deterministische Streuung zwischen `-30 Hz` und `+27 Hz` um die Grundtonhöhe ergibt. Deterministisch ist entscheidend: Dasselbe Wort erzeugt immer dieselbe melodische Kontur, deshalb wird eine bestimmte Phrase so wiedererkennbar, wie die Stimme eines Miis wiedererkennbar ist. Weil die Offsets aus Zeichencodes stammen statt aus Phonetik, folgt der Output eng dem Rhythmus des Textes, während er nicht-lexikalischer Kauderwelsch bleibt — genau der Beep-Sprach-Effekt, den das Labor anzunähern versucht.",
     },
     { type: "h2", text: "Eine Stimme für jede Persönlichkeitsgruppe entwerfen" },
     {
@@ -159,7 +159,7 @@ export const postVoiceSynthesis: BlogPost = {
     {
       type: "ol",
       items: [
-        "**Wählen Sie das Preset passend zur Gruppe.** Lebhafte und Selbstbewusste Miis bekommen den Preset „Erwachsener Mann“; Unabhängige Miis bekommen Erwachsene Frau; Entspannte Miis bekommen Ältere Person, deren `5 Hz`-Vibrato die entspannte, gemächliche Qualität beisteuert, für die die Gruppe bekannt ist. Die Gruppe eines Mii ergibt sich aus seinen vier Persönlichkeits-Schiebereglern — siehe die [Persönlichkeitsübersicht](/de/tomodachi-life-personality-chart), falls Sie sie noch nicht kennen.",
+        "**Wählen Sie das Preset passend zur Gruppe.** Lebhafte und Selbstbewusste Miis bekommen das Preset „Erwachsener Mann“; Unabhängige Miis bekommen Erwachsene Frau; Entspannte Miis bekommen Ältere Person, deren `5 Hz`-Vibrato die entspannte, gemächliche Qualität beisteuert, für die die Gruppe bekannt ist. Die Gruppe eines Miis ergibt sich aus seinen vier Persönlichkeits-Schiebereglern — siehe die [Persönlichkeitsübersicht](/de/tomodachi-life-personality-chart), falls Sie sie noch nicht kennen.",
         "**Setzen Sie den Tonhöhen-Regler innerhalb des Gruppenbereichs.** Für einen Selbstbewussten Designer bedeutet das `150 – 200 Hz`; Richtung `150 Hz` liest sich imposanter, Richtung `200 Hz` energiegeladener. Die `500 Hz`-Untergrenze des Kind-Presets sorgt dafür, dass sich der Bereich `500 – 700 Hz` von selbst durchsetzt.",
         "**Wählen Sie die Geschwindigkeit passend zum Sprechstil.** Schnellsprechende Entertainer-Typen rechtfertigen `1.4x – 2.0x`; ein schläfriger Träumer sitzt natürlich bei `0.5x – 0.8x`. Die Geschwindigkeit ändert nur die Dauer, sie verstimmt also nie die Stimme, die Sie in Schritt 2 gewählt haben.",
         "**Testen Sie mit einer kurzen Phrase.** Tippen Sie `20 – 30` Zeichen in das Textfeld und achten Sie auf die Phrasenpause bei jedem 5. Zeichen — wenn sich die Kadenz für die Persönlichkeit falsch anfühlt, justieren Sie die Geschwindigkeit, bevor Sie die Tonhöhe anfassen.",
@@ -177,20 +177,20 @@ export const postVoiceSynthesis: BlogPost = {
     },
     {
       type: "p",
-      text: "Die Begründung: `speechSynthesis` erzeugt natürliche menschliche Stimmen, und genau das will ein 8-Bit-Sprachlabor nicht. Es delegiert die Stimmauswahl außerdem an das Betriebssystem, sodass derselbe Text über Browser und Geräte hinweg unterschiedlich klingen kann, und mehrere Browser laden Stimmen verzögert mit spürbarer Latenz bei der ersten Äußerung. Der Beep-pro-Zeichen-Ansatz hält jeden Klang in demselben Drei-Knoten-Graphen, den auch der Einzelbeep-Modus verwendet, garantiert überall dieselbe Klangfarbe, wo die Web Audio API funktioniert, und startet sofort, weil nichts geladen werden muss.",
+      text: "Die Begründung: `speechSynthesis` erzeugt natürliche menschliche Stimmen, und genau das will ein 8-Bit-Sprachlabor nicht. Es delegiert die Stimmauswahl außerdem an das Betriebssystem, sodass derselbe Text über Browser und Geräte hinweg unterschiedlich klingen kann, und mehrere Browser laden Stimmen verzögert mit spürbarer Latenz bei der ersten Äußerung. Der Beep-pro-Zeichen-Ansatz hält jeden Klang in demselben Drei-Knoten-Graphen, den auch der Einzelbeep-Modus verwendet, liefert überall dort, wo die Web Audio API funktioniert, garantiert dieselbe Klangfarbe und startet sofort, weil nichts geladen werden muss.",
     },
     {
       type: "p",
-      text: "Der Kompromiss: Der Output ist keine verständliche Sprache. Er folgt Rhythmus und Kontur des Textes, produziert aber keine erkennbaren Wörter, ruft also eher die Kadenz der Beep-Sprache von Tomodachi Life auf als ihre Verständlichkeit — und auch der Kauderwelsch des Spiels ist nicht verständlich, was durchaus der Punkt sein dürfte. Das Stoppen der Wiedergabe ist ähnlich brachial und effektiv: Das Labor schließt den gesamten `AudioContext` per `close()`, was jeden geplanten Knoten sofort abschaltet, statt auszublenden.",
+      text: "Der Kompromiss: Der Output ist keine verständliche Sprache. Er folgt Rhythmus und Kontur des Textes, produziert aber keine erkennbaren Wörter, erinnert also eher an die Kadenz der Beep-Sprache von Tomodachi Life als an ihre Verständlichkeit — und auch der Kauderwelsch des Spiels ist nicht verständlich, was durchaus der Punkt sein dürfte. Das Stoppen der Wiedergabe ist ähnlich brachial und effektiv: Das Labor schließt den gesamten `AudioContext` per `close()`, was jeden geplanten Knoten sofort abschaltet, statt auszublenden.",
     },
     { type: "h2", text: "Grenzen, ehrlich benannt" },
     {
       type: "p",
-      text: "Drei Grenzen begrenzen, was dieser Synthesizer ehrlich behaupten kann. Erstens nähert er eine Ästhetik an, nicht die Engine des Spiels: Nintendo hat nie dokumentiert, wie Tomodachi Life seine Stimmen erzeugt, deshalb sind die Preset-Werte hier Community-Schätzungen, abgestimmt darauf, den Klang der Serie zu evozieren, keine extrahierten Konstanten. Die Stimmen erinnern an die des Spiels, sie sind keine getreuen Nachbildungen.",
+      text: "Drei Einschränkungen begrenzen, was dieser Synthesizer ehrlich behaupten kann. Erstens bildet er eine Ästhetik nach, nicht die Engine des Spiels: Nintendo hat nie dokumentiert, wie Tomodachi Life seine Stimmen erzeugt, deshalb sind die Preset-Werte hier Community-Schätzungen, abgestimmt darauf, den Klang der Serie zu evozieren, keine extrahierten Konstanten. Die Stimmen erinnern an die des Spiels, sie sind keine getreuen Nachbildungen.",
     },
     {
       type: "p",
-      text: "Zweitens ist die Synthese monophon und formantfrei. Jede Silbe ist ein einzelner Oszillator, geformt von einem einzigen Tiefpass, während natürliche Sprache — und vermutlich auch die ausgefeiltere Engine des Spiels — Formant-Struktur aus dem Vokaltrakt mitbringt. Deshalb liest sich der Output als Chiptune-Stimme statt als gesampelte Sprache, und das ist die Lücke, die sich am meisten zu erkunden lohnt, wenn Sie den Code erweitern: Ein zweiter Oszillator eine Oktave höher oder ein Filter mit geplanter Frequenzbewegung würden das Ergebnis beide näher an stimmliches Terrain heranschieben.",
+      text: "Zweitens ist die Synthese monophon und formantfrei. Jede Silbe ist ein einzelner Oszillator, geformt von einem einzigen Tiefpass, während natürliche Sprache — und vermutlich auch die ausgefeiltere Engine des Spiels — Formant-Struktur aus dem Vokaltrakt mitbringt. Deshalb liest sich der Output als Chiptune-Stimme statt als gesampelte Sprache, und das ist die Lücke, die sich am meisten zu erkunden lohnt, wenn Sie den Code erweitern: Ein zweiter Oszillator eine Oktave höher oder ein Filter mit geplanter Frequenzbewegung würden beide das Ergebnis näher an stimmliches Terrain heranschieben.",
     },
     {
       type: "p",

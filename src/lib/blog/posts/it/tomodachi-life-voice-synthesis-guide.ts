@@ -25,7 +25,7 @@ export const postVoiceSynthesis: BlogPost = {
     { type: "h2", text: "Perché le voci di Tomodachi parlano a beep" },
     {
       type: "p",
-      text: "La peculiarità distintiva dell'audio di Tomodachi Life è il parlato a beep: invece di dialoghi registrati, ogni Mii si esprime in brevi toni sintetizzati che seguono il ritmo di una frase senza mai formare parole reali. L'approccio risale alle origini portatili della serie, dove la dimensione delle cartucce e l'hardware audio rendevano impraticabile il doppiaggio completo, ed è sopravvissuto in Tomodachi Life: Living the Dream su Switch perché i beep sono diventati parte dell'identità della serie. Il risultato viene percepito come parlato perché ne copia la prosodia — movimento dell'intonazione, tempistica delle sillabe, pause — pur rimanendo volutamente non lessicale.",
+      text: "Il tratto distintivo dell'audio di Tomodachi Life è il parlato a beep: invece di dialoghi registrati, ogni Mii si esprime in brevi toni sintetizzati che seguono il ritmo di una frase senza mai formare parole reali. L'approccio risale alle origini della serie su console portatili, dove la dimensione delle cartucce e l'hardware audio rendevano impraticabile il doppiaggio completo, ed è sopravvissuto in Tomodachi Life: Living the Dream su Switch perché i beep sono diventati parte dell'identità della serie. Il risultato viene percepito come parlato perché ne copia la prosodia — movimento dell'intonazione, tempistica delle sillabe, pause — pur rimanendo volutamente non lessicale.",
     },
     {
       type: "p",
@@ -34,7 +34,7 @@ export const postVoiceSynthesis: BlogPost = {
     { type: "h2", text: "Il pipeline di sintesi, nodo per nodo" },
     {
       type: "p",
-      text: "Ogni suono prodotto dal laboratorio attraversa esattamente tre nodi di elaborazione tra l'oscillatore e i tuoi altoparlanti. Un `AudioContext` nuovo viene creato a ogni riproduzione — il laboratorio non mantiene mai in vita un grafo audio globale — e ogni sillaba pianifica il proprio insieme di nodi al suo interno:",
+      text: "Ogni suono prodotto dal laboratorio esce dallo stesso grafo a tre nodi — oscillatore, filtro e guadagno — e raggiunge i tuoi altoparlanti attraverso gli ultimi due. Un `AudioContext` nuovo viene creato a ogni riproduzione — il laboratorio non mantiene mai in vita un grafo audio globale — e ogni sillaba pianifica il proprio insieme di nodi al suo interno:",
     },
     {
       type: "code",
@@ -46,11 +46,11 @@ export const postVoiceSynthesis: BlogPost = {
     },
     {
       type: "p",
-      text: "Il `BiquadFilterNode` è sempre configurato come filtro `lowpass`, con il cutoff preso dal valore `filterFreq` del preset (`900 – 2500 Hz` a seconda del preset). Un filtro passa-basso attenua le armoniche sopra il proprio cutoff, ed è questo che trasforma il ronzio a tutta potenza di un'onda a dente di sega grezza in qualcosa di vicino a una voce: i preset più scuri (anziano a `900 Hz`) conservano solo le armoniche basse, mentre i preset più brillanti (bambino a `2500 Hz`) lasciano passare lo scintillio che fa percepire una voce come piccola e giovane.",
+      text: "Il `BiquadFilterNode` è sempre configurato come filtro `lowpass`, con il cutoff preso dal valore `filterFreq` del preset (`900 – 2500 Hz` a seconda del preset). Un filtro passa-basso attenua le armoniche sopra il proprio cutoff, ed è questo che trasforma il ronzio pieno di un'onda a dente di sega grezza in qualcosa che assomiglia a una voce: i preset più scuri (Anziano a `900 Hz`) conservano solo le armoniche basse, mentre i preset più brillanti (Bambino a `2500 Hz`) lasciano passare lo scintillio che fa suonare la voce piccola e giovane.",
     },
     {
       type: "p",
-      text: "Il `GainNode` è dove vive l'inviluppo, pianificato con quattro punti di automazione. Il gain parte da `0` all'istante di inizio della sillaba, sale linearmente fino al target del preset (`0.2 – 0.3`) durante il tempo di attack, si mantiene a quel valore fino a un tempo di release prima della fine, poi ridiscende linearmente a `0`. Le chiamate sono `setValueAtTime()` per i punti di ancoraggio e `linearRampToValueAtTime()` per le rampe — un semplice inviluppo attack/hold/release senza curve esponenziali, che conferisce al suono quell'irruenza caratteristica che si addice allo stile 8-bit.",
+      text: "Il `GainNode` è dove vive l'inviluppo, pianificato con quattro punti di automazione. Il gain parte da `0` all'istante di inizio della sillaba, sale linearmente fino al target del preset (`0.2 – 0.3`) durante il tempo di attack, si mantiene a quel valore fino all'inizio del release, poi ridiscende linearmente a `0`. Le chiamate sono `setValueAtTime()` per i punti di ancoraggio e `linearRampToValueAtTime()` per le rampe — un semplice inviluppo attack/hold/release senza curve esponenziali, che conferisce al suono quella bruschezza caratteristica che si addice allo stile 8-bit.",
     },
     {
       type: "p",
@@ -73,7 +73,7 @@ export const postVoiceSynthesis: BlogPost = {
     },
     {
       type: "p",
-      text: "I preset del laboratorio ne usano solo due delle quattro: `sawtooth` porta le quattro voci organiche e `square` porta il robot. Questa divisione è deliberata. Un'onda a dente di sega contiene energia a ogni armonica, che dopo il filtraggio passa-basso lascia un nucleo denso e simile a una voce — il motivo per cui approssima i toni cantati o parlati meglio di qualsiasi altra forma d'onda di base. Un'onda quadrata conserva solo le armoniche dispari, con più energia nelle alte frequenze, donando quella qualità vuota, nasale e inconfondibilmente elettronica che il preset robot cerca. `Sine` e `triangle` non sono usati da alcun preset attuale, ma restano modifiche da una riga tramite lo stesso campo `OscillatorType`: l'onda sinusoidale si adatta a effetti sonori puri come le campane, e l'onda triangolare a blip morbidi di sottofondo dove l'onda a dente di sega risulterebbe troppo aggressiva.",
+      text: "I preset del laboratorio ne usano solo due delle quattro: `sawtooth` è la forma delle quattro voci organiche e `square` quella del robot. Questa divisione è deliberata. Un'onda a dente di sega contiene energia a ogni armonica, che dopo il filtraggio passa-basso lascia un nucleo denso e simile a una voce — il motivo per cui approssima i toni cantati o parlati meglio di qualsiasi altra forma d'onda di base. Un'onda quadrata conserva solo le armoniche dispari, con più energia nelle alte frequenze, che dona quella qualità vuota, nasale e inconfondibilmente elettronica che il preset robot cerca. `sine` e `triangle` non sono usati da alcun preset attuale, ma si attivano con la modifica di una sola riga tramite lo stesso campo `OscillatorType`: l'onda sinusoidale si adatta a effetti sonori puri come le campane, e l'onda triangolare a blip morbidi di sottofondo dove l'onda a dente di sega risulterebbe troppo aggressiva.",
     },
     { type: "h2", text: "I cinque preset vocali, decodificati" },
     {
@@ -93,15 +93,15 @@ export const postVoiceSynthesis: BlogPost = {
     },
     {
       type: "p",
-      text: "**Uomo adulto** ancora l'insieme a una frequenza di base di `180 Hz`, collocandosi all'estremità bassa della tipica gamma di parlato maschile adulto, con un passa-basso a `1200 Hz` che doma il ronzio dell'onda a dente di sega in qualcosa di più arrotondato. **Donna adulta** porta la base quasi al doppio, a `350 Hz`, apre il filtro a `1800 Hz` per un tono più brillante e riduce sia il gain (`0.25`) sia il release (`0.04 s`) per un'articolazione leggermente più netta.",
+      text: "**Uomo adulto** ancora l'insieme a una frequenza di base di `180 Hz`, all'estremità bassa della tipica gamma di parlato maschile adulto, con un passa-basso a `1200 Hz` che doma il ronzio dell'onda a dente di sega in qualcosa di più arrotondato. **Donna adulta** porta la base quasi al doppio, a `350 Hz`, apre il filtro a `1800 Hz` per un tono più brillante e riduce sia il gain (`0.25`) sia il release (`0.04 s`) per un'articolazione leggermente più netta.",
     },
     {
       type: "p",
-      text: "**Anziano** è il preset più elaborato: il registro più basso (`120 Hz`), il filtro più scuro (`900 Hz`), l'unico vibrato (LFO a `5 Hz` con profondità di `±15 Hz`) e l'inviluppo più lento (`0.04 s` di attack, `0.08 s` di release). Questi ultimi due valori contano quanto il tono — l'attack pigro ammorbidisce l'attacco di ogni sillaba, e il release lungo lascia che i toni sfumino leggermente l'uno nell'altro, evocando l'articolazione meno precisa che il preset vuole ottenere.",
+      text: "**Anziano** è il preset più elaborato: il registro più basso (`120 Hz`), il filtro più scuro (`900 Hz`), l'unico vibrato (LFO a `5 Hz` con profondità di `±15 Hz`) e l'inviluppo più lento (`0.04 s` di attack, `0.08 s` di release). Questi ultimi due valori contano quanto il tono — l'attack pigro ammorbidisce l'inizio di ogni sillaba, e il release lungo lascia che i toni sfumino leggermente l'uno nell'altro, evocando l'articolazione meno precisa che il preset vuole ottenere.",
     },
     {
       type: "p",
-      text: "**Bambino** inverte quasi ogni decisione del preset anziano: la base più alta (`600 Hz`), il filtro più brillante (`2500 Hz`), il gain più basso (`0.20`) e l'inviluppo più rapido (`0.01 s` di attack, `0.03 s` di release). Inviluppi rapidi su intonazioni acute sono la ricetta classica per le voci di piccole creature — ogni sillaba atterra come un cinguettio rapido. **Robot** è l'eccezione su due assi: è l'unica onda `square`, ed è l'unico preset con attack e release a zero, il che significa che il gain si accende e si spegne istantaneamente. Quei bordi bruschi producono la qualità dura, gated e meccanica che il preset vuole — nessuna rampa significa nessuna morbidezza, per costruzione.",
+      text: "**Bambino** inverte quasi ogni decisione del preset anziano: la base più alta (`600 Hz`), il filtro più brillante (`2500 Hz`), il gain più basso (`0.20`) e l'inviluppo più rapido (`0.01 s` di attack, `0.03 s` di release). Inviluppi rapidi su intonazioni acute sono la ricetta classica per le voci di piccole creature — ogni sillaba atterra come un cinguettio rapido. **Robot** è l'eccezione su due assi: usa l'unica onda `square`, ed è l'unico preset con attack e release a zero, il che significa che il gain si accende e si spegne istantaneamente. Quei bordi bruschi producono la qualità dura, gated e meccanica che il preset vuole — nessuna rampa significa nessuna morbidezza, per costruzione.",
     },
     { type: "h2", text: "Come tono e velocità pilotano davvero l'oscillatore" },
     {
@@ -110,35 +110,35 @@ export const postVoiceSynthesis: BlogPost = {
     },
     {
       type: "p",
-      text: "Il tono imposta direttamente la frequenza dell'oscillatore, con un solo vincolo di protezione: nel preset bambino la frequenza riprodotta è `Math.max(pitch, 500)`, quindi trascinare il cursore sotto `500 Hz` in modalità bambino non ha alcun effetto — l'oscillatore non scende mai sotto quel limite minimo. Questo blocco protegge il carattere del preset, poiché una voce di bambino a `150 Hz` verrebbe semplicemente percepita come un uomo adulto dalla voce tranquilla.",
+      text: "Il tono imposta direttamente la frequenza dell'oscillatore, con un solo vincolo di protezione: nel preset bambino la frequenza riprodotta è `Math.max(pitch, 500)`, quindi trascinare il cursore sotto `500 Hz` in modalità bambino non ha alcun effetto — l'oscillatore non scende mai sotto quel limite minimo. Questo blocco protegge il carattere del preset, poiché una voce di bambino a `150 Hz` verrebbe semplicemente percepita come quella di un uomo adulto tranquillo.",
     },
     {
       type: "p",
-      text: "La velocità controlla il tempo, non la frequenza. Una sola pressione del pulsante di riproduzione produce un beep della durata di `0.5 / speed` secondi — `1.0 s` a `0.5x`, `0.5 s` a `1.0x` e `0.25 s` a `2.0x`. Lo stesso divisore si applica a ogni costante temporale in modalità testo, quindi una voce a `2.0x` è davvero due volte più veloce da cima a fondo anziché ricampionata, il che ne avrebbe spostato il tono. Dopo la riproduzione l'interfaccia reimposta il proprio stato di riproduzione dopo `500 / speed + 50` millisecondi, la durata del beep più un margine di `50 ms`.",
+      text: "La velocità controlla il tempo, non la frequenza. Una sola pressione del pulsante di riproduzione produce un beep della durata di `0.5 / speed` secondi — `1.0 s` a `0.5x`, `0.5 s` a `1.0x` e `0.25 s` a `2.0x`. Lo stesso divisore si applica a ogni costante temporale in modalità testo, quindi una voce a `2.0x` è davvero due volte più veloce da cima a fondo, e non ricampionata: un ricampionamento ne avrebbe spostato il tono. Al termine della riproduzione, l'interfaccia reimposta il proprio stato dopo `500 / speed + 50` millisecondi, la durata del beep più un margine di `50 ms`.",
     },
     { type: "h2", text: "Dal testo al parlato, un beep per carattere" },
     {
       type: "p",
-      text: "La modalità testo-voce del laboratorio non è un motore di sintesi vocale — è lo stesso pipeline di oscillatori a tre nodi, pianificato una volta per carattere. Quando digiti fino a `100` caratteri e premi parla, l'input viene suddiviso in caratteri singoli, e ogni carattere diverso da uno spazio diventa un beep di sillaba pianificato con uno scostamento di tono derivato dal suo codice carattere. Le costanti temporali, tutte divise per la velocità:",
+      text: "La modalità testo-voce del laboratorio non è un motore di sintesi vocale — è lo stesso pipeline di oscillatori a tre nodi, pianificato una volta per carattere. Quando digiti fino a `100` caratteri e premi «parla», l'input viene suddiviso in caratteri singoli, e ogni carattere diverso da uno spazio diventa un beep di sillaba pianificato con uno scostamento di tono derivato dal suo codice carattere. Le costanti temporali, tutte divise per la velocità:",
     },
     {
       type: "ul",
       items: [
-        "**Tono del carattere** — `0.08 / speed` secondi per carattere (`0.08 s` a `1.0x`).",
+        "**Durata del tono per carattere** — `0.08 / speed` secondi per carattere (`0.08 s` a `1.0x`).",
         "**Intervallo tra caratteri** — `0.03 / speed` secondi tra caratteri consecutivi.",
-        "**Intervallo tra parole** — uno spazio inserisce `0.12 / speed` secondi di silenzio, circa 1,5 lunghezze di carattere.",
+        "**Intervallo tra parole** — uno spazio inserisce `0.12 / speed` secondi di silenzio, circa una volta e mezza la durata di un carattere.",
         "**Pausa di frase** — ogni quinto carattere (`i % 5 === 4`) aggiunge una pausa extra di `gap × 2`, dando all'output una cadenza invece di un flusso piatto.",
         "**Ritardo iniziale** — lo scheduling inizia a `currentTime + 0.05` secondi così che il grafo audio sia pronto prima del primo tono.",
       ],
     },
     {
       type: "p",
-      text: "La variazione di tono è la parte ingegnosa. Lo scostamento di frequenza di ogni carattere viene calcolato come `((charCode % 20) - 10) × 3`, che produce una dispersione deterministica tra `-30 Hz` e `+27 Hz` attorno al tono base. Il determinismo conta: la stessa parola produce sempre lo stesso contorno melodico, quindi una data frase diventa riconoscibile allo stesso modo in cui è riconoscibile la voce di un Mii. Poiché gli scostamenti derivano dai codici carattere anziché dalla fonetica, l'output segue da vicino il ritmo del testo rimanendo però un farfugliare non lessicale — che è precisamente l'effetto di parlato a beep che il laboratorio sta approssimando.",
+      text: "La variazione di tono è la parte ingegnosa. Lo scostamento di frequenza di ogni carattere viene calcolato come `((charCode % 20) - 10) × 3`, che produce una dispersione deterministica tra `-30 Hz` e `+27 Hz` attorno al tono base. Il determinismo conta: la stessa parola produce sempre lo stesso contorno melodico, quindi una determinata frase diventa riconoscibile allo stesso modo in cui è riconoscibile la voce di un Mii. Poiché gli scostamenti derivano dai codici carattere anziché dalla fonetica, l'output segue da vicino il ritmo del testo rimanendo però un farfugliare non lessicale — che è precisamente l'effetto di parlato a beep che il laboratorio sta approssimando.",
     },
     { type: "h2", text: "Progettare una voce per ogni gruppo di personalità" },
     {
       type: "p",
-      text: "Una voce di personalità convincente è soprattutto una decisione sull'intervallo di tono: scegli il preset che la tabella di riferimento del sito assegna al gruppo di personalità del tuo Mii, poi posiziona il cursore del tono entro il range consigliato. La mappatura completa usata dalla [tabella di riferimento del Voice Lab](/it/tomodachi-voice-lab):",
+      text: "Progettare una voce di personalità convincente è soprattutto una decisione sull'intervallo di tono: scegli il preset che la tabella di riferimento del sito assegna al gruppo di personalità del tuo Mii, poi posiziona il cursore del tono entro il range consigliato. La mappatura completa usata dalla [tabella di riferimento del Voice Lab](/it/tomodachi-voice-lab):",
     },
     {
       type: "table",
@@ -154,16 +154,16 @@ export const postVoiceSynthesis: BlogPost = {
     },
     {
       type: "p",
-      text: "Nota che la tabella mappa i gruppi, non tutte le 16 personalità — i quattro gruppi di personalità della nostra [mappatura MBTI](/it/tomodachi-life-mbti) ricevono ciascuno una silhouette vocale rappresentativa, e le personalità individuali si esprimono attraverso la posizione del cursore entro il range e la velocità con cui usi il controllo della velocità. La ricetta passo per passo:",
+      text: "Nota che la tabella mappa i gruppi, non tutte le 16 personalità — i quattro gruppi di personalità della nostra [mappatura MBTI](/it/tomodachi-life-mbti) ricevono ciascuno una silhouette vocale rappresentativa, e le personalità individuali si esprimono attraverso la posizione del cursore entro il range e la velocità impostata sul controllo dedicato. La ricetta passo per passo:",
     },
     {
       type: "ol",
       items: [
         "**Scegli il preset in base al gruppo.** I Mii Estroversi e Sicuri di sé prendono Uomo adulto; i Mii Indipendenti prendono Donna adulta; i Mii Tranquilli prendono Anziano, il cui vibrato a `5 Hz` aggiunge la qualità rilassata e senza fretta per cui il gruppo è noto. Il gruppo di un Mii deriva dai suoi quattro cursori di personalità — consulta la [tabella delle personalità](/it/tomodachi-life-personality-chart) se non lo conosci ancora.",
-        "**Posiziona il cursore del tono entro il range del gruppo.** Per un Designer Sicuro di sé ciò significa `150 – 200 Hz`; scivolare verso `150 Hz` suona più imponente, verso `200 Hz` più energico. Il limite minimo di `500 Hz` del preset bambino fa sì che il range `500 – 700 Hz` si imponga da solo.",
-        "**Scegli la velocità in base allo stile di parlato.** I tipi Intrattenitore dal parlato veloce giustificano `1.4x – 2.0x`; un Sognatore assonnato si colloca naturalmente a `0.5x – 0.8x`. La velocità cambia solo la durata, quindi non stona mai la voce che hai scelto al passo 2.",
+        "**Posiziona il cursore del tono entro il range del gruppo.** Per un Designer Sicuro di sé ciò significa `150 – 200 Hz`; scendere verso `150 Hz` rende la voce più imponente, salire verso `200 Hz` più energica. Il limite minimo di `500 Hz` del preset bambino garantisce di fatto il range `500 – 700 Hz`.",
+        "**Scegli la velocità in base allo stile di parlato.** I tipi Intrattenitore dal parlato veloce staranno bene a `1.4x – 2.0x`; un Sognatore assonnato si colloca naturalmente a `0.5x – 0.8x`. La velocità cambia solo la durata, quindi non stona mai la voce che hai scelto al passo 2.",
         "**Prova con una frase breve.** Digita `20 – 30` caratteri nel campo di testo e ascolta la pausa di frase ogni quinto carattere — se la cadenza sembra sbagliata per la personalità, regola la velocità prima di toccare il tono.",
-        "**Itera sul tuo storico.** Ogni riproduzione — preset, tono, velocità e fino a `100` caratteri di testo — viene salvata in un pannello dello storico `IndexedDB` locale dentro lo strumento, così puoi confrontare in A/B due impostazioni senza annotarle. Nulla lascia il browser.",
+        "**Sfrutta lo storico.** Ogni riproduzione — preset, tono, velocità e fino a `100` caratteri di testo — viene salvata in un pannello dello storico `IndexedDB` locale dentro lo strumento, così puoi confrontare in A/B due impostazioni senza annotarle. Nulla lascia il browser.",
       ],
     },
     {
@@ -177,7 +177,7 @@ export const postVoiceSynthesis: BlogPost = {
     },
     {
       type: "p",
-      text: "La giustificazione: `speechSynthesis` produce voci umane naturali, che è esattamente ciò che un laboratorio di voci 8-bit non vuole. Delega inoltre la selezione delle voci al sistema operativo, quindi lo stesso testo può suonare diverso tra browser e dispositivi, e diversi browser caricano le voci pigramente, con una latenza percepibile alla prima pronuncia. L'approccio un beep per carattere mantiene ogni suono dentro lo stesso grafo a tre nodi usato dalla modalità a beep singolo, garantisce un timbro identico ovunque funzioni la Web Audio API e parte all'istante perché non c'è nulla da caricare.",
+      text: "La giustificazione: `speechSynthesis` produce voci umane naturali, il che è esattamente ciò che un laboratorio di voci 8-bit non vuole. Delega inoltre la selezione delle voci al sistema operativo, quindi lo stesso testo può suonare diverso tra browser e dispositivi, e diversi browser caricano le voci in modo differito, con una latenza percepibile alla prima pronuncia. L'approccio a un beep per carattere mantiene ogni suono dentro lo stesso grafo a tre nodi usato dalla modalità a beep singolo, garantisce un timbro identico ovunque funzioni la Web Audio API e parte all'istante perché non c'è nulla da caricare.",
     },
     {
       type: "p",
@@ -194,7 +194,7 @@ export const postVoiceSynthesis: BlogPost = {
     },
     {
       type: "p",
-      text: "Terzo, tutto dipende dal supporto del browser. La Web Audio API usata qui — `AudioContext`, `OscillatorNode`, `BiquadFilterNode`, `GainNode` — è supportata in tutti i principali browser attuali, ma il carattere dell'output della Web Audio API varia ancora leggermente tra gli stack audio dei dispositivi, e i browser che bloccano la riproduzione automatica fino a un gesto dell'utente richiederanno la pressione del pulsante di riproduzione che il laboratorio già fornisce. Sul fronte della privacy lo strumento è interamente lato client: la sintesi viene eseguita nel browser e l'unica persistenza è lo storico `IndexedDB` locale — nessun audio o testo viene caricato da nessuna parte.",
+      text: "Terzo, tutto dipende dal supporto del browser. La Web Audio API usata qui — `AudioContext`, `OscillatorNode`, `BiquadFilterNode`, `GainNode` — è supportata in tutti i principali browser attuali, ma il carattere dell'output varia ancora leggermente tra gli stack audio dei dispositivi, e i browser che bloccano la riproduzione automatica fino a un gesto dell'utente richiederanno la pressione del pulsante di riproduzione che il laboratorio già fornisce. Sul fronte della privacy lo strumento è interamente lato client: la sintesi viene eseguita nel browser e l'unica persistenza è lo storico `IndexedDB` locale — nessun audio o testo viene caricato da nessuna parte.",
     },
     { type: "h2", text: "Prova tu stesso il pipeline" },
     {
@@ -207,7 +207,7 @@ export const postVoiceSynthesis: BlogPost = {
         "[Voice Lab Tomodachi](/it/tomodachi-voice-lab) — il sintetizzatore stesso: cinque preset, il cursore del tono `100 – 800 Hz`, il controllo della velocità e la modalità testo a un beep per carattere.",
         "[Mappatura MBTI di Tomodachi Life](/it/tomodachi-life-mbti) — come i quattro cursori di personalità di un Mii producono il suo gruppo, che decide il suo preset nella tabella sopra.",
         "[Tabella delle personalità](/it/tomodachi-life-personality-chart) — il riferimento completo dei 16 tipi per scegliere una personalità rappresentativa da far parlare.",
-        "[Sblocca QR Mii](/it/mii-qr-unlocker) — abbina una voce progettata a un personaggio Mii modificato per il residente dell'isola completo.",
+        "[Sbloccatore QR Mii](/it/mii-qr-unlocker) — abbina una voce progettata a un personaggio Mii modificato per completare la rosa dei residenti dell'isola.",
       ],
     },
     {

@@ -25,7 +25,7 @@ export const postVoiceSynthesis: BlogPost = {
     { type: "h2", text: "Porque é que as vozes de Tomodachi falam em beeps" },
     {
       type: "p",
-      text: "A peculiaridade marcante do áudio de Tomodachi Life é a fala em beeps: em vez de diálogos gravados, cada Mii vocaliza em tons sintetizados curtos que seguem o ritmo de uma frase sem nunca formar palavras reais. A abordagem remonta às origens portáteis da série, onde o tamanho dos cartuchos e o hardware de som tornavam impraticável a dobragem completa, e sobreviveu até Tomodachi Life: Living the Dream na Switch porque os beeps se tornaram parte da identidade da série. O resultado lê-se como fala porque copia a prosódia da fala — movimento do tom, timing das sílabas, pausas — mantendo-se deliberadamente não lexical.",
+      text: "A peculiaridade marcante do áudio de Tomodachi Life é a fala em beeps: em vez de diálogos gravados, cada Mii vocaliza em tons sintetizados curtos que seguem o ritmo de uma frase sem nunca formar palavras reais. A abordagem remonta às origens portáteis da série, onde o tamanho dos cartuchos e o hardware de som tornavam impraticável a dobragem completa, e sobreviveu até ao Tomodachi Life: Living the Dream na Switch porque os beeps se tornaram parte da identidade da série. O resultado lê-se como fala porque copia a prosódia humana — movimento do tom, timing das sílabas, pausas — mantendo-se deliberadamente não lexical.",
     },
     {
       type: "p",
@@ -34,7 +34,7 @@ export const postVoiceSynthesis: BlogPost = {
     { type: "h2", text: "A pipeline de síntese, nó a nó" },
     {
       type: "p",
-      text: "Cada som que o laboratório produz passa exatamente por três nós de processamento entre o oscilador e os teus altifalantes. Um `AudioContext` novo é criado por cada reprodução — o laboratório nunca mantém um grafo de áudio global vivo — e cada sílaba agenda o seu próprio conjunto de nós dentro dele:",
+      text: "Cada som que o laboratório produz sai do mesmo grafo de três nós — oscilador, filtro e ganho — e chega aos teus altifalantes pelos dois últimos. Um `AudioContext` novo é criado a cada reprodução — o laboratório nunca mantém um grafo de áudio global vivo — e cada sílaba agenda o seu próprio conjunto de nós dentro dele:",
     },
     {
       type: "code",
@@ -42,7 +42,7 @@ export const postVoiceSynthesis: BlogPost = {
     },
     {
       type: "p",
-      text: "O `OscillatorNode` é a fonte sonora. O seu `type` vem do preset selecionado (`sawtooth` em quatro dos cinco presets, `square` para o robot) e a sua `frequency` é definida pelo cursor de tom. Como um oscilador é um gerador de forma de onda nu, não tem controlos de timbre próprios — tudo o que faz um preset soar diferente de outro é o agendamento de parâmetros a jusante.",
+      text: "O `OscillatorNode` é a fonte sonora. O seu `type` vem do preset selecionado (`sawtooth` em quatro dos cinco presets, `square` para o Robot) e a sua `frequency` é definida pelo cursor de tom. Como um oscilador é apenas um gerador de forma de onda, não tem controlos de timbre próprios — tudo o que faz um preset soar diferente de outro é o agendamento de parâmetros a jusante.",
     },
     {
       type: "p",
@@ -50,11 +50,11 @@ export const postVoiceSynthesis: BlogPost = {
     },
     {
       type: "p",
-      text: "O `GainNode` é onde vive o envelope, agendado com quatro pontos de automatização. O ganho começa em `0` no instante inicial da sílaba, sobe linearmente até ao valor-alvo do preset (`0.2 – 0.3`) durante o tempo de attack, mantém-se nesse valor até um tempo de release antes do fim e depois desce linearmente de volta a `0`. As chamadas são `setValueAtTime()` para as âncoras e `linearRampToValueAtTime()` para as rampas — um envelope attack/hold/release simples, sem curvas exponenciais, o que mantém o som caracteristicamente abrupto de uma forma que assenta na estética de 8 bits.",
+      text: "O `GainNode` é onde vive o envelope, agendado com quatro pontos de automatização. O ganho começa em `0` no instante inicial da sílaba, sobe linearmente até ao valor-alvo do preset (`0.2 – 0.3`) durante o tempo de attack, mantém-se nesse valor até ao início do release, antes do fim, e depois desce linearmente de volta a `0`. As chamadas são `setValueAtTime()` para as âncoras e `linearRampToValueAtTime()` para as rampas — um envelope attack/hold/release simples, sem curvas exponenciais, o que mantém o som caracteristicamente abrupto de uma forma que assenta na estética de 8 bits.",
     },
     {
       type: "p",
-      text: "Existe um par de nós adicional opcional: o vibrato. Quando um preset o ativa, um segundo `OscillatorNode` a funcionar como LFO (oscilador de baixa frequência) corre à `vibratoRate` do preset e alimenta um `GainNode` definido com a `vibratoDepth`, que está ligado ao parâmetro `frequency` do oscilador principal. Isto é modulação de frequência clássica — no preset Idoso, um LFO de `5 Hz` faz o tom oscilar `±15 Hz`, produzindo a qualidade trémula associada a vozes envelhecidas. Só o preset Idoso o liga; os outros quatro deixam o vibrato completamente desativado.",
+      text: "Existe um par de nós opcional: o vibrato. Quando um preset o ativa, um segundo `OscillatorNode` a funcionar como LFO (oscilador de baixa frequência) corre à `vibratoRate` do preset e alimenta um `GainNode` definido com a `vibratoDepth`, que está ligado ao parâmetro `frequency` do oscilador principal. Isto é modulação de frequência clássica — no preset Idoso, um LFO de `5 Hz` faz o tom oscilar `±15 Hz`, produzindo a qualidade trémula associada a vozes envelhecidas. Só o preset Idoso o liga; os outros quatro deixam o vibrato completamente desativado.",
     },
     { type: "h2", text: "Como soa cada forma de onda (e quando a escolher)" },
     {
@@ -73,7 +73,7 @@ export const postVoiceSynthesis: BlogPost = {
     },
     {
       type: "p",
-      text: "Os presets do laboratório usam apenas dois dos quatro: o `sawtooth` transporta as quatro vozes orgânicas e o `square` transporta o robot. Esta divisão é deliberada. Um dente de serra contém energia em todos os harmónicos, o que, após a filtragem passa-baixo, deixa um núcleo denso e semelhante a uma voz — a razão pela qual aproxima tons cantados ou falados melhor do que qualquer outra forma de onda básica. Uma onda quadrada mantém apenas harmónicos ímpares com mais energia no topo, dando a qualidade oca, nasal e inconfundivelmente eletrónica que o preset Robot procura. `Sine` e `triangle` não são usados por nenhum preset atual, mas continuam a ser alterações de uma linha através do mesmo campo `OscillatorType`: a onda sinusoidal adequa-se a efeitos sonoros puros como sinos, e a onda triangular adequa-se a bips suaves de fundo onde um dente de serra seria demasiado agressivo.",
+      text: "Os presets do laboratório usam apenas dois dos quatro: o `sawtooth` transporta as quatro vozes orgânicas e o `square` fica com o Robot. Esta divisão é deliberada. Um dente de serra contém energia em todos os harmónicos, o que, após a filtragem passa-baixo, deixa um núcleo denso e semelhante a uma voz — a razão pela qual se aproxima mais de tons cantados ou falados do que qualquer outra forma de onda básica. Uma onda quadrada mantém apenas harmónicos ímpares com mais energia no topo, dando a qualidade oca, nasal e inconfundivelmente eletrónica que o preset Robot procura. `sine` e `triangle` não são usados por nenhum preset atual, mas se mudam com uma única linha através do mesmo campo `OscillatorType`: a onda sinusoidal adequa-se a efeitos sonoros puros como sinos, e a onda triangular adequa-se a bips suaves de fundo onde um dente de serra seria demasiado agressivo.",
     },
     { type: "h2", text: "Os cinco presets de voz, descodificados" },
     {
@@ -97,7 +97,7 @@ export const postVoiceSynthesis: BlogPost = {
     },
     {
       type: "p",
-      text: "O **Idoso** é o preset mais processado: o registo mais grave (`120 Hz`), o filtro mais escuro (`900 Hz`), o único vibrato (LFO de `5 Hz` com profundidade de `±15 Hz`) e o envelope mais lento (`0.04 s` de attack, `0.08 s` de release). Estes dois últimos valores importam tanto como o tom — o attack lento suaviza o arranque de cada sílaba e o release longo deixa os tons transbordar ligeiramente para o seguinte, evocando a articulação menos precisa que o preset procura.",
+      text: "O **Idoso** é o preset mais processado: o registo mais grave (`120 Hz`), o filtro mais escuro (`900 Hz`), o único vibrato (LFO de `5 Hz` com profundidade de `±15 Hz`) e o envelope mais lento (`0.04 s` de attack, `0.08 s` de release). Estes dois últimos valores importam tanto como o tom — o attack lento suaviza o arranque de cada sílaba e o release longo deixa os tons transbordarem ligeiramente para o seguinte, evocando a articulação menos precisa que o preset procura.",
     },
     {
       type: "p",
@@ -106,7 +106,7 @@ export const postVoiceSynthesis: BlogPost = {
     { type: "h2", text: "Como o tom e a velocidade controlam realmente o oscilador" },
     {
       type: "p",
-      text: "Dois cursores controlam o grafo em tempo real: o tom, de `100 – 800 Hz` com um valor predefinido de `300 Hz`, e a velocidade, de `0.5x – 2.0x` com um valor predefinido de `1.0x`. Cada preset também declara o seu próprio `baseFreq` canónico (o centro de referência listado na tabela acima), que documenta onde esse tipo de voz foi desenhado para se situar.",
+      text: "Dois cursores controlam o grafo em tempo real: o tom, de `100 – 800 Hz` com um valor predefinido de `300 Hz`, e a velocidade, de `0.5x – 2.0x` com um valor predefinido de `1.0x`. Cada preset também declara o seu próprio `baseFreq` canónico (o centro de referência listado na tabela acima), que documenta onde esse tipo de voz foi pensado para se situar.",
     },
     {
       type: "p",
@@ -119,7 +119,7 @@ export const postVoiceSynthesis: BlogPost = {
     { type: "h2", text: "Do texto à fala, um beep por caráter" },
     {
       type: "p",
-      text: "O modo de fala de texto do laboratório não é um motor de fala — é a mesma pipeline de oscilador de três nós, agendada uma vez por caráter. Quando escreves até `100` carateres e clicas em falar, a entrada é dividida em carateres individuais e cada caráter que não seja um espaço torna-se um beep de sílaba agendado com um desvio de tom derivado do seu código de caráter. As constantes de tempo, todas divididas pela velocidade:",
+      text: "O modo de texto do laboratório não é um motor de fala — é a mesma pipeline de oscilador de três nós, agendada uma vez por caráter. Quando escreves até `100` carateres e clicas em falar, a entrada é dividida em carateres individuais e cada caráter que não seja um espaço torna-se um beep de sílaba agendado com um desvio de tom derivado do seu código de caráter. As constantes de tempo, todas divididas pela velocidade:",
     },
     {
       type: "ul",
@@ -133,7 +133,7 @@ export const postVoiceSynthesis: BlogPost = {
     },
     {
       type: "p",
-      text: "A variação de tom é a parte engenhosa. O desvio de frequência de cada caráter é calculado como `((charCode % 20) - 10) × 3`, o que produz uma dispersão determinística entre `-30 Hz` e `+27 Hz` em torno do tom base. Ser determinístico importa: a mesma palavra produz sempre o mesmo contorno melódico, por isso uma dada frase torna-se reconhecível do mesmo modo que a voz de um Mii é reconhecível. Como os desvios vêm de códigos de caráter e não de fonética, o output segue de perto o ritmo do texto enquanto permanece um sem-sentido não lexical — que é precisamente o efeito de fala em beeps que o laboratório procura aproximar.",
+      text: "A variação de tom é a parte engenhosa. O desvio de frequência de cada caráter é calculado como `((charCode % 20) - 10) × 3`, o que produz uma dispersão determinística entre `-30 Hz` e `+27 Hz` em torno do tom base. Ser determinístico importa: a mesma palavra produz sempre o mesmo contorno melódico, por isso uma dada frase torna-se reconhecível do mesmo modo que a voz de um Mii é reconhecível. Como os desvios vêm de códigos de caráter e não de fonética, o output segue de perto o ritmo do texto enquanto permanece um sem-sentido não lexical — que é precisamente o efeito de fala em beeps que o laboratório procura evocar.",
     },
     { type: "h2", text: "Desenhar uma voz para cada grupo de personalidade" },
     {
@@ -154,43 +154,43 @@ export const postVoiceSynthesis: BlogPost = {
     },
     {
       type: "p",
-      text: "Repara que a tabela mapeia grupos, não todas as 16 personalidades — os quatro grupos de personalidade do nosso [mapeamento MBTI](/pt/tomodachi-life-mbti) recebem cada um uma silhueta de voz representativa, e as personalidades individuais exprimem-se pelo sítio onde posicionas o cursor dentro da gama e pela velocidade a que corres o controlo de velocidade. A receita passo a passo:",
+      text: "Repara que a tabela mapeia grupos, não todas as 16 personalidades — os quatro grupos de personalidade do nosso [mapeamento MBTI](/pt/tomodachi-life-mbti) recebem cada um uma silhueta de voz representativa, e as personalidades individuais exprimem-se pelo sítio onde posicionas o cursor dentro da gama e pela velocidade que definires no controlo de velocidade. A receita passo a passo:",
     },
     {
       type: "ol",
       items: [
         "**Escolhe o preset a partir do grupo.** Miis Extrovertidos e Confiantes levam Homem adulto; Miis Independentes levam Mulher adulta; Miis Calmos levam Idoso, cujo vibrato de `5 Hz` acrescenta a qualidade descontraída e sem pressa pela qual o grupo é conhecido. O grupo de um Mii vem dos seus quatro cursores de personalidade — vê o [gráfico de personalidades](/pt/tomodachi-life-personality-chart) se ainda não o conheces.",
-        "**Define o cursor de tom dentro da gama do grupo.** Para um Designer Confiante isso significa `150 – 200 Hz`; deslizar em direção a `150 Hz` soa mais imponente, em direção a `200 Hz` mais energético. O limite de `500 Hz` do preset Criança faz com que a gama `500 – 700 Hz` se imponha por si.",
+        "**Define o cursor de tom dentro da gama do grupo.** Para um Designer Confiante isso significa `150 – 200 Hz`; deslizar em direção a `150 Hz` soa mais imponente, em direção a `200 Hz` mais energético. O limite de `500 Hz` do preset Criança faz com que a gama `500 – 700 Hz` se imponha por si só.",
         "**Escolhe a velocidade a combinar com o estilo de fala.** Tipos Animador de fala rápida justificam `1.4x – 2.0x`; um Sonhador sonolento fica naturalmente em `0.5x – 0.8x`. A velocidade muda apenas a duração, por isso nunca desafina a voz que escolheste no passo 2.",
-        "**Testa com uma frase curta.** Escreve `20 – 30` carateres no campo de texto e está atento à pausa de frase a cada 5.º caráter — se a cadência parecer errada para a personalidade, ajusta a velocidade antes de tocar no tom.",
-        "**Itera sobre o teu histórico.** Cada reprodução — preset, tom, velocidade e até `100` carateres de texto — é guardada num painel de histórico `IndexedDB` local dentro da ferramenta, para que possas fazer A/B a duas configurações sem as anotar. Nada sai do browser.",
+        "**Testa com uma frase curta.** Escreve `20 – 30` carateres no campo de texto e está atento à pausa de frase a cada 5.º caráter — se a cadência parecer errada para a personalidade, ajusta a velocidade antes de mexer no tom.",
+        "**Itera sobre o teu histórico.** Cada reprodução — preset, tom, velocidade e até `100` carateres de texto — é guardada num painel de histórico `IndexedDB` local dentro da ferramenta, para que possas fazer testes A/B entre duas configurações sem as anotar. Nada sai do browser.",
       ],
     },
     {
       type: "p",
-      text: "As linhas da criança e do robot ficam intencionalmente fora do sistema de personalidades: qualquer Mii pode receber qualquer uma das vozes, e é por isso que a sua coluna MBTI diz Any. O envelope de comprimento zero do robot torna-o tolerante ao tempo — a qualquer velocidade mantém a mesma rigidez cortada, por isso é a única voz em que a velocidade é puramente um controlo cómico.",
+      text: "As linhas da Criança e do Robot ficam intencionalmente fora do sistema de personalidades: qualquer Mii pode receber qualquer uma das vozes, e é por isso que a sua coluna MBTI diz Any. O envelope de comprimento zero do Robot torna-o tolerante ao ritmo — a qualquer velocidade mantém a mesma rigidez cortada, por isso é a única voz em que a velocidade é puramente um controlo cómico.",
     },
     { type: "h2", text: "Porque é que não existe fallback da Web Speech API" },
     {
       type: "p",
-      text: "O laboratório evita deliberadamente a Web Speech API do browser — não existe nenhuma chamada `speechSynthesis` em todo o seu código, e o modo de fala de texto é puro agendamento de oscilador. É uma decisão de design com uma justificação defensável e uma troca real, e vale a pena explicitar ambas.",
+      text: "O laboratório evita deliberadamente a Web Speech API do browser — não existe nenhuma chamada `speechSynthesis` em todo o seu código, e o modo de texto é puro agendamento de oscilador. É uma decisão de design com uma justificação defensável e um custo real, e vale a pena explicitar ambas.",
     },
     {
       type: "p",
-      text: "A justificação: a `speechSynthesis` produz vozes humanas naturais, que é exatamente o que um laboratório de vozes de 8 bits não quer. Também delega a seleção de voz no sistema operativo, por isso o mesmo texto pode soar diferente entre browsers e dispositivos, e vários browsers carregam as vozes de forma preguiçosa com latência notável na primeira elocução. A abordagem de um beep por caráter mantém todos os sons dentro do mesmo grafo de três nós que o modo de beep único usa, garante timbre idêntico em todo o lado onde a Web Audio API funciona e arranca instantaneamente porque não há nada para carregar.",
+      text: "A justificação: a `speechSynthesis` produz vozes humanas naturais, que é exatamente o que um laboratório de vozes de 8 bits não quer. Também delega a seleção de voz no sistema operativo, por isso o mesmo texto pode soar diferente entre browsers e dispositivos, e vários browsers só carregam as vozes quando são precisas, com latência notável na primeira elocução. A abordagem de um beep por caráter mantém todos os sons dentro do mesmo grafo de três nós que o modo de beep único usa, garante timbre idêntico em todo o lado onde a Web Audio API funciona e arranca instantaneamente porque não há nada para carregar.",
     },
     {
       type: "p",
-      text: "A troca: o output não é fala inteligível. Segue o ritmo e o contorno do texto mas não produz palavras reconhecíveis, por isso evoca a cadência da fala em beeps de Tomodachi Life em vez da sua compreensibilidade — e o sem-sentido do jogo também não é compreensível, o que é discutivelmente o ponto. Parar a reprodução é igualmente bruto e eficaz: o laboratório fecha o `AudioContext` inteiro via `close()`, o que mata imediatamente todos os nós agendados em vez de fazer um fade out.",
+      text: "O custo: o output não é fala inteligível. Segue o ritmo e o contorno do texto mas não produz palavras reconhecíveis, por isso evoca a cadência da fala em beeps de Tomodachi Life em vez da sua compreensibilidade — e o sem-sentido do jogo também não é compreensível, o que é discutivelmente o ponto. Parar a reprodução é igualmente bruto e eficaz: o laboratório fecha o `AudioContext` inteiro via `close()`, o que mata imediatamente todos os nós agendados em vez de fazer um fade out.",
     },
     { type: "h2", text: "Limitações, enunciadas com honestidade" },
     {
       type: "p",
-      text: "Três limitações enquadram o que este sintetizador pode honestamente afirmar. Primeiro, aproxima uma estética, não o motor do jogo: a Nintendo nunca documentou como Tomodachi Life gera as suas vozes, por isso os valores de preset aqui presentes são estimativas da comunidade afinadas para evocar o som da série, não constantes extraídas. As vozes lembram as do jogo, não são réplicas delas.",
+      text: "Três limitações enquadram o que este sintetizador pode honestamente afirmar. Primeiro, aproxima uma estética, não o motor do jogo: a Nintendo nunca documentou como Tomodachi Life gera as suas vozes, por isso os valores de preset aqui usados são estimativas da comunidade afinadas para evocar o som da série, não constantes extraídas. As vozes lembram as do jogo, não são réplicas delas.",
     },
     {
       type: "p",
-      text: "Segundo, a síntese é monofónica e sem formantes. Cada sílaba é um único oscilador moldado por um filtro passa-baixo, ao passo que a fala natural — e presumivelmente o motor mais sofisticado do jogo — transporta estrutura de formantes do trato vocal. É por isso que o output soa como voz chiptune em vez de fala amostrada, e é a lacuna que mais vale a pena explorar se expandires o código: um segundo oscilador uma oitava acima, ou um filtro com movimento de frequência agendado, empurrariam ambos o resultado para mais perto do território vocal.",
+      text: "Segundo, a síntese é monofónica e sem formantes. Cada sílaba é um único oscilador moldado por um filtro passa-baixo, ao passo que a fala natural — e presumivelmente o motor mais sofisticado do jogo — transporta estrutura de formantes do trato vocal. É por isso que o output soa como voz chiptune em vez de fala amostrada, e é a lacuna que mais vale a pena explorar se expandires o código: um segundo oscilador uma oitava acima, ou um filtro com movimento de frequência agendado, ambos empurrariam o resultado para mais perto do território vocal.",
     },
     {
       type: "p",

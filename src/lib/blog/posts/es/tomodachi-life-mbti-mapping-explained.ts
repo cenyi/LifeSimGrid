@@ -24,15 +24,15 @@ export const postMbtiMapping: BlogPost = {
     { type: "h2", text: "Los cuatro controles que lo deciden todo" },
     {
       type: "p",
-      text: "Cuando registras un Mii, el juego te permite ajustar cuatro ejes de personalidad. Distintas comunidades de fans les dan nombres ligeramente distintos; en este sitio los llamamos **Movimiento**, **Habla**, **Energía** y **Pensamiento**, y cada uno es un valor continuo de `0` a `100`. Ninguna de las 16 personalidades se consigue con un solo control — la personalidad es un **patrón** a lo largo de los cuatro ejes, y por eso dos Miis pueden parecer completamente distintos aunque compartan el valor de un solo control.",
+      text: "Cuando registras un Mii, el juego te permite ajustar cuatro ejes de personalidad. Las distintas comunidades de fans les dan nombres ligeramente diferentes; en este sitio los llamamos **Movimiento**, **Habla**, **Energía** y **Pensamiento**, y cada uno es un valor continuo de `0` a `100`. Ninguna de las 16 personalidades se consigue con un solo control — la personalidad es un **patrón** a lo largo de los cuatro ejes, y por eso dos Miis pueden parecer completamente distintos aunque compartan el valor de un solo control.",
     },
     {
       type: "p",
-      text: "**Movimiento** va de lento a rápido. Un Mii con Movimiento alto cruza la isla en visiblemente menos pasos, toma la iniciativa de llamar a las puertas y tiende a aparecer primero en las escenas de grupo. **Habla** va de suave a directo. Los Miis directos dan respuestas bruscas, confiesan sus sentimientos pronto y sueltan frases más duras en las peleas. **Energía** va de práctico a imaginativo: los Miis prácticos se ocupan de lo que tienen delante, mientras que los imaginativos divagan, proponen actividades nuevas y reaccionan con fuerza a la novedad. **Pensamiento** va de flexible a estructurado: los Miis estructurados mantienen rutinas, mantienen sus opiniones ordenadas y llevan la cuenta.",
+      text: "**Movimiento** va de lento a rápido. Un Mii con Movimiento alto da visiblemente menos pasos al cruzar la isla, toma la iniciativa de llamar a las puertas y tiende a aparecer primero en las escenas de grupo. **Habla** va de suave a directo. Los Miis directos dan respuestas bruscas, se declaran pronto y sueltan frases más duras en las peleas. **Energía** va de práctico a imaginativo: los Miis prácticos se ocupan de lo que tienen delante, mientras que los imaginativos divagan, proponen actividades nuevas y reaccionan con fuerza a la novedad. **Pensamiento** va de flexible a estructurado: los Miis estructurados siguen rutinas, ordenan sus opiniones y llevan la cuenta de todo.",
     },
     {
       type: "p",
-      text: "Los cuatro ejes no se eligieron al azar. Cada uno corresponde exactamente a una letra del código MBTI, y eso es lo que hace posible un mapeo limpio de 16 tipos. Antes de llegar ahí, el modelo tiene que colapsar cuatro valores continuos en una de 16 personalidades discretas, y lo hace en tres pasos: bandas, grupo y luego subtipo.",
+      text: "Los cuatro ejes no se eligieron al azar. Cada uno corresponde exactamente a una letra del código MBTI, y eso es lo que hace posible un mapeo limpio de 16 tipos. Antes de llegar ahí, el modelo tiene que reducir cuatro valores continuos a una de 16 personalidades discretas, y lo hace en tres pasos: bandas, grupo y luego subtipo.",
     },
     { type: "h2", text: "Paso 1: cada control se convierte en una de tres bandas" },
     {
@@ -66,16 +66,16 @@ export const postMbtiMapping: BlogPost = {
     },
     {
       type: "p",
-      text: "Luego las reglas se aplican en cascada y en orden. Si la señal de introversión es alta mientras la señal activa es baja, el Mii cae en el **Grupo Independiente** — el hogar del Artista, el Espíritu libre, el Pensador y el Lobo solitario. Si la señal activa es muy alta (`4` o más), el Mii es social: se convierte en **Extrovertido** cuando Habla también está en la banda alta, y en **Seguro** en caso contrario. Una señal activa intermedia se divide por Movimiento: un Movimiento alto mantiene al Mii en **Extrovertido**, y cualquier otra cosa lo desliza hacia **Afable**. Y cuando la señal activa es baja sin una señal de introversión fuerte, el Mii se instala en **Afable** por defecto. El orden de la cascada importa: un Mii introvertido pero enérgico se resuelve por la primera regla que coincida, no por promedio.",
+      text: "Luego las reglas se aplican en cascada y en orden. Si la señal de introversión es alta mientras la señal activa es baja, el Mii cae en el **Grupo Independiente** — el hogar del Artista, el Espíritu libre, el Pensador y el Lobo solitario. Si la señal activa es muy alta (`4` o más), el Mii es social: se convierte en **Extrovertido** cuando Habla también está en la banda alta, y en **Seguro** en caso contrario. Una señal activa intermedia se desempata con Movimiento: un Movimiento alto mantiene al Mii en **Extrovertido**, y cualquier otra cosa lo desliza hacia **Afable**. Y cuando la señal activa es baja sin una señal de introversión fuerte, el Mii se instala en **Afable** por defecto. El orden de la cascada importa: un Mii introvertido pero enérgico lo resuelve la primera regla que coincida, no un promedio de señales.",
     },
     {
       type: "p",
-      text: "Los dos grupos sociales y los dos grupos reservados no son categorías arbitrarias: alimentan directamente el modelo de compatibilidad del sitio, donde Extrovertido empareja de forma natural con Independiente, y Seguro con Afable. Más sobre eso abajo.",
+      text: "Los dos grupos sociales y los dos grupos reservados no son categorías arbitrarias: alimentan directamente el modelo de compatibilidad del sitio, donde Extrovertido empareja de forma natural con Independiente, y Seguro con Afable. Volveremos sobre eso más abajo.",
     },
     { type: "h2", text: "Paso 3: una segunda lectura elige el subtipo" },
     {
       type: "p",
-      text: "Una vez fijado el grupo, una segunda pasada sobre las mismas bandas selecciona a uno de sus cuatro miembros. Cada grupo tiene sus propios criterios de desempate. En el Grupo Extrovertido, por ejemplo, Energía alta junto con Habla alta produce el **Animador**; Movimiento alto con al menos Habla media da el **Innovador**; una banda de Pensamiento media o más alta orienta hacia el **Líder**; y todo lo demás se convierte en el **Optimista**. Los otros tres grupos siguen el mismo patrón con ejes de prioridad distintos, y eso es lo que le da a cada subtipo su silueta reconocible.",
+      text: "Una vez fijado el grupo, una segunda pasada sobre las mismas bandas selecciona a uno de sus cuatro miembros. Cada grupo tiene sus propios criterios de desempate. En el Grupo Extrovertido, por ejemplo, Energía alta junto con Habla alta produce el **Animador**; Movimiento alto con al menos Habla media da el **Innovador**; una banda de Pensamiento media o más alta orienta hacia el **Líder**; y todo lo demás se convierte en el **Optimista**. Los otros tres grupos siguen el mismo patrón con ejes de prioridad distintos.",
     },
     {
       type: "p",
@@ -111,7 +111,7 @@ export const postMbtiMapping: BlogPost = {
     {
       type: "ol",
       items: [
-        "**E o I ← Movimiento.** Un Mii rápido es extravertido (E); un Mii lento es introvertido (I). Movimiento es el único eje que decide la primera letra, y eso coincide con lo que observan los jugadores: la velocidad al caminar es el rasgo de personalidad más visible del juego.",
+        "**E o I ← Movimiento.** Un Mii rápido es extrovertido (E); un Mii lento es introvertido (I). Movimiento es el único eje que decide la primera letra, y eso coincide con lo que observan los jugadores: la velocidad al caminar es el rasgo de personalidad más visible del juego.",
         "**S o N ← Energía.** Un Mii práctico es sensorial (S); un Mii imaginativo es intuitivo (N). Este eje gobierna cómo reacciona el Mii ante objetos, eventos y residentes nuevos.",
         "**T o F ← Habla.** Un Mii directo es de pensamiento (T); un Mii suave es de sentimiento (F). El mismo control que hace que las peleas sean duras o suaves es el que decide la tercera letra.",
         "**J o P ← Pensamiento.** Un Mii estructurado es calificador (J); un Mii flexible es perceptivo (P). Los Miis amantes de la rutina llevan la J; los improvisadores llevan la P.",
@@ -124,24 +124,24 @@ export const postMbtiMapping: BlogPost = {
 
     { type: "h2", text: "Preguntas frecuentes sobre el mapeo" },
     { type: "h3", text: "¿Controles idénticos producen siempre la misma personalidad?" },
-    { type: "p", text: "Sí: el proceso es totalmente determinista. Los mismos cuatro valores caen siempre en las mismas bandas, aterran en la misma celda de las `81`, resuelven el mismo grupo en la cascada y eligen el mismo subtipo. Dos Miis registrados con ajustes idénticos saldrán siempre idénticos, en este sitio y, por toda la observación acumulada de los jugadores, también en el juego. Lo único que puede voltear a un Mii aparentemente intacto es un empujón de un punto en el borde de una banda — de `33` a `34`, o de `66` a `67` —; por eso los valores al límite merecen una segunda mirada antes de cerrar tu plan de isla." },
+    { type: "p", text: "Sí: el proceso es totalmente determinista. Los mismos cuatro valores caen siempre en las mismas bandas, aterran en la misma celda de las `81`, resuelven el mismo grupo en la cascada y eligen el mismo subtipo. Dos Miis registrados con ajustes idénticos saldrán siempre idénticos, en este sitio y, según toda la observación acumulada de los jugadores, también en el juego. Lo único que puede voltear a un Mii aparentemente intacto es un empujón de un punto en el borde de una banda — de `33` a `34`, o de `66` a `67` —, por eso los valores al límite merecen una segunda mirada antes de cerrar tu plan de isla." },
     { type: "h3", text: "¿Cuál de los cuatro controles pesa más?" },
-    { type: "p", text: "**Movimiento** lleva el mayor peso. Es el único eje que decide una letra por sí solo (rápido es E, lento es I), alimenta la señal activa y desempata entre **Extrovertido** y **Afable** cuando la señal activa es tibia. **Pensamiento** va justo detrás: es el único motor de la señal de introspección que lleva a los Miis callados hacia el Grupo Independiente, y inclina varios desempates de subtipo. Habla y Energía cuentan, pero sobre todo como multiplicadores de los otros dos." },
+    { type: "p", text: "**Movimiento** lleva el mayor peso. Es el único eje que decide la primera letra por sí solo (rápido es E, lento es I), alimenta la señal activa y desempata entre **Extrovertido** y **Afable** cuando la señal activa es tibia. **Pensamiento** va justo detrás: es el único motor de la señal de introversión que lleva a los Miis callados hacia el Grupo Independiente, y inclina varios desempates de subtipo. Habla y Energía cuentan, pero sobre todo como multiplicadores de los otros dos." },
     { type: "h3", text: "¿Por qué a veces un resultado se siente mal incluso con valores sensatos?" },
-    { type: "p", text: "Casi siempre por las bandas medias. Un control estacionado entre `34` y `66` casi no aporta información — el modelo lo lee como neutro —, así que dos Miis que se sienten distintos en el juego pueden cuantizarse igual y salir lo mismo. El orden de la cascada lo agrava: gana la primera regla que aplica, y un Mii enérgico y amable puede quedar separado de uno enérgico y directo por una sola banda. Si una predicción choca con cómo se comporta tu Mii en el juego, fíate del comportamiento y toma el código por lo que es: una aproximación." },
+    { type: "p", text: "Casi siempre por las bandas medias. Un control estacionado entre `34` y `66` casi no aporta información — el modelo lo lee como neutro —, así que dos Miis que se sienten distintos en el juego pueden cuantizarse igual y acabar siendo lo mismo. El orden de la cascada lo agrava: gana la primera regla que aplica, y un Mii enérgico y amable puede acabar en un grupo distinto al de uno enérgico y directo por una sola banda. Si una predicción choca con cómo se comporta tu Mii en el juego, fíate del comportamiento y toma el código por lo que es: una aproximación." },
     { type: "h3", text: "¿La personalidad cambia cómo actúa un Mii dentro del juego?" },
     { type: "p", text: "La observación de los jugadores dice que sí, a grandes rasgos: los Miis de habla directa sueltan lo que piensan en las peleas y se declaran pronto, los imaginativos proponen actividades raras y los estructurados mantienen las rutinas que el juego les permite fijar. Lo que la personalidad claramente no hace es sellar el destino: los niveles de amistad, el historial de regalos y los eventos aleatorios viven fuera de este sistema. Por eso nuestras puntuaciones de compatibilidad llegan con desglose y no con promesas." },
     { type: "h3", text: "¿Es el mismo test MBTI que la gente hace en internet?" },
-    { type: "p", text: "No, y conviene no mezclarlos. El indicador Myers-Briggs es un cuestionario para personas reales; este mapeo es una capa de traducción entre el sistema de controles de un videojuego y el vocabulario de cuatro letras de ese cuestionario. Las letras significan lo mismo a nivel de eje, pero un Mii no puede ser introvertido como lo es una persona: solo puede sostener un valor de control. Toma el código de un Mii como una taquigrafía compartida de su patrón de controles, no como una evaluación psicológica del personaje y mucho menos de su dueño." },
+    { type: "p", text: "No, y conviene no mezclarlos. El indicador Myers-Briggs es un cuestionario para personas reales; este mapeo es una capa de traducción entre el sistema de controles de un videojuego y el vocabulario de cuatro letras de ese cuestionario. Las letras significan lo mismo a nivel de eje, pero un Mii no puede ser introvertido como lo es una persona: solo puede tener un valor de control. Toma el código de un Mii como una taquigrafía compartida de su patrón de controles, no como una evaluación psicológica del personaje y mucho menos de su dueño." },
     { type: "h2", text: "El mapeo al revés: del código MBTI a los controles" },
-    { type: "p", text: "La tabla también funciona en sentido inverso, que es la dirección que la mayoría necesita: conoces tu propio código MBTI y quieres un Mii a juego. Lee el código como cuatro posiciones de control y ajústalas así:" },
+    { type: "p", text: "La tabla también funciona en sentido inverso, que es la dirección que la mayoría necesita: conoces tu propio código MBTI y quieres un Mii que le haga juego. Lee el código como cuatro posiciones de control y ajústalas así:" },
     { type: "ol", items: [
       "**Primera letra → Movimiento.** E pide Movimiento hacia rápido (`67` o más); I hacia lento (`33` o menos).",
       "**Segunda letra → Energía.** S se sienta en el extremo práctico (`33` o menos); N en el imaginativo (`67` o más).",
       "**Tercera letra → Habla.** T quiere directo (`67` o más); F quiere amable (`33` o menos).",
       "**Cuarta letra → Pensamiento.** J quiere estructurado (`67` o más); P quiere flexible (`33` o menos).",
     ] },
-    { type: "p", text: "Apunta a los extremos de cada eje, no a la mitad — las bandas medias son el punto débil del modelo, como explica la sección de límites. Un código pide una decisión en lugar de un ajuste: [INFP](/es/tomodachi-life-mbti/infp) corresponde tanto al [Artista](/es/tomodachi-life-personality/artist) como al [Sensible](/es/tomodachi-life-personality/softie); elige la fila cuyo grupo encaje con el temperamento buscado — contenido **Independiente** para el Artista, afectuoso **Afable** para el Sensible — y pon los controles en la firma de esa fila." },
+    { type: "p", text: "Apunta a los extremos de cada eje, no a la mitad — las bandas medias son el punto débil del modelo, como explica la sección de límites. Un código pide una decisión en lugar de un ajuste: [INFP](/es/tomodachi-life-mbti/infp) corresponde tanto al [Artista](/es/tomodachi-life-personality/artist) como al [Sensible](/es/tomodachi-life-personality/softie); elige la fila cuyo grupo encaje con el temperamento buscado — contenido **Independiente** para el Artista, afectuoso **Afable** para el Sensible — y pon los controles según la firma de esa fila." },
     { type: "h2", text: "La anomalía INFP: 16 personalidades, 15 códigos" },
     {
       type: "p",
@@ -149,11 +149,11 @@ export const postMbtiMapping: BlogPost = {
     },
     {
       type: "p",
-      text: "El Artista y el Sensible comparten exactamente la misma firma de controles: lento, suave, imaginativo y flexible. Lo que los separa es su grupo. El Artista vive en el Grupo Independiente, donde el modelo lee esa firma como un soñador privado y de mundo interior. El Sensible vive en el Grupo Afable, donde la firma idéntica se convierte en un residente tranquilo y abiertamente cariñoso. En términos del juego puedes pensarlos como las mismas cuatro lecturas de ejes con dos vestuarios sociales distintos: uno mantiene su distancia, el otro se acerca.",
+      text: "El Artista y el Sensible comparten exactamente la misma firma de controles: lento, suave, imaginativo y flexible. Lo que los separa es su grupo. El Artista vive en el Grupo Independiente, donde el modelo lee esa firma como la de un soñador reservado y de mundo interior. El Sensible vive en el Grupo Afable, donde la firma idéntica se convierte en un residente tranquilo y abiertamente cariñoso. En términos del juego puedes pensarlos como las mismas cuatro lecturas de ejes con dos vestuarios sociales distintos: uno mantiene su distancia, el otro se acerca.",
     },
     {
       type: "p",
-      text: "La consecuencia práctica: el MBTI por sí solo no puede distinguir a un [Artista](/es/tomodachi-life-personality/artist) de un [Sensible](/es/tomodachi-life-personality/softie). Si planificas la lista de residentes de tu isla por códigos MBTI, recuerda que INFP es ambiguo, y consulta el grupo (o la página de la personalidad) para ver cuál de los dos es realmente un Mii dado. Todos los demás códigos de la tabla se mapean a exactamente una personalidad.",
+      text: "La consecuencia práctica: el MBTI por sí solo no puede distinguir a un [Artista](/es/tomodachi-life-personality/artist) de un [Sensible](/es/tomodachi-life-personality/softie). Si planificas la lista de residentes de tu isla por códigos MBTI, recuerda que INFP es ambiguo, y consulta el grupo (o la página de la personalidad) para ver cuál de los dos es realmente un Mii concreto. Todos los demás códigos de la tabla se mapean a exactamente una personalidad.",
     },
     { type: "h2", text: "Cómo el modelo de compatibilidad usa los mismos grupos" },
     {
@@ -165,7 +165,7 @@ export const postMbtiMapping: BlogPost = {
       items: [
         "**Término zodiacal (50%).** Una matriz zodiacal simétrica de 12 × 12 aporta una puntuación base de química entre `40` y `90` para cualquier par de signos. Los pares del mismo signo y los clásicos del mismo elemento están en la parte alta de ese rango.",
         "**Término base (50%).** Un `50` plano que representa el punto de partida neutral del modelo antes de considerar la personalidad.",
-        "**Modificadores de personalidad.** Los grupos complementarios (Extrovertido con Independiente, o Seguro con Afable) suman `+20` al romance. Dos Miis del mismo grupo pierden `10` de romance pero ganan `+20` de amistad. Dos Miis de la personalidad **exactamente igual** pierden otros `5` de romance y ganan otros `+10` de amistad.",
+        "**Modificadores de personalidad.** Los grupos complementarios (Extrovertido con Independiente, o Seguro con Afable) suman `+20` al romance. Dos Miis del mismo grupo pierden `10` de romance pero ganan `+20` de amistad. Dos Miis con **exactamente la misma** personalidad pierden otros `5` de romance y ganan otros `+10` de amistad.",
       ],
     },
     {
@@ -197,7 +197,7 @@ export const postMbtiMapping: BlogPost = {
     },
     {
       type: "p",
-      text: "Tres advertencias que conviene tener en mente. Primero, los controles en banda media (`34 – 66`) son el punto débil del modelo: cambios pequeños cerca de los umbrales pueden voltear una banda y cambiar la personalidad predicha, así que trata los resultados fronterizos como provisionales. Segundo, la colisión INFP descrita arriba significa que planificar por MBTI pierde información que la planificación por personalidad conserva. Tercero, los resultados del juego también dependen de factores que este modelo no toca — eventos de la isla, historial de regalos y la semilla aleatoria detrás de las reacciones de cada Mii — así que las puntuaciones de compatibilidad son puntos de partida para historias, no garantías.",
+      text: "Tres advertencias que conviene tener en mente. Primero, los controles en banda media (`34 – 66`) son el punto débil del modelo: cambios pequeños cerca de los umbrales pueden voltear una banda y cambiar la personalidad predicha, así que trata los resultados al límite como provisionales. Segundo, la colisión INFP descrita arriba significa que planificar por MBTI pierde información que la planificación por personalidad conserva. Tercero, los resultados del juego también dependen de factores que este modelo no toca — eventos de la isla, historial de regalos y la semilla aleatoria detrás de las reacciones de cada Mii — así que las puntuaciones de compatibilidad son puntos de partida para historias, no garantías.",
     },
     {
       type: "callout",

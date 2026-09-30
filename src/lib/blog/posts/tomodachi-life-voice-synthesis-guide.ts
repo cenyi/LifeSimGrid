@@ -24,7 +24,7 @@ export const postVoiceSynthesis: BlogPost = {
     { type: "h2", text: "Why Tomodachi voices speak in beeps" },
     {
       type: "p",
-      text: "The signature quirk of Tomodachi Life's audio is beep-speech: instead of recorded dialogue, every Mii vocalizes in short synthesized tones that follow the rhythm of a sentence without ever forming real words. The approach dates back to the series' handheld origins, where cartridge size and sound hardware made full voice acting impractical, and it survived into Tomodachi Life: Living the Dream on Switch because the beeps became part of the series' identity. The result reads as speech because it copies speech's prosody — pitch movement, syllable timing, pauses — while staying deliberately non-lexical.",
+      text: "The signature quirk of Tomodachi Life's audio is beep-speech: instead of recorded dialogue, every Mii vocalizes in short synthesized tones that follow the rhythm of a sentence without ever forming real words. The approach dates back to the series' handheld origins, where cartridge size and sound hardware made full voice acting impractical, and it survived into Tomodachi Life: Living the Dream on Switch because the beeps became part of the series' identity. The result reads as speech because it copies human prosody — pitch movement, syllable timing, pauses — while staying deliberately non-lexical.",
     },
     {
       type: "p",
@@ -33,7 +33,7 @@ export const postVoiceSynthesis: BlogPost = {
     { type: "h2", text: "The synthesis pipeline, node by node" },
     {
       type: "p",
-      text: "Every sound the lab produces passes through exactly three processing nodes between the oscillator and your speakers. A fresh `AudioContext` is created per playback — the lab never keeps a global audio graph alive — and each syllable schedules its own set of nodes inside it:",
+      text: "Every sound the lab produces comes out of the same three-node graph — oscillator, filter, gain — on its way to your speakers. A fresh `AudioContext` is created per playback — the lab never keeps a global audio graph alive — and each syllable schedules its own set of nodes inside it:",
     },
     {
       type: "code",
@@ -49,11 +49,11 @@ export const postVoiceSynthesis: BlogPost = {
     },
     {
       type: "p",
-      text: "The `GainNode` is where the envelope lives, scheduled with four automation points. The gain starts at `0` at the syllable's start time, ramps linearly up to the preset's target (`0.2 – 0.3`) over the attack time, holds at that value until one release-time before the end, then ramps linearly back to `0`. The calls are `setValueAtTime()` for the anchors and `linearRampToValueAtTime()` for the ramps — a plain attack/hold/release envelope with no exponential curves, which keeps the sound characteristically abrupt in a way that suits 8-bit styling.",
+      text: "The `GainNode` is where the envelope lives, scheduled with four automation points. The gain starts at `0` at the syllable's start time, ramps linearly up to the preset's target (`0.2 – 0.3`) over the attack time, holds at that value until one release-duration before the end, then ramps linearly back to `0`. The calls are `setValueAtTime()` for the anchors and `linearRampToValueAtTime()` for the ramps — a plain attack/hold/release envelope with no exponential curves, which keeps the sound characteristically abrupt.",
     },
     {
       type: "p",
-      text: "One optional fourth node pair exists: vibrato. When a preset enables it, a second `OscillatorNode` acting as an LFO (low-frequency oscillator) runs at the preset's `vibratoRate` and feeds a `GainNode` set to the `vibratoDepth`, which is connected to the main oscillator's `frequency` parameter. This is classic frequency modulation — in the elder preset, a `5 Hz` LFO wobbles the pitch by `±15 Hz`, producing the wavering quality associated with aged voices. Only the elder preset turns it on; the other four leave vibrato disabled entirely.",
+      text: "A fourth, optional node pair exists: vibrato. When a preset enables it, a second `OscillatorNode` acting as an LFO (low-frequency oscillator) runs at the preset's `vibratoRate` and feeds a `GainNode` set to the `vibratoDepth`, which is connected to the main oscillator's `frequency` parameter. This is classic frequency modulation — in the elder preset, a `5 Hz` LFO wobbles the pitch by `±15 Hz`, producing the wavering quality associated with aged voices. Only the elder preset turns it on; the other four leave vibrato disabled entirely.",
     },
     { type: "h2", text: "What each waveform sounds like (and when to pick it)" },
     {
@@ -72,7 +72,7 @@ export const postVoiceSynthesis: BlogPost = {
     },
     {
       type: "p",
-      text: "The lab's presets use only two of the four: `sawtooth` carries the four organic voices and `square` carries the robot. That split is deliberate. A sawtooth contains energy at every harmonic, which after lowpass filtering leaves a thick, voice-like core — the reason it approximates sung or spoken tones better than any other basic waveform. A square wave keeps only odd harmonics with more energy up high, giving the hollow, nasal, unmistakably electronic quality the robot preset wants. `Sine` and `triangle` are not used by any current preset, but they remain one-line changes via the same `OscillatorType` field: sine suits pure sound effects like chimes, and triangle suits soft background blips where sawtooth would be too aggressive.",
+      text: "The lab's presets use only two of the four: `sawtooth` carries the four organic voices and `square` carries the robot. That split is deliberate. A sawtooth contains energy at every harmonic, which after lowpass filtering leaves a thick, voice-like core — the reason it approximates sung or spoken tones better than any other basic waveform. A square wave keeps only odd harmonics with more energy up high, giving the hollow, nasal, unmistakably electronic quality the robot preset wants. `sine` and `triangle` are not used by any current preset, but they remain one-line changes via the same `OscillatorType` field: sine suits pure sound effects like chimes, and triangle suits soft background blips where sawtooth would be too aggressive.",
     },
     { type: "h2", text: "The five voice presets, decoded" },
     {
@@ -109,11 +109,11 @@ export const postVoiceSynthesis: BlogPost = {
     },
     {
       type: "p",
-      text: "Pitch sets the oscillator frequency directly, with one guard rail: in the child preset the played frequency is `Math.max(pitch, 500)`, so dragging the slider below `500 Hz` in child mode does nothing — the oscillator never descends under that floor. This clamp protects the preset's character, since a child voice at `150 Hz` would simply read as a quiet adult male.",
+      text: "Pitch sets the oscillator frequency directly, with one guard rail: in the child preset the played frequency is `Math.max(pitch, 500)`, so dragging the slider below `500 Hz` in child mode does nothing — the oscillator never descends below that floor. This clamp protects the preset's character, since a child voice at `150 Hz` would simply read as a quiet adult male.",
     },
     {
       type: "p",
-      text: "Speed controls time, not frequency. A single press of the play button produces one beep lasting `0.5 / speed` seconds — `1.0 s` at `0.5x`, `0.5 s` at `1.0x`, and `0.25 s` at `2.0x`. The same divisor applies to every timing constant in text mode, so a `2.0x` voice is genuinely twice as fast end to end rather than resampled, which would have shifted its pitch. After playback the interface resets its playing state after `500 / speed + 50` milliseconds, the beep length plus a `50 ms` guard.",
+      text: "Speed controls time, not frequency. A single press of the play button produces one beep lasting `0.5 / speed` seconds — `1.0 s` at `0.5x`, `0.5 s` at `1.0x`, and `0.25 s` at `2.0x`. The same divisor applies to every timing constant in text mode, so a `2.0x` voice is genuinely twice as fast end to end rather than resampled, which would have shifted its pitch. Once playback ends, the interface resets its playing state after `500 / speed + 50` milliseconds, the beep length plus a `50 ms` guard.",
     },
     { type: "h2", text: "From text to speech, one beep per character" },
     {
@@ -132,7 +132,7 @@ export const postVoiceSynthesis: BlogPost = {
     },
     {
       type: "p",
-      text: "The pitch variation is the clever part. Each character's frequency offset is computed as `((charCode % 20) - 10) × 3`, which yields a deterministic spread between `-30 Hz` and `+27 Hz` around the base pitch. Deterministic matters: the same word always produces the same melodic contour, so a given phrase becomes recognizable the way a Mii's voice is recognizable. Because the offsets come from character codes rather than phonetics, the output follows the rhythm of the text closely while remaining non-lexical gibberish — which is precisely the beep-speech effect the lab is approximating.",
+      text: "The pitch variation is the clever part. Each character's frequency offset is computed as `((charCode % 20) - 10) × 3`, which yields a deterministic spread between `-30 Hz` and `+27 Hz` around the base pitch. The determinism matters: the same word always produces the same melodic contour, so a given phrase becomes recognizable the way a Mii's voice is recognizable. Because the offsets come from character codes rather than phonetics, the output follows the rhythm of the text closely while remaining non-lexical gibberish — which is precisely the beep-speech effect the lab is approximating.",
     },
     { type: "h2", text: "Designing a voice for each personality group" },
     {
@@ -160,7 +160,7 @@ export const postVoiceSynthesis: BlogPost = {
       items: [
         "**Pick the preset from the group.** Outgoing and Confident Miis take Adult Male; Independent Miis take Adult Female; Easygoing Miis take Elder, whose `5 Hz` vibrato adds the relaxed, unhurried quality the group is known for. A Mii's group comes from its four personality sliders — see the [personality chart](/tomodachi-life-personality-chart) if you do not know it yet.",
         "**Set the pitch slider inside the group's range.** For a Confident Designer that means `150 – 200 Hz`; sliding toward `150 Hz` reads more imposing, toward `200 Hz` more energetic. The child preset's `500 Hz` floor means the `500 – 700 Hz` range enforces itself.",
-        "**Choose speed to match speech style.** Fast-talking Entertainer types justify `1.4x – 2.0x`; a drowsy Dreamer sits naturally at `0.5x – 0.8x`. Speed changes only duration, so it never detunes the voice you chose in step 2.",
+        "**Choose speed to match speech style.** Fast-talking Entertainer types call for `1.4x – 2.0x`; a drowsy Dreamer sits naturally at `0.5x – 0.8x`. Speed changes only duration, so it never detunes the voice you chose in step 2.",
         "**Test with a short phrase.** Type `20 – 30` characters into the text field and listen for the phrase pause every 5th character — if the cadence feels wrong for the personality, adjust speed before touching pitch.",
         "**Iterate against your history.** Every playback — preset, pitch, speed, and up to `100` characters of text — is saved to a local `IndexedDB` history panel inside the tool, so you can A/B two settings without writing them down. Nothing leaves the browser.",
       ],
@@ -180,20 +180,20 @@ export const postVoiceSynthesis: BlogPost = {
     },
     {
       type: "p",
-      text: "The trade-off: the output is not intelligible speech. It follows the rhythm and contour of the text but produces no recognizable words, so it evokes the cadence of Tomodachi Life's beep-speech rather than its comprehensibility — and the game's gibberish is not comprehensible either, which is arguably the point. Stopping playback is similarly brute-force and effective: the lab closes the entire `AudioContext` via `close()`, which immediately kills every scheduled node rather than fading out.",
+      text: "The trade-off: the output is not intelligible speech. It follows the rhythm and contour of the text but produces no recognizable words, so it evokes the cadence of Tomodachi Life's beep-speech rather than its comprehensibility — and the game's gibberish is not comprehensible either, which is arguably the point. Stopping playback is brute-force and effective: the lab closes the entire `AudioContext` via `close()`, which immediately kills every scheduled node rather than fading out.",
     },
     { type: "h2", text: "Limitations, honestly stated" },
     {
       type: "p",
-      text: "Three limitations bound what this synthesizer can honestly claim. First, it approximates an aesthetic, not the game's engine: Nintendo has never documented how Tomodachi Life generates its voices, so the preset values here are community estimates tuned to evoke the series' sound, not extracted constants. The voices are reminiscent of the game's, not replicas of it.",
+      text: "Three limitations bound what this synthesizer can honestly claim. First, it approximates an aesthetic, not the game's engine: Nintendo has never documented how Tomodachi Life generates its voices, so the preset values here are community estimates tuned to evoke the series' sound, not extracted constants. The voices are reminiscent of the game's, not replicas of them.",
     },
     {
       type: "p",
-      text: "Second, the synthesis is monophonic and formant-free. Each syllable is a single oscillator shaped by one lowpass filter, whereas natural speech — and presumably the game's more sophisticated engine — carries formant structure from the vocal tract. This is why the output reads as chiptune voicing rather than sampled speech, and it is the gap most worth exploring if you extend the code: a second oscillator an octave up, or a filter with scheduled frequency movement, would both push the result closer to vocal territory.",
+      text: "Second, the synthesis is monophonic and formant-free. Each syllable is a single oscillator shaped by one lowpass filter, whereas natural speech — and presumably the game's more sophisticated engine — carries formant structure from the vocal tract. This is why the output reads as chiptune voicing rather than sampled speech, and it is the gap most worth exploring if you extend the code: a second oscillator an octave up, or a filter with scheduled frequency movement, would push the result closer to vocal territory.",
     },
     {
       type: "p",
-      text: "Third, everything depends on browser support. The Web Audio API used here — `AudioContext`, `OscillatorNode`, `BiquadFilterNode`, `GainNode` — is supported in all current major browsers, but the Web Audio API's output character still varies slightly across device audio stacks, and browsers that block autoplay until a user gesture will require the play button press the lab already provides. On the privacy side the tool is fully client-side: synthesis runs in the browser, and the only persistence is the local `IndexedDB` history — no audio or text is uploaded anywhere.",
+      text: "Third, everything depends on browser support. The Web Audio API used here — `AudioContext`, `OscillatorNode`, `BiquadFilterNode`, `GainNode` — is supported in all current major browsers, but its output character still varies slightly across device audio stacks, and browsers that block autoplay until a user gesture will require the play button press the lab already provides. On the privacy side, the tool is fully client-side: synthesis runs in the browser, and the only persistence is the local `IndexedDB` history — no audio or text is uploaded anywhere.",
     },
     { type: "h2", text: "Try the pipeline yourself" },
     {

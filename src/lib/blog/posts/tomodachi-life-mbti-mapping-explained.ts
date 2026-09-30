@@ -28,7 +28,7 @@ export const postMbtiMapping: BlogPost = {
     },
     {
       type: "p",
-      text: "**Movement** runs from slow to fast. A Mii with high Movement crosses the island in visibly fewer steps, initiates door-knocks, and tends to appear first in group scenes. **Speech** runs from gentle to direct. Direct Miis give blunt answers, confess feelings early, and land harder lines during quarrels. **Energy** runs from practical to imaginative — practical Miis deal in what is in front of them, imaginative Miis daydream, suggest new activities, and react strongly to novelty. **Thinking** runs from flexible to structured: structured Miis keep routines, keep opinions tidy, and keep score.",
+      text: "**Movement** runs from slow to fast. A Mii with high Movement crosses the island in visibly fewer steps, initiates door-knocks, and tends to appear first in group scenes. **Speech** runs from gentle to direct. Direct Miis give blunt answers, confess feelings early, and land harder lines during quarrels. **Energy** runs from practical to imaginative — practical Miis deal in what is in front of them; imaginative Miis daydream, suggest new activities, and react strongly to novelty. **Thinking** runs from flexible to structured: structured Miis keep routines, keep opinions tidy, and keep score.",
     },
     {
       type: "p",
@@ -75,7 +75,7 @@ export const postMbtiMapping: BlogPost = {
     { type: "h2", text: "Pass 3: a second read picks the sub-type" },
     {
       type: "p",
-      text: "Once the group is fixed, a second pass over the same bands selects one of its four members. Each group has its own tie-breakers. In the Outgoing group, for example, high Energy together with high Speech produces the **Entertainer**; high Movement with at least mid Speech gives the **Trendsetter**; a mid-or-higher Thinking band steers toward the **Leader**; and everything else becomes the **Optimist**. The other three groups follow the same pattern with different priority axes, which is what gives each sub-type its recognizable silhouette.",
+      text: "Once the group is fixed, a second pass over the same bands selects one of its four members. Each group has its own tie-breakers. In the Outgoing group, for example, high Energy together with high Speech produces the **Entertainer**; high Movement with at least mid Speech gives the **Trendsetter**; a mid-or-higher Thinking band steers toward the **Leader**; and everything else becomes the **Optimist**. The other three groups follow the same pattern with different priority axes.",
     },
     {
       type: "p",
@@ -119,16 +119,16 @@ export const postMbtiMapping: BlogPost = {
     },
     {
       type: "p",
-      text: "Notice that the code is fully determined by the four-axis signature — Movement speed, Energy style, Speech style, and Thinking structure — and **not** by the group. The group is a fifth piece of information, and the mapping needs it, as the next section shows.",
+      text: "Notice that the code is fully determined by the four-axis signature — Movement speed, Energy style, Speech style, and Thinking structure — and **not** by the group. The group is a fifth piece of information, and the mapping needs it, as the INFP section below shows.",
     },
 
     { type: "h2", text: "Questions players ask about the mapping" },
     { type: "h3", text: "Do identical sliders always produce the same personality?" },
-    { type: "p", text: "Yes — the pipeline is fully deterministic. The same four slider values always quantize to the same bands, land in the same cell of the `81`, resolve to the same group through the cascade, and pick the same sub-type. Two Miis registered with identical personality settings will always come out identical, on this site and, as far as long-term player observation goes, in the game. The only way a seemingly unchanged Mii can flip is a one-point nudge across a band edge — `33` to `34`, or `66` to `67` — which is why borderline sliders deserve a second look before you commit to a roster plan." },
+    { type: "p", text: "Yes — the pipeline is fully deterministic. The same four slider values always quantize to the same bands, land in the same one of the `81` cells, resolve to the same group through the cascade, and pick the same sub-type. Two Miis registered with identical personality settings will always come out identical, on this site and, as far as long-term player observation goes, in the game. The only way a seemingly unchanged Mii can flip is a one-point nudge across a band edge — `33` to `34`, or `66` to `67` — which is why borderline sliders deserve a second look before you commit to a roster plan." },
     { type: "h3", text: "Which of the four sliders matters most?" },
-    { type: "p", text: "**Movement** carries the most weight. It is the only axis that decides a letter on its own (fast is E, slow is I), it is one of the three inputs to the active signal, and it breaks the tie between **Outgoing** and **Easygoing** when the active signal is middling. **Thinking** runs a close second: it alone drives the intro signal that routes quiet, inward Miis into the Independent group, and it steers several sub-type tie-breakers. Speech and Energy matter, but mostly as multipliers on the other two." },
+    { type: "p", text: "**Movement** carries the most weight. It is the only axis that decides the first letter on its own (fast is E, slow is I), it is one of the three inputs to the active signal, and it breaks the tie between **Outgoing** and **Easygoing** when the active signal is middling. **Thinking** runs a close second: it alone drives the intro signal that routes quiet, inward Miis into the Independent group, and it steers several sub-type tie-breakers. Speech and Energy matter, but mostly as multipliers on the other two." },
     { type: "h3", text: "Why does a result sometimes feel wrong even with sensible sliders?" },
-    { type: "p", text: "Almost always because of the mid bands. A slider parked between `34` and `66` carries almost no information — the model reads it as neutral — so two Miis that feel different in play can quantize identically and come out the same. The cascade order compounds this: the first matching rule wins, so an energetic but gentle Mii and an energetic but direct Mii can be separated by a single band. If a prediction clashes with how a Mii actually behaves in your game, trust the behavior and treat the code as the approximation it is." },
+    { type: "p", text: "Almost always because of the mid bands. A slider parked between `34` and `66` carries little information — the model reads it as neutral — so two Miis that feel different in play can quantize identically and come out the same. The cascade order compounds this: the first matching rule wins, so an energetic but gentle Mii and an energetic but direct Mii can be separated by a single band. If a prediction clashes with how a Mii actually behaves in your game, trust the behavior and treat the code as the approximation it is." },
     { type: "h3", text: "Does the personality change how a Mii behaves in game?" },
     { type: "p", text: "Player observation says yes, in broad strokes: direct-speech Miis are the ones who blurt things out during quarrels and confess early, imaginative Miis are the ones who suggest odd activities, and structured Miis keep the routines the game lets them set. What the personality demonstrably does not do is lock fate — friendship levels, gift history, and random events all sit outside this system, which is exactly why our compatibility scores ship with breakdowns instead of promises." },
     { type: "h3", text: "Is this the same MBTI test people take online?" },

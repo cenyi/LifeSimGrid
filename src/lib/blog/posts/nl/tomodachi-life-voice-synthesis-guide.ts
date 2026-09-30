@@ -34,7 +34,7 @@ export const postVoiceSynthesis: BlogPost = {
     { type: "h2", text: "De synthesepipeline, knooppunt voor knooppunt" },
     {
       type: "p",
-      text: "Elk geluid dat het lab produceert passeert precies drie verwerkingsknooppunten tussen de oscillator en je luidsprekers. Bij elke weergave wordt een verse `AudioContext` aangemaakt — het lab houdt nooit een globale audiograaf in leven — en elke lettergreep plant zijn eigen set knooppunten daarin:",
+      text: "Elk geluid dat het lab produceert, komt uit dezelfde graaf van drie knooppunten — oscillator, filter, gain — en bereikt je luidsprekers via de laatste twee. Bij elke weergave wordt een verse `AudioContext` aangemaakt — het lab houdt nooit een globale audiograaf in leven — en elke lettergreep plant zijn eigen set knooppunten daarin:",
     },
     {
       type: "code",
@@ -42,11 +42,11 @@ export const postVoiceSynthesis: BlogPost = {
     },
     {
       type: "p",
-      text: "De `OscillatorNode` is de geluidsbron. Zijn `type` komt uit de gekozen preset (`sawtooth` bij vier van de vijf presets, `square` bij de robot), en zijn `frequency` wordt ingesteld via de toonhoogteschuifregelaar. Omdat een oscillator een kale golfvormgenerator is, heeft hij zelf geen regelaars voor klankkleur — alles wat het ene preset anders laat klinken dan het andere is stroomafwaartse parameterscheduling.",
+      text: "De `OscillatorNode` is de geluidsbron. Zijn `type` komt uit de gekozen preset (`sawtooth` bij vier van de vijf presets, `square` bij de Robot), en zijn `frequency` wordt ingesteld via de toonhoogteschuifregelaar. Omdat een oscillator een kale golfvormgenerator is, heeft hij zelf geen regelaars voor klankkleur — alles wat de ene preset anders laat klinken dan de andere is stroomafwaartse parameterscheduling.",
     },
     {
       type: "p",
-      text: "De `BiquadFilterNode` is altijd geconfigureerd als `lowpass`-filter, met een cutoff die uit de `filterFreq`-waarde van de preset komt (`900 – 2500 Hz` afhankelijk van de preset). Een laagdoorlaatfilter dempt de boventonen boven zijn cutofffrequentie, en dat is precies wat het ongeremde gezoem van een ruwe zaagtand omzet in iets dat op een stem lijkt: donkere presets (Oudere bij `900 Hz`) houden alleen de lage boventonen over, terwijl heldere presets (Kind bij `2500 Hz`) de glans doorlaten die een stem klein en jong doet klinken.",
+      text: "De `BiquadFilterNode` is altijd geconfigureerd als `lowpass`-filter, met een cutoff die uit de `filterFreq`-waarde van de preset komt (`900 – 2500 Hz`). Een laagdoorlaatfilter dempt de boventonen boven zijn cutofffrequentie, en dat is precies wat het ongeremde gezoem van een ruwe zaagtand omzet in iets dat op een stem lijkt: donkere presets (Oudere bij `900 Hz`) houden alleen de lage boventonen over, terwijl heldere presets (Kind bij `2500 Hz`) de glans doorlaten die een stem klein en jong doet klinken.",
     },
     {
       type: "p",
@@ -59,11 +59,11 @@ export const postVoiceSynthesis: BlogPost = {
     { type: "h2", text: "Hoe elke golfvorm klinkt (en wanneer je welke kiest)" },
     {
       type: "p",
-      text: "De keuze van de golfvorm is de belangrijkste klankkleurbeslissing in de hele pipeline, omdat die het obertoongehalte bepaalt dat filter en envelope vervolgens vormgeven. De `OscillatorNode` van de Web Audio API biedt vier standaardtypes, en elk type heeft een duidelijk eigen karakter:",
+      text: "De keuze van de golfvorm is de belangrijkste klankkleurbeslissing in de hele pipeline, omdat die het boventoongehalte bepaalt dat filter en envelope vervolgens vormgeven. De `OscillatorNode` van de Web Audio API biedt vier standaardtypes, en elk type heeft een duidelijk eigen karakter:",
     },
     {
       type: "table",
-      headers: ["Golfvorm", "Obertoongehalte", "Karakter", "Gebruikt door presets"],
+      headers: ["Golfvorm", "Boventongehalte", "Karakter", "Gebruikt door presets"],
       rows: [
         ["`sine`", "Alleen de grondtoon", "Zuiver, fluitachtig, nul gezoem", "Geen (beschikbaar via `OscillatorType`)"],
         ["`square`", "Oneven boventonen, sterk", "Hol, klassiek NES-leadkanaal", "Robot"],
@@ -73,12 +73,12 @@ export const postVoiceSynthesis: BlogPost = {
     },
     {
       type: "p",
-      text: "De presets van het lab gebruiken er maar twee van de vier: `sawtooth` draagt de vier organische stemmen en `square` draagt de robot. Die splitsing is bewust. Een zaagtand bevat energie op elke boventoon, wat na de laagdoorlaatfilter een dikke, stemachtige kern overhoudt — de reden dat hij gezongen of gesproken tonen beter benadert dan enige andere basisgolfvorm. Een blokgolf houdt alleen oneven boventonen over met meer energie in de hoogte, wat de holle, nasale, onmiskenbaar elektronische kwaliteit oplevert die de Robot-preset wil. `Sine` en `triangle` worden door geen enkele huidige preset gebruikt, maar ze blijven veranderingen van één regel via hetzelfde `OscillatorType`-veld: sinus past bij zuivere geluidseffecten zoals klokkengelui, en driehoeksgolf past bij zachte achtergrondblips waar een zaagtand te agressief zou zijn.",
+      text: "De presets van het lab gebruiken er maar twee van de vier: `sawtooth` draagt de vier organische stemmen en `square` draagt de Robot. Die splitsing is bewust. Een zaagtand bevat energie op elke boventoon, wat na het laagdoorlaatfilter een dikke, stemachtige kern overhoudt — de reden dat hij gezongen of gesproken tonen beter benadert dan enige andere basisgolfvorm. Een blokgolf houdt alleen oneven boventonen over met meer energie in de hoogte, wat de holle, nasale, onmiskenbaar elektronische kwaliteit oplevert die de Robot-preset wil. `sine` en `triangle` worden door geen enkele huidige preset gebruikt, maar ze blijven via hetzelfde `OscillatorType`-veld een verandering van één regel: sinus past bij zuivere geluidseffecten zoals klokkengelui, en driehoeksgolf past bij zachte achtergrondblips waar een zaagtand te agressief zou zijn.",
     },
     { type: "h2", text: "De vijf stempresets, ontcijferd" },
     {
       type: "p",
-      text: "De vijf presets zijn vijf parameterbundels boven dezelfde graaf met drie knooppunten, en hun verschillen laten zich volledig opsommen. Hier is de volledige tabel, rechtstreeks geciteerd uit de constante `VOICE_PRESETS` in de broncode:",
+      text: "De vijf presets zijn vijf parameterbundels op dezelfde graaf met drie knooppunten, en hun verschillen laten zich volledig opsommen. Hier is de volledige tabel, rechtstreeks geciteerd uit de constante `VOICE_PRESETS` in de broncode:",
     },
     {
       type: "table",
@@ -97,7 +97,7 @@ export const postVoiceSynthesis: BlogPost = {
     },
     {
       type: "p",
-      text: "**Oudere** is de meest bewerkte preset: het laagste register (`120 Hz`), het donkerste filter (`900 Hz`), het enige vibrato (`5 Hz`-LFO met een diepte van `±15 Hz`) en de traagste envelope (`0.04 s` attack, `0.08 s` release). Die laatste twee waarden zijn net zo belangrijk als de toonhoogte — de trage attack verzacht het begin van elke lettergreep, en de lange release laat tonen iets in de volgende doorlopen, wat de minder precieze articulatie oproept waar de preset op mikt.",
+      text: "**Oudere** is de meest bewerkte preset: het laagste register (`120 Hz`), het donkerste filter (`900 Hz`), het enige vibrato (`5 Hz`-LFO met een diepte van `±15 Hz`) en de traagste envelope (`0.04 s` attack, `0.08 s` release). Die laatste twee waarden zijn net zo belangrijk als de toonhoogte — de trage attack verzacht het begin van elke lettergreep, en de lange release laat tonen iets doorlopen in de volgende lettergreep, wat de minder precieze articulatie oproept waar de preset op mikt.",
     },
     {
       type: "p",
@@ -110,7 +110,7 @@ export const postVoiceSynthesis: BlogPost = {
     },
     {
       type: "p",
-      text: "De toonhoogte stelt de oscillatorfrequentie rechtstreeks in, met één vangrail: in de Kind-preset is de gespeelde frequentie `Math.max(pitch, 500)`, dus de schuifregelaar onder `500 Hz` trekken doet in de kindmodus niets — de oscillator zakt nooit onder die ondergrens. Deze begrenzing beschermt het karakter van de preset, want een kinderstem op `150 Hz` zou simpelweg klinken als een stille volwassen man.",
+      text: "De toonhoogte stelt de oscillatorfrequentie rechtstreeks in, met één vangrail: in de Kind-preset is de gespeelde frequentie `Math.max(pitch, 500)`, dus de schuifregelaar onder `500 Hz` zetten doet in de kindmodus niets — de oscillator zakt nooit onder die ondergrens. Deze begrenzing beschermt het karakter van de preset, want een kinderstem op `150 Hz` zou simpelweg klinken als een volwassen man.",
     },
     {
       type: "p",
@@ -133,7 +133,7 @@ export const postVoiceSynthesis: BlogPost = {
     },
     {
       type: "p",
-      text: "De toonhoogtevariatie is het slimme deel. De frequentie-offset van elk teken wordt berekend als `((charCode % 20) - 10) × 3`, wat een deterministische spreiding oplevert tussen `-30 Hz` en `+27 Hz` rond de basistoonhoogte. Dat het deterministisch is, is cruciaal: hetzelfde woord produceert altijd dezelfde melodische contour, waardoor een bepaalde frase net zo herkenbaar wordt als de stem van een Mii herkenbaar is. Omdat de offsets uit tekencodes komen in plaats van uit fonetiek, volgt de uitvoer het ritme van de tekst nauwkeurig terwijl het niet-lexicale wartaal blijft — precies het pieptaaleffect dat het lab probeert te benaderen.",
+      text: "De toonhoogtevariatie is het slimme deel. De frequentie-offset van elk teken wordt berekend als `((charCode % 20) - 10) × 3`, wat een deterministische spreiding oplevert tussen `-30 Hz` en `+27 Hz` rond de basistoonhoogte. Dat het deterministisch is, is cruciaal: hetzelfde woord produceert altijd dezelfde melodische contour, waardoor een bepaalde frase net zo herkenbaar wordt als de stem van een Mii herkenbaar is. Omdat de offsets uit tekencodes komen in plaats van uit fonetiek, volgt de uitvoer het ritme van de tekst nauwkeurig terwijl hij niet-lexicaal wartaal blijft — precies het pieptaaleffect dat het lab probeert te benaderen.",
     },
     { type: "h2", text: "Een stem ontwerpen voor elke persoonlijkheidsgroep" },
     {
@@ -154,21 +154,21 @@ export const postVoiceSynthesis: BlogPost = {
     },
     {
       type: "p",
-      text: "Merk op dat de tabel groepen in kaart brengt, niet alle 16 persoonlijkheden — de vier persoonlijkheidsgroepen uit onze [MBTI-koppeling](/nl/tomodachi-life-mbti) krijgen elk één representatief stemsilhouet, en individuele persoonlijkheden worden uitgedrukt door waar binnen het bereik je de schuifregelaar zet en hoe snel je de snelheidsregelaar laat lopen. Het recept, stap voor stap:",
+      text: "Merk op dat de tabel groepen in kaart brengt, niet alle 16 persoonlijkheden — de vier persoonlijkheidsgroepen uit onze [MBTI-koppeling](/nl/tomodachi-life-mbti) krijgen elk één representatief stemsilhouet, en individuele persoonlijkheden komen tot uitdrukking in waar binnen het bereik je de schuifregelaar zet en hoe ver je de snelheidsregelaar opendraait. Het recept, stap voor stap:",
     },
     {
       type: "ol",
       items: [
-        "**Kies de preset die bij de groep hoort.** Extraverte en Zelfverzekerde Mii's krijgen Volwassen man; Onafhankelijke Mii's krijgen Volwassen vrouw; Ontspannen Mii's krijgen Oudere, waarvan de `5 Hz`-vibrato de ontspannen, onhaastbare kwaliteit toevoegt waar de groep om bekendstaat. De groep van een Mii komt voort uit zijn vier persoonlijkheidsschuifregelaars — bekijk de [persoonlijkheidstabel](/nl/tomodachi-life-personality-chart) als je die nog niet kent.",
+        "**Kies de preset die bij de groep hoort.** Extraverte en Zelfverzekerde Mii's krijgen Volwassen man; Onafhankelijke Mii's krijgen Volwassen vrouw; Ontspannen Mii's krijgen Oudere, waarvan het `5 Hz`-vibrato de ontspannen, onhaastbare kwaliteit toevoegt waar de groep om bekendstaat. De groep van een Mii komt voort uit zijn vier persoonlijkheidsschuifregelaars — bekijk de [persoonlijkheidstabel](/nl/tomodachi-life-personality-chart) als je die nog niet kent.",
         "**Zet de toonhoogteschuifregelaar binnen het bereik van de groep.** Voor een Zelfverzekerde Designer betekent dat `150 – 200 Hz`; richting `150 Hz` leest imposanter, richting `200 Hz` energieker. De `500 Hz`-ondergrens van de Kind-preset zorgt ervoor dat het bereik `500 – 700 Hz` zichzelf handhaaft.",
-        "**Kies de snelheid die bij de spreekstijl past.** Snel pratende Entertainer-typen rechtvaardigen `1.4x – 2.0x`; een slaperige Dromer zit van nature op `0.5x – 0.8x`. Snelheid verandert alleen de duur, dus de stem die je in stap 2 hebt gekozen raakt er nooit door ontstemd.",
+        "**Kies de snelheid die bij de spreekstijl past.** Snel pratende Entertainer-typen rechtvaardigen `1.4x – 2.0x`; een slaperige Dromer zit van nature op `0.5x – 0.8x`. Snelheid verandert alleen de duur, dus de stem die je in stap 1 hebt gekozen raakt er nooit door ontstemd.",
         "**Test met een korte frase.** Typ `20 – 30` tekens in het tekstveld en luister naar de frasepauze bij elk 5e teken — als de cadans verkeerd aanvoelt voor de persoonlijkheid, pas dan eerst de snelheid aan voordat je aan de toonhoogte komt.",
         "**Itereer met je historie.** Elke weergave — preset, toonhoogte, snelheid en tot `100` tekens tekst — wordt opgeslagen in een lokaal `IndexedDB`-historiepaneel in de tool, zodat je twee instellingen kunt A/B-testen zonder ze op te schrijven. Niets verlaat de browser.",
       ],
     },
     {
       type: "p",
-      text: "De rijen voor Kind en Robot staan bewust buiten het persoonlijkheidssysteem: elke Mii kan met een van beide stemmen worden uitgerust, en daarom staat er Any in hun MBTI-kolom. De envelope met lengte nul maakt de robot tempotolerant — op elke snelheid behoudt hij dezelfde gated stijfheid, dus dit is de enige stem waarin snelheid puur een komische regelaar is.",
+      text: "De rijen voor Kind en Robot staan bewust buiten het persoonlijkheidssysteem: elke Mii kan met een van beide stemmen worden uitgerust, en daarom staat er Any in hun MBTI-kolom. De envelope met lengte nul maakt de Robot tempotolerant — op elke snelheid behoudt hij dezelfde gated stijfheid, dus dit is de enige stem waarin snelheid puur een komische regelaar is.",
     },
     { type: "h2", text: "Waarom er geen Web Speech API-fallback is" },
     {
@@ -181,7 +181,7 @@ export const postVoiceSynthesis: BlogPost = {
     },
     {
       type: "p",
-      text: "De afweging: de uitvoer is geen verstaanbare spraak. Hij volgt het ritme en de contour van de tekst, maar produceert geen herkenbare woorden, dus roept hij eerder de cadans van de pieptaal van Tomodachi Life op dan de verstaanbaarheid ervan — en de wartaal van het spel is zelf ook niet te verstaan, wat aannemelijk precies de bedoeling is. Het stoppen van de weergave is net zo bot en doeltreffend: het lab sluit de volledige `AudioContext` via `close()`, wat elk gepland knooppunt onmiddellijk afbreekt in plaats van uit te faden.",
+      text: "De afweging: de uitvoer is geen verstaanbare spraak. Hij volgt het ritme en de contour van de tekst, maar produceert geen herkenbare woorden, dus roept hij eerder de cadans van de pieptaal van Tomodachi Life op dan de verstaanbaarheid ervan — en de wartaal van het spel is zelf ook niet te verstaan, wat vermoedelijk precies de bedoeling is. Het stoppen van de weergave is net zo bot en doeltreffend: het lab sluit de volledige `AudioContext` via `close()`, wat elk gepland knooppunt onmiddellijk afbreekt in plaats van uit te faden.",
     },
     { type: "h2", text: "Beperkingen, eerlijk verwoord" },
     {
@@ -190,11 +190,11 @@ export const postVoiceSynthesis: BlogPost = {
     },
     {
       type: "p",
-      text: "Ten tweede is de synthese monofonisch en formantloos. Elke lettergreep is één enkele oscillator, gevormd door één laagdoorlaatfilter, terwijl natuurlijke spraak — en vermoedelijk de verfijndere engine van het spel — formantstructuur uit het spraakapparaat meedraagt. Daarom leest de uitvoer als een chiptune-stem in plaats van gesampelde spraak, en dat is de kloof die zich het meest leent om te verkennen als je de code uitbreidt: een tweede oscillator een octaaf hoger, of een filter met geplande frequentiebeweging, zou het resultaat allebei dichter naar echt stemgeluid duwen.",
+      text: "Ten tweede is de synthese monofonisch en formantloos. Elke lettergreep is één enkele oscillator, gevormd door één laagdoorlaatfilter, terwijl natuurlijke spraak — en vermoedelijk de verfijndere engine van het spel — formantstructuur uit het spraakapparaat meedraagt. Daarom leest de uitvoer als een chiptune-stem in plaats van gesampelde spraak, en dat is de kloof die zich het meest leent voor verkenning als je de code uitbreidt: een tweede oscillator een octaaf hoger, of een filter met geplande frequentiebeweging, zou het resultaat op beide manieren dichter naar echt stemgeluid duwen.",
     },
     {
       type: "p",
-      text: "Ten derde hangt alles af van browserondersteuning. De hier gebruikte Web Audio API — `AudioContext`, `OscillatorNode`, `BiquadFilterNode`, `GainNode` — wordt door alle huidige grote browsers ondersteund, maar het uitvoerkarakter van de Web Audio API varieert nog steeds licht tussen de audiostacks van verschillende apparaten, en browsers die autoplay blokkeren tot een gebruikersgebaar verlangen de druk op de afspeelknop die het lab toch al voorziet. Wat privacy betreft is de tool volledig client-side: de synthese draait in de browser, en de enige persistentie is de lokale `IndexedDB`-historie — er wordt nergens audio of tekst geüpload.",
+      text: "Ten derde hangt alles af van browserondersteuning. De hier gebruikte Web Audio API — `AudioContext`, `OscillatorNode`, `BiquadFilterNode`, `GainNode` — wordt door alle huidige grote browsers ondersteund, maar het uitvoerkarakter van de Web Audio API varieert nog steeds licht tussen de audiostacks van verschillende apparaten, en browsers die autoplay blokkeren tot een gebruikersgebaar, verlangen de druk op de afspeelknop die het lab toch al voorziet. Wat privacy betreft is de tool volledig client-side: de synthese draait in de browser, en de enige persistentie is de lokale `IndexedDB`-historie — er wordt nergens audio of tekst geüpload.",
     },
     { type: "h2", text: "Probeer de pipeline zelf uit" },
     {
@@ -207,12 +207,12 @@ export const postVoiceSynthesis: BlogPost = {
         "[Tomodachi Voice Lab](/nl/tomodachi-voice-lab) — de synthesizer zelf: vijf presets, de `100 – 800 Hz`-toonhoogteschuifregelaar, de snelheidsregeling en de tekstmodus met één pieptoon per teken.",
         "[Tomodachi Life MBTI-koppeling](/nl/tomodachi-life-mbti) — hoe de vier persoonlijkheidsschuifregelaars van een Mii zijn groep bepalen, die in de tabel hierboven zijn preset vaststelt.",
         "[Persoonlijkheidstabel](/nl/tomodachi-life-personality-chart) — de volledige referentie met 16 typen om een representatieve persoonlijkheid als stem te kiezen.",
-        "[Mii QR Unlocker](/nl/mii-qr-unlocker) — combineer een ontworpen stem met een bewerkte Mii-karakter voor de complete eilandbewoner.",
+        "[Mii QR Unlocker](/nl/mii-qr-unlocker) — combineer een ontworpen stem met een bewerkt Mii-karakter voor de complete eilandbewoner.",
       ],
     },
     {
       type: "callout",
-      text: "Tomodachi Life en Nintendo zijn geregistreerde handelsmerken van hun respectieve eigenaren. Deze stemsynthesizer is een interpretatie van fans voor entertainmentdoeleinden en is niet gelieerd aan Nintendo en wordt er niet door onderschreven.",
+      text: "Tomodachi Life en Nintendo zijn geregistreerde handelsmerken van hun respectieve eigenaren. Deze stemsynthesizer is een interpretatie van fans voor entertainmentdoeleinden en is niet gelieerd aan Nintendo en wordt door Nintendo niet onderschreven.",
     },
   ],
 };

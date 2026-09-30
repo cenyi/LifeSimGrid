@@ -4,11 +4,13 @@
  * Import = publish. Posts live under ./posts/es/.
  */
 import type { BlogPost } from "./types";
+import { postMiiQrFormat } from "./posts/es/mii-qr-code-format-explained";
 import { postMbtiMapping } from "./posts/es/tomodachi-life-mbti-mapping-explained";
 import { postVoiceSynthesis } from "./posts/es/tomodachi-life-voice-synthesis-guide";
 import { postFoodFavorites } from "./posts/es/tomodachi-life-food-favorites-guide";
 
 export const POSTS: BlogPost[] = [
+  postMiiQrFormat,
   postMbtiMapping,
   postVoiceSynthesis,
   postFoodFavorites,

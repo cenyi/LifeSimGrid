@@ -25,7 +25,7 @@ export const postVoiceSynthesis: BlogPost = {
     { type: "h2", text: "Por qué las voces de Tomodachi hablan en beeps" },
     {
       type: "p",
-      text: "La peculiaridad distintiva del audio de Tomodachi Life es el habla en beeps: en lugar de diálogos grabados, cada Mii vocaliza en tonos sintetizados cortos que siguen el ritmo de una frase sin llegar a formar palabras reales. El enfoque se remonta a los orígenes portátiles de la serie, donde el tamaño del cartucho y el hardware de sonido hacían inviable el doblaje completo, y sobrevivió hasta Tomodachi Life: Living the Dream en Switch porque los beeps se convirtieron en parte de la identidad de la serie. El resultado se percibe como habla porque copia la prosodia del habla — el movimiento del tono, el tiempo de las sílabas, las pausas — mientras se mantiene deliberadamente no léxico.",
+      text: "El rasgo distintivo del audio de Tomodachi Life es el habla en beeps: en lugar de diálogos grabados, cada Mii vocaliza en tonos sintetizados cortos que siguen el ritmo de una frase sin llegar a formar palabras reales. El enfoque se remonta a los orígenes de la serie en consolas portátiles, donde el tamaño del cartucho y el hardware de sonido hacían inviable el doblaje completo, y sobrevivió hasta Tomodachi Life: Living the Dream en Switch porque los beeps se convirtieron en parte de la identidad de la serie. El resultado se percibe como habla porque copia la prosodia de esta — el movimiento del tono, el tiempo de las sílabas, las pausas — mientras se mantiene deliberadamente no léxico.",
     },
     {
       type: "p",
@@ -34,7 +34,7 @@ export const postVoiceSynthesis: BlogPost = {
     { type: "h2", text: "La cadena de síntesis, nodo por nodo" },
     {
       type: "p",
-      text: "Cada sonido que produce el laboratorio pasa exactamente por tres nodos de procesamiento entre el oscilador y tus altavoces. Se crea un `AudioContext` nuevo por cada reproducción — el laboratorio nunca mantiene vivo un grafo de audio global — y cada sílaba programa dentro de él su propio conjunto de nodos:",
+      text: "Cada sonido que produce el laboratorio sale del mismo grafo de tres nodos —oscilador, filtro y ganancia— y llega a tus altavoces a través de los dos últimos. Se crea un `AudioContext` nuevo por cada reproducción — el laboratorio nunca mantiene vivo un grafo de audio global — y cada sílaba programa dentro de él su propio conjunto de nodos:",
     },
     {
       type: "code",
@@ -54,7 +54,7 @@ export const postVoiceSynthesis: BlogPost = {
     },
     {
       type: "p",
-      text: "Existe un par de nodos opcional, el cuarto: el vibrato. Cuando un preset lo activa, un segundo `OscillatorNode` que actúa como LFO (oscilador de baja frecuencia) corre a la `vibratoRate` del preset y alimenta un `GainNode` ajustado a la `vibratoDepth`, que está conectado al parámetro `frequency` del oscilador principal. Se trata de modulación de frecuencia clásica — en el preset Anciano, un LFO de `5 Hz` hace oscilar el tono `±15 Hz`, produciendo la calidad temblorosa asociada con las voces envejecidas. Solo el preset Anciano lo activa; los otros cuatro dejan el vibrato completamente desactivado.",
+      text: "Existe un cuarto conjunto de nodos, opcional: el vibrato. Cuando un preset lo activa, un segundo `OscillatorNode` que actúa como LFO (oscilador de baja frecuencia) corre a la `vibratoRate` del preset y alimenta un `GainNode` ajustado a la `vibratoDepth`, que está conectado al parámetro `frequency` del oscilador principal. Se trata de modulación de frecuencia clásica — en el preset Anciano, un LFO de `5 Hz` hace oscilar el tono `±15 Hz`, produciendo la calidad temblorosa asociada con las voces envejecidas. Solo el preset Anciano lo activa; los otros cuatro dejan el vibrato completamente desactivado.",
     },
     { type: "h2", text: "Cómo suena cada forma de onda (y cuándo elegirla)" },
     {
@@ -73,12 +73,12 @@ export const postVoiceSynthesis: BlogPost = {
     },
     {
       type: "p",
-      text: "Los presets del laboratorio usan solo dos de las cuatro: el `sawtooth` aporta las cuatro voces orgánicas y el `square` aporta el robot. Esa división es deliberada. Un diente de sierra contiene energía en cada armónico, lo que tras el filtrado paso bajo deja un núcleo denso y parecido a una voz — la razón por la que aproxima tonos cantados o hablados mejor que cualquier otra forma de onda básica. Una onda cuadrada conserva solo armónicos impares con más energía en la parte alta, lo que da la calidad hueca, nasal e inconfundiblemente electrónica que busca el preset Robot. `Sine` y `triangle` no los usa ningún preset actual, pero siguen siendo cambios de una sola línea a través del mismo campo `OscillatorType`: la onda sinusoidal sirve para efectos de sonido puros como campanillas, y la onda triangular para bips suaves de fondo donde el diente de sierra sería demasiado agresivo.",
+      text: "Los presets del laboratorio usan solo dos de las cuatro: el `sawtooth` aporta las cuatro voces orgánicas y el `square`, el robot. Esa división es deliberada. Un diente de sierra contiene energía en cada armónico, lo que tras el filtrado paso bajo deja un núcleo denso y parecido a una voz — la razón por la que imita los tonos cantados y hablados mejor que cualquier otra forma de onda básica. Una onda cuadrada conserva solo armónicos impares con más energía en la parte alta, lo que da la calidad hueca, nasal e inconfundiblemente electrónica que busca el preset Robot. `sine` y `triangle` no los usa ningún preset actual, pero siguen siendo cambios de una sola línea a través del mismo campo `OscillatorType`: la onda sinusoidal sirve para efectos de sonido puros como campanillas, y la onda triangular para bips suaves de fondo donde el diente de sierra sería demasiado agresivo.",
     },
     { type: "h2", text: "Los cinco presets de voz, descodificados" },
     {
       type: "p",
-      text: "Los cinco presets son cinco paquetes de parámetros sobre el mismo grafo de tres nodos, y sus diferencias se pueden enumerar por completo. Aquí está la tabla completa, citada directamente de la constante `VOICE_PRESETS` en el código fuente:",
+      text: "Los cinco presets son cinco paquetes de parámetros sobre el mismo grafo de tres nodos, y sus diferencias se pueden enumerar al detalle. Aquí está la tabla completa, citada directamente de la constante `VOICE_PRESETS` en el código fuente:",
     },
     {
       type: "table",
@@ -106,11 +106,11 @@ export const postVoiceSynthesis: BlogPost = {
     { type: "h2", text: "Cómo el tono y la velocidad manejan realmente el oscilador" },
     {
       type: "p",
-      text: "Dos controles deslizantes gobiernan el grafo en tiempo real: el tono, que abarca `100 – 800 Hz` con un valor predeterminado de `300 Hz`, y la velocidad, que abarca `0.5x – 2.0x` con un valor predeterminado de `1.0x`. Cada preset también declara su propio `baseFreq` canónico (el centro de referencia listado en la tabla anterior), que documenta dónde se diseñó para situarse ese tipo de voz.",
+      text: "Dos controles deslizantes gobiernan el grafo en tiempo real: el tono, que abarca `100 – 800 Hz` con un valor predeterminado de `300 Hz`, y la velocidad, que abarca `0.5x – 2.0x` con un valor predeterminado de `1.0x`. Cada preset también declara su propio `baseFreq` canónico (el centro de referencia listado en la tabla anterior), que documenta dónde está pensado para situarse ese tipo de voz.",
     },
     {
       type: "p",
-      text: "El tono fija la frecuencia del oscilador directamente, con una sola barrera de protección: en el preset Niño la frecuencia reproducida es `Math.max(pitch, 500)`, así que arrastrar el control por debajo de `500 Hz` en modo Niño no hace nada — el oscilador nunca baja de ese piso. Este límite protege el carácter del preset, ya que una voz de niño a `150 Hz` simplemente se percibiría como un hombre adulto en voz baja.",
+      text: "El tono fija la frecuencia del oscilador directamente, con una sola barrera de protección: en el preset Niño la frecuencia reproducida es `Math.max(pitch, 500)`, así que arrastrar el control por debajo de `500 Hz` en modo Niño no hace nada — el oscilador nunca baja de ese mínimo. Este límite protege el carácter del preset, ya que una voz de niño a `150 Hz` simplemente se percibiría como un hombre adulto en voz baja.",
     },
     {
       type: "p",
@@ -124,16 +124,16 @@ export const postVoiceSynthesis: BlogPost = {
     {
       type: "ul",
       items: [
-        "**Tono por carácter** — `0.08 / speed` segundos por carácter (`0.08 s` a `1.0x`).",
+        "**Duración por carácter** — `0.08 / speed` segundos por carácter (`0.08 s` a `1.0x`).",
         "**Intervalo entre caracteres** — `0.03 / speed` segundos entre caracteres consecutivos.",
-        "**Intervalo entre palabras** — un espacio inserta `0.12 / speed` segundos de silencio, aproximadamente 1,5 longitudes de carácter.",
+        "**Intervalo entre palabras** — un espacio inserta `0.12 / speed` segundos de silencio, aproximadamente 1,5 veces la duración de un carácter.",
         "**Pausa de frase** — cada 5.º carácter (`i % 5 === 4`) añade una pausa extra de `gap × 2`, lo que le da a la salida una cadencia en lugar de un flujo plano.",
         "**Anticipación** — la programación empieza en `currentTime + 0.05` segundos para que el grafo de audio esté listo antes del primer tono.",
       ],
     },
     {
       type: "p",
-      text: "La variación de tono es la parte ingeniosa. El desplazamiento de frecuencia de cada carácter se calcula como `((charCode % 20) - 10) × 3`, lo que produce una dispersión determinista entre `-30 Hz` y `+27 Hz` alrededor del tono base. Que sea determinista importa: la misma palabra produce siempre el mismo contorno melódico, así que una frase dada se vuelve reconocible igual que la voz de un Mii es reconocible. Como los desplazamientos provienen de códigos de carácter y no de la fonética, la salida sigue de cerca el ritmo del texto mientras permanece como jerigonza no léxica — que es precisamente el efecto de habla en beeps que el laboratorio intenta aproximar.",
+      text: "La variación de tono es la parte ingeniosa. El desplazamiento de frecuencia de cada carácter se calcula como `((charCode % 20) - 10) × 3`, lo que produce una dispersión determinista entre `-30 Hz` y `+27 Hz` alrededor del tono base. Que sea determinista importa: la misma palabra produce siempre el mismo contorno melódico, así que una frase dada se vuelve tan reconocible como la voz de un Mii. Como los desplazamientos provienen de códigos de carácter y no de la fonética, la salida sigue de cerca el ritmo del texto mientras permanece como jerigonza no léxica — que es precisamente el efecto de habla en beeps que el laboratorio intenta aproximar.",
     },
     { type: "h2", text: "Diseñar una voz para cada grupo de personalidad" },
     {
@@ -154,15 +154,15 @@ export const postVoiceSynthesis: BlogPost = {
     },
     {
       type: "p",
-      text: "Ten en cuenta que la tabla mapea grupos, no las 16 personalidades completas — los cuatro grupos de personalidad de nuestro [mapeo MBTI](/es/tomodachi-life-mbti) reciben cada uno una silueta de voz representativa, y las personalidades individuales se expresan según dónde dentro del rango colocas el control y a qué velocidad manejas el control de velocidad. La receta paso a paso:",
+      text: "Ten en cuenta que la tabla mapea grupos, no las 16 personalidades completas — los cuatro grupos de personalidad de nuestro [mapeo MBTI](/es/tomodachi-life-mbti) reciben cada uno una silueta de voz representativa, y las personalidades individuales se expresan según dónde dentro del rango colocas el tono y a qué velocidad fijas la reproducción. La receta paso a paso:",
     },
     {
       type: "ol",
       items: [
         "**Elige el preset según el grupo.** Los Miis Extrovertidos y Seguros de sí mismos llevan Hombre adulto; los Miis Independientes llevan Mujer adulta; los Miis Tranquilos llevan Anciano, cuyo vibrato de `5 Hz` aporta la cualidad relajada y sin prisa por la que se conoce al grupo. El grupo de un Mii proviene de sus cuatro controles deslizantes de personalidad — consulta la [tabla de personalidades](/es/tomodachi-life-personality-chart) si aún no la conoces.",
-        "**Coloca el control de tono dentro del rango del grupo.** Para un Diseñador Seguro de sí mismo eso significa `150 – 200 Hz`; deslizar hacia `150 Hz` se percibe más imponente, hacia `200 Hz` más enérgico. El piso de `500 Hz` del preset Niño hace que el rango `500 – 700 Hz` se aplique por sí solo.",
-        "**Elige la velocidad según el estilo de habla.** Los tipos Animador de habla rápida justifican `1.4x – 2.0x`; un Soñador somnoliento se sitúa de forma natural en `0.5x – 0.8x`. La velocidad cambia solo la duración, así que nunca desafina la voz que elegiste en el paso 2.",
-        "**Prueba con una frase corta.** Escribe `20 – 30` caracteres en el campo de texto y escucha la pausa de frase cada 5.º carácter — si la cadencia se siente incorrecta para la personalidad, ajusta la velocidad antes de tocar el tono.",
+        "**Coloca el control de tono dentro del rango del grupo.** Para un Diseñador Seguro de sí mismo eso significa `150 – 200 Hz`; deslizar hacia `150 Hz` se percibe más imponente, hacia `200 Hz` más enérgico. El mínimo de `500 Hz` del preset Niño hace que el rango `500 – 700 Hz` se cumpla por sí solo.",
+        "**Elige la velocidad según el estilo de habla.** Los Miis Animador, de habla rápida, justifican `1.4x – 2.0x`; un Soñador somnoliento se sitúa de forma natural en `0.5x – 0.8x`. La velocidad cambia solo la duración, así que nunca desafina la voz que elegiste en el paso 2.",
+        "**Prueba con una frase corta.** Escribe `20 – 30` caracteres en el campo de texto y escucha la pausa de frase cada 5.º carácter — si la cadencia no encaja con la personalidad, ajusta la velocidad antes de tocar el tono.",
         "**Itera con tu historial.** Cada reproducción — preset, tono, velocidad y hasta `100` caracteres de texto — se guarda en un panel de historial `IndexedDB` local dentro de la herramienta, así que puedes hacer una comparación A/B de dos ajustes sin anotarlos. Nada sale del navegador.",
       ],
     },
@@ -181,16 +181,16 @@ export const postVoiceSynthesis: BlogPost = {
     },
     {
       type: "p",
-      text: "El compromiso: la salida no es habla inteligible. Sigue el ritmo y el contorno del texto pero no produce palabras reconocibles, así que evoca la cadencia del habla en beeps de Tomodachi Life en lugar de su comprensibilidad — y la jerigonza del juego tampoco es comprensible, que discutiblemente es la idea. Detener la reproducción es igual de contundente y eficaz: el laboratorio cierra el `AudioContext` completo vía `close()`, lo que mata inmediatamente cada nodo programado en lugar de hacer un fundido.",
+      text: "El compromiso: la salida no es habla inteligible. Sigue el ritmo y el contorno del texto pero no produce palabras reconocibles, así que evoca la cadencia del habla en beeps de Tomodachi Life en lugar de su comprensibilidad — y la jerigonza del juego tampoco es comprensible, lo cual probablemente es precisamente la idea. Detener la reproducción es igual de contundente y eficaz: el laboratorio cierra el `AudioContext` completo vía `close()`, lo que mata inmediatamente cada nodo programado en lugar de hacer un fundido.",
     },
     { type: "h2", text: "Limitaciones, declaradas con honestidad" },
     {
       type: "p",
-      text: "Tres limitaciones delimitan lo que este sintetizador puede afirmar con honestidad. Primero, aproxima una estética, no el motor del juego: Nintendo nunca ha documentado cómo genera Tomodachi Life sus voces, así que los valores de los presets que aparecen aquí son estimaciones de la comunidad afinadas para evocar el sonido de la serie, no constantes extraídas. Las voces recuerdan a las del juego, no son réplicas de ellas.",
+      text: "Tres limitaciones delimitan lo que este sintetizador puede prometer con honestidad. Primero, aproxima una estética, no el motor del juego: Nintendo nunca ha documentado cómo genera Tomodachi Life sus voces, así que los valores de los presets que aparecen aquí son estimaciones de la comunidad afinadas para evocar el sonido de la serie, no constantes extraídas. Las voces recuerdan a las del juego, no son réplicas de ellas.",
     },
     {
       type: "p",
-      text: "Segundo, la síntesis es monofónica y sin formantes. Cada sílaba es un solo oscilador moldeado por un único filtro paso bajo, mientras que el habla natural — y presumiblemente el motor más sofisticado del juego — lleva una estructura de formantes del tracto vocal. Por eso la salida se percibe como voz chiptune en lugar de habla muestreada, y es la brecha que más vale la pena explorar si amplías el código: un segundo oscilador una octava arriba, o un filtro con movimiento de frecuencia programado, empujarían ambos el resultado más cerca del territorio vocal.",
+      text: "Segundo, la síntesis es monofónica y sin formantes. Cada sílaba es un solo oscilador moldeado por un único filtro paso bajo, mientras que el habla natural — y presumiblemente el motor más sofisticado del juego — tiene una estructura de formantes del tracto vocal. Por eso la salida se percibe como voz chiptune en lugar de habla muestreada, y es la brecha que más vale la pena explorar si amplías el código: un segundo oscilador una octava arriba, o un filtro con movimiento de frecuencia programado, ambos empujarían el resultado más cerca del territorio vocal.",
     },
     {
       type: "p",
@@ -207,7 +207,7 @@ export const postVoiceSynthesis: BlogPost = {
         "[Tomodachi Voice Lab](/es/tomodachi-voice-lab) — el sintetizador en sí: cinco presets, el control deslizante de tono de `100 – 800 Hz`, el control de velocidad y el modo de texto con un beep por carácter.",
         "[Mapeo MBTI de Tomodachi Life](/es/tomodachi-life-mbti) — cómo los cuatro controles deslizantes de personalidad de un Mii producen su grupo, que decide su preset en la tabla anterior.",
         "[Tabla de Personalidades](/es/tomodachi-life-personality-chart) — la referencia completa de los 16 tipos para elegir una personalidad representativa a la que dar voz.",
-        "[Desbloqueador de QR de Mii](/es/mii-qr-unlocker) — combina una voz diseñada con un personaje Mii editado para obtener al residente de isla completo.",
+        "[Desbloqueador QR Mii](/es/mii-qr-unlocker) — combina una voz diseñada con un personaje Mii editado para obtener al residente de isla completo.",
       ],
     },
     {
