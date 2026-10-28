@@ -562,8 +562,8 @@
     "relatedMbtiLink": "Tomodachi Life MBTI-Test"
   },
   "TomodachiVoiceLabPage": {
-    "title": "Tomodachi Life Sprachlabor & 16-Persönlichkeits (MBTI) Kompatibilitätsrechner",
-    "subtitle": "8-Bit-Mii-Sprachsynthese, 16-Persönlichkeitsmatrix-Erkundung (häufig mit MBTI verglichen) und Kompatibilitätsberechnung zwischen Inselbewohnern — alles in Ihrem Browser.",
+    "title": "Tomodachi Life Voice Generator - 8-Bit Mii-Sprachsynthese & TTS",
+    "subtitle": "Kostenloser Tomodachi-Life-Stimmengenerator mit Text-to-Speech (TTS): 8-Bit-Mii-Stimmen synthetisieren, Tonhöhe und Geschwindigkeit anpassen — für das originale Tomodachi Life und Living the Dream auf Nintendo Switch. Ideal zum Vorschauen der Spracheinstellungen vor dem Spiel.",
     "voiceGuideTitle": "Wie man Tomodachi Life-Stimmen synthetisiert: Leitfaden für die perfekte Stimme",
     "voiceGuideStep1": "Schritt 1: Wählen Sie ein Sprach-Preset, das zum Alter und zur Persönlichkeit Ihres Charakters passt.",
     "voiceGuideStep2": "Schritt 2: Feinabstimmung des Pitch-Sliders zur Anpassung der Grundfrequenz. Höhere Töne klingen jünger, tiefere älter.",
@@ -654,7 +654,9 @@
     "faq11A": "Ja! Unser Sprachlabor wandelt jede Texteingabe in 8-Bit-Mii-Charakterstimmen um, indem es Web Audio API verwendet. Geben Sie Ihren Text ein, wählen Sie ein Stimm-Preset (Erwachsener Mann, Erwachsene Frau, Älterer, Kind oder Roboter), passen Sie die Pitch- und Geschwindigkeitsregler an und klicken Sie auf Abspielen, um die synthetisierte Stimme zu hören. Die Text-zu-Sprache-Engine erzeugt Chiptune-Audio, das eng mit der charakteristischen Tomodachi Life-Stimmqualität übereinstimmt.",
     "faq12Q": "Wie passe ich Stimm-Pitch und -Geschwindigkeit für Tomodachi Life an?",
     "faq12A": "Unser Sprachlabor bietet zwei Hauptregler zur Anpassung von Mii-Stimmen: (1) Pitch-Regler (0–100) — niedrigere Werte erzeugen tiefere Stimmen geeignet für Erwachsener Mann und Älterer Presets (120–250 Hz), höhere Werte erzeugen höhere Stimmen für Erwachsene Frau und Kind Presets (280–400+ Hz). (2) Geschwindigkeits-Regler (0–100) — steuert die Sprechgeschwindigkeit und Vibrato-Frequenz. Passen Sie diese Einstellungen an den Persönlichkeitstyp Ihres Mii an.",
-    "relatedMbtiLink": "Tomodachi Life MBTI-Test"
+    "relatedMbtiLink": "Tomodachi Life MBTI-Test",
+    "faq13Q": "Gibt es einen Tomodachi-Life-Song-Maker oder Song-Generator?",
+    "faq13A": "Unser Voice Lab konzentriert sich auf die Mii-Sprachsynthese statt auf komplette Song-Erstellung. Du kannst den Text-to-Speech-Modus (TTS) jedoch nutzen, um kurze Phrasen singen zu lassen, indem du Songtext mit wiederholten Vokalen eingibst — die 8-Bit-Chiptune-Engine erzeugt den typischen Tomodachi-Life-Song-Stil. Für vollständige Songs nutze den In-Game-Song-Editor auf deinem Nintendo 3DS oder Switch und teste die Stimmeinstellungen vorab hier."
   },
   "LivingTheGrid": {
     "metaTitle": "Living the Grid | LifeSimGrid",
@@ -772,10 +774,10 @@
     "relatedMbtiLink": "Tomodachi Life MBTI-Test"
   },
   "TomodachiLifeMbtiPage": {
-    "pageTitle": "MBTI-Konverter — 16 Persönlichkeitstypen",
+    "pageTitle": "Tomodachi Life MBTI-Tabelle — 16-Persönlichkeits-Konverter",
     "metaDescription": "16 Mii-Typen in MBTI konvertieren. Interaktiver Kompatibilitätsrechner. 100% clientseitig, kein Server.",
     "heroBadge": "Tomodachi Life MBTI",
-    "heroTitle": "MBTI-Zuordnung der Tomodachi Life Persönlichkeiten",
+    "heroTitle": "Tomodachi Life MBTI-Tabelle — 16 Persönlichkeiten → MBTI-Zuordnung",
     "heroSubtitle": "Entdecken Sie die geeignete Tomodachi Life MBTI-Zuordnung für jeden Mii-Persönlichkeitstyp. Konvertieren Sie 16 In-Game-Persönlichkeiten in Myers-Briggs-Typen und erschließen Sie soziale Kompatibilitätseinblicke.",
     "heroTag1": "16 Persönlichkeitstypen",
     "heroTag2": "Interaktives Tool",

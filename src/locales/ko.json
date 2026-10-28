@@ -562,8 +562,8 @@
     "relatedMbtiLink": "Tomodachi Life MBTI 테스트"
   },
   "TomodachiVoiceLabPage": {
-    "title": "Tomodachi Life 보이스 랩 & 16-성격(MBTI) 궁합 계산기",
-    "subtitle": "8비트 Mii 음성 합성, 16성격 매트릭스 탐색(MBTI/16Personalities 프레임워크와 비교됨), 섬 주민 간 궁합 계산 — 모두 브라우저에서.",
+    "title": "Tomodachi Life 보이스 제너레이터 - 8비트 Mii TTS & 신디사이저",
+    "subtitle": "무료 Tomodachi Life 음성 생성기, 텍스트 음성 변환(TTS) 지원: 8비트 Mii 음성 합성, 음높이와 속도 조절 — 오리지널 Tomodachi Life와 Switch의 Living the Dream 모두 지원. 게임 내 설정 전에 음성을 미리 들어볼 수 있습니다.",
     "voiceGuideTitle": "Tomodachi Life 음성 합성 방법: 완벽한 음성 가이드",
     "voiceGuideStep1": "1단계: 캐릭터의 나이와 성격에 맞는 음성 프리셋을 선택.",
     "voiceGuideStep2": "2단계: 피치 슬라이더로 기본 주파수를 미세 조정. 높은 피치는 젊게, 낮은 피치는 나이 들게 들립니다.",
@@ -654,7 +654,9 @@
     "faq11A": "네! 당사 보이스 랩은 Web Audio API를 사용하여 모든 텍스트 입력을 8-bit Mii 캐릭터 음성으로 변환합니다. 텍스트를 입력하고, 음성 프리셋(성인 남성, 성인 여성, 노인, 아이, 로봇)을 선택하고, 피치와 속도 슬라이더를 조정한 후 재생을 클릭하면 합성된 음성을 들을 수 있습니다. 텍스트 음성 변환 엔진은 Tomodachi Life의 특징적인 음성 품질과 밀접하게 일치하는 칩튠 스타일 오디오를 생성합니다. 모든 합성은 브라우저에서 이루어집니다 — 서버 처리가 필요 없습니다.",
     "faq12Q": "Tomodachi Life의 음성 피치와 속도를 사용자 지정하는 방법은?",
     "faq12A": "당사 보이스 랩은 Mii 음성을 사용자 지정하기 위한 두 가지 주요 컨트롤을 제공합니다: (1) 피치 슬라이더(0–100) — 낮은 값은 성인 남성과 노인 프리셋에 적합한 낮은 음성(120–250 Hz)을 생성하고, 높은 값은 성인 여성과 아이 프리셋에 적합한 높은 음성(280–400+ Hz)을 생성합니다. (2) 속도 슬라이더(0–100) — 말하기 속도와 비브라토 주파수를 제어합니다. 이 설정을 Mii 성격 유형에 맞추세요: 외향적 유형은 보통 중간 피치와 빠른 속도를 사용하고, 내향적 유형은 높은 피치와 느린 속도를 사용합니다.",
-    "relatedMbtiLink": "Tomodachi Life MBTI 테스트"
+    "relatedMbtiLink": "Tomodachi Life MBTI 테스트",
+    "faq13Q": "Tomodachi Life 노래 메이커나 노래 생성기가 있나요?",
+    "faq13A": "저희 보이스 랩은 완전한 노래 제작보다 Mii 음성 합성에 집중합니다. 다만 TTS(텍스트 음성 변환) 모드에서 모음을 반복한 가사를 입력하면 Mii의 목소리로 짧은 구절을 노래하게 만들 수 있습니다 — 8비트 칩튠 엔진이 Tomodachi Life 특유의 노래 스타일을 재현합니다. 완전한 노래 제작은 3DS 또는 Switch의 게임 내 송 에디터를 사용하고, 먼저 여기서 음성 설정을 미리 테스트해 보세요."
   },
   "LivingTheGrid": {
     "metaTitle": "Living the Grid | LifeSimGrid",
@@ -772,10 +774,10 @@
     "relatedMbtiLink": "Tomodachi Life MBTI 테스트"
   },
   "TomodachiLifeMbtiPage": {
-    "pageTitle": "Tomodachi Life MBTI — 16성격변환",
+    "pageTitle": "Tomodachi Life MBTI 차트 - 16성격 변환기",
     "metaDescription": "16가지 Mii 성격을 MBTI로 변환. 대화형 호환성 계산기, 100% 클라이언트 처리.",
     "heroBadge": "Tomodachi Life MBTI",
-    "heroTitle": "Tomodachi Life MBTI 맵핑",
+    "heroTitle": "Tomodachi Life MBTI 차트 — 16성격 → MBTI 매핑",
     "heroSubtitle": "모든 Mii 성격 유형에 적합한 Tomodachi Life MBTI 매치를 찾아보세요. 16가지 게임 내 성격을 마이어스-브릭스 유형으로 변환하고 소셜 호환성 인사이트를 확인하세요.",
     "heroTag1": "16 성격 유형",
     "heroTag2": "인터랙티브 도구",

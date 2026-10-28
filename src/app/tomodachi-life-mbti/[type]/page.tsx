@@ -21,9 +21,14 @@ export async function generateMetadata({
   const mbti = type.toUpperCase();
   const personality = PERSONALITIES.find((p) => MBTI_MAP[p] === mbti);
 
+  const gamePersonality = personality ? personality.split("_")[1] : "";
+  const titleText = gamePersonality
+    ? `${mbti} in Tomodachi Life — ${gamePersonality} Personality Mapping | LifeSimGrid`
+    : `${mbti} in Tomodachi Life — Personality & Mapping | LifeSimGrid`;
+
   return {
-    title: { absolute: `${mbti} in Tomodachi Life — Personality & Mapping | LifeSimGrid` },
-    description: `${mbti} maps to ${personality ? personality.split("_")[1] : "a Tomodachi Life personality"}. See slider settings, compatibility, and fan insights for ${mbti} in Tomodachi Life: Living the Dream.`,
+    title: { absolute: titleText },
+    description: `${mbti} in Tomodachi Life${gamePersonality ? ` maps to the ${gamePersonality} personality` : ""}. See slider settings, MBTI compatibility, and fan insights for ${mbti} in the original and Living the Dream.`,
     alternates: {
       canonical: `${BASE}/tomodachi-life-mbti/${type}`,
       languages: languageAlternates(`tomodachi-life-mbti/${type}`, { xDefaultFirst: true }),

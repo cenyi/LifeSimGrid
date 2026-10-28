@@ -26,6 +26,7 @@ export default function TomodachiVoiceLabPage() {
     { q: t("faq10Q"), a: t("faq10A") },
     { q: t("faq11Q"), a: t("faq11A") },
     { q: t("faq12Q"), a: t("faq12A") },
+    { q: t("faq13Q"), a: t("faq13A") },
   ];
 
   /** Wraps technical terms in <code> tags for SEO and visual emphasis */

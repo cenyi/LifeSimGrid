@@ -562,8 +562,8 @@
     "relatedMbtiLink": "Tomodachi Life MBTI-test"
   },
   "TomodachiVoiceLabPage": {
-    "title": "Tomodachi Life Stemlab & 16-Persoonlijkheid (MBTI) Compatibiliteitscalculator",
-    "subtitle": "Synthetiseer 8-bit Mii-stemmen, verken de 16-persoonlijkheidsmatrix (vaak vergeleken met het MBTI/16Personalities-framework) en bereken compatibiliteit tussen eilandbewoners — allemaal in je browser.",
+    "title": "Tomodachi Life Stemgenerator - 8-Bit Mii TTS & Synthesizer",
+    "subtitle": "Gratis Tomodachi Life stemgenerator met tekst-naar-spraak (TTS): synthetiseer 8-bit Mii-stemmen, pas toonhoogte en snelheid aan — voor het originele Tomodachi Life en Living the Dream op Nintendo Switch. Ideaal om steminstellingen vooraf te testen.",
     "voiceGuideTitle": "Hoe Tomodachi Life-stemmen te synthetiseren: Gids voor de perfecte stem",
     "voiceGuideStep1": "Stap 1: Selecteer een stemvoorinstelling die bij de leeftijd en persoonlijkheid van je personage past.",
     "voiceGuideStep2": "Stap 2: Pas de toonhoogteschuifregelaar aan om de basisfrequentie te wijzigen. Hogere toonhoogtes klinken jonger, lagere ouder.",
@@ -654,7 +654,9 @@
     "faq11A": "Ja! Ons Stemlab zet elke tekstinvoer om in 8-bit Mii-karakterstemmen met behulp van Web Audio API. Typ je tekst, selecteer een stem-preset (Volwassen Man, Volwassen Vrouw, Oudere, Kind of Robot), pas de pitch- en snelheidsschuifregelaars aan en klik op afspelen om de gesynthetiseerde stem te horen. De tekst-naar-spraak engine genereert chiptune-stijl audio die nauw overeenkomt met de kenmerkende Tomodachi Life-stemkwaliteit.",
     "faq12Q": "Hoe pas ik de stem-pitch en -snelheid aan voor Tomodachi Life?",
     "faq12A": "Ons Stemlab biedt twee hoofdregelaars voor het aanpassen van Mii-stemmen: (1) Pitch-schuifregelaar (0–100) — lagere waarden produceren diepere stemmen geschikt voor Volwassen Man en Oudere presets (120–250 Hz), hogere waarden produceren hogere stemmen voor Volwassen Vrouw en Kind presets (280–400+ Hz). (2) Snelheid-schuifregelaar (0–100) — regelt de spreeksnelheid en vibratofrequentie. Pas deze instellingen aan het persoonlijkheidstype van je Mii aan.",
-    "relatedMbtiLink": "Tomodachi Life MBTI-test"
+    "relatedMbtiLink": "Tomodachi Life MBTI-test",
+    "faq13Q": "Is er een Tomodachi Life song maker of nummergenerator?",
+    "faq13A": "Ons Voice Lab richt zich op Mii-stemsynthese in plaats van volledige nummercreatie. Je kunt de tekst-naar-spraakmodus (TTS) echter gebruiken om korte frasen te laten zingen door tekst met herhaalde klinkers in te typen — de 8-bit chiptune-engine reproduceert de kenmerkende Tomodachi Life-songstijl. Voor volledige nummers gebruik je de ingebouwde songeditor van het spel op je Nintendo 3DS of Switch, en test je hier vooraf de steminstellingen."
   },
   "LivingTheGrid": {
     "metaTitle": "Living the Grid | LifeSimGrid",
@@ -772,10 +774,10 @@
     "relatedMbtiLink": "Tomodachi Life MBTI-test"
   },
   "TomodachiLifeMbtiPage": {
-    "pageTitle": "MBTI-Converter — 16 Persoonlijkheidstypen",
+    "pageTitle": "Tomodachi Life MBTI-tabel — 16-Persoonlijkheidsconverter",
     "metaDescription": "Converteer 16 Mii-typen naar MBTI. Interactieve compatibiliteitscalculator. 100% clientzijde, geen server.",
     "heroBadge": "Tomodachi Life MBTI",
-    "heroTitle": "MBTI-koppeling van Tomodachi Life persoonlijkheden",
+    "heroTitle": "Tomodachi Life MBTI-tabel — 16 Persoonlijkheden → MBTI-koppeling",
     "heroSubtitle": "Ontdek de perfecte Tomodachi Life MBTI-match voor elk Mii-persoonlijkheidstype. Converteer 16 in-game persoonlijkheden naar Myers-Briggs-typen en ontsluit inzichten in sociale compatibiliteit.",
     "heroTag1": "16 persoonlijkheidstypen",
     "heroTag2": "Interactieve Tool",

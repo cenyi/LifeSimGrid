@@ -9,17 +9,17 @@ const BASE = "https://lifesimgrid.org";
 
 /** Metadata for the root-level Tomodachi Voice Lab page (English default). */
 export const metadata: Metadata = {
-  title: { absolute: "Tomodachi Voice Lab — Living the Dream | LifeSimGrid" },
+  title: { absolute: "Tomodachi Life Voice Generator — 8-Bit Mii TTS & Synthesizer | LifeSimGrid" },
   description:
-    "Free Tomodachi Life: Living the Dream 8-bit voice synthesizer. 5 presets, pitch/speed & TTS. 100% browser-based.",
+    "Free Tomodachi Life voice generator with text-to-speech (TTS). Synthesize 8-bit Mii voices with 5 presets, pitch/speed controls — for the original and Living the Dream. 100% browser-based.",
   alternates: {
     canonical: `${BASE}/tomodachi-voice-lab`,
     languages: languageAlternates("tomodachi-voice-lab", { xDefaultFirst: true }),
   },
   openGraph: {
-    title: "Tomodachi Voice Lab — Living the Dream",
+    title: "Tomodachi Life Voice Generator — 8-Bit Mii TTS & Synthesizer",
     description:
-      "Free Tomodachi Life: Living the Dream 8-bit voice synthesizer. 5 presets, pitch/speed & TTS. 100% browser-based.",
+      "Free Tomodachi Life voice generator with text-to-speech (TTS). Synthesize 8-bit Mii voices with 5 presets, pitch/speed controls — for the original and Living the Dream. 100% browser-based.",
     url: `${BASE}/tomodachi-voice-lab`,
     siteName: "LifeSimGrid",
     type: "website",

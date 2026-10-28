@@ -562,8 +562,8 @@
     "relatedMbtiLink": "Tomodachi Life MBTI Test"
   },
   "TomodachiVoiceLabPage": {
-    "title": "Tomodachi Life Voice Lab — 8-Bit синтезатор",
-    "subtitle": "8-bit голоса Mii, высота и скорость, TTS — для Tomodachi Life и Living the Dream на Switch.",
+    "title": "Генератор голоса Tomodachi Life - 8-битный Mii TTS и синтезатор",
+    "subtitle": "Бесплатный генератор голоса Tomodachi Life с синтезом речи (TTS): создавайте 8-битные голоса Mii, настраивайте высоту и скорость — для оригинального Tomodachi Life и Living the Dream на Nintendo Switch. Идеально для проверки настроек голоса перед игрой.",
     "voiceGuideTitle": "Как синтезировать голоса Tomodachi Life",
     "voiceGuideStep1": "Шаг 1: Выберите пресет по возрасту и типу.",
     "voiceGuideStep2": "Шаг 2: Высота — выше = моложе, ниже = старше.",
@@ -654,7 +654,9 @@
     "faq11A": "Да! Web Audio API. Текст → 8-bit голос. Пресет, высота, скорость. Чиптюн в стиле Tomodachi Life. 100% в браузере.",
     "faq12Q": "Настройка высоты и скорости?",
     "faq12A": "(1) Высота (0–100): ниже = глубже (120–250 Hz), выше = выше (280–400+ Hz). (2) Скорость (0–100): темп и вибрато.",
-    "relatedMbtiLink": "Tomodachi Life MBTI Test"
+    "relatedMbtiLink": "Tomodachi Life MBTI Test",
+    "faq13Q": "Есть ли в Tomodachi Life создатель или генератор песен?",
+    "faq13A": "Наша Voice Lab сосредоточена на синтезе голосов Mii, а не на полноценном создании песен. Однако вы можете использовать режим синтеза речи (TTS), чтобы пропеть короткие фразы голосом Mii — просто введите текст с повторяющимися гласными: 8-битный чиптюн-движок воспроизводит характерный стиль песен Tomodachi Life. Для создания полноценных песен используйте внутриигровой редактор песен на Nintendo 3DS или Switch, а настройки голоса протестируйте здесь."
   },
   "LivingTheGrid": {
     "metaTitle": "Living the Grid | LifeSimGrid",
@@ -772,10 +774,10 @@
     "relatedMbtiLink": "Tomodachi Life MBTI Test"
   },
   "TomodachiLifeMbtiPage": {
-    "pageTitle": "Tomodachi Life MBTI — конвертер 16 типов",
+    "pageTitle": "Таблица MBTI Tomodachi Life — конвертер 16 типов личности",
     "metaDescription": "Бесплатный Tomodachi Life MBTI и таблица личности для Living the Dream. Калькулятор совместимости с зодиаком. 100% клиент.",
     "heroBadge": "Tomodachi Life MBTI & Personality Chart",
-    "heroTitle": "MBTI сопоставление личностей Tomodachi Life",
+    "heroTitle": "Таблица MBTI Tomodachi Life — 16 личностей → соответствие MBTI",
     "heroSubtitle": "Найдите идеальное MBTI-сопоставление для каждого типа личности Mii. 16 типов в MBTI и совместимость — для оригинала и Living the Dream на Switch.",
     "heroTag1": "16 типов личности",
     "heroTag2": "Интерактивный инструмент",

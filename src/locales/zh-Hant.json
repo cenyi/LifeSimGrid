@@ -562,8 +562,8 @@
     "relatedMbtiLink": "Tomodachi Life MBTI 測試"
   },
   "TomodachiVoiceLabPage": {
-    "title": "朋友聚會 新生活聲音實驗室與16性格(MBTI)相性計算機",
-    "subtitle": "8位元Mii語音合成、16性格矩陣探索（常與MBTI/16Personalities框架比較）、島民相性計算 — 全在瀏覽器中。",
+    "title": "朋友聚會 語音產生器 - 8位元Mii語音合成與TTS朗讀",
+    "subtitle": "免費的朋友聚會語音產生器，支援文字轉語音（TTS）：合成8位元Mii語音，自訂音高與語速 — 適用於原版朋友聚會與Switch上的《新生活》。在遊戲內設定前先預覽聲音效果。",
     "voiceGuideTitle": "如何合成 朋友聚會 新生活語音：完美語音指南",
     "voiceGuideStep1": "步驟1：選擇符合角色年齡和性格的聲音預設。",
     "voiceGuideStep2": "步驟2：微調音高滑桿調整基頻。高音聽起來較年輕，低音較年長。",
@@ -654,7 +654,9 @@
     "faq11A": "可以！我們的語音實驗室使用 Web Audio API 將任何文字輸入轉換為 8-bit Mii 角色語音。輸入文字、選擇語音預設（成人男性、成人女性、長者、孩童或機器人）、調整音高和速度滑桿，然後點擊播放即可聽到合成的語音。文字轉語音引擎生成與 Tomodachi Life 特有語音品質密切匹配的晶片音效風格音訊。所有合成都在您的瀏覽器中進行——無需伺服器處理。",
     "faq12Q": "如何為 Tomodachi Life 自訂語音音高和速度？",
     "faq12A": "我們的語音實驗室提供兩個主要控制項來自訂 Mii 語音：（1）音高滑桿（0–100）——較低的值產生適合成人男性和長者預設的深沉語音（120–250 Hz），較高的值產生適合成人女性和孩童預設的高音語音（280–400+ Hz）。（2）速度滑桿（0–100）——控制語速和顫音頻率。將這些設定與您的 Mii 性格類型匹配：外向類型通常使用中等音高和較快速度，而內斂類型使用較高音高和較慢速度。",
-    "relatedMbtiLink": "Tomodachi Life MBTI 測試"
+    "relatedMbtiLink": "Tomodachi Life MBTI 測試",
+    "faq13Q": "有朋友聚會的歌曲製作器或歌曲產生器嗎？",
+    "faq13A": "本站的語音實驗室專注於Mii語音合成，而非完整的歌曲創作。不過你可以使用文字轉語音（TTS）模式，輸入帶重複元音的歌詞，讓Mii的聲音唱出短句 — 8位元晶片音效引擎能重現朋友聚會特有的歌曲風格。如需創作完整歌曲，請使用3DS或Switch遊戲內的歌曲編輯器，並先在這裡預覽聲音設定。"
   },
   "LivingTheGrid": {
     "metaTitle": "Living the Grid | LifeSimGrid",
@@ -772,10 +774,10 @@
     "relatedMbtiLink": "Tomodachi Life MBTI 測試"
   },
   "TomodachiLifeMbtiPage": {
-    "pageTitle": "朋友聚會 新生活 MBTI — 16型人格轉換器",
+    "pageTitle": "朋友聚會 MBTI性格表 — 16型人格轉換器與計算機",
     "metaDescription": "將16種Mii性格轉換為MBTI。互動式相容性計算機，100%純前端。",
     "heroBadge": "Tomodachi Life MBTI",
-    "heroTitle": "朋友聚會 新生活 MBTI性格對照",
+    "heroTitle": "朋友聚會 MBTI性格表 — 16型性格 → MBTI對照",
     "heroSubtitle": "為每個 Mii 性格類型找到理想的 朋友聚會 新生活 MBTI 匹配。將16種遊戲內性格轉換為邁爾斯-布里格斯類型，解鎖社交相容性洞察。",
     "heroTag1": "16種人格類型",
     "heroTag2": "互動工具",

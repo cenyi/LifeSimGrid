@@ -37,9 +37,9 @@ const PAGE_DESCS: Record<NonEnLocale, string> = {
   pt: "Sintetizador voz 8-Bit Tomodachi. 5 presets, TTS, Web Audio API. 100% cliente.",
 };
 
-const FALLBACK_TITLE = "Tomodachi Life Voice Lab - 8-Bit Mii Voice Synthesizer";
+const FALLBACK_TITLE = "Tomodachi Life Voice Generator - 8-Bit Mii TTS & Synthesizer";
 const FALLBACK_DESC =
-  "Free online Tomodachi Life voice synthesizer. Synthesize 8-bit Mii voices with 5 presets, custom pitch and speed controls, and text-to-speech simulation.";
+  "Free Tomodachi Life voice generator with text-to-speech (TTS). Synthesize 8-bit Mii voices with 5 presets, pitch/speed controls — for the original and Living the Dream. 100% browser-based.";
 
 /** Generate metadata for the localized Tomodachi Voice Lab page. */
 export async function generateMetadata({
